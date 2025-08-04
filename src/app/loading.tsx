@@ -10,6 +10,7 @@ export default async function Loading() {
         alt="Cargando-Devhoo..."
         width={200}
         height={100}
+        style={{height: "auto", width: "auto  "}}
         className="animate-pulse"
       />
     </div>

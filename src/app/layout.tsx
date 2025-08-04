@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,12 +33,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
-
-        <Navbar/>
-
-        <main className="pt-20">{children}</main>
-
-        <Footer/>
+        <ScrollToTop>
+          <Navbar/>
+          <main className="pt-20">{children}</main>
+          <Footer/>
+        </ScrollToTop>
       </body>
     </html>
   );

@@ -57,7 +57,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             className="
-              relative px-6 py-2 rounded-lg text-white font-semibold shadow-md
+              relative px-8 py-2 rounded-lg text-white font-semibold shadow-md
               bg-gradient-to-r from-blue-500 to-blue-700
               overflow-hidden transition-all duration-700 ease-in-out
               hover:from-blue-600 hover:to-blue-800 
@@ -106,7 +106,7 @@ export default function Navbar() {
               href="/contact"
               onClick={toggleMenu}
               className="
-                relative px-6 py-2 rounded-lg text-white font-semibold shadow-md
+                relative px-8 py-2 rounded-lg text-white font-semibold shadow-md
                 bg-gradient-to-r from-blue-500 to-blue-700
                 overflow-hidden transition-all duration-700 ease-in-out
                 hover:from-blue-600 hover:to-blue-800 

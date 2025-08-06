@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function PageTransitionOverlay() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
-  const firstLoad = useRef(true); // 🔹 Detecta la primera carga
+  const firstLoad = useRef(true);
 
   useEffect(() => {
     if (firstLoad.current) {
@@ -19,7 +19,6 @@ export default function PageTransitionOverlay() {
     // Mostrar overlay en cambios de ruta
     setVisible(true);
     const timer = setTimeout(() => setVisible(false), 700);
-
     return () => clearTimeout(timer);
   }, [pathname]);
 

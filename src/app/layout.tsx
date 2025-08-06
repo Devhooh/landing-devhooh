@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import PageTransitionOverlay from "@/components/ui/PageTransitionOverlay";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,8 +19,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Devhoo",
-  description: 
-  "Soluciones web, móviles y empresariales integrando IA, Blockchain y software a medida para optimizar tu negocio.",
+  description: "Soluciones web, móviles y empresariales integrando IA, Blockchain y software a medida para optimizar tu negocio.",
 };
 
 export default function RootLayout({
@@ -29,15 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
-      >
-
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}>
         <Navbar/>
-
-        <main className="pt-20">{children}</main>
-
+          <main className="pt-20">{children}</main>
         <Footer/>
+        <PageTransitionOverlay/>
       </body>
     </html>
   );

@@ -107,7 +107,7 @@ export default function Footer() {
               {company.map((item) => {
                 return (
                   <li key={item.name}>
-                    <Link href={item.name} className="hover:text-white transition">
+                    <Link href={item.path} className="hover:text-white transition">
                       {item.name}
                     </Link>
                   </li>

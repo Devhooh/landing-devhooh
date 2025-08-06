@@ -2,9 +2,31 @@ import Link from "next/link"
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin, FaPhone, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
+  const services = [
+    {name: 'Desarrollo Web', path: '#'},
+    {name: 'Apps Móviles', path: '#'},
+    {name: 'Desarrollo de Software', path: '#'},
+    {name: 'Diseño UX/UI', path: '#'},
+    {name: 'Integración IA', path: '#'},
+    {name: 'Blockchain', path: '#'},
+    {name: 'DevOps', path: '#'},
+  ]
+
+  const company = [
+    {name: 'Misión', path: '#'},
+    {name: 'Soluciones', path: '#'},
+    {name: 'Sobre Nosotros', path: '#'},
+    {name: 'Porque Devhooh', path: '#'},
+    {name: 'Mision y Valores', path: '#'},
+    {name: 'Testimonios y Clientes', path: '#'},
+    {name: 'Terminos de servicios', path: '#'},
+    {name: 'Politica de privacidad', path: '#'},
+  ]
+
+
   return (
-    <footer className="w-full bg-sky-300 text-gray-900 mt-8 py-3 border-t border-gray-200">
-      <div className="max max-w-7xl mx-auto p-3 grid grid-cols-1 md:grid-cols-2 gap-5">
+    <footer className="w-full bg-sky-300 mt-8 py-5 border-t border-gray-200">
+      <div className="max max-w-7xl mx-auto p-5 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Lado izquierdo */}
         <div>
           <div className="bg-gray-800 p-6 rounded-2xl mb-6 text-center md:text-left w-full max-w-sm mx-auto md:mx-0">
@@ -18,10 +40,10 @@ export default function Footer() {
           <div className="md:text-left w-full max-w-sm mx-auto md:mx-0">
             <h4 className="text-lg font-semibold mb-3">Síguenos</h4>
             <div className="flex gap-4 text-xl">
-              <Link href="#"><FaFacebook className="hover:text-blue-500 transition" /></Link>
-              <Link href="#"><FaGithub className="hover:text-gray-400" /></Link>
-              <Link href="#"><FaXTwitter className="hover:text-gray-400 transition" /></Link>
-              <Link href="#"><FaLinkedin className="hover:text-blue-400 transition" /></Link>
+              <a href="#"><FaFacebook className="hover:text-blue-500 transition" /></a>
+              <a href="#"><FaGithub className="hover:text-gray-400" /></a>
+              <a href="#"><FaXTwitter className="hover:text-gray-400 transition" /></a>
+              <a href="#"><FaLinkedin className="hover:text-blue-400 transition" /></a>
             </div>
           </div>
         </div>
@@ -49,11 +71,15 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 leading-none">
                 <FaPhone className="text-gray-600 w-5 h-5 shrink-0" />
-                <a href="#" className="hover:text-white transition">+591 777-0000</a>
+                <a href="#" className="hover:text-white transition">
+                  +591 777-0000
+                </a>
               </li>
               <li className="flex items-center gap-2 leading-none">
                 <FaPhone className="text-gray-600 w-5 h-5 shrink-0" />
-                <a href="#" className="hover:text-white transition">+591 666-0000</a>
+                <a href="#" className="hover:text-white transition">
+                  +591 666-0000
+                </a>
               </li>
             </ul>
           </div>
@@ -62,13 +88,15 @@ export default function Footer() {
           <div className="flex-1 min-w-[150px]">
             <h4 className="text-lg font-semibold mb-4">Servicios</h4>
             <ul className="space-y-2 text-gray-500 text-sm">
-              <li>Desarrollo Web</li>
-              <li>Apps Móviles</li>
-              <li>Desarrollo de Software</li>
-              <li>Diseño UX/UI</li>
-              <li>Integración IA</li>
-              <li>Blockchain</li>
-              <li>DevOps</li>
+              {services.map((item) => {
+                return (
+                  <li key={item.name}>
+                    <Link href={item.path} className="hover:text-white transition">
+                      {item.name}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
 
@@ -76,14 +104,15 @@ export default function Footer() {
           <div className="flex-1 min-w-[150px]">
             <h4 className="text-lg font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2 text-gray-500 text-sm">
-              <li>Misión</li>
-              <li>Soluciones</li>
-              <li>Sobre Nosotros</li>
-              <li>Porque Devhooh</li>
-              <li>Mision y Valores</li>
-              <li>Testimonios y Clientes</li>
-              <li>Terminos de servicios</li>
-              <li>Politica de privacidad</li>
+              {company.map((item) => {
+                return (
+                  <li key={item.name}>
+                    <Link href={item.name} className="hover:text-white transition">
+                      {item.name}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>

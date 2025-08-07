@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 
 import Image from "next/image";
@@ -19,8 +19,17 @@ export default function Navbar() {
     { name: "Nosotros", path: "/about" },
   ];
 
+  // Deshabilita el scroll del body cuando el menú está abierto
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
+
   return (
-    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-fuchsia-300/50 border-b border-fuchsia-300">
+    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-fuchsia-300/50">
       <div className="relative max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
         {/* Logo de Devhoo */}
         <Link href="/" className="flex items-center gap-2">
@@ -33,19 +42,8 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Boton hamburguesa*/}
-        <button
-          onClick={toggleMenu}
-          className={`
-            md:hidden p-3 rounded-full transition-colors duration-300
-            ${!isOpen ? "bg-gray-800 text-white border" : ""}
-          `}
-        >
-          <Menu size={28} />
-        </button>
-
-        {/* Menu de servicios*/}
-        <nav className="hidden md:flex gap-6 text-slate-900 font-semibold">
+        {/* Menu de secciones PC*/}
+        <nav className="hidden md:flex gap-6 text-gray-950 font-semibold">
           {links.map((values) => {
             const isActive = pathname === values.path;
             return (
@@ -55,39 +53,47 @@ export default function Navbar() {
                 className={`relative px-3 py-2 rounded-3xl transition
                   hover:text-blue-700
                   ${isActive ? "text-blue-700 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-blue-700" : ""}
-                `}
-              >
+              `}>
                 {values.name}
               </Link>
             );
           })}
+
           {/* Boton CTA de contactanos */}
-          <Link
-            href="/contact"
-            className="
+          <Link href="/contact">
+            <button
+              className="
               relative px-8 py-2 rounded-lg text-white font-semibold shadow-md
               bg-gradient-to-r from-blue-500 to-blue-700
               overflow-hidden transition-all duration-700 ease-in-out
-              hover:from-blue-600 hover:to-blue-800
+              hover:from-blue-600 hover:to-blue-800 
               hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
             "
-          >
-            Contáctanos
+            >
+              Contáctanos
+            </button>
           </Link>
         </nav>
+
+        {/* Boton hamburguesa para mobile */}
+        <button
+          className="md:hidden p-3 rounded-full bg-gray-800 text-white focus:outline-none transition-transform duration-300"
+          onClick={toggleMenu}
+        >
+          <Menu size={28}/>
+        </button>
       </div>
 
-
-      {/* Menú mobile*/}
+      {/* Menú mobile */}
       <div
         className={`
           md:hidden fixed top-0 left-0 w-full h-screen bg-white shadow-md font-semibold z-40
-          transform transition-transform duration-500 ease-in-out
-          ${isOpen ? "translate-y-0" : "-translate-y-full"}
+          transform transition-all duration-500 ease-in-out flex flex-col
+          ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         `}
       >
         {/* Barra superior del menu mobile */}
-        <div className="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+        <div className="flex-none flex justify-between items-center px-6 py-4 border-b border-gray-200">
           <Link href="/" onClick={toggleMenu}>
             <Image
               className="rounded-xl"
@@ -106,44 +112,67 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Secciones del menu mobile */}
-        <nav className="flex flex-col items-center py-8 space-y-6">
-          {links.map((values) => {
-            const isActive = pathname === values.path;
-            return (
-              <Link
-                key={values.path}
-                href={values.path}
-                onClick={toggleMenu}
-                className={`
-                  flex justify-between items-center w-full px-6 py-4 transition-all duration-300
-                  text-slate-900 text-2xl border-b border-gray-100
-                  hover:bg-gray-100 hover:text-blue-500
-                  ${isActive ? "font-bold text-blue-700 bg-gray-100" : ""}
-                `}
-              >
-                <span>{values.name}</span>
-                <ChevronRight size={24} className="text-gray-400"/>
-              </Link>
-            );
-          })}
-          {/* Boton CTA para mobile */}
-          <Link
-            href="/contact"
-            onClick={toggleMenu}
-            className="
-              relative px-12 py-4 rounded-lg text-white text-3xl font-bold shadow-md
-              bg-gradient-to-r from-blue-500 to-blue-700
-              overflow-hidden transition-all duration-700 ease-in-out
-              hover:from-blue-600 hover:to-blue-800
-              hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
-            "
-          >
-            Contáctanos
-          </Link>
-        </nav>
+        {/* Contenedor de las secciones*/}
+        <div className="flex-1 overflow-y-auto px-6 pt-8 pb-6">
+          <nav className="flex flex-col space-y-6">
+            {links.map((values) => {
+              const isActive = pathname === values.path;
+              return (
+                <Link
+                  key={values.path}
+                  href={values.path}
+                  onClick={toggleMenu}
+                  className={`
+                    flex justify-between items-center w-full py-4 transition-all duration-300
+                    text-slate-900 text-2xl border-b border-gray-100
+                    hover:bg-gray-100 p-4 hover:text-blue-500
+                    ${isActive ? "font-bold text-blue-700 bg-gray-100" : ""}
+                  `}
+                >
+                  <span>{values.name}</span>
+                  <ChevronRight size={24} className="text-gray-500" />
+                </Link>
+              );
+            })}
+            {/* Botón "Contáctanos"*/}
+            <Link
+              href="/contact"
+              onClick={toggleMenu}
+              className="
+                relative w-full text-center mt-6 py-4 rounded-lg text-white text-3xl font-bold shadow-md
+                bg-gradient-to-r from-blue-500 to-blue-700
+                overflow-hidden transition-all duration-700 ease-in-out
+                hover:from-blue-600 hover:to-blue-800
+                hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
+              "
+            >
+              Contáctanos
+            </Link>
+          </nav>
+        </div>
       </div>
     </header>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

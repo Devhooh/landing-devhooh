@@ -87,7 +87,7 @@ export default function Navbar() {
       {/* Menú mobile */}
       <div
         className={`
-          md:hidden fixed top-0 left-0 w-full h-screen bg-white shadow-md font-semibold z-40
+          md:hidden fixed top-0 left-0 w-full h-svh bg-white shadow-md font-semibold z-40
           transform transition-all duration-500 ease-in-out flex flex-col
           ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         `}

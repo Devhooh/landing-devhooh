@@ -3,6 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ServicesSection() {
   const slides = [
@@ -64,9 +65,12 @@ export default function ServicesSection() {
                   <div className="flex-1 space-y-4 text-center">
                     <h2 className="text-4xl font-bold">{slide.title}</h2>
                     <p className="text-gray-600 max-w-md mx-auto font-medium text-xl">{slide.subtitle}</p>
-                    <button className="mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto">
-                      {slide.cta}
-                    </button>
+                    
+                    <Link href="/contact">
+                      <button className="mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto">
+                        {slide.cta}
+                      </button>
+                    </Link>
                   </div>
                   {/* Imagen derecha */}
                   <Image
@@ -87,11 +91,14 @@ export default function ServicesSection() {
                     <p className={`text-gray-600 max-w-md font-medium text-xl ${slide.layout === "right" ? "ml-auto text-right" : ""}`}>
                       {slide.subtitle}
                     </p>
-                    <button className={`mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex gap-2
-                      ${slide.layout === "right" ? "ml-auto" : "mr-auto"}`}
-                    >
-                      {slide.cta}
-                    </button>
+
+                    <Link href="/contact">
+                      <button className={`mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex gap-2
+                        ${slide.layout === "right" ? "ml-auto" : "mr-auto"}`}
+                      >
+                        {slide.cta}
+                      </button>
+                    </Link>
                   </div>
                   {/* Imagen */}
                   <div className="flex-1 flex justify-center">
@@ -127,9 +134,12 @@ export default function ServicesSection() {
                 <p className="text-gray-600 font-medium text-xl max-w-md mx-auto text-center order-3">
                   {slide.subtitle}
                 </p>
-                <button className="mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto order-4">
-                  {slide.cta}
-                </button>
+
+                <Link href="/contact" className="mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto order-4">
+                  <button>
+                    {slide.cta}
+                  </button>
+                </Link>
               </>
               
             </div>

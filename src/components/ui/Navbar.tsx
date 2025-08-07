@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -13,15 +13,15 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const links = [
-    {name: "Inicio", path: "/"},
-    {name: "Servicios", path: "/services"},
-    {name: "Portafolio", path: "/portfolio"},
-    {name: "Nosotros", path: "/about"},
+    { name: "Inicio", path: "/" },
+    { name: "Servicios", path: "/services" },
+    { name: "Portafolio", path: "/portfolio" },
+    { name: "Nosotros", path: "/about" },
   ];
 
   return (
-    <header className="w-full bg-purple-300 border-b border-purple-300 fixed top-0 left-0 z-50">
-      <div className=" relative max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-fuchsia-300/50 border-b border-fuchsia-300">
+      <div className="relative max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
         {/* Logo de Devhoo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -29,28 +29,38 @@ export default function Navbar() {
             alt="Devhoo-logo"
             width={120}
             height={60}
-            style={{height: "auto", width: "auto"}}
+            style={{ height: "auto", width: "auto" }}
           />
         </Link>
 
-        {/* Menu para escritorio */}
-        <nav className="hidden md:flex gap-6 text-gray-950 font-semibold">
+        {/* Boton hamburguesa*/}
+        <button
+          onClick={toggleMenu}
+          className={`
+            md:hidden p-3 rounded-full transition-colors duration-300
+            ${!isOpen ? "bg-gray-800 text-white border" : ""}
+          `}
+        >
+          <Menu size={28} />
+        </button>
+
+        {/* Menu de servicios*/}
+        <nav className="hidden md:flex gap-6 text-slate-900 font-semibold">
           {links.map((values) => {
             const isActive = pathname === values.path;
             return (
-              <Link 
-              key={values.path}
-              href={values.path}
-              className={`relative px-3 py-2 rounded-3xl transition
-                hover:bg-gray-400 hover:text-white
-                ${isActive ? "text-blue-700 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-blue-700" : ""}
-              `}
+              <Link
+                key={values.path}
+                href={values.path}
+                className={`relative px-3 py-2 rounded-3xl transition
+                  hover:text-blue-700
+                  ${isActive ? "text-blue-700 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-blue-700" : ""}
+                `}
               >
                 {values.name}
               </Link>
-            )
+            );
           })}
-
           {/* Boton CTA de contactanos */}
           <Link
             href="/contact"
@@ -58,70 +68,82 @@ export default function Navbar() {
               relative px-8 py-2 rounded-lg text-white font-semibold shadow-md
               bg-gradient-to-r from-blue-500 to-blue-700
               overflow-hidden transition-all duration-700 ease-in-out
-              hover:from-blue-600 hover:to-blue-800 
+              hover:from-blue-600 hover:to-blue-800
               hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
             "
           >
             Contáctanos
           </Link>
         </nav>
-
-
-        {/* Boton hamburguesa para mobile */}
-        <button
-          className="md:hidden text-gray-700 focus:outline-none transition-transform duration-300"
-          onClick={toggleMenu}
-        >
-          {isOpen ?< X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
-      {/* Menu mobile */}
-      <nav 
+
+      {/* Menú mobile*/}
+      <div
         className={`
-          md:hidden fixed top-[60px] left-0 w-full bg-purple-300 border-t border-purple-300 shadow-md font-semibold
-          transform transition-all duration-500 ease-in-out
-          ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"}
+          md:hidden fixed top-0 left-0 w-full h-screen bg-white shadow-md font-semibold z-40
+          transform transition-transform duration-500 ease-in-out
+          ${isOpen ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        <div className="flex flex-col items-center py-4 space-y-4">
+        {/* Barra superior del menu mobile */}
+        <div className="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+          <Link href="/" onClick={toggleMenu}>
+            <Image
+              className="rounded-xl"
+              src="/assets/images/BgColor.png"
+              alt="Devhoo-logo"
+              width={120}
+              height={60}
+              style={{ height: "auto", width: "auto" }}
+            />
+          </Link>
+          <button
+            onClick={toggleMenu}
+            className="p-3 rounded-full bg-gray-800 text-white transition-colors duration-300"
+          >
+            <X size={28} />
+          </button>
+        </div>
+
+        {/* Secciones del menu mobile */}
+        <nav className="flex flex-col items-center py-8 space-y-6">
           {links.map((values) => {
             const isActive = pathname === values.path;
-            return(
+            return (
               <Link
                 key={values.path}
                 href={values.path}
                 onClick={toggleMenu}
-                className={`relative px-3 py-2 rounded-3xl transition
-                hover:bg-gray-400 hover:text-white
-                ${isActive ? "text-blue-700 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-blue-700" : ""}
+                className={`
+                  flex justify-between items-center w-full px-6 py-4 transition-all duration-300
+                  text-slate-900 text-2xl border-b border-gray-100
+                  hover:bg-gray-100 hover:text-blue-500
+                  ${isActive ? "font-bold text-blue-700 bg-gray-100" : ""}
                 `}
               >
-                {values.name}
+                <span>{values.name}</span>
+                <ChevronRight size={24} className="text-gray-400"/>
               </Link>
-            )
+            );
           })}
-
           {/* Boton CTA para mobile */}
           <Link
             href="/contact"
             onClick={toggleMenu}
             className="
-              relative px-8 py-2 rounded-lg text-white font-semibold shadow-md
+              relative px-12 py-4 rounded-lg text-white text-3xl font-bold shadow-md
               bg-gradient-to-r from-blue-500 to-blue-700
               overflow-hidden transition-all duration-700 ease-in-out
-              hover:from-blue-600 hover:to-blue-800 
+              hover:from-blue-600 hover:to-blue-800
               hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
             "
           >
             Contáctanos
           </Link>
-        </div>
-      </nav>
-
+        </nav>
+      </div>
     </header>
-  )
+  );
 }
-
-
 

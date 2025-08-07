@@ -68,11 +68,11 @@ export default function Footer() {
           </div>
           <div className="md:text-left w-full max-w-sm mx-auto md:mx-0">
             <h4 className="text-2xl md:text-3xl font-semibold mb-3 text-white">Síguenos</h4>
-            <div className="flex gap-4 text-2xl md:text-3xl">
-              <a href="#"><FaFacebook className="hover:text-blue-700 transition" /></a>
-              <a href="#"><FaGithub className="hover:text-black" /></a>
-              <a href="#"><FaXTwitter className="hover:text-gray-400 transition" /></a>
-              <a href="#"><FaLinkedin className="hover:text-sky-400 transition" /></a>
+            <div className="flex gap-4 text-2xl md:text-4xl text-gray-400">
+              <a href="#"><FaFacebook className="text-3xl md:text-4xl hover:text-blue-700 transition" /></a>
+              <a href="#"><FaGithub className="text-3xl md:text-4xl hover:text-black" /></a>
+              <a href="#"><FaXTwitter className="text-3xl md:text-4xl hover:text-white transition" /></a>
+              <a href="#"><FaLinkedin className="text-3xl md:text-4xl hover:text-sky-500 transition" /></a>
             </div>
           </div>
         </div>

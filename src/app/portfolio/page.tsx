@@ -1,13 +1,18 @@
+import HeroSection from "@/components/sections/HeroSection";
+
 export default function Portfolio() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-8">
-      <h1 className="text-3xl font-bold text-center">
-        Portafolio
-      </h1>
-      <p className="text-gray-600 text-center max-w-xl">
-        Seccion donde se mostrara todos los proyectos que hizo
-        Devhoo
-      </p>
-    </div>
+    <main>
+      <HeroSection 
+        title= "De ideas a realidades digitales. Resultados que hablan por sí solos" 
+        subtitle="Cada proyecto representa una historia de innovación, colaboración y éxito. Mira cómo ayudamos a crecer negocios con tecnología moderna." 
+        cta="Cotiza tu proyecto ahora" 
+        ctaLink="/contact"
+        imageSrc="/assets/images/hero2.png"
+        imageAlt="Desarrollo de softwara, portafolio"
+        layout="right"
+      
+      />
+    </main>
   )
 }

@@ -1,17 +1,19 @@
+import HeroSection from "@/components/sections/HeroSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-8">
-      <h1 className="text-3xl font-bold text-center">
-        Bienvenido a Devhoo
-      </h1>
-      
-      <p className="text-gray-600 text-center max-w-xl">
-        Creamos soluciones web, móviles y empresariales integrando IA
-        y tecnologías modernas para optimizar tu negocio.
-      </p>
+    <main>
+      <HeroSection
+        title="Desarrollamos software inteligente a tu medida"
+        subtitle="Creamos soluciones web, móviles y empresariales, integrando inteligencia artificial para optimizar tu negocio."
+        cta="Hablemos de tu proyecto"
+        ctaLink="/contact"
+        imageSrc="/assets/images/hero1.png" // Asegúrate de tener estas imágenes
+        imageAlt="Ilustración de equipo de desarrollo"
+        layout="left"
+      />
 
-
-    </div>
+      {/* Otras secciones irían aquí... */}
+    </main>
   );
 }

@@ -8,6 +8,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
+      "md-tablet": "550px",
       "table-lg": "950px",
     },
     extend: {

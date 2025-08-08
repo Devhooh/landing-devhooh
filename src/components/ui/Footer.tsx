@@ -26,11 +26,11 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-fuchsia-950 mt-8 p-2 border-t border-gray-200">
-      <div className="max max-w-7xl mx-auto p-5 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max max-w-7xl mx-auto p-5 grid grid-cols-1 table-lg:grid-cols-2 gap-8">
         {/* Lado izquierdo */}
         <div>
-          <div className="bg-indigo-900 p-4 rounded-2xl mb-6 text-center md:text-left w-full max-w-sm mx-auto md:mx-0">
-            <h3 className="text-3xl font-semibold mb-3 text-white">
+          <div className="bg-indigo-900 p-4 rounded-2xl mb-6 text-center table-lg:text-left w-full max-w-sm mx-auto table-lg:mx-0">
+            <h3 className="text-2xl sm:text-3xl font-semibold mb-3 text-white">
               Inicia tu transformacion digital con Devhooh
             </h3>
             
@@ -62,26 +62,22 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+            </div>
           </div>
 
-
-          </div>
-          <div className="md:text-left w-full max-w-sm mx-auto md:mx-0">
-            <h4 className="text-2xl md:text-3xl font-semibold mb-3 text-white">Síguenos</h4>
-            <div className="flex gap-4 text-2xl md:text-4xl text-gray-400">
-              <a href="#"><FaFacebook className="text-3xl md:text-4xl hover:text-blue-700 transition" /></a>
-              <a href="#"><FaGithub className="text-3xl md:text-4xl hover:text-black" /></a>
-              <a href="#"><FaXTwitter className="text-3xl md:text-4xl hover:text-white transition" /></a>
-              <a href="#"><FaLinkedin className="text-3xl md:text-4xl hover:text-sky-500 transition" /></a>
+          <div className="table-lg:text-left w-full max-w-sm mx-auto table-lg:mx-0">
+            <h4 className="text-xl sm:text-2xl font-semibold mb-3 text-white">Síguenos</h4>
+            <div className="flex gap-4 text-2xl table-lg:text-4xl text-gray-400">
+              <a href="#"><FaFacebook className="text-3xl table-lg:text-4xl hover:text-blue-700 transition" /></a>
+              <a href="#"><FaGithub className="text-3xl table-lg:text-4xl hover:text-black" /></a>
+              <a href="#"><FaXTwitter className="text-3xl table-lg:text-4xl hover:text-white transition" /></a>
+              <a href="#"><FaLinkedin className="text-3xl table-lg:text-4xl hover:text-sky-500 transition" /></a>
             </div>
           </div>
         </div>
 
         {/* Lado derecho */}
-        <div className="
-          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8
-          lg:flex lg:flex-wrap lg:gap-8
-        ">
+        <div className="grid grid-cols-1 md-tablet:grid-cols-2 gap-8 justify-items-start md-tablet:justify-items-center">
           {/* Zona de servicios */}
           <div className="flex-1 min-w-[150px]">
             <h4 className="text-xl font-semibold mb-4 text-white">Servicios</h4>
@@ -118,12 +114,13 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="mt-5 text-center text-gray-300 text-sm font-semibold">
-        <p> Copyright software © Devhoo  -  {new Date().getFullYear()} Todos los derechos reservados.</p>
+        <p> Copyright software © Devhoo  -  {new Date().getFullYear()} Todos los derechos reservados.</p>
       </div>
-
-
     </footer>
   )
 }
+
+
+
 
 

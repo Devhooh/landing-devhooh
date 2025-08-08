@@ -5,6 +5,11 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
+// Importacion de los estilos de Swiper
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 export default function ServicesSection() {
   const slides = [
     {
@@ -42,15 +47,15 @@ export default function ServicesSection() {
         loop
         breakpoints={{
           0: {pagination: false},
-          1024: {pagination: {clickable: true}},
+          950: {pagination: {clickable: true}},
         }}
         className="max-w-6xl mx-auto"
       >
         {slides.map((slide, idx) => (
           <SwiperSlide key={idx}>
             
-            {/* Layout Pc (primer código) */}
-            <div className="hidden lg:flex items-center min-h-[350px] gap-4 px-4 justify-between">
+            {/* Layout Pc */}
+            <div className="hidden table-lg:flex items-center min-h-[350px] gap-4 px-4 justify-between">
               {slide.layout === "center" ? (
                 <>
                   {/* Imagen izquierda */}
@@ -67,7 +72,7 @@ export default function ServicesSection() {
                     <p className="text-gray-600 max-w-md mx-auto font-medium text-xl">{slide.subtitle}</p>
                     
                     <Link href="/contact">
-                      <button className="mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto">
+                      <button className="mt-4 px-8 py-4 text-lg table-lg:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto">
                         {slide.cta}
                       </button>
                     </Link>
@@ -93,7 +98,7 @@ export default function ServicesSection() {
                     </p>
 
                     <Link href="/contact">
-                      <button className={`mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex gap-2
+                      <button className={`mt-4 px-8 py-4 text-lg table-lg:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex gap-2
                         ${slide.layout === "right" ? "ml-auto" : "mr-auto"}`}
                       >
                         {slide.cta}
@@ -117,9 +122,8 @@ export default function ServicesSection() {
               )}
             </div>
 
-
-            {/* Layout Mobile (segundo código) */}
-            <div className="flex flex-col lg:hidden items-center min-h-[400px] gap-8 p-4">
+            {/* Layout Mobile */}
+            <div className="flex flex-col table-lg:hidden items-center min-h-[400px] gap-8 p-4">
               <>
                 <h2 className="text-3xl font-bold text-center order-1">
                   {slide.title}
@@ -135,7 +139,7 @@ export default function ServicesSection() {
                   {slide.subtitle}
                 </p>
 
-                <Link href="/contact" className="mt-4 px-8 py-4 text-lg md:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto order-4">
+                <Link href="/contact" className="mt-4 px-8 py-4 text-lg table-lg:text-xl font-semibold bg-blue-500 text-white rounded-xl shadow-md hover:bg-blue-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto order-4">
                   <button>
                     {slide.cta}
                   </button>
@@ -150,6 +154,4 @@ export default function ServicesSection() {
     </section>
   );
 }
-
-
 

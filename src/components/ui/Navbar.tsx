@@ -43,7 +43,7 @@ export default function Navbar() {
         </Link>
 
         {/* Menu de secciones PC*/}
-        <nav className="hidden md:flex gap-6 text-gray-950 font-semibold">
+        <nav className="hidden table-lg:flex gap-6 text-gray-950 font-semibold">
           {links.map((values) => {
             const isActive = pathname === values.path;
             return (
@@ -77,7 +77,7 @@ export default function Navbar() {
 
         {/* Boton hamburguesa para mobile */}
         <button
-          className="md:hidden p-3 rounded-full bg-gray-800 text-white focus:outline-none transition-transform duration-300"
+          className="table-lg:hidden p-3 rounded-full bg-gray-800 text-white focus:outline-none transition-transform duration-300"
           onClick={toggleMenu}
         >
           <Menu size={28}/>
@@ -87,7 +87,7 @@ export default function Navbar() {
       {/* Menú mobile */}
       <div
         className={`
-          md:hidden fixed top-0 left-0 w-full h-svh bg-white shadow-md font-semibold z-40
+          table-lg:hidden fixed top-0 left-0 w-full h-svh bg-white shadow-md font-semibold z-40
           transform transition-all duration-500 ease-in-out flex flex-col
           ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         `}

@@ -3,10 +3,10 @@ import ServicesSection from "@/components/ui/ServicesSection";
 
 export default function Services() {
   return (
-    <main>
+    <div className="flex flex-col gap-12">
       <ServicesSection/>
-    <ServicesCardsSection/>
-    </main>
+      <ServicesCardsSection/>
+    </div>
 
   )
 }

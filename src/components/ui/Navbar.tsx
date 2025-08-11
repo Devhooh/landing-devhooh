@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-fuchsia-300/50">
+    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-fuchsia-400/30">
       <div className="relative max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
         {/* Logo de Devhoo */}
         <Link href="/" className="flex items-center gap-2">
@@ -43,7 +43,7 @@ export default function Navbar() {
         </Link>
 
         {/* Menu de secciones PC*/}
-        <nav className="hidden table-lg:flex gap-6 text-gray-950 font-semibold">
+        <nav className="hidden table-lg:flex gap-6 text-gray-700 font-semibold">
           {links.map((values) => {
             const isActive = pathname === values.path;
             return (
@@ -63,10 +63,10 @@ export default function Navbar() {
           <Link href="/contact">
             <button
               className="
-              relative px-8 py-2 rounded-lg text-white font-semibold shadow-md
-              bg-gradient-to-r from-blue-500 to-blue-700
+              relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
+              bg-gradient-to-r from-purple-500 to-purple-700
               overflow-hidden transition-all duration-700 ease-in-out
-              hover:from-blue-600 hover:to-blue-800 
+              hover:from-purple-600 hover:to-purple-800 
               hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
             "
             >
@@ -140,9 +140,9 @@ export default function Navbar() {
               onClick={toggleMenu}
               className="
                 relative w-full text-center mt-6 py-4 rounded-lg text-white text-3xl font-bold shadow-md
-                bg-gradient-to-r from-blue-500 to-blue-700
+                bg-gradient-to-r from-fuchsia-500 to-fuchsia-700
                 overflow-hidden transition-all duration-700 ease-in-out
-                hover:from-blue-600 hover:to-blue-800
+                hover:from-fuchsia-600 hover:to-fuchsia-800
                 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
               "
             >

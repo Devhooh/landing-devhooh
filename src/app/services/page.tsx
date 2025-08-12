@@ -1,6 +1,7 @@
 import CustomDevelopmentSection from "@/components/ui/CustomDevelopmentSection";
 import ServicesCardsSection from "@/components/ui/ServicesCardsSection";
 import ServicesSection from "@/components/ui/ServicesSection";
+import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
 
 export default function Services() {
   return (
@@ -16,12 +17,24 @@ export default function Services() {
             </h3>
           </div>
 
-          <CustomDevelopmentSection/>
+          <CustomDevelopmentSection
+            title="Desarrollo Personalizado"
+            cardData={customDevelopmentCardData}
+          />
+          <CustomDevelopmentSection
+            title="Servicios de IA"
+            cardData={ServicesIACardData}
+          />
+          <CustomDevelopmentSection
+            title="Infraestructura y Soporte"
+            cardData={InfraestructureSupportCardData}
+          />
+          <CustomDevelopmentSection
+            title="Diseño y QA"
+            cardData={DesignerQACardData}
+          />
         </div>
-      </div>
-
-
+      </div>
     </div>
-
   )
 }

@@ -1,12 +1,11 @@
 "use client";
 
-import React from "react";
 import { Lightbulb, Rocket, Repeat } from "lucide-react";
 
 export default function ServicesCardsSection() {
   return (
     <section className="w-full py-10 bg-indigo-950/90 text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 table-lg:px-4">
+      <div className="max-w-7xl mx-auto px-6 table-lg:px-8">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-6 items-start">
           
           {/* Lado izquierdo - Contenedor de las tarjetas */}

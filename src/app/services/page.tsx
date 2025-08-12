@@ -1,6 +1,6 @@
-import CardCaroulselSection from "@/components/ui/CardCaroulselSection";
-import ServicesCardsSection from "@/components/ui/ServicesCardsSection";
-import ServicesSection from "@/components/sections/ServicesSection";
+import CardCaroulselSection from "@/sections/services/CardCaroulselSection";
+import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
+import ServicesSection from "@/sections/services/ServicesSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
 
 export default function Services() {

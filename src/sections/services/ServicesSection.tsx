@@ -1,4 +1,3 @@
-// src/components/sections/ServicesSection.tsx
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";

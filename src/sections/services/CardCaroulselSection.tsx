@@ -4,7 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Swiper component and modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
@@ -32,7 +31,7 @@ const Card: React.FC<{ card: CardData }> = ({ card }) => {
       case 'orange':
         return 'bg-gradient-to-br from-orange-400 to-orange-600';
       default:
-        return 'bg-white'; // Fallback a blanco si no hay color
+        return 'bg-white'; 
     }
   };
 
@@ -59,7 +58,6 @@ const Card: React.FC<{ card: CardData }> = ({ card }) => {
           <li key={i} className='pb-2'>{detail}</li>
         ))}
       </ul>
-      {/* mt-auto empuja los botones al fondo */}
       <div className="flex flex-col gap-4 mt-auto">
         <Link href="#">
           <button className="w-full px-6 py-3 bg-white/30 hover:bg-white/40 text-white font-semibold rounded-full transition-colors">
@@ -99,7 +97,6 @@ export default function CardCaroulselSection ({title, cardData}: CardCaroulselSe
         <Swiper
           modules={[Navigation, Pagination]}
           navigation
-          loop
           className="w-full h-full flex items-stretch"
           slidesPerView={1}
           spaceBetween={12} 

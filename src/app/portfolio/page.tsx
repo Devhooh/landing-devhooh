@@ -2,7 +2,7 @@ import HeroSection from "@/components/sections/HeroSection";
 
 export default function Portfolio() {
   return (
-    <main>
+    <div>
       <HeroSection 
         title= "De ideas a realidades digitales. Resultados que hablan por sí solos" 
         subtitle="Cada proyecto representa una historia de innovación, colaboración y éxito. Mira cómo ayudamos a crecer negocios con tecnología moderna." 
@@ -13,6 +13,6 @@ export default function Portfolio() {
         layout="right"
       
       />
-    </main>
+    </div>
   )
 }

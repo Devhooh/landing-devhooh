@@ -2,7 +2,7 @@ import HeroSection from "@/components/sections/HeroSection";
 
 export default function About() {
   return (
-    <main>
+    <div>
       <HeroSection 
         title="Somos Devhoo: Tecnología con propósito. Nuestra misión va más allá del software" 
         subtitle="Detrás del código, somos un equipo que escucha, colabora y construye contigo. Conoce quiénes somos y por qué trabajamos diferente."
@@ -11,6 +11,6 @@ export default function About() {
         layout="center"       
       />
 
-    </main>
+    </div>
   )
 }

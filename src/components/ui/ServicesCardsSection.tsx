@@ -6,7 +6,7 @@ import { Lightbulb, Rocket, Repeat } from "lucide-react";
 export default function ServicesCardsSection() {
   return (
     <section className="w-full py-10 bg-indigo-950/90 text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-2 table-lg:px-4">
+      <div className="max-w-7xl mx-auto px-6 table-lg:px-4">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-6 items-start">
           
           {/* Lado izquierdo - Contenedor de las tarjetas */}
@@ -69,6 +69,22 @@ export default function ServicesCardsSection() {
             </p>
           </div>
         </div>
+
+        <div 
+          className="
+            text-center p-6 mt-12 rounded-3xl shadow-2xl mx-auto select-none
+            bg-gradient-to-r from-blue-600 to-indigo-800 
+            transform transition-all duration-300
+            hover:scale-105 hover:from-blue-700 hover:to-indigo-900
+            active:scale-95 active:rounded-xl active:from-blue-700 active:to-indigo-900
+            max-w-3xl cursor-pointer
+          "
+        >
+          <h2 className="text-4xl md-tablet:text-5xl md:text-5xl font-extrabold text-white leading-tight animate-pulse" style={{ textShadow: '0 0 0px #ffffff, 0 0 20px #ffffff, 0 0 0px #ffffff' }}>
+            Tenemos una amplia <span className="text-yellow-400">gama de servicios.</span> Escoge el ideal <span className="text-yellow-400">para Ti</span>
+          </h2>
+        </div>
+
       </div>
     </section>
   );

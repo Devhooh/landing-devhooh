@@ -1,7 +1,3 @@
-// src/data/portfolioData.ts
-// Este archivo centraliza los datos para el portafolio.
-
-// 1. Definimos la interfaz del proyecto para asegurar la tipificación de los datos.
 export interface Project {
   id: number;
   title: string;
@@ -10,8 +6,6 @@ export interface Project {
   technologies: string[];
 }
 
-// 2. Aquí están los datos de prueba de los proyectos.
-// Esto simula la información que obtendrías de una base de datos o API.
 export const projectsData: Project[] = [
   {
     id: 1,
@@ -55,10 +49,29 @@ export const projectsData: Project[] = [
     service: "Desarrollo Web",
     technologies: ["Python", "Django"],
   },
+  {
+    id: 7,
+    title: "Sistema de Reservas",
+    country: "México",
+    service: "Desarrollo Web",
+    technologies: ["PHP", "Laravel"],
+  },
+  {
+    id: 8,
+    title: "Aplicación de Fitness",
+    country: "Perú",
+    service: "Desarrollo Móvil",
+    technologies: ["React Native", "Express"],
+  },
+  {
+    id: 9,
+    title: "Software de Contabilidad",
+    country: "Colombia",
+    service: "Desarrollo Web",
+    technologies: ["Python", "Django"],
+  },
 ];
 
-// 3. Generamos dinámicamente las opciones de filtro a partir de los datos.
-// Ahora usamos Array.from() para convertir explícitamente el Set en un array.
 const allProjects = ["Todos", ...projectsData.map((p) => p.title)];
 const allCountries = ["Todos", ...Array.from(new Set(projectsData.map((p) => p.country)))];
 const allServices = ["Todos", ...Array.from(new Set(projectsData.map((p) => p.service)))];

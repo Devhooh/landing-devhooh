@@ -25,7 +25,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="w-full bg-fuchsia-950 mt-8 p-2 border-t border-gray-200">
+    <footer className="w-full bg-fuchsia-950 p-4 border-t ">
       <div className="max max-w-7xl mx-auto p-5 grid grid-cols-1 table-lg:grid-cols-2 gap-8">
         {/* Lado izquierdo */}
         <div>

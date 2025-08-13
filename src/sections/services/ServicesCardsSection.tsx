@@ -79,7 +79,7 @@ export default function ServicesCardsSection() {
             max-w-3xl cursor-pointer
           "
         >
-          <h2 className="text-4xl md-tablet:text-5xl md:text-5xl font-extrabold text-white leading-tight animate-pulse" style={{ textShadow: '0 0 0px #ffffff, 0 0 20px #ffffff, 0 0 0px #ffffff' }}>
+          <h2 className="text-4xl md-tablet:text-5xl md:text-5xl font-extrabold text-white leading-tight animate-pulse" style={{ textShadow: '0 0 5px #ffffff, 0 0 1px #ffffff, 0 0 1px #ffffff' }}>
             Tenemos una amplia <span className="text-yellow-400">gama de servicios.</span> Escoge el ideal <span className="text-yellow-400">para Ti</span>
           </h2>
         </div>

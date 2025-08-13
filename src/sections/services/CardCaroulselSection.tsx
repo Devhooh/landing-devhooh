@@ -43,7 +43,7 @@ const Card: React.FC<{ card: CardData }> = ({ card }) => {
       shadow-2xl transform transition-all duration-300 hover:scale-[1.02]
       flex flex-col h-full`}
     >
-      <h3 className="text-3xl font-bold mb-4 text-center">{card.title}</h3>
+      <h3 className="text-2xl table-lg:text-3xl font-bold m-4 text-center">{card.title}</h3>
       
       <div className={`p-4 rounded-2xl flex items-center justify-center mb-6 bg-gray-300/30`}>
         <Image
@@ -87,10 +87,10 @@ interface CardCaroulselSectionProps {
 
 export default function CardCaroulselSection ({title, cardData}: CardCaroulselSectionProps) {
   return (
-    <section className="bg-white  w-full py-4 overflow-hidden rounded-2xl ">
+    <section className="bg-white  w-full py-10 overflow-hidden rounded-2xl ">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
-        <h2 className="text-4xl md:text-5xl text-center font-extrabold mb-6 text-indigo-950">
+        <h2 className="text-3xl md-tablet:text-4xl text-center font-extrabold mb-6 text-indigo-950">
           {title}
         </h2>
         

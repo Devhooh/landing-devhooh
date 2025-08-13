@@ -1,4 +1,6 @@
+import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
+import PortfolioFilters from "@/sections/portfolio/PortfolioFilters";
 
 export default function Portfolio() {
   return (
@@ -13,6 +15,11 @@ export default function Portfolio() {
         layout="right"
       
       />
+
+      <PortfolioFilters/>
+
+      <ContactCTA/>
+
     </div>
   )
 }

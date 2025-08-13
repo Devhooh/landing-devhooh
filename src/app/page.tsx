@@ -1,8 +1,9 @@
+import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
 
 export default function Home() {
   return (
-    <main>
+    <div>
       <HeroSection
         title="Desarrollamos software inteligente a tu medida"
         subtitle="Creamos soluciones web, móviles y empresariales, integrando inteligencia artificial para optimizar tu negocio."
@@ -13,7 +14,8 @@ export default function Home() {
         layout="left"
       />
 
-      {/* Otras secciones irían aquí... */}
-    </main>
+      <ContactCTA/>
+
+    </div>
   );
 }

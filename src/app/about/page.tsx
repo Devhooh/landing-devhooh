@@ -1,3 +1,4 @@
+import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
 
 export default function About() {
@@ -10,6 +11,8 @@ export default function About() {
         ctaLink="/contact"
         layout="center"       
       />
+
+      <ContactCTA/>
 
     </div>
   )

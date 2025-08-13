@@ -3,6 +3,7 @@ import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
 import ServicesSection from "@/sections/services/ServicesSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
 import ProcessSection from "@/sections/services/ProcessSection";
+import ContactCTA from "@/components/ui/ContactCTA";
 
 export default function Services() {
   return (
@@ -38,6 +39,8 @@ export default function Services() {
       </div>
 
       <ProcessSection/>
+
+      <ContactCTA/>
     </div>
   )
 }

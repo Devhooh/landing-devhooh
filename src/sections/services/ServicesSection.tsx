@@ -43,7 +43,7 @@ export default function ServicesSection() {
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 4000 }}
+        autoplay={{ delay: 7000 }}
         loop
         breakpoints={{
           0: {pagination: false},

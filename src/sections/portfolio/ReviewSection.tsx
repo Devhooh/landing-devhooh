@@ -40,11 +40,11 @@ export default function ReviewsSection() {
   const groupedReviews = groupReviewsInPairs(reviewData);
 
   return (
-    <div className="py-16 bg-gray-100">
+    <div className="py-4 bg-gray-100">
       <div className="max-w-6xl mx-auto px-8 md-tablet:px-16 table-lg:px-40">
         {/* Título y subtítulo de la sección */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-900 md-tablet:text-5xl">
+          <h2 className="mt-10 text-4xl font-extrabold text-gray-900 md-tablet:text-5xl">
             Reseñas de Clientes
           </h2>
           <p className="mt-4 text-xl text-gray-600">
@@ -68,7 +68,7 @@ export default function ReviewsSection() {
             <SwiperSlide key={groupIndex}>
               {/* Contenedor grid responsivo para las reseñas dentro de la diapositiva */}
               {/* grid-cols-1 para tablet y móvil, lg:grid-cols-2 para escritorio */}
-              <div className="grid grid-cols-1 gap-8">
+              <div className="grid grid-cols-1 gap-8 mb-20">
                 {group.map((review) => (
                   <ReviewCard key={review.id} review={review} />
                 ))}

@@ -52,7 +52,7 @@ export default function ReviewCard({ review }: { review: Review }) {
         </div>
 
         {/* Perfil del revisor */}
-        <div className="flex items-center space-x-3 mt-auto">
+        <div className="flex items-center space-x-3 mt-auto pt-10">
           <Image
             src={review.reviewerProfileUrl}
             alt={review.reviewerName}

@@ -1,5 +1,6 @@
 import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
+import FAQSection from "@/sections/portfolio/FAQSection";
 import PortfolioFilters from "@/sections/portfolio/PortfolioFilters";
 import ReviewsSection from "@/sections/portfolio/ReviewSection";
 
@@ -20,6 +21,8 @@ export default function Portfolio() {
       <PortfolioFilters/>
 
       <ReviewsSection/>
+
+      <FAQSection/>
 
       <ContactCTA/>
 

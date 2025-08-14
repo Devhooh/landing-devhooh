@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutSection () {
   return (
-    <div className="bg-white py-16 px-4 md:px-8">
+    <div className="bg-white pt-16 px-4 md-tablet:px-8">
       <div className="container mx-auto max-w-7xl">
         
         {/* Card central de comunicación */}

@@ -2,6 +2,7 @@ import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
 import AboutSection from "@/sections/about/AboutSection";
 import OurValuesSection from "@/sections/about/OurValuesSection";
+import ProblemsSection from "@/sections/about/ProblemsSection";
 import WhyChooseUsSection from "@/sections/about/WhyChooseUsSection";
 
 export default function About() {
@@ -20,6 +21,8 @@ export default function About() {
       <OurValuesSection/>
 
       <WhyChooseUsSection/>
+
+      <ProblemsSection/>
 
       <ContactCTA/>
 

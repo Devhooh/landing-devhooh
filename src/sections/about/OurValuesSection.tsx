@@ -46,7 +46,7 @@ export default function OurValuesSection() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-emerald-100 rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-gray-200 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+                className="bg-emerald-100 rounded-2xl shadow-xl p-6 flex flex-col items-center md-tablet:flex grid-cols-2 text-center border border-gray-200 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 <div className="relative w-40 h-40 mb-4">
                   <Image

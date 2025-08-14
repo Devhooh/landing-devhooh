@@ -36,17 +36,17 @@ export default function OurValuesSection() {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 px-8 md-tablet:px-8">
+    <section className="bg-gray-50 py-16 md-tablet:px-4">
       <div className="container mx-auto max-w-7xl text-center">
         <h2 className="text-4xl md-tablet:text-5xl font-extrabold text-gray-900 mb-12">
           Nuestros Valores
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-6">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-emerald-100 rounded-2xl shadow-xl p-6 flex flex-col items-center md-tablet:flex grid-cols-2 text-center border border-gray-200 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+                className="bg-emerald-100 rounded-2xl shadow-xl p-6 flex flex-col items-center md-tablet:flex grid-cols-3 text-center border border-gray-200 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 <div className="relative w-40 h-40 mb-4">
                   <Image

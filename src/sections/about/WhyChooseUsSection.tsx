@@ -7,35 +7,35 @@ export default function WhyChooseUsSection() {
       title: "Entregas rápidas y confiables",
       description:
         "Cumplimos plazos y garantizamos que tu proyecto esté listo para despegar sin retrasos.",
-      image: "/assets/images/fast.png",
+      image: "/assets/icons/fast.png",
       alt: "Entregas rápidas y confiables",
     },
     {
       title: "Soluciones a medida",
       description:
         "Cada proyecto es único. Diseñamos estrategias y software que se adaptan exactamente a lo que necesitas.",
-      image: "/assets/images/solution.png",
+      image: "/assets/icons/solution.png",
       alt: "Soluciones a medida",
     },
     {
       title: "Trabajo colaborativo",
       description:
         "Te mantenemos al tanto en cada fase con metodologías ágiles y comunicación clara.",
-      image: "/assets/images/collaborative.png",
+      image: "/assets/icons/collaborative.png",
       alt: "Trabajo colaborativo",
     },
     {
       title: "Seguridad y calidad",
       description:
         "Aplicamos buenas prácticas para asegurar que tu producto sea confiable, escalable y protegido.",
-      image: "/assets/images/security.png",
+      image: "/assets/icons/securities.png",
       alt: "Seguridad y calidad",
     },
     {
       title: "Crecimiento garantizado",
       description:
         "Creamos soluciones que no solo funcionan, sino que ayudan a que tu negocio evolucione y escale.",
-      image: "/assets/images/guaranteed.png",
+      image: "/assets/icons/guaranteed.png",
       alt: "Crecimiento garantizado",
     },
   ];

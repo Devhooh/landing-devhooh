@@ -1,6 +1,7 @@
 import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
 import { BenefitsSection } from "@/sections/home/BenefitsSection";
+import { PlansSection } from "@/sections/home/PlansSection";
 import { ProjectsSection } from "@/sections/home/ProjectsSection";
 import { SolutionsSection } from "@/sections/home/SolutionsSection";
 
@@ -22,6 +23,8 @@ export default function Home() {
       <ProjectsSection/>
 
       <BenefitsSection/>
+
+      <PlansSection/>
 
       <ContactCTA/>
 

@@ -1,4 +1,4 @@
-import CardCaroulselSection from "@/sections/services/CardCaroulselSection";
+import CaroulselSection from "@/sections/services/CaroulselSection";
 import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
 import ServicesSection from "@/sections/services/ServicesSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
@@ -19,19 +19,19 @@ export default function Services() {
             </h3>
           </div>
 
-          <CardCaroulselSection
+          <CaroulselSection
             title="Desarrollo Personalizado"
             cardData={customDevelopmentCardData}
           />
-          <CardCaroulselSection
+          <CaroulselSection
             title="Servicios de IA"
             cardData={ServicesIACardData}
           />
-          <CardCaroulselSection
+          <CaroulselSection
             title="Infraestructura y Soporte"
             cardData={InfraestructureSupportCardData}
           />
-          <CardCaroulselSection
+          <CaroulselSection
             title="Diseño y QA"
             cardData={DesignerQACardData}
           />

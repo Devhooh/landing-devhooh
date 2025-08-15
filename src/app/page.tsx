@@ -1,5 +1,6 @@
 import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
+import { SolutionsSection } from "@/sections/home/SolutionsSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
         imageAlt="Ilustración de equipo de desarrollo"
         layout="left"
       />
+
+      <SolutionsSection/>
 
       <ContactCTA/>
 

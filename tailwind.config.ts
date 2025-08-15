@@ -17,6 +17,16 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        scroll: {
+        '0%': { transform: 'translateX(0)' },
+        '100%': { transform: 'translateX(-50%)' }, // mueve la mitad del contenedor
+        },
+      },
+      animation: {
+        scroll: 'scroll 20s linear infinite',
+        'scroll-reverse': 'scroll 20s linear infinite reverse',
+      }
     },
   },
   plugins: [],

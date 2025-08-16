@@ -1,8 +1,21 @@
+import ContactCTA from "@/components/ui/ContactCTA";
+import HeroSection from "@/components/ui/HeroSection";
 
 export default function Tecnologia() {
   return (
     <div>
-      Seccion de tecnologias
+      <HeroSection 
+        title="La tecnología detrás de nuestras soluciones de vanguardia" 
+        subtitle="Donde los frameworks y la innovación de productos se unen con la experiencia técnica." 
+        cta="Construyamos tu producto" 
+        imageSrc="/assets/images/slide3.png"
+        imageAlt="Ilustración de equipo de desarrollo"
+        ctaLink="/contact" 
+        layout="left"        
+      />
+
+      <ContactCTA/>
+
     </div>
   )
 }

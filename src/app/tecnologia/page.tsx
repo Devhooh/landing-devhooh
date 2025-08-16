@@ -1,5 +1,6 @@
 import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
+import IntroSection from "@/sections/tech/IntroSection";
 
 export default function Tecnologia() {
   return (
@@ -13,6 +14,8 @@ export default function Tecnologia() {
         ctaLink="/contact" 
         layout="left"        
       />
+
+      <IntroSection/>
 
       <ContactCTA/>
 

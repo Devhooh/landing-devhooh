@@ -53,7 +53,7 @@ export default function HeroSection({
         <div
           className={`flex-1 ${contentAlignment} ${isCenterLayout ? "w-full" : contentOrder}`}
         >
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-indigo-950 leading-tight mb-4">
+          <h1 className="text-4xl md-tablet:text-5xl font-extrabold text-indigo-950 leading-tight mb-4">
             {title}
           </h1>
           
@@ -69,7 +69,7 @@ export default function HeroSection({
             </div>
           )}
 
-          <p className={`text-lg sm:text-xl text-gray-700 mb-6 max-w-2xl ${contentMargin}`}>
+          <p className={`text-lg md-tablet:text-xl text-gray-700 my-12 mb-6 max-w-2xl ${contentMargin}`}>
             {subtitle}
           </p>
           {cta && ctaLink && (

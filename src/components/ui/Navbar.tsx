@@ -124,8 +124,8 @@ export default function Navbar() {
                   href={values.path}
                   onClick={toggleMenu}
                   className={`
-                    flex justify-between items-center w-full py-4 transition-all duration-300
-                    text-slate-900 text-2xl border-b border-gray-100
+                    flex justify-between items-center w-full py-2 transition-all duration-300
+                    text-slate-900 text-xl border-b border-gray-100
                     hover:bg-gray-100 p-4 hover:text-blue-500
                     ${isActive ? "font-bold text-blue-700 bg-gray-100" : ""}
                   `}

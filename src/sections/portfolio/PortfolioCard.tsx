@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Project {
   id: number;
@@ -27,14 +28,17 @@ export default function PortfolioCard({ project }: { project: Project }) {
       >
         {/* Lado frontal */}
         <div className="absolute w-full h-full backface-hidden bg-white rounded-lg shadow-xl overflow-hidden">
-          <div className="bg-gray-200 p-3 h-48 w-full flex items-center justify-center">
+          <div className="bg-gray-200 p-3 h-48 w-full flex flex-col items-center justify-center">
             <Image
-              width={200}
-              height={200}
+              width={400}
+              height={400}
               src="/assets/images/slide1.png"
               alt={project.title}
-              className="object-contain w-full h-full"
+              className="object-contain w-full h-full p-5"
             />
+            <p className="text-sm text-gray-500">
+              <span className="font-medium">Ver descripcion:</span>
+            </p>
           </div>
           <div className="p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -62,9 +66,11 @@ export default function PortfolioCard({ project }: { project: Project }) {
             Descripcion
           </h3>
           <p>{project.description}</p>
-          <button className="bg-white text-indigo-900 font-bold py-2 px-4 rounded-lg mt-4 hover:bg-gray-300 transform transition">
-            Ver más detalles
-          </button>
+          <Link href="/contact">
+            <button className="bg-white text-indigo-900 font-bold py-2 px-4 rounded-lg mt-4 hover:bg-gray-300 transform transition">
+              Ver más detalles
+            </button>
+          </Link>
         </div>
       </div>
     </div>

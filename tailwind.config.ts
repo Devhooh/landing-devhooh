@@ -24,8 +24,8 @@ const config: Config = {
         },
       },
       animation: {
-        scroll: 'scroll 20s linear infinite',
-        'scroll-reverse': 'scroll 20s linear infinite reverse',
+        scroll: 'scroll 40s linear infinite',
+        'scroll-reverse': 'scroll 40s linear infinite reverse',
       }
     },
   },

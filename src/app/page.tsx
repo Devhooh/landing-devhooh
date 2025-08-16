@@ -4,6 +4,7 @@ import { BenefitsSection } from "@/sections/home/BenefitsSection";
 import { PlansSection } from "@/sections/home/PlansSection";
 import { ProjectsSection } from "@/sections/home/ProjectsSection";
 import { SolutionsSection } from "@/sections/home/SolutionsSection";
+import TechSection from "@/sections/home/TechSection";
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
       <ProjectsSection/>
 
       <BenefitsSection/>
+
+      <TechSection/>
 
       <PlansSection/>
 

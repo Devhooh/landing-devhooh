@@ -1,6 +1,7 @@
 import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
 import IntroSection from "@/sections/tech/IntroSection";
+import TechDataSection from "@/sections/tech/TechDataSectionD";
 
 export default function Tecnologia() {
   return (
@@ -16,6 +17,8 @@ export default function Tecnologia() {
       />
 
       <IntroSection/>
+      
+      <TechDataSection/>
 
       <ContactCTA/>
 

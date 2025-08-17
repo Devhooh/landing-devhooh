@@ -11,6 +11,7 @@ const config: Config = {
     screens: {
       "md-tablet": "550px",
       "table-lg": "950px",
+      "lg-table": "1150px"
     },
     extend: {
       colors: {

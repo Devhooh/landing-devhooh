@@ -6,7 +6,7 @@ import { SliderTech } from "./SliderTech";
 // src/components/Tecnologia.tsx
 export default function IntroSection() {
   return (
-    <section className="w-full bg-white py-16 px-4">
+    <section className="w-full bg-white py-16 mx-auto">
       {/* Hero de Tecnología */}
       <div className="max-w-5xl mx-auto text-center space-y-4">
         <h2 className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-bold text-indigo-950">
@@ -26,7 +26,7 @@ export default function IntroSection() {
       </div>
 
       {/* Bloque de Kit Tecnológico */}
-      <div className="max-w-5xl mx-auto mt-16 space-y-4 text-left">
+      <div className="overflow-hidden mx-auto mt-16 px-10 space-y-4 text-left">
         <h3 className="text-xl md-tablet:text-2xl table-lg:text-3xl font-bold text-indigo-950">
           De un vistazo a nuestro kit <br /> de herramientas tecnológicas
         </h3>

@@ -5,8 +5,11 @@ import Link from "next/link";
 
 interface Project {
   id: number;
-  title: string;
-  country: string;
+  company?: string;
+  imageSrc: string;
+  imageAlt?: string;
+  ProjectName: string;
+  location: string;
   service: string;
   technologies: string[];
   description: string;
@@ -32,8 +35,8 @@ export default function PortfolioCard({ project }: { project: Project }) {
             <Image
               width={400}
               height={400}
-              src="/assets/images/slide1.png"
-              alt={project.title}
+              src={project.imageSrc}
+              alt={project.ProjectName}
               className="object-contain w-full h-full p-5"
             />
             <p className="text-sm text-gray-500">
@@ -42,7 +45,7 @@ export default function PortfolioCard({ project }: { project: Project }) {
           </div>
           <div className="p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              {project.title}
+              {project.ProjectName}
             </h3>
             <p className="text-sm text-gray-500">
               <span className="font-medium">Servicio:</span> {project.service}

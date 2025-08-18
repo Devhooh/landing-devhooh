@@ -20,15 +20,15 @@ export default function PortfolioFilters() {
   const [selectedTechnology, setSelectedTechnology] = useState("Todos");
 
   const filteredProjects = projectsData.filter((project) => {
-    const projectMatch = selectedProject === "Todos" || project.title === selectedProject;
-    const countryMatch = selectedCountry === "Todos" || project.country === selectedCountry;
+    const projectMatch = selectedProject === "Todos" || project.ProjectName === selectedProject;
+    const countryMatch = selectedCountry === "Todos" || project.location === selectedCountry;
     const serviceMatch = selectedService === "Todos" || project.service === selectedService;
     const technologyMatch = selectedTechnology === "Todos" || project.technologies.includes(selectedTechnology);
     return projectMatch && countryMatch && serviceMatch && technologyMatch;
   });
 
-  const uniqueProjects = ["Todos", ...Array.from(new Set(projectsData.map(p => p.title)))];
-  const uniqueCountries = ["Todos", ...Array.from(new Set(projectsData.map(p => p.country)))];
+  const uniqueProjects = ["Todos", ...Array.from(new Set(projectsData.map(p => p.ProjectName)))];
+  const uniqueCountries = ["Todos", ...Array.from(new Set(projectsData.map(p => p.location)))];
   const uniqueServices = ["Todos", ...Array.from(new Set(projectsData.map(p => p.service)))];
   const uniqueTechnologies = ["Todos", ...Array.from(new Set(projectsData.flatMap(p => p.technologies)))];
 

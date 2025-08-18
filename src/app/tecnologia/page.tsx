@@ -1,8 +1,10 @@
 import ContactCTA from "@/components/ui/ContactCTA";
 import HeroSection from "@/components/ui/HeroSection";
+import { projectsData } from "@/data/portfolioData";
 import FeaturedSection from "@/sections/tech/FeaturedSection";
 import IntroSection from "@/sections/tech/IntroSection";
 import TechDataSection from "@/sections/tech/TechDataSectionD";
+import TechProjectSection from "@/sections/tech/TechProjectSection";
 
 export default function Tecnologia() {
   return (
@@ -22,6 +24,8 @@ export default function Tecnologia() {
       <TechDataSection/>
 
       <FeaturedSection/>
+
+      <TechProjectSection projects={projectsData} />
 
       <ContactCTA/>
 

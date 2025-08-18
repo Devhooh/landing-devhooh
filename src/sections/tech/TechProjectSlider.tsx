@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Image from "next/image";
 import { Navigation } from "swiper/modules";
+import TechProjectCard from "./TechProjectCard";
 
 interface Project {
   id: number;
-  company?: string;
+  company: string;
   imageSrc: string;
   imageAlt?: string;
   ProjectName: string;
@@ -17,58 +17,34 @@ interface Project {
   service: string;
   technologies: string[];
   description: string;
+  link: string;
 }
 
 interface ProjectsSliderProps {
-  projects: Project[];
+  projectsData: Project[];
 }
 
-export function TechProjectSlider({ projects }: ProjectsSliderProps) {
+export function TechProjectSlider({ projectsData }: ProjectsSliderProps) {
   return (
     <Swiper
-      modules={[Navigation]}
-      spaceBetween={20}
-      slidesPerView={1.2} // visible parcialmente
-      navigation
-      loop
-      pagination={{ clickable: true }}
-      breakpoints={{
-        550: { slidesPerView: 1.5 }, // md-tablet
-        950: { slidesPerView: 2.2 }, // table-lg
-        1150: { slidesPerView: 3 }, // lg-table
-      }}
-    >
-      {projects.map((project, idx) => (
-        <SwiperSlide key={idx}>
-          <div className="bg-white rounded-2xl shadow-lg p-4">
-            {/* Título superior izquierdo */}
-            <h4 className="text-lg font-bold text-indigo-950 mb-2">
-              {project.company}
-            </h4>
-
-            {/* Imagen centrada */}
-            <div className="flex justify-center mb-4">
-              <Image
-                src={project.imageSrc}
-                alt={project.imageAlt || ""}
-                width={300}
-                height={200}
-                className="rounded-xl object-cover"
-              />
-            </div>
-
-            {/* Subtítulo */}
-            <p className="text-sm font-semibold text-gray-700 text-left mb-2">
-              {project.ProjectName} - {project.location}
-            </p>
-
-            {/* Descripción */}
-            <p className="text-sm text-gray-600 text-left">
-              {project.description}
-            </p>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+  modules={[Navigation]}
+  slidesPerView={1.05}
+  spaceBetween={32}
+  navigation
+  loop
+  pagination={{ clickable: true }}
+  breakpoints={{
+    550:  { slidesPerView: 1.4, spaceBetween: 32 },   // md-tablet
+    950:  { slidesPerView: 2.1, spaceBetween: 40 },   // table-lg
+    1150: { slidesPerView: 3,   spaceBetween: 48 },   // lg-table
+  }}
+  className="!px-2 md-tablet:!px-4 table-lg:!px-6"  // gutters en los bordes
+>
+  {projectsData.map((project) => (
+    <SwiperSlide key={project.id} className="flex my-6">
+      <TechProjectCard projects={project} />
+    </SwiperSlide>
+  ))}
+</Swiper>
   );
 }

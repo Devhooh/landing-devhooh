@@ -2,7 +2,8 @@
 
 // import { LogoSlider } from "@/components/ui/LogoSlider";
 import { ProjectCard } from "@/sections/home/ProjectCard"
-import { logos, projects } from "@/data/projects";
+import { logos } from "@/data/projects";
+import { projectsData } from "@/data/portfolioData";
 // import { ProjectSlider } from "./ProjectSlider";
 import { SwiperSlide, Swiper } from "swiper/react";
 import {Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -44,7 +45,7 @@ export function ProjectsSection() {
           }}
           className="max-w-6xl mx-auto"
         >
-          {projects.map((project, index) => (
+          {projectsData.slice(0, 4).map((project, index) => (
             <SwiperSlide key={index} className="h-auto flex justify-center" style={{ width: '80%' }}>
               <ProjectCard {...project} />
             </SwiperSlide>

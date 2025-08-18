@@ -1,7 +1,7 @@
 export interface Project {
   id: number;
-  link?: string;
-  company?: string;
+  link: string;
+  company: string;
   imageSrc: string;
   imageAlt?: string;
   ProjectName: string;
@@ -9,7 +9,7 @@ export interface Project {
   service: string;
   technologies: string[];
   description: string;
-  subtitle?: string;
+  subtitle: string;
 }
 
 export const projectsData: Project[] = [

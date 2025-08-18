@@ -11,10 +11,10 @@ import { ProjectSlider } from "./ProjectSlider";
 
 export function ProjectsSection() {
   return (
-    <section className="w-full bg-white py-10 px-6 md-tablet:px-12">
+    <section className="w-full bg-white py-14 px-6 md-tablet:px-12">
       {/* Título + subtítulo */}
-      <div className="text-center max-w-4xl mx-auto mb-8">
-        <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-900 to-blue-400 mb-4">
+      <div className="text-center max-w-4xl mx-auto mb-16">
+        <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-900 to-blue-400 mb-8">
           Proyectos que impulsan resultados
         </h2>
         <p className="text-gray-700 text-base md-tablet:text-lg table-lg:text-xl">
@@ -23,7 +23,7 @@ export function ProjectsSection() {
       </div>
 
       {/* Sliders de logos */}
-      <div className="flex flex-col mb-8 px-2 md-tablet:px-6 table-lg:px-12">
+      <div className="flex flex-col mb-16 px-2 md-tablet:px-6 table-lg:px-12">
         <ProjectSlider logos={logos} direction="left" />
         <ProjectSlider logos={logos} direction="right" />
       </div>

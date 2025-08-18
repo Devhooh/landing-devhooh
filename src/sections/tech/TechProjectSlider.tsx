@@ -29,12 +29,12 @@ export function TechProjectSlider({ projectsData }: ProjectsSliderProps) {
     <Swiper
   modules={[Navigation]}
   slidesPerView={1.05}
-  spaceBetween={32}
+  spaceBetween={25}
   navigation
   loop
   pagination={{ clickable: true }}
   breakpoints={{
-    550:  { slidesPerView: 1.4, spaceBetween: 32 },   // md-tablet
+    550:  { slidesPerView: 1.2, spaceBetween: 25 },   // md-tablet
     950:  { slidesPerView: 2.1, spaceBetween: 40 },   // table-lg
     1150: { slidesPerView: 3,   spaceBetween: 48 },   // lg-table
   }}

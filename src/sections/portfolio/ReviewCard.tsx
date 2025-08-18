@@ -31,7 +31,8 @@ export default function ReviewCard({ review }: { review: Review }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-xl p-8 flex flex-col md-tablet:flex-row space-y-6 md-tablet:space-y-0 md-tablet:space-x-6 h-full">
+    <div className="bg-white rounded-lg shadow-xl p-8 flex flex-col md-tablet:flex-row space-y-6 md-tablet:space-y-0 md-tablet:space-x-6 h-full max-w-3xl mx-auto">
+
       {/* Sección izquierda (Logo, título, cuerpo, perfil del revisor) */}
       <div className="flex-1 flex flex-col space-y-4">
         {/* Logo de la empresa */}

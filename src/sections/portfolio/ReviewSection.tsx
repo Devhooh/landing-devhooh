@@ -4,7 +4,7 @@ import React from 'react';
 import ReviewCard from './ReviewCard';
 import { reviewData } from '@/data/reviewData';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 // Importamos los estilos de Swiper
 import 'swiper/css';
@@ -36,12 +36,11 @@ const groupReviewsInPairs = (data: Review[]): Review[][] => {
 };
 
 export default function ReviewsSection() {
-  // Agrupamos las reseñas en pares para que cada diapositiva contenga 2 reseñas
   const groupedReviews = groupReviewsInPairs(reviewData);
 
   return (
     <div className="py-4 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-8 md-tablet:px-16 table-lg:px-40">
+      <div className="max-w-6xl mx-auto px-4 md-tablet:px-8">
         {/* Título y subtítulo de la sección */}
         <div className="text-center mb-12">
           <h2 className="mt-10 text-4xl font-extrabold text-gray-900 md-tablet:text-5xl">
@@ -52,22 +51,16 @@ export default function ReviewsSection() {
           </p>
         </div>
 
-        {/* Contenedor del carrusel con Swiper */}
         <Swiper
-          // Módulos que vamos a usar (paginación)
-          modules={[Pagination]}
-          // Espacio entre las diapositivas
+          modules={[Pagination, Navigation]}
+          navigation
           spaceBetween={32}
-          // Siempre muestra una diapositiva a la vez
           slidesPerView={1}
-          // Paginación (puntos de navegación)
           pagination={{ clickable: true }}
-          className="mySwiper"
+          className="mySwiper h-full flex items-center px-8 md:px-16"
         >
           {groupedReviews.map((group, groupIndex) => (
             <SwiperSlide key={groupIndex}>
-              {/* Contenedor grid responsivo para las reseñas dentro de la diapositiva */}
-              {/* grid-cols-1 para tablet y móvil, lg:grid-cols-2 para escritorio */}
               <div className="grid grid-cols-1 gap-8 mb-20">
                 {group.map((review) => (
                   <ReviewCard key={review.id} review={review} />

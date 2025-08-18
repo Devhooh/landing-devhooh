@@ -30,7 +30,7 @@ export default function CaroulselCard ({ card }: { card: CardData }) {
     <div
       className={`${gradientClass} p-4 rounded-3xl text-white
       shadow-2xl transform transition-all duration-300 hover:scale-[1.02]
-      flex flex-col h-full min-h-[32rem]`}
+      flex flex-col justify-between h-[850px] table-lg:h-[790px]`}
     >
       <h3 className="text-2xl table-lg:text-3xl font-bold mx-2 my-6  text-center">
         {card.title}
@@ -44,9 +44,9 @@ export default function CaroulselCard ({ card }: { card: CardData }) {
           height={100}
         />
       </div>
-      <ul className="list-disc pl-5 text-gray-200 text-sm mb-8 flex-grow">
+      <ul className="list-disc pl-5 text-gray-200 text-xl md-tablet:text-base tablet-md:text-lg table-lg:text-lg flex-grow">
         {card.details.map((detail, i) => (
-          <li key={i} className='pb-2'>{detail}</li>
+          <li key={i} className='pb-3'>{detail}</li>
         ))}
       </ul>
       <div className="flex flex-col gap-4 mt-auto">
@@ -55,7 +55,7 @@ export default function CaroulselCard ({ card }: { card: CardData }) {
             Cotiza tu proyecto
           </button>
         </Link>
-        <Link href="#">
+        <Link href="#" className="pb-3">
           <button className="w-full px-6 py-3 border border-white/20 text-white font-semibold rounded-full transition-colors hover:bg-white/10">
             + Ver más detalles
           </button>

@@ -27,8 +27,8 @@ export default function TechProjectCard({projects}: {projects: ProjectCardProps}
         <Image
           src={projects.imageSrc}
           alt={projects.ProjectName}
-          width={300}
-          height={200}
+          width={500}
+          height={500}
           className="rounded-xl object-cover"
         />
       </div>

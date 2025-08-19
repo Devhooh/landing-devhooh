@@ -40,15 +40,16 @@ export default function CaroulselCard ({ card }: { card: CardData }) {
         <Image
           src={card.icon}
           alt={card.title}
-          width={100}
-          height={100}
+          width={500}
+          height={500}
+          className="w-32 h-auto"
         />
       </div>
-      <ul className="list-disc pl-5 text-gray-200 text-xl md-tablet:text-base tablet-md:text-lg table-lg:text-lg flex-grow">
+      {/* <ul className="list-disc pl-5 text-gray-200 text-xl md-tablet:text-base tablet-md:text-lg table-lg:text-lg flex-grow">
         {card.details.map((detail, i) => (
           <li key={i} className='pb-3'>{detail}</li>
         ))}
-      </ul>
+      </ul> */}
       <div className="flex flex-col gap-4 mt-auto">
         <Link href="/contact">
           <button className="w-full px-6 py-3 bg-white/30 hover:bg-white/40 text-white font-semibold rounded-full transition-colors">

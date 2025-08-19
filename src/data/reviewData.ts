@@ -15,7 +15,7 @@ interface Review {
 export const reviewData: Review[] = [
   {
     id: 1,
-    logoUrl: "/assets/images/BgColor.png",
+    logoUrl: "/assets/images/noBgBlack.png",
     projectTitle: "Desarrollo de App Móvil para Gestión de Pedidos",
     reviewBody: "El equipo de Devhoo superó nuestras expectativas. La comunicación fue fluida y entregaron un producto final robusto y fácil de usar. Estamos muy satisfechos con el resultado.",
     reviewerName: "Laura Gómez",
@@ -28,7 +28,7 @@ export const reviewData: Review[] = [
   },
   {
     id: 2,
-    logoUrl: "/assets/images/BgColor.png",
+    logoUrl: "/assets/images/noBgBlack.png",
     projectTitle: "Optimización de E-commerce y Estrategia SEO",
     reviewBody: "Su enfoque estratégico y técnico nos ayudó a duplicar nuestras ventas en línea en solo seis meses. Son verdaderos expertos en su campo.",
     reviewerName: "Carlos Ramirez",
@@ -41,7 +41,7 @@ export const reviewData: Review[] = [
   },
   {
     id: 3,
-    logoUrl: "/assets/images/BgColor.png",
+    logoUrl: "/assets/images/noBgBlack.png",
     projectTitle: "Implementación de Sistema de Gestión Interna",
     reviewBody: "La transición fue increíblemente suave. El nuevo sistema ha mejorado drásticamente nuestra eficiencia interna. La capacitación que ofrecieron fue excelente.",
     reviewerName: "María Fernández",
@@ -54,7 +54,7 @@ export const reviewData: Review[] = [
   },
   {
     id: 4,
-    logoUrl: "/assets/images/BgColor.png",
+    logoUrl: "/assets/images/noBgBlack.png",
     projectTitle: "Rediseño de Sitio Web Corporativo",
     reviewBody: "El rediseño del sitio web fue un éxito. Nos encanta el nuevo look moderno y profesional. El equipo fue muy receptivo a nuestros comentarios durante todo el proceso.",
     reviewerName: "Juan Pérez",
@@ -67,7 +67,7 @@ export const reviewData: Review[] = [
   },
   {
     id: 5,
-    logoUrl: "/assets/images/BgColor.png",
+    logoUrl: "/assets/images/noBgBlack.png",
     projectTitle: "Implementación de Sistema de Gestión Interna",
     reviewBody: "La transición fue increíblemente suave. El nuevo sistema ha mejorado drásticamente nuestra eficiencia interna. La capacitación que ofrecieron fue excelente.",
     reviewerName: "María Fernández",
@@ -80,7 +80,7 @@ export const reviewData: Review[] = [
   },
   {
     id: 6,
-    logoUrl: "/assets/images/BgColor.png",
+    logoUrl: "/assets/images/noBgBlack.png",
     projectTitle: "Rediseño de Sitio Web Corporativo",
     reviewBody: "El rediseño del sitio web fue un éxito. Nos encanta el nuevo look moderno y profesional. El equipo fue muy receptivo a nuestros comentarios durante todo el proceso.",
     reviewerName: "Juan Pérez",

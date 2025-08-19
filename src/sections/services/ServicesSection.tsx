@@ -115,12 +115,12 @@ export default function ServicesSection() {
                   <div className="flex-1 flex justify-center">
                     {slide.images.map((src, i) => (
                       <Image
-                        width={400}
-                        height={400}
+                        width={500}
+                        height={500}
                         key={i}
                         src={src}
                         alt={slide.title}
-                        className="max-h-64 object-contain rounded-lg"
+                        className="w-64 h-auto object-contain rounded-lg"
                       />
                     ))}
                   </div>
@@ -135,11 +135,11 @@ export default function ServicesSection() {
               </h2>
               {slide.images && slide.images.length > 0 && (
                 <Image
-                  width={400}
-                  height={400}
+                  width={500}
+                  height={500}
                   src={slide.images[0]}
                   alt={slide.title}
-                  className="max-h-64 object-contain rounded-lg order-2"
+                  className="w-64 h-auto object-contain rounded-lg order-2"
                 />
               )}
               <p className="text-lg sm:text-xl text-gray-700 mb-6 max-w-2xl mx-auto text-center order-3">

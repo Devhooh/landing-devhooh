@@ -50,11 +50,11 @@ export default function OurValuesSection() {
               >
                 <div className="relative w-40 h-40 mb-4">
                   <Image
-                    width={200}
-                    height={200}
+                    width={500}
+                    height={500}
                     src={value.image}
                     alt={value.alt}
-                    objectFit="contain"
+                    className="w-64 h-auto"
                   />
                 </div>
                   <div>

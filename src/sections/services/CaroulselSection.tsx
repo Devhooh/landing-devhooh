@@ -29,7 +29,7 @@ export default function CaroulselSection ({title, cardData}: CardCaroulselSectio
     <section className="bg-white w-full h-full py-12 overflow-hidden rounded-2xl ">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
-        <h2 className="mb-10 text-3xl md-tablet:text-5xl text-center font-extrabold text-indigo-950">
+        <h2 className="mb-10 text-2xl md-tablet:text-5xl text-center font-extrabold text-indigo-950">
           {title}
         </h2>
         

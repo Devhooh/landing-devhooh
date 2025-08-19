@@ -32,10 +32,6 @@ export default function CaroulselCard ({ card }: { card: CardData }) {
       shadow-2xl transform transition-all duration-300 hover:scale-[1.02]
       flex flex-col justify-between h-[750px] table-lg:h-[780px]`}
     >
-      <h3 className="my-8 text-2xl table-lg:text-3xl font-bold mx-6 text-center min-h-[70px] flex items-center justify-center">
-        {card.title}
-      </h3>
-
       <div className="p-4 rounded-2xl flex items-center justify-center mb-6 bg-gray-300/30 min-h-[200px]">
         <Image
           src={card.icon}
@@ -45,8 +41,11 @@ export default function CaroulselCard ({ card }: { card: CardData }) {
           className="w-36 h-auto object-contain"
         />
       </div>
+      <h3 className="pb-4 text-2xl md-tablet:text-2xl table-lg:text-3xl font-bold mx-6 text-center min-h-[70px] flex items-center justify-center">
+        {card.title}
+      </h3>
 
-      <div className="list-disc pl-5 text-gray-200 text-xl md-tablet:text-base tablet-md:text-lg table-lg:text-lg flex-grow min-h-[120px]">
+      <div className="px-2 text-gray-200 text-xl md-tablet:text-base tablet-md:text-lg table-lg:text-lg flex-grow min-h-[120px]">
         <p className="pb-3">{card.details}</p>
       </div>
       <div className="flex flex-col gap-4 mt-auto">

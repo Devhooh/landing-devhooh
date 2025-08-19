@@ -37,10 +37,9 @@ export function ProjectSlider({
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={160}
-              height={80}
-              className="object-contain w-full h-full"
-              priority={false}
+              width={500}
+              height={300}
+              className="object-contain"
             />
           </div>
         ))}

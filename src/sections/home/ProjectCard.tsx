@@ -32,7 +32,7 @@ export function ProjectCard({
           src={imageSrc}
           alt={ProjectName}
           fill
-          className="object-cover"
+          style={{ objectFit: "cover" }} // ⚡ Esto evita el warning
           sizes="(max-width: 550px) 100vw, (max-width: 950px) 50vw, 33vw"
           priority={false}
         />

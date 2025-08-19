@@ -62,9 +62,9 @@ export default function HeroSection({
               <Image
                 src={imageSrc}
                 alt={imageAlt || ""}
-                width={400}
-                height={400}
-                className="max-h-64 object-contain rounded-3xl"
+                width={500}
+                height={500}
+                className="w-96 h-auto object-contain rounded-3xl"
               />
             </div>
           )}
@@ -88,9 +88,9 @@ export default function HeroSection({
             <Image
               src={imageSrc}
               alt={imageAlt || ""}
-              width={400}
-              height={400}
-              className="max-h-64 object-contain rounded-3xl"
+              width={500}
+              height={500}
+              className="w-96 h-auto object-contain rounded-3xl"
             />
           </div>
         )}

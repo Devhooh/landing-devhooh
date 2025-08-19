@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 // Card data interface
 interface CardData {
   title: string;
-  details: string[];
+  details: string;
   color: string;
   icon: string;
 }
@@ -26,10 +26,10 @@ interface CardCaroulselSectionProps {
 
 export default function CaroulselSection ({title, cardData}: CardCaroulselSectionProps) {
   return (
-    <section className="bg-white w-full h-full py-10 overflow-hidden rounded-2xl ">
+    <section className="bg-white w-full h-full py-12 overflow-hidden rounded-2xl ">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
-        <h2 className="text-3xl md-tablet:text-4xl text-center font-extrabold mb-6 text-indigo-950">
+        <h2 className="mb-10 text-3xl md-tablet:text-5xl text-center font-extrabold text-indigo-950">
           {title}
         </h2>
         

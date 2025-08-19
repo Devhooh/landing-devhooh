@@ -4,7 +4,7 @@ import Link from 'next/link';
 // Card data interface
 interface CardData {
   title: string;
-  details: string[];
+  details: string;
   color: string;
   icon: string;
 }
@@ -30,26 +30,25 @@ export default function CaroulselCard ({ card }: { card: CardData }) {
     <div
       className={`${gradientClass} p-4 rounded-3xl text-white
       shadow-2xl transform transition-all duration-300 hover:scale-[1.02]
-      flex flex-col justify-between h-[850px] table-lg:h-[790px]`}
+      flex flex-col justify-between h-[750px] table-lg:h-[780px]`}
     >
-      <h3 className="text-2xl table-lg:text-3xl font-bold mx-2 my-6  text-center">
+      <h3 className="my-8 text-2xl table-lg:text-3xl font-bold mx-6 text-center min-h-[70px] flex items-center justify-center">
         {card.title}
       </h3>
-      
-      <div className={`p-4 rounded-2xl flex items-center justify-center mb-6 bg-gray-300/30`}>
+
+      <div className="p-4 rounded-2xl flex items-center justify-center mb-6 bg-gray-300/30 min-h-[200px]">
         <Image
           src={card.icon}
           alt={card.title}
           width={500}
           height={500}
-          className="w-32 h-auto"
+          className="w-36 h-auto object-contain"
         />
       </div>
-      {/* <ul className="list-disc pl-5 text-gray-200 text-xl md-tablet:text-base tablet-md:text-lg table-lg:text-lg flex-grow">
-        {card.details.map((detail, i) => (
-          <li key={i} className='pb-3'>{detail}</li>
-        ))}
-      </ul> */}
+
+      <div className="list-disc pl-5 text-gray-200 text-xl md-tablet:text-base tablet-md:text-lg table-lg:text-lg flex-grow min-h-[120px]">
+        <p className="pb-3">{card.details}</p>
+      </div>
       <div className="flex flex-col gap-4 mt-auto">
         <Link href="/contact">
           <button className="w-full px-6 py-3 bg-white/30 hover:bg-white/40 text-white font-semibold rounded-full transition-colors">

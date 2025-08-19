@@ -34,7 +34,7 @@ interface TechLogo {
   alt: string;
 }
 
-export const logoTech: TechLogo[] = [
+export const sliderLogoTech: TechLogo[] = [
   { icon: FaJsSquare, color: "text-gray-400", alt: "javascript"},
   { icon: FaReact, color:"text-gray-400" , alt: "react" },
   { icon: SiNextdotjs, color:"text-gray-400", alt: "nextjs" },

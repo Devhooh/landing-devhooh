@@ -1,6 +1,6 @@
 "use client"
 
-import { logoTech } from "@/data/logoTech";
+import { sliderLogoTech } from "@/data/sliderLogoTech";
 import { SliderTech } from "./SliderTech";
 
 // src/components/Tecnologia.tsx
@@ -21,8 +21,8 @@ export default function IntroSection() {
 
       {/* Carrusel de logos */}
       <div className="overflow-hidden mt-12 mx-auto">
-        <SliderTech logos={logoTech} direction="left" />
-        <SliderTech logos={logoTech} direction="right" />
+        <SliderTech logos={sliderLogoTech} direction="left" />
+        <SliderTech logos={sliderLogoTech} direction="right" />
       </div>
 
       {/* Bloque de Kit Tecnológico */}

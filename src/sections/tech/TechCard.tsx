@@ -41,7 +41,7 @@ export default function TechCard({
             >
               <div className="flex items-center gap-2">
                 <Icon className={`${tech.color || "text-gray-700"} text-2xl`} />
-                <span className="text-sm font-medium">{tech.name}</span>
+                <span className="text-xl font-medium">{tech.name}</span>
               </div>
               <HiArrowRight className="text-black" />
             </Link>

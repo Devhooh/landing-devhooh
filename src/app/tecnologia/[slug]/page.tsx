@@ -1,6 +1,7 @@
 import TechHero from "@/sections/tech/components/TechHero";
 import { notFound } from "next/navigation";
 import { techData } from "@/data/techDataPage";
+import TechBenefits from "@/sections/tech/components/TechBenefits";
 
 interface Props {
   params: {
@@ -15,6 +16,8 @@ export default function TechPage({ params }: Props) {
   return (
     <div>
       <TechHero tech={tech} />
+
+      <TechBenefits benefits={tech.beneficios} name={tech.title}/>
     </div>
   );
 }

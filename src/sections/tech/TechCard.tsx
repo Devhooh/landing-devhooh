@@ -7,7 +7,8 @@ import { HiArrowRight } from "react-icons/hi";
 interface Technology {
   name: string;
   icon: IconType;
-  color?: string; // opcional para el icono
+  color?: string;
+  slug: string; // opcional para el icono
 }
 
 interface TechCardProps {
@@ -36,7 +37,7 @@ export default function TechCard({
           return (
             <Link
               key={idx}
-              href="#" // o cualquier ruta válida
+              href={`/tecnologia/${tech.slug}`}
               className="flex items-center justify-between p-2 rounded-lg bg-white shadow-sm border border-gray-200"
             >
               <div className="flex items-center gap-2">

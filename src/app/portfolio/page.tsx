@@ -3,6 +3,7 @@ import HeroSection from "@/components/ui/HeroSection";
 import FAQSection from "@/sections/portfolio/FAQSection";
 import PortfolioFilters from "@/sections/portfolio/PortfolioFilters";
 import ReviewsSection from "@/sections/portfolio/ReviewSection";
+import { faqData} from '@/data/faqData';
 
 export default function Portfolio() {
   return (
@@ -22,7 +23,7 @@ export default function Portfolio() {
 
       <ReviewsSection/>
 
-      <FAQSection/>
+      <FAQSection itemsDate={faqData}/>
 
       <ContactCTA/>
 

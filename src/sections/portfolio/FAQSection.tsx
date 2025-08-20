@@ -2,9 +2,17 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-// Importamos los datos y el tipo de dato desde el archivo faqData.ts
-// Asegúrate de que la ruta sea correcta según la ubicación de tu archivo
-import { faqData} from '@/data/faqData';
+
+
+type FAQItemProps = {
+  id: number;
+  question: string;
+  answer: string;
+}
+
+interface listFAQ {
+  itemsDate: FAQItemProps[]
+}
 
 // Componente para una sola pregunta con tipado de propiedades
 const FAQItem: React.FC<{
@@ -35,7 +43,7 @@ const FAQItem: React.FC<{
 };
 
 // Componente principal
-export default function FAQSection() {
+export default function FAQSection({itemsDate}: listFAQ ) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
@@ -54,7 +62,7 @@ export default function FAQSection() {
           </p>
         </div>
         <div className="space-y-4">
-          {faqData.map((item, index) => (
+          {itemsDate.map((item, index) => (
             <FAQItem
               key={item.id}
               question={item.question}

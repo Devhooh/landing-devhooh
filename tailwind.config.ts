@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     screens: {
       "md-tablet": "550px",
-      "tablet-md": "650px",
+      "tablet-md": "750px",
       "table-lg": "950px",
       "lg-table": "1150px"
     },

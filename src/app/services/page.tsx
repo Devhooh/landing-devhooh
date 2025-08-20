@@ -4,6 +4,8 @@ import ServicesSection from "@/sections/services/ServicesSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
 import ContactCTA from "@/components/ui/ContactCTA";
 import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
+import FAQSection from "@/sections/portfolio/FAQSection";
+import { faqDataServices } from "@/data/faqDataServices";
 
 export default function Services() {
   return (
@@ -39,6 +41,8 @@ export default function Services() {
       </div>
 
       <ServicesSliderProjects/>
+
+      <FAQSection itemsDate={faqDataServices}/>
 
       <ContactCTA/>
     </div>

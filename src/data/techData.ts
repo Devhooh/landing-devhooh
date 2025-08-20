@@ -40,12 +40,12 @@ import {
 
 
 export const frontendTech = [
-  { icon: FaJsSquare, name: "JavaScript", color: "text-yellow-400" },
-  { icon: SiTypescript, name: "TypeScript", color: "text-blue-600" },
-  { icon: SiTailwindcss, name: "TailwindCSS", color: "text-sky-500" },
-  { icon: SiNextdotjs, name: "Next.js", color: "text-gray-900" },
-  { icon: FaAngular, name: "Angular", color: "text-red-600" },
-  { icon: FaReact, name: "React", color: "text-cyan-400" },
+  { icon: FaJsSquare, name: "JavaScript", color: "text-yellow-400", slug: "javascript" },
+  { icon: SiTypescript, name: "TypeScript", color: "text-blue-600", slug: "typescript" },
+  { icon: SiTailwindcss, name: "TailwindCSS", color: "text-sky-500", slug: "tailwindcss" },
+  { icon: SiNextdotjs, name: "Next.js", color: "text-gray-900", slug: "nextjs" },
+  { icon: FaAngular, name: "Angular", color: "text-red-600", slug: "angular" },
+  { icon: FaReact, name: "React", color: "text-cyan-400", slug: "react" },
 ];
 
 export const backendTech = [

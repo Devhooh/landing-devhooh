@@ -49,30 +49,30 @@ export const frontendTech = [
 ];
 
 export const backendTech = [
-  { icon: FaNode, name: "NodeJs", color: "text-green-400" },
-  { icon: SiMysql, name: "MySQL", color: "text-sky-500" },
-  { icon: SiMongodb, name: "MongoDB", color: "text-green-600" },
-  { icon: SiNestjs, name: "NestJs", color: "text-red-600" },
-  { icon: BiLogoPostgresql, name: "PostgreSQL", color: "text-blue-600" },
-  { icon: SiExpress, name: "ExpressJs", color: "text-gray-700" },
+  { icon: FaNode, name: "NodeJs", color: "text-green-400", slug:"" },
+  { icon: SiMysql, name: "MySQL", color: "text-sky-500", slug:"" },
+  { icon: SiMongodb, name: "MongoDB", color: "text-green-600", slug:"" },
+  { icon: SiNestjs, name: "NestJs", color: "text-red-600", slug:"" },
+  { icon: BiLogoPostgresql, name: "PostgreSQL", color: "text-blue-600", slug:"" },
+  { icon: SiExpress, name: "ExpressJs", color: "text-gray-700", slug:"" },
 ];
 
 export const mobilTech = [
-  { icon: SiKotlin, name: "Kotlin", color: "text-fuchsia-500" },
-  { icon: SiFlutter, name: "Flutter", color: "text-sky-500" },
-  { icon: FaSwift, name: "Swift", color: "text-orange-400" },
-  { icon: TbBrandReactNative, name: "ReactNative", color: "text-blue-600" },
+  { icon: SiKotlin, name: "Kotlin", color: "text-fuchsia-500", slug:"" },
+  { icon: SiFlutter, name: "Flutter", color: "text-sky-500", slug:"" },
+  { icon: FaSwift, name: "Swift", color: "text-orange-400", slug:"" },
+  { icon: TbBrandReactNative, name: "ReactNative", color: "text-blue-600", slug:"" },
 ];
 
 export const softwareTech = [
-  { icon: SiDotnet, name: "Dotnet", color: "text-fuchsia-500" },
-  { icon: TbBrandCSharp, name: "CSharp", color: "text-purple-800" },
-  { icon: FaPython, name: "Python", color: "text-blue-600" },
-  { icon: FaJava, name: "Java", color: "text-blue-800" },
-  { icon: DiDjango, name: "Django", color: "text-green-800" },
-  { icon: BiLogoGoLang, name: "GO", color: "text-blue-800" },
-  { icon: SiCplusplus, name: "C++", color: "text-blue-500" },
-  { icon: SiRust, name: "Rust", color: "text-black" },
+  { icon: SiDotnet, name: "Dotnet", color: "text-fuchsia-500", slug:"" },
+  { icon: TbBrandCSharp, name: "CSharp", color: "text-purple-800", slug:"" },
+  { icon: FaPython, name: "Python", color: "text-blue-600", slug:"" },
+  { icon: FaJava, name: "Java", color: "text-blue-800", slug:"" },
+  { icon: DiDjango, name: "Django", color: "text-green-800", slug:"" },
+  { icon: BiLogoGoLang, name: "GO", color: "text-blue-800", slug:"" },
+  { icon: SiCplusplus, name: "C++", color: "text-blue-500", slug:"" },
+  { icon: SiRust, name: "Rust", color: "text-black", slug:"" },
 ];
 
 export const iaTech = [
@@ -80,17 +80,17 @@ export const iaTech = [
 ];
 
 export const infraTech = [
-  { icon: FaDocker, name: "Docker", color: "text-sky-400" },
-  { icon: SiKubernetes, name: "Kubernetes", color: "text-blue-800" },
-  { icon: FaAws, name: "FaAws", color: "text-orange-600" },
-  { icon: FaGithub, name: "Github", color: "text-black-800" },
-  { icon: FaGitAlt, name: "Git", color: "text-red-500" },
-  { icon: SiVercel, name: "Vercel", color: "text-black-800" },
-  { icon: SiVite, name: "Vite", color: "text-purple-500" },
+  { icon: FaDocker, name: "Docker", color: "text-sky-400", slug:"" },
+  { icon: SiKubernetes, name: "Kubernetes", color: "text-blue-800", slug:"" },
+  { icon: FaAws, name: "FaAws", color: "text-orange-600", slug:"" },
+  { icon: FaGithub, name: "Github", color: "text-black-800", slug:"" },
+  { icon: FaGitAlt, name: "Git", color: "text-red-500", slug:"" },
+  { icon: SiVercel, name: "Vercel", color: "text-black-800", slug:"" },
+  { icon: SiVite, name: "Vite", color: "text-purple-500", slug:"" },
 ];
 export const designerTech = [
-  { icon: PiFigmaLogoFill, name: "Figma", color: "text-gray-700" },
-  { icon: SiAdobexd, name: "Adobexd", color: "text-fuchsia-900" },
-  { icon: TbBrandBlender, name: "Blender", color: "text-orange-500" },
-  { icon: FaSketch, name: "Sketch ", color: "text-yellow-500" },
+  { icon: PiFigmaLogoFill, name: "Figma", color: "text-gray-700", slug:"" },
+  { icon: SiAdobexd, name: "Adobexd", color: "text-fuchsia-900", slug:"" },
+  { icon: TbBrandBlender, name: "Blender", color: "text-orange-500", slug:"" },
+  { icon: FaSketch, name: "Sketch ", color: "text-yellow-500", slug:"" },
 ];

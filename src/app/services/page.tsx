@@ -6,6 +6,7 @@ import ContactCTA from "@/components/ui/ContactCTA";
 import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
 import FAQSection from "@/sections/portfolio/FAQSection";
 import { faqDataServices } from "@/data/faqDataServices";
+import { projectsData } from "@/data/portfolioData";
 
 export default function Services() {
   return (
@@ -40,7 +41,10 @@ export default function Services() {
         </div>
       </div>
 
-      <ServicesSliderProjects/>
+      <ServicesSliderProjects 
+        title="Proyectos que usaron nuestros servicios" 
+        projects={projectsData}
+      />
 
       <FAQSection itemsDate={faqDataServices}/>
 

@@ -2,12 +2,12 @@ import CaroulselSection from "@/sections/services/CaroulselSection";
 import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
 import ServicesSection from "@/sections/services/ServicesSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
-import ProcessSection from "@/sections/services/ProcessSection";
 import ContactCTA from "@/components/ui/ContactCTA";
+import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
 
 export default function Services() {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-10">
       <ServicesSection/>
       <ServicesCardsSection/>
 
@@ -38,7 +38,7 @@ export default function Services() {
         </div>
       </div>
 
-      <ProcessSection/>
+      <ServicesSliderProjects/>
 
       <ContactCTA/>
     </div>

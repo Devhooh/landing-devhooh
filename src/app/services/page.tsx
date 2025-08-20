@@ -44,6 +44,7 @@ export default function Services() {
       <ServicesSliderProjects 
         title="Proyectos que usaron nuestros servicios" 
         projects={projectsData}
+        showService={true}
       />
 
       <FAQSection itemsDate={faqDataServices}/>

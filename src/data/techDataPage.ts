@@ -1,3 +1,7 @@
+export interface servicios {
+  title: string;
+  description: string;
+}
 
 export interface Beneficio {
   icon: string;
@@ -13,6 +17,7 @@ export interface DataTech {
   subtitle: string;
   image: string;
   beneficios: Beneficio[];
+  servicios: servicios[]
 }
 
 // 🔹 Objeto centralizado con todas las tecnologías
@@ -33,6 +38,13 @@ export const techData: Record<string, DataTech> = {
       { icon: "Users", title: "Comunidad activa", description: "Millones de desarrolladores comparten conocimiento." },
       { icon: "Zap", title: "Productividad", description: "Permite crear prototipos y productos rápido." },
     ],
+    servicios: [
+      { title: "Desarrollo Frontend", description: "Creamos interfaces web interactivas, dinámicas y responsivas usando JavaScript puro o frameworks modernos como React, garantizando una experiencia de usuario fluida y atractiva."},
+      { title: "Aplicaciones Backend", description: "Desarrollamos APIs rápidas, seguras y escalables con Node.js y JavaScript, facilitando la comunicación entre el frontend y bases de datos, optimizando el rendimiento de tus aplicaciones."},
+      { title: "Integraciones en tiempo real", description: "Implementamos websockets y funcionalidades de actualización instantánea para aplicaciones colaborativas y plataformas en tiempo real, mejorando la interacción y la productividad del usuario."},
+      { title: "Automatización de procesos", description: "Creamos scripts personalizados y soluciones automatizadas con JavaScript para optimizar tareas repetitivas, aumentando la eficiencia operativa de tu negocio y reduciendo errores humanos."},
+      { title: "Aplicaciones multiplataforma", description: "Construimos soluciones que funcionan en navegador, escritorio y dispositivos móviles, asegurando compatibilidad y rendimiento óptimo en todas las plataformas con JavaScript y tecnologías modernas."},
+    ],
   },
   typescript: {
     id: 2,
@@ -50,6 +62,28 @@ export const techData: Record<string, DataTech> = {
       { icon: "Users", title: "Comunidad activa", description: "Gran adopción en la industria." },
       { icon: "Zap", title: "Mejor DX", description: "Autocompletado e IntelliSense potenciado." },
     ],
+    servicios: [
+    {
+      title: "Desarrollo Frontend con TS",
+      description: "Creamos interfaces seguras y escalables usando TypeScript junto a frameworks modernos como React o Vue."
+    },
+    {
+      title: "APIs y Backend tipado",
+      description: "Construimos APIs robustas y seguras con Node.js y TypeScript, garantizando menos errores y mayor mantenibilidad."
+    },
+    {
+      title: "Proyectos grandes y escalables",
+      description: "Aplicaciones empresariales con arquitectura sólida, utilizando TS para asegurar consistencia y control de tipos."
+    },
+    {
+      title: "Integración con librerías modernas",
+      description: "Compatibilidad total con librerías JS/TS y herramientas modernas de desarrollo para productividad máxima."
+    },
+    {
+      title: "Optimización y calidad de código",
+      description: "Buenas prácticas y tipado estático para código más limpio, seguro y fácil de mantener a largo plazo."
+    },
+  ],
   },
   tailwindcss: {
     id: 3,
@@ -67,6 +101,28 @@ export const techData: Record<string, DataTech> = {
       { icon: "Smartphone", title: "Responsive fácil", description: "Breakpoints simples para diseño adaptable." },
       { icon: "Users", title: "Comunidad activa", description: "Gran ecosistema de plugins y ejemplos." },
     ],
+    servicios: [
+    {
+      title: "Diseño de interfaces modernas",
+      description: "Creamos páginas y componentes estilizados con Tailwind CSS, garantizando consistencia y estética profesional."
+    },
+    {
+      title: "Responsivo y adaptable",
+      description: "Diseños que se adaptan perfectamente a dispositivos móviles, tablets y pantallas grandes mediante breakpoints personalizables."
+    },
+    {
+      title: "Componentes reutilizables",
+      description: "Construcción de bloques y componentes modulares para acelerar el desarrollo y mantener coherencia visual."
+    },
+    {
+      title: "Integración con JS y TS",
+      description: "Tailwind funciona perfectamente junto a JavaScript y TypeScript, facilitando el desarrollo de interfaces dinámicas."
+    },
+    {
+      title: "Optimización y rendimiento",
+      description: "Generamos CSS eficiente y ligero, reduciendo el tamaño de archivos y mejorando la velocidad de carga."
+    },
+  ],
   },
   nextjs: {
     id: 4,
@@ -84,6 +140,28 @@ export const techData: Record<string, DataTech> = {
       { icon: "Server", title: "API integrada", description: "Backend ligero con serverless functions." },
       { icon: "Shield", title: "Soporte de Vercel", description: "Infraestructura de primera para despliegues." },
     ],
+    servicios: [
+    {
+      title: "SSR y SSG optimizados",
+      description: "Desarrollamos aplicaciones rápidas y amigables con SEO mediante Server-Side y Static Rendering en Next.js."
+    },
+    {
+      title: "Ruteo automático",
+      description: "Sistema de rutas basado en archivos para crear páginas y secciones fácilmente sin configuraciones complejas."
+    },
+    {
+      title: "API Integrada",
+      description: "Creamos endpoints y funciones serverless directamente dentro de tu proyecto Next.js para manejar backend ligero y eficiente."
+    },
+    {
+      title: "Optimización automática",
+      description: "Next.js optimiza imágenes, fuentes y recursos estáticos automáticamente, mejorando la experiencia del usuario."
+    },
+    {
+      title: "Escalabilidad y mantenimiento",
+      description: "Aplicaciones listas para crecer con arquitectura modular y soporte de Vercel para despliegues confiables."
+    },
+  ],
   },
   angular: {
     id: 5,
@@ -101,6 +179,28 @@ export const techData: Record<string, DataTech> = {
       { icon: "Rocket", title: "Rendimiento", description: "Optimizado para aplicaciones empresariales." },
       { icon: "Zap", title: "Herramientas integradas", description: "CLI potente para scaffolding y builds." },
     ],
+    servicios: [
+    {
+      title: "Aplicaciones empresariales",
+      description: "Desarrollamos soluciones web robustas y escalables con Angular y TypeScript para empresas de cualquier tamaño."
+    },
+    {
+      title: "Arquitectura modular",
+      description: "Proyectos organizados por módulos, facilitando mantenimiento y expansión futura."
+    },
+    {
+      title: "Componentes reutilizables",
+      description: "Creación de componentes altamente reutilizables y personalizables para acelerar el desarrollo."
+    },
+    {
+      title: "CLI potente",
+      description: "Angular CLI para scaffolding, builds y tests automáticos, aumentando la productividad del equipo."
+    },
+    {
+      title: "Optimización y rendimiento",
+      description: "Aplicaciones optimizadas para velocidad, carga y experiencia del usuario final."
+    },
+  ],
   },
   react: {
     id: 6,
@@ -118,6 +218,28 @@ export const techData: Record<string, DataTech> = {
       { icon: "Smartphone", title: "React Native", description: "Expande tu app al desarrollo móvil." },
       { icon: "Layers", title: "Flexibilidad", description: "Se adapta a proyectos de cualquier tamaño." },
     ],
+    servicios: [
+    {
+      title: "Componentes y UI dinámica",
+      description: "Construimos interfaces interactivas y modulares usando React para web y React Native para móvil."
+    },
+    {
+      title: "Aplicaciones SPA",
+      description: "Desarrollamos Single Page Applications rápidas y eficientes con React y manejo avanzado del estado."
+    },
+    {
+      title: "Integración con librerías y frameworks",
+      description: "React es compatible con un ecosistema enorme de librerías, herramientas y plugins para cualquier necesidad."
+    },
+    {
+      title: "Optimización y rendimiento",
+      description: "Uso de Virtual DOM y buenas prácticas para aplicaciones rápidas y con carga mínima."
+    },
+    {
+      title: "Desarrollo multiplataforma",
+      description: "React Native permite llevar la misma base de código a móviles, acelerando la creación de apps."
+    },
+  ],
   },
 
 };

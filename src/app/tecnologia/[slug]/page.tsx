@@ -5,6 +5,7 @@ import TechBenefits from "@/sections/tech/components/TechBenefits";
 import TechServices from "@/sections/tech/components/TechServices";
 import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
 import { projectsData } from "@/data/portfolioData";
+import TechWhy from "@/sections/tech/components/TechWhy";
 
 interface Props {
   params: {
@@ -19,6 +20,8 @@ export default function TechPage({ params }: Props) {
   return (
     <div>
       <TechHero tech={tech} />
+
+      <TechWhy title={tech.title} description={tech.whyTech} image={tech.image}/>
 
       <TechBenefits benefits={tech.beneficios} name={tech.title}/>
 

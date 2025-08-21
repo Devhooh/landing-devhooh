@@ -42,7 +42,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
           alt={project.projectName}
           width={900}
           height={500}
-          className="rounded-xl shadow-lg w-[70%] object-cover"
+          className="rounded-xl shadow-lg min-w-10 object-cover"
         />
       </div>
     </section>

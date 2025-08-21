@@ -12,7 +12,7 @@ interface ProjectCardProps {
   service: string;
   technologies: string[];
   description: string;
-  link: string;
+  slug: string;
 }
 
 export default function TechProjectCard({projects}: {projects: ProjectCardProps}) {
@@ -42,7 +42,7 @@ export default function TechProjectCard({projects}: {projects: ProjectCardProps}
       <p className="text-sm text-gray-600 text-left">{projects.description}</p>
 
       <div className="flex justify-left pb-4">
-        <Link href={projects.link}>
+        <Link href={`/portfolio/${projects.slug}`}>
           <button className="bg-blue-200 hover:bg-blue-700 hover:text-white text-blue-500 border-2 border-blue-700 py-2 px-6 rounded-3xl text-sm font-semibold">
             Ver proyecto
           </button>

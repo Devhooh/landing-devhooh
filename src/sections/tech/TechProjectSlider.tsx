@@ -17,7 +17,7 @@ interface Project {
   service: string;
   technologies: string[];
   description: string;
-  link: string;
+  slug: string;
 }
 
 interface ProjectsSliderProps {

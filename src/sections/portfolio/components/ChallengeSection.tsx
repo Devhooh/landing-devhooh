@@ -24,8 +24,8 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                 }`}
               >
                 {/* Texto */}
-                <div className="table-lg:w-1/2 text-center table-lg:text-left">
-                  <p className="text-gray-600 text-base md-tablet:text-lg">
+                <div className="table-lg:w-1/2 table-lg:text-left">
+                  <p className="text-gray-600 text-center text-base md-tablet:text-lg">
                     {item.description}
                   </p>
 

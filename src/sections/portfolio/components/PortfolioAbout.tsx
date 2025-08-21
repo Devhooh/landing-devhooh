@@ -71,7 +71,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
   return (
     <section className="w-full bg-white py-12 px-4 md-tablet:px-8">
       {/* Sobre el proyecto */}
-      <div className="max-w-7xl mx-auto flex flex-col table-lg:flex-row items-center gap-8 mb-16">
+      <div className="max-w-7xl mx-3 flex flex-col table-lg:flex-row items-center gap-8 mb-16">
         {/* Texto a la izquierda */}
         <div className="table-lg:w-1/2 text-left">
           <h2 className="text-2xl md-tablet:text-3xl font-bold text-gray-800 mb-4">
@@ -96,7 +96,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
 
 
       {/* Sobre la compañía */}
-      <div className="max-w-7xl mx-auto flex flex-col table-lg:flex-row items-center gap-8">
+      <div className="max-w-7xl mx-3 flex flex-col table-lg:flex-row items-center gap-8">
         {/* Texto a la derecha en desktop, arriba en móvil */}
         <div className="table-lg:w-1/2 text-left table-lg:text-right order-1 table-lg:order-2">
           <h2 className="text-2xl md-tablet:text-3xl font-bold text-gray-800 mb-4">

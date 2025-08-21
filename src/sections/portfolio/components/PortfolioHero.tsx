@@ -10,13 +10,13 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
     <section className="w-full bg-white py-12">
       {/* Título */}
       <div className="text-center mb-10">
-        <h1 className="text-3xl md-tablet:text-4xl font-extrabold text-gray-800">
+        <h1 className="text-3xl mx-5 md-tablet:text-4xl font-extrabold text-gray-800">
           {project.title}
         </h1>
       </div>
 
       {/* Grid de detalles */}
-      <div className="grid grid-cols-2 table-lg:grid-cols-4 gap-6 max-w-4xl mx-auto text-center mb-12">
+      <div className="grid grid-cols-2 table-lg:grid-cols-4 gap-6 max-w-4xl mx-5 md-tablet:mx-auto text-center mb-12">
         <div>
           <h3 className="text-sm font-bold text-gray-500 uppercase">Proyecto</h3>
           <p className="mt-1 text-lg font-medium text-gray-800">{project.projectName}</p>

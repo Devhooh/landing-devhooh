@@ -3,6 +3,7 @@ import ChallengeSection from "@/sections/portfolio/components/ChallengeSection";
 import PortfolioAbout from "@/sections/portfolio/components/PortfolioAbout";
 import PortfolioHero from "@/sections/portfolio/components/PortfolioHero";
 import PortfolioProcess from "@/sections/portfolio/components/PortfolioProcess";
+import ResultSection from "@/sections/portfolio/components/ResultSection";
 import StackTech from "@/sections/portfolio/components/StackTech";
 
 interface Props {
@@ -27,6 +28,8 @@ export default function ProjectPage({ params }: Props) {
       <PortfolioProcess project={project}/>
 
       <StackTech project={project}/>
+
+      <ResultSection project={project}/>
     </div>
   );
 }

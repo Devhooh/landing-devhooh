@@ -1,3 +1,9 @@
+interface ProcessData {
+  id: number;
+  title: string;
+  process: string[];
+}
+
 interface ChallengeData {
   image: string;
   title: string;
@@ -21,6 +27,7 @@ export interface Project {
   aboutCompany: AboutData;
   aboutProject: AboutData;
   challengeData: ChallengeData[]
+  process: ProcessData[]
 }
 
 export const portfolioDetails: Project[] = [
@@ -64,5 +71,52 @@ export const portfolioDetails: Project[] = [
         ]
       },
     ],
+    process: [
+      {
+        id: 1,
+        title: "Descubrimiento",
+        process: [
+          "Reunión inicial con el cliente para comprender en detalle las necesidades, objetivos de negocio y expectativas del marketplace global.", 
+          "Investigación de mercado para analizar tendencias de comercio electrónico y evaluar competidores directos e indirectos.",
+          "Definición del alcance del proyecto, funcionalidades clave y criterios de éxito medibles."
+        ]
+      },
+      {
+        id: 2,
+        title: "Diseño y Prototipado",
+        process: [
+          "Creación de wireframes y prototipos interactivos para validar la experiencia de usuario antes del desarrollo.",
+          "Diseño UI adaptado a la identidad de TechNova, con énfasis en usabilidad y accesibilidad.",
+          "Pruebas con usuarios para identificar mejoras en la navegación y el flujo de compra."
+        ]
+      },
+      {
+        id: 3,
+        title: "Desarrollo e Integración",
+        process: [
+          "Implementación de arquitectura escalable basada en microservicios para garantizar rendimiento y disponibilidad.",
+          "Integración de pasarelas de pago internacionales como PayPal y Stripe con encriptación avanzada.",
+          "Desarrollo de un panel de administración intuitivo para la gestión de productos, pedidos y usuarios."
+        ]
+      },
+      {
+        id: 4,
+        title: "Pruebas y Optimización",
+        process: [
+          "Pruebas unitarias, de integración y de estrés para validar seguridad y rendimiento en alta concurrencia.",
+          "Optimización de la velocidad de carga en dispositivos móviles y navegadores.",
+          "Corrección de errores y refinamiento de la experiencia de usuario."
+        ]
+      },
+      {
+        id: 5,
+        title: "Lanzamiento y Monitoreo",
+        process: [
+          "Despliegue en infraestructura en la nube con balanceo de carga y redundancia.",
+          "Monitoreo en tiempo real de métricas clave como transacciones, retención de usuarios y tiempos de respuesta.",
+          "Acompañamiento post-lanzamiento con soporte técnico y actualizaciones continuas."
+        ]
+      }
+    ]
   },
 ]

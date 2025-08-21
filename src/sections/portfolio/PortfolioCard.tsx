@@ -5,6 +5,7 @@ import Link from "next/link";
 
 interface Project {
   id: number;
+  slug: string;
   company?: string;
   imageSrc: string;
   imageAlt?: string;
@@ -71,7 +72,7 @@ export default function PortfolioCard({ project }: { project: Project }) {
           <p>{project.description}</p>
           
           <Link 
-            href="/contact"
+            href={`/portfolio/${project.slug}`}
             className="bg-white text-center text-indigo-900 font-bold py-2 px-4 rounded-lg mt-4 hover:bg-gray-300 transform transition"
           >
             Ver más detalles

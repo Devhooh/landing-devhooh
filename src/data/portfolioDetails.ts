@@ -23,6 +23,12 @@ interface AboutData {
   description: string;
 }
 
+interface ResultData {
+  descripcion: string;
+  antes: string[]
+  despues: string[]
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -37,6 +43,7 @@ export interface Project {
   challengeData: ChallengeData[]
   process: ProcessData[]
   stackTech: Tech[]
+  result: ResultData
 }
 
 export const portfolioDetails: Project[] = [
@@ -132,6 +139,20 @@ export const portfolioDetails: Project[] = [
       {name: "React", icon: "react", color: "text-blue-500"},
       {name: "Node.js", icon: "node", color: "text-green-400"},
       {name: "MongoDB", icon: "mongodb", color: "text-green-700"}
-    ]
+    ],
+
+    result: {
+      descripcion: "Devhooh ayudó a TechNova a construir un marketplace global que optimiza la experiencia de compra de los usuarios y mejora la eficiencia operativa del equipo interno. Gracias a una arquitectura moderna y procesos bien definidos, el proyecto logró resultados medibles y mejoras significativas en varios aspectos clave.",
+      antes: [
+        "Código heredado con poca escalabilidad.",
+        "Integraciones mínimas o inexistentes con terceros.",
+        "Procesos internos lentos para gestión de pedidos y usuarios.",
+      ],
+      despues: [
+        "Lanzamiento de un MVP funcional en 6 semanas.",
+        "Integraciones con múltiples servicios y pasarelas de pago.",
+        "Arquitectura moderna basada en microservicios escalable y segura.",
+      ]
+    }
   },
 ]

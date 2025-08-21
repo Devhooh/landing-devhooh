@@ -1,4 +1,5 @@
 import { portfolioDetails } from "@/data/portfolioDetails";
+import ChallengeSection from "@/sections/portfolio/components/ChallengeSection";
 import PortfolioAbout from "@/sections/portfolio/components/PortfolioAbout";
 import PortfolioHero from "@/sections/portfolio/components/PortfolioHero";
 
@@ -18,6 +19,8 @@ export default function ProjectPage({ params }: Props) {
       <PortfolioHero project={project}/>
 
       <PortfolioAbout project={project}/>
+
+      <ChallengeSection project={project}/>
     </div>
   );
 }

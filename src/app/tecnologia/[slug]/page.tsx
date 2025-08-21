@@ -6,6 +6,7 @@ import TechServices from "@/sections/tech/components/TechServices";
 import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
 import { projectsData } from "@/data/portfolioData";
 import TechWhy from "@/sections/tech/components/TechWhy";
+import TechProcess from "@/sections/tech/components/TechProcess";
 
 interface Props {
   params: {
@@ -28,6 +29,8 @@ export default function TechPage({ params }: Props) {
       <TechServices image={tech.image} name={tech.title} services={tech.servicios} />
 
       <ServicesSliderProjects title="Nuestra experiencia:" projects={projectsData} showService={false}/>
+
+      <TechProcess name={tech.title} steps={tech.proceso || []}/>
 
     </div>
   );

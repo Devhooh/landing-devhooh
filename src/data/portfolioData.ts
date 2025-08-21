@@ -1,6 +1,6 @@
 export interface Project {
   id: number;
-  link: string;
+  slug: string;
   company: string;
   imageSrc: string;
   imageAlt?: string;
@@ -15,7 +15,7 @@ export interface Project {
 export const projectsData: Project[] = [
   {
   id: 1,
-  link: "#",    
+  slug: "marketplace-global",    
   company: "TechNova",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "Marketplace Global",
@@ -27,7 +27,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 2,
-  link: "#",    
+  slug: "#",    
   company: "InnoSoft",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "App de Control de Inventario",
@@ -39,7 +39,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 3,
-  link: "#",    
+  slug: "#",    
   company: "EduNext",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "Plataforma de E-learning Interactiva",
@@ -51,7 +51,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 4,
-  link: "#",    
+  slug: "#",    
   company: "ReservaPlus",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "Sistema de Reservas Online",
@@ -63,7 +63,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 5,
-  link: "#",    
+  slug: "#",    
   company: "FitLife",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "Aplicación de Fitness Personalizada",
@@ -75,7 +75,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 6,
-  link: "#",    
+  slug: "#",    
   company: "ContaPro",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "Software de Contabilidad en la Nube",
@@ -87,7 +87,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 7,
-  link: "#",    
+  slug: "#",    
   company: "MediLink",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "Plataforma de Telemedicina",
@@ -99,7 +99,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 8,
-  link: "#",    
+  slug: "#",    
   company: "EcoTrack",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "Sistema de Monitoreo Ambiental",
@@ -111,7 +111,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 9,
-  link: "#",    
+  slug: "#",    
   company: "LogistiCore",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "Plataforma de Logística Inteligente",
@@ -123,7 +123,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 10,
-  link: "#",
+  slug: "#",
   company: "ShopHub",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "E-commerce Multimarca",
@@ -136,7 +136,7 @@ export const projectsData: Project[] = [
 ,
   {
     id: 11,
-    link: "#",
+    slug: "#",
     company: "devhooh",
     imageSrc: "/assets/images/slide1.png",
     ProjectName: "App de Gestión de Inventario",
@@ -148,7 +148,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 12,
-    link: "#",
+    slug: "#",
     company: "devhooh",
     imageSrc: "/assets/images/slide1.png",
     ProjectName: "Plataforma de E-learning",
@@ -160,7 +160,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 13,
-    link: "#",
+    slug: "#",
     company: "devhooh",
     imageSrc: "/assets/images/slide1.png",
     ProjectName: "Sistema de Reservas",
@@ -172,7 +172,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 14,
-    link: "#",
+    slug: "#",
     company: "devhooh",
     imageSrc: "/assets/images/slide1.png",
     ProjectName: "Aplicación de Fitness",
@@ -184,7 +184,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 15,
-    link: "#",
+    slug: "#",
     company: "devhooh",
     imageSrc: "/assets/images/slide1.png",
     ProjectName: "Software de Contabilidad",
@@ -196,7 +196,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 16,
-    link: "#",
+    slug: "#",
     company: "devhooh",
     imageSrc: "/assets/images/slide1.png",
     ProjectName: "Sistema de Reservas",
@@ -208,7 +208,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 17,
-    link: "#",
+    slug: "#",
     company: "devhooh",
     imageSrc: "/assets/images/slide1.png",
     ProjectName: "Aplicación de Fitness",
@@ -220,7 +220,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 18,
-    link: "#",
+    slug: "#",
     company: "devhooh",
     imageSrc: "/assets/images/slide1.png",
     ProjectName: "Software de Contabilidad",

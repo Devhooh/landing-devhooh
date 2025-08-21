@@ -1,3 +1,11 @@
+import { iconsData } from "./techData";
+
+interface Tech {
+  name: string;       
+  icon: keyof typeof iconsData; // O que pongo aqui?
+  color?: string;   
+}
+
 interface ProcessData {
   id: number;
   title: string;
@@ -28,6 +36,7 @@ export interface Project {
   aboutProject: AboutData;
   challengeData: ChallengeData[]
   process: ProcessData[]
+  stackTech: Tech[]
 }
 
 export const portfolioDetails: Project[] = [
@@ -117,6 +126,12 @@ export const portfolioDetails: Project[] = [
           "Acompañamiento post-lanzamiento con soporte técnico y actualizaciones continuas."
         ]
       }
+    ],
+
+    stackTech: [
+      {name: "React", icon: "react", color: "text-blue-500"},
+      {name: "Node.js", icon: "node", color: "text-green-400"},
+      {name: "MongoDB", icon: "mongodb", color: "text-green-700"}
     ]
   },
 ]

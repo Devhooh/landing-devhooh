@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface Project {
   id: number;
-  link?: string;
+  slug: string;
   company?: string;
   imageSrc: string;
   imageAlt?: string;
@@ -56,7 +56,7 @@ export default function ServicesProjects({
           </div>
 
           <div>
-            <Link href={project.link || "/contact"}>
+            <Link href={`/portfolio/${project.slug}`}>
               <button className="bg-white text-indigo-900 hover:border-2 border-indigo-950 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-gray-300 transform transition">
                 Ver más detalles
               </button>

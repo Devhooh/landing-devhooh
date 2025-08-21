@@ -38,6 +38,46 @@ import {
   SiAdobexd
 } from "react-icons/si";
 
+export const iconsData = {
+  js: FaJsSquare,
+  node: FaNode,
+  react: FaReact,
+  angular: FaAngular,
+  python: FaPython,
+  swift: FaSwift,
+  java: FaJava,
+  git: FaGitAlt,
+  github: FaGithub,
+  docker: FaDocker,
+  aws: FaAws,
+  sketch: FaSketch,
+
+  mongodb: SiMongodb,
+  nextjs: SiNextdotjs,
+  tailwind: SiTailwindcss,
+  typescript: SiTypescript,
+  vite: SiVite,
+  nestjs: SiNestjs,
+  mysql: SiMysql,
+  kotlin: SiKotlin,
+  flutter: SiFlutter,
+  vercel: SiVercel,
+  kubernetes: SiKubernetes,
+  express: SiExpress,
+  dotnet: SiDotnet,
+  cpp: SiCplusplus,
+  rust: SiRust,
+  adobexd: SiAdobexd,
+
+  postgresql: BiLogoPostgresql,
+  golang: BiLogoGoLang,
+  reactnative: TbBrandReactNative,
+  blender: TbBrandBlender,
+  csharp: TbBrandCSharp,
+  django: DiDjango,
+  figma: PiFigmaLogoFill,
+};
+
 
 export const frontendTech = [
   { icon: FaJsSquare, name: "JavaScript", color: "text-yellow-400", slug: "javascript" },

@@ -28,17 +28,11 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                   <p className="text-gray-600 text-center text-base md-tablet:text-lg">
                     {item.description}
                   </p>
-
-                  <div className="pt-5 mx-5">
-                    {item.listData?.map((items, index) => (
-                      <ul 
-                        key={index}
-                        className="mt-2 list-disc text-gray-600 text-base md-tablet:text-lg"
-                      >
-                        <li>{items}</li>
-                      </ul>
-                    ))}
-                  </div>
+                    <ul className="mt-2 pt-5 mx-5 list-disc text-gray-600 text-base md-tablet:text-lg">
+                      {item.listData?.map((items, index) => (
+                          <li key={index}>{items}</li>
+                      ))}
+                    </ul>
                 </div>
 
                 {/* Imagen */}

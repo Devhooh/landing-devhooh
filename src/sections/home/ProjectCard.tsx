@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface ProjectCardProps {
   id: number;
-  link?: string;
+  slug: string;
   company?: string;
   imageSrc: string;
   imageAlt?: string;
@@ -21,7 +21,7 @@ export function ProjectCard({
   imageSrc,
   ProjectName,
   subtitle,
-  link
+  slug
 }: ProjectCardProps) {
 
   return (
@@ -47,15 +47,13 @@ export function ProjectCard({
           {subtitle}
         </p>
 
-        {link && (
           <div className="flex justify-center mt-3 md-tablet:mt-4">
-            <Link href={link}>
+            <Link href={`/portfolio/${slug}`}>
               <button className="bg-blue-600 hover:bg-blue-700 text-white py-2 md-tablet:py-3 px-6 md-tablet:px-8 rounded-xl text-sm md-tablet:text-base font-semibold">
                 Ver proyecto
               </button>
             </Link>
           </div>
-        )}
       </div>
     </div>
   );

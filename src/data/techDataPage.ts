@@ -3,6 +3,13 @@ export interface Servicios {
   description: string;
 }
 
+export type FAQItemProps = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
+
 export interface TechDates {
   icon: string;
   title: string;
@@ -20,6 +27,7 @@ export interface DataTech {
   servicios: Servicios[]
   whyTech: string
   proceso?: TechDates[]
+  faq: FAQItemProps[];
 }
 
 // 🔹 Objeto centralizado con todas las tecnologías
@@ -54,6 +62,12 @@ export const techData: Record<string, DataTech> = {
       { icon: "Activity", title: "Testing", description: "Verificamos rendimiento y compatibilidad en todos los navegadores." },
       { icon: "Package", title: "Deploy", description: "Desplegamos la aplicación asegurando velocidad y estabilidad." },
     ],
+    faq: [
+      { id: 1, question: "¿Qué ventajas tiene usar JavaScript en mi proyecto?", answer: "JavaScript es universal, compatible con todos los navegadores y permite desarrollar tanto frontend como backend, agilizando el desarrollo. Además, su ecosistema de librerías y frameworks permite crear aplicaciones interactivas y escalables, mejorando la experiencia de usuario." },
+      { id: 2, question: "¿Puedo combinar JavaScript con frameworks modernos?", answer: "Sí, se integra perfectamente con frameworks como React, Next.js, Angular o incluso con Tailwind para diseño, mejorando productividad y experiencia de usuario. Esto permite desarrollar proyectos más rápidos y mantener código limpio y modular." },
+      { id: 3, question: "¿El rendimiento se ve afectado por usar JavaScript?", answer: "No, con buenas prácticas y optimizaciones, JavaScript ofrece excelente rendimiento incluso en aplicaciones complejas. La optimización de cargas, lazy loading y uso de frameworks modernos aseguran rapidez y eficiencia." },
+      { id: 4, question: "¿JavaScript es seguro para aplicaciones críticas?", answer: "Sí, al implementar buenas prácticas de seguridad, validaciones y control de datos, se puede construir aplicaciones confiables y seguras, minimizando riesgos y vulnerabilidades comunes." }
+    ]
   },
   typescript: {
     id: 2,
@@ -85,6 +99,12 @@ export const techData: Record<string, DataTech> = {
       { icon: "Activity", title: "Testing", description: "Verificamos rendimiento y compatibilidad en todos los navegadores." },
       { icon: "Package", title: "Deploy", description: "Desplegamos la aplicación asegurando velocidad y estabilidad." },
     ],
+    faq: [
+      { id: 1, question: "¿Por qué usar TypeScript sobre JavaScript?", answer: "TypeScript añade tipado estático y detección de errores en tiempo de compilación, reduciendo fallos y mejorando la mantenibilidad del código en proyectos grandes. Esto permite entregar software más robusto y seguro." },
+      { id: 2, question: "¿TypeScript funciona con frameworks existentes?", answer: "Sí, TypeScript se integra con React, Angular, Next.js y otros frameworks modernos, permitiendo un desarrollo más seguro y eficiente, con autocompletado y validaciones de tipos que aceleran la producción de código de calidad." },
+      { id: 3, question: "¿Cómo ayuda TypeScript al equipo de desarrollo?", answer: "TypeScript ayuda a detectar errores antes de ejecutar la aplicación, facilita la colaboración entre desarrolladores y asegura que todos sigan la misma estructura de datos y convenciones de código." },
+      { id: 4, question: "¿Es difícil aprender TypeScript si sé JavaScript?", answer: "No, la curva de aprendizaje es moderada si ya conoces JavaScript. Solo necesitas entender conceptos de tipado, interfaces y tipos avanzados, que ayudan a construir aplicaciones más robustas y mantenibles." }
+    ]
   },
   tailwindcss: {
     id: 3,
@@ -110,6 +130,12 @@ export const techData: Record<string, DataTech> = {
       { title: "Integración con JS y TS", description: "Tailwind funciona perfectamente junto a JavaScript y TypeScript, facilitando el desarrollo de interfaces dinámicas."},
       { title: "Optimización y rendimiento", description: "Generamos CSS eficiente y ligero, reduciendo el tamaño de archivos y mejorando la velocidad de carga."},
     ],
+    faq: [
+      { id: 1, question: "¿Qué es Tailwind CSS?", answer: "Tailwind CSS es un framework de utilidades que permite crear interfaces modernas y responsivas rápidamente, sin necesidad de escribir CSS personalizado, agilizando el desarrollo frontend." },
+      { id: 2, question: "¿Tailwind funciona con React, Next.js o Angular?", answer: "Sí, Tailwind se integra perfectamente con cualquier framework moderno, aplicando clases utilitarias directamente en JSX, templates o componentes, manteniendo consistencia en el diseño." },
+      { id: 3, question: "¿Tailwind mejora la productividad?", answer: "Sí, Tailwind permite construir diseños responsivos, consistentes y personalizables rápidamente, reduciendo tiempo de desarrollo y simplificando la gestión de estilos." },
+      { id: 4, question: "¿Tailwind es SEO-friendly?", answer: "Sí, Tailwind solo maneja estilos y no altera la semántica HTML, por lo que no afecta el SEO, permitiendo que los motores de búsqueda indexen correctamente el contenido de la web." }
+    ]
 
   },
   nextjs: {
@@ -141,6 +167,12 @@ export const techData: Record<string, DataTech> = {
       { icon: "Activity", title: "Testing", description: "Validamos rutas, performance y experiencia de usuario." },
       { icon: "Package", title: "Deploy", description: "Desplegamos con optimización de SEO y velocidad de carga." },
     ],
+    faq: [
+      { id: 1, question: "¿Qué es Next.js y por qué usarlo?", answer: "Next.js permite renderizado del lado del servidor (SSR), generación de sitios estáticos (SSG) y rutas dinámicas, optimizando velocidad y SEO. Es ideal para proyectos donde el rendimiento y visibilidad en buscadores es clave." },
+      { id: 2, question: "¿Puedo usar Next.js con TypeScript y React?", answer: "Sí, Next.js funciona perfectamente con React y TypeScript, combinando tipado seguro, componentes reutilizables y optimización de rutas y APIs, lo que agiliza el desarrollo y mejora la calidad del proyecto." },
+      { id: 3, question: "¿Cómo mejora Next.js la velocidad de mi web?", answer: "Next.js optimiza la carga usando SSR, SSG e ISR, lo que reduce tiempos de espera, mejora la experiencia de usuario y aumenta la puntuación de Core Web Vitals." },
+      { id: 4, question: "¿Next.js es adecuado para proyectos grandes?", answer: "Sí, su arquitectura modular, optimizaciones de rendimiento y rutas dinámicas facilitan la construcción de proyectos escalables y mantenibles, ideales para aplicaciones empresariales y startups." }
+    ]
   },
   angular: {
     id: 5,
@@ -171,6 +203,12 @@ export const techData: Record<string, DataTech> = {
       { icon: "Dev", title: "Desarrollo Angular", description: "Implementamos componentes, servicios y rutas según arquitectura." },
       { icon: "Deploy", title: "Deploy", description: "Publicamos la aplicación en servidores optimizados para Angular." },
     ],
+    faq: [
+      { id: 1, question: "¿Qué ventajas tiene Angular frente a otros frameworks?", answer: "Angular es un framework completo con herramientas integradas para desarrollo, testing y arquitectura robusta. Su CLI y módulos predefinidos agilizan el desarrollo de aplicaciones complejas." },
+      { id: 2, question: "¿Angular funciona con TypeScript?", answer: "Sí, Angular está construido sobre TypeScript, ofreciendo tipado seguro y autocompletado, facilitando la escalabilidad y manteniendo la consistencia del código en proyectos grandes." },
+      { id: 3, question: "¿Angular es adecuado para aplicaciones empresariales?", answer: "Sí, su arquitectura modular y servicios integrados permiten manejar aplicaciones de gran tamaño con múltiples funcionalidades, manteniendo el rendimiento y facilidad de mantenimiento." },
+      { id: 4, question: "¿Se puede integrar Angular con librerías externas?", answer: "Sí, Angular permite integrar librerías externas cuando sea necesario, sin afectar la estructura del proyecto, y soporta herramientas de testing y optimización de rendimiento." }
+    ]
 
   },
   react: {
@@ -203,6 +241,11 @@ export const techData: Record<string, DataTech> = {
       { icon: "Activity", title: "Testing", description: "Validamos funcionalidad y rendimiento con pruebas unitarias y de integración." },
       { icon: "Package", title: "Deploy", description: "Publicamos la app optimizando tiempos de carga y SEO." },
     ],
+    faq: [
+      { id: 1, question: "¿Qué ventajas tiene React para mis proyectos?", answer: "React permite crear interfaces dinámicas y componentes reutilizables, mejorando la experiencia de usuario y facilitando el mantenimiento. Su ecosistema permite integraciones con bibliotecas de estado, routing y testing, agilizando el desarrollo." },
+      { id: 2, question: "¿React funciona con TypeScript?", answer: "Sí, React y TypeScript se combinan para ofrecer tipado seguro, autocompletado y validaciones en desarrollo. Esto reduce errores y facilita la escalabilidad de proyectos grandes y complejos." },
+      { id: 3, question: "¿Puedo usar React para aplicaciones móviles?", answer: "Sí, con React Native puedes portar tus componentes y lógica a aplicaciones móviles nativas, manteniendo consistencia en el diseño y optimizando tiempo de desarrollo." },
+      { id: 4, question: "¿React es SEO-friendly?", answer: "React por sí solo tiene limitaciones en SEO, pero usando SSR o SSG con Next.js, se pueden generar páginas completamente indexables, optimizando visibilidad y posicionamiento en buscadores." }
+    ]
   },
-
 };

@@ -69,10 +69,12 @@ export default function PortfolioCard({ project }: { project: Project }) {
             Descripcion
           </h3>
           <p>{project.description}</p>
-          <Link href="/contact">
-            <button className="bg-white text-indigo-900 font-bold py-2 px-4 rounded-lg mt-4 hover:bg-gray-300 transform transition">
-              Ver más detalles
-            </button>
+          
+          <Link 
+            href="/contact"
+            className="bg-white text-center text-indigo-900 font-bold py-2 px-4 rounded-lg mt-4 hover:bg-gray-300 transform transition"
+          >
+            Ver más detalles
           </Link>
         </div>
       </div>

@@ -24,7 +24,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
             Servicios de {name} que brindamos
           </h2>
 
-          <div className="w-full mt-4 tablet-md:mt-0">
+          <div className="w-full mt-4 pt-16 tablet-md:mt-0">
             <Image
               src={image}
               alt={`Imagen de ${name}`}

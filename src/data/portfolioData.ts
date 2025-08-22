@@ -27,7 +27,7 @@ export const projectsData: Project[] = [
 },
 {
   id: 2,
-  slug: "#",    
+  slug: "control-inventario",    
   company: "InnoSoft",
   imageSrc: "/assets/images/slide1.png",
   ProjectName: "App de Control de Inventario",

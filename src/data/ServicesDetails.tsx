@@ -18,6 +18,7 @@ export interface ServicesData {
   subtitle: string;
   services: ServicesInclud[];
   benefits: Benefits[];
+  servicesData: ServicesInclud[]
 }
 
 export const ServicesDetails: Record<string, ServicesData> = {
@@ -47,31 +48,44 @@ export const ServicesDetails: Record<string, ServicesData> = {
       },
     ],
     benefits: [
-      {
-        icon: "BarChart",  
-        title: "Análisis de rendimiento",
-        description: "Medimos y optimizamos el rendimiento de tu web para maximizar la conversión y retención de usuarios."
-      },
-      {
-        icon: "TrendingUp",
-        title: "Crecimiento de tu negocio",
-        description: "Una web profesional genera confianza y ayuda a atraer más clientes y oportunidades."
-      },
-      {
-        icon: "Gift",
-        title: "Mejora de la experiencia de usuario",
-        description: "Creamos interfaces intuitivas y agradables que facilitan la navegación y fidelizan visitantes."
-      },
+      { icon: "BarChart", title: "Análisis de rendimiento", description: "Medimos y optimizamos el rendimiento de tu web para maximizar la conversión y retención de usuarios."},
+      { icon: "TrendingUp", title: "Crecimiento de tu negocio", description: "Una web profesional genera confianza y ayuda a atraer más clientes y oportunidades."},
+      { icon: "Gift", title: "Mejora de la experiencia de usuario", description: "Creamos interfaces intuitivas y agradables que facilitan la navegación y fidelizan visitantes."},
+      { icon: "Globe", title: "Presencia internacional", description: "Tu sitio puede llegar a clientes en cualquier parte del mundo con optimización multilingüe y geolocalización."},
+      { icon: "Headphones", title: "Soporte y asesoría", description: "Recibirás orientación profesional durante y después del desarrollo para mantener tu web siempre actualizada."}
+    ],
+    servicesData: [
       {
         icon: "Globe",
-        title: "Presencia internacional",
-        description: "Tu sitio puede llegar a clientes en cualquier parte del mundo con optimización multilingüe y geolocalización."
+        title: "Landing Pages",
+        subtitle: "Webs rápidas para captar clientes."
       },
       {
-        icon: "Headphones",
-        title: "Soporte y asesoría",
-        description: "Recibirás orientación profesional durante y después del desarrollo para mantener tu web siempre actualizada."
-      }
+        icon: "ShoppingCart",
+        title: "E-commerce",
+        subtitle: "Tiendas en línea con carrito de compras."
+      },
+      {
+        icon: "BookOpen",
+        title: "Blogs / Revistas digitales",
+        subtitle: "Páginas para publicar contenido."
+      },
+      {
+        icon: "Building2",
+        title: "Páginas Corporativas",
+        subtitle: "Empresas que quieren presencia profesional."
+      },
+      {
+        icon: "User",
+        title: "Portafolios personales",
+        subtitle: "Para freelancers o creativos."
+      },
+      {
+        icon: "GraduationCap",
+        title: "Webs Educativas",
+        subtitle: "Cursos, academias, plataformas e-learning."
+      },
     ]
+
   },
 };

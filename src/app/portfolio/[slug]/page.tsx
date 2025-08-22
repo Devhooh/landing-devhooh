@@ -1,3 +1,4 @@
+import ContactCTA from "@/components/ui/ContactCTA";
 import { portfolioDetails } from "@/data/portfolioDetails";
 import ChallengeSection from "@/sections/portfolio/components/ChallengeSection";
 import PortfolioAbout from "@/sections/portfolio/components/PortfolioAbout";
@@ -33,7 +34,7 @@ export default function ProjectPage({ params }: Props) {
       <ResultSection project={project}/>
 
       {/* Galería de imágenes */}
-      <div className="max-w-7xl mx-auto mt-12 pb-16">
+      <div className="max-w-7xl mx-auto mt-12">
         {/* Encabezado */}
         <div className="text-center mb-16">
           <h2 className=" text-3xl md-tablet:text-5xl font-bold pb-4">
@@ -61,6 +62,8 @@ export default function ProjectPage({ params }: Props) {
           ))}
         </div>
       </div>
+
+      <ContactCTA/>
 
     </div>
   );

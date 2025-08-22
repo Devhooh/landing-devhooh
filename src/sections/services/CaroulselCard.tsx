@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 // Card data interface
 interface CardData {
+  slug: string;
   title: string;
   details: string;
   color: string;
@@ -54,7 +55,7 @@ export default function CaroulselCard ({ card }: { card: CardData }) {
             Cotiza tu proyecto
           </button>
         </Link>
-        <Link href="#" className="pb-3">
+        <Link href={`/services/${card.slug}`}>
           <button className="w-full px-6 py-3 border border-white/20 text-white font-semibold rounded-full transition-colors hover:bg-white/10">
             + Ver más detalles
           </button>

@@ -24,7 +24,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
       <div className="flex flex-col table-lg:flex-row gap-8">
         {/* Before */}
         <div className="table-lg:w-1/2 bg-white rounded-lg shadow p-6">
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">Before</h3>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">Antes:</h3>
           <ul className="space-y-2">
             {result.antes.map((item, index) => (
               <li key={index} className="flex items-center gap-2 text-red-500">
@@ -37,7 +37,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
 
         {/* After */}
         <div className="table-lg:w-1/2 bg-white rounded-lg shadow p-6">
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">After</h3>
+          <h3 className="text-xl font-semibold text-gray-800 mb-3">Despues:</h3>
           <ul className="space-y-2">
             {result.despues.map((item, index) => (
               <li key={index} className="flex items-center gap-2 text-green-500">

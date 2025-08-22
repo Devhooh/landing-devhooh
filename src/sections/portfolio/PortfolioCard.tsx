@@ -40,8 +40,8 @@ export default function PortfolioCard({ project }: { project: Project }) {
               alt={project.ProjectName}
               className="object-contain w-full h-full p-5"
             />
-            <p className="text-sm text-gray-500">
-              <span className="font-medium">Ver descripcion:</span>
+            <p className="text-lg text-gray-500 animate-pulse">
+              <span className="font-semibold">Ver descripcion:</span>
             </p>
           </div>
           <div className="p-6">

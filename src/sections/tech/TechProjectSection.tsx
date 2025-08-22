@@ -9,9 +9,9 @@ export default function TechProjectSection() {
 
   return (
     <section className="w-full py-16 px-4 table-lg:px-10 bg-gray-50">
-      <div className="max-w-7xl mx-auto text-left mb-8">
+      <div className="max-w-7xl mx-auto text-left mb-2">
         <h2 className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-bold text-indigo-950">
-          Proyectos que hemos hecho realidad
+          Proyectos con nuestra tecnología:
         </h2>
       </div>
 

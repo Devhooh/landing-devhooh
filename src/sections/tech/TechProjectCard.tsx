@@ -20,7 +20,7 @@ export default function TechProjectCard({projects}: {projects: ProjectCardProps}
     <div className="relative w-full h-[630px] bg-white border border-gray-400 rounded-2xl shadow-lg p-4 flex flex-col justify-between">
 
       {/* Título superior izquierdo */}
-      <h4 className="text-lg font-bold text-indigo-950">{projects.company}</h4>
+      <h4 className="text-lg text-center font-bold text-indigo-950">{projects.company}</h4>
 
       {/* Imagen centrada */}
       <div className="flex justify-center">
@@ -39,7 +39,16 @@ export default function TechProjectCard({projects}: {projects: ProjectCardProps}
       </p>
 
       {/* Descripción */}
-      <p className="text-sm text-gray-600 text-left">{projects.description}</p>
+      <div className="flex flex-wrap gap-2 mt-2">
+        {projects.technologies.map((tech) => (
+          <span
+            key={tech}
+            className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
 
       <div className="flex justify-left pb-4">
         <Link href={`/portfolio/${projects.slug}`}>

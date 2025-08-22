@@ -13,6 +13,7 @@ import 'swiper/css/pagination';
 
 // Card data interface
 interface CardData {
+  slug: string;
   title: string;
   details: string;
   color: string;

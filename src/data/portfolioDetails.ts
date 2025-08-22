@@ -2,7 +2,7 @@ import { iconsData } from "./techData";
 
 interface Tech {
   name: string;       
-  icon: keyof typeof iconsData; // O que pongo aqui?
+  icon: keyof typeof iconsData;
   color?: string;   
 }
 
@@ -29,6 +29,11 @@ interface ResultData {
   despues: string[]
 }
 
+interface PicturesData {
+  descripcion: string;
+  images: string[];
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -44,6 +49,7 @@ export interface Project {
   process: ProcessData[]
   stackTech: Tech[]
   result: ResultData
+  pictures: PicturesData
 }
 
 export const portfolioDetails: Project[] = [
@@ -152,6 +158,15 @@ export const portfolioDetails: Project[] = [
         "Lanzamiento de un MVP funcional en 6 semanas.",
         "Integraciones con múltiples servicios y pasarelas de pago.",
         "Arquitectura moderna basada en microservicios escalable y segura.",
+      ]
+    },
+    pictures: {
+      descripcion: "Un vistazo al resultado final del proyecto, mostrando las pantallas principales y adaptaciones en distintos dispositivos.",
+      images: [
+        "/assets/images/slide1.png",
+        "/assets/images/slide2.png",
+        "/assets/images/slide3.png",
+        "/assets/images/slide4.png",
       ]
     }
   },

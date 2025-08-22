@@ -1,5 +1,6 @@
 import { ServicesDetails } from "@/data/ServicesDetails";
 import HeroSectionServices from "@/sections/services/components/HeroSectionServices";
+import ServicesIncluded from "@/sections/services/components/ServicesIncluded";
 
 interface Props {
   params: { slug: string };
@@ -17,8 +18,10 @@ export default function ServicePage({ params }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-8">
       <HeroSectionServices service={service}/>
+
+      <ServicesIncluded service={service}/>
     </div>
   );
 }

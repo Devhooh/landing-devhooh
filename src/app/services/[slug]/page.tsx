@@ -3,6 +3,7 @@ import HeroSectionServices from "@/sections/services/components/HeroSectionServi
 import ServicesBenefits from "@/sections/services/components/ServicesBenefits";
 import ServicesDataSection from "@/sections/services/components/ServicesDataSection";
 import ServicesIncluded from "@/sections/services/components/ServicesIncluded";
+import ServicesStackTech from "@/sections/services/components/ServicesStackTech";
 
 interface Props {
   params: { slug: string };
@@ -28,6 +29,8 @@ export default function ServicePage({ params }: Props) {
       <ServicesBenefits service={service}/>
 
       <ServicesDataSection service={service}/>
+
+      <ServicesStackTech service={service}/>
     </div>
   );
 }

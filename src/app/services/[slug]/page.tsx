@@ -1,5 +1,6 @@
 import { ServicesDetails } from "@/data/ServicesDetails";
 import HeroSectionServices from "@/sections/services/components/HeroSectionServices";
+import ServicesBenefits from "@/sections/services/components/ServicesBenefits";
 import ServicesIncluded from "@/sections/services/components/ServicesIncluded";
 
 interface Props {
@@ -22,6 +23,8 @@ export default function ServicePage({ params }: Props) {
       <HeroSectionServices service={service}/>
 
       <ServicesIncluded service={service}/>
+
+      <ServicesBenefits service={service}/>
     </div>
   );
 }

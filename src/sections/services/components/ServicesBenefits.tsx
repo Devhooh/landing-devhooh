@@ -1,0 +1,51 @@
+"use client";
+
+import * as Icons from "lucide-react";
+import { LucideProps } from "lucide-react";
+import { ServicesData } from "@/data/ServicesDetails";
+
+interface BenefitsSectionProps {
+  service: ServicesData;
+}
+
+export default function ServicesBenefits({ service }: BenefitsSectionProps) {
+  return (
+    <section className="p-6 md-tablet:px-8 table-lg:px-12 bg-gray-50">
+      <div className="w-auto px-auto">
+        <h2 className="text-3xl font-extrabold mb-1 text-center md-tablet:text-left">
+          Beneficios de nuestro servicio de 
+        </h2>
+        <h2 className="text-3xl font-extrabold mb-10 text-center md-tablet:text-left">
+          <span className="text-blue-600">{service.name}</span>
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 md-tablet:grid-cols-2 gap-6 table-lg:gap-8">
+        {service.benefits.map((benefit, index) => {
+          const Icon =
+            (Icons[benefit.icon as keyof typeof Icons] as React.ComponentType<
+              LucideProps
+            >) || Icons.HelpCircle;
+
+          return (
+            <div
+              key={index}
+              className="flex flex-col md-tablet:flex-row items-start md-tablet:items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition"
+            >
+              {/* Icono */}
+              <div className="flex-shrink-0 mb-4 md-tablet:mb-0 md-tablet:mr-4">
+                <Icon className="w-10 h-10 text-blue-500" />
+              </div>
+
+              {/* Texto */}
+              <div>
+                <h3 className="text-lg font-semibold mb-1">{benefit.title}</h3>
+                <p className="text-gray-600 text-sm">{benefit.description}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}

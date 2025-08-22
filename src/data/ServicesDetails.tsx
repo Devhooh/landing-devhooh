@@ -14,6 +14,7 @@ interface ServicesInclud {
 export interface ServicesData {
   slug: string;
   name: string;
+  description: string;
   subtitle: string;
   services: ServicesInclud[];
   benefits: Benefits[];
@@ -23,7 +24,8 @@ export const ServicesDetails: Record<string, ServicesData> = {
   "desarrollo-web": { 
     slug: "desarrollo-web",
     name: "Desarrollo Web",
-    subtitle: "Ofrecemos soluciones modernas, confiables y adaptadas a tus necesidades. Nuestro equipo te acompaña en cada paso para garantizar resultados efectivos y duraderos.",
+    subtitle: "Nuestro equipo te acompaña en cada paso para garantizar resultados efectivos y duraderos.",
+    description: "Ofrecemos un ciclo completo de servicios de diseño, desarrollo e integración de soluciones web. Ya sea un sitio orientado al consumidor o una plataforma empresarial a gran escala, te acompañamos en todo el proceso: desde la idea inicial hasta la entrega final y el soporte continuo.",
     services: [
       { icon: "PenTool", title: "Diseño a medida y personalizado", subtitle: "Creamos páginas únicas que reflejan la esencia de tu negocio, sin usar plantillas genéricas.",
         list: ["Diseños exclusivos adaptados a tu marca","Experiencia visual moderna","Enfoque en la usabilidad"],

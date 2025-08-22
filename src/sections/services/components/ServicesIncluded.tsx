@@ -11,8 +11,17 @@ interface BenefitsSectionProps {
 export default function ServicesIncluded({ service }: BenefitsSectionProps) {
   return (
     <section className="py-12 px-6 md-tablet:px-12 bg-gray-50">
+      <div className="max-w-3xl mx-auto text-center mb-12">
+        <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+          ¿Por qué elegirnos para tu proyecto de {service.name.toLowerCase()}?
+        </h2>
+        <p className="text-gray-600 leading-relaxed">
+          {service.description}
+        </p>
+      </div>
+      
       {/* Título */}
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-12 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
         Qué incluye nuestro servicio de{" "}
         <span className="text-blue-600">{service.name}</span>
       </h2>

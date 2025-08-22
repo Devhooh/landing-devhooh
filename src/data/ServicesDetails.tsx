@@ -4,6 +4,18 @@ interface Benefits {
   description: string;
 }
 
+interface ListTech {
+  icon: string;
+  color?: string;
+  title: string;
+  listTech: string[];
+}
+
+interface TechStack {
+  description: string;
+  tech: ListTech[]
+}
+
 interface ServicesInclud {
   icon: string;
   title: string;
@@ -19,6 +31,7 @@ export interface ServicesData {
   services: ServicesInclud[];
   benefits: Benefits[];
   servicesData: ServicesInclud[]
+  stackTech: TechStack[]
 }
 
 export const ServicesDetails: Record<string, ServicesData> = {
@@ -55,37 +68,37 @@ export const ServicesDetails: Record<string, ServicesData> = {
       { icon: "Headphones", title: "Soporte y asesoría", description: "Recibirás orientación profesional durante y después del desarrollo para mantener tu web siempre actualizada."}
     ],
     servicesData: [
+      { icon: "Globe", title: "Landing Pages", subtitle: "Webs rápidas para captar clientes."},
+      { icon: "ShoppingCart", title: "E-commerce", subtitle: "Tiendas en línea con carrito de compras."},
+      { icon: "BookOpen", title: "Blogs / Revistas digitales", subtitle: "Páginas para publicar contenido."},
+      { icon: "Building2", title: "Páginas Corporativas", subtitle: "Empresas que quieren presencia profesional."},
+      { icon: "User", title: "Portafolios personales", subtitle: "Para freelancers o creativos."},
+      { icon: "GraduationCap", title: "Webs Educativas", subtitle: "Cursos, academias, plataformas e-learning."},
+    ],
+    stackTech: [
       {
-        icon: "Globe",
-        title: "Landing Pages",
-        subtitle: "Webs rápidas para captar clientes."
-      },
-      {
-        icon: "ShoppingCart",
-        title: "E-commerce",
-        subtitle: "Tiendas en línea con carrito de compras."
-      },
-      {
-        icon: "BookOpen",
-        title: "Blogs / Revistas digitales",
-        subtitle: "Páginas para publicar contenido."
-      },
-      {
-        icon: "Building2",
-        title: "Páginas Corporativas",
-        subtitle: "Empresas que quieren presencia profesional."
-      },
-      {
-        icon: "User",
-        title: "Portafolios personales",
-        subtitle: "Para freelancers o creativos."
-      },
-      {
-        icon: "GraduationCap",
-        title: "Webs Educativas",
-        subtitle: "Cursos, academias, plataformas e-learning."
-      },
+        description: "Nuestros servicios incluyen la pila tecnológica necesaria para crear una aplicación web exitosa y personalizada para su negocio",
+        tech: [
+          {
+            icon: "Database",
+            color: "blue",
+            title: "Base de datos",
+            listTech: ["MySQL", "Postgres", "MongoDB"]
+          },
+          {
+            icon: "Server",
+            color: "green",
+            title: "Back-End",
+            listTech: ["NestJS", "Node.js", "ExpressJS"]
+          },
+          {
+            icon: "Laptop",
+            color: "purple",
+            title: "Front-End",
+            listTech: ["React", "Next.js", "TypeScript", "TailwindCSS"]
+          }
+        ]
+      }
     ]
-
   },
 };

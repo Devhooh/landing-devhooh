@@ -13,7 +13,7 @@ export default function CarouselCard({ card }: { card: CardData }) {
   return (
     <div
       className="
-        bg-purple-500/50 rounded-2xl shadow-lg overflow-hidden h-[400px]
+        bg-purple-800/60 rounded-2xl shadow-lg overflow-hidden h-[450px]
         flex flex-col transition-transform duration-300 hover:scale-[1.03]
       "
     >

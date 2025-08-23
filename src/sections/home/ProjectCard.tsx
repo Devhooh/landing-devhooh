@@ -21,6 +21,7 @@ export function ProjectCard({
   imageSrc,
   ProjectName,
   subtitle,
+  company,
   slug
 }: ProjectCardProps) {
 
@@ -43,6 +44,9 @@ export function ProjectCard({
         <h3 className="text-lg md-tablet:text-xl table-lg:text-2xl font-bold text-gray-900">
           {ProjectName}
         </h3>
+        <p className="text-gray-800 text-lg md-tablet:text-xl">
+          Empresa: {company}
+        </p>
         <p className="text-gray-600 text-sm md-tablet:text-base">
           {subtitle}
         </p>

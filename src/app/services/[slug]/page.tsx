@@ -1,5 +1,6 @@
 import { ServicesDetails } from "@/data/ServicesDetails";
 import HeroSectionServices from "@/sections/services/components/HeroSectionServices";
+import ProcessServicesSection from "@/sections/services/components/ProcessServicesSection";
 import ProjectsServicesSection from "@/sections/services/components/ProjectsServicesSection";
 import ServicesBenefits from "@/sections/services/components/ServicesBenefits";
 import ServicesDataSection from "@/sections/services/components/ServicesDataSection";
@@ -34,6 +35,8 @@ export default function ServicePage({ params }: Props) {
       <ServicesStackTech service={service}/>
 
       <ProjectsServicesSection/>
+
+      <ProcessServicesSection service={service}/>
 
     </div>
   );

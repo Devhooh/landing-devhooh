@@ -27,10 +27,10 @@ interface CardCaroulselSectionProps {
 
 export default function CaroulselSection ({title, cardData}: CardCaroulselSectionProps) {
   return (
-    <section className="bg-white w-full h-full py-12 overflow-hidden rounded-2xl ">
+    <section className="bg-white w-full h-full pt-10 overflow-hidden rounded-2xl ">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
-        <h2 className="mb-10 text-2xl md-tablet:text-5xl text-center font-extrabold text-indigo-950">
+        <h2 className="px-4 text-2xl md-tablet:text-4xl text-left font-extrabold text-indigo-950">
           {title}
         </h2>
         
@@ -53,7 +53,7 @@ export default function CaroulselSection ({title, cardData}: CardCaroulselSectio
           }}
         >
           {cardData.map((card, index) => (
-            <SwiperSlide key={index} className="px-4 py-2 md-tablet:pb-20 table-lg:pb-15 flex items-stretch">
+            <SwiperSlide key={index} className="px-4 py-8 md-tablet:pb-10 flex items-stretch">
               <CaroulselCard card={card} />
             </SwiperSlide>
           ))}

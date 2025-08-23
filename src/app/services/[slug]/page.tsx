@@ -1,3 +1,4 @@
+import NotFound from "@/app/not-found";
 import ContactCTA from "@/components/ui/ContactCTA";
 import { ServicesDetails } from "@/data/ServicesDetails";
 import FAQSection from "@/sections/portfolio/FAQSection";
@@ -18,9 +19,7 @@ export default function ServicePage({ params }: Props) {
 
   if (!service) {
     return (
-      <div className="p-10 text-center text-red-600 font-bold">
-        Servicio no encontrado
-      </div>
+      NotFound()
     );
   }
 

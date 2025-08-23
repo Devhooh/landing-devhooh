@@ -1,3 +1,10 @@
+interface ProcessStep {
+  number: number;
+  title: string;
+  description: string;
+  points?: string[];
+}
+
 interface Benefits {
   icon: string;
   title: string;
@@ -32,6 +39,7 @@ export interface ServicesData {
   benefits: Benefits[];
   servicesData: ServicesInclud[]
   stackTech: TechStack[]
+  process: ProcessStep[]
 }
 
 export const ServicesDetails: Record<string, ServicesData> = {
@@ -76,29 +84,55 @@ export const ServicesDetails: Record<string, ServicesData> = {
       { icon: "GraduationCap", title: "Webs Educativas", subtitle: "Cursos, academias, plataformas e-learning."},
     ],
     stackTech: [
-      {
-        description: "Nuestros servicios incluyen la pila tecnológica necesaria para crear una aplicación web exitosa y personalizada para su negocio",
+      { description: "Nuestros servicios incluyen la pila tecnológica necesaria para crear una aplicación web exitosa y personalizada para su negocio",
         tech: [
-          {
-            icon: "Database",
-            color: "blue",
-            title: "Base de datos",
-            listTech: ["MySQL", "Postgres", "MongoDB"]
-          },
-          {
-            icon: "Server",
-            color: "green",
-            title: "Back-End",
-            listTech: ["NestJS", "Node.js", "ExpressJS"]
-          },
-          {
-            icon: "Laptop",
-            color: "purple",
-            title: "Front-End",
-            listTech: ["React", "Next.js", "TypeScript", "TailwindCSS"]
-          }
+          { icon: "Database", color: "blue", title: "Base de datos", listTech: ["MySQL", "Postgres", "MongoDB"]},
+          { icon: "Server", color: "green", title: "Back-End", listTech: ["NestJS", "Node.js", "ExpressJS"]},
+          { icon: "Laptop", color: "purple", title: "Front-End", listTech: ["React", "Next.js", "TypeScript", "TailwindCSS"]}
         ]
       }
+    ],
+    process: [
+      {
+        number: 1,
+        title: "Reunión Inicial",
+        description:
+          "Nos reunimos contigo para conocer a fondo tus necesidades, objetivos de negocio y expectativas. Esta etapa es fundamental para entender qué tipo de página web necesitas, el público al que deseas llegar y los resultados que esperas lograr. Aquí construimos la base del proyecto asegurando que todos estemos alineados desde el inicio.",
+      },
+      {
+        number: 2,
+        title: "Planificación",
+        description:
+          "Definimos un plan de trabajo claro y organizado, donde estructuramos el proyecto en fases y tareas específicas. En esta etapa nos aseguramos de que cada detalle quede documentado, desde la arquitectura web hasta las funcionalidades principales, estableciendo plazos realistas y entregables bien definidos.",
+        points: ["Arquitectura web", "Definición de funcionalidades", "Plazos de entrega"],
+      },
+      {
+        number: 3,
+        title: "Diseño UI/UX",
+        description:
+          "Creamos un diseño visual atractivo y una experiencia de usuario intuitiva. Te presentamos wireframes y prototipos interactivos para que puedas visualizar cómo lucirá tu sitio antes de ser desarrollado. Nuestro objetivo es que tu página no solo se vea bien, sino que también sea fácil de navegar para tus usuarios.",
+        points: ["Wireframes", "Prototipos interactivos", "Validación con cliente"],
+      },
+      {
+        number: 4,
+        title: "Desarrollo",
+        description:
+          "Construimos tu sitio web utilizando tecnologías modernas que aseguran velocidad, seguridad y escalabilidad. Implementamos un frontend responsivo que se adapta a cualquier dispositivo y un backend optimizado para manejar tus necesidades. También incluimos prácticas de optimización SEO para que tu sitio tenga mayor visibilidad en buscadores.",
+        points: ["Frontend responsivo", "Integración con APIs", "Optimización SEO"],
+      },
+      {
+        number: 5,
+        title: "Pruebas",
+        description:
+          "Antes de lanzar tu sitio web, realizamos pruebas exhaustivas para asegurar que todo funcione correctamente. Validamos la usabilidad, compatibilidad en diferentes navegadores y dispositivos, así como la velocidad de carga. Esto nos permite garantizar que tu página ofrecerá la mejor experiencia posible a tus usuarios.",
+        points: ["Pruebas de usabilidad", "Compatibilidad en navegadores", "Optimización de velocidad"],
+      },
+      {
+        number: 6,
+        title: "Entrega & Soporte",
+        description:
+          "Publicamos tu página web en el servidor definitivo y nos aseguramos de que todo esté funcionando de manera óptima. Además, te brindamos soporte técnico continuo para resolver cualquier duda o necesidad que pueda surgir después del lanzamiento. Queremos que tu proyecto siga creciendo contigo.",
+      },
     ]
   },
 };

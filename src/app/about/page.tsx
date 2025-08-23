@@ -1,12 +1,31 @@
+import ContactCTA from "@/components/ui/ContactCTA";
+import HeroSection from "@/components/ui/HeroSection";
+import AboutSection from "@/sections/about/AboutSection";
+import OurValuesSection from "@/sections/about/OurValuesSection";
+import ProblemsSection from "@/sections/about/ProblemsSection";
+import WhyChooseUsSection from "@/sections/about/WhyChooseUsSection";
+
 export default function About() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-8">
-      <h1 className="text-3xl font-bold text-center">
-        Nosotros
-      </h1>
-      <p className="text-gray-600 text-center max-w-xl">
-        Seccion para mostrar nuestros valores y beneficios
-      </p>
+    <div>
+      <HeroSection 
+        title="Somos Devhoo: Tecnología con propósito. Nuestra misión va más allá del software" 
+        subtitle="Detrás del código, somos un equipo que escucha, colabora y construye contigo. Conoce quiénes somos y por qué trabajamos diferente."
+        cta="Hablemos de tu proyecto"
+        ctaLink="/contact"
+        layout="center"       
+      />
+
+      <AboutSection/>
+
+      <OurValuesSection/>
+
+      <WhyChooseUsSection/>
+
+      <ProblemsSection/>
+
+      <ContactCTA/>
+
     </div>
   )
 }

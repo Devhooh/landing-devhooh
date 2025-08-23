@@ -1,14 +1,55 @@
+import CaroulselSection from "@/sections/services/CaroulselSection";
+import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
+import ServicesSection from "@/sections/services/ServicesSection";
+import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
+import ContactCTA from "@/components/ui/ContactCTA";
+import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
+import FAQSection from "@/sections/portfolio/FAQSection";
+import { faqDataServices } from "@/data/faqDataServices";
+import { projectsData } from "@/data/portfolioData";
+
 export default function Services() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-8">
-      <h1 className="text-3xl font-bold text-center">
-        Servicios
-      </h1>
-      <p className="text-gray-600 text-center max-w-xl">
-        Seccion para mostrar los servicios que ofrece 
-        la landing page de Devhoo
-      </p>
+    <div className="flex flex-col gap-10">
+      <ServicesSection/>
+      <ServicesCardsSection/>
 
+      <div className="w-full py-10 bg-indigo-950/90 text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 space-y-10">
+          <div className="flex items-center justify-center py-8 rounded-2xl bg-sky-400">
+            <h3 className="font-extrabold text-3xl table-lg:text-5xl text-center">
+              Servicios que ofrecemos
+            </h3>
+          </div>
+
+          <CaroulselSection
+            title="Desarrollo Personalizado"
+            cardData={customDevelopmentCardData}
+          />
+          <CaroulselSection
+            title="Servicios de IA"
+            cardData={ServicesIACardData}
+          />
+          <CaroulselSection
+            title="Infraestructura y Soporte"
+            cardData={InfraestructureSupportCardData}
+          />
+          <CaroulselSection
+            title="Diseño y QA"
+            cardData={DesignerQACardData}
+          />
+        </div>
+      </div>
+
+      <ServicesSliderProjects 
+        title="Proyectos que usaron nuestros servicios" 
+        projects={projectsData}
+        showService={true}
+      />
+
+      <FAQSection itemsDate={faqDataServices}/>
+
+      <ContactCTA/>
     </div>
   )
 }

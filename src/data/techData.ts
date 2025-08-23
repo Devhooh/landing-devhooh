@@ -35,7 +35,11 @@ import {
   SiDotnet,
   SiCplusplus,
   SiRust,
-  SiAdobexd
+  SiAdobexd,
+  SiTensorflow,
+  SiOpenai,
+  SiFastapi,
+  SiFlask
 } from "react-icons/si";
 
 export const iconsData = {
@@ -76,6 +80,11 @@ export const iconsData = {
   csharp: TbBrandCSharp,
   django: DiDjango,
   figma: PiFigmaLogoFill,
+  tensorflox: SiTensorflow,
+  openia: SiOpenai,
+  fastapi: SiFastapi,
+  flask: SiFlask
+
 };
 
 
@@ -100,29 +109,32 @@ export const backendTech = [
 export const mobilTech = [
   { icon: SiKotlin, name: "Kotlin", color: "text-fuchsia-500", slug:"" },
   { icon: SiFlutter, name: "Flutter", color: "text-sky-500", slug:"" },
-  { icon: FaSwift, name: "Swift", color: "text-orange-400", slug:"" },
+  // { icon: FaSwift, name: "Swift", color: "text-orange-400", slug:"" },
   { icon: TbBrandReactNative, name: "ReactNative", color: "text-blue-600", slug:"" },
 ];
 
 export const softwareTech = [
-  { icon: SiDotnet, name: "Dotnet", color: "text-fuchsia-500", slug:"" },
-  { icon: TbBrandCSharp, name: "CSharp", color: "text-purple-800", slug:"" },
+  // { icon: SiDotnet, name: "Dotnet", color: "text-fuchsia-500", slug:"" },
+  // { icon: TbBrandCSharp, name: "CSharp", color: "text-purple-800", slug:"" },
   { icon: FaPython, name: "Python", color: "text-blue-600", slug:"" },
   { icon: FaJava, name: "Java", color: "text-blue-800", slug:"" },
   { icon: DiDjango, name: "Django", color: "text-green-800", slug:"" },
-  { icon: BiLogoGoLang, name: "GO", color: "text-blue-800", slug:"" },
-  { icon: SiCplusplus, name: "C++", color: "text-blue-500", slug:"" },
-  { icon: SiRust, name: "Rust", color: "text-black", slug:"" },
+  // { icon: BiLogoGoLang, name: "GO", color: "text-blue-800", slug:"" },
+  // { icon: SiCplusplus, name: "C++", color: "text-blue-500", slug:"" },
+  // { icon: SiRust, name: "Rust", color: "text-black", slug:"" },
 ];
 
 export const iaTech = [
-
+  { icon: SiTensorflow, name: "TensorFlow", color: "text-orange-500", slug: "tensorflow" },
+  { icon: SiOpenai, name: "OpenAI GPT", color: "text-green-500", slug: "openai-gpt" },
+  { icon: SiFastapi, name: "FastAPI", color: "text-teal-500", slug: "fastapi" },
+  { icon: SiFlask, name: "Flask", color: "text-gray-700", slug: "flask" },
 ];
 
 export const infraTech = [
   { icon: FaDocker, name: "Docker", color: "text-sky-400", slug:"" },
   { icon: SiKubernetes, name: "Kubernetes", color: "text-blue-800", slug:"" },
-  { icon: FaAws, name: "FaAws", color: "text-orange-600", slug:"" },
+  // { icon: FaAws, name: "FaAws", color: "text-orange-600", slug:"" },
   { icon: FaGithub, name: "Github", color: "text-black-800", slug:"" },
   { icon: FaGitAlt, name: "Git", color: "text-red-500", slug:"" },
   { icon: SiVercel, name: "Vercel", color: "text-black-800", slug:"" },
@@ -131,6 +143,6 @@ export const infraTech = [
 export const designerTech = [
   { icon: PiFigmaLogoFill, name: "Figma", color: "text-gray-700", slug:"" },
   { icon: SiAdobexd, name: "Adobexd", color: "text-fuchsia-900", slug:"" },
-  { icon: TbBrandBlender, name: "Blender", color: "text-orange-500", slug:"" },
-  { icon: FaSketch, name: "Sketch ", color: "text-yellow-500", slug:"" },
+  // { icon: TbBrandBlender, name: "Blender", color: "text-orange-500", slug:"" },
+  // { icon: FaSketch, name: "Sketch ", color: "text-yellow-500", slug:"" },
 ];

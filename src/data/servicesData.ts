@@ -41,30 +41,30 @@ export const ServicesIACardData: CardData[] = [
     color: "indigo",
     icon: "/assets/images/cardImg.png",
   },
-  {
-    slug: "blockchain",
-    title: "Blockchain",
-    details: "Creamos aplicaciones y sistemas basados en blockchain que garantizan seguridad, transparencia y confianza en tus operaciones digitales.",
-    color: "orange",
-    icon: "/assets/images/cardImg.png",
-  },
-  {
-    slug: "machine-learning",
-    title: "Machine Learning",
-    details: "Implementamos modelos de machine learning que analizan datos y generan predicciones inteligentes para anticiparte a las necesidades del mercado.",
-    color: "teal",
-    icon: "/assets/images/cardImg.png",
-  },
+  // {
+  //   slug: "blockchain",
+  //   title: "Blockchain",
+  //   details: "Creamos aplicaciones y sistemas basados en blockchain que garantizan seguridad, transparencia y confianza en tus operaciones digitales.",
+  //   color: "orange",
+  //   icon: "/assets/images/cardImg.png",
+  // },
+  // {
+  //   slug: "machine-learning",
+  //   title: "Machine Learning",
+  //   details: "Implementamos modelos de machine learning que analizan datos y generan predicciones inteligentes para anticiparte a las necesidades del mercado.",
+  //   color: "teal",
+  //   icon: "/assets/images/cardImg.png",
+  // },
 ];
 
 export const InfraestructureSupportCardData: CardData[] = [
-  {
-    slug: "soporte-tecnico",
-    title: "Soporte técnico",
-    details: "Ofrecemos soporte técnico especializado para garantizar el correcto funcionamiento de tus sistemas, resolviendo incidencias y optimizando el rendimiento de tus aplicaciones.",
-    color: "indigo",
-    icon: "/assets/images/cardImg.png",
-  },
+  // {
+  //   slug: "soporte-tecnico",
+  //   title: "Soporte técnico",
+  //   details: "Ofrecemos soporte técnico especializado para garantizar el correcto funcionamiento de tus sistemas, resolviendo incidencias y optimizando el rendimiento de tus aplicaciones.",
+  //   color: "indigo",
+  //   icon: "/assets/images/cardImg.png",
+  // },
   {
     slug: "despliegue",
     title: "Despliegue de Aplicaciones",
@@ -89,13 +89,13 @@ export const DesignerQACardData: CardData[] = [
     color: "indigo",
     icon: "/assets/images/cardImg.png",
   },
-  {
-    slug: "investigacion",
-    title: "Investigación",
-    details: "Realizamos investigación de usuarios y análisis de mercado para comprender necesidades reales, validando ideas y garantizando que el diseño y desarrollo se basen en datos sólidos.",
-    color: "orange",
-    icon: "/assets/images/cardImg.png",
-  },
+  // {
+  //   slug: "investigacion",
+  //   title: "Investigación",
+  //   details: "Realizamos investigación de usuarios y análisis de mercado para comprender necesidades reales, validando ideas y garantizando que el diseño y desarrollo se basen en datos sólidos.",
+  //   color: "orange",
+  //   icon: "/assets/images/cardImg.png",
+  // },
   {
     slug: "qa",
     title: "QA",

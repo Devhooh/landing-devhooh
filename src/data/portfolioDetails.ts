@@ -174,7 +174,7 @@ export const portfolioDetails: Project[] = [
   {
     id: 2,
     slug: "control-inventario",
-    title: "App de Control de Inventario para InnoSoft",
+    title: "Desarrollo web para InnoSoft",
     company: "InnoSoft",
     projectName: "App de Control de Inventario",
     location: "Colombia",
@@ -301,7 +301,7 @@ export const portfolioDetails: Project[] = [
   {
     id: 3,
     slug: "learning-interactiva",    
-    title: "Plataforma de E-learning Interactiva para EduNext",
+    title: "Diseño UX/UI para EduNext",
     company: "EduNext",
     projectName: "Learning Interactiva",
     location: "Chile",
@@ -413,7 +413,7 @@ export const portfolioDetails: Project[] = [
   {
     id: 4,
     slug: "reservas-online",
-    title: "Sistema de Reservas Online para ReservaPlus",
+    title: "Desarrolllo web para ReservaPlus",
     company: "ReservaPlus",
     projectName: "Sistema de Reservas Online",
     location: "México",
@@ -541,7 +541,7 @@ export const portfolioDetails: Project[] = [
   {
   id: 5,
   slug: "fitness-custom",
-  title: "Aplicación de Fitness Personalizada para FitLife",
+  title: "Desarrollo movil para FitLife",
   company: "FitLife",
   projectName: "Aplicación de Fitness Personalizada",
   location: "Perú",
@@ -668,7 +668,7 @@ export const portfolioDetails: Project[] = [
 {
   id: 6,
   slug: "contabilidad",
-  title: "Software de Contabilidad en la Nube para ContaPro",
+  title: "Desarrollo web para ContaPro",
   company: "ContaPro",
   projectName: "Software de Contabilidad en la Nube",
   location: "Colombia",

@@ -5,6 +5,12 @@ interface ProcessStep {
   points?: string[];
 }
 
+interface FAQItemProps  {
+  id: number;
+  question: string;
+  answer: string;
+};
+
 interface Benefits {
   icon: string;
   title: string;
@@ -40,6 +46,7 @@ export interface ServicesData {
   servicesData: ServicesInclud[]
   stackTech: TechStack[]
   process: ProcessStep[]
+  faq: FAQItemProps[]
 }
 
 export const ServicesDetails: Record<string, ServicesData> = {
@@ -96,43 +103,64 @@ export const ServicesDetails: Record<string, ServicesData> = {
       {
         number: 1,
         title: "Reunión Inicial",
-        description:
-          "Nos reunimos contigo para conocer a fondo tus necesidades, objetivos de negocio y expectativas. Esta etapa es fundamental para entender qué tipo de página web necesitas, el público al que deseas llegar y los resultados que esperas lograr. Aquí construimos la base del proyecto asegurando que todos estemos alineados desde el inicio.",
+        description: "Nos reunimos contigo para conocer a fondo tus necesidades, objetivos de negocio y expectativas. Esta etapa es fundamental para entender qué tipo de página web necesitas, el público al que deseas llegar y los resultados que esperas lograr. Aquí construimos la base del proyecto asegurando que todos estemos alineados desde el inicio.",
       },
       {
         number: 2,
         title: "Planificación",
-        description:
-          "Definimos un plan de trabajo claro y organizado, donde estructuramos el proyecto en fases y tareas específicas. En esta etapa nos aseguramos de que cada detalle quede documentado, desde la arquitectura web hasta las funcionalidades principales, estableciendo plazos realistas y entregables bien definidos.",
+        description: "Definimos un plan de trabajo claro y organizado, donde estructuramos el proyecto en fases y tareas específicas. En esta etapa nos aseguramos de que cada detalle quede documentado, desde la arquitectura web hasta las funcionalidades principales, estableciendo plazos realistas y entregables bien definidos.",
         points: ["Arquitectura web", "Definición de funcionalidades", "Plazos de entrega"],
       },
       {
         number: 3,
         title: "Diseño UI/UX",
-        description:
-          "Creamos un diseño visual atractivo y una experiencia de usuario intuitiva. Te presentamos wireframes y prototipos interactivos para que puedas visualizar cómo lucirá tu sitio antes de ser desarrollado. Nuestro objetivo es que tu página no solo se vea bien, sino que también sea fácil de navegar para tus usuarios.",
+        description: "Creamos un diseño visual atractivo y una experiencia de usuario intuitiva. Te presentamos wireframes y prototipos interactivos para que puedas visualizar cómo lucirá tu sitio antes de ser desarrollado. Nuestro objetivo es que tu página no solo se vea bien, sino que también sea fácil de navegar para tus usuarios.",
         points: ["Wireframes", "Prototipos interactivos", "Validación con cliente"],
       },
       {
         number: 4,
         title: "Desarrollo",
-        description:
-          "Construimos tu sitio web utilizando tecnologías modernas que aseguran velocidad, seguridad y escalabilidad. Implementamos un frontend responsivo que se adapta a cualquier dispositivo y un backend optimizado para manejar tus necesidades. También incluimos prácticas de optimización SEO para que tu sitio tenga mayor visibilidad en buscadores.",
+        description: "Construimos tu sitio web utilizando tecnologías modernas que aseguran velocidad, seguridad y escalabilidad. Implementamos un frontend responsivo que se adapta a cualquier dispositivo y un backend optimizado para manejar tus necesidades. También incluimos prácticas de optimización SEO para que tu sitio tenga mayor visibilidad en buscadores.",
         points: ["Frontend responsivo", "Integración con APIs", "Optimización SEO"],
       },
       {
         number: 5,
         title: "Pruebas",
-        description:
-          "Antes de lanzar tu sitio web, realizamos pruebas exhaustivas para asegurar que todo funcione correctamente. Validamos la usabilidad, compatibilidad en diferentes navegadores y dispositivos, así como la velocidad de carga. Esto nos permite garantizar que tu página ofrecerá la mejor experiencia posible a tus usuarios.",
+        description: "Antes de lanzar tu sitio web, realizamos pruebas exhaustivas para asegurar que todo funcione correctamente. Validamos la usabilidad, compatibilidad en diferentes navegadores y dispositivos, así como la velocidad de carga. Esto nos permite garantizar que tu página ofrecerá la mejor experiencia posible a tus usuarios.",
         points: ["Pruebas de usabilidad", "Compatibilidad en navegadores", "Optimización de velocidad"],
       },
       {
         number: 6,
         title: "Entrega & Soporte",
-        description:
-          "Publicamos tu página web en el servidor definitivo y nos aseguramos de que todo esté funcionando de manera óptima. Además, te brindamos soporte técnico continuo para resolver cualquier duda o necesidad que pueda surgir después del lanzamiento. Queremos que tu proyecto siga creciendo contigo.",
+        description: "Publicamos tu página web en el servidor definitivo y nos aseguramos de que todo esté funcionando de manera óptima. Además, te brindamos soporte técnico continuo para resolver cualquier duda o necesidad que pueda surgir después del lanzamiento. Queremos que tu proyecto siga creciendo contigo.",
       },
+    ],
+    faq: [
+      {
+        id: 1,
+        question: "¿Cuánto tiempo tarda en desarrollarse una página web?",
+        answer: "El tiempo depende del tamaño y complejidad del proyecto. Una web básica puede tardar entre 2 y 4 semanas, mientras que proyectos más grandes con funcionalidades personalizadas pueden tomar varios meses. Siempre planificamos entregas parciales para que veas avances constantes."
+      },
+      {
+        id: 2,
+        question: "¿El diseño será adaptable a celulares y tablets?",
+        answer: "Sí, todos nuestros desarrollos son 100% responsivos. Esto significa que tu página web se adaptará automáticamente a cualquier dispositivo, ya sea computadora, tablet o celular, garantizando una buena experiencia de navegación."
+      },
+      {
+        id: 3,
+        question: "¿Puedo actualizar el contenido de mi página yo mismo?",
+        answer: "Claro, integramos tu web con un sistema de gestión de contenidos (CMS) o desarrollamos un panel personalizado para que puedas modificar textos, imágenes y secciones sin necesidad de conocimientos técnicos."
+      },
+      {
+        id: 4,
+        question: "¿La página estará optimizada para aparecer en Google?",
+        answer: "Sí, aplicamos prácticas de SEO técnico como estructura optimizada, carga rápida, etiquetas correctas y compatibilidad móvil. Además, podemos asesorarte en estrategias de posicionamiento para mejorar tu visibilidad en buscadores."
+      },
+      {
+        id: 5,
+        question: "¿Ofrecen soporte después de la entrega?",
+        answer: "Sí, ofrecemos planes de soporte y mantenimiento que incluyen actualizaciones, copias de seguridad y mejoras continuas para que tu página web siempre funcione de manera óptima y segura."
+      }
     ]
   },
 };

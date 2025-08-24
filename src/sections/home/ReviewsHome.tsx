@@ -11,11 +11,14 @@ import 'swiper/css/pagination';
 
 export default function ReviewsHome() {
   return (
-    <div className="py-4 bg-gray-100">
+    <div className="pb-10 pt-4 bg-gray-900">
       <div className="max-w-6xl mx-auto px-8 md-tablet:px-16 table-lg:px-40">
         <div className="text-center mb-12">
-          <p className="mt-4 text-3xl text-gray-600">
-            Mira lo que nuestros clientes tienen que decir sobre nuestro trabajo.
+          <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-purple-600">
+            Lo que dicen nuestros clientes
+          </h2>
+          <p className="mt-4 text-gray-300 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed">
+            Opiniones reales de clientes satisfechos que confían en nuestro trabajo y nuestras soluciones digitales.
           </p>
         </div>
 

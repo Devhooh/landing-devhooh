@@ -24,7 +24,7 @@ export function ProjectSlider({
   const logosLoop = logos.concat(logos);
 
   return (
-    <div className="overflow-hidden bg-gray-400 m-0">
+    <div className="overflow-hidden bg-fuchsia-300 m-0">
       <div
         className={`flex ${animationClass} gap-${gap}`}
         style={{ minWidth: `${logosLoop.length * 10}rem` }} // opcional, asegura que no se corte

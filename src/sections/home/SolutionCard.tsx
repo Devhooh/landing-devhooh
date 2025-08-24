@@ -14,23 +14,22 @@ export function SolutionCard({
   reverse = false,
 }: SolutionCardProps) {
   return (
-    // Contenedor externo que controla ancho y alineación de la card entera
     <div
       className={`
         w-full table-lg:w-3/4
         ${reverse ? "table-lg:self-end" : "table-lg:self-start"}
       `}
     >
-      {/* Card interna */}
       <div
         className={`
-          bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200
+          bg-white rounded-2xl shadow-lg border border-gray-100
+          overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl
           flex flex-col table-lg:flex-row
           ${reverse ? "table-lg:flex-row-reverse" : ""}
         `}
       >
         {/* Imagen */}
-        <div className="p-6 md-tablet:w-1/2 md-tablet:mx-auto table-lg:w-1/3 flex items-center justify-center bg-gray-100">
+        <div className="p-6 md-tablet:w-1/2 table-lg:w-1/3 flex items-center justify-center bg-gradient-to-br from-sky-50 to-sky-100">
           <Image
             width={220}
             height={220}
@@ -41,8 +40,8 @@ export function SolutionCard({
         </div>
 
         {/* Texto */}
-        <div className="table-lg:w-2/3 p-6 md-tablet:p-8 flex flex-col md-tablet:justify-center text-center">
-          <h3 className="text-2xl md-tablet:text-3xl font-bold text-gray-900 mb-4">
+        <div className="table-lg:w-2/3 p-6 md-tablet:p-10 flex flex-col justify-center text-center md-tablet:text-left">
+          <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-gray-900 mb-3">
             {title}
           </h3>
           <p className="text-gray-600 text-base md-tablet:text-lg leading-relaxed">
@@ -53,4 +52,3 @@ export function SolutionCard({
     </div>
   );
 }
-

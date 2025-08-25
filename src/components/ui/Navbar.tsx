@@ -30,7 +30,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-fuchsia-400">
+    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-white/50">
       <div className="relative max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
         {/* Logo de Devhoo */}
         <Link href="/" className="flex items-center gap-2">
@@ -44,7 +44,7 @@ export default function Navbar() {
         </Link>
 
         {/* Menu de secciones PC*/}
-        <nav className="hidden table-lg:flex gap-6 text-gray-100 font-semibold">
+        <nav className="hidden table-lg:flex gap-6 text-blue-950 font-semibold">
           {links.map((values) => {
             const isActive = pathname === values.path;
             return (

@@ -22,7 +22,7 @@ export function SolutionCard({
     >
       <div
         className={`
-          bg-white rounded-2xl shadow-lg border border-gray-100
+          bg-purple-400/50 rounded-2xl shadow-lg border border-purple-400
           overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl
           flex flex-col table-lg:flex-row
           ${reverse ? "table-lg:flex-row-reverse" : ""}

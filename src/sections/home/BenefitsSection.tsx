@@ -3,7 +3,7 @@ import styles from "./BenefitsSection.module.css";
 
 export function BenefitsSection() {
   return (
-    <section className="bg-gray-900 px-6 py-16 md-tablet:px-8 table-lg:px-32 relative">
+    <section className="bg-violet-950 px-6 py-16 md-tablet:px-8 table-lg:px-32 relative">
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-8">
 
         {/* FILA SUPERIOR DE CÍRCULOS */}

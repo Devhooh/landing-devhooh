@@ -38,12 +38,12 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="w-full p-4 bg-gray-200">
+    <section className="w-full p-4 bg-gray-50">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 7000 }}
+        // autoplay={{ delay: 7000 }}
         loop
         breakpoints={{
           0: {pagination: false},
@@ -67,11 +67,11 @@ export default function ServicesSection() {
                     className="flex-1 max-h-64 object-contain rounded-lg"
                   />
                   {/* Texto */}
-                  <div className="flex-1 space-y-4 text-center">
-                    <h2 className="text-4xl sm:text-5xl font-extrabold text-indigo-950 leading-tight mb-4">
+                  <div className="flex-1 text-center">
+                    <h2 className="text-4xl sm:text-5xl font-extrabold text-indigo-950 leading-tight mb-8">
                       {slide.title}
                     </h2>
-                    <p className="text-lg sm:text-xl text-gray-700 mb-6 max-w-2xl mx-auto">
+                    <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
                       {slide.subtitle}
                     </p>
                     
@@ -95,11 +95,11 @@ export default function ServicesSection() {
                   ${slide.layout === "right" ? "flex-row-reverse text-right" : "justify-between"}
                 `}>
                   {/* Texto */}
-                  <div className="flex-1 space-y-4">
-                    <h2 className={`text-4xl sm:text-5xl font-extrabold text-indigo-950 leading-tight mb-4 ${slide.layout === "right" ? "text-right" : ""}`}>
+                  <div className="flex-1">
+                    <h2 className={`text-4xl sm:text-5xl font-extrabold text-indigo-950 leading-tight mb-8 ${slide.layout === "right" ? "text-right ml-8" : ""}`}>
                       {slide.title}
                     </h2>
-                    <p className={`text-lg sm:text-xl text-gray-700 mb-6 max-w-2xl font-medium ${slide.layout === "right" ? "ml-auto text-right" : ""}`}>
+                    <p className={`text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl font-medium ${slide.layout === "right" ? "text-right ml-20" : ""}`}>
                       {slide.subtitle}
                     </p>
 
@@ -120,7 +120,7 @@ export default function ServicesSection() {
                         key={i}
                         src={src}
                         alt={slide.title}
-                        className="w-64 h-auto object-contain rounded-lg"
+                        className="w-72 h-auto object-contain rounded-lg"
                       />
                     ))}
                   </div>

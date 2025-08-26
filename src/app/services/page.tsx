@@ -10,7 +10,7 @@ import { projectsData } from "@/data/portfolioData";
 
 export default function Services() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col">
       <ServicesSection/>
       <ServicesCardsSection/>
 

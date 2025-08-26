@@ -90,7 +90,11 @@ export function SolutionsSection() {
             Impulsamos tu <span className="bg-clip-text bg-gradient-to-r from-fuchsia-500 to-pink-500">negocio</span> con <span className="bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">soluciones modernas</span>
           </h2>
           <p className="text-gray-700 text-base md-tablet:text-lg leading-relaxed">
-            Desde tu primera idea hasta el lanzamiento, desarrollamos <span className="font-semibold text-blue-600">webs</span>, <span className="font-semibold text-pink-500">apps</span> y sistemas inteligentes que ayudan a tu empresa a destacar en el entorno digital, optimizando procesos y mejorando la experiencia de tus usuarios.
+            Desde tu primera idea hasta el lanzamiento, desarrollamos {""} 
+            <span className="font-semibold text-blue-600">webs</span>, {""}
+            <span className="font-semibold text-pink-500">apps</span> y {""}
+            <span className="font-semibold text-blue-600">sistemas inteligentes</span> {""}
+            que ayudan a tu empresa a destacar en el entorno digital, optimizando procesos y mejorando la experiencia de tus usuarios.
           </p>
         </div>
       </div>
@@ -111,7 +115,7 @@ export function SolutionsSection() {
       {/* Botón */}
       <div className="flex justify-center mt-12">
         <Link href="/services">
-          <button className="text-lg md-tablet:text-xl bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white py-4 px-10 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:opacity-90 transition-all duration-300">
+          <button className="text-xl md-tablet:text-2xl bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white py-4 px-8 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:opacity-90 transition-all duration-300">
             Vea todos nuestros servicios
           </button>
         </Link>

@@ -12,7 +12,7 @@ export default function ServicesCardsSection() {
           <div className="flex flex-col gap-6 self-start order-last table-lg:order-first">
             
             {/* Tarjeta pequeña */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-md w-full">
+            <div className="bg-indigo-900 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-md w-full">
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
                 <div className="bg-fuchsia-500/80 p-6 rounded-full flex-shrink-0">
                   <Lightbulb className="h-10 w-10 text-yellow-3" />
@@ -27,7 +27,7 @@ export default function ServicesCardsSection() {
             </div>
 
             {/* Tarjeta mediana */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-xl w-full">
+            <div className="bg-indigo-900 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-xl w-full">
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
                 <div className="bg-fuchsia-500/80 p-6 rounded-full flex-shrink-0">
                   <Rocket className="h-10 w-10 text-white" />
@@ -42,7 +42,7 @@ export default function ServicesCardsSection() {
             </div>
 
             {/* Tarjeta grande */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-2xl w-full">
+            <div className="bg-indigo-900 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-2xl w-full">
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
                 <div className="bg-fuchsia-500/80 p-6 rounded-full flex-shrink-0">
                   <Repeat className="h-10 w-10 text-white" />
@@ -59,7 +59,7 @@ export default function ServicesCardsSection() {
           
           {/* Lado derecho - Título y subtítulo */}
           <div className="text-center table-lg:text-right order-first table-lg:order-last">
-            <h2 className="text-5xl md-tablet:text-6xl font-extrabold text-white leading-relaxed mb-8">
+            <h2 className="text-4xl md-tablet:text-6xl font-extrabold text-white leading-relaxed mb-8">
               ¿En qué etapa se encuentra tu proyecto?
             </h2>
             <p className="text-2xl sm:text-xl text-gray-200 mb-8 mx-auto table-lg:mx-0">

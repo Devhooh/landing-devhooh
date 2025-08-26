@@ -35,11 +35,12 @@ export default function Navbar() {
         {/* Logo de Devhoo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/assets/images/noBgBlack.png"
+            src="/assets/images/devhooh.png"
             alt="Devhoo-logo"
             width={120}
             height={60}
             style={{ height: "auto", width: "auto" }}
+            className="rounded-xl"
           />
         </Link>
 
@@ -99,9 +100,9 @@ export default function Navbar() {
           <Link href="/" onClick={toggleMenu}>
             <Image
               className="rounded-xl"
-              src="/assets/images/BgColor.png"
+              src="/assets/images/logoMovil.png"
               alt="Devhoo-logo"
-              width={120}
+              width={60}
               height={60}
               style={{ height: "auto", width: "auto" }}
             />

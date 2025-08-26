@@ -38,7 +38,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="w-full p-4 bg-gray-50">
+    <section className="w-full pb-12 bg-gray-50">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -49,13 +49,13 @@ export default function ServicesSection() {
           0: {pagination: false},
           950: {pagination: {clickable: true}},
         }}
-        className="max-w-6xl mx-auto"
+        className="max-w-[1550px] mx-auto"
       >
         {slides.map((slide, idx) => (
           <SwiperSlide key={idx}>
             
             {/* Layout PC */}
-            <div className="hidden table-lg:flex items-center min-h-[350px] gap-4 px-4 justify-between">
+            <div className="hidden table-lg:flex items-center min-h-[400px] gap-4 justify-center">
               {slide.layout === "center" ? (
                 <>
                   {/* Imagen izquierda */}
@@ -76,7 +76,7 @@ export default function ServicesSection() {
                     </p>
                     
                     <Link href="/contact">
-                      <button className="px-8 py-4 text-lg md:text-xl font-semibold bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto">
+                      <button className="px-8 py-4 text-lg md:text-xl font-semibold bg-fuchsia-500 text-white  rounded-xl shadow-md hover:bg-fuhsia-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto">
                         {slide.cta}
                       </button>
                     </Link>
@@ -91,20 +91,20 @@ export default function ServicesSection() {
                   />
                 </>
               ) : (
-                <div className={`flex items-center min-h-[400px] gap-8 px-8
-                  ${slide.layout === "right" ? "flex-row-reverse text-right" : "justify-between"}
+                <div className={`flex items-center min-h-[400px] gap-8 px-10 w-full
+                  ${slide.layout === "right" ? "flex-row-reverse text-right" : "justify-center"}
                 `}>
                   {/* Texto */}
                   <div className="flex-1">
-                    <h2 className={`text-4xl sm:text-5xl font-extrabold text-indigo-950 leading-tight mb-8 ${slide.layout === "right" ? "text-right ml-8" : ""}`}>
+                    <h2 className={`text-4xl sm:text-5xl font-extrabold text-indigo-950 leading-tight mb-8 ${slide.layout === "right" ? "text-right" : ""}`}>
                       {slide.title}
                     </h2>
-                    <p className={`text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl font-medium ${slide.layout === "right" ? "text-right ml-20" : ""}`}>
+                    <p className={`text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl font-medium ${slide.layout === "right" ? "text-right ml-auto" : ""}`}>
                       {slide.subtitle}
                     </p>
 
                     <Link href="/contact">
-                      <button className={`mt-4 px-8 py-4 text-lg table-lg:text-xl font-semibold bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 hover:scale-105 transform transition-all duration-300 flex gap-2
+                      <button className={`mt-4 px-8 py-4 text-lg table-lg:text-xl font-semibold bg-fuchsia-500 text-white  rounded-xl shadow-md hover:bg-fuchsia-600 hover:scale-105 transform transition-all duration-300 flex gap-2
                         ${slide.layout === "right" ? "ml-auto" : "mr-auto"}`}
                       >
                         {slide.cta}
@@ -146,7 +146,7 @@ export default function ServicesSection() {
                 {slide.subtitle}
               </p>
               <Link href="/contact" className="order-4">
-                <button className="px-8 py-4 text-lg md:text-xl font-semibold bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto">
+                <button className="px-8 py-4 text-lg md:text-xl font-semibold bg-fuchsia-500 text-white  rounded-xl shadow-md hover:bg-fuchsia-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2 mx-auto">
                   {slide.cta}
                 </button>
               </Link>

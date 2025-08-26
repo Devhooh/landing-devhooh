@@ -26,11 +26,11 @@ export default function ServicesProjects({
   showService = true, // por defecto true
 }: ServicesProjectsProps) {
   return (
-    <section className="w-full h-auto">
+    <section className="w-full h-auto ">
       {/* Card */}
-      <div className="h-[400px] bg-white rounded-lg shadow-xl overflow-hidden flex flex-col">
+      <div className="h-[400px] bg-purple-800/40 rounded-2xl shadow-xl overflow-hidden flex flex-col">
         {/* Imagen */}
-        <div className="bg-gray-200 p-3 h-48 w-full flex items-center justify-center">
+        <div className="bg-purple-300 p-3 h-48 w-full flex items-center justify-center">
           <Image
             width={400}
             height={400}
@@ -57,7 +57,7 @@ export default function ServicesProjects({
 
           <div>
             <Link href={`/portfolio/${project.slug}`}>
-              <button className="bg-white text-indigo-900 hover:border-2 border-indigo-950 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-gray-300 transform transition">
+              <button className="bg-white text-gray-950 hover:text-white hover:border border-purple-400 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-purple-300 transform transition">
                 Ver más detalles
               </button>
             </Link>

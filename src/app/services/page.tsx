@@ -14,15 +14,8 @@ export default function Services() {
       <ServicesSection/>
       <ServicesCardsSection/>
 
-      <div className="w-full py-10 bg-purple-950/90 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 space-y-10">
-          <div className="flex justify-center">
-            <div className="w-fit py-8 px-8 rounded-2xl bg-fuchsia-400/50">
-              <h3 className="font-extrabold text-gray-100 text-3xl md-tablet:text-5xl text-center">
-                Servicios que ofrecemos
-              </h3>
-            </div>
-          </div>
+      <div className="w-full bg-purple-800/40 py-10 overflow-hidden">
+        <div className="max-w-[1550px] mx-auto px-6 space-y-10">
 
           <CaroulselSection
             title="Desarrollo Personalizado"

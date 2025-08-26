@@ -41,13 +41,13 @@ export const ServicesIACardData: CardData[] = [
     color: "indigo",
     icon: "/assets/images/cardImg.png",
   },
-  // {
-  //   slug: "blockchain",
-  //   title: "Blockchain",
-  //   details: "Creamos aplicaciones y sistemas basados en blockchain que garantizan seguridad, transparencia y confianza en tus operaciones digitales.",
-  //   color: "orange",
-  //   icon: "/assets/images/cardImg.png",
-  // },
+  {
+    slug: "blockchain",
+    title: "Blockchain",
+    details: "Creamos aplicaciones y sistemas basados en blockchain que garantizan seguridad, transparencia y confianza en tus operaciones digitales.",
+    color: "orange",
+    icon: "/assets/images/cardImg.png",
+  },
   // {
   //   slug: "machine-learning",
   //   title: "Machine Learning",

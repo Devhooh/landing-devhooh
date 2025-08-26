@@ -30,14 +30,15 @@ export default function CaroulselSection ({title, cardData}: CardCaroulselSectio
     <section className="bg-white w-full h-full pt-10 overflow-hidden rounded-2xl ">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
-        <h2 className="px-4 text-2xl md-tablet:text-4xl text-left font-extrabold text-indigo-950">
+        <h2 className="px-4 text-2xl md-tablet:text-4xl text-center font-extrabold bg-clip-text text-transparent bg-gray-800">
           {title}
         </h2>
         
         <Swiper
           modules={[Navigation, Pagination]}
           navigation
-          className="w-full h-full flex items-stretch"
+          className="w-full flex justify-center"
+          centerInsufficientSlides={true} 
           autoHeight={true}
           slidesPerView={1}
           spaceBetween={12} 
@@ -53,7 +54,7 @@ export default function CaroulselSection ({title, cardData}: CardCaroulselSectio
           }}
         >
           {cardData.map((card, index) => (
-            <SwiperSlide key={index} className="px-4 py-8 md-tablet:pb-10 flex items-stretch">
+            <SwiperSlide key={index} className="px-4 py-8 md-tablet:pb-10 flex justify-center items-center">
               <CaroulselCard card={card} />
             </SwiperSlide>
           ))}

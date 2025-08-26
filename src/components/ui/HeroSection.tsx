@@ -59,7 +59,7 @@ export default function HeroSection({
       className={`w-full p-8 ${!backgroundImageSrc ? backgroundColor : ""}`}
       style={sectionStyle}
     >
-      <div className="max-w-7xl mx-auto flex flex-col table-lg:flex-row items-center gap-8 md-tablet:gap-16">
+      <div className="max-w-[1550px] mx-auto flex flex-col table-lg:flex-row items-center gap-8 md-tablet:gap-16">
         {/* Contenido (texto y CTA) */}
         <div className={`flex-1 ${contentAlignment} ${isCenterLayout ? "w-full" : contentOrder}`}>
           <h1 className="text-4xl md-tablet:text-4xl font-extrabold text-blue-950 leading-tight mb-10">

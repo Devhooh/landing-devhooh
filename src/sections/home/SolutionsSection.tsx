@@ -21,7 +21,7 @@ export function SolutionsSection() {
 ];
 
   return (
-    <section className="w-full py-12 bg-gradient-to-b from-fuchsia-300/50 to-purple-200/80">
+    <section className="w-full py-12 bg-gradient-to-b from-fuchsia-200/30 to-blue-100/50">
       {/* Encabezado */}
       <div className="px-5 md-tablet:px-10 flex flex-col text-center table-lg:flex-row justify-center items-center mb-12 gap-6">
         <div className="max-w-2xl">
@@ -29,8 +29,8 @@ export function SolutionsSection() {
             Impulsamos tu <span className="bg-clip-text bg-gradient-to-r from-fuchsia-500 to-pink-500">negocio</span> con <span className="bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">soluciones modernas</span>
           </h2>
           <p className="text-gray-700 text-base md-tablet:text-lg leading-relaxed">
-            Desde tu primera idea hasta el lanzamiento, desarrollamos {""} 
-            <span className="font-semibold text-blue-600">webs</span>, {""}
+            Desde tu primera idea hasta el lanzamiento, {""} 
+            <span className="font-semibold text-blue-600">desarrollamos webs</span>, {""}
             <span className="font-semibold text-pink-500">apps</span> y {""}
             <span className="font-semibold text-blue-600">sistemas inteligentes</span> {""}
             que ayudan a tu empresa a destacar en el entorno digital, optimizando procesos y mejorando la experiencia de tus usuarios.

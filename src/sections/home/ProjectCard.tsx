@@ -25,7 +25,7 @@ export function ProjectCard({
   slug,
 }: ProjectCardProps) {
   return (
-    <div className="h-[450px] bg-gradient-to-t from-violet-500/80 to-indigo-300/80 rounded-3xl overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,255,255,0.4)]">
+    <div className="h-[450px] bg-gradient-to-b from-fuchsia-500/80 to-purple-300/80 rounded-3xl overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,255,255,0.4)]">
       
       {/* Imagen */}
       <div className="relative w-full h-48 md-tablet:h-56 table-lg:h-64 border-b border-cyan-500/40">

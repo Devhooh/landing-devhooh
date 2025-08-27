@@ -11,8 +11,7 @@ import 'swiper/css/pagination';
 
 export default function ReviewsHome() {
   return (
-    <div className="p-10">
-      <div className="max-w-8xl mx-auto px-8 md-tablet:px-12">
+      <div className="max-w-8xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-200">
             Lo que dicen nuestros clientes
@@ -36,6 +35,5 @@ export default function ReviewsHome() {
           ))}
         </Swiper>
       </div>
-    </div>
   );
 }

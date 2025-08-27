@@ -109,7 +109,7 @@ export function BenefitsSection() {
   const splitText = (text: string) => text.split("");
 
   return (
-    <section className="bg-gradient-to-b from-blue-950 via-violet-950 to-blue-100 px-2 py-16 md-tablet:px-8 table-lg:px-32 relative">
+    <section className="bg-gradient-to-b from-blue-950 via-violet-950 to-blue-100 px-2 py-20 md-tablet:px-8 table-lg:px-32 relative">
       <div className="max-w-[1550px] pb-16 mx-auto flex flex-col items-center gap-8">
 
         {/* FILA SUPERIOR DE CÍRCULOS */}

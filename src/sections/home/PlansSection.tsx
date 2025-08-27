@@ -1,11 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { CheckCircle, Star, Shield } from "lucide-react";
 
 export function PlansSection() {
-
   const planes = [
     {
       title: "Plan Starter",
       subtitle: "Ideal para emprendedores y pequeñas empresas que buscan su primera presencia digital.",
+      icon: CheckCircle,
       beneficio: [
         "Landing page o web básica profesional y rápida",
         "App prototipo o MVP",
@@ -17,6 +21,7 @@ export function PlansSection() {
     {
       title: "Plan Enterprise",
       subtitle: "Para empresas que buscan desarrollo avanzado con soporte continuo y escalabilidad.",
+      icon: Star,
       beneficio: [
         "Sitio web o app con varias secciones o funcionalidades",
         "Integración de Inteligencia IA o Machine Learning",
@@ -28,6 +33,7 @@ export function PlansSection() {
     {
       title: "Plan Business",
       subtitle: "Para negocios en crecimiento que necesitan soluciones más robustas y escalables.",
+      icon: Shield,
       beneficio: [
         "Sitio web o app con varias secciones o funcionalidades",
         "Integración con APIs o sistemas internos",
@@ -36,58 +42,83 @@ export function PlansSection() {
         "Mantenimiento inicial y mejoras según tu feedback"
       ]
     },
-  ]
+  ];
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0 },
+    hover: { scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.25)" },
+  };
+
+  const bulletVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: { opacity: 1, scale: 1 },
+  };
 
   return (
-    <section className="w-full py-10 bg-gray-50">
+    <section className="w-full py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        {/* Título */}
-        <h2 className="text-3xl md-tablet:text-4xl table-lg:text-6xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-indigo-900 to-blue-400">
+        <h2 className="text-4xl md-tablet:text-6xl font-extrabold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-violet-400">
           Planes estimados
         </h2>
 
-        {/* Contenedor de tarjetas */}
-        <div className="flex flex-wrap justify-center gap-6">
-          {planes.map((data, index) => (
-            <div 
-              key={index} 
-              className={`
-                rounded-2xl px-8 py-6 flex flex-col items-center text-center 
-                w-80 md-tablet:w-96 table-lg:w-80  // ancho responsive
-                transform transition duration-300 hover:scale-105 hover:shadow-2xl
-                ${index === 1 
-                  ? "bg-gray-800 text-white shadow-2xl border-2 border-gray-700"
-                  : "bg-white text-gray-800 shadow-xl border-2 border-gray-200"}
-              `}
-            >
-              {/* Título */}
-              <h3 className="text-xl font-semibold mb-4">{data.title}</h3>
-              <p className={`mb-6 ${index === 1 ? "text-gray-200" : "text-gray-500"}`}>
-                {data.subtitle}
-              </p>
+        <div className="flex flex-wrap justify-center gap-8">
+          {planes.map((data, index) => {
+            const Icon = data.icon;
+            return (
+              <motion.div
+                key={index}
+                className={`
+                  rounded-3xl px-10 py-8 flex flex-col items-center text-center
+                  w-80 md-tablet:w-96 table-lg:w-80
+                  ${index === 1 
+                    ? "bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white shadow-2xl border border-gray-700" 
+                    : "bg-white text-gray-800 shadow-xl border border-gray-200"}
+                `}
+                initial="hidden"
+                whileInView="show"
+                whileHover="hover"
+                viewport={{ once: true }}
+                variants={cardVariants}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <h3 className="text-2xl font-semibold mb-4">{data.title}</h3>
+                <p className={`mb-6 ${index === 1 ? "text-gray-200" : "text-gray-600"}`}>
+                  {data.subtitle}
+                </p>
 
-              {/* Lista de beneficios */}
-              <ul className={`list-disc text-left space-y-2 mb-6 ${index === 1 ? "text-gray-100" : "text-gray-700"}`}>
-                {data.beneficio.map((values, idx) => (
-                  <li key={idx}>{values}</li>
-                ))}
-              </ul>
+                <div className="m-4 w-full">
+                  <Link href="/contact">
+                    <button
+                      className={`
+                        w-full py-3 px-4 rounded-2xl font-semibold text-lg
+                        ${index === 1
+                          ? "bg-fuchsia-900 text-white hover:bg-fuchsia-500"
+                          : "border border-fuchsia-800 bg-fuchsia-100 text-purple-500 hover:bg-fuchsia-200"}
+                        shadow-lg transition-all duration-300
+                      `}
+                    >
+                      Cotiza tu proyecto
+                    </button>
+                  </Link>
+                </div>
 
-              {/* Botón */}
-              <Link href="/contact">
-                <button 
-                  className={`
-                    w-full py-2 rounded-full px-6 font-semibold
-                    ${index === 1 
-                      ? "bg-gray-200 text-gray-800 hover:bg-gray-300" 
-                      : "bg-gray-800 text-white hover:bg-gray-700"}
-                  `}
-                >
-                  Cotiza tu proyecto
-                </button>
-              </Link>
-            </div>
-          ))}
+                <ul className="text-left space-y-3 mb-6 w-full">
+                  {data.beneficio.map((item, idx) => (
+                    <motion.li
+                      key={idx}
+                      className="flex items-center gap-3 p-2 rounded-lg"
+                      variants={bulletVariants}
+                      transition={{ duration: 0.3, delay: idx * 0.1 }}
+                    >
+                      <Icon className={`w-5 h-5 flex-shrink-0 ${index === 1 ? "text-fuchsia-400" : "text-blue-500"}`} />
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

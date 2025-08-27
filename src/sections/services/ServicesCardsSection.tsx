@@ -5,7 +5,7 @@ import { Lightbulb, Rocket, Repeat } from "lucide-react";
 export default function ServicesCardsSection() {
   return (
     <section className="w-full overflow-hidden">
-      <div className="px-6 table-lg:px-8 py-10 bg-gradient-to-r from-white via-blue-50/80 to-white">
+      <div className="px-6 table-lg:px-8 py-10 bg-gradient-to-l from-fuchsia-200 to-fuchsia-100">
         <div className="max-w-[1550px] mx-auto grid grid-cols-1 table-lg:grid-cols-[6fr_4fr] gap-6 items-start">
           
           {/* Lado izquierdo - Contenedor de las tarjetas */}
@@ -75,7 +75,7 @@ export default function ServicesCardsSection() {
       <div 
   className="
     text-center py-12 px-8 m-32 shadow-2xl mx-auto select-none
-    bg-gradient-to-r from-fuchsia-500 to-purple-600
+    bg-gradient-to-r from-fuchsia-500/70 to-purple-600/70
     rounded-3xl max-w-4xl cursor-pointer
     transform transition-all duration-300
     hover:scale-105 hover:from-fuchsia-600 hover:to-purple-700

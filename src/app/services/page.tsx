@@ -14,7 +14,7 @@ export default function Services() {
       <ServicesSection/>
       <ServicesCardsSection/>
 
-      <div className="w-full pb-10 overflow-hidden">
+      <div className="w-full bg-fuchsia-400 py-10 overflow-hidden">
         <div className="max-w-[1550px] mx-auto md-tablet:px-6 space-y-10">
 
           <CaroulselSection

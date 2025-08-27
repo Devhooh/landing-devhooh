@@ -21,7 +21,7 @@ export function SolutionsSection() {
 ];
 
   return (
-    <section className="w-full py-12">
+    <section className="w-full py-12 bg-gradient-to-b from-fuchsia-300/50 to-purple-200/80">
       {/* Encabezado */}
       <div className="px-5 md-tablet:px-10 flex flex-col text-center table-lg:flex-row justify-center items-center mb-12 gap-6">
         <div className="max-w-2xl">
@@ -39,7 +39,7 @@ export function SolutionsSection() {
       </div>
 
       {/* Cards */}
-      <div className="w-full py-12 px-5 md-tablet:px-10">
+      <div className="w-full pt-12 px-5 md-tablet:px-10">
         <div className="mx-auto flex flex-col gap-10 max-w-[1550px] justify-center">
           {solutions.map((s, i) => (
             <SolutionCard

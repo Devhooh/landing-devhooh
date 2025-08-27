@@ -3,7 +3,6 @@ import HeroSection from "@/components/ui/HeroSection";
 import { BenefitsSection } from "@/sections/home/BenefitsSection";
 import { PlansSection } from "@/sections/home/PlansSection";
 import { ProjectsSection } from "@/sections/home/ProjectsSection";
-import ReviewsHome from "@/sections/home/ReviewsHome";
 import { SolutionsSection } from "@/sections/home/SolutionsSection";
 import TechSection from "@/sections/home/TechSection";
 
@@ -25,8 +24,6 @@ export default function Home() {
       <ProjectsSection/>
 
       <BenefitsSection/>
-
-      <ReviewsHome/>
 
       <TechSection/>
 

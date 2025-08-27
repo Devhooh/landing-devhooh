@@ -5,14 +5,14 @@ import { Lightbulb, Rocket, Repeat } from "lucide-react";
 export default function ServicesCardsSection() {
   return (
     <section className="w-full overflow-hidden">
-      <div className="px-6 table-lg:px-8 py-16 bg-gradient-to-r from-purple-100 via-fuchsia-50 to-blue-100">
+      <div className="px-6 table-lg:px-8 py-10 bg-gradient-to-r from-white via-blue-50/80 to-white">
         <div className="max-w-[1550px] mx-auto grid grid-cols-1 table-lg:grid-cols-[6fr_4fr] gap-6 items-start">
           
           {/* Lado izquierdo - Contenedor de las tarjetas */}
-          <div className="flex flex-col gap-6 self-start order-last table-lg:order-first">
+          <div className="flex flex-col gap-10 self-start order-last table-lg:order-first">
             
             {/* Tarjeta pequeña */}
-            <div className="bg-gradient-to-b from-fuchsia-400/90 to-violet-500/90 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-md w-full">
+            <div className="bg-gradient-to-b from-blue-400/90 to-indigo-500/90 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-md w-full">
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
                 <div className="bg-fuchsia-400/80 p-6 rounded-full flex-shrink-0">
                   <Lightbulb className="h-10 w-10 text-white" />
@@ -42,7 +42,7 @@ export default function ServicesCardsSection() {
             </div>
 
             {/* Tarjeta grande */}
-            <div className="bg-gradient-to-b from-violet-700/90 to-violet-500/90 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-2xl w-full">
+            <div className="bg-gradient-to-b from-blue-400/90 to-indigo-500/90 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/20 table-lg:max-w-2xl w-full">
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
                 <div className="bg-fuchsia-400/80 p-6 rounded-full flex-shrink-0">
                   <Repeat className="h-10 w-10 text-white" />
@@ -50,7 +50,7 @@ export default function ServicesCardsSection() {
                 <div>
                   <h3 className="text-2xl font-semibold mb-1 text-white">Necesitas actualizarte</h3>
                   <p className="text-xl leading-snug text-gray-200">
-                    Renovamos tu plataforma, añadimos nuevas funcionalidades y optimizamos su rendimiento.
+                    Renovamos tu plataforma, añadimos nuevas funcionalidades y optimizamos su rendimiento para que sea mas veloz.
                   </p>
                 </div>
               </div>

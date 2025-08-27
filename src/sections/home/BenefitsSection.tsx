@@ -1,10 +1,11 @@
 "use client";
 import styles from "./BenefitsSection.module.css";
+import ReviewsHome from "./ReviewsHome";
 
 export function BenefitsSection() {
   return (
-    <section className="bg-violet-950 px-6 py-16 md-tablet:px-8 table-lg:px-32 relative">
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-8">
+    <section className="bg-gradient-to-b from-blue-950 via-blue-950 to to-blue-100 px-6 py-16 md-tablet:px-8 table-lg:px-32 relative">
+      <div className="max-w-[1550px] pb-16 mx-auto flex flex-col items-center gap-8">
 
         {/* FILA SUPERIOR DE CÍRCULOS */}
         <div className="w-full flex justify-between table-lg:justify-around gap-4 md-tablet:gap-6">
@@ -36,7 +37,7 @@ export function BenefitsSection() {
 
         {/* FILA INFERIOR DE CÍRCULOS */}
         <div className="w-full flex justify-between table-lg:justify-around gap-4 md-tablet:gap-6">
-          <div className={`w-36 h-36 md-tablet:w-52 md-tablet:h-52 rounded-full flex flex-col items-center justify-center p-4 ${styles.redCircle} bg-gradient-to-br from-red-500 to-pink-600 shadow-[0_0_20px_rgba(255,0,0,0.4)]`}>
+          <div className={`w-36 h-36 md-tablet:w-52 md-tablet:h-52 rounded-full flex flex-col items-center justify-center p-4 ${styles.redCircle} bg-gradient-to-br from-pink-500 to-pink-400 shadow-[0_0_20px_rgba(255,0,0,0.4)]`}>
             <h3 className="font-bold text-sm md-tablet:text-xl text-white text-center tracking-wide">100% personalizado</h3>
             <p className="text-xs md-tablet:text-base text-gray-200 text-center mt-1 leading-snug">
               Soluciones únicas hechas a tu medida, sin plantillas.
@@ -52,6 +53,8 @@ export function BenefitsSection() {
         </div>
 
       </div>
+
+      <ReviewsHome/>
       
     </section>
   );

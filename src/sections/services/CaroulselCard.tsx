@@ -13,7 +13,7 @@ export default function CarouselCard({ card }: { card: CardData }) {
   return (
     <div
       className="
-        bg-gradient-to-b from-emerald-300/80 to-cyan-200/80 border hover:border-fuchsia-700
+        bg-gradient-to-b from-blue-400/80 to-blue-100/80 border hover:border-fuchsia-700
         rounded-2xl shadow-xl overflow-hidden h-[490px]
         flex flex-col transition-transform duration-300 hover:scale-[1.03]
       "

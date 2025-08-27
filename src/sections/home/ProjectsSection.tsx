@@ -9,7 +9,7 @@ import { ProjectSlider } from "./ProjectSlider";
 
 export function ProjectsSection() {
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-100 py-14 px-6 md-tablet:px-12">
+    <section className="w-full py-14 px-6 md-tablet:px-12">
       
       {/* Título + subtítulo */}
       <div className="text-center max-w-4xl mx-auto mb-16">
@@ -28,7 +28,7 @@ export function ProjectsSection() {
       </div>
 
       {/* Slider de proyectos */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1550px] mx-auto">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           navigation

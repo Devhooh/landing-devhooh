@@ -41,7 +41,6 @@ export function ServicesSliderProjects({
           breakpoints={{
             550: { slidesPerView: 1.2, spaceBetween: 25 },
             950: { slidesPerView: 3, spaceBetween: 30 },
-            // 1150: { slidesPerView: 3, spaceBetween: 48 },
           }}
           className="px-2 md-tablet:px-6"
         >

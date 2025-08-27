@@ -25,7 +25,7 @@ export function ProjectCard({
   slug,
 }: ProjectCardProps) {
   return (
-    <div className="h-[450px] bg-gray-900 rounded-3xl shadow-[0_0_20px_rgba(0,255,255,0.2)] overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,255,255,0.4)]">
+    <div className="h-[450px] bg-gradient-to-t from-violet-500/80 to-indigo-300/80 rounded-3xl overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(0,255,255,0.4)]">
       
       {/* Imagen */}
       <div className="relative w-full h-48 md-tablet:h-56 table-lg:h-64 border-b border-cyan-500/40">
@@ -42,16 +42,16 @@ export function ProjectCard({
 
       {/* Contenido */}
       <div className="p-4 md-tablet:p-5 table-lg:p-6 flex flex-col gap-2 flex-1 text-white">
-        <h3 className="text-lg md-tablet:text-xl table-lg:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">
+        <h3 className="text-lg md-tablet:text-xl table-lg:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800">
           {ProjectName}
         </h3>
         {company && (
-          <p className="text-cyan-300 text-sm md-tablet:text-base">
+          <p className="text-blue-800 text-base md-tablet:text-lg font-semibold">
             Empresa: {company}
           </p>
         )}
         {subtitle && (
-          <p className="text-gray-400 text-xs md-tablet:text-sm">
+          <p className="text-gray-800 text-base md-tablet:text-lg">
             {subtitle}
           </p>
         )}

@@ -27,10 +27,10 @@ interface CardCaroulselSectionProps {
 
 export default function CaroulselSection ({title, cardData}: CardCaroulselSectionProps) {
   return (
-    <section className="bg-white w-full h-full pt-10 overflow-hidden rounded-2xl ">
+    <section className="bg-gradient-to-r from-purple-100 via-fuchsia-50 to-blue-100 w-full h-full pt-10 overflow-hidden rounded-2xl ">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
-        <h2 className="px-4 text-2xl md-tablet:text-4xl text-center font-extrabold bg-clip-text text-transparent bg-gray-800">
+        <h2 className="px-4 text-3xl md-tablet:text-4xl text-center font-extrabold bg-clip-text text-transparent bg-gray-800">
           {title}
         </h2>
         

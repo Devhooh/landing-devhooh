@@ -16,19 +16,20 @@ export function SolutionCard({
   return (
     <div
       className={`
-        max-w-3xl table-lg:w-3/4 p-5 rounded-2xl 
-        shadow-lg border border-purple-400 overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl
-        ${reverse ? "table-lg:self-end bg-gradient-to-r from-blue-950 to-blue-400" : "table-lg:self-start bg-gradient-to-l from-blue-950 to-blue-400"}
+        relative max-w-3xl table-lg:w-3/4 p-[2px] rounded-2xl 
+        bg-gradient-to-r from-fuchsia-500 via-blue-500 to-black
+        ${reverse ? "table-lg:self-end" : "table-lg:self-start"}
       `}
     >
       <div
         className={`
-          flex flex-col table-lg:flex-row 
+          bg-white rounded-2xl p-6 md-tablet:p-10 shadow-lg hover:shadow-2xl transition
+          flex flex-col table-lg:flex-row
           ${reverse ? "table-lg:flex-row-reverse" : ""}
         `}
       >
         {/* Imagen */}
-        <div className="p-6 rounded-2xl md-tablet:w-1/2 table-lg:w-1/3 flex items-center justify-center bg-white">
+        <div className="p-6 md-tablet:w-1/2 table-lg:w-1/3 flex items-center justify-center">
           <Image
             width={220}
             height={220}
@@ -39,11 +40,11 @@ export function SolutionCard({
         </div>
 
         {/* Texto */}
-        <div className="table-lg:w-2/3 p-6 md-tablet:p-10 flex flex-col justify-center text-center md-tablet:text-left">
-          <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-gray-100 mb-3">
+        <div className="table-lg:w-2/3 flex flex-col justify-center text-center md-tablet:text-left">
+          <h3 className="text-2xl md-tablet:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-blue-600 mb-3">
             {title}
           </h3>
-          <p className="text-gray-300 text-base md-tablet:text-lg leading-relaxed">
+          <p className="text-gray-700 text-base md-tablet:text-lg leading-relaxed">
             {description}
           </p>
         </div>

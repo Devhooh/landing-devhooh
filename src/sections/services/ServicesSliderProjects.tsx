@@ -23,9 +23,9 @@ export function ServicesSliderProjects({
   const displayedProjects = projects.slice(0, limit);
 
   return (
-    <section className="py-10 mx-5">
-      <div className="max-w-7xl mx-10 text-left mb-4">
-        <h2 className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-bold text-indigo-950">
+    <section className="py-10 mx-5 md-tablet:mx-10">
+      <div className="max-w-7xl text-left mb-4">
+        <h2 className="text-3xl md-tablet:text-4xl font-bold text-indigo-950">
           {title}
         </h2>
       </div>
@@ -40,10 +40,10 @@ export function ServicesSliderProjects({
           pagination={{ clickable: true }}
           breakpoints={{
             550: { slidesPerView: 1.2, spaceBetween: 25 },
-            950: { slidesPerView: 2.1, spaceBetween: 40 },
-            1150: { slidesPerView: 3, spaceBetween: 48 },
+            950: { slidesPerView: 3, spaceBetween: 30 },
+            // 1150: { slidesPerView: 3, spaceBetween: 48 },
           }}
-          className="!px-2 md-tablet:!px-4 table-lg:!px-6"
+          className="px-2 md-tablet:px-6"
         >
           {displayedProjects.map((project) => (
             <SwiperSlide key={project.id} className="flex my-6">

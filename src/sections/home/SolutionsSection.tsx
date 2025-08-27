@@ -39,15 +39,15 @@ export function SolutionsSection() {
       </div>
 
       {/* Cards */}
-      <div className="bg-blue-200 mx-8 py-12 px-5 md-tablet:px-10 rounded-3xl">
-        <div className="mx-auto rounded-3xl flex flex-col gap-10 max-w-[1550px] justify-center">
+      <div className="w-full py-12 px-5 md-tablet:px-10">
+        <div className="mx-auto flex flex-col gap-10 max-w-[1550px] justify-center">
           {solutions.map((s, i) => (
             <SolutionCard
               key={i}
               title={s.title}
               description={s.description}
               image={s.image}
-              reverse={i % 2 === 1} // mantiene alternancia
+              reverse={i % 2 === 1}
             />
           ))}
         </div>
@@ -55,7 +55,7 @@ export function SolutionsSection() {
         {/* Botón */}
         <div className="flex justify-center mt-12">
           <Link href="/services">
-            <button className="text-xl md-tablet:text-2xl bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white py-4 px-8 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:opacity-90 transition-all duration-300">
+            <button className="text-xl md-tablet:text-2xl bg-gradient-to-r from-fuchsia-500 via-pink-500 to-blue-600 text-white py-4 px-8 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
               Vea todos nuestros servicios
             </button>
           </Link>

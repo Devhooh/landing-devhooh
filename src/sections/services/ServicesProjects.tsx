@@ -26,11 +26,11 @@ export default function ServicesProjects({
   showService = true, // por defecto true
 }: ServicesProjectsProps) {
   return (
-    <section className="w-full h-auto ">
+    <section className="w-full h-auto">
       {/* Card */}
-      <div className="h-[400px] bg-purple-800/40 rounded-2xl shadow-xl overflow-hidden flex flex-col">
+      <div className="h-[400px] bg-gradient-to-b from-fuchsia-400/80 to-purple-200/80 rounded-lg shadow-xl overflow-hidden flex flex-col">
         {/* Imagen */}
-        <div className="bg-purple-300 p-3 h-48 w-full flex items-center justify-center">
+        <div className="bg-violet-300/80 p-3 h-48 w-full flex items-center justify-center">
           <Image
             width={400}
             height={400}

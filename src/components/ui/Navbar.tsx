@@ -53,7 +53,7 @@ export default function Navbar() {
                 key={values.path}
                 href={values.path}
                 className={`relative px-3 py-2 rounded-3xl transition
-                  text-slate-800 hover:text-fuchsia-500
+                  text-gray-950 hover:text-fuchsia-500
                   ${isActive ? "text-fuchsia-500 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-fuchsia-500" : ""}
               `}
               >
@@ -67,10 +67,10 @@ export default function Navbar() {
             <button
               className="
                 relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
-                bg-gradient-to-r from-fuchsia-500 to-purple-600
-                overflow-hidden transition-all duration-700 ease-in-out
-                hover:from-fuchsia-600 hover:to-purple-700
-                hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
+                bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-500
+                animate-gradient
+                transition-all duration-700 ease-in-out
+                hover:scale-105 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)]
               "
             >
               Contáctanos
@@ -80,7 +80,7 @@ export default function Navbar() {
 
         {/* Boton hamburguesa para mobile */}
         <button
-          className="table-lg:hidden p-3 rounded-full bg-gray-800 border-2 border-slate-300 text-white focus:outline-none transition-transform duration-300"
+          className="table-lg:hidden p-3 rounded-full bg-gray-950 border-2 border-slate-300 text-white focus:outline-none transition-transform duration-300"
           onClick={toggleMenu}
         >
           <Menu size={28} />
@@ -109,7 +109,7 @@ export default function Navbar() {
           </Link>
           <button
             onClick={toggleMenu}
-            className="p-3 rounded-full bg-gray-800 border-2 border-slate-300 text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-gray-950 border-2 border-slate-300 text-white transition-colors duration-300"
           >
             <X size={28} />
           </button>
@@ -143,10 +143,10 @@ export default function Navbar() {
               onClick={toggleMenu}
               className="
                 relative w-full text-center mt-6 py-4 rounded-lg text-white text-2xl font-bold shadow-md
-                bg-gradient-to-r from-fuchsia-500 to-purple-600
-                overflow-hidden transition-all duration-700 ease-in-out
-                hover:from-fuchsia-600 hover:to-purple-700
-                hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
+                bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-500
+                animate-gradient
+                transition-all duration-700 ease-in-out
+                hover:scale-105 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)]
               "
             >
               Contáctanos

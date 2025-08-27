@@ -3,20 +3,49 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
 
 export default function HeroSectionHome() {
+  // Variants para stagger en la lista
+  const listVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // delay entre cada li
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 60 } },
+  };
+
   return (
     <section className="relative w-full bg-gradient-to-b from-white to-blue-50 overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md:px-12 py-8">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <h1 className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-blue-950 leading-tight tracking-tight">
-            Desarrollo de <span className="text-fuchsia-600">software inteligente</span> a tu medida
-          </h1>
+          <motion.h1
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, type: "spring" }}
+            className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-blue-950 leading-tight tracking-tight"
+          >
+            Desarrollo de{" "}
+            <span className="text-fuchsia-600">software inteligente</span> a tu medida
+          </motion.h1>
 
           {/* --- 2) IMAGEN --- */}
-          <div className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
+          >
             <div className="relative z-10 bg-white shadow-2xl rounded-3xl p-4">
               <Image
                 src="/assets/images/hero1.png"
@@ -27,51 +56,74 @@ export default function HeroSectionHome() {
                 priority
               />
             </div>
-
-            {/* Glow detrás de la imagen */}
+            {/* Glows */}
             <div className="absolute -z-0 top-10 right-10 w-72 h-72 bg-fuchsia-400 blur-3xl opacity-30 rounded-full"></div>
-            <div className="absolute -z-0 bottom-10 left-10 w-72 h-72 bg-blue-400 blur-3xl opacity-20 rounded-full"></div>
-          </div>
+            <div className="absolute -z-0 bottom-24 left-10 w-72 h-72 bg-blue-400 blur-3xl opacity-20 rounded-full"></div>
+          </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <p className="order-3 text-lg md-tablet:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto table-lg:mx-0">
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="order-3 text-lg md-tablet:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
+          >
             Creamos soluciones web, móviles y empresariales integrando{" "}
-            <span className="font-semibold text-blue-800">inteligencia artificial</span> 
-            para impulsar la innovación y mejorar la eficiencia de tu negocio.
-          </p>
+            <span className="font-semibold text-blue-800">inteligencia artificial</span>
+            {" "}para impulsar la innovación y mejorar la eficiencia de tu negocio.
+          </motion.p>
 
           {/* --- 4) LISTA SEO --- */}
-          <ul className="order-4 space-y-4 text-sm md-tablet:text-base text-gray-800">
+          <motion.ul
+            variants={listVariants}
+            initial="hidden"
+            animate="show"
+            className="
+              order-4 space-y-4 text-sm md-tablet:text-base text-gray-800
+              text-left md-tablet:text-center table-lg:text-left
+              max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0
+            "
+          >
             {[
               "Aplicaciones web rápidas y escalables",
               "Apps móviles modernas y fluidas",
               "Integración de inteligencia artificial en tus procesos",
               "Sistemas empresariales personalizados",
             ].map((item, idx) => (
-              <li key={idx} className="flex items-start gap-3">
+              <motion.li
+                key={idx}
+                variants={itemVariants}
+                className="flex items-center gap-3"
+              >
                 <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
                 <span>{item}</span>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
 
           {/* --- 5) BOTÓN --- */}
-          <div className="order-5 flex justify-center table-lg:justify-start pt-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="order-5 flex justify-center table-lg:justify-start pt-4"
+          >
             <Link href="/contact">
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="
                   px-8 py-4 text-lg md-tablet:text-xl font-semibold
                   bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white
                   rounded-2xl shadow-lg
-                  hover:scale-105 hover:shadow-xl
+                  hover:shadow-xl
                   transition-all duration-300
                 "
               >
                 Empieza ahora
-              </button>
+              </motion.button>
             </Link>
-          </div>
-
+          </motion.div>
         </div>
       </div>
     </section>

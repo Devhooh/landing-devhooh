@@ -1,57 +1,3 @@
-// "use client";
-
-// import Link from "next/link";
-// import { useState } from "react";
-
-// export default function ContactCTA() {
-//   const [isHovered, setIsHovered] = useState(false);
-
-//   return (
-//     <div className="relative w-full pt-10 flex justify-center">
-//       <div
-//         // Aquí añadimos la clase 'animate-pulse' de Tailwind.
-//         className="border border-gray-700 relative w-full max-w-[700px] h-[340px] rounded-t-[500px] bg-white
-//         shadow-xl flex flex-col items-center justify-center text-center
-//         overflow-hidden transition-all duration-2000 ease-out "
-//         onMouseEnter={() => setIsHovered(true)}
-//         onMouseLeave={() => setIsHovered(false)}
-//       >
-//         <div
-//           className={`absolute bottom-0 w-[1000px] h-[1000px] rounded-full
-//           transition-transform duration-700 ease-out
-//           ${isHovered ? "translate-y-1/3 scale-110 bg-gradient-to-r from-violet-950 via-purple-500 to-fuchsia-700" : "translate-y-full scale-90 bg-gradient-to-r from-violet-950 via-purple-500 to-fuchsia-700"}`}
-//         />
-        
-//         <div className="relative z-10 px-8 pt-20 text-center flex flex-col justify-center items-center">
-//           <div className="m-5">
-//             <h2
-//               className={`text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold mb-4 transition-all duration-700 ease-out
-//               ${isHovered ? "text-white tracking-wide" : "text-blue-950 tracking-normal"}`}
-//             >
-//               Queremos que su empresa sea nuestro próximo caso de éxito
-//             </h2>
-//           </div>
-          
-//           <div className="flex gap-4">
-//             <Link
-//               href="/contact"
-//               className={`relative inline-flex items-center justify-center gap-2 px-10 py-3 text-sm
-//               md-tablet:text-lg font-bold rounded-2xl shadow-lg transition-all duration-700 ease-out
-//               ${isHovered ? "text-blue-950 bg-fuchsia-100" : "text-white bg-fuchsia-900"}`}
-//             >
-//               ¡Empieza ahora!
-//               <svg className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
-//                 <path d="M12.293 5.293a1 1 0 011.414 0L18 9.586l-4.293 4.293a1 1 0 01-1.414-1.414L14.586 10H4a1 1 0 110-2h10.586l-2.293-2.293a1 1 0 010-1.414z" />
-//               </svg>
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
 "use client";
 
 import Link from "next/link";
@@ -69,27 +15,30 @@ export default function ContactCTA() {
         shadow-xl flex flex-col items-center justify-center text-center overflow-hidden transition-all duration-2000 ease-out"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        initial={{ opacity: 0, y: 50 }}            // Entrada desde abajo
+        initial={{ opacity: 0, y: 50 }} // Entrada desde abajo
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Fondo animado */}
+        {/* Fondo animado solo al hover */}
         <motion.div
-          className="absolute bottom-0 w-[1000px] h-[1000px] rounded-full"
+          className="absolute bottom-0 w-[1000px] h-[1000px] rounded-full pointer-events-none"
           animate={isHovered
-            ? { y: "33%", scale: 1.1, background: "linear-gradient(to right, #5b21b6, #a855f7, #f472b6)" }
-            : { y: "100%", scale: 0.9, background: "linear-gradient(to right, #5b21b6, #a855f7, #f472b6)" }}
+            ? { y: "33%", scale: 1.1, opacity: 1 }
+            : { y: "100%", scale: 0.9, opacity: 0 }}
+          style={{
+            background: "linear-gradient(to right, #5b21b6, #a855f7, #f472b6)",
+          }}
           transition={{ type: "spring", stiffness: 80, damping: 20 }}
         />
 
         {/* Contenido */}
         <div className="relative z-10 px-8 pt-20 text-center flex flex-col justify-center items-center">
           <motion.h2
-            className="text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold mb-4 transition-all duration-700 ease-out"
+            className="text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold mb-4"
             animate={isHovered
-              ? { color: "#ffffff", letterSpacing: 2, scale: 1.02 }
-              : { color: "#0f172a", letterSpacing: 0, scale: 1 }}
+              ? { color: "#ffffff", letterSpacing: "2px", scale: 1.02 }
+              : { color: "#0f172a", letterSpacing: "0px", scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             Queremos que su empresa sea nuestro próximo caso de éxito

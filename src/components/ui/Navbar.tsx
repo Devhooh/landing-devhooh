@@ -39,6 +39,7 @@ export default function Navbar() {
             alt="Devhoo-logo"
             width={120}
             height={60}
+            priority
             style={{ height: "auto", width: "auto" }}
             className="rounded-xl"
           />

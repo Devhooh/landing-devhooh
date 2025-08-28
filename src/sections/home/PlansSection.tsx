@@ -69,7 +69,7 @@ export function PlansSection() {
               <motion.div
                 key={index}
                 className={`
-                  rounded-3xl px-10 py-8 flex flex-col items-center text-center
+                  rounded-3xl px-4 py-8 flex flex-col items-center text-center
                   w-80 md-tablet:w-96 table-lg:w-80
                   ${index === 1 
                     ? "bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white shadow-2xl border border-gray-700" 
@@ -112,7 +112,7 @@ export function PlansSection() {
                       transition={{ duration: 0.3, delay: idx * 0.1 }}
                     >
                       <Icon className={`w-5 h-5 flex-shrink-0 ${index === 1 ? "text-fuchsia-400" : "text-blue-500"}`} />
-                      <span>{item}</span>
+                      <span className="text-xs">{item}</span>
                     </motion.li>
                   ))}
                 </ul>

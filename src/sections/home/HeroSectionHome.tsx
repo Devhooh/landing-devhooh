@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle } from "lucide-react";
+import { CircleCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
 
@@ -25,7 +25,7 @@ export default function HeroSectionHome() {
 
   return (
     <section className="relative w-full bg-gradient-to-b from-white to-blue-50 overflow-hidden">
-      <div className="max-w-[1550px] mx-auto px-6 md:px-12 py-8">
+      <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
@@ -66,7 +66,9 @@ export default function HeroSectionHome() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="order-3 text-lg md-tablet:text-xl text-gray-700 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
+            className="order-3 text-lg md-tablet:text-xl 
+              text-center table-lg:text-left
+            text-gray-700 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
           >
             Creamos soluciones web, móviles y empresariales integrando{" "}
             <span className="font-semibold text-blue-800">inteligencia artificial</span>
@@ -80,7 +82,7 @@ export default function HeroSectionHome() {
             animate="show"
             className="
               order-4 space-y-4 text-sm md-tablet:text-base text-gray-800
-              text-left md-tablet:text-center table-lg:text-left
+              text-left table-lg:text-left
               max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0
             "
           >
@@ -95,7 +97,7 @@ export default function HeroSectionHome() {
                 variants={itemVariants}
                 className="flex items-center gap-3"
               >
-                <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                <CircleCheck className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
                 <span>{item}</span>
               </motion.li>
             ))}

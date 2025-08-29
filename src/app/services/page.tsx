@@ -1,17 +1,20 @@
 import CaroulselSection from "@/sections/services/CaroulselSection";
 import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
-import ServicesSection from "@/sections/services/ServicesSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
 import ContactCTA from "@/components/ui/ContactCTA";
 import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
 import FAQSection from "@/sections/portfolio/FAQSection";
 import { faqDataServices } from "@/data/faqDataServices";
 import { projectsData } from "@/data/portfolioData";
+import HeroSlider from "@/sections/services/HeroSlider";
 
 export default function Services() {
   return (
     <div className="flex flex-col">
-      <ServicesSection/>
+      {/* <ServicesHeroSection/> */}
+
+      <HeroSlider/>
+
       <ServicesCardsSection/>
 
       <div className="w-full bg-fuchsia-400 py-10 overflow-hidden">

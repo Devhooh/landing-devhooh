@@ -27,7 +27,9 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-4xl font-extrabold text-indigo-950 leading-tight text-center table-lg:text-right">
+            <h2 className="text-4xl font-extrabold leading-tight text-center table-lg:text-right
+              text-transparent bg-clip-text bg-gradient-to-r from-indigo-950/90 to-indigo-700/60
+            ">
               {title}
             </h2>
           </motion.div>

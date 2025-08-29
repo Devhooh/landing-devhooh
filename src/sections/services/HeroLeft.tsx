@@ -33,7 +33,9 @@ export default function HeroLeft({
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md-tablet:text-4xl font-extrabold text-indigo-950 leading-tight text-center table-lg:text-left">
+            <h2 className="text-3xl md-tablet:text-4xl font-extrabold leading-tight text-center table-lg:text-left 
+              text-transparent bg-clip-text bg-gradient-to-r from-indigo-950/90 to-indigo-700/60
+            ">
               {title}
             </h2>
           </motion.div>
@@ -100,7 +102,7 @@ export default function HeroLeft({
 
           {/* --- 5) BOTÓN --- */}
           <motion.div
-            className="order-5 flex justify-center table-lg:justify-start py-5"
+            className="order-5 flex justify-center table-lg:justify-start mt-10 mb-5 table-lg:mt-5"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}

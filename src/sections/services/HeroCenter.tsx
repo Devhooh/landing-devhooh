@@ -49,7 +49,9 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="mt-5 text-4xl md-tablet:text-5xl table-lg:text-4xl font-extrabold text-indigo-950 leading-tight">
+              <h2 className="mt-5 text-4xl md-tablet:text-5xl table-lg:text-4xl font-extrabold leading-tight
+                text-transparent bg-clip-text bg-gradient-to-r from-indigo-950/90 to-indigo-700/60
+              ">
                 {title}
               </h2>
             </motion.div>
@@ -120,7 +122,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="mt-10 table-lg:mt-1 mb-5 table-lg:my-8 "
+              className="mt-10 table-lg:mt-1 mb-8 table-lg:my-8 "
             >
               <Link href="/contact">
                 <motion.button

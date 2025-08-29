@@ -16,7 +16,7 @@ export default function HeroSlider() {
         navigation
         autoplay={{ delay: 7000 }}
         loop
-        className="w-full mx-auto bg-gradient-to-br from-fuchsia-500/50 to-blue-500/50"
+        className="w-full mx-auto bg-gradient-to-t from-fuchsia-400/50 to-white"
       >
         {/* Slide 1: HeroLeft */}
         <SwiperSlide>
@@ -57,7 +57,6 @@ export default function HeroSlider() {
             images="/assets/images/slide4.png"
             features={[
               "Desarrollo de aplicaciones móviles multiplataforma modernas",
-              "Implementación de soluciones con IA y blockchain",
               "Diseño de sitios web rápidos, atractivos y optimizados",
               "Soluciones digitales personalizadas según tus necesidades"
             ]}

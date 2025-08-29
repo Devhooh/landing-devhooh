@@ -131,7 +131,7 @@ export function ProjectsSection() {
           {projectsData.slice(0, 4).map((project, index) => (
             <SwiperSlide 
               key={index} 
-              className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-[1.03]"
+              className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-[1]"
               style={{ width: '70%' }}
             >
               <div className="bg-fuchsia-200 rounded-2xl shadow-lg w-full">

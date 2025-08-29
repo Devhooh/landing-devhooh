@@ -16,7 +16,7 @@ interface HeroCenterProps {
 export default function HeroCenter({ title, subtitle, cta, images, features = [] }: HeroCenterProps) {
   return (
     <section className="h-auto">
-      <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
+      <div className="max-w-[1550px] mx-auto px-6 pt-10 md-tablet:pt-4 table-lg:pt-0 md-tablet:px-12">
         <div className="grid grid-cols-1 table-lg:grid-cols-3 items-center gap-6">
 
           {/* Imagen izquierda */}
@@ -43,12 +43,13 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
             
             {/* Título */}
             <motion.div
+              className="md-tablet:mt-2"
               initial={{ opacity: 0, y: -40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md-tablet:text-4xl font-extrabold text-indigo-950 leading-tight">
+              <h2 className="mt-5 text-4xl md-tablet:text-5xl table-lg:text-4xl font-extrabold text-indigo-950 leading-tight">
                 {title}
               </h2>
             </motion.div>
@@ -56,7 +57,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
             {/* Imagen para mobile */}
             {images[0] && (
               <motion.div
-                className="table-lg:hidden my-5"
+                className="table-lg:hidden my-14"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
@@ -87,7 +88,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
             {/* Lista */}
             {features.length > 0 && (
               <motion.ul
-                className="space-y-4 text-sm md-tablet:text-base text-gray-800 text-left max-w-md"
+                className="mt-10 md-tablet:mt-4 space-y-4 text-sm md-tablet:text-base text-gray-800 text-left max-w-md"
                 initial="hidden"
                 whileInView="show"
                 variants={{
@@ -107,7 +108,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
                     transition={{ duration: 0.5 }}
                   >
                     <Star className="w-6 h-6 text-fuchsia-500 flex-shrink-0" />
-                    <span>{feature}</span>
+                    <span className="text-base md-tablet:text-lg">{feature}</span>
                   </motion.li>
                 ))}
               </motion.ul>
@@ -119,7 +120,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="mt-14 table-lg:my-8"
+              className="mt-10 mb-5 table-lg:my-8 "
             >
               <Link href="/contact">
                 <motion.button

@@ -21,7 +21,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
 
           {/* --- 1) TÍTULO --- */}
           <motion.div
-            className="order-1 table-lg:order-2 mt-6 table-lg:mt-2"
+            className="order-1 table-lg:order-2 mt-10 table-lg:mt-2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -34,7 +34,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
 
           {/* --- 2) IMAGEN --- */}
           <motion.div
-            className="my-5 table-lg:m-2 order-2 table-lg:order-1 table-lg:row-span-4 flex justify-center table-lg:justify-start"
+            className="my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4 flex justify-center table-lg:justify-start"
             initial={{ opacity: 0, x: -50, scale: 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true }}
@@ -51,7 +51,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
 
           {/* --- 3) SUBTÍTULO --- */}
           <motion.div
-            className="order-3 mb-3"
+            className="order-3 mb-5"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -82,7 +82,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <Star className="w-6 h-6 text-fuchsia-500 flex-shrink-0" />
-                    <span>{feature}</span>
+                    <span className="text-base md-tablet:text-xl">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -91,7 +91,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
 
           {/* --- 5) BOTÓN --- */}
           <motion.div
-            className="order-5 flex justify-center table-lg:justify-end m-5 table-lg:m-4"
+            className="order-5 flex justify-center table-lg:justify-end mt-10 mb-5 table-lg:my-8 "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

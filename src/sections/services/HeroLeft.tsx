@@ -23,7 +23,7 @@ export default function HeroLeft({
   return (
     <section className="relative w-full h-auto overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
-        <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-5">
+        <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
           <motion.div
@@ -71,7 +71,7 @@ export default function HeroLeft({
 
           {/* --- 4) LISTA --- */}
           <motion.ul
-            className="order-4 flex justify-center table-lg:justify-start flex-col space-y-4 text-sm md-tablet:text-base text-gray-800 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
+            className="order-4 flex justify-center table-lg:justify-start flex-col space-y-4 text-gray-800 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
             initial="hidden"
             whileInView="show"
             variants={{
@@ -93,7 +93,7 @@ export default function HeroLeft({
                 transition={{ duration: 0.5 }}
               >
                 <Star className="w-6 h-6 text-fuchsia-500 flex-shrink-0" />
-                <span>{feature}</span>
+                <span className="text-base md-tablet:text-lg">{feature}</span>
               </motion.li>
             ))}
           </motion.ul>

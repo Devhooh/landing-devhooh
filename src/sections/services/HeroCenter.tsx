@@ -3,13 +3,14 @@
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface HeroCenterProps {
   title: string;
   subtitle: string;
   cta: string;
   images: string[];
-  features?: string[]; 
+  features?: string[];
 }
 
 export default function HeroCenter({ title, subtitle, cta, images, features = [] }: HeroCenterProps) {
@@ -20,7 +21,13 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
 
           {/* Imagen izquierda */}
           {images[0] && (
-            <div className="hidden table-lg:flex justify-end">
+            <motion.div
+              className="hidden table-lg:flex justify-end"
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <Image
                 src={images[0]}
                 alt={title}
@@ -28,21 +35,33 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
                 height={500}
                 className="flex-1 max-h-64 object-contain rounded-lg"
               />
-            </div>
+            </motion.div>
           )}
 
-          {/* Contenedor central: título, subtítulo, lista y botón */}
-          <div className="flex flex-col items-center table-lg:items-center text-center table-lg:text-center gap-6 col-span-1 table-lg:col-span-1">
+          {/* Contenedor central */}
+          <div className="flex flex-col items-center text-center gap-8 col-span-1">
             
-            <div className="mt-6 table-lg:mt-2">
+            {/* Título */}
+            <motion.div
+              initial={{ opacity: 0, y: -40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl md-tablet:text-4xl font-extrabold text-indigo-950 leading-tight">
                 {title}
               </h2>
-            </div>
+            </motion.div>
 
-            {/* Imagen para mobile debajo del título */}
+            {/* Imagen para mobile */}
             {images[0] && (
-              <div className="table-lg:hidden my-5">
+              <motion.div
+                className="table-lg:hidden my-5"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
                 <Image
                   src={images[0]}
                   alt={title}
@@ -50,42 +69,79 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
                   height={500}
                   className="flex-1 w-96 max-h-64 object-contain rounded-lg"
                 />
-              </div>
+              </motion.div>
             )}
 
-            <div className="mb-5 table-lg:mb-3">
+            {/* Subtítulo */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <p className="text-lg md-tablet:text-xl text-gray-700 max-w-2xl">
                 {subtitle}
               </p>
-            </div>
+            </motion.div>
 
-            <div className="flex justify-center table-lg:justify-start">
-              {features.length > 0 && (
-                <ul className="
-                    space-y-4 text-sm md-tablet:text-base text-gray-800
-                    text-left table-lg:text-left
-                    max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0
-                  ">
-                  {features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Star className="w-6 h-6 text-fuchsia-500 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+            {/* Lista */}
+            {features.length > 0 && (
+              <motion.ul
+                className="space-y-4 text-sm md-tablet:text-base text-gray-800 text-left max-w-md"
+                initial="hidden"
+                whileInView="show"
+                variants={{
+                  hidden: {},
+                  show: { transition: { staggerChildren: 0.15 } },
+                }}
+                viewport={{ once: true }}
+              >
+                {features.map((feature, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex items-center gap-3"
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      show: { opacity: 1, x: 0 },
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Star className="w-6 h-6 text-fuchsia-500 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            )}
 
-            <Link href="/contact" className="mt-20 table-lg:mt-5">
-              <button className="px-8 py-4 text-lg md:text-xl font-semibold bg-fuchsia-500 text-white rounded-xl shadow-md hover:bg-fuchsia-600 hover:scale-105 transform transition-all duration-300 flex items-center gap-2">
-                {cta}
-              </button>
-            </Link>
+            {/* Botón CTA */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="mt-14 table-lg:my-8"
+            >
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 text-lg md:text-xl font-semibold bg-fuchsia-500 text-white rounded-xl shadow-md hover:bg-fuchsia-600 transform transition-all duration-300 flex items-center gap-2"
+                >
+                  {cta}
+                </motion.button>
+              </Link>
+            </motion.div>
           </div>
 
           {/* Imagen derecha */}
           {images[1] && (
-            <div className="hidden table-lg:flex justify-start">
+            <motion.div
+              className="hidden table-lg:flex justify-start"
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <Image
                 src={images[1]}
                 alt={title}
@@ -93,7 +149,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
                 height={500}
                 className="max-h-64 object-contain rounded-lg"
               />
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

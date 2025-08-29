@@ -14,7 +14,7 @@ export default function HeroSlider() {
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
-        // autoplay={{ delay: 7000 }}
+        autoplay={{ delay: 7000 }}
         loop
         className="w-full mx-auto bg-gradient-to-br from-fuchsia-500/50 to-blue-500/50"
       >
@@ -52,7 +52,7 @@ export default function HeroSlider() {
         <SwiperSlide>
           <HeroRight
             title="Servicios completos con tecnologías actuales"
-            subtitle="IA, apps móviles, blockchain, sitios web y más. Nuestro stack moderno está listo para llevar tu idea al siguiente nivel."
+            subtitle="IA, apps móviles, blockchain, sitios web y más. Nuestro stack moderno está listo para tu idea."
             cta="Empieza tu proyecto"
             images="/assets/images/slide4.png"
             features={[

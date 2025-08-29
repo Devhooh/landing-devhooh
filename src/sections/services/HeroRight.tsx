@@ -3,6 +3,7 @@
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface HeroRightProps {
   title: string;
@@ -19,14 +20,26 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <div className="order-1 table-lg:order-2 mt-6 table-lg:mt-2">
+          <motion.div
+            className="order-1 table-lg:order-2 mt-6 table-lg:mt-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="text-4xl font-extrabold text-indigo-950 leading-tight text-center table-lg:text-right">
-            {title}
-          </h2>
-          </div>
+              {title}
+            </h2>
+          </motion.div>
 
           {/* --- 2) IMAGEN --- */}
-          <div className="my-5 table-lg:m-2 order-2 table-lg:order-1 table-lg:row-span-4 flex justify-center table-lg:justify-start">
+          <motion.div
+            className="my-5 table-lg:m-2 order-2 table-lg:order-1 table-lg:row-span-4 flex justify-center table-lg:justify-start"
+            initial={{ opacity: 0, x: -50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <Image
               src={images}
               alt={title}
@@ -34,40 +47,66 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
               height={500}
               className="w-64 md-tablet:w-80 table-lg:w-96 h-auto object-contain rounded-lg"
             />
-          </div>
+          </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <div className="order-3 mb-3">
+          <motion.div
+            className="order-3 mb-3"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          >
             <p className="text-lg md-tablet:text-xl text-gray-700 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
-            {subtitle}
-          </p>
-          </div>
+              {subtitle}
+            </p>
+          </motion.div>
 
           {/* --- 4) LISTA --- */}
-          <div className="order-4 flex justify-end">
+          <motion.div
+            className="order-4 flex justify-end"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+          >
             {features.length > 0 && (
               <ul className="space-y-3 text-gray-800 text-left max-w-md mx-auto table-lg:mx-0">
                 {features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3">
+                  <motion.li
+                    key={index}
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
                     <Star className="w-6 h-6 text-fuchsia-500 flex-shrink-0" />
                     <span>{feature}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             )}
-          </div>
+          </motion.div>
 
           {/* --- 5) BOTÓN --- */}
-          <div className="order-5 flex justify-center table-lg:justify-end m-5 table-lg:m-4">
+          <motion.div
+            className="order-5 flex justify-center table-lg:justify-end m-5 table-lg:m-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          >
             <Link href="/contact">
               <button className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-fuchsia-500 text-white rounded-xl shadow-md hover:bg-fuchsia-600 hover:scale-105 transform transition-all duration-300">
                 {cta}
               </button>
             </Link>
-          </div>
+          </motion.div>
 
         </div>
       </div>
     </section>
   );
 }
+

@@ -7,12 +7,20 @@ import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
 import ServicesProjects from "./ServicesProjects";
 import { Project } from "@/data/portfolioData";
+import { motion, Variants } from "framer-motion";
+
 
 interface ServicesSliderProjectsProps {
   projects: Project[];
   title?: string; // h2 opcional
   showService:boolean;
 }
+
+const fadeUpTitle: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 
 export function ServicesSliderProjects({
   projects,
@@ -23,11 +31,17 @@ export function ServicesSliderProjects({
   const displayedProjects = projects.slice(0, limit);
 
   return (
-    <section className="py-10 mx-5 md-tablet:mx-10">
+    <section className="bg-white py-10 mx-5 md-tablet:mx-10">
       <div className="max-w-7xl text-left mb-4">
-        <h2 className="text-3xl md-tablet:text-4xl font-bold text-indigo-950">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUpTitle}
+          className="text-3xl md-tablet:text-4xl font-extrabold text-indigo-950"
+        >
           {title}
-        </h2>
+        </motion.h2>
       </div>
 
       <div>
@@ -44,9 +58,9 @@ export function ServicesSliderProjects({
           }}
           className="px-2 md-tablet:px-6"
         >
-          {displayedProjects.map((project) => (
+          {displayedProjects.map((project, index) => (
             <SwiperSlide key={project.id} className="flex my-6">
-              <ServicesProjects project={project} showService={showService}/>
+              <ServicesProjects project={project} showService={showService} index={index} />
             </SwiperSlide>
           ))}
         </Swiper>

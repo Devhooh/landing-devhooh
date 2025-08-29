@@ -40,7 +40,7 @@ export default function Services() {
       </div>
 
       <ServicesSliderProjects 
-        title="Proyectos que usaron nuestros servicios" 
+        title="Proyectos que usaron nuestros servicios: " 
         projects={projectsData}
         showService={true}
       />

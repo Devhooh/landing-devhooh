@@ -1,17 +1,14 @@
 "use client";
 
-import React from 'react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import CaroulselCard from "./CaroulselCard";
+import { motion } from "framer-motion";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import CaroulselCard from './CaroulselCard';
-
-// Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-// Card data interface
 interface CardData {
   slug: string;
   title: string;
@@ -19,50 +16,67 @@ interface CardData {
   color: string;
   icon: string;
 }
-  
+
 interface CardCaroulselSectionProps {
   title: string;
   cardData: CardData[];
 }
 
-export default function CaroulselSection ({title, cardData}: CardCaroulselSectionProps) {
+const letterVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
+const splitText = (text: string) => text.split("");
+
+export default function CaroulselSection({ title, cardData }: CardCaroulselSectionProps) {
   return (
-    <section className="bg-gradient-to-r from-purple-100 via-fuchsia-50 to-blue-100 w-full h-full pt-10 overflow-hidden rounded-2xl ">
+    <section
+      className="
+        bg-gradient-to-t from-purple-900/80 to-purple-200
+        w-full h-full pt-10 overflow-hidden rounded-3xl shadow-inner
+      "
+    >
       <div className="max-w-7xl mx-auto">
-        {/* Section title */}
-        <h2 className="px-4 text-3xl md-tablet:text-4xl text-center font-extrabold bg-clip-text text-transparent bg-gray-800">
-          {title}
-        </h2>
-        
+        <motion.h2
+          className="px-4 text-3xl md-tablet:text-4xl text-center font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-indigo-800 drop-shadow-sm"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.02 } } }}
+        >
+          {splitText(title).map((letter, idx) => (
+            <motion.span key={idx} variants={letterVariants}>
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h2>
+
         <Swiper
           modules={[Navigation, Pagination]}
           navigation
           className="w-full flex justify-center"
-          centerInsufficientSlides={true} 
+          centerInsufficientSlides={true}
           autoHeight={true}
           slidesPerView={1}
-          spaceBetween={12} 
+          spaceBetween={12}
           breakpoints={{
-            550: {
-              slidesPerView: 2,
-              spaceBetween: 12,
-            },
-            950: {
-              slidesPerView: 3,
-              spaceBetween: 12,
-            },
+            550: { slidesPerView: 2, spaceBetween: 12 },
+            950: { slidesPerView: 3, spaceBetween: 12 },
           }}
         >
           {cardData.map((card, index) => (
-            <SwiperSlide key={index} className="px-4 py-8 md-tablet:pb-10 flex justify-center items-center">
-              <CaroulselCard card={card} />
+            <SwiperSlide
+              key={index}
+              className="px-4 py-8 md-tablet:pb-10 flex justify-center items-center"
+            >
+              {/* pasamos index para el stagger */
+              }
+              <CaroulselCard card={card} index={index} />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
     </section>
-  
-    
   );
-};
-
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { Lightbulb, Rocket, Repeat } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 // Variantes para animaciones
 const fadeRight = {
@@ -9,12 +9,12 @@ const fadeRight = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
 };
 
-const fadeUpStagger = {
+const fadeUpStagger: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
+  visible: () => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.3 },
+    transition: { duration: 0.4, ease: "easeOut" },
   }),
 };
 
@@ -138,13 +138,13 @@ export default function ServicesCardsSection() {
     w-full cursor-pointer transform
     md-tablet:hover:scale-105 md-tablet:hover:skew-x-[-5deg] // aplica solo en desktop
     md-tablet:skew-x-0
-    skew-x-[-5deg] // default en mobile y tablet
+    
   "
 >
   {/* Glow animado */}
   <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-400 via-purple-500 to-sky-400 opacity-30 blur-2xl animate-pulse" />
   
-  <h2 className="relative text-3xl md-tablet:text-4xl font-extrabold text-white leading-tight italic md-tablet:not-italic">
+  <h2 className="relative text-3xl md-tablet:text-4xl font-extrabold text-white leading-tight italic table-lg:not-italic">
     Tenemos una amplia <span className="text-sky-300">gama de servicios. </span>  
     Escoge el ideal <span className="text-sky-300">para ti</span>
   </h2>

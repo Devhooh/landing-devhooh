@@ -155,7 +155,7 @@ const FAQItem: React.FC<{
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="px-4 sm:px-6 overflow-hidden"
       >
-        <p className="text-sm sm:text-base text-gray-600 py-2">{answer}</p>
+        <p className="text-sm sm:text-base text-gray-600 py-2 pb-5">{answer}</p>
       </motion.div>
     </motion.div>
   );

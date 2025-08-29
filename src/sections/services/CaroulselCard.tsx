@@ -42,8 +42,8 @@ export default function CaroulselCard({
         <Image
           src={card.icon}
           alt={card.title}
-          width={300}
-          height={300}
+          width={500}
+          height={500}
           className="object-contain w-36 h-36"
         />
       </div>

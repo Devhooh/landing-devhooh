@@ -15,7 +15,7 @@ export default function ContactCTA() {
         shadow-xl flex flex-col items-center justify-center text-center overflow-hidden transition-all duration-2000 ease-out"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        initial={{ opacity: 0, y: 50 }} // Entrada desde abajo
+        initial={{ opacity: 0, y: 20 }} // Entrada desde abajo
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -37,7 +37,7 @@ export default function ContactCTA() {
           <motion.h2
             className="text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold mb-4"
             animate={isHovered
-              ? { color: "#ffffff", letterSpacing: "2px", scale: 1.02 }
+              ? { color: "#ffffff", letterSpacing: "1px", scale: 1 }
               : { color: "#0f172a", letterSpacing: "0px", scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >

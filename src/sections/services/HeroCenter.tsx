@@ -22,7 +22,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
           {/* Imagen izquierda */}
           {images[0] && (
             <motion.div
-              className="hidden table-lg:flex justify-end"
+              className="hidden table-lg:flex justify-end table-lg:mb-16 "
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -88,7 +88,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
             {/* Lista */}
             {features.length > 0 && (
               <motion.ul
-                className="mt-10 md-tablet:mt-4 space-y-4 text-sm md-tablet:text-base text-gray-800 text-left max-w-md"
+                className="mt-10 table-lg:mt-0 md-tablet:mt-4 space-y-4 text-gray-800 text-left max-w-md"
                 initial="hidden"
                 whileInView="show"
                 variants={{
@@ -120,7 +120,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="mt-10 mb-5 table-lg:my-8 "
+              className="mt-10 table-lg:mt-1 mb-5 table-lg:my-8 "
             >
               <Link href="/contact">
                 <motion.button
@@ -137,7 +137,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
           {/* Imagen derecha */}
           {images[1] && (
             <motion.div
-              className="hidden table-lg:flex justify-start"
+              className="hidden table-lg:flex justify-start table-lg:mb-16 "
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}

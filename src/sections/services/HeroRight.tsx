@@ -51,7 +51,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
 
           {/* --- 3) SUBTÍTULO --- */}
           <motion.div
-            className="order-3 mb-5"
+            className="order-3 mb-5 table-lg:mb-0"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -91,7 +91,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
 
           {/* --- 5) BOTÓN --- */}
           <motion.div
-            className="order-5 flex justify-center table-lg:justify-end mt-10 mb-5 table-lg:my-8 "
+            className="order-5 flex justify-center table-lg:justify-end mt-10 table-lg:mt-1 mb-5 table-lg:my-8 "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

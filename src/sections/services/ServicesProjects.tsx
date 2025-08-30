@@ -51,7 +51,7 @@ export default function ServicesProjects({
         className="h-[400px] bg-gradient-to-t from-indigo-700/80 to-fuchsia-500/80 rounded-lg shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Imagen */}
-        <div className="bg-gradient-to-b from-purple-700 to-fuchsia-400/50 p-3 h-48 w-full flex items-center justify-center">
+        <div className="bg-purple-700/50 p-3 h-48 w-full flex items-center justify-center">
           <Image
             width={400}
             height={400}
@@ -77,7 +77,7 @@ export default function ServicesProjects({
 
           <div>
             <Link href={`/portfolio/${project.slug}`}>
-              <button className="bg-white text-indigo-950 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-fuchsia-400/80 hover:text-white hover:border border-fuchsia-600 transform transition">
+              <button className="bg-fuchsia-200/90 text-indigo-950 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-fuchsia-400/80 hover:text-white hover:border border-fuchsia-600 transform transition-all">
                 Ver más detalles
               </button>
             </Link>

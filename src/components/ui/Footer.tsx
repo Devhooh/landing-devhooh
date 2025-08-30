@@ -25,7 +25,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="w-full bg-purple-950/70 py-4">
+    <footer className="w-full bg-fuchsia-950/90 py-4">
       <div className="max max-w-7xl mx-auto p-5 grid grid-cols-1 table-lg:grid-cols-2 gap-8">
         {/* Lado izquierdo */}
         <div className="md-tablet:items-center text-center justify-center">
@@ -81,7 +81,7 @@ export default function Footer() {
           {/* Zona de servicios */}
           <div className="flex-1 min-w-[150px]">
             <h4 className="text-2xl font-semibold mb-4 text-white">Servicios</h4>
-            <ul className="space-y-2 text-gray-100 text-sm">
+            <ul className="space-y-2 text-white/90 text-sm">
               {services.map((item) => {
                 return (
                   <li key={item.name}>

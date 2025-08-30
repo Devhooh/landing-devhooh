@@ -34,7 +34,7 @@ export default function HeroLeft({
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md-tablet:text-4xl font-extrabold leading-tight text-center table-lg:text-left 
-              text-transparent bg-clip-text bg-gradient-to-r from-indigo-950/90 to-indigo-700/60
+              text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-800/80
             ">
               {title}
             </h2>

@@ -50,7 +50,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
               viewport={{ once: true }}
             >
               <h2 className="mt-5 text-4xl md-tablet:text-5xl table-lg:text-4xl font-extrabold leading-tight
-                text-transparent bg-clip-text bg-gradient-to-r from-indigo-950/90 to-indigo-700/60
+                text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-800/80
               ">
                 {title}
               </h2>

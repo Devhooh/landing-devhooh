@@ -111,7 +111,7 @@ export function PlansSection() {
                       variants={bulletVariants}
                       transition={{ duration: 0.3, delay: idx * 0.1 }}
                     >
-                      <Icon className={`w-5 h-5 flex-shrink-0 ${index === 1 ? "text-fuchsia-400" : "text-blue-500"}`} />
+                      <Icon className="w-5 h-5 flex-shrink-0 text-fuchsia-400" />
                       <span className="text-xs">{item}</span>
                     </motion.li>
                   ))}

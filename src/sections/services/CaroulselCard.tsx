@@ -43,6 +43,7 @@ export default function CaroulselCard({
           src={card.icon}
           alt={card.title}
           width={500}
+          priority
           height={500}
           className="object-contain w-36 h-36"
         />

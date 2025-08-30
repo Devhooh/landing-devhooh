@@ -19,7 +19,7 @@ export function SliderTech({logos, direction = "left",}: LogoSliderProps) {
   const logosLoop = logos.concat(logos);
 
   return (
-    <div className="overflow-hidden bg-white m-0">
+    <div className="overflow-hidde m-0">
       <div
         
         className={`flex ${directionLogo} gap-12`}

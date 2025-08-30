@@ -38,7 +38,10 @@ export default function OurValuesSection() {
   return (
     <section className="bg-gray-50 py-16 md-tablet:px-4">
       <div className="container mx-auto max-w-7xl text-center">
-        <h2 className="text-4xl md-tablet:text-5xl font-extrabold text-gray-900 mb-12">
+        <h2 className="
+          text-4xl md-tablet:text-5xl font-extrabold mb-12
+          bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-purple-400
+          ">
           Nuestros Valores
         </h2>
 
@@ -46,22 +49,24 @@ export default function OurValuesSection() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-emerald-100 rounded-2xl shadow-xl p-6 flex flex-col items-center md-tablet:flex grid-cols-3 text-center border border-gray-200 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+                className="
+                  bg-gradient-to-t from-fuchsia-900 to-white rounded-2xl shadow-xl p-6 flex flex-col items-center md-tablet:flex grid-cols-3 
+                    text-center border border-fuchsia-400 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
               >
-                <div className="relative w-40 h-40 mb-4">
+                <div className="relative mb-4">
                   <Image
                     width={500}
                     height={500}
                     src={value.image}
                     alt={value.alt}
-                    className="w-64 h-auto"
+                    className="w-28 h-auto"
                   />
                 </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-lg font-bold text-white mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-100/80">
                       {value.description}
                     </p>
                   </div>

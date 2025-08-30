@@ -43,7 +43,10 @@ export default function WhyChooseUsSection() {
   return (
     <section className="bg-white py-8 px-4 md-tablet:px-8">
       <div className="container mx-auto max-w-7xl text-center">
-        <h2 className="text-4xl md-tablet:text-5xl font-extrabold text-gray-900 mb-12">
+        <h2 className="
+          text-4xl md-tablet:text-5xl font-extrabold py-12
+          bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-purple-400
+          ">
           ¿Por qué elegir a Devhoo?
         </h2>
 
@@ -53,10 +56,10 @@ export default function WhyChooseUsSection() {
             return (
               <div
                 key={index}
-                className={`flex items-center gap-10 bg-gray-100 border-2 border-black rounded-2xl shadow-2xl 
+                className={`flex items-center gap-10 bg-fuchsia-100/70 border-2 border-fuchsia-200 rounded-2xl shadow-2xl 
                   px- sm:px-6 md-tablet:px-8 table-lg:px-10 py-4 
                   mx-2 md-tablet:mx-8 table-lg:mx-32 
-                  transform transition duration-300 hover:scale-105 hover:shadow-2xl
+                  transform transition duration-300 hover:bg-fuchsia-200 hover:shadow-2xl
                   flex-col md-tablet:flex-row ${isReversed ? "md-tablet:flex-row-reverse" : ""}`}
               >
                 {/* Imagen */}
@@ -76,10 +79,10 @@ export default function WhyChooseUsSection() {
                     isReversed ? "md-tablet:text-right" : ""
                   }`}
                 >
-                  <h3 className="text-2xl font-bold text-gray-900 m-2">
+                  <h3 className="text-2xl font-bold text-blue-900 m-2">
                     {feature.title}
                   </h3>
-                  <p className="text-md text-gray-600 m-2">{feature.description}</p>
+                  <p className="text-base text-gray-600 m-2">{feature.description}</p>
                 </div>
               </div>
             );

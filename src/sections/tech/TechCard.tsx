@@ -18,16 +18,6 @@ interface TechCardProps {
   technologies: Technology[];
 }
 
-// const cardVariants: Variants = {
-//   hidden: { opacity: 0, y: 30, scale: 0.98 },
-//   show: {
-//     opacity: 1,
-//     y: 0,
-//     scale: 1,
-//     transition: { duration: 0.5, ease: "easeOut" },
-//   },
-// };
-
 const subtitleVariants: Variants = {
   hidden: { opacity: 0, x: -20 },
   show: { opacity: 1, x: 0, transition: { duration: 0.45, ease: "easeOut", delay: 0.15 } },

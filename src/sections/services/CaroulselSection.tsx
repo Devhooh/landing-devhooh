@@ -72,7 +72,7 @@ export default function CaroulselSection({ title, cardData }: CardCaroulselSecti
             >
               {/* pasamos index para el stagger */
               }
-              <CaroulselCard card={card} />
+              <CaroulselCard card={card} index={index}/>
             </SwiperSlide>
           ))}
         </Swiper>

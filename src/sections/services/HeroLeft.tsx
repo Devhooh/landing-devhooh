@@ -53,8 +53,7 @@ export default function HeroLeft({
               alt={title}
               width={500}
               height={500}
-              priority
-              className="w-72 md-tablet:w-96 h-auto object-contain rounded-2xl"
+              className="w-64 md-tablet:w-96 h-auto object-contain rounded-2xl"
             />
           </motion.div>
 

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 interface Project {
@@ -18,14 +18,10 @@ interface Project {
   subtitle?: string;
 }
 
-const fadeUpStagger: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: () => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: 0.2, ease: "easeOut" },
-  }),
-};
+const cardVariants = {
+    hidden: { opacity: 0, y: 80 },
+    show: { opacity: 1, y: 0 },
+  };
 
 
 interface ServicesProjectsProps {
@@ -43,11 +39,12 @@ export default function ServicesProjects({
 
     <section className="w-full h-auto">
       <motion.div
-        custom={index}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeUpStagger}
+      whileInView="show"
+      whileHover="hover"
+      viewport={{ once: true }}
+      variants={cardVariants}
+      transition={{ duration: 0.3, delay: index * 0.1 }}
         className="h-[400px] bg-gradient-to-t from-indigo-700/80 to-fuchsia-500/80 rounded-lg shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Imagen */}

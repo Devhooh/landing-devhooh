@@ -13,12 +13,13 @@ interface CardData {
 }
 
 const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 50 },
     show: { opacity: 1, y: 0 },
   };
 
 export default function CaroulselCard({
   card,
+  index = 0
 }: {
   card: CardData;
   index?: number;
@@ -30,7 +31,7 @@ export default function CaroulselCard({
       whileHover="hover"
       viewport={{ once: true }}
       variants={cardVariants}
-      transition={{ duration: 0.6, delay: 0.2 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
       className="
         bg-white/90 border border-gray-200 hover:border-fuchsia-400
         rounded-2xl shadow-xl overflow-hidden h-[490px]

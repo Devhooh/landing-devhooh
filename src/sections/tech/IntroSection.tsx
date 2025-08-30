@@ -45,7 +45,7 @@ export default function IntroSection() {
       </motion.div>
 
       {/* Bloque de Kit Tecnológico */}
-      <div className="overflow-hidden mx-auto mt-16 px-10 space-y-4 text-left">
+      <div className="overflow-hidden mx-auto mt-16 px-5 space-y-4 text-left">
         <motion.h3
           initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}

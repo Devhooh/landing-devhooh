@@ -18,15 +18,15 @@ interface TechCardProps {
   technologies: Technology[];
 }
 
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.98 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+// const cardVariants: Variants = {
+//   hidden: { opacity: 0, y: 30, scale: 0.98 },
+//   show: {
+//     opacity: 1,
+//     y: 0,
+//     scale: 1,
+//     transition: { duration: 0.5, ease: "easeOut" },
+//   },
+// };
 
 const subtitleVariants: Variants = {
   hidden: { opacity: 0, x: -20 },
@@ -60,11 +60,7 @@ const splitText = (text: string) => text.split("");
 
 export default function TechCard({ title, subtitle, technologies }: TechCardProps) {
   return (
-    <motion.article
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+    <article
       className="p-4 rounded-2xl shadow-md max-w-full bg-gradient-to-b from-blue-800/80 to-blue-950"
     >
       {/* Título */}
@@ -120,6 +116,6 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
           );
         })}
       </motion.div>
-    </motion.article>
+    </article>
   );
 }

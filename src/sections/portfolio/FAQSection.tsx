@@ -170,7 +170,7 @@ export default function FAQSection({itemsDate}: listFAQ ) {
   };
 
   return (
-    <div className="bg-gradient-to-t from-blue-100 to-white pb-8 pt-8 sm:px-6 table-lg:px-8 flex items-center justify-center">
+    <div className="bg-gradient-to-t from-blue-100 via-blue-200/50 to-white pb-8 pt-8 sm:px-6 table-lg:px-8 flex items-center justify-center">
       <div className="w-full max-w-4xl mx-auto px-10">
         <div className="text-center mb-12">
           <motion.h2

@@ -40,12 +40,12 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({ label, options, valu
 
   return (
     <div className="flex flex-col gap-3 w-full relative" ref={dropdownRef}>
-      <p className="text-indigo-950 font-semibold">{label}</p>
+      <p className="text-white/90 font-semibold">{label}</p>
       <div
-        className="bg-white p-2 border border-gray-300 rounded-md shadow-sm cursor-pointer flex justify-between items-center"
+        className="bg-purple-100 p-2 border border-fuchsia-300 rounded-md shadow-sm cursor-pointer flex justify-between items-center"
         onClick={handleToggle}
       >
-        <span>{value}</span>
+        <span className="text-fuchsia-950">{value}</span>
         {/* El ícono rota 180 grados cuando el menú está abierto */}
         <ChevronDown 
           className={`h-6 w-6 md-tablet:h-4 md-tablet:w-4 transform transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} 
@@ -53,7 +53,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({ label, options, valu
       </div>
       {/* Menú desplegable con animación suave */}
       <ul
-        className={`absolute z-10 w-full top-[100%] mt-1 bg-white border border-gray-300 rounded-md shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`absolute z-10 w-full top-[100%] mt-1 bg-white border border-fuchsia-300 rounded-md shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-60 opacity-100 overflow-y-auto" : "max-h-0 opacity-0"
         }`}
       >
@@ -61,7 +61,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({ label, options, valu
           <li
             key={option}
             onClick={() => handleSelect(option)}
-            className="p-2 cursor-pointer hover:bg-gray-100"
+            className="p-2 cursor-pointer hover:bg-fuchsia-200"
           >
             {option}
           </li>

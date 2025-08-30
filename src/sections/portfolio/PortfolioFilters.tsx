@@ -47,15 +47,18 @@ export default function PortfolioFilters() {
     <div className="bg-white p-6 shadow-md rounded-lg mx-auto max-w-7xl">
       
       <div className="mb-6 mx-2 md-tablet:mx-8">
-        <h2 className="text-2xl md-tablet:text-3xl font-extrabold text-gray-800">
-          Vea cómo Devhoo ayudo
+        <h2 className="text-2xl md-tablet:text-3xl font-extrabold text-blue-950">
+          Vea cómo Devhooh ayudó
         </h2>
         <p className="text-gray-600 mt-2 text-lg md-tablet:text-xl">
           a sus clientes a lograr su visión de innovación digital.
         </p>
       </div>
       
-      <div className="bg-gray-200 rounded-3xl flex flex-col md-tablet:flex-row gap-4 items-center mb-6 p-6 mx-2 md-tablet:mx-8">
+      <div className="
+        bg-fuchsia-900 rounded-3xl 
+          flex flex-col md-tablet:flex-row gap-4 items-center 
+          mb-6 p-6 mx-2 md-tablet:mx-8">
         <CustomSelect label="Proyectos" options={uniqueProjects} value={selectedProject} onChange={setSelectedProject} />
         <CustomSelect label="País" options={uniqueCountries} value={selectedCountry} onChange={setSelectedCountry} />
         <CustomSelect label="Servicio" options={uniqueServices} value={selectedService} onChange={setSelectedService} />

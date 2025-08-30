@@ -43,7 +43,7 @@ export default function ReviewCard({ review }: { review: Review }) {
 
   return (
 
-    <div className="bg-gradient-to-br from-white via-fuchsia-50 to-purple-50 rounded-2xl p-8 flex flex-col md-tablet:flex-row space-y-6 md-tablet:space-y-0 md-tablet:space-x-6 h-full max-w-3xl mx-auto">
+    <div className="bg-gradient-to-br from-white via-fuchsia-50 to-purple-50 border border-fuchsia-400 rounded-2xl p-8 flex flex-col md-tablet:flex-row space-y-6 md-tablet:space-y-0 md-tablet:space-x-6 h-full max-w-3xl mx-auto">
         
         {/* Sección izquierda */}
         <div className="flex-1 flex flex-col space-y-4">

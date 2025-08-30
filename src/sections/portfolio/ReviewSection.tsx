@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 
 export default function ReviewsSection() {
   return (
-    <div className="py-4 bg-gray-100">
+    <div className="py-4 bg-white">
       <div className="max-w-6xl mx-auto px-4 md-tablet:px-8">
         {/* Título y subtítulo */}
         <div className="text-center mb-12">

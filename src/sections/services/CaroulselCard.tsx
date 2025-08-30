@@ -23,7 +23,7 @@ export default function CaroulselCard({
       initial={{ opacity: 0, y: 30, scale: 0.98 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
       whileHover={{
         scale: 1.04,
         rotateX: 1.5,

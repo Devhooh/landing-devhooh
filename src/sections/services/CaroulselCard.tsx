@@ -12,26 +12,25 @@ interface CardData {
   icon: string;
 }
 
-const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    show: { opacity: 1, y: 0 },
-  };
-
 export default function CaroulselCard({
   card,
-  index = 0
+  index = 0,
 }: {
   card: CardData;
   index?: number;
 }) {
   return (
     <motion.div
-      initial="hidden"
-      whileInView="show"
-      whileHover="hover"
-      viewport={{ once: true }}
-      variants={cardVariants}
-      transition={{ duration: 0.6, delay: index * 0.2 }}
+      initial={{ opacity: 0, y: 30, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, delay: index * 0.1 , ease: "easeOut" }}
+      whileHover={{
+        scale: 1.04,
+        rotateX: 1.5,
+        rotateY: -1.5,
+        transition: { duration: 0.2 },
+      }}
       className="
         bg-white/90 border border-gray-200 hover:border-fuchsia-400
         rounded-2xl shadow-xl overflow-hidden h-[490px]

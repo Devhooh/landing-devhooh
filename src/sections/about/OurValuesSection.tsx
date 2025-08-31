@@ -36,7 +36,7 @@ export default function OurValuesSection() {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 md-tablet:px-4">
+    <section className="bg-white py-16 md-tablet:px-4">
       <div className="container mx-auto max-w-7xl text-center">
         <h2 className="
           text-4xl md-tablet:text-5xl font-extrabold mb-12
@@ -50,7 +50,7 @@ export default function OurValuesSection() {
               <div
                 key={index}
                 className="
-                  bg-gradient-to-t from-fuchsia-900 to-white rounded-2xl shadow-xl p-6 flex flex-col items-center md-tablet:flex grid-cols-3 
+                  bg-gradient-to-t from-fuchsia-900 to-fuchsia-300 rounded-2xl shadow-xl p-6 flex flex-col items-center md-tablet:flex grid-cols-3 
                     text-center border border-fuchsia-400 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 <div className="relative mb-4">

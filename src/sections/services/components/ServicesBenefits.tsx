@@ -10,13 +10,13 @@ interface BenefitsSectionProps {
 
 export default function ServicesBenefits({ service }: BenefitsSectionProps) {
   return (
-    <section className="p-6 md-tablet:px-8 table-lg:px-12 bg-gray-50">
+    <section className="p-6 md-tablet:px-8 table-lg:px-12 bg-blue-50">
       <div className="w-auto px-auto">
-        <h2 className="text-3xl font-extrabold mb-1 text-center md-tablet:text-left">
+        <h2 className="text-3xl font-extrabold mb-1 text-center md-tablet:text-left text-blue-900">
           Beneficios de nuestro servicio de 
         </h2>
         <h2 className="text-3xl font-extrabold mb-10 text-center md-tablet:text-left">
-          <span className="text-blue-600">{service.name}</span>
+          <span className="text-fuchsia-600 underline">{service.name}</span>
         </h2>
       </div>
 
@@ -30,11 +30,11 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
           return (
             <div
               key={index}
-              className="flex flex-col md-tablet:flex-row items-start md-tablet:items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition"
+              className="flex flex-col md-tablet:flex-row items-start md-tablet:items-center bg-white p-6 rounded-2xl shadow-md border border-fuchsia-300 hover:shadow-lg transition"
             >
               {/* Icono */}
               <div className="flex-shrink-0 mb-4 md-tablet:mb-0 md-tablet:mr-4">
-                <Icon className="w-10 h-10 text-blue-500" />
+                <Icon className="w-10 h-10 text-fuchsia-500" />
               </div>
 
               {/* Texto */}

@@ -13,13 +13,13 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
   const stack = service.stackTech[0]; // asumimos que siempre hay un stackTech
 
   return (
-    <section className="py-8 px-6 md-tablet:px-12 bg-gray-50">
+    <section className="py-8 px-6 md-tablet:px-12 bg-violet-50">
       {/* Encabezado global */}
       <div className="max-w-3xl mb-10">
-        <h2 className="text-3xl md-tablet:text-4xl font-bold text-gray-900">
+        <h2 className="text-3xl md-tablet:text-4xl font-bold text-blue-900">
           Stack de tecnología que utilizamos para {service.name}
         </h2>
-        <p className="mt-3 text-gray-600 text-base leading-relaxed">
+        <p className="mt-3 text-gray-600 text-base md-tablet:text-lg leading-relaxed">
           {stack.description}
         </p>
       </div>
@@ -35,15 +35,15 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
           return (
             <div
               key={index}
-              className="flex flex-col items-start p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:border-blue-200 transition duration-300"
+              className="flex flex-col items-start p-6 rounded-2xl bg-white border border-fuchsia-200 shadow-sm hover:shadow-xl hover:border-fuchsia-400 transition duration-300"
             >
               {/* Icono arriba izquierda */}
-              <div className="mb-3 p-3 rounded-lg bg-blue-100">
+              <div className="mb-3 p-3 rounded-lg bg-purple-100">
                 <Icon className={`w-8 h-8 text-${item.color}-600`} />
               </div>
 
               {/* Título */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-blue-900 mb-2">
                 {item.title}
               </h3>
 
@@ -52,7 +52,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
                 {item.listTech.map((tech, i) => (
                   <span 
                     key={i}
-                    className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                    className="bg-fuchsia-100 text-fuchsia-800 text-xs font-medium px-3 py-1 rounded-full"
                   >
                     {tech}
                   </span>
@@ -67,7 +67,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
       <div className="mt-10 text-center">
         <Link
           href="/tecnologia"
-          className="inline-block px-6 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
+          className="inline-block px-6 py-3 rounded-xl bg-fuchsia-600 text-white font-medium hover:bg-fuchsia-700 transition"
         >
           Ver todas las tecnologías
         </Link>

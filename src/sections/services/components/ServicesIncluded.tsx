@@ -10,9 +10,9 @@ interface BenefitsSectionProps {
 
 export default function ServicesIncluded({ service }: BenefitsSectionProps) {
   return (
-    <section className="py-12 px-6 md-tablet:px-12 bg-gray-50">
+    <section className="py-12 px-6 md-tablet:px-12 bg-white">
       <div className="max-w-3xl mx-auto text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+        <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-blue-900">
           ¿Por qué elegirnos para tu proyecto de {service.name.toLowerCase()}?
         </h2>
         <p className="text-gray-600 leading-relaxed">
@@ -21,9 +21,9 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
       </div>
       
       {/* Título */}
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-900">
         Qué incluye nuestro servicio de{" "}
-        <span className="text-blue-600">{service.name}</span>
+        <span className="text-fuchsia-600 underline">{service.name}</span>
       </h2>
 
       {/* Grid de beneficios */}
@@ -37,12 +37,12 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
           return (
             <div
               key={index}
-              className="flex flex-col p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:border-blue-200 transition duration-300"
+              className="flex flex-col p-6 rounded-2xl bg-gradient-to-t from-white to-purple-200 border shadow-sm hover:shadow-xl hover:border-fuchsia-400 transition duration-300"
             >
               {/* Icono + título */}
               <div className="flex items-center mb-4">
-                <div className="p-3 rounded-full bg-blue-100">
-                  <Icon className="w-7 h-7 text-blue-600" />
+                <div className="p-3 rounded-full bg-purple-100">
+                  <Icon className="w-7 h-7 text-fuchsia-600" />
                 </div>
                 <h3 className="ml-3 text-lg font-semibold text-gray-900">
                   {benefit.title}

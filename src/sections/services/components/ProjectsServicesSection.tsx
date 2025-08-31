@@ -9,9 +9,9 @@ export default function ProjectsServicesSection() {
   const displayedProjects = projectsData.slice(0, limit);
 
   return (
-    <section className="mx-5 py-8 px-4 table-lg:px-10 bg-gray-50">
+    <section className="mx-5 py-8 px-4 table-lg:px-10 bg-white">
       <div className="mx-auto mb-8">
-        <h2 className="text-left text-3xl md-tablet:text-4xl font-bold text-indigo-950">
+        <h2 className="text-left text-3xl md-tablet:text-4xl font-bold text-blue-900">
           Los proyectos que hemos hecho realidad
         </h2>
       </div>
@@ -25,7 +25,7 @@ export default function ProjectsServicesSection() {
       <div className="mt-10 text-center">
         <Link
           href="/portfolio"
-          className="inline-block px-8 py-3 text-base md-tablet:text-xl rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition"
+          className="inline-block px-8 py-3 text-base md-tablet:text-xl rounded-xl bg-fuchsia-600 text-white font-bold hover:bg-fuchsia-700 transition"
         >
           Ver todos los proyectos
         </Link>

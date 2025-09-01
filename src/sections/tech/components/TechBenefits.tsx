@@ -17,7 +17,7 @@ interface TechBenefitsProps {
 export default function TechBenefits({benefits, name}: TechBenefitsProps) {
   return (
     <section className="py-12 px-4 items-center justify-center">
-      <h2 className="text-center text-2xl md-tablet:text-4xl font-bold mb-6 mx-20">
+      <h2 className="text-center text-2xl md-tablet:text-4xl font-bold text-blue-950 mb-6 mx-20">
         Beneficios al usar {name}
       </h2>
 
@@ -31,11 +31,13 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
           return (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6 rounded-2xl shadow-md bg-white border-2 border-gray-200 hover:shadow-lg transition"
+              className="
+                flex flex-col items-center text-center p-6 rounded-2xl shadow-md 
+              bg-gradient-to-b from-blue-100 to-white border-2 border-fuchsia-200 hover:shadow-lg transition"
             >
-              <Icon className="w-10 h-10 mb-4 text-blue-500" />
-              <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-              <p className="text-sm text-gray-500">{benefit.description}</p>
+              <Icon className="w-10 h-10 mb-4 text-fuchsia-600" />
+              <h3 className="text-lg font-semibold text-violet-950 mb-2">{benefit.title}</h3>
+              <p className="text-sm text-gray-600">{benefit.description}</p>
             </div>
           );
         })}

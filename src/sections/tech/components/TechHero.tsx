@@ -11,10 +11,10 @@ export default function TechHero({ tech }: TechHeroProps) {
     <section className="container mx-auto px-6 py-12">
       <div className="grid grid-cols-1 tablet-md:grid-cols-2 gap-8 items-center">
         <div>
-          <h1 className="text-3xl md-tablet:text-4xl tablet-md:text-5xl table-lg:text-6xl font-bold">
+          <h1 className="text-3xl md-tablet:text-4xl tablet-md:text-6xl text-blue-950 font-bold">
             Servicios de desarrollo con <span className={tech.color}>{tech.title}</span>
           </h1>
-          <p className="mt-4 text-lg md-tablet:text-xl tablet-md:text-2xl table-lg:text-3xl text-gray-600">
+          <p className="mt-4 text-lg md-tablet:text-xl tablet-md:text-3xl text-gray-700">
             {tech.subtitle}
           </p>
         </div>

@@ -24,7 +24,7 @@ export default function TechWhy({ title, description, image }: TechWhyProps) {
 
       {/* Texto a la derecha */}
       <div className="order-1 text-center tablet-md:order-2 tablet-md:text-right flex flex-col items-end mx-auto">
-        <h2 className="text-2xl tablet-md:text-3xl font-bold mb-4">
+        <h2 className="text-2xl tablet-md:text-3xl font-bold mb-4 text-blue-950">
           ¿Por qué desarrollar con {title}?
         </h2>
         <p className="text-gray-600 leading-relaxed mb-6 max-w-md">
@@ -34,7 +34,7 @@ export default function TechWhy({ title, description, image }: TechWhyProps) {
         {/* Botón */}
         <Link
           href="/contact"
-          className="mx-auto tablet-md:mx-0 inline-block bg-indigo-600 text-white font-medium px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition"
+          className="mx-auto tablet-md:mx-0 inline-block bg-purple-600 text-white font-medium px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 transition"
         >
           Solicita presupuesto
         </Link>

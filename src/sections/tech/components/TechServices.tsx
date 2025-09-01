@@ -20,7 +20,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
         {/* Columna izquierda */}
         <div className="tablet-md:w-1/2 flex flex-col items-center text-center mx-auto">
           {/* Separamos el título de la imagen */}
-          <h2 className="text-4xl font-bold pb-16 items-center text-center">
+          <h2 className="text-4xl text-blue-950 font-bold pb-16 items-center text-center">
             Servicios de {name} que brindamos
           </h2>
 
@@ -40,9 +40,9 @@ export default function TechServices({ name, image, services }: TechServicesProp
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition"
+              className="p-4 bg-purple-200 rounded-lg shadow hover:shadow-lg transition"
             >
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <h3 className="text-xl text-fuchsia-950 font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
             </div>
           ))}

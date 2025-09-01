@@ -45,10 +45,10 @@ export default function ServicesProjects({
       viewport={{ once: true }}
       variants={cardVariants}
       transition={{ duration: 0.3, delay: index * 0.1 }}
-        className="h-[400px] bg-gradient-to-t from-indigo-700/80 to-fuchsia-500/80 rounded-lg shadow-2xl overflow-hidden flex flex-col"
+        className="h-[400px] border border-fuchsia-400 bg-gradient-to-t from-purple-700 to-purple-300 rounded-lg shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Imagen */}
-        <div className="bg-purple-700/50 p-3 h-48 w-full flex items-center justify-center">
+        <div className="bg-purple-200 p-3 h-48 w-full flex items-center justify-center">
           <Image
             width={400}
             height={400}
@@ -74,7 +74,7 @@ export default function ServicesProjects({
 
           <div>
             <Link href={`/portfolio/${project.slug}`}>
-              <button className="bg-fuchsia-200/90 text-indigo-950 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-fuchsia-400/80 hover:text-white hover:border border-fuchsia-600 transform transition-all">
+              <button className="bg-fuchsia-200/90 text-indigo-950 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-fuchsia-500 hover:text-white hover:border border-fuchsia-600 transform transition-all">
                 Ver más detalles
               </button>
             </Link>

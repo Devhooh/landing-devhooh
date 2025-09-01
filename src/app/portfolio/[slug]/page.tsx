@@ -37,14 +37,14 @@ export default function ProjectPage({ params }: Props) {
       <ResultSection project={project}/>
 
       {/* Galería de imágenes */}
-      <div className="max-w-7xl mx-auto mt-12">
+      <div className="max-w-7xl mx-auto mt-12 bg-gradient-to-t from-purple-300 to-white border border-gray-500 rounded-3xl">
         {/* Encabezado */}
-        <div className="text-center mb-16">
-          <h2 className=" text-3xl md-tablet:text-5xl font-bold pb-4">
+        <div className="text-center mb-16 pt-12">
+          <h2 className=" text-3xl md-tablet:text-5xl font-bold pb-4 text-blue-950">
             {project.company}
           </h2>
           {project.pictures.descripcion && (
-            <p className="mt-2 text-lg text-gray-600">
+            <p className="mt-2 text-lg text-gray-700">
               {project.pictures.descripcion}
             </p>
           )}

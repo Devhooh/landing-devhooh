@@ -7,8 +7,8 @@ interface StackSectionProps {
 
 export default function StackTech({ project }: StackSectionProps) {
   return (
-    <section className="w-full bg-white py-12 px-5 md-tablet:px-8">
-      <h2 className="text-3xl md-tablet:text-4xl font-bold text-gray-800 text-center mb-8">
+    <section className="w-full bg-gradient-to-b from-purple-300 to-white py-12 px-5 md-tablet:px-8">
+      <h2 className="text-3xl md-tablet:text-4xl font-bold text-blue-950 text-center mb-8">
         Stack de tecnologías del proyecto
       </h2>
 

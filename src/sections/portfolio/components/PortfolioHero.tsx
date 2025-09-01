@@ -7,10 +7,10 @@ interface PortfolioHeroProps {
 
 export default function PortfolioHero({ project }: PortfolioHeroProps) {
   return (
-    <section className="w-full bg-white py-12">
+    <section className="w-full bg-gradient-to-b from-purple-950 via-purple-700 to-white py-12">
       {/* Título */}
       <div className="text-center mb-10">
-        <h1 className="text-3xl mx-5 md-tablet:text-4xl font-extrabold text-gray-800">
+        <h1 className="text-3xl mx-5 md-tablet:text-4xl font-extrabold text-white">
           {project.title}
         </h1>
       </div>
@@ -18,20 +18,20 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
       {/* Grid de detalles */}
       <div className="grid grid-cols-2 table-lg:grid-cols-4 gap-6 max-w-4xl mx-5 md-tablet:mx-auto text-center mb-12">
         <div>
-          <h3 className="text-sm font-bold text-gray-500 uppercase">Proyecto</h3>
-          <p className="mt-1 text-lg font-medium text-gray-800">{project.projectName}</p>
+          <h3 className="text-lg font-bold underline text-blue-300 uppercase">Proyecto</h3>
+          <p className="mt-1 text-xl font-medium text-gray-200">{project.projectName}</p>
         </div>
         <div>
-          <h3 className="text-sm font-bold text-gray-500 uppercase">Cliente</h3>
-          <p className="mt-1 text-lg font-medium text-gray-800">{project.company}</p>
+          <h3 className="text-lg font-bold underline text-blue-300 uppercase">Cliente</h3>
+          <p className="mt-1 text-xl font-medium text-gray-200">{project.company}</p>
         </div>
         <div>
-          <h3 className="text-sm font-bold text-gray-500 uppercase">Servicio</h3>
-          <p className="mt-1 text-lg font-medium text-gray-800">{project.service}</p>
+          <h3 className="text-lg font-bold underline text-blue-300 uppercase">Servicio</h3>
+          <p className="mt-1 text-xl font-medium text-gray-200">{project.service}</p>
         </div>
         <div>
-          <h3 className="text-sm font-bold text-gray-500 uppercase">Ubicación</h3>
-          <p className="mt-1 text-lg font-medium text-gray-800">{project.location}</p>
+          <h3 className="text-lg font-bold underline text-blue-300 uppercase">Ubicación</h3>
+          <p className="mt-1 text-xl font-medium text-gray-200">{project.location}</p>
         </div>
       </div>
 

@@ -40,7 +40,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-4 bg-purple-200 rounded-lg shadow hover:shadow-lg transition"
+              className="p-4 bg-purple-200 border border-fuchsia-500 rounded-lg shadow hover:shadow-lg transition"
             >
               <h3 className="text-xl text-fuchsia-950 font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>

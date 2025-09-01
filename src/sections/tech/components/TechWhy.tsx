@@ -9,7 +9,10 @@ interface TechWhyProps {
 
 export default function TechWhy({ title, description, image }: TechWhyProps) {
   return (
-    <section className="max-w-5xl mx-auto px-16 py-16 grid grid-cols-1 tablet-md:grid-cols-2 gap-12 items-center">
+    <section className="
+      max-w-5xl mx-auto px-16 py-16 grid grid-cols-1 tablet-md:grid-cols-2 gap-12 items-center
+      rounded-2xl bg-gradient-to-t from-purple-50 to-purple-400
+      ">
       
       {/* Imagen a la izquierda */}
       <div className="flex justify-center order-2 tablet-md:order-1">

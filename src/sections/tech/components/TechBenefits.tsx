@@ -16,7 +16,7 @@ interface TechBenefitsProps {
 
 export default function TechBenefits({benefits, name}: TechBenefitsProps) {
   return (
-    <section className="py-12 px-4 items-center justify-center">
+    <section className="my-20 py-12 px-4 items-center justify-center bg-gray-100/80">
       <h2 className="text-center text-2xl md-tablet:text-4xl font-bold text-blue-950 mb-6 mx-20">
         Beneficios al usar {name}
       </h2>
@@ -33,7 +33,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
               key={index}
               className="
                 flex flex-col items-center text-center p-6 rounded-2xl shadow-md 
-              bg-gradient-to-b from-blue-100 to-white border-2 border-fuchsia-200 hover:shadow-lg transition"
+              bg-gradient-to-b from-violet-300 to-white border-2 border-fuchsia-200 hover:shadow-lg transition"
             >
               <Icon className="w-10 h-10 mb-4 text-fuchsia-600" />
               <h3 className="text-lg font-semibold text-violet-950 mb-2">{benefit.title}</h3>

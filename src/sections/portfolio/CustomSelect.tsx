@@ -42,7 +42,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({ label, options, valu
     <div className="flex flex-col gap-3 w-full relative" ref={dropdownRef}>
       <p className="text-white/90 font-semibold">{label}</p>
       <div
-        className="bg-purple-100 p-2 border border-fuchsia-300 rounded-md shadow-sm cursor-pointer flex justify-between items-center"
+        className="bg-gray-100 p-2 border border-fuchsia-300 rounded-md shadow-sm cursor-pointer flex justify-between items-center"
         onClick={handleToggle}
       >
         <span className="text-fuchsia-950">{value}</span>

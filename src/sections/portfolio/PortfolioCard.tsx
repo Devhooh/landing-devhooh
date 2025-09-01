@@ -59,7 +59,7 @@ export default function PortfolioCard({ project }: { project: Project }) {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-fuchsia-500 text-white text-xs font-medium px-2.5 py-0.5 rounded-full"
+                  className="bg-fuchsia-300 text-black text-xs font-medium px-2.5 py-0.5 rounded-full"
                 >
                   {tech}
                 </span>

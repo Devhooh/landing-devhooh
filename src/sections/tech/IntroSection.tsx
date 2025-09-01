@@ -49,7 +49,7 @@ export default function IntroSection() {
         <motion.h3
           initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6, type: "spring" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-2xl md-tablet:text-3xl font-bold text-indigo-950"
         >
@@ -57,7 +57,7 @@ export default function IntroSection() {
         </motion.h3>
 
         <motion.p
-          initial={{ x: 40, opacity: 0 }}
+          initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}

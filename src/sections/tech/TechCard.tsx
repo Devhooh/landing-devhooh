@@ -93,7 +93,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
             <motion.div key={idx} variants={techItemVariants}>
               <Link
                 href={`/tecnologia/${tech.slug}`}
-                className="flex items-center justify-between p-2 rounded-lg bg-fuchsia-100 border-2 border-fuchsia-300
+                className="flex items-center justify-between p-2 rounded-lg bg-fuchsia-50 hover:bg-fuchsia-100 border-2 border-fuchsia-500
                   transform transition duration-300 hover:scale-95 hover:shadow-xl"
               >
                 <div className="flex items-center gap-2">

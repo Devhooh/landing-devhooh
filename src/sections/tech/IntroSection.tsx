@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function IntroSection() {
   return (
-    <section className="w-full pb-5 pt-16 mx-auto bg-gradient-to-t from-white via-blue-200/50 to-blue-800/50">
+    <section className="w-full pb-5 pt-16 mx-auto bg-gradient-to-t from-white via-blue-200/50 to-blue-900/60">
       {/* Hero de Tecnología */}
       <div className="max-w-5xl mx-auto px-10 text-center items-center space-y-4">
         <motion.h2
@@ -14,7 +14,7 @@ export default function IntroSection() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, type: "spring" }}
           viewport={{ once: true }}
-          className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-indigo-950 pb-5"
+          className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-blue-950 pb-5"
         >
           Todo lo que necesitas para construir y escalar
         </motion.h2>

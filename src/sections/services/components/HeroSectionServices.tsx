@@ -9,17 +9,17 @@ interface HeroSectionProps {
 
 export default function HeroSectionServices({ service }: HeroSectionProps) {
   return (
-    <section className="w-full pt-20 bg-gradient-to-b from-purple-300 via-purple-200 to-white flex flex-col items-center text-center px-4 md-tablet:px-8">
+    <section className="w-full pt-20 bg-gradient-to-b from-purple-900 via-purple-800 to-white flex flex-col items-center text-center px-4 md-tablet:px-8">
       {/* Título */}
       <h1 className="
         text-4xl md-tablet:text-6xl font-extrabold mb-4
-        bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-blue-600
+        bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-white
       ">
         {service.name}
       </h1>
 
       {/* Subtítulo */}
-      <p className="text-base md-tablet:text-lg tablet-md:text-xl table-lg:text-2xl text-gray-700 mb-10 max-w-3xl">
+      <p className="text-base md-tablet:text-lg tablet-md:text-xl table-lg:text-2xl text-gray-200 mb-10 max-w-3xl">
         {service.subtitle}
       </p>
 

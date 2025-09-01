@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 export default function OurValuesSection() {
   const values = [
@@ -35,44 +36,87 @@ export default function OurValuesSection() {
     },
   ];
 
+  // Variantes para contenedor (stagger effect)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // delay entre cada card
+      },
+    },
+  };
+
+  // Variantes para cada card
+  const cardVariants: Variants = {
+    hidden: { opacity: 0},
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  // El texto saldra uno por uno
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
+  const splitText = (text: string) => text.split("");
+
   return (
     <section className="bg-white py-16 md-tablet:px-4">
       <div className="container mx-auto max-w-7xl text-center">
-        <h2 className="
+
+        <motion.h2
+          className="
           text-4xl md-tablet:text-5xl font-extrabold mb-12
           bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-purple-400
-          ">
-          Nuestros Valores
-        </h2>
+          "
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.05 } } }}
+        >
+          {splitText("Nuestros Valores").map((letter, idx) => (
+            <motion.span key={idx} variants={letterVariants}>
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h2>
 
-        <div className="flex flex-wrap justify-center gap-6">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="
-                  bg-gradient-to-t from-fuchsia-900 to-fuchsia-300 rounded-2xl shadow-xl p-6 flex flex-col items-center md-tablet:flex grid-cols-3 
-                    text-center border border-fuchsia-400 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-              >
-                <div className="relative mb-4">
-                  <Image
-                    width={500}
-                    height={500}
-                    src={value.image}
-                    alt={value.alt}
-                    className="w-28 h-auto"
-                  />
-                </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {value.title}
-                    </h3>
-                    <p className="text-sm text-gray-100/80">
-                      {value.description}
-                    </p>
-                  </div>
+        {/* Contenedor animado con stagger */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex flex-wrap justify-center gap-6"
+        >
+          {values.map((value, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className="
+                bg-gradient-to-t from-fuchsia-900 to-fuchsia-300 rounded-2xl shadow-xl p-6 flex flex-col items-center 
+                text-center border border-fuchsia-400 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl
+              "
+            >
+              <div className="relative mb-4">
+                <Image
+                  width={500}
+                  height={500}
+                  src={value.image}
+                  alt={value.alt}
+                  className="w-28 h-auto"
+                />
               </div>
-            ))}
-        </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">
+                  {value.title}
+                </h3>
+                <p className="text-sm text-gray-100/80">{value.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

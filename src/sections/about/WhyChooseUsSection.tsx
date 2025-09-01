@@ -1,5 +1,21 @@
 "use client";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
+
+// Variantes según dirección
+const cardVariants: Variants = {
+  hiddenLeft: { opacity: 0, x: -80 },
+  hiddenRight: { opacity: 0, x: 80 },
+  show: { opacity: 1, x: 0 },
+};
+
+// El texto saldra uno por uno
+const letterVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
+const splitText = (text: string) => text.split("");
 
 export default function WhyChooseUsSection() {
   const features = [
@@ -43,24 +59,39 @@ export default function WhyChooseUsSection() {
   return (
     <section className="bg-white py-8 px-4 md-tablet:px-8">
       <div className="container mx-auto max-w-7xl text-center">
-        <h2 className="
-          text-4xl md-tablet:text-5xl font-extrabold py-12
-          bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-purple-400
-          ">
-          ¿Por qué elegir a Devhoo?
-        </h2>
 
+        <motion.h2
+          className="
+          text-4xl md-tablet:text-5xl font-extrabold py-12
+          bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-purple-400"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+        >
+          {splitText("¿Por qué elegir a Devhoo?").map((letter, idx) => (
+            <motion.span key={idx} variants={letterVariants}>
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h2>
+        
+        {/* Cards */}
         <div className="flex flex-col gap-8 md-tablet:gap-10 table-lg:gap-12">
           {features.map((feature, index) => {
             const isReversed = index % 2 === 1;
             return (
-              <div
+              <motion.div
                 key={index}
                 className={`flex items-center gap-10 bg-fuchsia-100/70 border-2 border-fuchsia-200 rounded-2xl shadow-2xl 
-                  px- sm:px-6 md-tablet:px-8 table-lg:px-10 py-4 
+                  sm:px-6 md-tablet:px-8 table-lg:px-10 py-4 
                   mx-2 md-tablet:mx-8 table-lg:mx-32 
                   transform transition duration-300 hover:bg-fuchsia-200 hover:shadow-2xl
                   flex-col md-tablet:flex-row ${isReversed ? "md-tablet:flex-row-reverse" : ""}`}
+                initial={isReversed ? "hiddenRight" : "hiddenLeft"}
+                whileInView="show"
+                viewport={{ once: true}}
+                variants={cardVariants}
               >
                 {/* Imagen */}
                 <div className="flex-shrink-0 w-20 h-20 md-tablet:w-20 md-tablet:h-20 relative">
@@ -82,9 +113,11 @@ export default function WhyChooseUsSection() {
                   <h3 className="text-2xl font-bold text-blue-900 m-2">
                     {feature.title}
                   </h3>
-                  <p className="text-base text-gray-600 m-2">{feature.description}</p>
+                  <p className="text-base text-gray-600 m-2">
+                    {feature.description}
+                  </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

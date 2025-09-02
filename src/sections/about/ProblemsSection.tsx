@@ -92,12 +92,15 @@ export default function ProblemsSection() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
+        {/* Titulo: */}
         <motion.h2 
           className="text-3xl md-tablet:text-5xl pb-5 font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-purple-400"
           variants={itemVariants}
         >
           ¿Qué problemas solucionamos?
         </motion.h2>
+
+        {/* Subtitulo: */}
         <motion.p 
           className="text-xl table-lg:text-2xl text-gray-800"
           variants={itemVariants}
@@ -106,14 +109,17 @@ export default function ProblemsSection() {
         </motion.p>
       </motion.div>
 
+
+      {/* Contenedor de cards: */}
       <motion.div 
         className="grid grid-cols-1 md-tablet:grid-cols-1 table-lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ staggerChildren: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ staggerChildren: 0.5 }}
       >
         {problems.map((problem, index) => (
+          // Cards
           <motion.div
             key={index}
             className="flex flex-col md-tablet:flex-row items-center md-tablet:items-center gap-4 bg-gradient-to-b from-fuchsia-200 to-white border-2 border-fuchsia-400 shadow-md rounded-xl p-6"
@@ -121,7 +127,7 @@ export default function ProblemsSection() {
             whileHover={{ 
               y: -5, 
               transition: { 
-                duration: 0.3,
+                duration: 0.6,
                 ease: "easeOut"
               } 
             }}
@@ -129,8 +135,8 @@ export default function ProblemsSection() {
             {/* Icono */}
             <div className="w-16 h-16 relative flex-shrink-0">
               <Image
-                width={200}
-                height={200}
+                width={500}
+                height={500}
                 src={problem.icon}
                 alt={problem.title1}
                 className="object-contain"

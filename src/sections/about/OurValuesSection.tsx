@@ -42,7 +42,7 @@ export default function OurValuesSection() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // delay entre cada card
+        staggerChildren: 0.6, // delay entre cada card
       },
     },
   };
@@ -87,7 +87,7 @@ export default function OurValuesSection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="flex flex-wrap justify-center gap-6"
         >
           {values.map((value, index) => (

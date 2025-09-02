@@ -199,9 +199,9 @@ export const techData: Record<string, DataTech> = {
       { title: "Optimización y rendimiento", description: "Aplicaciones optimizadas para velocidad, carga y experiencia del usuario final."},
     ],
     proceso: [
-      { icon: "Design", title: "Planificación", description: "Definimos arquitectura y módulos." },
-      { icon: "Dev", title: "Desarrollo Angular", description: "Implementamos componentes, servicios y rutas según arquitectura." },
-      { icon: "Deploy", title: "Deploy", description: "Publicamos la aplicación en servidores optimizados para Angular." },
+      { icon: "Brush", title: "Planificación", description: "Definimos arquitectura y módulos." },
+      { icon: "CodeXml", title: "Desarrollo Angular", description: "Implementamos componentes, servicios y rutas según arquitectura." },
+      { icon: "Package", title: "Deploy", description: "Publicamos la aplicación en servidores optimizados para Angular." },
     ],
     faq: [
       { id: 1, question: "¿Qué ventajas tiene Angular frente a otros frameworks?", answer: "Angular es un framework completo con herramientas integradas para desarrollo, testing y arquitectura robusta. Su CLI y módulos predefinidos agilizan el desarrollo de aplicaciones complejas." },

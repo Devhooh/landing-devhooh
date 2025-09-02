@@ -27,7 +27,7 @@ export default function TechPage({ params }: Props) {
     <div>
       <TechHero tech={tech} />
 
-      <TechWhy title={tech.title} description={tech.whyTech} image={tech.image}/>
+      <TechWhy title={tech.title} color={tech.color} description={tech.whyTech} image={tech.image}/>
 
       <TechBenefits benefits={tech.beneficios} name={tech.title}/>
 

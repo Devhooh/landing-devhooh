@@ -42,7 +42,7 @@ export default function OurValuesSection() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.6, // delay entre cada card
+        staggerChildren: 0.4, // delay entre cada card
       },
     },
   };

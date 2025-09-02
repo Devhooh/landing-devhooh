@@ -47,7 +47,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 10 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ ease: "easeOut", delay: index * 0.2 }}
               viewport={{ once: true }}

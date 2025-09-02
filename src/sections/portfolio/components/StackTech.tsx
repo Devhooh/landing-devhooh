@@ -1,5 +1,7 @@
+"use client"
 import { Project } from "@/data/portfolioDetails";
 import { iconsData } from "@/data/techData";
+import { motion } from "framer-motion";
 
 interface StackSectionProps {
   project: Project;
@@ -7,14 +9,20 @@ interface StackSectionProps {
 
 export default function StackTech({ project }: StackSectionProps) {
   return (
-    <section className="w-full bg-gradient-to-b from-purple-300 to-white py-12 px-5 md-tablet:px-8">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }} // empieza abajo y transparente
+      whileInView={{ opacity: 1, y: 0 }} // sube y aparece
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="w-full bg-gradient-to-b from-purple-300 to-white py-12 px-5 md-tablet:px-8"
+    >
       <h2 className="text-3xl md-tablet:text-4xl font-bold text-blue-950 text-center mb-8">
         Stack de tecnologías del proyecto
       </h2>
 
       <div className="flex flex-wrap justify-center gap-4">
         {project.stackTech.map((tech) => {
-          const Icon = iconsData[tech.icon]; // obtenemos el componente dinámicamente
+          const Icon = iconsData[tech.icon];
           return (
             <div
               key={tech.name}
@@ -26,6 +34,6 @@ export default function StackTech({ project }: StackSectionProps) {
           );
         })}
       </div>
-    </section>
+    </motion.section>
   );
 }

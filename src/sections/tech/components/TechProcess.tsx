@@ -101,7 +101,7 @@ const splitText = (text: string) => text.split("");
 export default function TechProcess({ name, steps }: TechProcessProps) {
   if (!steps || steps.length === 0) return null;
   return (
-    <section className="py-12 px-8">
+    <section className="py-12 px-5 md-tablet:px-10">
       {/* Título animado */}
       <motion.h2
         className="text-center text-2xl md-tablet:text-4xl text-blue-950 font-bold mb-12"
@@ -126,7 +126,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
         viewport={{ once: true, amount: 0.2 }}
       >
         {/* Línea vertical */}
-        <div className="absolute top-0 left-4 md-tablet:left-12 w-1 bg-fuchsia-300 h-full"></div>
+        <div className="absolute top-0 left-12 md-tablet:left-12 w-1 bg-fuchsia-300 h-full"></div>
 
         <motion.div className="flex flex-col gap-12">
           {steps.map((step, index) => {

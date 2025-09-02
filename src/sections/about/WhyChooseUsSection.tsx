@@ -4,8 +4,8 @@ import { motion, Variants } from "framer-motion";
 
 // Variantes según dirección
 const cardVariants: Variants = {
-  hiddenLeft: { opacity: 0, x: -80 },
-  hiddenRight: { opacity: 0, x: 80 },
+  hiddenLeft: { opacity: 0, x: -40 },
+  hiddenRight: { opacity: 0, x: 40 },
   show: { opacity: 1, x: 0 },
 };
 

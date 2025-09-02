@@ -94,7 +94,7 @@ export default function TechSection() {
                 <motion.div
                   className="flex items-center justify-center w-14 h-14 rounded-full bg-white border border-gray-200 shadow z-20"
                   initial={{ y: 0 }}
-                  animate={{ y: [0, -10, 0, 10, 0] }} // movimiento tipo ola
+                  animate={{ y: [0, 3, 5, -10, 5, 3, 0, 3, 5, 10, 5, 3, 0] }} // movimiento tipo ola
                   transition={{
                     duration: 4,
                     repeat: Infinity,

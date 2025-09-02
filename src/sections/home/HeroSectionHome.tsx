@@ -56,9 +56,6 @@ export default function HeroSectionHome() {
                 priority
               />
             </div>
-            {/* Glows */}
-            <div className="absolute -z-0 top-10 right-10 w-72 h-72 bg-fuchsia-400 blur-3xl opacity-30 rounded-full"></div>
-            <div className="absolute -z-0 bottom-24 left-10 w-72 h-72 bg-blue-400 blur-3xl opacity-20 rounded-full"></div>
           </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}

@@ -16,7 +16,7 @@ export default function HeroSlider() {
         navigation
         autoplay={{ delay: 7000 }}
         loop
-        className="w-full mx-auto bg-gradient-to-t from-fuchsia-400/50 to-white"
+        className="w-full mx-auto bg-gradient-to-b from-fuchsia-900 via-fuchsia-800 to-fuchsia-400/80"
       >
         {/* Slide 1: HeroLeft */}
         <SwiperSlide>

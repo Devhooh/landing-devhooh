@@ -34,7 +34,7 @@ export default function HeroLeft({
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md-tablet:text-4xl font-extrabold leading-tight text-center table-lg:text-left 
-              text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-800/80
+              text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-white
             ">
               {title}
             </h2>
@@ -65,14 +65,14 @@ export default function HeroLeft({
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-lg md-tablet:text-xl text-gray-700 text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-xl text-gray-200 text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
               {subtitle}
             </p>
           </motion.div>
 
           {/* --- 4) LISTA --- */}
           <motion.ul
-            className="order-4 flex justify-center table-lg:justify-start flex-col space-y-4 text-gray-800 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
+            className="order-4 flex justify-center table-lg:justify-start flex-col space-y-4 text-gray-100 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
             initial="hidden"
             whileInView="show"
             variants={{
@@ -86,14 +86,14 @@ export default function HeroLeft({
             {features.map((feature, index) => (
               <motion.li
                 key={index}
-                className="flex items-center gap-3"
+                className="flex items-start gap-3"
                 variants={{
                   hidden: { opacity: 0, x: -40 },
                   show: { opacity: 1, x: 0 },
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <Star className="w-6 h-6 text-fuchsia-500 flex-shrink-0" />
+                <Star className="w-6 h-6 text-yellow-500 flex-shrink-0" />
                 <span className="text-base md-tablet:text-lg">{feature}</span>
               </motion.li>
             ))}

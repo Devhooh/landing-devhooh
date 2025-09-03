@@ -28,7 +28,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h2 className="text-4xl font-extrabold leading-tight text-center table-lg:text-right
-              text-transparent bg-clip-text bg-gradient-to-r from-blue-950 to-indigo-800/80
+              text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-white
             ">
               {title}
             </h2>

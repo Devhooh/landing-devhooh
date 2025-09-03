@@ -24,7 +24,7 @@ export default function HeroSlider() {
             title="¿Buscas desarrollo de calidad y escalable? Aquí lo tienes."
             subtitle="Descubre nuestros servicios de desarrollo y conoce las tecnologías web y herramientas que utilizamos para llevar tus proyectos digitales al siguiente nivel."
             cta="Empieza tu proyecto"
-            images="/assets/images/slide1.png"
+            images="/assets/images/webSoftware.png"
             features={[
               "Diseño web responsivo y adaptable para todos los dispositivos",
               "Entrega puntual de proyectos con alta calidad garantizada",

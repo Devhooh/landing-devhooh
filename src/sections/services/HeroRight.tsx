@@ -1,6 +1,6 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { Asterisk } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -59,7 +59,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            <p className="text-lg md-tablet:text-xl text-gray-700 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-xl text-gray-200 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               {subtitle}
             </p>
           </motion.div>
@@ -73,17 +73,17 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
           >
             {features.length > 0 && (
-              <ul className="space-y-3 text-gray-800 text-left max-w-md mx-auto table-lg:mx-0">
+              <ul className="space-y-3 text-gray-100 text-left max-w-md mx-auto table-lg:mx-0">
                 {features.map((feature, index) => (
                   <motion.li
                     key={index}
-                    className="flex items-center gap-3"
+                    className="flex items-start gap-3"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Star className="w-6 h-6 text-fuchsia-500 flex-shrink-0" />
+                    <Asterisk className="w-6 h-6 text-black flex-shrink-0" />
                     <span className="text-base md-tablet:text-xl">{feature}</span>
                   </motion.li>
                 ))}
@@ -100,7 +100,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
             <Link href="/contact">
-              <button className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-fuchsia-500 text-white rounded-xl shadow-md hover:bg-fuchsia-600 hover:scale-105 transform transition-all duration-300">
+              <button className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-violet-600 text-white rounded-xl shadow-md hover:bg-violet-700 hover:scale-105 transform transition-all duration-300">
                 {cta}
               </button>
             </Link>

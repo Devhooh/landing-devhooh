@@ -14,14 +14,14 @@ const fadeUpStagger: Variants = {
   visible: () => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.10},
   }),
 };
 
 export default function ServicesCardsSection() {
   return (
     <section className="w-full overflow-hidden">
-      <div className="px-6 table-lg:px-8 py-10 bg-gradient-to-b from-fuchsia-400/50 to-white">
+      <div className="px-6 table-lg:px-8 py-10 bg-gradient-to-b from-fuchsia-200 to-white">
         <div className="max-w-[1550px] mx-auto grid grid-cols-1 table-lg:grid-cols-[6fr_4fr] gap-6 items-start">
           
           {/* Lado izquierdo - Contenedor de las tarjetas */}
@@ -117,10 +117,10 @@ export default function ServicesCardsSection() {
             variants={fadeRight}
             className="text-center table-lg:text-right order-first table-lg:order-last"
           >
-            <h2 className="text-4xl md-tablet:text-7xl font-extrabold text-indigo-950 mb-8">
+            <h2 className="text-4xl md-tablet:text-7xl font-extrabold text-blue-900 mb-8">
               ¿En qué etapa se encuentra tu proyecto?
             </h2>
-            <p className="text-xl md-tablet:text-2xl font-semibold text-gray-500 mb-8 mx-auto table-lg:mx-0">
+            <p className="text-xl md-tablet:text-2xl font-semibold text-gray-700 mb-8 mx-auto table-lg:mx-0">
               No importa si estás dando los primeros pasos o buscas escalar. En Devhooh,
               adaptamos nuestros servicios para impulsar tu visión.
             </p>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Star } from "lucide-react";
+import { Asterisk  } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface HeroLeftProps {
@@ -53,7 +53,7 @@ export default function HeroLeft({
               alt={title}
               width={500}
               height={500}
-              className="w-64 md-tablet:w-96 h-auto object-contain rounded-2xl"
+              className="w-64 md-tablet:w-72 table-lg:w-80 h-auto object-contain rounded-lg"
             />
           </motion.div>
 
@@ -93,7 +93,7 @@ export default function HeroLeft({
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <Star className="w-6 h-6 text-yellow-500 flex-shrink-0" />
+                <Asterisk  className="w-6 h-6 text-black flex-shrink-0" />
                 <span className="text-base md-tablet:text-lg">{feature}</span>
               </motion.li>
             ))}
@@ -111,7 +111,7 @@ export default function HeroLeft({
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-fuchsia-500 text-white rounded-2xl shadow-md hover:bg-fuchsia-600 transform transition-all duration-300"
+                className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-violet-600 text-white rounded-2xl shadow-md hover:bg-violet-700 transform transition-all duration-300"
               >
                 {cta}
               </motion.button>

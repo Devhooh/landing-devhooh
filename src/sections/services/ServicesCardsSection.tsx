@@ -10,7 +10,7 @@ const fadeRight = {
 };
 
 const fadeUpStagger: Variants = {
-  hidden: { opacity: 0, y: 80 },
+  hidden: { opacity: 0, y: 50 },
   visible: () => ({
     opacity: 1,
     y: 0,
@@ -21,7 +21,7 @@ const fadeUpStagger: Variants = {
 export default function ServicesCardsSection() {
   return (
     <section className="w-full overflow-hidden">
-      <div className="px-6 table-lg:px-8 py-10 bg-gradient-to-b from-fuchsia-200 to-white">
+      <div className="px-6 table-lg:px-8 py-10 bg-gradient-to-b from-gray-100 to-white">
         <div className="max-w-[1550px] mx-auto grid grid-cols-1 table-lg:grid-cols-[6fr_4fr] gap-6 items-start">
           
           {/* Lado izquierdo - Contenedor de las tarjetas */}
@@ -32,7 +32,7 @@ export default function ServicesCardsSection() {
               custom={0}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={fadeUpStagger}
               className="
                 bg-gradient-to-b from-indigo-600/70 via-blue-600/70 to-indigo-800/80 
@@ -59,7 +59,7 @@ export default function ServicesCardsSection() {
               custom={1}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={fadeUpStagger}
               className="
                 bg-gradient-to-b from-indigo-600/70 via-blue-600/70 to-indigo-800/80 
@@ -86,7 +86,7 @@ export default function ServicesCardsSection() {
               custom={2}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={fadeUpStagger}
               className="
                 bg-gradient-to-b from-indigo-600/70 via-blue-600/70 to-indigo-800/80 

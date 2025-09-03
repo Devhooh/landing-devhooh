@@ -33,13 +33,15 @@ export default function CaroulselSection({ title, cardData }: CardCaroulselSecti
   return (
     <section
       className="
-        bg-gradient-to-t from-purple-900/80 to-purple-200
+        bg-gradient-to-bl from-purple-900 to-purple-700
         w-full h-full pt-10 overflow-hidden rounded-3xl shadow-inner
       "
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="px-4 text-3xl md-tablet:text-4xl text-center font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-indigo-800 drop-shadow-sm"
+          className="
+            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold bg-clip-text text-transparent 
+            bg-gradient-to-r from-gray-300 to-white drop-shadow-sm"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -70,8 +72,7 @@ export default function CaroulselSection({ title, cardData }: CardCaroulselSecti
               key={index}
               className="px-4 py-8 md-tablet:pb-10 flex justify-center items-center"
             >
-              {/* pasamos index para el stagger */
-              }
+              {/* pasamos index para el stagger */}
               <CaroulselCard card={card} index={index}/>
             </SwiperSlide>
           ))}

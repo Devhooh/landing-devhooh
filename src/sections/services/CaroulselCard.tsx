@@ -23,8 +23,8 @@ export default function CaroulselCard({
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.98 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay: index * 0.1 , ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay: index * 0.2}}
       whileHover={{
         scale: 1.04,
         rotateX: 1.5,
@@ -32,10 +32,9 @@ export default function CaroulselCard({
         transition: { duration: 0.2 },
       }}
       className="
-        bg-white/90 border border-gray-200 hover:border-fuchsia-400
+        bg-fuchsia-100 border border-gray-200 hover:border-fuchsia-400
         rounded-2xl shadow-xl overflow-hidden h-[490px]
-        flex flex-col
-      "
+        flex flex-col"
     >
       {/* Imagen */}
       <div className="flex items-center justify-center bg-gradient-to-br from-fuchsia-50 via-white to-purple-50 p-6">

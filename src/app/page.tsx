@@ -1,5 +1,5 @@
-import ContactCTA from "@/components/ui/ContactCTA";
 import { BenefitsSection } from "@/sections/home/BenefitsSection";
+import CTAHome from "@/sections/home/CTAHome";
 import HeroSectionHome from "@/sections/home/HeroSectionHome";
 import { PlansSection } from "@/sections/home/PlansSection";
 import { ProjectsSection } from "@/sections/home/ProjectsSection";
@@ -21,7 +21,7 @@ export default function Home() {
 
       <PlansSection/>
 
-      <ContactCTA/>
+      <CTAHome/>
 
     </div>
   );

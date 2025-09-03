@@ -73,12 +73,12 @@ export default function TechSection() {
         </motion.p>
 
         <div className="relative">
-          <div className="hidden md-tablet:block absolute inset-x-0 top-7 h-px bg-gray-300" />
-          <div className="block md-tablet:hidden absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 transform -translate-x-1/2" />
+          <div className="hidden tablet-md:block absolute inset-x-0 top-7 h-px bg-gray-300" />
+          <div className="block tablet-md:hidden absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 transform -translate-x-1/2" />
 
           {/* Items animados */}
           <motion.div
-            className="relative z-10 flex flex-col md-tablet:flex-row md-tablet:items-start md-tablet:justify-between gap-12"
+            className="relative z-10 flex flex-col tablet-md:flex-row tablet-md:items-start md-tablet:justify-between gap-12"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}

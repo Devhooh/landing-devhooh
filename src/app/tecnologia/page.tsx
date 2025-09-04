@@ -1,4 +1,4 @@
-import ContactCTA from "@/components/ui/ContactCTA";
+import CTATech from "@/sections/tech/CTATech";
 import FeaturedSection from "@/sections/tech/FeaturedSection";
 import HeroSectionTech from "@/sections/tech/HeroSectionTech";
 import IntroSection from "@/sections/tech/IntroSection";
@@ -18,7 +18,7 @@ export default function Tecnologia() {
 
       <TechProjectSection/>
 
-      <ContactCTA/>
+      <CTATech/>
 
     </div>
   )

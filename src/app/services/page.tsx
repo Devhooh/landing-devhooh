@@ -1,12 +1,12 @@
 import CaroulselSection from "@/sections/services/CaroulselSection";
 import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
-import ContactCTA from "@/components/ui/ContactCTA";
 import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
 import FAQSection from "@/sections/portfolio/FAQSection";
 import { faqDataServices } from "@/data/faqDataServices";
 import { projectsData } from "@/data/portfolioData";
 import HeroSlider from "@/sections/services/HeroSlider";
+import CTAServices from "@/sections/services/CTAServices";
 
 export default function Services() {
   return (
@@ -47,7 +47,7 @@ export default function Services() {
 
       <FAQSection itemsDate={faqDataServices}/>
 
-      <ContactCTA/>
+      <CTAServices/>
     </div>
   )
 }

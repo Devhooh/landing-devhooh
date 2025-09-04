@@ -1,7 +1,7 @@
 import NotFound from "@/app/not-found";
-import ContactCTA from "@/components/ui/ContactCTA";
 import { portfolioDetails } from "@/data/portfolioDetails";
 import ChallengeSection from "@/sections/portfolio/components/ChallengeSection";
+import CTASlugfolio from "@/sections/portfolio/components/CTASlugfolio";
 import ImageProject from "@/sections/portfolio/components/ImagesProject";
 import PortfolioAbout from "@/sections/portfolio/components/PortfolioAbout";
 import PortfolioHero from "@/sections/portfolio/components/PortfolioHero";
@@ -38,7 +38,7 @@ export default function ProjectPage({ params }: Props) {
 
       <ImageProject project={project}/>
 
-      <ContactCTA/>
+      <CTASlugfolio/>
 
     </div>
   );

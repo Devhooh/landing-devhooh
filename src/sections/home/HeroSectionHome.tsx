@@ -24,7 +24,7 @@ export default function HeroSectionHome() {
   };
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-white to-blue-50 overflow-hidden">
+    <section className="relative w-full bg-colorFondo overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6 mb-10">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
@@ -33,10 +33,10 @@ export default function HeroSectionHome() {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, type: "spring" }}
-            className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-blue-950 leading-tight tracking-tight"
+            className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
           >
             Desarrollo de{" "}
-            <span className="text-fuchsia-600">software inteligente</span> a tu medida
+            <span className="text-colorSecundario">software inteligente</span> a tu medida
           </motion.h1>
 
           {/* --- 2) IMAGEN --- */}
@@ -65,10 +65,10 @@ export default function HeroSectionHome() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="order-3 text-lg md-tablet:text-xl 
               text-center table-lg:text-left
-            text-gray-700 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
+            text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
           >
             Creamos soluciones web, móviles y empresariales integrando{" "}
-            <span className="font-semibold text-blue-800">inteligencia artificial</span>
+            <span className="font-semibold text-colorSecundario1">inteligencia artificial</span>
             {" "}para impulsar la innovación y mejorar la eficiencia de tu negocio.
           </motion.p>
 
@@ -111,10 +111,10 @@ export default function HeroSectionHome() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 text-lg md-tablet:text-xl font-semibold border border-purple-600
-                  bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
+                  bg-gradient-to-r from-colorSecundario2/80 to-colorSecundario2 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Ver servicios
+                Ver nuestros servicios
               </motion.button>
             </Link>
 
@@ -122,10 +122,10 @@ export default function HeroSectionHome() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 // whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 text-lg md-tablet:text-xl font-semibold border border-purple-600
-                  bg-gradient-to-r from-gray-50 to-gray-100 text-black rounded-2xl shadow-lg hover:from-fuchsia-500 hover:to-purple-600 hover:text-white transition-all duration-300"
+                className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
+                  bg-gradient-to-r from-gray-50 to-white text-black rounded-2xl shadow-lg hover:from-colorSecundario2/80 hover:to-colorSecundario2 hover:text-white transition-all duration-300"
               >
-                Ver portfolio
+                Ver nuestro portafolio
               </motion.button>
             </Link>
           </motion.div>

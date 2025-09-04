@@ -43,9 +43,9 @@ export function ProjectsSection() {
         <motion.h2
           custom={0}
           variants={textVariants}
-          className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-900 via-purple-600 to-fuchsia-500"
+          className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-colorPrimario2 to-colorPrimario1"
         >
-          Proyectos que <span className="text-blue-600">impulsan</span> resultados
+          Proyectos que <span className="text-colorSecundario3">impulsan</span> resultados
         </motion.h2>
       </motion.div>
 
@@ -65,7 +65,7 @@ export function ProjectsSection() {
             className="text-gray-700 text-base md-tablet:text-lg table-lg:text-xl leading-relaxed mb-6"
           >
             De startups a empresas consolidadas, creamos soluciones digitales modernas que{" "}
-            <span className="font-semibold text-indigo-600">mejoran procesos</span>, escalan negocios y sorprenden a los usuarios.
+            <span className="font-semibold text-colorSecundario">mejoran procesos</span>, escalan negocios y sorprenden a los usuarios.
           </motion.p>
         </motion.div>
 
@@ -100,13 +100,13 @@ export function ProjectsSection() {
 
       {/* Nuestros clientes */}
       <div className="flex justify-center mt-12">
-        <h3 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-purple-600">
+        <h3 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-colorPrimario2 to-colorPrimario2">
           Nuestros clientes:
         </h3>
       </div>
 
       {/* Sliders */}
-      <div className="flex flex-col mb-12 px-6 md-tablet:px-12 gap-2 bg-fuchsia-950">
+      <div className="flex flex-col mb-12 px-6 md-tablet:px-12 gap-2 bg-colorPrimarioLogo1">
         <ProjectSlider logos={logos} direction="left" />
         <ProjectSlider logos={logos} direction="right" />
       </div>
@@ -134,7 +134,7 @@ export function ProjectsSection() {
               className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-[1]"
               style={{ width: '70%' }}
             >
-              <div className="bg-fuchsia-200 rounded-2xl shadow-lg w-full">
+              <div className="bg-gradient-to-b from-colorPrimarioLogo1 to-colorPrimarioLogo2/30 rounded-3xl w-full">
                 <ProjectCard {...project} />
               </div>
             </SwiperSlide>

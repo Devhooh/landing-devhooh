@@ -109,10 +109,10 @@ export default function HeroSectionHome() {
           >
             <Link href="/services">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                // whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                  bg-gradient-to-r from-colorSecundario2/80 to-colorSecundario2 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  bg-colorSecundario2/90 hover:bg-colorSecundario3  text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Ver nuestros servicios
               </motion.button>
@@ -120,10 +120,10 @@ export default function HeroSectionHome() {
 
             <Link href="/portfolio">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                // whileTap={{ scale: 0.95 }}
+                // whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                  bg-gradient-to-r from-gray-50 to-white text-black rounded-2xl shadow-lg hover:from-colorSecundario2/80 hover:to-colorSecundario2 hover:text-white transition-all duration-300"
+                  bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white transition-all duration-300"
               >
                 Ver nuestro portafolio
               </motion.button>

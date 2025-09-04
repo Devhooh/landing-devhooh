@@ -43,7 +43,7 @@ export function SolutionsSection() {
 };
 
   return (
-    <section className="w-full py-12 bg-gradient-to-t from-fuchsia-200/80 to-blue-100/50 overflow-x-hidden">
+    <section className="w-full py-12 bg-colorHover/20 overflow-x-hidden">
       {/* Encabezado */}
       <motion.div
         className="px-5 md-tablet:px-10 flex flex-col text-center table-lg:flex-row justify-center items-center mb-12 gap-6"
@@ -54,27 +54,23 @@ export function SolutionsSection() {
       >
         <motion.div className="max-w-2xl" variants={containerVariants}>
           <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500"
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-colorPrimario2 to-colorPrimario1"
             variants={textVariants}
           >
-            Impulsamos tu{" "}
-            <span className="bg-clip-text bg-gradient-to-r from-fuchsia-500 to-pink-500">
-              negocio
-            </span>{" "}
-            con{" "}
-            <span className="bg-clip-text bg-gradient-to-r from-fuchsia-500 to-pink-500">
+            Impulsamos tu negocio con{" "}
+            <span className="bg-clip-text bg-colorSecundario3">
               soluciones modernas
             </span>
           </motion.h2>
 
           <motion.p
-            className="text-gray-700 text-base md-tablet:text-lg leading-relaxed"
+            className="text-colorPrimario1 text-base md-tablet:text-lg leading-relaxed"
             variants={textVariants}
           >
             Desde tu primera idea hasta el lanzamiento,{" "}
-            <span className="font-semibold text-blue-600">desarrollamos webs</span>,{" "}
-            <span className="font-semibold text-pink-500">apps</span> y{" "}
-            <span className="font-semibold text-blue-600">sistemas inteligentes</span>{" "}
+            <span className="font-semibold text-colorSecundario2">desarrollamos webs</span>,{" "}
+            <span className="font-semibold text-colorSecundario2">apps</span> y{" "}
+            <span className="font-semibold text-colorSecundario2">sistemas inteligentes</span>{" "}
             que ayudan a tu empresa a destacar en el entorno digital, optimizando procesos y mejorando la experiencia de tus usuarios.
           </motion.p>
         </motion.div>
@@ -103,7 +99,7 @@ export function SolutionsSection() {
           className="flex justify-center mt-12"
         >
           <Link href="/services">
-            <button className="text-xl md-tablet:text-2xl bg-gradient-to-r from-blue-600 to-purple-500 text-white py-4 px-8 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <button className="text-xl md-tablet:text-2xl bg-colorSecundario2 text-white py-4 px-8 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
               Vea todos nuestros servicios
             </button>
           </Link>

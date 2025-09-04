@@ -23,7 +23,9 @@ export default function ReviewsHome() {
     <div className="max-w-8xl mx-2">
       <div className="text-center mb-12">
         <motion.h2
-          className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500/80 to-purple-300"
+          className="
+            text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold 
+            text-white"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -37,7 +39,7 @@ export default function ReviewsHome() {
         </motion.h2>
 
         <motion.p
-          className="mt-4 text-gray-200 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"
+          className="mt-10 text-gray-300 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -55,7 +57,7 @@ export default function ReviewsHome() {
         className="mySwiper"
       >
         {reviewData.map((review) => (
-          <SwiperSlide key={review.id}>
+          <SwiperSlide key={review.id} className="mb-10">
             <ReviewCard review={review} />
           </SwiperSlide>
         ))}

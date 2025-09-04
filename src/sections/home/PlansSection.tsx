@@ -56,9 +56,9 @@ export function PlansSection() {
   };
 
   return (
-    <section className="w-full py-16 bg-gray-50">
+    <section className="w-full py-16 bg-colorHover/15">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md-tablet:text-6xl font-extrabold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-violet-400">
+        <h2 className="text-4xl md-tablet:text-6xl font-extrabold mb-16 text-colorPrimario2">
           Planes estimados
         </h2>
 
@@ -72,7 +72,7 @@ export function PlansSection() {
                   rounded-3xl px-4 py-8 flex flex-col items-center text-center
                   w-80 md-tablet:w-96 table-lg:w-80
                   ${index === 1 
-                    ? "bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white shadow-2xl border border-gray-700" 
+                    ? "bg-colorPrimario1 text-white shadow-2xl border border-gray-700" 
                     : "bg-white text-gray-800 shadow-xl border border-gray-200"}
                 `}
                 initial="hidden"
@@ -93,8 +93,8 @@ export function PlansSection() {
                       className={`
                         w-full py-3 px-4 rounded-2xl font-semibold text-lg
                         ${index === 1
-                          ? "bg-fuchsia-900 text-white hover:bg-fuchsia-500"
-                          : "border border-fuchsia-800 bg-fuchsia-100 text-purple-500 hover:bg-fuchsia-200"}
+                          ? "bg-purple-950 border border-colorSecundario2 text-white hover:bg-colorPrimarioLogo1"
+                          : "border border-colorPrimarioLogo1 bg-colorHover/40 text-colorSecundario3 hover:bg-colorHover"}
                         shadow-lg transition-all duration-300
                       `}
                     >
@@ -111,7 +111,7 @@ export function PlansSection() {
                       variants={bulletVariants}
                       transition={{ duration: 0.3, delay: idx * 0.1 }}
                     >
-                      <Icon className="w-5 h-5 flex-shrink-0 text-fuchsia-400" />
+                      <Icon className="w-5 h-5 flex-shrink-0 text-colorSecundario3" />
                       <span className="text-xs">{item}</span>
                     </motion.li>
                   ))}

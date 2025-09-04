@@ -43,7 +43,7 @@ export default function ReviewCard({ review }: { review: Review }) {
 
   return (
 
-    <div className="bg-gradient-to-br from-white via-fuchsia-50 to-purple-50 border border-fuchsia-400 rounded-2xl p-8 flex flex-col md-tablet:flex-row space-y-6 md-tablet:space-y-0 md-tablet:space-x-6 h-full max-w-3xl mx-auto">
+    <div className="bg-colorFondo border border-colorSecundario rounded-2xl p-8 flex flex-col md-tablet:flex-row space-y-6 md-tablet:space-y-0 md-tablet:space-x-6 h-full max-w-3xl mx-auto">
         
         {/* Sección izquierda */}
         <div className="flex-1 flex flex-col space-y-4">
@@ -60,17 +60,17 @@ export default function ReviewCard({ review }: { review: Review }) {
 
           {/* Título + reseña */}
           <div>
-            <h3 className="text-lg font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-purple-700">
+            <h3 className="text-lg font-extrabold bg-clip-text text-transparent bg-colorSecundario2">
               {review.projectTitle}
             </h3>
-            <p className="text-gray-600 mt-1 text-sm leading-relaxed">
+            <p className="text-colorPrimario1 mt-1 text-sm leading-relaxed">
               {review.reviewBody}
             </p>
           </div>
 
           {/* Revisor */}
           <div className="flex items-center space-x-3 mt-auto pt-10">
-            <div className="p-[2px] rounded-full bg-gradient-to-r from-fuchsia-500 to-purple-600">
+            <div className="p-[2px] rounded-full bg-colorSecundario">
               <Image
                 src={review.reviewerProfileUrl}
                 alt={review.reviewerName}
@@ -80,17 +80,17 @@ export default function ReviewCard({ review }: { review: Review }) {
               />
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-800">{review.reviewerName}</p>
-              <p className="text-xs text-gray-500">Cliente de Devhoo</p>
+              <p className="text-sm font-semibold text-colorPrimario2">{review.reviewerName}</p>
+              <p className="text-xs text-colorPrimario1">Cliente de Devhoo</p>
             </div>
           </div>
         </div>
 
         {/* Sección derecha */}
-        <div className="w-full md-tablet:w-52 flex-shrink-0 bg-white/80 backdrop-blur-md border border-gray-100 p-6 rounded-xl flex flex-col space-y-4 items-center">
+        <div className="w-full md-tablet:w-52 flex-shrink-0 bg-colorHover/15 backdrop-blur-md border border-gray-100 p-6 rounded-xl flex flex-col space-y-4 items-center">
           {/* Calificación general */}
           <div className="text-center">
-            <p className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-violet-600">
+            <p className="text-4xl font-bold bg-clip-text text-transparent bg-colorSecundario2">
               {review.rating.toFixed(1)}
             </p>
             <div className="flex justify-center text-2xl mt-1 text-yellow-400 drop-shadow-[0_0_6px_rgba(250,204,21,0.6)]">
@@ -99,7 +99,7 @@ export default function ReviewCard({ review }: { review: Review }) {
           </div>
 
           {/* Detalles */}
-          <div className="w-full text-sm text-gray-700 space-y-2">
+          <div className="w-full text-sm text-colorPrimario1 space-y-2">
             <div className="flex justify-between">
               <span>Calidad</span>
               <span className="font-semibold">{review.quality.toFixed(1)}</span>

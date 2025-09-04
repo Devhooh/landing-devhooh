@@ -34,7 +34,7 @@ export function SolutionCard({
       viewport={{ once: true, amount: 0.3 }}
       variants={cardVariants}
       className={`relative max-w-3xl table-lg:w-3/4 p-[2px] rounded-2xl 
-        bg-gradient-to-r from-fuchsia-500 via-blue-500 to-black
+        bg-gradient-to-r from-colorSecundario3 via-colorSecundario1 to-black
         ${reverse ? "table-lg:self-end" : "table-lg:self-start"}`}
     >
       <div className={`bg-white rounded-2xl p-6 md-tablet:p-10 shadow-lg hover:shadow-2xl transition
@@ -53,10 +53,10 @@ export function SolutionCard({
 
         {/* Texto */}
         <div className="table-lg:w-2/3 flex flex-col justify-center text-center md-tablet:text-left">
-          <h3 className="text-2xl md-tablet:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-blue-600 mb-3">
+          <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario2 mb-3">
             {title}
           </h3>
-          <p className="text-gray-700 text-base md-tablet:text-lg leading-relaxed">
+          <p className="text-colorPrimario1 text-base md-tablet:text-lg leading-relaxed">
             {description}
           </p>
         </div>

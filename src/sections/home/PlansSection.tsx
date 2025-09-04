@@ -91,10 +91,10 @@ export function PlansSection() {
                   <Link href="/contact">
                     <button
                       className={`
-                        w-full py-3 px-4 rounded-2xl font-semibold text-lg
+                        w-full py-3 px-4 rounded-lg font-semibold text-lg
                         ${index === 1
-                          ? "bg-purple-950 border border-colorSecundario2 text-white hover:bg-colorPrimarioLogo1"
-                          : "border border-colorPrimarioLogo1 bg-colorHover/40 text-colorSecundario3 hover:bg-colorHover"}
+                          ? "bg-purple-700 border border-colorSecundario2 text-white hover:bg-colorPrimarioLogo1"
+                          : "border border-colorPrimarioLogo1 bg-white text-colorSecundario3 hover:bg-colorHover/40"}
                         shadow-lg transition-all duration-300
                       `}
                     >

@@ -24,7 +24,8 @@ const config: Config = {
         colorFondo: "#FFFEFE", // principal de fondo
         colorPrimario1: "#232323", // color del logo secundario - oscuro suave
         colorPrimario2: "#0A0A0B", // color del logo terciario - oscuro fuerte
-        colorTitle2: "#321A7B", // azul oscuro
+        colorDarkFondo1: "#321A7B", // azul oscuro
+        colorDarkFondo2: "#1E1243", 
 
         colorSecundario: "#674CC4", // variante 1 del color principal
         colorSecundario1: "#673DE6", // variante 2 del color principal

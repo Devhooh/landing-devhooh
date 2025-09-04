@@ -21,11 +21,20 @@ const config: Config = {
         colorPrimarioLogo1: "#8159BA", // color principal del logo princpal
         colorPrimarioLogo2: "#B197D4", // color principal del logo suave
         colorHover: "#C0ACDC",
+        colorHover2: "#8C85FE",
+        colorHover3: "#D5DFFF", // de hostinger
+        colorHover4: "#CBD2E3", 
         colorFondo: "#FFFEFE", // principal de fondo
         colorPrimario1: "#232323", // color del logo secundario - oscuro suave
         colorPrimario2: "#0A0A0B", // color del logo terciario - oscuro fuerte
+        colorPrimario3: "#663CE6", // boton de hostinger
+        colorPrimario4: "#734FE7", // color hostionger mas fuerte
+        colorPrimario5: "#8C84FD", // color de hostinger mas suave
         colorDarkFondo1: "#321A7B", // azul oscuro
-        colorDarkFondo2: "#1E1243", 
+        colorDarkFondo2: "#1E1245", 
+        colorDarkFondo3: "#261559", 
+        colorDarkFondo4: "#221A50", 
+        colorDarkFondo5: "#2E1C6A", // ligeramente suave
 
         colorSecundario: "#674CC4", // variante 1 del color principal
         colorSecundario1: "#673DE6", // variante 2 del color principal

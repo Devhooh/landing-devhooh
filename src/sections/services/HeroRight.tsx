@@ -1,6 +1,6 @@
 "use client";
 
-import { Asterisk } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -27,9 +27,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-4xl font-extrabold leading-tight text-center table-lg:text-right
-              text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-white
-            ">
+            <h2 className="text-4xl font-extrabold leading-tight text-center table-lg:text-right text-white">
               {title}
             </h2>
           </motion.div>
@@ -59,7 +57,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            <p className="text-lg md-tablet:text-xl text-gray-200 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-xl text-gray-300 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               {subtitle}
             </p>
           </motion.div>
@@ -73,7 +71,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
           >
             {features.length > 0 && (
-              <ul className="space-y-3 text-gray-100 text-left max-w-md mx-auto table-lg:mx-0">
+              <ul className="space-y-3 text-white text-left max-w-md mx-auto table-lg:mx-0">
                 {features.map((feature, index) => (
                   <motion.li
                     key={index}
@@ -83,7 +81,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Asterisk className="w-6 h-6 text-black flex-shrink-0" />
+                    <Sparkles className="w-4 h-4 text-white flex-shrink-0" />
                     <span className="text-base md-tablet:text-xl">{feature}</span>
                   </motion.li>
                 ))}
@@ -100,7 +98,9 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
             <Link href="/contact">
-              <button className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-violet-600 text-white rounded-xl shadow-md hover:bg-violet-700 hover:scale-105 transform transition-all duration-300">
+              <button className="
+                px-10 py-3 text-lg md-tablet:text-xl font-semibold bg-white text-black rounded-lg shadow-md hover:scale-105
+                transform transition-all duration-300 border border-colorSecundario2">
                 {cta}
               </button>
             </Link>

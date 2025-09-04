@@ -12,7 +12,7 @@ export default function CTAServices() {
           z-10 mx-5 px-5 tablet-md:px-10 py-8 w-full h-auto max-w-[900px]
           flex flex-col tablet-md:flex-row tablet-md:items-center tablet-md:justify-start
           gap-6 table-lg:gap-12
-          border-2 border-black rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 via-gray-900 to-black
+          border-2 border-black rounded-3xl overflow-hidden bg-colorDarkFondo2
           text-center tablet-md:text-left
         "
       >
@@ -34,7 +34,7 @@ export default function CTAServices() {
               className="
                 inline-flex items-center gap-2 px-8 py-4
                 font-bold text-lg rounded-xl shadow-lg 
-                bg-gradient-to-r from-fuchsia-600 to-violet-600
+                bg-colorPrimario3
                 text-white transition-all duration-500"
             >
               ¡Programa una cita!

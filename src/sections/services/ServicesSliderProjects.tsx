@@ -38,7 +38,7 @@ export function ServicesSliderProjects({
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUpTitle}
-          className="text-3xl md-tablet:text-4xl font-extrabold text-indigo-950"
+          className="text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2"
         >
           {title}
         </motion.h2>
@@ -59,7 +59,7 @@ export function ServicesSliderProjects({
           className="px-2 md-tablet:px-6"
         >
           {displayedProjects.map((project, index) => (
-            <SwiperSlide key={project.id} className="flex my-6">
+            <SwiperSlide key={project.id} className="flex my-12">
               <ServicesProjects project={project} showService={showService} index={index} />
             </SwiperSlide>
           ))}

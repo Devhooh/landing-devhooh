@@ -33,15 +33,14 @@ export default function CaroulselSection({ title, cardData }: CardCaroulselSecti
   return (
     <section
       className="
-        bg-gradient-to-bl from-purple-900 to-purple-700
+        bg-purple-700
         w-full h-full pt-10 overflow-hidden rounded-3xl shadow-inner
       "
     >
       <div className="max-w-7xl mx-auto">
         <motion.h2
           className="
-            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold bg-clip-text text-transparent 
-            bg-gradient-to-r from-gray-300 to-white drop-shadow-sm"
+            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-white drop-shadow-sm"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}

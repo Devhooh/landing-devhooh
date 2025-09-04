@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Asterisk  } from "lucide-react";
+import { Sparkles  } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface HeroLeftProps {
@@ -34,7 +34,7 @@ export default function HeroLeft({
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md-tablet:text-4xl font-extrabold leading-tight text-center table-lg:text-left 
-              text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-white
+              text-white
             ">
               {title}
             </h2>
@@ -65,14 +65,14 @@ export default function HeroLeft({
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-lg md-tablet:text-xl text-gray-200 text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-xl text-gray-300 text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
               {subtitle}
             </p>
           </motion.div>
 
           {/* --- 4) LISTA --- */}
           <motion.ul
-            className="order-4 flex justify-center table-lg:justify-start flex-col space-y-4 text-gray-100 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
+            className="order-4 flex justify-center table-lg:justify-start flex-col space-y-4 text-white text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
             initial="hidden"
             whileInView="show"
             variants={{
@@ -93,7 +93,7 @@ export default function HeroLeft({
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <Asterisk  className="w-6 h-6 text-black flex-shrink-0" />
+                <Sparkles  className="w-4 h-4 text-white flex-shrink-0" />
                 <span className="text-base md-tablet:text-lg">{feature}</span>
               </motion.li>
             ))}
@@ -111,7 +111,9 @@ export default function HeroLeft({
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-violet-600 text-white rounded-2xl shadow-md hover:bg-violet-700 transform transition-all duration-300"
+                className="
+                  px-10 py-3 text-lg md-tablet:text-xl font-semibold bg-white text-black rounded-lg shadow-md 
+                  transform transition-all duration-300 border border-colorSecundario2"
               >
                 {cta}
               </motion.button>

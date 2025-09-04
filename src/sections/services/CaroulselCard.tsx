@@ -32,12 +32,12 @@ export default function CaroulselCard({
         transition: { duration: 0.2 },
       }}
       className="
-        bg-fuchsia-100 border border-gray-200 hover:border-fuchsia-400
+        bg-white border border-gray-200 hover:border-fuchsia-400
         rounded-2xl shadow-xl overflow-hidden h-[490px]
         flex flex-col"
     >
       {/* Imagen */}
-      <div className="flex items-center justify-center bg-gradient-to-br from-fuchsia-50 via-white to-purple-50 p-6">
+      <div className="flex items-center justify-center bg-gray-200 p-6">
         <Image
           src={card.icon}
           alt={card.title}
@@ -49,7 +49,7 @@ export default function CaroulselCard({
 
       {/* Contenido */}
       <div className="flex flex-col flex-grow p-5 text-gray-900">
-        <h3 className="text-xl font-bold mb-2 text-left text-indigo-950 flex items-center gap-2">
+        <h3 className="text-xl font-bold mb-2 text-left text-colorPrimario2 flex items-center gap-2">
           <span>{card.title}</span>
           <span className="animate-pulse w-2 h-2 rounded-full bg-green-700" />
         </h3>
@@ -61,14 +61,14 @@ export default function CaroulselCard({
       {/* Botones */}
       <div className="mb-12 px-5 flex flex-col gap-4">
         <Link href="/contact">
-          <button className="relative w-full py-2 rounded-lg bg-gradient-to-r from-indigo-700 to-purple-600 text-white font-semibold overflow-hidden">
+          <button className="relative w-full py-2 rounded-lg bg-colorPrimario3 text-white font-semibold overflow-hidden">
             <span className="relative z-10">Cotiza tu proyecto</span>
             <span className="absolute inset-0 bg-white/30 -translate-x-full rotate-45 animate-shine" />
           </button>
         </Link>
 
         <Link href={`/services/${card.slug}`}>
-          <button className="w-full py-2 rounded-lg border border-fuchsia-400 text-indigo-900 font-medium transition bg-fuchsia-50 hover:bg-fuchsia-100">
+          <button className="w-full py-2 rounded-lg border border-colorSecundario2 text-colorPrimario4 font-medium transition bg-white hover:bg-colorHover3">
             Ver más detalles
           </button>
         </Link>

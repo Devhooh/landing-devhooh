@@ -25,7 +25,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="w-full bg-fuchsia-950/90 py-4">
+    <footer className="w-full bg-black/95 py-4">
       <div className="max max-w-7xl mx-auto p-5 grid grid-cols-1 table-lg:grid-cols-2 gap-8">
         {/* Lado izquierdo */}
         <div className="md-tablet:items-center text-center justify-center">
@@ -113,8 +113,8 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="mt-5 text-center text-gray-300 text-sm font-semibold">
-        <p> Copyright software © Devhoo  -  {new Date().getFullYear()} Todos los derechos reservados.</p>
+      <div className="border-t border-gray-400 mt-8 pt-8 text-center text-gray-300 text-sm font-semibold">
+        <p> Copyright software © Devhooh - {new Date().getFullYear()} Todos los derechos reservados.</p>
       </div>
     </footer>
   )

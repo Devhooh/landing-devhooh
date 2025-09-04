@@ -30,8 +30,8 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-white/50">
-      <div className="relative max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-white/70">
+      <div className="relative max-w-[1550px] mx-auto px-6 py-2 flex justify-between items-center">
         {/* Logo de Devhoo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -40,8 +40,7 @@ export default function Navbar() {
             width={120}
             height={60}
             priority
-            style={{ height: "auto", width: "auto" }}
-            className="rounded-xl"
+            className="rounded-md"
           />
         </Link>
 
@@ -54,8 +53,8 @@ export default function Navbar() {
                 key={values.path}
                 href={values.path}
                 className={`relative px-3 py-2 rounded-3xl transition
-                  text-gray-950 hover:text-fuchsia-500
-                  ${isActive ? "text-fuchsia-500 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-fuchsia-500" : ""}
+                  text-gray-950 hover:text-colorSecundario1
+                  ${isActive ? "text-colorSecundario1 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-colorSecundario1" : ""}
               `}
               >
                 {values.name}
@@ -68,10 +67,10 @@ export default function Navbar() {
             <button
               className="
                 relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
-                bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-500
+                bg-gradient-to-r from-gray-900 via-gray-700 to-black
                 animate-gradient
                 transition-all duration-700 ease-in-out
-                hover:scale-105 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)]
+                hover:scale-[1.05] hover:shadow-[0_0_20px_rgba(236,72,153,0.6)]
               "
             >
               Contáctanos
@@ -79,9 +78,10 @@ export default function Navbar() {
           </Link>
         </nav>
 
+
         {/* Boton hamburguesa para mobile */}
         <button
-          className="table-lg:hidden p-3 rounded-full bg-gray-950 border-2 border-slate-300 text-white focus:outline-none transition-transform duration-300"
+          className="table-lg:hidden p-3 rounded-full bg-colorPrimario2 border-2 border-black text-white focus:outline-none transition-transform duration-300"
           onClick={toggleMenu}
         >
           <Menu size={28} />
@@ -110,7 +110,7 @@ export default function Navbar() {
           </Link>
           <button
             onClick={toggleMenu}
-            className="p-3 rounded-full bg-gray-950 border-2 border-slate-300 text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-colorPrimario2 border-2 border-black text-white transition-colors duration-300"
           >
             <X size={28} />
           </button>
@@ -128,13 +128,13 @@ export default function Navbar() {
                   onClick={toggleMenu}
                   className={`
                     flex justify-between items-center w-full py-2 transition-all duration-300
-                    text-xl border-b border-purple-100 rounded-lg
-                    hover:bg-fuchsia-100 hover:text-fuchsia-500 p-4
-                    ${isActive ? "font-bold text-fuchsia-500 bg-fuchsia-100" : ""}
+                    text-xl border-b border-colorHover rounded-lg
+                    hover:bg-colorHover/35 hover:text-colorSecundario1 p-4
+                    ${isActive ? "font-bold text-colorSecundario1 bg-colorHover/30" : ""}
                   `}
                 >
                   <span>{values.name}</span>
-                  <ChevronRight size={24} className="text-fuchsia-500" />
+                  <ChevronRight size={24} className="text-colorPrimario" />
                 </Link>
               );
             })}
@@ -144,7 +144,7 @@ export default function Navbar() {
               onClick={toggleMenu}
               className="
                 relative w-full text-center mt-6 py-4 rounded-lg text-white text-2xl font-bold shadow-md
-                bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-500
+                bg-gradient-to-r from-gray-900 via-gray-700 to-black
                 animate-gradient
                 transition-all duration-700 ease-in-out
                 hover:scale-105 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)]

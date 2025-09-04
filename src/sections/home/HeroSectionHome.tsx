@@ -25,7 +25,7 @@ export default function HeroSectionHome() {
 
   return (
     <section className="relative w-full bg-gradient-to-b from-white to-blue-50 overflow-hidden">
-      <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
+      <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6 mb-10">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
@@ -46,7 +46,7 @@ export default function HeroSectionHome() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
-            <div className="relative z-10 bg-white shadow-2xl rounded-3xl p-4">
+            <div className="relative z-10 bg-white shadow-2xl rounded-3xl px-4 my-10">
               <Image
                 src="/assets/images/hero1.png"
                 alt="Equipo desarrollando software a medida"
@@ -78,7 +78,7 @@ export default function HeroSectionHome() {
             initial="hidden"
             animate="show"
             className="
-              order-4 space-y-4 text-sm md-tablet:text-base text-gray-800
+              order-4 space-y-2 text-base md-tablet:text-lg text-gray-800
               text-left table-lg:text-left
               max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0
             "
@@ -100,26 +100,32 @@ export default function HeroSectionHome() {
             ))}
           </motion.ul>
 
-          {/* --- 5) BOTÓN --- */}
+          {/* --- 5 BOTÓN --- */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="order-5 flex justify-center table-lg:justify-start pt-4"
+            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
           >
-            <Link href="/contact">
+            <Link href="/services">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="
-                  px-8 py-4 text-lg md-tablet:text-xl font-semibold
-                  bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white
-                  rounded-2xl shadow-lg
-                  hover:shadow-xl
-                  transition-all duration-300
-                "
+                className="px-10 py-4 text-lg md-tablet:text-xl font-semibold border border-purple-600
+                  bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Empieza ahora
+                Ver servicios
+              </motion.button>
+            </Link>
+
+            <Link href="/portfolio">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                // whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 text-lg md-tablet:text-xl font-semibold border border-purple-600
+                  bg-gradient-to-r from-gray-50 to-gray-100 text-black rounded-2xl shadow-lg hover:from-fuchsia-500 hover:to-purple-600 hover:text-white transition-all duration-300"
+              >
+                Ver portfolio
               </motion.button>
             </Link>
           </motion.div>

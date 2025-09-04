@@ -18,6 +18,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        colorPrimario: "#8159BA", // color principal del logo princpal
+        colorHover: "#C0ACDC",
+        colorFondo: "#FFFEFE", // principal de fondo
+        colorPrimario1: "#232323", // color del logo secundario
+        colorPrimario2: "#0A0A0B", // color del logo terciario
+
+        colorSecundario: "#674CC4", // variante 1 del color principal
+        colorSecundario1: "#673DE6", // variante 2 del color principal
+        colorSecundario2: "#7550E7", // variante 3 del color principal
+
       },
       keyframes: {
         scroll: {

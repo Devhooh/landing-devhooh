@@ -19,10 +19,10 @@ export default function TechProjectSection() {
   const displayedProjects = projectsData.slice(0, limit);
 
   return (
-    <section className="w-full py-16 px-4 table-lg:px-10 bg-gradient-to-b from-white via-blue-200/50 to-blue-800/50">
+    <section className="w-full my-16 py-10 px-4 table-lg:px-10 bg-colorPrimario4">
       <div className="max-w-7xl mx-auto text-left mb-2">
         <motion.h2
-          className="px-6 text-3xl md-tablet:text-4xl font-bold text-indigo-950"
+          className="px-6 text-3xl md-tablet:text-4xl font-bold text-white"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}

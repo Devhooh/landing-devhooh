@@ -7,7 +7,7 @@ import TechProjectSection from "@/sections/tech/TechProjectSection";
 
 export default function Tecnologia() {
   return (
-    <div>
+    <div className="bg-colorPrimario3">
       <HeroSectionTech/>
 
       <IntroSection/>

@@ -3,7 +3,7 @@ import { IconType } from "react-icons";
 
 interface Logo {
   icon: IconType;
-  color: string,
+  // color: string,
   alt: string;
 }
 
@@ -27,7 +27,7 @@ export function SliderTech({logos, direction = "left",}: LogoSliderProps) {
       >
           {logosLoop.map((logo, i) => {
             const Icon = logo.icon; // asignamos el componente del icono
-            return <Icon key={i} className={`${logo.color} m-2 flex items-center justify-center w-14 h-14 md-tablet:w-16 md-tablet:h-16 table-lg:w-20 table-lg:h-20`} aria-label={logo.alt} />;
+            return <Icon key={i} className={`text-gray-300 m-2 flex items-center justify-center w-14 h-14 md-tablet:w-16 md-tablet:h-16 table-lg:w-20 table-lg:h-20`} aria-label={logo.alt} />;
           })}
       </div>
     </div>

@@ -5,20 +5,20 @@ import Link from "next/link";
 
 export default function CTATech() {
   return (
-    <div className="relative w-full h-auto my-32 flex justify-center overflow-hidden">
+    <div className="relative w-full h-auto py-32 flex justify-center overflow-hidden">
       {/* Contenedor principal */}
       <div
         className="
-          z-10 mx-5 tablet-md:mx-10 px-4 tablet-md:px-10 py-10 w-full h-auto 
-          flex flex-col md-tablet:flex-row md-tablet:items-center
-          gap-6 tablet-lg:gap-4 overflow-hidden text-center"
+          z-10 mx-5 tablet-md:mx-10 px-4 tablet-md:px-10 py-6 w-full h-auto 
+          flex flex-col md-tablet:flex-row md-tablet:items-center rounded-xl
+          gap-6 tablet-lg:gap-4 overflow-hidden text-center bg-gradient-to-b from-colorSecundario4 to-colorHover2"
       >
         {/* Texto + botón */}
         <div className="flex flex-col items-center max-w-full">
-          <h2 className="text-2xl md-tablet:text-4xl font-bold text-gray-900 mb-2 pb-5 break-words">
+          <h2 className="text-2xl md-tablet:text-4xl font-bold text-white mb-2 pb-5 break-words">
             Tansformamos ideas en resultados digitales que impactan en tu negocio
           </h2>
-          <p className="text-base md-tablet:text-2xl font-bold text-slate-700 mb-4 pb-3">
+          <p className="text-base md-tablet:text-2xl font-bold text-gray-300 mb-4 pb-3">
             Desde startups hasta grandes empresas, tú puedes ser el siguiente
           </p>
 
@@ -31,8 +31,8 @@ export default function CTATech() {
               className="
                 inline-flex items-center gap-2 px-8 py-4
                 font-bold text-lg rounded-xl shadow-lg 
-                bg-gradient-to-r from-blue-600 to-blue-800
-                text-white transition-all duration-500"
+                bg-white
+                text-colorPrimario3 transition-all duration-500"
             >
               Solicita una consulta
               <motion.svg

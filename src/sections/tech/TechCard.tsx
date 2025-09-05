@@ -51,7 +51,7 @@ const splitText = (text: string) => text.split("");
 export default function TechCard({ title, subtitle, technologies }: TechCardProps) {
   return (
     <article
-      className="p-4 rounded-2xl shadow-md max-w-full bg-gradient-to-b from-blue-800/80 to-blue-950"
+      className="p-4 rounded-xl shadow-md max-w-full bg-colorPrimario11"
     >
       {/* Título */}
       <motion.h2
@@ -93,7 +93,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
             <motion.div key={idx} variants={techItemVariants}>
               <Link
                 href={`/tecnologia/${tech.slug}`}
-                className="flex items-center justify-between p-2 rounded-lg bg-white hover:bg-fuchsia-100 border-2 border-fuchsia-500
+                className="flex items-center justify-between p-2 rounded-lg bg-white border border-colorPrimarioLogo1
                   transform transition duration-300 hover:scale-95 hover:shadow-xl"
               >
                 <div className="flex items-center gap-2">

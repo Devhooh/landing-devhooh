@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function HeroSectionTech() {
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-indigo-950 via-blue-950/90 to-blue-900/60 overflow-hidden">
+    <section className="relative w-full overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
@@ -28,7 +28,7 @@ export default function HeroSectionTech() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
-            <div className="relative z-10 bg-white rounded-3xl p-4">
+            <div className="relative z-10 rounded-3xl p-4">
               <Image
                 src="/assets/images/hero1.png"
                 alt="Equipo desarrollando software a medida"
@@ -66,7 +66,7 @@ export default function HeroSectionTech() {
                 whileTap={{ scale: 0.95 }}
                 className="
                   px-8 py-4 text-lg md-tablet:text-xl font-semibold
-                  bg-gradient-to-r from-fuchsia-500 to-purple-500 text-white
+                  bg-colorPrimario5 hover:bg-colorSecundario2 text-white
                   rounded-2xl shadow-lg
                   hover:shadow-xl transition-all duration-300
                 "

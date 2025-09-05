@@ -34,7 +34,7 @@ export default function HeroLeft({
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md-tablet:text-4xl font-extrabold leading-tight text-center table-lg:text-left 
-              text-colorPrimario1
+              text-white
             ">
               {title}
             </h2>
@@ -65,7 +65,7 @@ export default function HeroLeft({
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-lg md-tablet:text-xl text-gray-300 text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-xl text-gray-200 text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
               {subtitle}
             </p>
           </motion.div>

@@ -49,7 +49,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="mt-5 text-4xl md-tablet:text-5xl table-lg:text-4xl font-extrabold leading-tight text-colorPrimario1">
+              <h2 className="mt-5 text-4xl md-tablet:text-5xl table-lg:text-4xl font-extrabold leading-tight text-white">
                 {title}
               </h2>
             </motion.div>
@@ -80,7 +80,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <p className="text-lg md-tablet:text-xl text-gray-300 max-w-2xl">
+              <p className="text-lg md-tablet:text-xl text-gray-200 max-w-2xl">
                 {subtitle}
               </p>
             </motion.div>

@@ -61,7 +61,7 @@ export const portfolioDetails: Project[] = [
     projectName: "Marketplace Global",
     location: "México",
     service: "Desarrollo Web",
-    imageHero: "/assets/images/slide1.png",
+    imageHero: "/assets/images/webSoftware.png",
     aboutCompany: { image: "/assets/images/BgColor.png", description: "TechNova es una empresa líder en soluciones digitales, especializada en el desarrollo de plataformas de comercio electrónico, aplicaciones web escalables y soluciones tecnológicas innovadoras para clientes internacionales. Con un enfoque en la experiencia de usuario, optimización de procesos y seguridad, TechNova ha ayudado a empresas de distintos sectores a crecer en el entorno digital y alcanzar sus objetivos de negocio."},
     aboutProject: { image: "/assets/images/mision.png", description: "Este proyecto consistió en diseñar y desarrollar un marketplace global altamente funcional, integrando pasarelas de pago seguras, gestión de inventarios en tiempo real y un sistema de administración intuitivo. El enfoque principal fue garantizar la escalabilidad, rendimiento y accesibilidad, ofreciendo a los usuarios finales una experiencia de compra fluida y optimizada para múltiples dispositivos y navegadores.",},
     challengeData: [
@@ -163,7 +163,7 @@ export const portfolioDetails: Project[] = [
     pictures: {
       descripcion: "Un vistazo al resultado final del proyecto, mostrando las pantallas principales y adaptaciones en distintos dispositivos.",
       images: [
-        "/assets/images/slide1.png",
+        "/assets/images/webSoftware.png",
         "/assets/images/slide2.png",
         "/assets/images/slide3.png",
         "/assets/images/slide4.png",
@@ -179,7 +179,7 @@ export const portfolioDetails: Project[] = [
     projectName: "App de Control de Inventario",
     location: "Colombia",
     service: "Desarrollo Móvil",
-    imageHero: "/assets/images/slide1.png",
+    imageHero: "/assets/images/webSoftware.png",
     aboutCompany: {
       image: "/assets/images/BgColor.png",
       description: "InnoSoft es una empresa líder en soluciones de software móvil, especializada en optimizar procesos de inventario y logística para clientes de distintos sectores. Su enfoque está en eficiencia operativa y experiencia de usuario en dispositivos móviles."
@@ -290,7 +290,7 @@ export const portfolioDetails: Project[] = [
     pictures: {
       descripcion: "Capturas de pantalla de la app de control de inventario en distintos dispositivos.",
       images: [
-        "/assets/images/slide1.png",
+        "/assets/images/webSoftware.png",
         "/assets/images/slide2.png",
         "/assets/images/slide3.png",
         "/assets/images/slide4.png",
@@ -306,7 +306,7 @@ export const portfolioDetails: Project[] = [
     projectName: "Learning Interactiva",
     location: "Chile",
     service: "Diseño UX/UI",
-    imageHero: "/assets/images/slide1.png",
+    imageHero: "/assets/images/webSoftware.png",
     aboutCompany: { 
       image: "/assets/images/BgColor.png", 
       description: "EduNext es una startup chilena enfocada en la transformación digital de la educación. Su misión es ofrecer plataformas de aprendizaje accesibles, dinámicas y efectivas que potencien la retención estudiantil y mejoren la interacción entre profesores y alumnos. Con presencia en instituciones educativas y empresas de formación, EduNext impulsa la innovación en e-learning." 
@@ -403,7 +403,7 @@ export const portfolioDetails: Project[] = [
     pictures: {
       descripcion: "Imágenes de la nueva plataforma e-learning con diseño moderno, accesible y optimizado para múltiples dispositivos.",
       images: [
-        "/assets/images/slide1.png",
+        "/assets/images/webSoftware.png",
         "/assets/images/slide2.png",
         "/assets/images/slide3.png"
       ]
@@ -418,7 +418,7 @@ export const portfolioDetails: Project[] = [
     projectName: "Sistema de Reservas Online",
     location: "México",
     service: "Desarrollo Web",
-    imageHero: "/assets/images/slide1.png",
+    imageHero: "/assets/images/webSoftware.png",
     
     aboutCompany: { 
       image: "/assets/images/BgColor.png", 
@@ -530,7 +530,7 @@ export const portfolioDetails: Project[] = [
     pictures: {
       descripcion: "Vista del sistema de reservas online en diferentes dispositivos y secciones clave.",
       images: [
-        "/assets/images/slide1.png",
+        "/assets/images/webSoftware.png",
         "/assets/images/slide2.png",
         "/assets/images/slide3.png",
         "/assets/images/slide4.png",
@@ -546,7 +546,7 @@ export const portfolioDetails: Project[] = [
   projectName: "Aplicación de Fitness Personalizada",
   location: "Perú",
   service: "Desarrollo Móvil",
-  imageHero: "/assets/images/slide1.png",
+  imageHero: "/assets/images/webSoftware.png",
 
   aboutCompany: { 
     image: "/assets/images/BgColor.png", 
@@ -657,7 +657,7 @@ export const portfolioDetails: Project[] = [
   pictures: {
     descripcion: "Vista de la aplicación de fitness mostrando rutinas, dashboards y progresos de los usuarios.",
     images: [
-      "/assets/images/slide1.png",
+      "/assets/images/webSoftware.png",
       "/assets/images/slide2.png",
       "/assets/images/slide3.png",
       "/assets/images/slide4.png",
@@ -673,7 +673,7 @@ export const portfolioDetails: Project[] = [
   projectName: "Software de Contabilidad en la Nube",
   location: "Colombia",
   service: "Desarrollo Web",
-  imageHero: "/assets/images/slide1.png",
+  imageHero: "/assets/images/webSoftware.png",
 
   aboutCompany: { 
     image: "/assets/images/BgColor.png", 
@@ -784,7 +784,7 @@ export const portfolioDetails: Project[] = [
   pictures: {
     descripcion: "Vista del sistema contable mostrando dashboards, reportes y módulos de gestión administrativa.",
     images: [
-      "/assets/images/slide1.png",
+      "/assets/images/webSoftware.png",
       "/assets/images/slide2.png",
       "/assets/images/slide3.png",
       "/assets/images/slide4.png",

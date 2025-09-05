@@ -24,6 +24,9 @@ const config: Config = {
         colorHover2: "#8C85FE",
         colorHover3: "#D5DFFF", // de hostinger
         colorHover4: "#CBD2E3", 
+        colorHover5: "#F4F5FF", 
+        colorHover6: "#EBEBFF", 
+
         colorFondo: "#FFFEFE", // principal de fondo
         colorPrimario1: "#232323", // color del logo secundario - oscuro suave
         colorPrimario2: "#0A0A0B", // color del logo terciario - oscuro fuerte

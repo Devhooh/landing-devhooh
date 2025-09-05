@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck   } from "lucide-react";
+import { BadgeCheck   } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface HeroLeftProps {
@@ -93,7 +93,7 @@ export default function HeroLeft({
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <ShieldCheck   className="w-6 h-6 text-cyan-400 flex-shrink-0" />
+                <BadgeCheck   className="w-6 h-6 text-cyan-400 flex-shrink-0" />
                 <span className="text-base md-tablet:text-lg">{feature}</span>
               </motion.li>
             ))}

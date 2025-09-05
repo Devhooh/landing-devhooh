@@ -8,7 +8,6 @@ interface CardData {
   slug: string;
   title: string;
   details: string;
-  color: string;
   icon: string;
 }
 

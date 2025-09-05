@@ -5,6 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import CaroulselCard from "./CaroulselCard";
 import { motion } from "framer-motion";
+import * as Icons from "lucide-react";
+import { LucideProps } from "lucide-react";
+
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -13,12 +17,13 @@ interface CardData {
   slug: string;
   title: string;
   details: string;
-  color: string;
   icon: string;
 }
 
 interface CardCaroulselSectionProps {
   title: string;
+  subtitle?: string;
+  features?: {icon: string; text: string}[];
   cardData: CardData[];
 }
 
@@ -29,7 +34,7 @@ const letterVariants = {
 
 const splitText = (text: string) => text.split("");
 
-export default function CaroulselSection({ title, cardData }: CardCaroulselSectionProps) {
+export default function CaroulselSection({ title, cardData, subtitle, features }: CardCaroulselSectionProps) {
   return (
     <section
       className="
@@ -50,6 +55,35 @@ export default function CaroulselSection({ title, cardData }: CardCaroulselSecti
             </motion.span>
           ))}
         </motion.h2>
+
+        {subtitle && (
+          <motion.p
+            className="text-center text-gray-700 my-4 text-lg"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            {subtitle}
+          </motion.p>
+        )}
+
+        {features && (
+          <div className="flex flex-col items-center tablet-md:flex-row tablet-md:justify-center gap-6 mb-2">
+            {features.map((f, idx) => {
+              const Icon =
+                (Icons[f.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) ||
+                Icons.HelpCircle;
+
+              return (
+                <div key={idx} className="flex items-center gap-2 text-gray-600">
+                  <Icon className="w-5 h-5 tablet-md:w-7 tablet-md:h-7 text-colorSecundario3" />
+                  <span>{f.text}</span>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         <Swiper
           modules={[Navigation, Pagination]}

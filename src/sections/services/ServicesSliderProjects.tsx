@@ -12,7 +12,8 @@ import { motion, Variants } from "framer-motion";
 
 interface ServicesSliderProjectsProps {
   projects: Project[];
-  title?: string; // h2 opcional
+  title?: string;
+  subtitle?: string;
   showService:boolean;
 }
 
@@ -25,6 +26,7 @@ const fadeUpTitle: Variants = {
 export function ServicesSliderProjects({
   projects,
   title,
+  subtitle,
   showService = true,
 }: ServicesSliderProjectsProps) {
   const limit = 5;
@@ -42,6 +44,19 @@ export function ServicesSliderProjects({
         >
           {title}
         </motion.h2>
+
+        {subtitle && (
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUpTitle}
+            className="mt-2 text-base md-tablet:text-lg text-gray-600 max-w-3xl"
+          >
+            {subtitle}
+          </motion.p>
+        )}
+
       </div>
 
       <div className="mx-5 tablet-md:mx-10">

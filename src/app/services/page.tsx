@@ -22,18 +22,42 @@ export default function Services() {
 
           <CaroulselSection
             title="Desarrollo Personalizado"
+            subtitle="Soluciones hechas a la medida de tu negocio"
+            features={[
+              { icon: "Zap", text: "Rendimiento optimizado" },
+              { icon: "Shield", text: "Seguridad empresarial" },
+              { icon: "Layers", text: "Escalabilidad garantizada" },
+            ]}
             cardData={customDevelopmentCardData}
           />
           <CaroulselSection
             title="Servicios de IA"
+            subtitle="Transforma tus datos en decisiones inteligentes"
+            features={[
+              { icon: "Bot", text: "Automatización de procesos" },
+              { icon: "BarChart3", text: "Análisis predictivo" },
+              { icon: "MessageSquare", text: "Chatbots y asistentes virtuales" },
+            ]}
             cardData={ServicesIACardData}
           />
           <CaroulselSection
             title="Infraestructura y Soporte"
+            subtitle="Mantén tu negocio siempre en línea"
+            features={[
+              { icon: "Cloud", text: "Soluciones en la nube" },
+              { icon: "ShieldCheck", text: "Monitoreo 24/7" },
+              { icon: "Cog", text: "Mantenimiento continuo" },
+            ]}
             cardData={InfraestructureSupportCardData}
           />
           <CaroulselSection
             title="Diseño y QA"
+            subtitle="Experiencias atractivas y de calidad asegurada"
+            features={[
+              { icon: "Palette", text: "Interfaces modernas" },
+              { icon: "FlaskConical", text: "Pruebas automatizadas" },
+              { icon: "Smartphone", text: "Diseño responsive" },
+            ]}
             cardData={DesignerQACardData}
           />
         </div>
@@ -41,6 +65,7 @@ export default function Services() {
 
       <ServicesSliderProjects 
         title="Proyectos que usaron nuestros servicios: " 
+        subtitle="Desde software personalizado y aplicaciones móviles hasta inteligencia artificial y diseño web. Cada caso refleja cómo ayudamos a empresas a innovar y crecer."
         projects={projectsData}
         showService={true}
       />

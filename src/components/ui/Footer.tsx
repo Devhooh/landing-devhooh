@@ -25,8 +25,8 @@ export default function Footer() {
 
 
   return (
-    <footer className="w-full bg-black/95 py-4">
-      <div className="max max-w-7xl mx-auto p-5 grid grid-cols-1 table-lg:grid-cols-2 gap-8">
+    <footer className="w-full bg-colorPrimario3 pb-4">
+      <div className="max-w-7xl mx-auto p-5 grid grid-cols-1 table-lg:grid-cols-2 gap-8">
         {/* Lado izquierdo */}
         <div className="md-tablet:items-center text-center justify-center">
           <div className="p-4 text-center table-lg:text-left w-full">

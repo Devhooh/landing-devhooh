@@ -45,10 +45,10 @@ export default function ServicesProjects({
       viewport={{ once: true }}
       variants={cardVariants}
       transition={{ duration: 0.3, delay: index * 0.1 }}
-        className="h-[400px] border border-colorPrimarioLogo1 bg-colorPrimario3 rounded-xl shadow-2xl overflow-hidden flex flex-col"
+        className="h-[400px] border border-colorPrimarioLogo1 bg-colorSecundario rounded-xl shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Imagen */}
-        <div className="bg-white p-3 h-48 w-full flex items-center justify-center">
+        <div className="p-3 h-48 w-full flex items-center justify-center">
           <Image
             width={400}
             height={400}

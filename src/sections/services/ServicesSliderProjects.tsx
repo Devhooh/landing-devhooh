@@ -31,8 +31,8 @@ export function ServicesSliderProjects({
   const displayedProjects = projects.slice(0, limit);
 
   return (
-    <section className="bg-white py-10 mx-5 md-tablet:mx-10">
-      <div className="max-w-7xl text-left mb-4">
+    <section className="py-10 mx-auto w-full">
+      <div className="text-left mb-8 mx-8 tablet-md:mx-12">
         <motion.h2
           initial="hidden"
           whileInView="visible"
@@ -44,7 +44,7 @@ export function ServicesSliderProjects({
         </motion.h2>
       </div>
 
-      <div>
+      <div className="mx-5 tablet-md:mx-10">
         <Swiper
           modules={[Navigation]}
           slidesPerView={1.05}
@@ -59,7 +59,7 @@ export function ServicesSliderProjects({
           className="px-2 md-tablet:px-6"
         >
           {displayedProjects.map((project, index) => (
-            <SwiperSlide key={project.id} className="flex my-12">
+            <SwiperSlide key={project.id} className="flex mb-12 px-1 md-tablet:px-2">
               <ServicesProjects project={project} showService={showService} index={index} />
             </SwiperSlide>
           ))}

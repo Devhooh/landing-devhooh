@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTAServices() {
   return (
-    <div className="relative w-full h-auto my-12 flex justify-center overflow-hidden">
+    <div className="relative w-full h-auto my-32 flex justify-center overflow-hidden">
       {/* Contenedor principal */}
       <div
         className="
@@ -22,7 +22,7 @@ export default function CTAServices() {
             ¿Buscas <span className="text-fuchsia-300">servicios</span> de desarrollo <span className="text-fuchsia-300">confiable</span>?
           </h2>
           <p className="text-2xl tablet-md:text-3xl font-extrabold text-slate-200 mb-4 pb-3">
-            En <span className="text-fuchsia-700">devhooh</span> podemos ayudarlo
+            En <span className="text-fuchsia-300">devhooh</span> podemos ayudarlo
           </p>
 
           {/* Botón */}

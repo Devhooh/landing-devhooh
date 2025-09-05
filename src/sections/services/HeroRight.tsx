@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -27,7 +27,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-4xl font-extrabold leading-tight text-center table-lg:text-right text-white">
+            <h2 className="text-4xl font-extrabold leading-tight text-center table-lg:text-right text-colorPrimario1">
               {title}
             </h2>
           </motion.div>
@@ -81,7 +81,7 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Sparkles className="w-4 h-4 text-white flex-shrink-0" />
+                    <ShieldCheck className="w-6 h-6 text-cyan-400 flex-shrink-0" />
                     <span className="text-base md-tablet:text-xl">{feature}</span>
                   </motion.li>
                 ))}

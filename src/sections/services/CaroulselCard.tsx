@@ -32,12 +32,12 @@ export default function CaroulselCard({
         transition: { duration: 0.2 },
       }}
       className="
-        bg-white border border-gray-200 hover:border-fuchsia-400
+        bg-white border border-colorPrimarioLogo2 hover:border-colorPrimarioLogo1
         rounded-2xl shadow-xl overflow-hidden h-[490px]
         flex flex-col"
     >
       {/* Imagen */}
-      <div className="flex items-center justify-center bg-gray-200 p-6">
+      <div className="flex items-center justify-center p-6">
         <Image
           src={card.icon}
           alt={card.title}

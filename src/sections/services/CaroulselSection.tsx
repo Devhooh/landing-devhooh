@@ -33,14 +33,12 @@ export default function CaroulselSection({ title, cardData }: CardCaroulselSecti
   return (
     <section
       className="
-        bg-purple-700
-        w-full h-full pt-10 overflow-hidden rounded-3xl shadow-inner
-      "
+        bg-colorHover4/30 w-full h-full pt-10 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1550px] mx-auto px-3 tablet-md:px-10">
         <motion.h2
           className="
-            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-white drop-shadow-sm"
+            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-colorPrimario2 drop-shadow-sm"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}

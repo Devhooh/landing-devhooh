@@ -43,7 +43,7 @@ export function SolutionsSection() {
 };
 
   return (
-    <section className="w-full py-12 bg-colorHover/20 overflow-x-hidden">
+    <section className="w-full py-12 bg-colorHover5 overflow-x-hidden">
       {/* Encabezado */}
       <motion.div
         className="px-5 md-tablet:px-10 flex flex-col text-center table-lg:flex-row justify-center items-center mb-12 gap-6"

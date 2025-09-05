@@ -112,7 +112,7 @@ export function ProjectsSection() {
       </div>
 
       {/* Slider de proyectos */}
-      <div className="max-w-[1550px] mx-auto md-tablet:px-0">
+      <div className="max-w-[1550px] mx-auto md-tablet:px-0 bg-colorHover6">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           navigation
@@ -131,10 +131,10 @@ export function ProjectsSection() {
           {projectsData.slice(0, 4).map((project, index) => (
             <SwiperSlide 
               key={index} 
-              className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-[1]"
+              className="h-auto flex py-14 justify-center transition-transform duration-300 hover:scale-[1]"
               style={{ width: '70%' }}
             >
-              <div className="bg-gray-100 rounded-3xl w-full">
+              <div className="bg-white rounded-3xl w-full">
                 <ProjectCard {...project} />
               </div>
             </SwiperSlide>

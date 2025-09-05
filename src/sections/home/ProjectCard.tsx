@@ -25,7 +25,9 @@ export function ProjectCard({
   slug,
 }: ProjectCardProps) {
   return (
-    <div className="h-[450px] backdrop-blur-md border-2 border-gray-400 rounded-3xl overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.01]">
+    <div className="
+      h-[450px] backdrop-blur-md border-b-4 tablet-md:border-b-8 border-colorPrimarioLogo1 border tablet-md:border-2 rounded-3xl 
+      overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.01]">
       
       {/* Imagen */}
       <div className="relative w-full h-48 md-tablet:h-56 table-lg:h-64 border-b border-purple-500/30">
@@ -46,12 +48,12 @@ export function ProjectCard({
           {ProjectName}
         </h3>
         {company && (
-          <p className="text-colorSecundario3 text-base md-tablet:text-lg font-semibold">
+          <p className="text-colorSecundario3 text-base md-tablet:text-xl font-semibold">
             Empresa: {company}
           </p>
         )}
         {subtitle && (
-          <p className="text-colorPrimario1 text-sm md-tablet:text-base">
+          <p className="text-colorPrimario1 text-sm md-tablet:text-lg">
             {subtitle}
           </p>
         )}
@@ -59,7 +61,9 @@ export function ProjectCard({
         {/* Botón premium */}
         <div className="flex justify-center mt-5">
           <Link href={`/portfolio/${slug}`}>
-            <button className="bg-colorSecundario2 hover:bg-colorSecundario3 text-white py-2.5 md-tablet:py-3 px-7 md-tablet:px-9 rounded-2xl text-sm md-tablet:text-base font-semibold shadow-md transition-all duration-300">
+            <button className="
+              bg-colorSecundario2 hover:bg-colorSecundario3 text-white py-2.5 md-tablet:py-3 px-7 md-tablet:px-14 rounded-xl 
+              text-sm md-tablet:text-base font-semibold shadow-md transition-all duration-300">
               Ver proyecto
             </button>
           </Link>

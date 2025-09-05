@@ -24,7 +24,7 @@ export function ProjectSlider({
 
   return (
     <div className="overflow-hidden w-full">
-      <div className={`flex ${animationClass} gap-6`}>
+      <div className={`flex ${animationClass} gap-6`} style={{ minWidth: `${logosLoop.length * 10}rem` }} >
         {logosLoop.map((logo, i) => (
           <div
             key={i}

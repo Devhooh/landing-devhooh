@@ -134,7 +134,7 @@ export function ProjectsSection() {
               className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-[1]"
               style={{ width: '70%' }}
             >
-              <div className="bg-gradient-to-b from-colorPrimarioLogo1 to-colorPrimarioLogo2/30 rounded-3xl w-full">
+              <div className="bg-gray-100 rounded-3xl w-full">
                 <ProjectCard {...project} />
               </div>
             </SwiperSlide>

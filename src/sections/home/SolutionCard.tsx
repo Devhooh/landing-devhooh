@@ -34,7 +34,7 @@ export function SolutionCard({
       viewport={{ once: true, amount: 0.3 }}
       variants={cardVariants}
       className={`relative max-w-3xl table-lg:w-3/4 p-[2px] rounded-2xl 
-        bg-gradient-to-r from-colorSecundario3 via-colorSecundario1 to-black
+        bg-colorSecundario3
         ${reverse ? "table-lg:self-end" : "table-lg:self-start"}`}
     >
       <div className={`bg-white rounded-2xl p-6 md-tablet:p-10 shadow-lg hover:shadow-2xl transition

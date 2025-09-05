@@ -7,9 +7,8 @@ import { Mail } from "lucide-react"; // Ícono de ejemplo
 export default function CTAHome() {
   return (
     <div className="
-      group
       relative w-full h-auto my-12 tablet-md:my-32 flex justify-center overflow-hidden
-      bg-gradient-to-tl from-colorSecundario3 to-white shadow-xl hover:shadow-2xl"
+      bg-gradient-to-tl from-colorSecundario3 via-colorHover2/50 to-white shadow-xl hover:shadow-2xl"
     >
       {/* Contenedor principal */}
       <div
@@ -30,7 +29,7 @@ export default function CTAHome() {
         <div className="flex flex-col items-center md-tablet:items-start max-w-full">
           <h2
             className="
-              text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario2 mb-2 break-words"
+              text-2xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-2 break-words"
           >
             Queremos que su empresa sea nuestro próximo{" "}
             <span className="text-white">
@@ -39,7 +38,7 @@ export default function CTAHome() {
           </h2>
           <p
             className="
-              text-base md-tablet:text-lg text-gray-800 font-medium mb-4 pt-4"
+              text-base md-tablet:text-xl text-gray-800 font-medium mb-4 pt-4"
           >
             Impulsa tu proyecto con soluciones digitales hechas a tu medida.
           </p>
@@ -52,9 +51,9 @@ export default function CTAHome() {
                 className="
                   inline-flex items-center gap-2 px-6 py-3
                   font-bold rounded-xl shadow-lg 
-                  bg-colorSecundario3 text-black
+                  bg-colorDarkFondo1 text-white
                   transition-all duration-500
-                  group-hover:bg-colorDarkFondo1 group-hover:text-white"
+                  hover:bg-colorSecundario3 hover:text-white"
               >
                 ¡Empieza ahora!
                 <motion.svg

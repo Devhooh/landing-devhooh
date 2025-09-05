@@ -33,7 +33,7 @@ export default function CaroulselSection({ title, cardData }: CardCaroulselSecti
   return (
     <section
       className="
-        bg-colorHover6 w-full h-full pt-10 overflow-hidden"
+        bg-colorHover5 w-full h-full pt-10 overflow-hidden"
     >
       <div className="max-w-[1550px] mx-auto px-3 tablet-md:px-10">
         <motion.h2

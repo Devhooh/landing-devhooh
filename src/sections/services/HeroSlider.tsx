@@ -10,13 +10,13 @@ import "swiper/css/pagination";
 
 export default function HeroSlider() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full mx-auto bg-colorSecundario">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         autoplay={{ delay: 7000 }}
         loop
-        className="w-full mx-auto bg-colorSecundario"
+        // className="w-full mx-auto bg-colorSecundario"
       >
         {/* Slide 1: HeroLeft */}
         <SwiperSlide>

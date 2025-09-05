@@ -28,11 +28,19 @@ const config: Config = {
         colorHover6: "#EBEBFF", 
 
         colorFondo: "#FFFEFE", // principal de fondo
-        colorPrimario1: "#232323", // color del logo secundario - oscuro suave
-        colorPrimario2: "#0A0A0B", // color del logo terciario - oscuro fuerte
-        colorPrimario3: "#663CE6", // boton de hostinger
-        colorPrimario4: "#734FE7", // color hostionger mas fuerte
-        colorPrimario5: "#8C84FD", // color de hostinger mas suave
+        colorPrimario1: "#232323", // color del logo - oscuro suave 1
+        colorPrimario2: "#0A0A0B", // color del logo - oscuro fuerte 1
+        colorPrimario3: "#0D0D0C", // color del logo - oscuro fuerte 2
+        colorPrimario4: "#1C1E21", // color del logo - oscuro suave 2
+
+        colorPrimario5: "#663CE6", // boton de hostinger
+        colorPrimario6: "#734FE7", // color hostionger mas fuerte
+        colorPrimario7: "#8C84FD", // color de hostinger mas suave
+        colorPrimario8: "#8D85FE", // color de hostinger mas suave
+
+        colorPrimario11: "#262730", // color de hostinger mas suave
+        colorPrimario22: "#161619", // color de hostinger mas fuerte
+
         colorDarkFondo1: "#321A7B", // azul oscuro
         colorDarkFondo2: "#1E1245", 
         colorDarkFondo3: "#261559", 
@@ -43,6 +51,7 @@ const config: Config = {
         colorSecundario1: "#673DE6", // variante 2 del color principal
         colorSecundario2: "#7550E7", // variante 3 del color principal
         colorSecundario3: "#5A29EB", // variante 4 del color principal mas fuerte
+        colorSecundario4: "#5025D1", // variante 5 del color principal
 
 
       },

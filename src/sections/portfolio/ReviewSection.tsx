@@ -1,21 +1,18 @@
 "use client";
 
-import React from 'react';
-import ReviewCard from './ReviewCard';
-import { reviewData } from '@/data/reviewData';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import React from "react";
+import ReviewCard from "./ReviewCard";
+import { reviewData } from "@/data/reviewData";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 import { motion, Variants } from "framer-motion";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 
 const containerVariant = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.4 }, // delay entre cada card
-  },
+  show: { opacity: 1, transition: { staggerChildren: 0.4 } },
 };
 
 const cardVariant: Variants = {
@@ -23,19 +20,24 @@ const cardVariant: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-// El texto saldra uno por uno
 const letterVariants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
+  show: { opacity: 1, y: 0 },
 };
 
 const splitText = (text: string) => text.split("");
 
 export default function ReviewsSection() {
+  // Agrupar reviews en pares (para tablet/pc)
+  const pairedReviews = [];
+  for (let i = 0; i < reviewData.length; i += 2) {
+    pairedReviews.push([reviewData[i], reviewData[i + 1]]);
+  }
+
   return (
     <div className="py-4 bg-white">
       <div className="max-w-6xl mx-auto px-4 md-tablet:px-8">
-        {/* Título y subtítulo */}
+        {/* Título */}
         <div className="text-center mb-12">
           <motion.h2
             className="mt-10 text-4xl font-extrabold text-gray-900 md-tablet:text-5xl"
@@ -62,18 +64,45 @@ export default function ReviewsSection() {
           </motion.p>
         </div>
 
-        <Swiper
-          modules={[Pagination, Navigation]}
-          navigation
-          spaceBetween={32}
-          slidesPerView={1} // siempre 1 slide visible
-          pagination={{ clickable: true }}
-          className="mySwiper h-full flex items-center px-8 md:px-16"
-        >
-          {/* Aquí en cada SwiperSlide colocamos 2 reviews directamente */}
-          {reviewData.map((_, index) =>
-            index % 2 === 0 ? (
-              <SwiperSlide key={index}>
+        {/* Swiper para móviles */}
+        <div className="block md-tablet:hidden">
+          <motion.div
+            variants={containerVariant}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Swiper
+              modules={[Navigation, Pagination]}
+              navigation
+              pagination={{ clickable: true }}
+              className="w-full h-full"
+              slidesPerView={1}
+              spaceBetween={20}
+            >
+              {reviewData.map((review, idx) => (
+                <SwiperSlide key={`review-mobile-${idx}`} className="p-2">
+                  <motion.div variants={cardVariant}>
+                    <ReviewCard review={review} />
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
+        </div>
+
+        {/* Swiper para tablet/pc (pares de reseñas) */}
+        <div className="hidden md-tablet:block">
+          <Swiper
+            modules={[Pagination, Navigation]}
+            navigation
+            spaceBetween={32}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            className="mySwiper h-full flex items-center px-8 md:px-16"
+          >
+            {pairedReviews.map((pair, index) => (
+              <SwiperSlide key={`review-slide-${index}`}>
                 <motion.div
                   className="grid grid-cols-1 gap-8 mb-20"
                   variants={containerVariant}
@@ -82,19 +111,20 @@ export default function ReviewsSection() {
                   viewport={{ once: true, amount: 0.2 }}
                 >
                   <motion.div variants={cardVariant}>
-                    <ReviewCard review={reviewData[index]} />
+                    <ReviewCard review={pair[0]} />
                   </motion.div>
 
-                  {reviewData[index + 1] && (
+                  {pair[1] && (
                     <motion.div variants={cardVariant}>
-                      <ReviewCard review={reviewData[index + 1]} />
+                      <ReviewCard review={pair[1]} />
                     </motion.div>
                   )}
                 </motion.div>
               </SwiperSlide>
-            ) : null
-          )}
-        </Swiper>
+            ))}
+          </Swiper>
+        </div>
+
       </div>
     </div>
   );

@@ -22,10 +22,10 @@ export default function PortfolioFilters() {
   });
 
   return (
-    <div className="bg-white w-full p-6 mx-auto max-w-[1550px]">
+    <div className="bg-white w-full max-w-[1550px] mx-auto">
       
       {/* Título */}
-      <section className="bg-colorHover5 py-5 my-10 rounded-2xl">
+      <section className="bg-colorHover3 py-5 my-10 px-2 mx-4 tablet-md:mx-8 rounded-2xl">
         <div className="mb-6 mx-2 md-tablet:mx-8">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}

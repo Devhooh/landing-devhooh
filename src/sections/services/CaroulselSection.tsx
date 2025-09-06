@@ -38,7 +38,7 @@ export default function CaroulselSection({ title, cardData, subtitle, features }
   return (
     <section
       className="
-        bg-colorHover5 w-full h-full pt-10 overflow-hidden"
+        bg-colorHover6 w-full h-full pt-10 overflow-hidden"
     >
       <div className="max-w-[1550px] mx-auto px-3 tablet-md:px-10">
         <motion.h2
@@ -58,7 +58,7 @@ export default function CaroulselSection({ title, cardData, subtitle, features }
 
         {subtitle && (
           <motion.p
-            className="text-center text-gray-700 my-4 text-lg"
+            className="text-center text-gray-700 mb-5 mt-2 text-lg"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -69,20 +69,20 @@ export default function CaroulselSection({ title, cardData, subtitle, features }
         )}
 
         {features && (
-          <div className="flex flex-col items-center tablet-md:flex-row tablet-md:justify-center gap-6 mb-2">
+          <ul className="flex flex-col items-center tablet-md:flex-row tablet-md:justify-center gap-6 mb-2">
             {features.map((f, idx) => {
               const Icon =
                 (Icons[f.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) ||
                 Icons.HelpCircle;
 
               return (
-                <div key={idx} className="flex items-center gap-2 text-gray-600">
-                  <Icon className="w-5 h-5 tablet-md:w-7 tablet-md:h-7 text-colorSecundario3" />
+                <li key={idx} className="flex items-center gap-2 text-gray-600">
+                  <Icon className="w-6 h-6 tablet-md:w-8 tablet-md:h-8 text-colorSecundario3" />
                   <span>{f.text}</span>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         )}
 
         <Swiper

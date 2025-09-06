@@ -60,7 +60,7 @@ export default function CaroulselCard({
       {/* Botones */}
       <div className="mb-12 px-5 flex flex-col gap-4">
         <Link href="/contact">
-          <button className="relative w-full py-2 rounded-lg bg-colorPrimario3 text-white font-semibold overflow-hidden">
+          <button className="relative w-full py-2 rounded-lg bg-colorPrimario5 text-white font-semibold overflow-hidden">
             <span className="relative z-10">Cotiza tu proyecto</span>
             <span className="absolute inset-0 bg-white/30 -translate-x-full rotate-45 animate-shine" />
           </button>

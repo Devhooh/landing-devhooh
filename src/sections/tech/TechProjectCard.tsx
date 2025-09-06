@@ -31,58 +31,50 @@ export default function TechProjectCard({ projects }: { projects: ProjectCardPro
       className="w-full h-auto"
     >
       <div className="min-h-[500px] max-h-[600px] py-4 border border-colorHover3 rounded-2xl shadow-xl overflow-hidden flex flex-col
-                      bg-colorPrimario3/40 backdrop-blur-md 
-                      transition-transform duration-300 hover:scale-[1.02] hover:shadow-3xl">
+                bg-colorPrimario3/40 backdrop-blur-md transition-transform duration-300 hover:shadow-3xl">
 
-        {/* Imagen */}
-        <div className="flex justify-center m-5">
-          <Image
-            src={projects.imageSrc}
-            alt={projects.ProjectName}
-            width={500}
-            height={500}
-            className="w-48 h-auto rounded-xl object-contain transition-transform duration-300 hover:scale-105"
-          />
-        </div>
+  {/* Imagen */}
+  <div className="bg-colorPrimarioLogo1 flex justify-center relative w-full h-48 md-tablet:h-56 table-lg:h-64">
+    <Image
+      src={projects.imageSrc}
+      alt={projects.ProjectName}
+      fill
+      style={{ objectFit: "cover" }}
+      className="object-contain transition-transform duration-300 hover:scale-105"
+    />
+  </div>
 
-        {/* Título del proyecto */}
-        <h4 className="text-xl md:text-2xl text-center font-bold text-white">
-          {projects.ProjectName}
-        </h4>
+  {/* Contenido principal */}
+  <div className="flex-1 flex flex-col justify-start px-2 mt-2">
+    <h4 className="text-xl md:text-2xl text-center font-bold text-white">
+      {projects.ProjectName}
+    </h4>
 
-        {/* Subtítulo: empresa + ubicación */}
-        <p className="text-sm md:text-base text-center text-gray-300 italic mt-1">
-          {projects.company} · {projects.location}
-        </p>
+    <p className="text-sm md:text-base text-center text-gray-300 italic mt-1">
+      {projects.company} · {projects.location}
+    </p>
 
-        {/* Chips de tecnologías */}
-        <div className="flex justify-center flex-wrap gap-2 mt-4 px-2">
-          {projects.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="bg-white/10 text-gray-100 border border-white/20
-                         text-xs font-medium px-4 py-1.5 rounded-full 
-                         transition-all hover:bg-white/20"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+    <div className="flex justify-center flex-wrap gap-2 mt-4">
+      {projects.technologies.map((tech) => (
+        <span
+          key={tech}
+          className="bg-white/10 text-gray-100 border border-white/20 text-xs font-medium px-4 py-1.5 rounded-full transition-all hover:bg-white/20"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
 
-        {/* Botón ver proyecto */}
-        <div className="flex justify-center mt-4 mb-4">
-          <Link href={`/portfolio/${projects.slug}`}>
-            <button
-              className="bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 
-                         hover:opacity-90 text-white transition-all 
-                         py-2 px-8 rounded-xl text-base md:text-lg font-semibold 
-                         shadow-md hover:shadow-xl"
-            >
-              Ver proyecto
-            </button>
-          </Link>
-        </div>
-      </div>
+    {/* Botón empujado hacia abajo */}
+    <div className="mt-auto flex justify-center mb-4">
+      <Link href={`/portfolio/${projects.slug}`}>
+        <button className="bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 hover:opacity-90 text-white transition-all py-2 px-8 rounded-xl text-base md:text-lg font-semibold shadow-md hover:shadow-xl">
+          Ver proyecto
+        </button>
+      </Link>
+    </div>
+  </div>
+</div>
     </motion.section>
   );
 }

@@ -48,13 +48,14 @@ export default function ServicesProjects({
         className="h-[400px] border border-colorPrimarioLogo1 bg-colorSecundario rounded-xl shadow-2xl overflow-hidden flex flex-col"
       >
         {/* Imagen */}
-        <div className="p-3 h-48 w-full flex items-center justify-center">
+        <div className="p-3 flex items-center justify-center relative w-full h-48 md-tablet:h-56 table-lg:h-64">
           <Image
-            width={400}
-            height={400}
             src={project.imageSrc}
             alt={project.imageAlt || project.ProjectName}
-            className="object-contain w-full h-full p-5"
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 750px) 100vw, (max-width: 950px) 50vw, 33vw"
+            className="object-contain transition-transform duration-300 hover:scale-105"
           />
         </div>
 
@@ -74,7 +75,7 @@ export default function ServicesProjects({
 
           <div>
             <Link href={`/portfolio/${project.slug}`}>
-              <button className="bg-white text-colorSecundario3 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-colorHover3 hover:text-black hover:border border-colorSecundario transform transition-all">
+              <button className="bg-white text-colorSecundario3 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-colorHover3 hover:border border-colorSecundario transform transition-all">
                 Ver más detalles
               </button>
             </Link>

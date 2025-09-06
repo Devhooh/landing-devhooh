@@ -9,16 +9,16 @@ export default function CTAServices() {
       {/* Contenedor principal */}
       <div
         className="
-          z-10 mx-5 px-5 tablet-md:px-10 py-8 w-full h-auto max-w-[1000px]
+          z-10 px-5 tablet-md:px-10 py-8 w-full h-auto
           flex flex-col items-center
           gap-6 table-lg:gap-12
-          border-2 border-black rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 via-gray-900 to-black
+          overflow-hidden bg-gradient-to-tl from-colorDarkFondo2 to-colorPrimarioLogo1
           text-center
         "
       >
         {/* Texto + botón */}
         <div className="flex flex-col items-center max-w-full">
-          <h2 className="text-3xl tablet-md:text-5xl font-bold text-white mb-2 break-words pb-3">
+          <h2 className="text-3xl tablet-md:text-5xl font-extrabold text-white mb-2 break-words pb-3">
             Cuando estes listo:
           </h2>
           <h2 className="text-3xl tablet-md:text-5xl font-bold text-white mb-2 break-words pb-3">
@@ -34,7 +34,7 @@ export default function CTAServices() {
                 className="
                   inline-flex items-center gap-2 px-8 py-4
                   font-bold text-lg rounded-xl shadow-lg 
-                  bg-gradient-to-r from-fuchsia-600 to-violet-600
+                  bg-colorPrimario5
                   text-white transition-all duration-500"
               >
                 Ponte en contacto
@@ -51,7 +51,7 @@ export default function CTAServices() {
             </Link>
           </div>
 
-          <p className="text-base tablet-md:text-xl font-extrabold text-slate-200 mb-4 pb-3">
+          <p className="text-base tablet-md:text-xl italic font-extrabold text-slate-200 mb-4 pb-3">
             Desde startups hasta grandes empresas, tú puedes ser el siguiente
           </p>
         </div>

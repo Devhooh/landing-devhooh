@@ -35,14 +35,14 @@ export default function ServicesCardsSection() {
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUpStagger}
               className="
-                bg-purple-700
+                bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
                 backdrop-blur-xl shadow-xl rounded-3xl p-6 table-lg:max-w-md w-full
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl
               "
             >
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
-                <div className="bg-colorPrimario5 p-6 rounded-full flex-shrink-0">
+                <div className="bg-colorHover2 p-6 rounded-full flex-shrink-0">
                   <Lightbulb className="h-10 w-10 text-white" />
                 </div>
                 <div>
@@ -62,14 +62,14 @@ export default function ServicesCardsSection() {
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUpStagger}
               className="
-                bg-purple-700
+                bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
                 backdrop-blur-xl shadow-xl rounded-3xl p-6 table-lg:max-w-xl w-full
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl
               "
             >
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
-                <div className="bg-colorPrimario5 p-6 rounded-full flex-shrink-0">
+                <div className="bg-colorHover2 p-6 rounded-full flex-shrink-0">
                   <Rocket className="h-10 w-10 text-white" />
                 </div>
                 <div>
@@ -89,14 +89,14 @@ export default function ServicesCardsSection() {
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUpStagger}
               className="
-                bg-purple-700
+                bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
                 backdrop-blur-xl shadow-xl rounded-3xl p-6 table-lg:max-w-2xl w-full
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl
               "
             >
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
-                <div className="bg-colorPrimario5 p-6 rounded-full flex-shrink-0">
+                <div className="bg-colorHover2 p-6 rounded-full flex-shrink-0">
                   <Repeat className="h-10 w-10 text-white" />
                 </div>
                 <div>

@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 export default function HeroSlider() {
   return (
-    <section className="w-full mx-auto bg-colorSecundario">
+    <section className="w-full mx-auto bg-colorPrimario6">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation

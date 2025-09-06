@@ -37,20 +37,19 @@ export default function TechProjectSection() {
 
 
       </div>
-
+      
       <Swiper
         modules={[Navigation]}
-        slidesPerView={1.05}
-        spaceBetween={50}
+        spaceBetween={30}
         navigation
         loop
         pagination={{ clickable: true }}
         breakpoints={{
-          550:  { slidesPerView: 1.2, spaceBetween: 25 },   // md-tablet
-          950:  { slidesPerView: 2.1, spaceBetween: 40 },   // table-lg
-          1150: { slidesPerView: 3,   spaceBetween: 48 },   // lg-table
+          550:  { slidesPerView: 1.2, spaceBetween: 30 },
+          950:  { slidesPerView: 2.1, spaceBetween: 40 },
+          1150: { slidesPerView: 3,   spaceBetween: 48 },
         }}
-        className="px-2 md-tablet:px-6"
+        className="px-6 md:px-12 overflow-visible" // 👈 más espacio a los lados
       >
         {displayedProjects.map((project) => (
           <SwiperSlide key={project.id} className="flex my-6">
@@ -58,7 +57,6 @@ export default function TechProjectSection() {
           </SwiperSlide>
         ))}
       </Swiper>
-
 
     </section>
   );

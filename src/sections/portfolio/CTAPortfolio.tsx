@@ -21,7 +21,7 @@ export default function CTAServices() {
           <h2 className="text-3xl tablet-md:text-5xl font-extrabold text-white mb-2 break-words pb-3">
             Cuando estes listo:
           </h2>
-          <h2 className="text-3xl tablet-md:text-5xl font-bold text-white mb-2 break-words pb-3">
+          <h2 className="text-3xl tablet-md:text-5xl font-bold text-gray-200 mb-2 break-words pb-3">
             Hablemos sobre tu proyecto
           </h2>
 
@@ -34,7 +34,7 @@ export default function CTAServices() {
                 className="
                   inline-flex items-center gap-2 px-8 py-4
                   font-bold text-lg rounded-xl shadow-lg 
-                  bg-colorPrimario5
+                  bg-colorSecundario3
                   text-white transition-all duration-500"
               >
                 Ponte en contacto

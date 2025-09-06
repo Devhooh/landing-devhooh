@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTAAbout() {
   return (
-    <div className="relative w-full h-auto my-32 flex justify-center overflow-hidden">
+    <div className="relative w-full h-auto my-32 flex justify-center overflow-hidden bg-gradient-to-b from-colorHover4 to-white">
       {/* Contenedor principal */}
       <div
         className="
@@ -15,10 +15,10 @@ export default function CTAAbout() {
       >
         {/* Texto + botón */}
         <div className="flex flex-col items-center max-w-full">
-          <h2 className="text-3xl tablet-md:text-5xl font-bold text-gray-950 mb-2 break-words pb-3">
+          <h2 className="text-3xl tablet-md:text-5xl font-extrabold text-gray-950 mb-2 break-words pb-3">
             Devhooh es un socio en quien realmente se puede confiar.
           </h2>
-          <p className="text-base tablet-md:text-xl font-extrabold text-slate-500 mb-4 pb-3">
+          <p className="text-base tablet-md:text-xl font-bold text-gray-700 mb-4 pb-3">
             Mejoramos la experiencia de su plataforma y aumentamos las conversiones junto a su equipo.
             Donde creamos una solución escalable y una interfaz optimizada para su negocio.
           </p>

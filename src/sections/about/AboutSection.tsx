@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { Eye, Target, Users, Globe } from "lucide-react";
 
 const centralVariant: Variants = {
   hidden: { opacity: 0, y: 60 },
@@ -17,87 +18,121 @@ const missionVariant: Variants = {
   show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-
-export default function AboutSection () {
+export default function AboutSection() {
   return (
-    <div className="bg-white pt-16 px-4 md-tablet:px-8">
-      <div className="container mx-auto max-w-7xl">
+    <div className="bg-white pt-16 w-full">
+      <div className="container mx-auto max-w-[1550px]">
         
-        {/* Card central de comunicación */}
-        <div className="flex justify-center mb-8">
+        {/* Card central */}
+        <div className="flex justify-center mb-32">
           <motion.div
             variants={centralVariant}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="bg-gradient-to-b from-indigo-950 via-blue-950 to-black text-white rounded-3xl p-8 shadow-2xl max-w-5xl text-center"
+            className="
+              bg-gradient-to-b from-colorDarkFondo2 to-colorPrimario5 
+              text-white rounded-3xl p-10 shadow-[0_0_40px_rgba(0,0,0,0.25)] 
+              border border-white/10 backdrop-blur-md
+              max-w-5xl text-center mx-4 md-tablet:mx-8"
           >
             <h2 className="text-3xl table-lg:text-4xl font-extrabold mb-10">
               Cuando la confianza es alta, la comunicación es fácil, instantánea y efectiva.
             </h2>
             <p className="text-lg table-lg:text-xl font-light italic leading-relaxed max-w-3xl mx-auto">
-              En solo 4 años, Devhoo ha ayudado a startups y empresas a transformar sus ideas en soluciones digitales reales. Con un equipo apasionado por la innovación, combinamos diseño, desarrollo y tecnologías modernas para que tu proyecto brille desde el primer día.
+              En solo 4 años, Devhooh ha ayudado a startups y empresas a transformar sus ideas en soluciones digitales reales. 
+              Con un equipo apasionado por la innovación, combinamos diseño, desarrollo y tecnologías modernas para que tu proyecto brille desde el primer día.
             </p>
           </motion.div>
         </div>
 
-        {/* Contenedor de las cards de Visión y Misión */}
-        <div className="flex flex-col space-y-12 p-4">
-          
-          {/* Card de Visión */}
+        {/* Contenedor de las cards */}
+        <div className="
+          flex flex-col space-y-16 px-10 py-24 w-full
+          bg-gradient-to-b from-colorPrimario5 to-colorSecundario4">
+          {/* Card Visión */}
           <motion.div
             variants={visionVariant}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="w-full table-lg:w-3/4 table-lg:self-start bg-gradient-to-b from-white via-gray-50 to-blue-50 rounded-2xl shadow-xl overflow-hidden flex flex-col table-lg:flex-row border-2 border-fuchsia-300"
+            className="
+              w-full table-lg:w-3/4 table-lg:self-start 
+              bg-white rounded-2xl border border-colorPrimarioLogo1/40
+              shadow-lg hover:shadow-2xl transition-all duration-300
+              overflow-hidden flex flex-col table-lg:flex-row"
           >
-            <div className="p-4 md-tablet:w-1/2 md-tablet:mx-auto table-lg:w-1/3 flex items-center justify-center bg-fuchsia-100">
+            {/* Imagen / Icono */}
+            <div className="
+              relative p-6 table-lg:w-1/3 flex flex-col items-center justify-center 
+              bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10">
               <Image
-                width={200}
-                height={200}
+                width={400}
+                height={400}
                 src="/assets/images/vision.png"
                 alt="Visión de la empresa"
-                className="w-full h-auto object-cover rounded-lg max-w-xs mx-auto"
+                className="w-52 h-auto object-contain"
               />
             </div>
-            <div className="table-lg:w-2/3 p-6 flex flex-col justify-center">
-              <h3 className="text-3xl font-bold text-blue-900 mb-6">Vision</h3>
-              <p className="text-base table-lg:text-base text-gray-600 mb-4">
+            {/* Texto */}
+            <div className="table-lg:w-2/3 p-10 flex flex-col justify-center">
+              <h3 className="text-3xl font-bold text-colorPrimario2 mb-6 flex items-center gap-3">
+                <Eye className="w-14 h-14 text-colorPrimario2" /> Visión
+              </h3>
+              <p className="text-base text-gray-700 mb-4 leading-relaxed">
                 Entregar proyectos que superen expectativas, siempre a tiempo, confiables y escalables.
               </p>
-              <p className="text-base table-lg:text-base text-gray-600">
+              <p className="text-base text-gray-600 leading-relaxed">
                 En los próximos 3 a 5 años, nuestra meta es posicionarnos como una de las empresas tecnológicas más importantes del país y con presencia internacional, capaz de competir a nivel global.
               </p>
             </div>
           </motion.div>
 
-          {/* Card de Misión */}
+          {/* Card Misión */}
           <motion.div
             variants={missionVariant}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="w-full table-lg:w-3/4 table-lg:self-end bg-gradient-to-b from-white via-gray-50 to-blue-50 rounded-2xl shadow-xl overflow-hidden flex flex-col table-lg:flex-row-reverse border-2 border-fuchsia-300"
+            className="
+              w-full table-lg:w-3/4 table-lg:self-end 
+              bg-white rounded-2xl border border-colorPrimarioLogo1/40
+              shadow-lg hover:shadow-2xl transition-all duration-300
+              overflow-hidden flex flex-col table-lg:flex-row-reverse"
           >
-            <div className="p-4 md-tablet:w-1/2 md-tablet:mx-auto table-lg:w-1/3 flex items-center justify-center bg-fuchsia-100">
+            {/* Imagen / Icono */}
+            <div className="
+              relative p-6 table-lg:w-1/3 flex flex-col items-center justify-center 
+              bg-gradient-to-br from-colorPrimario6/10 to-colorPrimario5/10">
               <Image
-                width={200}
-                height={200}
+                width={400}
+                height={400}
                 src="/assets/images/mision.png"
                 alt="Misión de la empresa"
-                className="w-full h-auto object-cover rounded-lg max-w-xs mx-auto"
+                className="w-52 h-auto object-contain"
               />
             </div>
-            <div className="table-lg:w-2/3 px-10 py-5 flex flex-col justify-center">
-              <h3 className="text-3xl font-bold text-blue-900 mb-2">Mision</h3>
-              <p className="text-base table-lg:text-base text-gray-600 mb-3">
+            {/* Texto */}
+            <div className="table-lg:w-2/3 p-10 flex flex-col justify-center">
+              <h3 className="text-3xl font-bold text-colorPrimario2 mb-6 flex items-center gap-3">
+                <Users className="w-14 h-14 text-colorPrimario2" /> Misión
+              </h3>
+              <p className="text-base text-gray-700 mb-4 leading-relaxed">
                 Ayudar a las personas a construir y hacer realidad sus ideas a través de soluciones de TI innovadoras, utilizando tecnologías modernas que la empresa ofrece.
               </p>
-              <ul className="list-disc text-base table-lg:text-base text-gray-600 space-y-2">
-                <li>Contratar y desarrollar el mejor talento nacional e internacional.</li>
-                <li>Mantener una transparencia total en todas las operaciones y comunicaciones.</li>
-                <li>Trabajar siempre de la mano con el cliente y las personas adecuadas para cada proyecto.</li>
+              <ul className="space-y-3 text-base text-gray-700 leading-relaxed">
+                <li className="flex items-center gap-2">
+                  <Users className="w-5 h-5 text-colorPrimario5" />
+                  Contratar y desarrollar el mejor talento nacional e internacional.
+                </li>
+                <li className="flex items-center gap-2">
+                  <Globe className="w-5 h-5 text-colorPrimario5" />
+                  Mantener una transparencia total en todas las operaciones y comunicaciones.
+                </li>
+                <li className="flex items-center gap-2">
+                  <Target className="w-5 h-5 text-colorPrimario5" />
+                  Trabajar siempre de la mano con el cliente y las personas adecuadas para cada proyecto.
+                </li>
               </ul>
             </div>
           </motion.div>
@@ -105,4 +140,4 @@ export default function AboutSection () {
       </div>
     </div>
   );
-};
+}

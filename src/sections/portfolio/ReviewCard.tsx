@@ -43,7 +43,7 @@ export default function ReviewCard({ review }: { review: Review }) {
 
   return (
 
-    <div className="bg-colorFondo border border-colorSecundario rounded-2xl p-8 flex flex-col md-tablet:flex-row space-y-6 md-tablet:space-y-0 md-tablet:space-x-6 h-full max-w-3xl mx-auto">
+    <div className="bg-colorFondo border border-colorPrimarioLogo1 rounded-2xl p-8 flex flex-col md-tablet:flex-row space-y-6 md-tablet:space-y-0 md-tablet:space-x-6 h-full max-w-3xl mx-auto">
         
         {/* Sección izquierda */}
         <div className="flex-1 flex flex-col space-y-4">
@@ -60,7 +60,7 @@ export default function ReviewCard({ review }: { review: Review }) {
 
           {/* Título + reseña */}
           <div>
-            <h3 className="text-lg font-extrabold bg-clip-text text-transparent bg-colorSecundario2">
+            <h3 className="text-lg font-extrabold bg-clip-text text-transparent bg-colorPrimario3">
               {review.projectTitle}
             </h3>
             <p className="text-colorPrimario1 mt-1 text-sm leading-relaxed">
@@ -90,7 +90,7 @@ export default function ReviewCard({ review }: { review: Review }) {
         <div className="w-full md-tablet:w-52 flex-shrink-0 bg-colorHover/15 backdrop-blur-md border border-gray-100 p-6 rounded-xl flex flex-col space-y-4 items-center">
           {/* Calificación general */}
           <div className="text-center">
-            <p className="text-4xl font-bold bg-clip-text text-transparent bg-colorSecundario2">
+            <p className="text-4xl font-bold bg-clip-text text-transparent bg-colorDarkFondo1">
               {review.rating.toFixed(1)}
             </p>
             <div className="flex justify-center text-2xl mt-1 text-yellow-400 drop-shadow-[0_0_6px_rgba(250,204,21,0.6)]">

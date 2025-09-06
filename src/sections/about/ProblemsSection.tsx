@@ -84,7 +84,7 @@ export default function ProblemsSection() {
   ];
 
   return (
-    <section className="bg-gray-100 border-2 border-fuchsia-300 rounded-2xl my-10 mx-4 py-8 px-6 md-tablet:px-10 md-tablet:mx-10 table-lg:mx-20">
+    <section className="bg-colorPrimario5 rounded-2xl mt-32  mx-4 py-8 px-6 md-tablet:px-10 md-tablet:mx-10 table-lg:mx-20">
       <motion.div 
         className="max-w-5xl mx-auto text-center mb-12"
         variants={containerVariants}
@@ -94,7 +94,7 @@ export default function ProblemsSection() {
       >
         {/* Titulo: */}
         <motion.h2 
-          className="text-3xl md-tablet:text-5xl pb-5 font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-purple-400"
+          className="text-3xl md-tablet:text-5xl pb-5 font-extrabold text-white"
           variants={itemVariants}
         >
           ¿Qué problemas solucionamos?
@@ -102,7 +102,7 @@ export default function ProblemsSection() {
 
         {/* Subtitulo: */}
         <motion.p 
-          className="text-xl table-lg:text-2xl text-gray-800"
+          className="text-xl table-lg:text-2xl text-gray-200"
           variants={itemVariants}
         >
           Si esto te suena familiar... podemos ayudarte
@@ -122,7 +122,9 @@ export default function ProblemsSection() {
           // Cards
           <motion.div
             key={index}
-            className="flex flex-col md-tablet:flex-row items-center md-tablet:items-center gap-4 bg-gradient-to-b from-fuchsia-200 to-white border-2 border-fuchsia-400 shadow-md rounded-xl p-6"
+            className="
+              flex flex-col md-tablet:flex-row items-center md-tablet:items-center gap-4 
+              bg-white shadow-md rounded-xl p-6"
             variants={cardVariants}
             whileHover={{ 
               y: -5, 
@@ -145,8 +147,8 @@ export default function ProblemsSection() {
 
             {/* Texto */}
             <div className="text-center md-tablet:text-left">
-              <h3 className="text-lg font-bold text-blue-950">{problem.title1}</h3>
-              <h4 className="text-md font-semibold text-blue-700">{problem.title2}</h4>
+              <h3 className="text-lg font-bold text-colorPrimario2">{problem.title1}</h3>
+              <h4 className="text-md font-semibold text-colorSecundario3">{problem.title2}</h4>
               <p className="mt-2 text-gray-600">{problem.description}</p>
             </div>
           </motion.div>

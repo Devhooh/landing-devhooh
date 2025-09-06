@@ -62,14 +62,12 @@ export default function OurValuesSection() {
   const splitText = (text: string) => text.split("");
 
   return (
-    <section className="bg-white py-16 md-tablet:px-4">
+    <section className="bg-white py-16 my-20 px-2 md-tablet:px-4">
       <div className="container mx-auto max-w-7xl text-center">
 
         <motion.h2
           className="
-          text-4xl md-tablet:text-5xl font-extrabold mb-12
-          bg-clip-text text-transparent bg-gradient-to-r from-blue-950 to-purple-400
-          "
+          text-4xl md-tablet:text-5xl font-extrabold mb-12 text-colorPrimario2"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -95,8 +93,8 @@ export default function OurValuesSection() {
               key={index}
               variants={cardVariants}
               className="
-                bg-gradient-to-t from-fuchsia-900 to-fuchsia-300 rounded-2xl shadow-xl p-6 flex flex-col items-center 
-                text-center border border-fuchsia-400 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-2xl
+                bg-colorFondo rounded-2xl shadow-xl p-6 flex flex-col items-center 
+                text-center border border-gray-400 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-xl
               "
             >
               <div className="relative mb-4">
@@ -109,10 +107,10 @@ export default function OurValuesSection() {
                 />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-colorPrimario2 mb-2">
                   {value.title}
                 </h3>
-                <p className="text-sm text-gray-100/80">{value.description}</p>
+                <p className="text-sm text-gray-700/80">{value.description}</p>
               </div>
             </motion.div>
           ))}

@@ -1,82 +1,3 @@
-// "use client";
-
-// import React, { useState } from 'react';
-// import { ChevronDown, ChevronUp } from 'lucide-react';
-
-
-// type FAQItemProps = {
-//   id: number;
-//   question: string;
-//   answer: string;
-// }
-
-// interface listFAQ {
-//   itemsDate: FAQItemProps[]
-// }
-
-// // Componente para una sola pregunta con tipado de propiedades
-// const FAQItem: React.FC<{
-//   question: string;
-//   answer: string;
-//   isOpen: boolean;
-//   onClick: () => void;
-// }> = ({ question, answer, isOpen, onClick }) => {
-//   return (
-//     <div className="bg-white/90 border border-fuchsia-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-//       <button
-//         onClick={onClick}
-//         className="flex justify-between items-center w-full p-4 table-lg:p-6 text-left"
-//       >
-//         <span className="text-lg sm:text-xl font-semibold text-indigo-950 m-1">
-//           {question}
-//         </span>
-//         {isOpen ? <ChevronUp className="h-7 w-7 md-tablet:h-8 md-tablet:w-8 text-fuchsia-600 shrink-0" /> : <ChevronDown className="h-7 w-7 md-tablet:h-8 md-tablet:w-8 text-fuchsia-600 shrink-0" />}
-//       </button>
-      
-//       {isOpen && (
-//         <div className="px-4 sm:px-6 pb-4 sm:pb-6 text-gray-600 animate-fadeIn">
-//           <p className="text-sm sm:text-base">{answer}</p>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// // Componente principal
-// export default function FAQSection({itemsDate}: listFAQ ) {
-//   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-//   const handleToggle = (index: number) => {
-//     setOpenIndex(openIndex === index ? null : index);
-//   };
-
-//   return (
-//     <div className="bg-gradient-to-t from-sky-100 to-white pb-8 pt-8 sm:px-6 table-lg:px-8 flex items-center justify-center">
-//       <div className="w-full max-w-4xl mx-auto px-10">
-//         <div className="text-center mb-12">
-//           <h2 className="text-3xl sm:text-4xl table-lg:text-5xl font-extrabold text-indigo-950 mb-4">
-//             Preguntas frecuentes
-//           </h2>
-//           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-//             ¿Tiene preguntas sobre nuestros servicios digitales? Explore nuestra sección de preguntas frecuentes o póngase en contacto con nosotros directamente para obtener asistencia e información personalizadas.
-//           </p>
-//         </div>
-//         <div className="space-y-4">
-//           {itemsDate.map((item, index) => (
-//             <FAQItem
-//               key={item.id}
-//               question={item.question}
-//               answer={item.answer}
-//               isOpen={index === openIndex}
-//               onClick={() => handleToggle(index)}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import React, { useState } from 'react';
@@ -132,13 +53,13 @@ const FAQItem: React.FC<{
       whileInView="visible"
       viewport={{ once: true }}
       variants={faqItemVariants}
-      className="bg-white/90 border border-colorPrimario3 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+      className="bg-white border border-colorPrimario3 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
     >
       <button
         onClick={onClick}
         className="flex justify-between items-center w-full p-4 table-lg:p-6 text-left"
       >
-        <span className="text-lg sm:text-xl font-semibold text-black m-1">
+        <span className="text-lg sm:text-xl font-semibold text-colorDarkFondo1 m-1">
           {question}
         </span>
         {isOpen ? 
@@ -170,7 +91,7 @@ export default function FAQSection({itemsDate}: listFAQ ) {
   };
 
   return (
-    <div className="bg-colorHover3/30 pb-8 pt-8 sm:px-6 table-lg:px-8 flex items-center justify-center">
+    <div className="bg-colorHover5 pb-24 pt-8 sm:px-6 table-lg:px-8 flex items-center justify-center">
       <div className="w-full max-w-4xl mx-auto px-10">
         <div className="text-center mb-12">
           <motion.h2

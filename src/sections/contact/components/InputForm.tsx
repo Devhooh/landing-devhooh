@@ -16,7 +16,7 @@ export default function InputForm({placeholder, nameHtmlFor, title, id, name, ty
     <div className="flex flex-col gap-1">
       <label
         htmlFor={nameHtmlFor}
-        className="text-base font-semibold text-gray-200 mb-1"
+        className="text-base font-semibold text-white mb-1"
       >
         {title}
       </label>

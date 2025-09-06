@@ -34,7 +34,7 @@ export default function AboutSection() {
               bg-gradient-to-b from-colorDarkFondo2 to-colorPrimario5 
               text-white rounded-3xl p-10 shadow-[0_0_40px_rgba(0,0,0,0.25)] 
               border border-white/10 backdrop-blur-md
-              max-w-5xl text-center mx-4 md-tablet:mx-8"
+              max-w-5xl text-center mx-4 md-tablet:mx-8 px-2"
           >
             <h2 className="text-3xl table-lg:text-4xl font-extrabold mb-10">
               Cuando la confianza es alta, la comunicación es fácil, instantánea y efectiva.
@@ -48,7 +48,7 @@ export default function AboutSection() {
 
         {/* Contenedor de las cards */}
         <div className="
-          flex flex-col space-y-16 px-10 py-24 w-full
+          flex flex-col space-y-16 px-4 md-tablet:px-10 py-24 w-full
           bg-gradient-to-b from-colorPrimario5 to-colorSecundario4">
           {/* Card Visión */}
           <motion.div
@@ -122,15 +122,15 @@ export default function AboutSection() {
               </p>
               <ul className="space-y-3 text-base text-gray-700 leading-relaxed">
                 <li className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-colorPrimario5" />
+                  <Users className="w-12 h-12 md-tablet:w-6 tablet-md:h-6 text-colorPrimario5" />
                   Contratar y desarrollar el mejor talento nacional e internacional.
                 </li>
                 <li className="flex items-center gap-2">
-                  <Globe className="w-5 h-5 text-colorPrimario5" />
+                  <Globe className="w-12 h-12 md-tablet:w-6 tablet-md:h-6 text-colorPrimario5" />
                   Mantener una transparencia total en todas las operaciones y comunicaciones.
                 </li>
                 <li className="flex items-center gap-2">
-                  <Target className="w-5 h-5 text-colorPrimario5" />
+                  <Target className="w-12 h-12 md-tablet:w-6 tablet-md:h-6 text-colorPrimario5" />
                   Trabajar siempre de la mano con el cliente y las personas adecuadas para cada proyecto.
                 </li>
               </ul>

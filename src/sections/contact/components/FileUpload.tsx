@@ -14,7 +14,7 @@ export function FileUpload({ label, onFileSelect }: FileUploadProps) {
 
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-base font-semibold text-gray-200">{label}</label>
+      <label className="text-base font-semibold text-white">{label}</label>
       <div className="flex items-center gap-2">
         <input
           type="file"
@@ -25,7 +25,7 @@ export function FileUpload({ label, onFileSelect }: FileUploadProps) {
         <label
           htmlFor="file-upload"
           className="flex-1 cursor-pointer rounded-md border-2 border-gray-300 px-3 py-2 
-          text-sm text-gray-700 hover:border-fuchsia-600 bg-gray-100"
+          text-sm text-colorPrimario2 hover:border-fuchsia-600 bg-gray-100"
         >
           Seleccione un archivo
         </label>
@@ -33,7 +33,7 @@ export function FileUpload({ label, onFileSelect }: FileUploadProps) {
         <button
           type="button"
           className="flex items-center gap-2 rounded-md bg-fuchsia-500 px-3 py-2 
-                    text-sm text-gray-100 hover:bg-fuchsia-600"
+                    text-sm text-white hover:bg-fuchsia-600 transition-all transform"
         >
           <ArchiveRestore className="w-5 h-5" />
           <span>Subir archivo</span>

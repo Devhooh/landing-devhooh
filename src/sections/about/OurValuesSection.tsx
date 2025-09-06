@@ -93,8 +93,8 @@ export default function OurValuesSection() {
               key={index}
               variants={cardVariants}
               className="
-                bg-colorFondo rounded-2xl shadow-xl p-6 flex flex-col items-center 
-                text-center border border-gray-400 w-80 max-w-sm transform transition duration-300 hover:scale-105 hover:shadow-xl
+                bg-colorFondo rounded-2xl p-6 flex flex-col items-center 
+                text-center border border-gray-400 w-80 max-w-sm
               "
             >
               <div className="relative mb-4">

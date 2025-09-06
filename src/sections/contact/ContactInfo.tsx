@@ -25,7 +25,7 @@ const dataVariants: Variants = {
 
 export function ContactInfo() {
   return (
-    <div className="space-y-6 text-blue-900">
+    <div className="space-y-6 text-colorPrimario2">
       <div className="space-y-4">
         {/* Introducción */}
         <motion.p
@@ -58,31 +58,31 @@ export function ContactInfo() {
       <div className="space-y-8">
         {[
           {
-            icon: <Mail className="text-fuchsia-500 w-8 h-8 shrink-0" />,
+            icon: <Mail className="text-colorPrimario5 w-8 h-8 shrink-0" />,
             label: "Correo:",
             value: (
               <Link
                 href="mailto:contact@devhooh.com"
-                className="text-gray-600 font-medium text-lg hover:text-fuchsia-700 transition-all"
+                className="text-gray-600 font-medium text-lg hover:text-colorSecundario4 transition-all"
               >
                 contact@devhoo.com
               </Link>
             )
           },
           {
-            icon: <Phone className="text-fuchsia-500 w-8 h-8 shrink-0" />,
+            icon: <Phone className="text-colorPrimario5 w-8 h-8 shrink-0" />,
             label: "Celular:",
             value: (
               <Link
                 href="https://wa.me/77776666"
-                className="text-gray-600 font-medium text-lg hover:text-fuchsia-700 transition-all"
+                className="text-gray-600 font-medium text-lg hover:text-colorSecundario4 transition-all"
               >
                 +591 77776666
               </Link>
             )
           },
           {
-            icon: <Clock className="text-fuchsia-500 w-8 h-8 shrink-0" />,
+            icon: <Clock className="text-colorPrimario5 w-8 h-8 shrink-0" />,
             label: "Horarios:",
             value: (
               <p className="text-gray-600 font-medium text-lg">
@@ -91,11 +91,11 @@ export function ContactInfo() {
             )
           },
           {
-            icon: <ArrowRight className="w-8 h-8 shrink-0 text-fuchsia-500" />,
+            icon: <ArrowRight className="w-8 h-8 shrink-0 text-colorPrimario5" />,
             label: "",
             value: (
               <Link href="/about">
-                <p className="font-semibold text-xl hover:text-fuchsia-700 transition-all">
+                <p className="font-semibold text-xl hover:text-colorSecundario4 transition-all">
                   Más sobre Devhooh
                 </p>
               </Link>

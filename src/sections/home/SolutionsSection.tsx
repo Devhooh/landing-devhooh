@@ -6,25 +6,40 @@ import Link from "next/link";
 
 export function SolutionsSection() {
   const solutions = [
-    {
-      title: "Webs & Software",
-      description:
-        "Diseñamos sitios web y sistemas a medida, rápidos, escalables y optimizados para mejorar la presencia digital de tu negocio.",
-      image: "/assets/images/webSoftware.png",
-    },
-    {
-      title: "Aplicaciones Móviles",
-      description:
-        "Creamos apps nativas y multiplataforma para iOS y Android, enfocadas en experiencia de usuario y rendimiento eficiente.",
-      image: "/assets/images/mobil.png",
-    },
-    {
-      title: "Inteligencia Artificial",
-      description:
-        "Implementamos soluciones de IA y machine learning que automatizan procesos y generan decisiones inteligentes para tu empresa.",
-      image: "/assets/images/ia.png",
-    },
-  ];
+  {
+    title: "Webs & Software",
+    description:
+      "Desarrollamos páginas web profesionales y software a medida que aumentan la visibilidad online, mejoran la experiencia del cliente y optimizan los procesos internos de tu empresa.",
+    image: "/assets/images/webSoftware.png",
+    benefits: [
+      "Código limpio y escalable para crecer sin límites",
+      "Diseños adaptados a la identidad de tu marca",
+      "Integraciones fluidas con herramientas de gestión",
+    ],
+  },
+  {
+    title: "Aplicaciones Móviles",
+    description:
+      "Creamos aplicaciones móviles nativas y multiplataforma que combinan diseño atractivo, alto rendimiento y compatibilidad total con iOS y Android para maximizar tu alcance.",
+    image: "/assets/images/mobil.png",
+    benefits: [
+      "Notificaciones push para aumentar la retención",
+      "Interfaz intuitiva que mejora la usabilidad",
+      "Optimización para un rendimiento rápido y estable",
+    ],
+  },
+  {
+    title: "Inteligencia Artificial",
+    description:
+      "Implementamos soluciones de inteligencia artificial y machine learning que automatizan tareas, reducen costes y aportan datos valiosos para decisiones más estratégicas.",
+    image: "/assets/images/ia.png",
+    benefits: [
+      "Chatbots y asistentes virtuales personalizados",
+      "Predicciones basadas en análisis de datos",
+      "Automatización inteligente de procesos repetitivos",
+    ],
+  },
+];
 
   // Variants para animación de textos
   const containerVariants: Variants = {
@@ -38,12 +53,16 @@ export function SolutionsSection() {
   };
 
   const buttonVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50, delay: 0.3 } },
-};
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 50, delay: 0.3 },
+    },
+  };
 
   return (
-    <section className="w-full py-12 bg-colorHover6 overflow-x-hidden">
+    <section className="w-full py-12 bg-white overflow-x-hidden">
       {/* Encabezado */}
       <motion.div
         className="px-5 md-tablet:px-10 flex flex-col text-center table-lg:flex-row justify-center items-center mb-12 gap-6"
@@ -68,10 +87,16 @@ export function SolutionsSection() {
             variants={textVariants}
           >
             Desde tu primera idea hasta el lanzamiento,{" "}
-            <span className="font-semibold text-colorSecundario2">desarrollamos webs</span>,{" "}
+            <span className="font-semibold text-colorSecundario2">
+              desarrollamos webs
+            </span>
+            ,{" "}
             <span className="font-semibold text-colorSecundario2">apps</span> y{" "}
-            <span className="font-semibold text-colorSecundario2">sistemas inteligentes</span>{" "}
-            que ayudan a tu empresa a destacar en el entorno digital, optimizando procesos y mejorando la experiencia de tus usuarios.
+            <span className="font-semibold text-colorSecundario2">
+              sistemas inteligentes
+            </span>{" "}
+            que ayudan a tu empresa a destacar en el entorno digital,
+            optimizando procesos y mejorando la experiencia de tus usuarios.
           </motion.p>
         </motion.div>
       </motion.div>
@@ -85,6 +110,7 @@ export function SolutionsSection() {
               title={s.title}
               description={s.description}
               image={s.image}
+              benefits={s.benefits} // 👈 pasamos los beneficios
               reverse={i % 2 === 1}
             />
           ))}

@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { Check } from "lucide-react"; // ícono de lucide
 
 interface SolutionCardProps {
   title: string;
   description: string;
   image: string;  
   reverse?: boolean;
+  benefits?: string[]; // 👈 le agregamos los beneficios opcionales
 }
 
 export function SolutionCard({
@@ -15,6 +17,7 @@ export function SolutionCard({
   description,
   image,
   reverse = false,
+  benefits = [], // default vacío
 }: SolutionCardProps) {
 
   // Variantes de animación
@@ -36,11 +39,13 @@ export function SolutionCard({
       className={`relative max-w-3xl table-lg:w-3/4 p-[2px] rounded-2xl 
         ${reverse ? "table-lg:self-end" : "table-lg:self-start"}`}
     >
-      <div className={`bg-white border border-colorPrimarioLogo2 rounded-2xl p-6 md-tablet:p-10 shadow-lg hover:shadow-2xl transition
-        flex flex-col table-lg:flex-row ${reverse ? "table-lg:flex-row-reverse" : ""}`}>
-        
+      <div
+        className={`bg-white border border-colorSecundario2 hover:border-colorSecundario3
+        rounded-2xl p-6 md-tablet:p-10 transition
+        flex flex-col table-lg:flex-row ${reverse ? "table-lg:flex-row-reverse" : ""}`}
+      >
         {/* Imagen */}
-        <div className="p-6 md-tablet:w-1/2 table-lg:w-1/3 flex items-center justify-center">
+        <div className="p-6 table-lg:w-1/3 flex items-center justify-center">
           <Image
             width={220}
             height={220}
@@ -52,12 +57,24 @@ export function SolutionCard({
 
         {/* Texto */}
         <div className="table-lg:w-2/3 flex flex-col justify-center text-center md-tablet:text-left">
-          <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario2 mb-3">
+          <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-colorSecundario1 mb-3">
             {title}
           </h3>
-          <p className="text-colorPrimario1 text-base md-tablet:text-lg leading-relaxed">
+          <p className="text-colorPrimario1 text-base md-tablet:text-lg leading-relaxed mb-4">
             {description}
           </p>
+
+          {/* Lista de beneficios */}
+          {benefits.length > 0 && (
+            <ul className="flex flex-col gap-2">
+              {benefits.map((benefit, i) => (
+                <li key={i} className="flex items-center gap-2 text-colorPrimario1">
+                  <Check className="w-5 h-5 text-colorSecundario2" />
+                  <span className="text-sm md-tablet:text-base">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </motion.div>

@@ -20,12 +20,12 @@ const splitText = (text: string) => text.split("");
 
 export default function ReviewsHome() {
   return (
-    <div className="max-w-8xl mx-2">
+    <div className="max-w-8xl bg-colorHover5 py-10 mx-2 px-4">
       <div className="text-center mb-12">
         <motion.h2
           className="
-            text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold 
-            text-white"
+            text-3xl md-tablet:text-4xl table-lg:text-4xl font-extrabold 
+            text-colorPrimario2"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -39,7 +39,7 @@ export default function ReviewsHome() {
         </motion.h2>
 
         <motion.p
-          className="mt-10 text-gray-300 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"
+          className="mt-5 text-colorPrimario1 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}

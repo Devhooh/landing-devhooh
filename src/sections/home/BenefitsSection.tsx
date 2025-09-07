@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import ReviewsHome from "./ReviewsHome";
 
 // Animación para letras del título
 const letterVariants = {
@@ -46,7 +45,7 @@ export function BenefitsSection() {
   const splitText = (text: string) => text.split("");
 
   return (
-    <section className="bg-colorDarkFondo2 px-2 py-20 md-tablet:px-8 table-lg:px-32 relative">
+    <section className="bg-white px-2 py-20 md-tablet:px-8 table-lg:px-32 relative">
       <div className="max-w-[1550px] pb-16 mx-auto flex flex-col items-center gap-8">
 
         {/* FILA SUPERIOR DE CÍRCULOS */}
@@ -101,7 +100,7 @@ export function BenefitsSection() {
           {splitText("Beneficios").map((letter, idx) => (
             <motion.span
               key={idx}
-              className="text-colorFondo"
+              className="text-colorPrimario2"
               variants={letterVariants}
             >
               {letter}
@@ -111,7 +110,7 @@ export function BenefitsSection() {
           {splitText("inmediatos").map((letter, idx) => (
             <motion.span
               key={idx}
-              className="text-colorFondo"
+              className="text-colorPrimario2"
               variants={letterVariants}
             >
               {letter}
@@ -162,7 +161,7 @@ export function BenefitsSection() {
 
       </div>
 
-      <ReviewsHome/>
+      
     </section>
   );
 }

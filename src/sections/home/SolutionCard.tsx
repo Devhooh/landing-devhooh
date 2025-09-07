@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import { Check } from "lucide-react"; // ícono de lucide
+import { CircleCheck } from "lucide-react"; // ícono de lucide
 
 interface SolutionCardProps {
   title: string;
@@ -69,7 +69,7 @@ export function SolutionCard({
             <ul className="flex flex-col gap-2 text-left">
               {benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start gap-2 text-colorPrimario1">
-                  <Check className="w-5 h-5 text-colorSecundario2" />
+                  <CircleCheck className="w-5 h-5 text-colorSecundario2" />
                   <span className="text-sm md-tablet:text-base">{benefit}</span>
                 </li>
               ))}

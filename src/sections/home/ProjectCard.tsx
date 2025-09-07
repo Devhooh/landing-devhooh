@@ -23,10 +23,12 @@ export function ProjectCard({
   subtitle,
   company,
   slug,
+  technologies,
+  description
 }: ProjectCardProps) {
   return (
     <div className="
-      h-[450px] backdrop-blur-md border-b-4 tablet-md:border-b-8 border-colorPrimarioLogo1 border tablet-md:border-2 rounded-3xl 
+      h-[550px] backdrop-blur-md border-b-4 tablet-md:border-b-8 border-colorPrimarioLogo1 border tablet-md:border-2 rounded-3xl 
       overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.01]">
       
       {/* Imagen */}
@@ -53,12 +55,29 @@ export function ProjectCard({
           </p>
         )}
         {subtitle && (
-          <p className="text-colorPrimario1 text-sm md-tablet:text-lg">
+          <p className="text-colorPrimario1 font-medium text-sm md-tablet:text-lg">
             {subtitle}
           </p>
         )}
 
-        {/* Botón premium */}
+        {description && (
+          <p className="text-colorPrimario4 text-sm md-tablet:text-base line-clamp-3">
+            {description}
+          </p>
+        )}
+
+        <div className="flex flex-wrap gap-2 mt-2">
+          {technologies?.slice(0, 3).map((tech, idx) => (
+            <span 
+              key={idx} 
+              className="bg-colorHover3 text-colorPrimario2 text-xs md-tablet:text-sm px-2 py-1 rounded-md"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Botón */}
         <div className="flex justify-center mt-5">
           <Link href={`/portfolio/${slug}`}>
             <button className="

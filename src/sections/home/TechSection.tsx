@@ -44,83 +44,87 @@ export default function TechSection() {
 
   return (
     <section className="w-full py-12">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* Título animado letra por letra */}
-        <motion.h2
-          className="text-4xl md-tablet:text-5xl font-extrabold mb-6 p-4 text-colorPrimario2"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
-        >
-          {splitText("Nuestro stack tecnológico").map((letter, idx) => (
-            <motion.span key={idx} variants={letterVariants}>
-              {letter}
-            </motion.span>
-          ))}
-        </motion.h2>
+      <div className="mx-auto text-center">
 
         {/* Texto descriptivo */}
-        <motion.p
-          className="text-colorPrimario1/80 mb-12 max-w-2xl mx-auto text-lg md-tablet:text-2xl"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={blockVariants}
-          transition={{ duration: 0.6 }}
-        >
-          Estas son algunas de las herramientas que forman parte de nuestro stack.
-        </motion.p>
+        <div className="bg-colorHover5 w-full py-10">
+          <div className="max-w-[1550px] mx-auto">
+            {/* Título animado letra por letra */}
+            <motion.h2
+              className="text-4xl md-tablet:text-5xl font-extrabold mb-6 p-4 text-colorPrimario2"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+            >
+              {splitText("Nuestro stack tecnológico").map((letter, idx) => (
+                <motion.span key={idx} variants={letterVariants}>
+                  {letter}
+                </motion.span>
+              ))}
+            </motion.h2>
+            <motion.p
+              className="text-colorPrimario1/80 mb-12 max-w-2xl mx-auto text-lg md-tablet:text-2xl"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={blockVariants}
+              transition={{ duration: 0.6 }}
+            >
+              Estas son algunas de las herramientas que forman parte de nuestro stack.
+            </motion.p>
 
-        <div className="relative">
-          <div className="hidden tablet-md:block absolute inset-x-0 top-7 h-px bg-gray-300" />
-          <div className="block tablet-md:hidden absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 transform -translate-x-1/2" />
+            <div className="relative">
+              <div className="hidden tablet-md:block absolute inset-x-0 top-7 h-px bg-gray-300" />
+              <div className="block tablet-md:hidden absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 transform -translate-x-1/2" />
 
-          {/* Items animados */}
-          <motion.div
-            className="relative z-10 flex flex-col tablet-md:flex-row tablet-md:items-start md-tablet:justify-between gap-12"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.2 } } }}
-          >
-            {technologies.map((tech, idx) => (
+              {/* Items animados */}
               <motion.div
-                key={idx}
-                className="flex flex-col items-center text-center md-tablet:flex-1 px-4"
-                variants={blockVariants}
-                transition={{ duration: 0.6 }}
+                className="relative z-10 flex flex-col tablet-md:flex-row tablet-md:items-start md-tablet:justify-between gap-12"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={{ hidden: {}, show: { transition: { staggerChildren: 0.2 } } }}
               >
-                <motion.div
-                  className="flex items-center justify-center w-14 h-14 rounded-full bg-white border border-gray-200 shadow z-20"
-                  initial={{ y: 0 }}
-                  animate={{ y: [0, 3, 5, -10, 5, 3, 0, 3, 5, 10, 5, 3, 0] }} // movimiento tipo ola
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    ease: "easeInOut",
-                    delay: idx * 0.3, // cada icono inicia la animación en un punto distinto
-                  }}
-                >
-                  {tech.icon}
-                </motion.div>
+                {technologies.map((tech, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="flex flex-col items-center text-center md-tablet:flex-1 px-4"
+                    variants={blockVariants}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <motion.div
+                      className="flex items-center justify-center w-14 h-14 rounded-full bg-white border border-gray-200 shadow z-20"
+                      initial={{ y: 0 }}
+                      animate={{ y: [0, 3, 5, -10, 5, 3, 0, 3, 5, 10, 5, 3, 0] }} // movimiento tipo ola
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "easeInOut",
+                        delay: idx * 0.3, // cada icono inicia la animación en un punto distinto
+                      }}
+                    >
+                      {tech.icon}
+                    </motion.div>
 
-                <motion.h3
-                  className="mt-4 text-lg font-semibold text-colorPrimario2"
-                  variants={blockVariants}
-                >
-                  {tech.title}
-                </motion.h3>
-                <motion.p
-                  className="mt-2 text-sm text-colorPrimario1/80 max-w-xs"
-                  variants={blockVariants}
-                >
-                  {tech.description}
-                </motion.p>
+                    <motion.h3
+                      className="mt-4 text-lg font-semibold text-colorPrimario2"
+                      variants={blockVariants}
+                    >
+                      {tech.title}
+                    </motion.h3>
+                    <motion.p
+                      className="mt-2 text-sm text-colorPrimario1/80 max-w-xs"
+                      variants={blockVariants}
+                    >
+                      {tech.description}
+                    </motion.p>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Botón animado */}

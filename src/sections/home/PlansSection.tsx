@@ -56,9 +56,9 @@ export function PlansSection() {
   };
 
   return (
-    <section className="w-full py-16 bg-colorHover/15">
+    <section className="w-full py-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md-tablet:text-6xl font-extrabold mb-16 text-colorPrimario2">
+        <h2 className="text-4xl md-tablet:text-5xl font-extrabold mb-16 text-colorPrimario2">
           Planes estimados
         </h2>
 

@@ -66,9 +66,9 @@ export function SolutionCard({
 
           {/* Lista de beneficios */}
           {benefits.length > 0 && (
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2 text-left">
               {benefits.map((benefit, i) => (
-                <li key={i} className="flex items-center gap-2 text-colorPrimario1">
+                <li key={i} className="flex items-start gap-2 text-colorPrimario1">
                   <Check className="w-5 h-5 text-colorSecundario2" />
                   <span className="text-sm md-tablet:text-base">{benefit}</span>
                 </li>

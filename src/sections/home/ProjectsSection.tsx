@@ -2,14 +2,9 @@
 
 import { motion, Variants } from "framer-motion";
 import { CheckCircle, BadgeCheck } from "lucide-react";
-import { ProjectSlider } from "./ProjectSlider";
-import { logos } from "@/data/projects";
-import { projectsData } from "@/data/portfolioData";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { ProjectCard } from "@/sections/home/ProjectCard";
 import ReviewsHome from "@/sections/home/ReviewsHome";
 import { BenefitsSection } from "./BenefitsSection";
+import { ProjectSecitonSlider } from "./ProjectSectionSlider";
 
 // Variantes para textos y párrafos
 const textVariants: Variants = {
@@ -127,52 +122,7 @@ export function ProjectsSection() {
       <BenefitsSection/>
 
       {/* Nuestros clientes */}
-      <div>
-        <div className="flex justify-center mt-12">
-          <h3 className="
-            text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold py-12
-            bg-clip-text text-transparent bg-gradient-to-r from-colorPrimario2 to-colorPrimario2">
-            Empresas a las que ayudamos
-          </h3>
-        </div>
-
-        {/* Sliders de logos de empresas*/}
-        <div className="flex flex-col mb-12 px-6 md-tablet:px-12 gap-2 bg-colorPrimarioLogo2">
-          <ProjectSlider logos={logos} direction="left" />
-          <ProjectSlider logos={logos} direction="right" />
-        </div>
-
-        {/* Slider de proyectos */}
-        <div className="max-w-[1550px] mx-auto md-tablet:px-0 mb-10">
-          <Swiper
-            modules={[Autoplay, Pagination, Navigation]}
-            navigation
-            autoplay={{ delay: 4500 }}
-            loop
-            centeredSlides
-            slidesPerView="auto"
-            spaceBetween={24}
-            breakpoints={{
-              0: { spaceBetween: 18 },
-              550: { spaceBetween: 24 },
-              950: { spaceBetween: 32 },
-            }}
-            className="max-w-full mx-auto"
-          >
-            {projectsData.slice(0, 4).map((project, index) => (
-              <SwiperSlide 
-                key={index} 
-                className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-[1]"
-                style={{ width: '70%' }}
-              >
-                <div className="bg-white rounded-3xl w-full">
-                  <ProjectCard {...project} />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
+      <ProjectSecitonSlider/>
 
       {/* Reviews de clientes */}
       <ReviewsHome/>

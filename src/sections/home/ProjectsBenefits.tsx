@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Rocket, Star, Wrench } from "lucide-react";
+import { Shield, Star, Wrench } from "lucide-react";
 
 const listItemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -20,22 +20,22 @@ interface Benefit {
 
 const benefits: Benefit[] = [
   {
-    icon: <Rocket className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-    title: "Entrega rápida",
-    description:
-      "Todos los proyectos se ejecutan con tiempos optimizados sin comprometer la calidad, asegurando resultados en tiempo récord.",
-  },
-  {
     icon: <Star className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-    title: "Calidad premium",
+    title: "Calidad y enfoque al cliente",
     description:
-      "Diseños y soluciones de alto nivel que sorprenden a los usuarios y elevan la experiencia de tu negocio.",
+      "Nos comprometemos a entregar soluciones de alto nivel, diseñadas para sorprender a tus usuarios y ajustadas a tus necesidades específicas.",
   },
   {
     icon: <Wrench className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-    title: "Soporte completo",
+    title: "Transparencia y colaboración",
     description:
-      "Acompañamiento dedicado durante todo el proceso y después del lanzamiento, para que tu proyecto siempre funcione perfectamente.",
+      "Trabajamos de la mano contigo, manteniendo comunicación constante y claridad en cada etapa del proyecto.",
+  },
+  {
+    icon: <Shield className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    title: "Responsabilidad y cumplimiento",
+    description:
+      "Cumplimos con los plazos, estándares y compromisos adquiridos, asegurando confianza y resultados consistentes para tu negocio.",
   },
 ];
 
@@ -54,12 +54,12 @@ export function ProjectsBenefits() {
           <motion.h2
             className="text-3xl tablet-md:text-4xl font-extrabold mb-4 text-white"
           >
-            Beneficios clave de nuestros proyectos
+            Por qué escoger Devhooh
           </motion.h2>
           <motion.p
             className="text-gray-200 text-base tablet-md:text-lg max-w-3xl mx-auto"
           >
-            Con cada proyecto, garantizamos rapidez, calidad y soporte completo, asegurando que tu negocio alcance resultados medibles y clientes satisfechos.
+            Nos destacamos por nuestra calidad, enfoque al cliente y compromiso con cada proyecto. Transparencia, colaboración y excelencia continua son los valores que garantizan resultados efectivos y negocios que crecen.
           </motion.p>
         </motion.div>
 

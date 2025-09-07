@@ -8,8 +8,8 @@ import { projectsData } from "@/data/portfolioData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { ProjectCard } from "@/sections/home/ProjectCard";
-import { ProjectsBenefits } from "./ProjectsBenefits";
 import ReviewsHome from "@/sections/home/ReviewsHome";
+import { BenefitsSection } from "./BenefitsSection";
 
 // Variantes para textos y párrafos
 const textVariants: Variants = {
@@ -124,15 +124,15 @@ export function ProjectsSection() {
       </div>
 
       {/* Beneficios de proyectos */}
-      <ProjectsBenefits/>
+      <BenefitsSection/>
 
       {/* Nuestros clientes */}
       <div>
         <div className="flex justify-center mt-12">
           <h3 className="
-            text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold my-12 
+            text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold py-12
             bg-clip-text text-transparent bg-gradient-to-r from-colorPrimario2 to-colorPrimario2">
-            Nuestros clientes:
+            Empresas a las que ayudamos
           </h3>
         </div>
 
@@ -174,6 +174,7 @@ export function ProjectsSection() {
         </div>
       </div>
 
+      {/* Reviews de clientes */}
       <ReviewsHome/>
 
     </section>

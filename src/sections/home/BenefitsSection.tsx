@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import { Zap, Shield, Palette, Check } from "lucide-react";
+import Image from "next/image";
 
 // Animación para letras del título
 const letterVariants = {
@@ -7,161 +9,175 @@ const letterVariants = {
   show: { opacity: 1, y: 0 },
 };
 
-export function BenefitsSection() {
-  const upperCircles = [
-    {
-      title: "Entrega rápida",
-      text: "Proyectos listos en tiempo récord, manteniendo calidad premium.",
-      gradient: "from-fuchsia-500 to-purple-700",
-      shadow: "shadow-[0_0_20px_rgba(255,0,255,0.4)]",
-      reverse: false,
-    },
-    {
-      title: "Seguro y confiable",
-      text: "Tecnología moderna y buenas prácticas para tranquilidad total.",
-      gradient: "from-blue-500 to-indigo-700",
-      shadow: "shadow-[0_0_20px_rgba(0,255,255,0.3)]",
-      reverse: true,
-    },
-  ];
+// Animación para las cards
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
 
-  const lowerCircles = [
-    {
-      title: "100% personalizado",
-      text: "Soluciones únicas hechas a tu medida, sin plantillas.",
-      gradient: "from-pink-500 to-pink-400",
-      shadow: "shadow-[0_0_20px_rgba(255,0,0,0.4)]",
-      reverse: false,
-    },
-    {
-      title: "Soporte constante",
-      text: "A tu lado siempre, incluso después de la entrega.",
-      gradient: "from-green-400 to-teal-600",
-      shadow: "shadow-[0_0_20px_rgba(0,255,0,0.3)]",
-      reverse: true,
-    },
-  ];
+export function BenefitsSection() {
+  const benefits = [
+  {
+    icon: Zap,
+    title: "Entrega de proyectos optimizada",
+    description:
+      "Implementamos procesos ágiles para que tus proyectos web estén listos a tiempo, sin sacrificar calidad ni funcionalidad.",
+    gradient: "from-colorPrimario5 to-colorPrimario6",
+  },
+  {
+    icon: Shield,
+    title: "Seguridad y estabilidad garantizadas",
+    description:
+      "Desarrollamos soluciones confiables con estándares modernos de seguridad y mantenimiento para proteger tu negocio digital.",
+    gradient: "from-colorPrimario5 to-colorPrimario6",
+  },
+  {
+    icon: Palette,
+    title: "Diseño personalizado y profesional",
+    description:
+      "Cada proyecto se adapta a tu marca y objetivos, con interfaces únicas, atractivas y funcionales para tu audiencia.",
+    gradient: "from-colorPrimario5 to-colorPrimario6",
+  },
+];
+
+const checklistItems = [
+  "Diseño responsive y optimizado para móviles y tablets",
+  "Optimización SEO para mejorar tu visibilidad online",
+  "Hosting confiable y dominio propio configurado",
+  "Panel de administración intuitivo y fácil de usar",
+  "Integración con redes sociales y herramientas de marketing",
+  "Certificado SSL gratuito para mayor seguridad",
+];
 
   const splitText = (text: string) => text.split("");
 
   return (
-    <section className="bg-white px-2 py-20 md-tablet:px-8 table-lg:px-32 relative">
-      <div className="max-w-[1550px] pb-16 mx-auto flex flex-col items-center gap-8">
+    <section className="relative bg-gradient-to-b from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 px-4 py-20 md-tablet:px-8 table-lg:px-16">
+      <div className="max-w-[1400px] mx-auto">
+        
+        {/* TÍTULO Y SUBTÍTULO */}
+        <div className="text-center mb-16">
+          <motion.h2
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold leading-tight mb-6"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+          >
+            {splitText("Beneficios de nuestros proyectos").map((letter, idx) => (
+              <motion.span
+                key={idx}
+                className="text-white"
+                variants={letterVariants}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.h2>
+          
+          <motion.p
+            className="text-lg md-tablet:text-xl text-colorHover5 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Descubre por qué miles de clientes confían en nosotros para llevar sus proyectos al siguiente nivel
+          </motion.p>
+        </div>
 
-        {/* FILA SUPERIOR DE CÍRCULOS */}
-        <div className="w-full flex justify-between table-lg:justify-around gap-4 md-tablet:gap-6">
-          {upperCircles.map((c, i) => (
+        {/* CARDS HORIZONTALES */}
+        <div className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
+          {benefits.map((benefit, index) => (
             <motion.div
-              key={i}
-              className={`w-40 h-40 md-tablet:w-64 md-tablet:h-64 rounded-full flex flex-col items-center justify-center p-4 bg-gradient-to-br ${c.gradient} ${c.shadow}`}
-              animate={{
-                y: [0, -5, 0, 5, 0],
-                x: c.reverse ? [0, -10, 0, 10, 0] : [0, 10, 0, -10, 0],
-              }}
-              transition={{
-                y: { repeat: Infinity, repeatType: "loop", duration: 6, ease: "easeInOut" },
-                x: { repeat: Infinity, repeatType: "loop", duration: 6, ease: "easeInOut" },
-              }}
+              key={index}
+              className={`
+                  relative p-6 rounded-2xl bg-gradient-to-br ${benefit.gradient} shadow-[0_0_30px_rgba(103,61,230,0.25)] 
+                  hover:shadow-[0_0_40px_rgba(103,61,230,0.4)] transition-all duration-300`}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <motion.h3
-                className="font-bold text-sm md-tablet:text-2xl text-white text-center tracking-wide"
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
-              >
-                {splitText(c.title).map((letter, idx) => (
-                  <motion.span key={idx} variants={letterVariants}>
-                    {letter}
-                  </motion.span>
-                ))}
-              </motion.h3>
-              <motion.p
-                className="text-xs md-tablet:text-lg text-gray-200 text-center mt-1 leading-snug"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                {c.text}
-              </motion.p>
+              <div className="flex flex-col items-start text-left">
+                <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm mb-4">
+                  <benefit.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl md-tablet:text-2xl font-bold text-white mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-colorHover5 leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* TEXTO EN EL CENTRO */}
-        <motion.h2
-          className="text-4xl md-tablet:text-6xl table-lg:text-7xl font-extrabold text-center leading-tight mt-12 mb-12"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
-        >
-          {splitText("Beneficios").map((letter, idx) => (
-            <motion.span
-              key={idx}
-              className="text-colorPrimario2"
-              variants={letterVariants}
-            >
-              {letter}
-            </motion.span>
-          ))}
-          <br />
-          {splitText("inmediatos").map((letter, idx) => (
-            <motion.span
-              key={idx}
-              className="text-colorPrimario2"
-              variants={letterVariants}
-            >
-              {letter}
-            </motion.span>
-          ))}
-        </motion.h2>
+        {/* SECCIÓN INFERIOR: LISTA E IMAGEN */}
+        <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
+          
+          {/* BLOQUE DE LISTA */}
+          <motion.div
+            className="space-y-6 text-center table-lg:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl md-tablet:text-4xl font-bold text-white mb-8">
+              Lo que incluye tu proyecto
+            </h3>
+            
+            <ul className="space-y-4 inline-block table-lg:block text-left">
+              {checklistItems.map((item, index) => (
+                <motion.li
+                  key={index}
+                  className="flex items-center gap-4 text-colorHover5 text-lg"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex-shrink-0 p-1 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span>{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
 
-        {/* FILA INFERIOR DE CÍRCULOS */}
-        <div className="w-full flex justify-between table-lg:justify-around gap-4 md-tablet:gap-6">
-          {lowerCircles.map((c, i) => (
-            <motion.div
-              key={i}
-              className={`w-40 h-40 md-tablet:w-64 md-tablet:h-64 rounded-full flex flex-col items-center justify-center p-4 bg-gradient-to-br ${c.gradient} ${c.shadow}`}
-              animate={{
-                y: [0, -5, 0, 5, 0],
-                x: c.reverse ? [0, -10, 0, 10, 0] : [0, 10, 0, -10, 0],
-              }}
-              transition={{
-                y: { repeat: Infinity, repeatType: "loop", duration: 6, ease: "easeInOut" },
-                x: { repeat: Infinity, repeatType: "loop", duration: 6, ease: "easeInOut" },
-              }}
-            >
-              <motion.h3
-                className="font-bold text-sm md-tablet:text-2xl text-white text-center tracking-wide"
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
-              >
-                {splitText(c.title).map((letter, idx) => (
-                  <motion.span key={idx} variants={letterVariants}>
-                    {letter}
-                  </motion.span>
-                ))}
-              </motion.h3>
-              <motion.p
-                className="text-xs md-tablet:text-lg text-gray-200 text-center mt-1 leading-snug"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                {c.text}
-              </motion.p>
-            </motion.div>
-          ))}
+          {/* BLOQUE DE IMAGEN */}
+          <motion.div
+            className="relative flex justify-center table-lg:justify-end mx-5"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative p-6 md-tablet:p-4 table-lg:p-8 rounded-3xl bg-gradient-to-br from-colorSecundario1/20 to-colorSecundario3/20 backdrop-blur-sm border border-white/10 w-fit">
+              {/* Contenedor de imagen con tamaño fijo */}
+              <div className="w-90 h-90 md-tablet:w-[500px] md-tablet:h-[500px] table-lg:w-96 table-lg:h-96 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorSecundario3 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/assets/images/webSoftware.png"
+                  width={500}
+                  height={500}
+                  alt="Desarrollo, Beneficios proyectos"
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              </div>
+              
+              {/* Efectos decorativos */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-colorPrimario6 animate-pulse"></div>
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 rounded-full bg-colorSecundario2 animate-pulse delay-1000"></div>
+            </div>
+          </motion.div>
         </div>
 
       </div>
-
-      
     </section>
   );
 }

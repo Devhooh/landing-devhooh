@@ -30,7 +30,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-white/70">
+    <header className="w-full fixed top-0 left-0 z-50 bg-white">
       <div className="relative max-w-[1550px] mx-auto px-6 py-2 flex justify-between items-center">
         {/* Logo de Devhoo */}
         <Link href="/" className="flex items-center gap-2">

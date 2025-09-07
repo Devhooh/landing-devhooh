@@ -48,7 +48,7 @@ export default function TechSection() {
 
         {/* Texto descriptivo */}
         <div className="bg-colorHover5 w-full py-10">
-          <div className="max-w-[1550px] mx-auto">
+          <div className="max-w-[1550px] mx-auto px-4">
             {/* Título animado letra por letra */}
             <motion.h2
               className="text-4xl md-tablet:text-5xl font-extrabold mb-6 p-4 text-colorPrimario2"
@@ -129,7 +129,7 @@ export default function TechSection() {
 
         {/* Botón animado */}
         <motion.div
-          className="mt-12"
+          className="mt-12 mx-6"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

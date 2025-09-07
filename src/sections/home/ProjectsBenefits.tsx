@@ -41,7 +41,7 @@ const benefits: Benefit[] = [
 
 export function ProjectsBenefits() {
   return (
-    <section className="bg-colorDarkFondo2 w-full mb-8 px-6 tablet-md:px-12 py-16">
+    <section className="bg-colorDarkFondo2 w-full mb-20 tablet-md:mb-24  px-6 tablet-md:px-12 py-16">
 
       <div className="max-w-6xl mx-auto ">
         {/* Título SEO y descripción */}

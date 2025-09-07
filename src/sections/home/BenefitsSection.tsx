@@ -160,7 +160,7 @@ const checklistItems = [
           >
             <div className="relative p-6 md-tablet:p-4 table-lg:p-8 rounded-3xl bg-gradient-to-br from-colorSecundario1/20 to-colorSecundario3/20 backdrop-blur-sm border border-white/10 w-fit">
               {/* Contenedor de imagen con tamaño fijo */}
-              <div className="w-90 h-90 md-tablet:w-[500px] md-tablet:h-[500px] table-lg:w-96 table-lg:h-96 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorSecundario3 flex items-center justify-center overflow-hidden">
+              <div className="w-90 h-90 md-tablet:w-[450px] md-tablet:h-[450x] table-lg:w-96 table-lg:h-96 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorSecundario3 flex items-center justify-center overflow-hidden">
                 <Image
                   src="/assets/images/webSoftware.png"
                   width={500}

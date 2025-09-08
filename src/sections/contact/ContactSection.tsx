@@ -14,12 +14,12 @@ import { motion } from "framer-motion";
 
 export function ContactSection() {
   return (
-    <section className="w-full px-6 pt-10 pb-12 bg-white">
+    <section className="w-full px-3 pt-5 pb-12 bg-white">
       {/* Título */}
 
       <motion.h2
         className="
-        text-3xl md-tablet:text-5xl font-bold text-center mb-8 text-colorPrimario2"
+        text-3xl md-tablet:text-5xl font-extrabold text-center mb-8 text-colorPrimario2"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}

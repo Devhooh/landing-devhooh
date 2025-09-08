@@ -85,7 +85,7 @@ export function ProjectsSection() {
             variants={textVariants}
             className="text-colorPrimario4 text-base md-tablet:text-lg table-lg:text-xl leading-relaxed mb-6"
           >
-            De startups a empresas consolidadas, creamos soluciones digitales modernas que{" "}
+            Creamos soluciones digitales modernas que{" "}
             <span className="font-semibold text-colorSecundario">mejoran procesos</span>, escalan negocios y sorprenden a los usuarios.
           </motion.p>
         </motion.div>

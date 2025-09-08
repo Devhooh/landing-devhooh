@@ -45,11 +45,11 @@ export default function TechProjectSection() {
         loop
         pagination={{ clickable: true }}
         breakpoints={{
-          550:  { slidesPerView: 1.2, spaceBetween: 30 },
-          950:  { slidesPerView: 2.1, spaceBetween: 40 },
-          1150: { slidesPerView: 3,   spaceBetween: 48 },
+          550:  { slidesPerView: 1, spaceBetween: 30 },
+          950:  { slidesPerView: 2, spaceBetween: 40 },
+          1150: { slidesPerView: 3, spaceBetween: 48 },
         }}
-        className="px-6 md:px-12 overflow-visible" // 👈 más espacio a los lados
+        className="px-6 md:px-12 overflow-hidden" // 👈 más espacio a los lados
       >
         {displayedProjects.map((project) => (
           <SwiperSlide key={project.id} className="flex my-6">

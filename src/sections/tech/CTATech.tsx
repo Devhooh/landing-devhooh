@@ -2,53 +2,88 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-export default function CTATech() {
+export default function CTASlugfolio() {
+  const splitText = (text: string) => text.split("");
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
+  const stats = [
+    { value: "50+", label: "Proyectos completados", color: "from-colorPrimario5 to-colorSecundario1" },
+    { value: "98%", label: "Clientes satisfechos", color: "from-colorSecundario1 to-colorPrimario7" },
+    { value: "24h", label: "Soporte garantizado", color: "from-colorPrimario7 to-colorPrimario5" },
+  ];
+
   return (
-    <div className="relative w-full h-auto py-32 flex justify-center overflow-hidden">
+    <section className="relative w-full py-28 px-5 tablet-md:px-10 flex justify-center overflow-hidden text-white">
       {/* Contenedor principal */}
-      <div
-        className="
-          z-10 mx-5 tablet-md:mx-10 px-4 tablet-md:px-10 py-6 w-full h-auto 
-          flex flex-col md-tablet:flex-row md-tablet:items-center rounded-xl
-          gap-6 tablet-lg:gap-4 overflow-hidden text-center bg-gradient-to-b from-colorSecundario4 to-colorHover2"
-      >
-        {/* Texto + botón */}
-        <div className="flex flex-col items-center max-w-full">
-          <h2 className="text-2xl md-tablet:text-4xl font-bold text-white mb-2 pb-5 break-words">
-            Tansformamos ideas en resultados digitales que impactan en tu negocio
-          </h2>
-          <p className="text-base md-tablet:text-2xl font-bold text-gray-300 mb-4 pb-3">
-            Desde startups hasta grandes empresas, tú puedes ser el siguiente
-          </p>
+      <div className="relative z-10 max-w-4xl w-full flex flex-col items-center gap-8 bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 p-10 rounded-3xl shadow-2xl text-center">
+        
+        {/* Título animado letra por letra */}
+        <motion.h2
+          className="text-3xl tablet-md:text-5xl font-extrabold leading-tight"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+        >
+          {splitText("Innovación tecnológica que impulsa tu negocio").map((letter, idx) => (
+            <motion.span key={idx} variants={letterVariants}>
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h2>
 
-          {/* Botón */}
-          <div className="flex justify-center w-full">
+        {/* Subtítulo */}
+        <motion.p
+          className="text-base tablet-md:text-xl text-gray-200 max-w-3xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          Desarrollamos soluciones digitales con seguridad, escalabilidad y un enfoque personalizado para maximizar tu crecimiento.
+        </motion.p>
+
+        {/* Botón principal */}
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
           <Link href="/contact">
             <motion.button
+              className="relative group inline-flex items-center gap-3 px-10 py-4 font-bold text-lg rounded-xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 shadow-lg overflow-hidden"
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              whileHover={{ scale: 1.05 }}
-              className="
-                inline-flex items-center gap-2 px-8 py-4
-                font-bold text-lg rounded-xl shadow-lg 
-                bg-white
-                text-colorPrimario3 transition-all duration-500"
             >
-              Solicita una consulta
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                transition={{ type: "spring", stiffness: 120, damping: 12 }}
-              >
-                <path d="M12.293 5.293a1 1 0 011.414 0L18 9.586l-4.293 4.293a1 1 0 01-1.414-1.414L14.586 10H4a1 1 0 110-2h10.586l-2.293-2.293a1 1 0 010-1.414z" />
-              </motion.svg>
+              {/* Brillo animado */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <span className="relative z-10 flex items-center gap-2">
+                Ponte en contacto
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
             </motion.button>
           </Link>
-        </div>
-        </div>
+        </motion.div>
+
+        {/* Stats / badges */}
+        <motion.div className="flex flex-wrap justify-center gap-6 mt-12">
+          {stats.map((stat, idx) => (
+            <motion.div
+              key={idx}
+              className={`px-6 py-4 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-2xl font-bold">{stat.value}</div>
+              <div className="text-sm">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

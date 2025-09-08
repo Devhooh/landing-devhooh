@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { Rocket, Sparkles, ArrowRight } from "lucide-react";
+import { Mail, Sparkles, ArrowRight } from "lucide-react";
 
 export default function CTAHome() {
   const splitText = (text: string) => text.split("");
@@ -178,13 +178,13 @@ export default function CTAHome() {
                   animate="animate"
                 ></motion.div>
 
-                {/* Rocket icon central */}
+                {/* Mail icon central */}
                 <motion.div
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 flex items-center justify-center"
                   variants={floatingVariants}
                   animate="animate"
                 >
-                  <Rocket className="w-12 h-12 tablet-md:w-32 tablet-md:h-32 text-white" />
+                  <Mail className="w-12 h-12 tablet-md:w-32 tablet-md:h-32 text-white" />
                 </motion.div>
 
                 {/* Sparkles decorativos */}

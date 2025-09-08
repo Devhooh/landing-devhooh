@@ -22,7 +22,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
           {/* Imagen izquierda */}
           {images[0] && (
             <motion.div
-              className="hidden table-lg:flex justify-end table-lg:mb-16 "
+              className="hidden table-lg:flex justify-end table-lg:mb-16 bg-white/10 shadow-2xl rounded-3xl px-4 py-8"
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -57,7 +57,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
             {/* Imagen para mobile */}
             {images[0] && (
               <motion.div
-                className="table-lg:hidden my-14"
+                className="table-lg:hidden my-14 bg-white/10 shadow-2xl rounded-3xl px-4"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
@@ -139,7 +139,7 @@ export default function HeroCenter({ title, subtitle, cta, images, features = []
           {/* Imagen derecha */}
           {images[1] && (
             <motion.div
-              className="hidden table-lg:flex justify-start table-lg:mb-16 "
+              className="hidden table-lg:flex justify-start table-lg:mb-16 bg-white/10 shadow-2xl rounded-3xl px-4 py-10"
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}

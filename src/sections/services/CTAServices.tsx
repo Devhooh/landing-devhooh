@@ -47,7 +47,7 @@ const itemVariants: Variants = {
 
 export default function CTAServices() {
   return (
-    <section className="relative w-full h-auto my-32 py-16 flex justify-center items-center overflow-hidden px-4">
+    <section className="relative w-full h-auto my-10 py-16 flex justify-center items-center overflow-hidden px-4">
       {/* CAMBIO: Fondo con blobs decorativos para dar profundidad */}
       <div className="absolute inset-0 z-0 opacity-40">
         <div className="absolute top-0 -left-16 w-72 h-72 rounded-full bg-colorPrimario5/20 blur-2xl animate-pulse"></div>

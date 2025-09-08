@@ -34,7 +34,9 @@ export default function HeroRight({ title, subtitle, cta, images, features = [] 
 
           {/* --- 2) IMAGEN --- */}
           <motion.div
-            className="my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4 flex justify-center table-lg:justify-start"
+            className="
+              my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4 
+              flex justify-center table-lg:justify-start bg-white/10 shadow-2xl rounded-3xl px-4 py-8"
             initial={{ opacity: 0, x: -50, scale: 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true }}

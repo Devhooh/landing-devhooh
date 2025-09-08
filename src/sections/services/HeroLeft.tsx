@@ -42,7 +42,9 @@ export default function HeroLeft({
 
           {/* --- 2) IMAGEN --- */}
           <motion.div
-            className="order-2 mt-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center"
+            className="
+              order-2 mt-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center 
+              bg-white/10 shadow-2xl rounded-3xl px-4 py-8"
             initial={{ opacity: 0, x: -60, scale: 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}

@@ -7,6 +7,9 @@ import { faqDataServices } from "@/data/faqDataServices";
 import { projectsData } from "@/data/portfolioData";
 import HeroSlider from "@/sections/services/HeroSlider";
 import CTAServices from "@/sections/services/CTAServices";
+import GarantiasSection from "@/sections/services/GarantiasSection";
+import BeneficiosSection from "@/sections/services/BeneficiosSection";
+import ReviewSection from "@/sections/services/ReviewSection";
 
 export default function Services() {
   return (
@@ -22,7 +25,6 @@ export default function Services() {
 
           <CaroulselSection
             title="Desarrollo Personalizado"
-            subtitle="Soluciones hechas a la medida de tu negocio"
             features={[
               { icon: "Zap", text: "Rendimiento optimizado" },
               { icon: "Shield", text: "Seguridad empresarial" },
@@ -32,7 +34,6 @@ export default function Services() {
           />
           <CaroulselSection
             title="Servicios de IA"
-            subtitle="Transforma tus datos en decisiones inteligentes"
             features={[
               { icon: "Bot", text: "Automatización de procesos" },
               { icon: "BarChart3", text: "Análisis predictivo" },
@@ -42,7 +43,6 @@ export default function Services() {
           />
           <CaroulselSection
             title="Infraestructura y Soporte"
-            subtitle="Mantén tu negocio siempre en línea"
             features={[
               { icon: "Cloud", text: "Soluciones en la nube" },
               { icon: "ShieldCheck", text: "Monitoreo 24/7" },
@@ -52,7 +52,6 @@ export default function Services() {
           />
           <CaroulselSection
             title="Diseño y QA"
-            subtitle="Experiencias atractivas y de calidad asegurada"
             features={[
               { icon: "Palette", text: "Interfaces modernas" },
               { icon: "FlaskConical", text: "Pruebas automatizadas" },
@@ -63,6 +62,8 @@ export default function Services() {
         </div>
       </div>
 
+      <GarantiasSection/>
+
       <ServicesSliderProjects 
         title="Proyectos que usaron nuestros servicios: " 
         subtitle="Desde software personalizado y aplicaciones móviles hasta inteligencia artificial y diseño web. Cada caso refleja cómo ayudamos a empresas a innovar y crecer."
@@ -70,9 +71,13 @@ export default function Services() {
         showService={true}
       />
 
-      <FAQSection itemsDate={faqDataServices}/>
+      <BeneficiosSection/>
+
+      <ReviewSection/>
 
       <CTAServices/>
+
+      <FAQSection itemsDate={faqDataServices}/>
     </div>
   )
 }

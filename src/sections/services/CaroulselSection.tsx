@@ -22,7 +22,6 @@ interface CardData {
 
 interface CardCaroulselSectionProps {
   title: string;
-  subtitle?: string;
   features?: {icon: string; text: string}[];
   cardData: CardData[];
 }
@@ -34,16 +33,16 @@ const letterVariants = {
 
 const splitText = (text: string) => text.split("");
 
-export default function CaroulselSection({ title, cardData, subtitle, features }: CardCaroulselSectionProps) {
+export default function CaroulselSection({ title, cardData, features }: CardCaroulselSectionProps) {
   return (
     <section
       className="
-        bg-colorHover6 w-full h-full pt-10 overflow-hidden"
+        bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 w-full h-full pt-10 overflow-hidden"
     >
       <div className="max-w-[1550px] mx-auto px-3 tablet-md:px-10">
         <motion.h2
           className="
-            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-colorPrimario2 drop-shadow-sm"
+            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-colorSecundario1 drop-shadow-sm"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -56,20 +55,8 @@ export default function CaroulselSection({ title, cardData, subtitle, features }
           ))}
         </motion.h2>
 
-        {subtitle && (
-          <motion.p
-            className="text-center text-gray-700 mb-5 mt-2 text-lg"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            {subtitle}
-          </motion.p>
-        )}
-
         {features && (
-          <ul className="flex flex-col items-center tablet-md:flex-row tablet-md:justify-center gap-6 mb-2">
+          <ul className="flex flex-col items-center tablet-md:flex-row tablet-md:justify-center gap-6 my-3">
             {features.map((f, idx) => {
               const Icon =
                 (Icons[f.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) ||

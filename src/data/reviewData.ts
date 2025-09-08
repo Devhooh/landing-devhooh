@@ -50,7 +50,7 @@ export const reviewData: ReviewData[] = [
     projectTitle: "Implementación de Sistema de Gestión Interna",
     reviewBody:
       "La transición fue increíblemente suave. El nuevo sistema ha mejorado drásticamente nuestra eficiencia interna. La capacitación que ofrecieron fue excelente.",
-    reviewerName: "María Fernández",
+    reviewerName: "Carlos Ramirez",
     position: "Coordinadora de Proyectos en InnoTech",
     reviewerProfileUrl: "/assets/images/usuario.png",
     rating: 4.7,
@@ -65,7 +65,7 @@ export const reviewData: ReviewData[] = [
     projectTitle: "Rediseño de Sitio Web Corporativo",
     reviewBody:
       "El rediseño del sitio web fue un éxito. Nos encanta el nuevo look moderno y profesional. El equipo fue muy receptivo a nuestros comentarios durante todo el proceso.",
-    reviewerName: "Juan Pérez",
+    reviewerName: "Alma Marcela",
     position: "CEO en CorpVision",
     reviewerProfileUrl: "/assets/images/usuario.png",
     rating: 4.6,
@@ -80,7 +80,7 @@ export const reviewData: ReviewData[] = [
     projectTitle: "Implementación de Sistema de Gestión Interna",
     reviewBody:
       "La transición fue increíblemente suave. El nuevo sistema ha mejorado drásticamente nuestra eficiencia interna. La capacitación que ofrecieron fue excelente.",
-    reviewerName: "María Fernández",
+    reviewerName: "Larry Cañonga",
     position: "Coordinadora de Proyectos en InnoTech",
     reviewerProfileUrl: "/assets/images/usuario.png",
     rating: 4.7,

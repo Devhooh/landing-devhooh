@@ -5,13 +5,18 @@ import { motion } from "framer-motion";
 
 export default function HeroAbout() {
   return (
-    <section className="h-auto bg-colorFondo">
-      <div className="max-w-[1550px] mx-auto px-6 pt-10 md-tablet:pt-4 table-lg:pt-0 md-tablet:px-12">
+    <section className="relative h-auto bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
+      {/* Efectos decorativos de fondo */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-colorPrimario5/10 blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-colorSecundario1/10 blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-colorPrimario7/20 blur-2xl"></div>
+      </div>
+      
+      <div className="max-w-[1550px] mx-auto px-6 pt-16 md-tablet:pt-10 table-lg:pt-0 md-tablet:px-12 relative z-10">
         <div className="grid grid-cols-1 items-center gap-6">
-
           {/* Contenedor central */}
-          <div className="flex flex-col items-center text-center gap-8 col-span-1">
-            
+          <div className="flex flex-col items-center text-center gap-10 col-span-1">
             {/* Título */}
             <motion.div
               className="md-tablet:mt-2"
@@ -20,12 +25,17 @@ export default function HeroAbout() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="mt-5 text-colorPrimario2 table-lg:px-24 text-4xl md-tablet:text-5xl table-lg:text-4xl font-extrabold leading-tight">
+              <h2 className="mt-5 text-colorPrimario2 table-lg:px-24 text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
                 Somos Devhooh: {""}
-                <span className="text-colorPrimarioLogo1">Tecnología con propósito.</span> Nuestra misión va más allá del software
+                <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
+                  Tecnología con propósito.
+                </span>
+                <br className="hidden md-tablet:block" />
+                <span className="block text-lg md-tablet:text-2xl font-semibold text-colorPrimario1/80 mt-2">
+                  Nuestra misión va más allá del software
+                </span>
               </h2>
             </motion.div>
-
             {/* Subtítulo */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -33,11 +43,12 @@ export default function HeroAbout() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <p className="text-lg md-tablet:text-xl text-gray-700 max-w-lg mb-5 md-tablet:mb-16">
-                Detrás del código, somos un equipo que escucha, colabora y construye contigo. Conoce quiénes somos y por qué trabajamos diferente.
+              <p className="text-lg md-tablet:text-xl text-colorPrimario1/70 max-w-xl mb-5 md-tablet:mb-16 mx-auto">
+                Detrás del código, somos un equipo que escucha, colabora y
+                construye contigo. Conoce quiénes somos y por qué trabajamos
+                diferente.
               </p>
             </motion.div>
-
             {/* Botón CTA */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -48,16 +59,17 @@ export default function HeroAbout() {
             >
               <Link href="/contact">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 text-lg md:text-xl font-semibold bg-colorPrimario5 text-white rounded-xl shadow-md hover:bg-colorSecundario4 transform transition-all duration-300 flex items-center gap-2"
+                  whileHover={{ scale: 1.07 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 transform transition-all duration-300 flex items-center gap-3 drop-shadow-lg"
                 >
+                  <span className="inline-block w-3 h-3 rounded-full bg-colorPrimario5 animate-pulse"></span>
                   Hablemos de tu proyecto
+                  <span className="inline-block w-3 h-3 rounded-full bg-colorSecundario1 animate-pulse"></span>
                 </motion.button>
               </Link>
             </motion.div>
           </div>
-
         </div>
       </div>
     </section>

@@ -18,7 +18,8 @@ export default function HeroSectionTech() {
             transition={{ duration: 0.6, type: "spring" }}
             className="order-1 text-center table-lg:text-left text-4xl font-extrabold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
           >
-            La tecnología detrás de nuestras soluciones de vanguardia
+            La tecnología detrás de nuestras 
+            <span className="text-colorPrimario5"> soluciones de vanguardia</span>
           </motion.h1>
 
           {/* --- 2) IMAGEN --- */}
@@ -26,7 +27,9 @@ export default function HeroSectionTech() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
+            className="
+              order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center 
+              rounded-lg backdrop-blur-sm shadow-xl bg-gradient-to-t from-colorPrimario1 to-colorPrimario3"
           >
             <div className="relative z-10 rounded-3xl p-4">
               <Image
@@ -38,7 +41,21 @@ export default function HeroSectionTech() {
                 priority
               />
             </div>
-            {/* Glows */}
+            
+            {/* Círculo decorativo flotante */}
+            <motion.div
+              className={`absolute -top-2 -right-2 w-6 h-6 md-tablet:w-10 md-tablet:h-10 rounded-full bg-colorFondo/50 opacity-20`}
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.2, 0.4, 0.2]
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity,
+                delay: 1 * 0.5
+              }}
+            ></motion.div>
+
           </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}

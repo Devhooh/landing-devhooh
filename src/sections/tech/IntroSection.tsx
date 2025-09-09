@@ -8,7 +8,7 @@ export default function IntroSection() {
   return (
     <section className="w-full pb-5 pt-16 mx-auto">
       {/* Hero de Tecnología */}
-      <div className="max-w-5xl mx-auto px-10 text-center items-center space-y-4 bg-colorHover5 py-5 rounded-xl">
+      <div className="max-w-5xl mx-auto px-10 text-center items-center space-y-4 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 py-5 rounded-xl">
         <motion.h2
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

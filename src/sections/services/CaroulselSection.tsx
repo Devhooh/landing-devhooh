@@ -6,7 +6,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import CaroulselCard from "./CaroulselCard";
 import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
-import { LucideProps } from "lucide-react";
+import { ArrowLeft, ArrowRight, LucideProps } from "lucide-react";
 
 
 import "swiper/css";
@@ -74,7 +74,10 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
 
         <Swiper
           modules={[Navigation, Pagination]}
-          navigation
+          navigation={{
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+          }}
           className="w-full flex justify-center"
           centerInsufficientSlides={true}
           autoHeight={true}
@@ -94,6 +97,15 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
               <CaroulselCard card={card} index={index}/>
             </SwiperSlide>
           ))}
+
+          {/* Botones custom */}
+          <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
+            <ArrowLeft className="w-6 h-6 text-white" />
+          </div>
+          <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
+            <ArrowRight className="w-6 h-6 text-white" />
+          </div>
+
         </Swiper>
       </div>
     </section>

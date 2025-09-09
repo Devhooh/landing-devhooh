@@ -9,6 +9,7 @@ import { motion, Variants } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const containerVariant = {
   hidden: { opacity: 0 },
@@ -74,7 +75,10 @@ export default function ReviewsSection() {
           >
             <Swiper
               modules={[Navigation, Pagination]}
-              navigation
+              navigation={{
+                nextEl: ".swiper-button-next-custom",
+                prevEl: ".swiper-button-prev-custom",
+              }}
               pagination={{ clickable: true }}
               className="w-full h-full"
               slidesPerView={1}
@@ -87,6 +91,15 @@ export default function ReviewsSection() {
                   </motion.div>
                 </SwiperSlide>
               ))}
+
+              {/* Botones custom */}
+              <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
+                <ArrowLeft className="w-6 h-6 text-white" />
+              </div>
+              <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
+                <ArrowRight className="w-6 h-6 text-white" />
+              </div>
+
             </Swiper>
           </motion.div>
         </div>
@@ -95,7 +108,10 @@ export default function ReviewsSection() {
         <div className="hidden md-tablet:block">
           <Swiper
             modules={[Pagination, Navigation]}
-            navigation
+            navigation={{
+              nextEl: ".swiper-button-next-custom",
+              prevEl: ".swiper-button-prev-custom",
+            }}
             spaceBetween={32}
             slidesPerView={1}
             pagination={{ clickable: true }}
@@ -122,6 +138,15 @@ export default function ReviewsSection() {
                 </motion.div>
               </SwiperSlide>
             ))}
+
+            {/* Botones custom */}
+            <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
+              <ArrowLeft className="w-6 h-6 text-white" />
+            </div>
+            <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
+              <ArrowRight className="w-6 h-6 text-white" />
+            </div>
+
           </Swiper>
         </div>
 

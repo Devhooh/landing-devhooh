@@ -118,18 +118,35 @@ export default function ServicesCardsSection() {
             className="text-center table-lg:text-right order-first table-lg:order-last"
           >
             <h2 className="text-4xl md-tablet:text-7xl font-extrabold text-colorPrimario2 mb-8">
-              ¿En qué etapa se encuentra tu proyecto?
+              ¿En qué etapa se encuentra 
+              <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> tu proyecto?</span>
             </h2>
             <p className="text-xl md-tablet:text-2xl font-medium text-gray-700 mb-8 mx-auto table-lg:mx-0">
-              No importa si estás dando los
-              <span className="text-colorSecundario4"> primeros pasos </span>
-              o buscas escalar. 
+              No importa si estás dando los primeros pasos o buscas escalar. 
               <span className="text-colorSecundario4"> En Devhooh, </span>
               adaptamos nuestros servicios para
               <span className="text-colorSecundario4"> impulsar tu visión. </span>
             </p>
           </motion.div>
         </div>
+
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="
+            inline-flex items-center gap-2 px-6 py-3 rounded-full text-2xl font-semibold
+            bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">
+            <span className="text-colorPrimario5 font-semibold">
+              Trabajemos en tu próximo proyecto ahora!
+            </span>
+          </div>
+        </motion.div>
+
+
       </div>
 
       <motion.div

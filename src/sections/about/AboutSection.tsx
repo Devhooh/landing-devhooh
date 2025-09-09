@@ -48,7 +48,7 @@ export default function AboutSection() {
             
             {/* Sparkles flotantes */}
             <motion.div 
-              className="absolute top-10 left-10 text-colorPrimario5"
+              className="absolute top-10 left-2 md-tablet:left-10 text-colorPrimario5"
               variants={floatingVariants}
               animate="animate"
             >
@@ -56,7 +56,7 @@ export default function AboutSection() {
             </motion.div>
             
             <motion.div 
-              className="absolute bottom-12 right-12 text-colorSecundario1"
+              className="absolute bottom-12 right-2 md-tablet:right-12 text-colorSecundario1"
               variants={floatingVariants}
               animate="animate"
               style={{ animationDelay: "1s" }}

@@ -268,11 +268,11 @@ export default function ProblemsSection() {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
-            <CheckCircle className="w-6 h-6 text-green-400" />
+            <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
             <span className="text-colorHover5 font-semibold text-lg">
               Todos estos problemas tienen solución
             </span>
-            <CheckCircle className="w-6 h-6 text-colorPrimario5" />
+            <CheckCircle className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>
       </div>

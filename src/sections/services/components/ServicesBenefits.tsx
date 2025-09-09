@@ -43,7 +43,7 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="text-3xl font-extrabold mb-1 text-center md-tablet:text-left text-blue-900"
+          className="text-3xl font-extrabold mb-1 text-center md-tablet:text-left text-colorPrimario2"
         >
           Beneficios de nuestro servicio de
         </motion.h2>
@@ -55,7 +55,7 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
           viewport={{ once: true }}
           className="text-3xl font-extrabold mb-10 text-center md-tablet:text-left"
         >
-          <span className="text-fuchsia-600 underline">{service.name}</span>
+          <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text underline">{service.name}</span>
         </motion.h2>
       </div>
 
@@ -78,7 +78,7 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
             >
               {/* Icono */}
               <div className="flex-shrink-0 mb-4 md-tablet:mb-0 md-tablet:mr-4">
-                <Icon className="w-10 h-10 text-fuchsia-500" />
+                <Icon className="w-10 h-10 text-colorSecundario3" />
               </div>
 
               {/* Texto */}

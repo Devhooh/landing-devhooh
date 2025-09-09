@@ -1,7 +1,7 @@
 "use client";
 
 import * as Icons from "lucide-react";
-import { LucideProps } from "lucide-react";
+import { LucideProps, Target, Zap } from "lucide-react";
 import { ServicesData } from "@/data/ServicesDetails"; // tu modelo
 import { motion, Variants } from "framer-motion";
 
@@ -35,9 +35,9 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
   return (
     <section className="py-10 px-6 md-tablet:px-12 bg-gray-50">
       {/* Título con animación letra por letra */}
-      <div className="pb-10 items-center">
+      <div className="pb-10 items-center text-center">
         <motion.h2
-          className="text-3xl md-tablet:text-4xl font-bold text-center text-blue-900"
+          className="text-3xl md-tablet:text-4xl font-extrabold text-center text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -49,6 +49,15 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
             </motion.span>
           ))}
         </motion.h2>
+
+        {/* Subtítulo */}
+        <p className="mt-4 text-lg md-tablet:text-lg text-colorPrimario4 max-w-2xl mx-auto">
+          Estos son los servicios que ofrecemos en{" "}
+          <span className="font-semibold text-colorSecundario2">
+            {service.name}
+          </span>
+          , diseñados para adaptarse a tus necesidades y potenciar tu negocio.
+        </p>
       </div>
 
       {/* Grid de servicios */}
@@ -74,7 +83,7 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
               "
             >
               {/* Icono */}
-              <Icon className="w-14 h-14 text-fuchsia-600 mb-4" />
+              <Icon className="w-14 h-14 text-colorSecundario4 mb-4" />
 
               {/* Título */}
               <h3 className="text-lg font-semibold mb-2">
@@ -89,6 +98,23 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
           );
         })}
       </div>
+
+      <motion.div
+          className="relative z-10 text-center mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-colorPrimario5/20 border border-colorPrimarioLogo1/30 backdrop-blur-sm">
+            <Target className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
+            <span className="text-colorPrimario2 font-semibold text-lg">
+              ¿Listo para empezar tu proyecto?
+            </span>
+            <Zap className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
+          </div>
+        </motion.div>
+
     </section>
   );
 }

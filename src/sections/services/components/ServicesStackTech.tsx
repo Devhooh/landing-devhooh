@@ -1,82 +1,3 @@
-// "use client";
-
-// import Link from "next/link";
-// import * as Icons from "lucide-react";
-// import { LucideProps } from "lucide-react";
-// import { ServicesData } from "@/data/ServicesDetails"; // tus datos reales
-
-// interface TechStackSectionProps {
-//   service: ServicesData;
-// }
-
-// export default function ServicesStackTech({ service }: TechStackSectionProps) {
-//   const stack = service.stackTech[0]; // asumimos que siempre hay un stackTech
-
-//   return (
-//     <section className="py-8 px-6 md-tablet:px-12 bg-violet-50">
-//       {/* Encabezado global */}
-//       <div className="max-w-3xl mb-10">
-//         <h2 className="text-3xl md-tablet:text-4xl font-bold text-blue-900">
-//           Stack de tecnología que utilizamos para {service.name}
-//         </h2>
-//         <p className="mt-3 text-gray-600 text-base md-tablet:text-lg leading-relaxed">
-//           {stack.description}
-//         </p>
-//       </div>
-
-//       {/* Grid de tecnologías */}
-//       <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6">
-//         {stack.tech.map((item, index) => {
-//           const Icon =
-//             (Icons[item.icon as keyof typeof Icons] as React.ComponentType<
-//               LucideProps
-//             >) || Icons.HelpCircle;
-
-//           return (
-//             <div
-//               key={index}
-//               className="flex flex-col items-start p-6 rounded-2xl bg-white border border-fuchsia-200 shadow-sm hover:shadow-xl hover:border-fuchsia-400 transition duration-300"
-//             >
-//               {/* Icono arriba izquierda */}
-//               <div className="mb-3 p-3 rounded-lg bg-purple-100">
-//                 <Icon className={`w-8 h-8 text-${item.color}-600`} />
-//               </div>
-
-//               {/* Título */}
-//               <h3 className="text-lg font-semibold text-blue-900 mb-2">
-//                 {item.title}
-//               </h3>
-
-//               {/* Lista de tecnologías */}
-//               <div className="flex flex-wrap gap-2 mt-2">
-//                 {item.listTech.map((tech, i) => (
-//                   <span 
-//                     key={i}
-//                     className="bg-fuchsia-100 text-fuchsia-800 text-xs font-medium px-3 py-1 rounded-full"
-//                   >
-//                     {tech}
-//                   </span>
-//                 ))}
-//               </div>
-//             </div>
-//           );
-//         })}
-//       </div>
-
-//       {/* Botón global */}
-//       <div className="mt-10 text-center">
-//         <Link
-//           href="/tecnologia"
-//           className="inline-block px-6 py-3 rounded-xl bg-fuchsia-600 text-white font-medium hover:bg-fuchsia-700 transition"
-//         >
-//           Ver todas las tecnologías
-//         </Link>
-//       </div>
-//     </section>
-//   );
-// }
-
-
 "use client";
 
 import Link from "next/link";
@@ -117,16 +38,19 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
     <section className="py-8 px-6 md-tablet:px-12 bg-violet-50">
       {/* Encabezado */}
       <motion.div initial="hidden" whileInView="show" viewport={{ once: true }}>
-        <motion.h2 className="text-3xl md-tablet:text-4xl font-bold text-blue-900 mb-2" variants={textVariants}>
-          Stack de tecnología que utilizamos para {service.name}
+        <motion.h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-2" variants={textVariants}>
+          Stack de tecnología que utilizamos
         </motion.h2>
-        <motion.p className="mt-3 text-gray-600 text-base md-tablet:text-lg leading-relaxed" variants={textVariants}>
+        <motion.h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2  mb-4" variants={textVariants}>
+          para <span className="text-colorPrimario5">{service.name}</span>
+        </motion.h2>
+        <motion.p className="mt-3 text-colorPrimario1 text-lg md-tablet:text-xl leading-relaxed" variants={textVariants}>
           {stack.description}
         </motion.p>
       </motion.div>
 
       {/* Grid de tecnologías */}
-      <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6 mt-8">
+      <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6 mt-8 px-4">
         {stack.tech.map((item, index) => {
           const Icon =
             (Icons[item.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) || Icons.HelpCircle;
@@ -139,36 +63,87 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
               whileInView="show"
               viewport={{ once: true }}
               variants={cardVariants}
-              className="flex flex-col items-start p-6 rounded-2xl bg-white border border-fuchsia-200 shadow-sm hover:shadow-xl hover:border-fuchsia-400 transition duration-300"
+              className={`
+                group relative bg-white/70 
+                border-2 border-${item.color}-400
+                rounded-3xl p-8 flex flex-col text-center
+                w-full hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]
+                transition-all duration-300 hover:border-colorPrimario5/40
+              `}
+              whileHover={{ y: -8, scale: 1.02 }}
             >
-              <div className="mb-3 p-3 rounded-lg bg-purple-100">
-                <Icon className={`w-8 h-8 text-${item.color}-600`} />
+              {/* Badge numerado */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white font-bold text-sm flex items-center justify-center shadow-lg">
+                {String(index + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-lg font-semibold text-blue-900 mb-2">{item.title}</h3>
-              <div className="flex flex-wrap gap-2 mt-2">
+
+              {/* Efectos decorativos */}
+              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
+
+              {/* Icono central */}
+              <div className="relative mb-6 flex justify-center">
+                <div className="relative p-4 rounded-2xl bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10 backdrop-blur-sm shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <Icon className={`w-12 h-12 text-${item.color}-600 transition-transform duration-300 group-hover:scale-110`} />
+                </div>
+              </div>
+
+              {/* Contenido */}
+              <h3 className="text-xl font-bold text-colorPrimario2 group-hover:text-colorPrimario5 transition-colors duration-300 mb-3">
+                {item.title}
+              </h3>
+              <div className="flex flex-wrap gap-2 justify-center">
                 {item.listTech.map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-fuchsia-100 text-fuchsia-800 text-xs font-medium px-3 py-1 rounded-full"
+                    className="bg-colorHover3 text-colorSecundario4 text-xs font-medium px-3 py-1 rounded-full"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
+
+              {/* Efecto de brillo en hover */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </motion.div>
           );
         })}
       </div>
 
       {/* Botón */}
-      <motion.div className="mt-10 text-center" initial="hidden" whileInView="show" viewport={{ once: true }} variants={buttonVariants}>
+      <motion.div
+        className="mt-10 text-center"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={buttonVariants}
+      >
         <Link
           href="/tecnologia"
-          className="inline-block px-6 py-3 rounded-xl bg-fuchsia-600 text-white font-medium hover:bg-fuchsia-700 transition"
+          className={`
+            inline-flex items-center justify-center gap-2
+            px-6 md-tablet:px-8 table-lg:px-10
+            py-3 md-tablet:py-4
+            rounded-2xl font-semibold text-white text-base md-tablet:text-lg
+            bg-gradient-to-r from-colorPrimario5 to-colorSecundario1
+            shadow-[0_4px_20px_rgba(103,61,230,0.25)]
+            hover:shadow-[0_6px_30px_rgba(103,61,230,0.35)]
+            hover:scale-105 hover:from-colorPrimario6 hover:to-colorSecundario2
+            transition-all duration-300 ease-out
+          `}
         >
-          Ver todas las tecnologías
+          <span>Ver todas las tecnologías</span>
+          <svg
+            className="w-5 h-5 md-tablet:w-6 md-tablet:h-6 text-white transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
         </Link>
       </motion.div>
+
     </section>
   );
 }

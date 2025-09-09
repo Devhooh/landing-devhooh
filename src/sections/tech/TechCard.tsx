@@ -55,7 +55,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
     >
       {/* Título */}
       <motion.h2
-        className="text-xl md-tablet:text-2xl font-bold text-white m-2"
+        className="text-xl md-tablet:text-2xl font-bold text-colorHover2 m-2"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}

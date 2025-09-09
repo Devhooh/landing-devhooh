@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function HeroSectionTech() {
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden bg-colorPrimario2">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 

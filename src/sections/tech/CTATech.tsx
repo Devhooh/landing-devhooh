@@ -19,7 +19,7 @@ export default function CTASlugfolio() {
   ];
 
   return (
-    <section className="relative w-full py-28 px-5 tablet-md:px-10 flex justify-center overflow-hidden text-white">
+    <section className="relative w-full pb-28 pt-14 px-5 tablet-md:px-10 flex justify-center overflow-hidden text-white">
       {/* Contenedor principal */}
       <div className="relative z-10 max-w-4xl w-full flex flex-col items-center gap-8 bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 p-10 rounded-3xl shadow-2xl text-center">
         

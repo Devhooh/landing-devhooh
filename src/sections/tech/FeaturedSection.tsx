@@ -57,17 +57,28 @@ export default function FeaturedSection() {
   };
 
   return (
-    <section className="my-24 mx-4 md-tablet:mx-12 py-12 rounded-2xl bg-colorPrimario4">
+    <section className="my-24 mx-4 md-tablet:mx-12 py-16 rounded-2xl bg-colorPrimario4">
       {/* Título animado */}
       <motion.h2
         variants={titleVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="text-3xl table-lg:text-5xl font-extrabold text-center mb-12 text-white"
+        className="text-3xl table-lg:text-4xl font-extrabold text-center mb-4 text-white"
       >
         En qué nos destacamos
       </motion.h2>
+
+      {/* Subtítulo */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="text-center text-gray-300 mb-12 max-w-2xl mx-auto text-base md-tablet:text-lg"
+      >
+        Soluciones tecnológicas que marcan la diferencia en cada proyecto.
+      </motion.p>
 
       {/* Grid con stagger */}
       <motion.div
@@ -81,18 +92,22 @@ export default function FeaturedSection() {
           <motion.div
             key={index}
             variants={cardVariants}
-            className="bg-colorPrimario3 border border-colorPrimario2 rounded-2xl shadow-md p-6 relative"
+            whileHover={{ scale: 1.02 }}
+            className="bg-colorPrimario3 border border-colorPrimario2 rounded-2xl shadow-md p-6 relative transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
-            {/* Icono arriba a la izquierda */}
-            <div className="absolute top-4 left-4">{item.icon}</div>
+            {/* Icono con círculo */}
+            <div className="absolute top-4 left-4 bg-white/10 p-3 rounded-full">
+              {item.icon}
+            </div>
 
             {/* Título debajo del icono */}
             <h3 className="text-xl text-white font-semibold text-left mt-12">
+              <span className="text-colorSecundario4">▹ </span>
               {item.title}
             </h3>
 
             {/* Descripción alineada a la izquierda */}
-            <p className="text-gray-300 text-left mt-2">{item.description}</p>
+            <p className="text-gray-200 text-left mt-3">{item.description}</p>
           </motion.div>
         ))}
       </motion.div>

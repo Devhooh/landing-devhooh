@@ -43,7 +43,7 @@ export default function TechProjectSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="px-6 mt-4 text-gray-300 max-w-2xl"
+          className="px-6 mt-4 text-gray-300 max-w-2xl text-lg md-tablet:text-xl"
         >
           Una selección de proyectos recientes donde aplicamos nuestras mejores
           tecnologías para lograr impacto real.

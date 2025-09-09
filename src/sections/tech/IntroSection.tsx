@@ -29,7 +29,9 @@ export default function IntroSection() {
               viewport={{ once: true }}
               className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorFondo pb-5"
             >
-              Todo lo que necesitas para construir y escalar
+              Todo lo que necesitas para {""}
+              <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">construir y escalar</span>
+              
             </motion.h2>
 
             <motion.p
@@ -79,9 +81,9 @@ export default function IntroSection() {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-2xl md-tablet:text-3xl font-bold text-colorPrimario1"
+          className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario1"
         >
-          De un vistazo a nuestro kit <br /> de herramientas tecnológicas
+          De un vistazo a nuestro kit <br />de <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> herramientas tecnológicas</span>
         </motion.h3>
 
         <motion.p

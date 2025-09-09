@@ -66,7 +66,8 @@ export default function FeaturedSection() {
         viewport={{ once: true }}
         className="text-3xl table-lg:text-4xl font-extrabold text-center mb-4 text-white"
       >
-        En qué nos destacamos
+        En qué nos 
+        <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> destacamos</span>
       </motion.h2>
 
       {/* Subtítulo */}

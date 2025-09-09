@@ -19,7 +19,7 @@ export default function HeroSectionTech() {
             className="order-1 text-center table-lg:text-left text-4xl font-extrabold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
           >
             La tecnología detrás de nuestras 
-            <span className="text-colorPrimario5"> soluciones de vanguardia</span>
+            <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> soluciones de vanguardia</span>
           </motion.h1>
 
           {/* --- 2) IMAGEN --- */}

@@ -7,7 +7,6 @@ import { CheckCircle } from "lucide-react";
 export default function BeneficiosSection() {
   return (
     <section className="relative w-full py-20 bg-gradient-to-b from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4">
-    {/* // <section className="relative w-full py-20 bg-cyan-600"> */}
       <div className="container mx-auto px-6 tablet-md:px-12 max-w-7xl flex flex-col gap-24">
 
         {/* Encabezado */}
@@ -46,8 +45,9 @@ export default function BeneficiosSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
         >
+          {/* Imagen */}
           <motion.div
-            className=""
+            className="order-2 table-lg:order-1"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -61,8 +61,10 @@ export default function BeneficiosSection() {
               className="rounded-2xl shadow-lg bg-colorHover2/10"
             />
           </motion.div>
+
+          {/* Texto */}
           <motion.div
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 order-1 table-lg:order-2"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -123,8 +125,9 @@ export default function BeneficiosSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
         >
+          {/* Texto */}
           <motion.div
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 order-1 table-lg:order-1"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -160,8 +163,10 @@ export default function BeneficiosSection() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Imagen */}
           <motion.div
-            className=""
+            className="order-2 table-lg:order-2"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -185,8 +190,9 @@ export default function BeneficiosSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
         >
+          {/* Imagen */}
           <motion.div
-            className=""
+            className="order-2 table-lg:order-1"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -200,8 +206,10 @@ export default function BeneficiosSection() {
               className="rounded-2xl shadow-lg bg-colorHover2/10"
             />
           </motion.div>
+
+          {/* Texto */}
           <motion.div
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 order-1 table-lg:order-2"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -274,6 +282,7 @@ export default function BeneficiosSection() {
             <div className="text-sm text-colorPrimario1/70">uptime en soluciones en la nube.</div>
           </div>
         </motion.div>
+
       </div>
     </section>
   );

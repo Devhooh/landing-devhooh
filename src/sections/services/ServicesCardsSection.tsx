@@ -121,8 +121,12 @@ export default function ServicesCardsSection() {
               ¿En qué etapa se encuentra tu proyecto?
             </h2>
             <p className="text-xl md-tablet:text-2xl font-medium text-gray-700 mb-8 mx-auto table-lg:mx-0">
-              No importa si estás dando los primeros pasos o buscas escalar. En Devhooh,
-              adaptamos nuestros servicios para impulsar tu visión.
+              No importa si estás dando los
+              <span className="text-colorSecundario4"> primeros pasos </span>
+              o buscas escalar. 
+              <span className="text-colorSecundario4"> En Devhooh, </span>
+              adaptamos nuestros servicios para
+              <span className="text-colorSecundario4"> impulsar tu visión. </span>
             </p>
           </motion.div>
         </div>

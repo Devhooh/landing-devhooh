@@ -8,19 +8,19 @@ export default function CTATech() {
   return (
     <section className="relative w-full py-32 mt-20 overflow-hidden">
       {/* Fondo dinámico */}
-      <div className="absolute inset-0 bg-colorHover2/50 opacity-95"></div>
+      <div className="absolute inset-0 bg-colorHover5 opacity-95"></div>
       {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]"></div> */}
 
       {/* Iconos flotantes */}
       <motion.div
-        className="absolute top-12 left-10 text-white"
+        className="absolute top-12 left-10 text-colorDarkFondo2"
         animate={{ y: [0, -15, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
       >
         <Sparkles size={40} />
       </motion.div>
       <motion.div
-        className="absolute bottom-16 right-12 text-white"
+        className="absolute bottom-16 right-12 text-colorDarkFondo2"
         animate={{ y: [0, 20, 0] }}
         transition={{ duration: 8, repeat: Infinity }}
       >

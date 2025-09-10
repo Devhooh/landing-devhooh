@@ -19,7 +19,7 @@ export function ContactSection() {
 
       <motion.h2
         className="
-        text-3xl md-tablet:text-5xl font-extrabold text-center mb-8 text-colorPrimario2"
+        text-3xl md-tablet:text-5xl font-extrabold text-center mb-8 text-colorPrimario2 leading-tight drop-shadow-lg"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}

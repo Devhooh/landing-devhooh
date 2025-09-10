@@ -3,24 +3,22 @@ import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin, FaPhone, FaXTwitter } fro
 
 export default function Footer() {
   const services = [
-    {name: 'Desarrollo Web', path: '#'},
-    {name: 'Apps Móviles', path: '#'},
-    {name: 'Desarrollo de Software', path: '#'},
-    {name: 'Diseño UX/UI', path: '#'},
-    {name: 'Integración IA', path: '#'},
-    {name: 'Blockchain', path: '#'},
-    {name: 'DevOps', path: '#'},
+    {name: "Desarrollo Web", path: "/services/desarrollo-web"},
+    {name: "Apps Móviles", path: "/services/desarrollo-mobile"},
+    {name: "Desarrollo de Software", path: "/services/desarrollo-software"},
+    {name: "Diseño UX/UI", path: '#'},
+    {name: "Integración IA", path: '#'},
+    {name: "Blockchain", path: "#"},
+    {name: "DevOps", path: "#"},
   ]
 
   const company = [
-    {name: 'Misión', path: '#'},
-    {name: 'Soluciones', path: '#'},
-    {name: 'Sobre Nosotros', path: '#'},
-    {name: 'Porque Devhooh', path: '#'},
-    {name: 'Mision y Valores', path: '#'},
-    {name: 'Testimonios y Clientes', path: '#'},
-    {name: 'Terminos de servicios', path: '#'},
-    {name: 'Politica de privacidad', path: '#'},
+    {name: "Soluciones", path: "/about#soluciones"},
+    {name: "Sobre Nosotros", path: "/about"},
+    {name: "Porque Devhooh", path: "/about#whydevhooh"},
+    {name: "Nuestros valores", path: "/about#valores"},
+    {name: "Terminos de servicios", path: "#"},
+    {name: "Politica de privacidad", path: "#"},
   ]
 
 
@@ -35,32 +33,52 @@ export default function Footer() {
             </h3>
             
             {/* Zona contactos */}
+            {/* Correos: */}
             <div className="py-5 md-tablet:justify-items-center table-lg:justify-items-start flex-1 min-w-[150px]">
             <ul className="space-y-3 text-gray-300 text-sm">
               <li className="flex items-center gap-2 leading-none">
                 <FaEnvelope className="text-fuchsia-400 w-5 h-5 shrink-0" />
-                <a href="#" className="hover:text-white hover:drop-shadow-[0_0_4px_white] transition">
+                <a 
+                  href="mailto:contacto@devhooh.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white hover:drop-shadow-[0_0_4px_white] transition">
                   contacto@devhooh.com
                 </a>
               </li>
               <li className="flex items-center gap-2 leading-none">
                 <FaEnvelope className="text-fuchsia-400 w-5 h-5 shrink-0" />
-                <a href="#" className="hover:text-white hover:drop-shadow-[0_0_4px_white] transition">
+                <a 
+                  href="mailto:soporte@devhooh.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white hover:drop-shadow-[0_0_4px_white] transition">
                   soporte@devhooh.com
                 </a>
               </li>
+
+              {/* Celular: */}
               <li className="flex items-center gap-2 leading-none">
                 <FaPhone className="text-fuchsia-400 w-5 h-5 shrink-0" />
-                <a href="#" className="hover:text-white hover:drop-shadow-[0_0_4px_white] transition">
+                <a 
+                  href="tel:+59177770000" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white hover:drop-shadow-[0_0_4px_white] transition">
                   +591 777-0000
                 </a>
               </li>
               <li className="flex items-center gap-2 leading-none">
                 <FaPhone className="text-fuchsia-400 w-5 h-5 shrink-0" />
-                <a href="#" className="hover:text-white hover:drop-shadow-[0_0_4px_white] transition">
-                  +591 666-0000
+                <a 
+                  href="tel:+59166660000" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white hover:drop-shadow-[0_0_4px_white] transition">
+                  +591 6666-0000
                 </a>
               </li>
+
             </ul>
             </div>
           </div>
@@ -68,10 +86,34 @@ export default function Footer() {
           <div className="px-4 text-left md-tablet:justify-items-center table-lg:justify-items-start w-full">
             <h4 className="text-xl sm:text-2xl font-semibold mb-4 text-white">Síguenos</h4>
             <div className="flex gap-4 text-2xl table-lg:text-4xl text-fuchsia-400">
-              <a href="#"><FaFacebook className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" /></a>
-              <a href="#"><FaGithub className="text-3xl table-lg:text-4xl hover:text-fuchsia-500" /></a>
-              <a href="#"><FaXTwitter className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" /></a>
-              <a href="#"><FaLinkedin className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" /></a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaFacebook className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" />
+              </a>
+              <a 
+                href="https://github.com/Devhooh" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="text-3xl table-lg:text-4xl hover:text-fuchsia-500" />
+              </a>
+              <a 
+                href="https://x.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaXTwitter className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/devhooh/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" />
+              </a>
             </div>
           </div>
         </div>

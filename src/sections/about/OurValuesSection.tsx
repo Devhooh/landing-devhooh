@@ -99,7 +99,7 @@ export default function OurValuesSection() {
   const splitText = (text: string) => text.split("");
 
   return (
-    <section className="relative bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 py-20 overflow-hidden">
+    <section id="valores" className="relative bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 py-20 overflow-hidden">
 
       <div className="container mx-auto max-w-[1400px] text-center px-7 md-tablet:px-10 relative z-10">
 

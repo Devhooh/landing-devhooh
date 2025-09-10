@@ -1,38 +1,27 @@
-import ContactCTA from "@/components/ui/ContactCTA";
-import HeroSection from "@/components/ui/HeroSection";
-import { BenefitsSection } from "@/sections/home/BenefitsSection";
+import CTAHome from "@/sections/home/CTAHome";
+import HeroSectionHome from "@/sections/home/HeroSectionHome";
 import { PlansSection } from "@/sections/home/PlansSection";
+import { ProjectsBenefits } from "@/sections/home/ProjectsBenefits";
 import { ProjectsSection } from "@/sections/home/ProjectsSection";
-import ReviewsHome from "@/sections/home/ReviewsHome";
 import { SolutionsSection } from "@/sections/home/SolutionsSection";
 import TechSection from "@/sections/home/TechSection";
 
 export default function Home() {
   return (
     <div>
-      <HeroSection
-        title="Desarrollamos software inteligente a tu medida"
-        subtitle="Creamos soluciones web, móviles y empresariales, integrando inteligencia artificial para optimizar tu negocio."
-        cta="Hablemos de tu proyecto"
-        ctaLink="/contact"
-        imageSrc="/assets/images/hero1.png" // Asegúrate de tener estas imágenes
-        imageAlt="Ilustración de equipo de desarrollo"
-        layout="left"
-      />
+      <HeroSectionHome/>
 
       <SolutionsSection/>
 
       <ProjectsSection/>
 
-      <BenefitsSection/>
-
-      <ReviewsHome/>
+      <ProjectsBenefits/>
 
       <TechSection/>
 
       <PlansSection/>
 
-      <ContactCTA/>
+      <CTAHome/>
 
     </div>
   );

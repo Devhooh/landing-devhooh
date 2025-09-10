@@ -1,31 +1,28 @@
-import ContactCTA from "@/components/ui/ContactCTA";
-import HeroSection from "@/components/ui/HeroSection";
 import FAQSection from "@/sections/portfolio/FAQSection";
 import PortfolioFilters from "@/sections/portfolio/PortfolioFilters";
 import ReviewsSection from "@/sections/portfolio/ReviewSection";
 import { faqData} from '@/data/faqData';
+import HeroSectionPort from "@/sections/portfolio/HeroSectionPort";
+import CTAPortfolio from "@/sections/portfolio/CTAPortfolio";
+import { portfolioDesarrollo } from "@/data/portfolioDesarrollo";
+import ProcessPortfolio from "@/sections/portfolio/ProcessPortfolio";
 
 export default function Portfolio() {
   return (
     <div>
-      <HeroSection 
-        title= "Realidades digitales. Resultados que hablan por sí solos" 
-        subtitle="Cada proyecto representa una historia de innovación, colaboración y éxito. Mira cómo ayudamos a crecer negocios con tecnología moderna." 
-        cta="Cotiza tu proyecto ahora" 
-        ctaLink="/contact"
-        imageSrc="/assets/images/hero2.png"
-        imageAlt="Desarrollo de softwara, portafolio"
-        layout="right"
-      
-      />
+
+      <HeroSectionPort/>
 
       <PortfolioFilters/>
+
+      <CTAPortfolio/>
+
+      <ProcessPortfolio steps={portfolioDesarrollo.proceso || []}/>
 
       <ReviewsSection/>
 
       <FAQSection itemsDate={faqData}/>
 
-      <ContactCTA/>
 
     </div>
   )

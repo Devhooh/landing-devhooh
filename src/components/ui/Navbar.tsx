@@ -30,21 +30,22 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-fuchsia-400/30">
-      <div className="relative max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+    <header className="w-full fixed top-0 left-0 z-50 bg-white">
+      <div className="relative max-w-[1550px] mx-auto px-6 py-2 flex justify-between items-center">
         {/* Logo de Devhoo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/assets/images/noBgBlack.png"
+            src="/assets/images/devhooh.png"
             alt="Devhoo-logo"
             width={120}
             height={60}
-            style={{ height: "auto", width: "auto" }}
+            priority
+            className="rounded-md"
           />
         </Link>
 
         {/* Menu de secciones PC*/}
-        <nav className="hidden table-lg:flex gap-6 text-gray-700 font-semibold">
+        <nav className="hidden table-lg:flex gap-6 font-semibold">
           {links.map((values) => {
             const isActive = pathname === values.path;
             return (
@@ -52,9 +53,10 @@ export default function Navbar() {
                 key={values.path}
                 href={values.path}
                 className={`relative px-3 py-2 rounded-3xl transition
-                  hover:text-blue-700
-                  ${isActive ? "text-blue-700 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-blue-700" : ""}
-              `}>
+                  text-gray-950 hover:text-colorSecundario1
+                  ${isActive ? "text-colorSecundario1 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-colorSecundario1" : ""}
+              `}
+              >
                 {values.name}
               </Link>
             );
@@ -64,24 +66,25 @@ export default function Navbar() {
           <Link href="/contact">
             <button
               className="
-              relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
-              bg-gradient-to-r from-purple-500 to-purple-700
-              overflow-hidden transition-all duration-700 ease-in-out
-              hover:from-purple-600 hover:to-purple-800 
-              hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
-            "
+                relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
+                bg-gradient-to-r from-gray-900 via-gray-700 to-black
+                animate-gradient
+                transition-all duration-700 ease-in-out
+                hover:scale-[1.05] hover:shadow-[0_0_20px_rgba(236,72,153,0.6)]
+              "
             >
               Contáctanos
             </button>
           </Link>
         </nav>
 
+
         {/* Boton hamburguesa para mobile */}
         <button
-          className="table-lg:hidden p-3 rounded-full bg-gray-800 text-white focus:outline-none transition-transform duration-300"
+          className="table-lg:hidden p-3 rounded-full bg-colorPrimario2 border-2 border-black text-white focus:outline-none transition-transform duration-300"
           onClick={toggleMenu}
         >
-          <Menu size={28}/>
+          <Menu size={28} />
         </button>
       </div>
 
@@ -98,16 +101,16 @@ export default function Navbar() {
           <Link href="/" onClick={toggleMenu}>
             <Image
               className="rounded-xl"
-              src="/assets/images/BgColor.png"
+              src="/assets/images/logoMovil.png"
               alt="Devhoo-logo"
-              width={120}
+              width={60}
               height={60}
               style={{ height: "auto", width: "auto" }}
             />
           </Link>
           <button
             onClick={toggleMenu}
-            className="p-3 rounded-full bg-gray-800 text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-colorPrimario2 border-2 border-black text-white transition-colors duration-300"
           >
             <X size={28} />
           </button>
@@ -125,13 +128,13 @@ export default function Navbar() {
                   onClick={toggleMenu}
                   className={`
                     flex justify-between items-center w-full py-2 transition-all duration-300
-                    text-slate-900 text-xl border-b border-gray-100
-                    hover:bg-gray-100 p-4 hover:text-blue-500
-                    ${isActive ? "font-bold text-blue-700 bg-gray-100" : ""}
+                    text-xl border-b border-colorHover rounded-lg
+                    hover:bg-colorHover/35 hover:text-colorSecundario1 p-4
+                    ${isActive ? "font-bold text-colorSecundario1 bg-colorHover/30" : ""}
                   `}
                 >
                   <span>{values.name}</span>
-                  <ChevronRight size={24} className="text-gray-500" />
+                  <ChevronRight size={24} className="text-colorPrimario" />
                 </Link>
               );
             })}
@@ -140,11 +143,11 @@ export default function Navbar() {
               href="/contact"
               onClick={toggleMenu}
               className="
-                relative w-full text-center mt-6 py-4 rounded-lg text-white text-3xl font-bold shadow-md
-                bg-gradient-to-r from-fuchsia-500 to-fuchsia-700
-                overflow-hidden transition-all duration-700 ease-in-out
-                hover:from-fuchsia-600 hover:to-fuchsia-800
-                hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
+                relative w-full text-center mt-6 py-4 rounded-lg text-white text-2xl font-bold shadow-md
+                bg-gradient-to-r from-gray-900 via-gray-700 to-black
+                animate-gradient
+                transition-all duration-700 ease-in-out
+                hover:scale-105 hover:shadow-[0_0_25px_rgba(236,72,153,0.6)]
               "
             >
               Contáctanos
@@ -155,10 +158,6 @@ export default function Navbar() {
     </header>
   );
 }
-
-
-
-
 
 
 

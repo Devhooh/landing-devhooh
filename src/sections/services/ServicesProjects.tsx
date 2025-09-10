@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
 
 interface Project {
   id: number;
@@ -16,40 +18,56 @@ interface Project {
   subtitle?: string;
 }
 
+const cardVariants = {
+    hidden: { opacity: 0, y: 80 },
+    show: { opacity: 1, y: 0 },
+  };
+
+
 interface ServicesProjectsProps {
   project: Project;
-  showService?: boolean; // <-- nuevo prop opcional
+  showService?: boolean;
+  index?: number; // <-- nuevo
 }
 
 export default function ServicesProjects({
   project,
-  showService = true, // por defecto true
+  showService = true,
+  index = 0,
 }: ServicesProjectsProps) {
   return (
+
     <section className="w-full h-auto">
-      {/* Card */}
-      <div className="h-[400px] bg-white rounded-lg shadow-xl overflow-hidden flex flex-col">
+      <motion.div
+        initial="hidden"
+      whileInView="show"
+      whileHover="hover"
+      viewport={{ once: true }}
+      variants={cardVariants}
+      transition={{ duration: 0.3, delay: index * 0.1 }}
+        className="h-[400px] border border-colorPrimarioLogo1 bg-colorSecundario rounded-xl shadow-2xl overflow-hidden flex flex-col"
+      >
         {/* Imagen */}
-        <div className="bg-gray-200 p-3 h-48 w-full flex items-center justify-center">
+        <div className="p-3 flex items-center justify-center relative w-full h-48 md-tablet:h-56 table-lg:h-64">
           <Image
-            width={400}
-            height={400}
             src={project.imageSrc}
             alt={project.imageAlt || project.ProjectName}
-            className="object-contain w-full h-full p-5"
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 750px) 100vw, (max-width: 950px) 50vw, 33vw"
+            className="object-contain transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         {/* Contenido */}
         <div className="p-6 flex-1 flex flex-col justify-between">
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+            <h3 className="text-xl font-semibold text-white mb-3">
               {project.ProjectName}
             </h3>
 
-            {/* Mostrar servicio solo si existe y showService es true */}
             {showService && project.service && (
-              <p className="text-base text-gray-700">
+              <p className="text-base text-gray-200">
                 <span className="font-medium">Servicio:</span> {project.service}
               </p>
             )}
@@ -57,13 +75,13 @@ export default function ServicesProjects({
 
           <div>
             <Link href={`/portfolio/${project.slug}`}>
-              <button className="bg-white text-indigo-900 hover:border-2 border-indigo-950 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-gray-300 transform transition">
+              <button className="bg-white text-colorSecundario3 font-bold mt-3 py-2 px-4 rounded-lg hover:bg-colorHover3 hover:border border-colorSecundario transform transition-all">
                 Ver más detalles
               </button>
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

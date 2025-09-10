@@ -21,39 +21,72 @@ export function ProjectCard({
   imageSrc,
   ProjectName,
   subtitle,
-  slug
+  company,
+  slug,
+  technologies,
+  description
 }: ProjectCardProps) {
-
   return (
-    <div className="bg-gray-300 rounded-2xl shadow-xl overflow-hidden flex flex-col w-full">
-      {/* Imagen (altura controlada por breakpoint) */}
-      <div className="relative w-full h-48 md-tablet:h-56 table-lg:h-64">
+    <div className="
+      h-[550px] backdrop-blur-md border-b-4 tablet-md:border-b-8 border-colorPrimarioLogo1 border tablet-md:border-2 rounded-3xl 
+      overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.01]">
+      
+      {/* Imagen */}
+      <div className="relative w-full h-48 md-tablet:h-56 table-lg:h-64 border-b border-purple-500/30">
         <Image
           src={imageSrc}
           alt={ProjectName}
           fill
-          style={{ objectFit: "cover" }} // ⚡ Esto evita el warning
+          style={{ objectFit: "cover" }}
           sizes="(max-width: 550px) 100vw, (max-width: 950px) 50vw, 33vw"
-          priority={false}
         />
+        {/* Overlay elegante */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       </div>
 
       {/* Contenido */}
-      <div className="p-4 md-tablet:p-5 table-lg:p-6 flex flex-col gap-2 flex-1">
-        <h3 className="text-lg md-tablet:text-xl table-lg:text-2xl font-bold text-gray-900">
+      <div className="p-6 md-tablet:p-7 table-lg:p-8 flex flex-col gap-3 flex-1">
+        <h3 className="text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold text-colorPrimario2">
           {ProjectName}
         </h3>
-        <p className="text-gray-600 text-sm md-tablet:text-base">
-          {subtitle}
-        </p>
+        {company && (
+          <p className="text-colorSecundario3 text-base md-tablet:text-xl font-semibold">
+            Empresa: {company}
+          </p>
+        )}
+        {subtitle && (
+          <p className="text-colorPrimario1 font-medium text-sm md-tablet:text-lg">
+            {subtitle}
+          </p>
+        )}
 
-          <div className="flex justify-center mt-3 md-tablet:mt-4">
-            <Link href={`/portfolio/${slug}`}>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white py-2 md-tablet:py-3 px-6 md-tablet:px-8 rounded-xl text-sm md-tablet:text-base font-semibold">
-                Ver proyecto
-              </button>
-            </Link>
-          </div>
+        {description && (
+          <p className="text-colorPrimario4 text-sm md-tablet:text-base line-clamp-3">
+            {description}
+          </p>
+        )}
+
+        <div className="flex flex-wrap gap-2 mt-2">
+          {technologies?.slice(0, 3).map((tech, idx) => (
+            <span 
+              key={idx} 
+              className="bg-colorHover3 text-colorPrimario2 text-xs md-tablet:text-sm px-2 py-1 rounded-md"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Botón */}
+        <div className="flex justify-center mt-5">
+          <Link href={`/portfolio/${slug}`}>
+            <button className="
+              bg-colorSecundario2 hover:bg-colorSecundario3 text-white py-2.5 md-tablet:py-3 px-7 md-tablet:px-14 rounded-xl 
+              text-sm md-tablet:text-base font-semibold shadow-md transition-all duration-300">
+              Ver proyecto
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

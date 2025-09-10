@@ -1,6 +1,7 @@
-import ContactCTA from "@/components/ui/ContactCTA";
+import NotFound from "@/app/not-found";
 import { ServicesDetails } from "@/data/ServicesDetails";
 import FAQSection from "@/sections/portfolio/FAQSection";
+import CTASlugServices from "@/sections/services/components/CTASlugServices";
 import HeroSectionServices from "@/sections/services/components/HeroSectionServices";
 import ProcessServicesSection from "@/sections/services/components/ProcessServicesSection";
 import ProjectsServicesSection from "@/sections/services/components/ProjectsServicesSection";
@@ -18,9 +19,7 @@ export default function ServicePage({ params }: Props) {
 
   if (!service) {
     return (
-      <div className="p-10 text-center text-red-600 font-bold">
-        Servicio no encontrado
-      </div>
+      NotFound()
     );
   }
 
@@ -42,7 +41,7 @@ export default function ServicePage({ params }: Props) {
 
       <FAQSection itemsDate={service.faq}/>
 
-      <ContactCTA/>
+      <CTASlugServices/>
 
     </div>
   );

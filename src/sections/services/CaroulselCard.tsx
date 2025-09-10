@@ -1,66 +1,77 @@
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
 
-// Card data interface
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+
 interface CardData {
   slug: string;
   title: string;
   details: string;
-  color: string;
   icon: string;
 }
 
-// Card componente
-export default function CaroulselCard ({ card }: { card: CardData }) {
-  const getGradientClass = (color: string) => {
-    switch (color) {
-      case 'indigo':
-        return 'bg-gradient-to-br from-indigo-500 to-indigo-700';
-      case 'teal':
-        return 'bg-gradient-to-br from-teal-500 to-teal-700';
-      case 'orange':
-        return 'bg-gradient-to-br from-orange-400 to-orange-600';
-      default:
-        return 'bg-white'; 
-    }
-  };
-
-  const gradientClass = getGradientClass(card.color);
-
+export default function CaroulselCard({
+  card,
+  index = 0,
+}: {
+  card: CardData;
+  index?: number;
+}) {
   return (
-    <div
-      className={`${gradientClass} p-4 rounded-3xl text-white
-      shadow-2xl transform transition-all duration-300 hover:scale-[1.02]
-      flex flex-col justify-between h-[750px] table-lg:h-[780px]`}
+    <motion.div
+      initial={{ opacity: 0, y: 30, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay: index * 0.2}}
+      whileHover={{
+        scale: 1.04,
+        rotateX: 1.5,
+        rotateY: -1.5,
+        transition: { duration: 0.2 },
+      }}
+      className="
+        bg-white border border-colorPrimarioLogo2 hover:border-colorPrimarioLogo1
+        rounded-2xl shadow-xl overflow-hidden h-[490px]
+        flex flex-col"
     >
-      <div className="p-4 rounded-2xl flex items-center justify-center mb-6 bg-gray-300/30 min-h-[200px]">
+      {/* Imagen */}
+      <div className="flex items-center justify-center p-6">
         <Image
           src={card.icon}
           alt={card.title}
           width={500}
           height={500}
-          className="w-36 h-auto object-contain"
+          className="object-contain w-36 h-auto"
         />
       </div>
-      <h3 className="pb-4 text-2xl md-tablet:text-2xl table-lg:text-3xl font-bold mx-6 text-center min-h-[70px] flex items-center justify-center">
-        {card.title}
-      </h3>
 
-      <div className="px-2 text-gray-200 text-xl md-tablet:text-base tablet-md:text-lg table-lg:text-lg flex-grow min-h-[120px]">
-        <p className="pb-3">{card.details}</p>
+      {/* Contenido */}
+      <div className="flex flex-col flex-grow p-5 text-gray-900">
+        <h3 className="text-xl font-bold mb-2 text-left text-colorPrimario2 flex items-center gap-2">
+          <span>{card.title}</span>
+          <span className="animate-pulse w-2 h-2 rounded-full bg-green-700" />
+        </h3>
+        <p className="text-sm text-gray-600 leading-snug line-clamp-3 text-left mb-4">
+          {card.details}
+        </p>
       </div>
-      <div className="flex flex-col gap-4 mt-auto">
+
+      {/* Botones */}
+      <div className="mb-12 px-5 flex flex-col gap-4">
         <Link href="/contact">
-          <button className="w-full px-6 py-3 bg-white/30 hover:bg-white/40 text-white font-semibold rounded-full transition-colors">
-            Cotiza tu proyecto
+          <button className="relative w-full py-2 rounded-lg bg-colorPrimario5 text-white font-semibold overflow-hidden">
+            <span className="relative z-10">Cotiza tu proyecto</span>
+            <span className="absolute inset-0 bg-white/30 -translate-x-full rotate-45 animate-shine" />
           </button>
         </Link>
+
         <Link href={`/services/${card.slug}`}>
-          <button className="w-full px-6 py-3 border border-white/20 text-white font-semibold rounded-full transition-colors hover:bg-white/10">
-            + Ver más detalles
+          <button className="w-full py-2 rounded-lg border border-colorSecundario2 text-colorPrimario4 font-medium transition bg-white hover:bg-colorHover3">
+            Ver más detalles
           </button>
         </Link>
       </div>
-    </div>
-  )
-};
+    </motion.div>
+  );
+}

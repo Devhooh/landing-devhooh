@@ -1,46 +1,53 @@
 "use client"
 import TechCard from "./TechCard";
-import{ backendTech, designerTech, frontendTech, iaTech, infraTech, mobilTech, softwareTech } from "@/data/techData"
+import {
+  backendTech,
+  designerTech,
+  frontendTech,
+  iaTech,
+  infraTech,
+  mobilTech,
+  softwareTech,
+} from "@/data/techData";
 
 export default function TechDataSection() {
   return (
     <div className="grid md-tablet:grid-cols-2 lg-table:grid-cols-1 gap-8 px-10 pb-16">
       <TechCard
         title="Front-End"
-        subtitle="Sitios web modernos, rápidos, escalables y optimizados para SEO."
+        subtitle="Interfaces modernas, responsivas y optimizadas para brindar experiencias de usuario fluidas."
         technologies={frontendTech}
       />
       <TechCard
         title="Back-End & Databases"
-        subtitle="Sitios web modernos, rápidos, escalables y optimizados para SEO."
+        subtitle="Arquitecturas sólidas, seguras y escalables con bases de datos confiables y alto rendimiento."
         technologies={backendTech}
       />
       <TechCard
         title="Mobile"
-        subtitle="Sitios web modernos, rápidos, escalables y optimizados para SEO."
+        subtitle="Aplicaciones nativas y multiplataforma rápidas, intuitivas y listas para Android e iOS."
         technologies={mobilTech}
       />
       <TechCard
         title="Software empresarial y de escritorio"
-        subtitle="Sitios web modernos, rápidos, escalables y optimizados para SEO."
+        subtitle="Soluciones robustas para gestión, productividad y automatización en entornos corporativos."
         technologies={softwareTech}
       />
       <TechCard
         title="IA & Blockchain"
-        subtitle="Soluciones con IA, modelos de Machine Learning y desarrollo sobre Blockchain."
+        subtitle="Inteligencia Artificial aplicada a datos y sistemas descentralizados para potenciar la innovación."
         technologies={iaTech}
       />
       <TechCard
         title="Infraestructura"
-        subtitle="Sitios web modernos, rápidos, escalables y optimizados para SEO."
+        subtitle="Entornos en la nube, DevOps y servidores escalables que aseguran disponibilidad 24/7."
         technologies={infraTech}
       />
       <TechCard
         title="Diseño"
-        subtitle="Sitios web modernos, rápidos, escalables y optimizados para SEO."
+        subtitle="Prototipado creativo, diseño UI/UX centrado en el usuario y experiencias digitales memorables."
         technologies={designerTech}
       />
-      {/* Puedes agregar otra card: Back-End, Diseño, etc */}
     </div>
   );
 }

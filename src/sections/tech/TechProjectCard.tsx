@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
 
 interface ProjectCardProps {
   id: number;
@@ -15,49 +16,65 @@ interface ProjectCardProps {
   slug: string;
 }
 
-export default function TechProjectCard({projects}: {projects: ProjectCardProps}) {
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+export default function TechProjectCard({ projects }: { projects: ProjectCardProps }) {
   return (
-    <div className="relative w-full h-[630px] bg-white border border-gray-400 rounded-2xl shadow-lg p-4 flex flex-col justify-between">
+    <motion.section
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      className="w-full h-auto"
+    >
+      <div className="min-h-[500px] max-h-[600px] py-4 border border-colorHover3 rounded-2xl shadow-xl overflow-hidden flex flex-col
+                bg-colorPrimario3/40 backdrop-blur-md transition-transform duration-300 hover:shadow-3xl">
 
-      {/* Título superior izquierdo */}
-      <h4 className="text-lg text-center font-bold text-indigo-950">{projects.company}</h4>
+  {/* Imagen */}
+  <div className="bg-colorPrimarioLogo1 flex justify-center relative w-full h-48 md-tablet:h-56 table-lg:h-64">
+    <Image
+      src={projects.imageSrc}
+      alt={projects.ProjectName}
+      fill
+      style={{ objectFit: "cover" }}
+      className="object-contain transition-transform duration-300 hover:scale-105"
+    />
+  </div>
 
-      {/* Imagen centrada */}
-      <div className="flex justify-center">
-        <Image
-          src={projects.imageSrc}
-          alt={projects.ProjectName}
-          width={500}
-          height={500}
-          className="rounded-xl object-cover"
-        />
-      </div>
+  {/* Contenido principal */}
+  <div className="flex-1 flex flex-col justify-start px-2 mt-2">
+    <h4 className="text-xl md:text-2xl text-center font-bold text-white">
+      {projects.ProjectName}
+    </h4>
 
-      {/* Subtítulo */}
-      <p className="text-sm font-semibold text-gray-700 text-left">
-        {projects.ProjectName} - {projects.location}
-      </p>
+    <p className="text-sm md:text-base text-center text-gray-300 italic mt-1">
+      {projects.company} · {projects.location}
+    </p>
 
-      {/* Descripción */}
-      <div className="flex flex-wrap gap-2 mt-2">
-        {projects.technologies.map((tech) => (
-          <span
-            key={tech}
-            className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-
-      <div className="flex justify-left pb-4">
-        <Link href={`/portfolio/${projects.slug}`}>
-          <button className="bg-blue-200 hover:bg-blue-700 hover:text-white text-blue-500 border-2 border-blue-700 py-2 px-6 rounded-3xl text-sm font-semibold">
-            Ver proyecto
-          </button>
-        </Link>
-      </div>
-
+    <div className="flex justify-center flex-wrap gap-2 mt-4">
+      {projects.technologies.map((tech) => (
+        <span
+          key={tech}
+          className="bg-white/10 text-gray-100 border border-white/20 text-xs font-medium px-4 py-1.5 rounded-full transition-all hover:bg-white/20"
+        >
+          {tech}
+        </span>
+      ))}
     </div>
+
+    {/* Botón empujado hacia abajo */}
+    <div className="mt-auto flex justify-center mb-4">
+      <Link href={`/portfolio/${projects.slug}`}>
+        <button className="bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 hover:opacity-90 text-white transition-all py-2 px-8 rounded-xl text-base md:text-lg font-semibold shadow-md hover:shadow-xl">
+          Ver proyecto
+        </button>
+      </Link>
+    </div>
+  </div>
+</div>
+    </motion.section>
   );
 }

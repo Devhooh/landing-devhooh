@@ -163,4 +163,191 @@ export const ServicesDetails: Record<string, ServicesData> = {
       }
     ]
   },
+
+  "desarrollo-mobile": { 
+    slug: "desarrollo-mobile",
+    name: "Desarrollo Móvil",
+    subtitle: "Creamos aplicaciones móviles intuitivas, seguras y escalables que conectan con tus clientes donde quiera que estén.",
+    description: "Ofrecemos un ciclo completo de servicios de diseño y desarrollo de aplicaciones móviles. Desde la idea inicial hasta la publicación en App Store y Google Play, te acompañamos en cada paso para garantizar que tu aplicación no solo funcione, sino que también ofrezca una experiencia excepcional a tus usuarios.",
+    
+    services: [
+      { icon: "Smartphone", title: "Aplicaciones nativas", subtitle: "Desarrollamos apps optimizadas para iOS y Android con el máximo rendimiento.",
+        list: ["iOS (Swift, Objective-C)", "Android (Kotlin, Java)", "Interfaz fluida y rápida"],
+      },
+      { icon: "Layers", title: "Aplicaciones multiplataforma", subtitle: "Un solo desarrollo que funciona en ambas plataformas.",
+        list: ["React Native", "Flutter", "Menor costo y tiempo de desarrollo"] 
+      },
+      { icon: "PenTool", title: "Diseño centrado en el usuario", subtitle: "Apps visualmente atractivas y fáciles de usar.",
+        list: ["UI moderna y limpia", "UX intuitiva", "Pruebas de usabilidad"] 
+      },
+      { icon: "Zap", title: "Rendimiento optimizado", subtitle: "Nuestras apps funcionan rápido y sin interrupciones.",
+        list: ["Carga veloz", "Consumo eficiente de batería", "Mejor experiencia de usuario"] 
+      },
+      { icon: "Shield", title: "Seguridad avanzada", subtitle: "Protegemos los datos de tus usuarios con altos estándares.",
+        list: ["Encriptación de datos", "Autenticación segura", "Cumplimiento de normativas"] 
+      },
+      { icon: "LifeBuoy", title: "Soporte y mantenimiento", subtitle: "Nos aseguramos de que tu app siga funcionando con el tiempo.",
+        list: ["Actualizaciones periódicas", "Corrección de errores", "Mejoras continuas"] 
+      },
+    ],
+
+    benefits: [
+      { icon: "Users", title: "Conexión con clientes", description: "Tu marca estará siempre en el bolsillo de tus usuarios, lista para interactuar con ellos en cualquier momento."},
+      { icon: "TrendingUp", title: "Impulso a tu negocio", description: "Una app profesional genera confianza y abre nuevas oportunidades de venta y fidelización."},
+      { icon: "Globe", title: "Presencia digital", description: "Con una app en las principales tiendas, tu negocio alcanza mayor visibilidad y prestigio."},
+      { icon: "BarChart", title: "Datos en tiempo real", description: "Obtén métricas de uso y comportamiento para tomar decisiones basadas en datos."},
+      { icon: "Headphones", title: "Soporte personalizado", description: "Te acompañamos antes, durante y después del desarrollo para que tu app siempre crezca contigo."}
+    ],
+
+    servicesData: [
+      { icon: "ShoppingCart", title: "E-commerce móvil", subtitle: "Lleva tu tienda en línea a dispositivos móviles."},
+      { icon: "Utensils", title: "Apps de delivery", subtitle: "Pedidos rápidos y fáciles desde el celular."},
+      { icon: "User", title: "Aplicaciones corporativas", subtitle: "Herramientas internas para empresas."},
+      { icon: "Heart", title: "Salud y bienestar", subtitle: "Apps para fitness, nutrición o telemedicina."},
+      { icon: "GraduationCap", title: "Educación móvil", subtitle: "Cursos, clases y plataformas e-learning."},
+      { icon: "Gamepad2", title: "Entretenimiento", subtitle: "Juegos y apps interactivas."},
+    ],
+
+    stackTech: [
+      { description: "Utilizamos tecnologías modernas para crear aplicaciones móviles rápidas, seguras y escalables.",
+        tech: [
+          { icon: "Smartphone", color: "blue", title: "Multiplataforma", listTech: ["React Native", "Flutter"]},
+          { icon: "Code2", color: "green", title: "Nativo", listTech: ["Kotlin", "Swift", "Java"]},
+          { icon: "Server", color: "purple", title: "Back-End", listTech: ["Node.js", "Firebase", "GraphQL"]}
+        ]
+      }
+    ],
+
+    process: [
+      {
+        number: 1,
+        title: "Análisis inicial",
+        description: "Nos reunimos contigo para entender el objetivo de tu aplicación, el público al que deseas llegar y las funcionalidades clave. Definimos juntos la visión y el propósito de la app."
+      },
+      {
+        number: 2,
+        title: "Planificación",
+        description: "Organizamos el desarrollo en fases claras y priorizamos las funciones más importantes. Definimos plazos realistas y un roadmap con entregas parciales.",
+        points: ["Definición de funcionalidades", "Diseño de arquitectura", "Plan de entregas"]
+      },
+      {
+        number: 3,
+        title: "Diseño UI/UX",
+        description: "Creamos pantallas intuitivas, atractivas y centradas en el usuario. Diseñamos prototipos interactivos para validar la experiencia antes del desarrollo.",
+        points: ["Wireframes", "Prototipos interactivos", "Pruebas de usabilidad"]
+      },
+      {
+        number: 4,
+        title: "Desarrollo",
+        description: "Construimos la aplicación con código limpio y tecnologías modernas. Aseguramos un rendimiento óptimo tanto en iOS como en Android.",
+        points: ["Desarrollo nativo o híbrido", "Integración con APIs", "Optimización de rendimiento"]
+      },
+      {
+        number: 5,
+        title: "Pruebas",
+        description: "Realizamos pruebas exhaustivas en distintos dispositivos y sistemas operativos para asegurar estabilidad, seguridad y una experiencia fluida.",
+        points: ["Pruebas de compatibilidad", "Pruebas de seguridad", "Optimización de velocidad"]
+      },
+      {
+        number: 6,
+        title: "Lanzamiento y soporte",
+        description: "Publicamos tu aplicación en App Store y Google Play, y ofrecemos soporte continuo con actualizaciones y mejoras constantes."
+      }
+    ],
+
+    faq: [
+      {
+        id: 1,
+        question: "¿Cuánto tiempo tarda en desarrollarse una aplicación móvil?",
+        answer: "Depende de la complejidad. Una app sencilla puede tardar de 2 a 3 meses, mientras que proyectos más grandes con múltiples funcionalidades pueden llevar entre 4 y 6 meses o más."
+      },
+      {
+        id: 2,
+        question: "¿La aplicación funcionará tanto en iOS como en Android?",
+        answer: "Sí, desarrollamos tanto apps nativas como multiplataforma. Según tus necesidades y presupuesto, recomendamos la mejor opción para asegurar compatibilidad en ambas plataformas."
+      },
+      {
+        id: 3,
+        question: "¿Se puede actualizar la app después del lanzamiento?",
+        answer: "Por supuesto. Ofrecemos planes de mantenimiento y soporte para agregar nuevas funciones, corregir errores y mantener tu app al día con los cambios en iOS y Android."
+      },
+      {
+        id: 4,
+        question: "¿La aplicación estará optimizada para la seguridad de los datos?",
+        answer: "Sí, implementamos encriptación, autenticación segura y seguimos buenas prácticas de seguridad para proteger la información de tus usuarios."
+      },
+      {
+        id: 5,
+        question: "¿Publican ustedes la app en App Store y Google Play?",
+        answer: "Sí, nosotros nos encargamos del proceso de publicación y te guiamos con todos los requisitos necesarios para que tu aplicación esté disponible en ambas tiendas."
+      }
+    ]
+  },
+
+  "desarrollo-software": { 
+    slug: "desarrollo-software",
+    name: "Desarrollo de Software",
+    subtitle: "Creamos soluciones de software robustas y escalables para impulsar tu negocio.",
+    description: "Ofrecemos un ciclo completo de diseño, desarrollo e integración de software a medida. Ya sea una aplicación empresarial, un sistema interno o una solución multiplataforma, te acompañamos desde la idea inicial hasta la entrega final y el soporte continuo.",
+    services: [
+      { icon: "PenTool", title: "Software a medida", subtitle: "Creamos aplicaciones adaptadas a tus necesidades específicas.",
+        list: ["Soluciones personalizadas","Funcionalidades adaptadas a tu negocio","Diseño centrado en el usuario"]
+      },
+      { icon: "Smartphone", title: "Multiplataforma", subtitle: "Aplicaciones para escritorio, móviles y web desde un mismo núcleo.",
+        list: ["Compatibilidad con distintos sistemas","Experiencia unificada","Desarrollo eficiente"]
+      },
+      { icon: "LifeBuoy", title: "Soporte y mantenimiento", subtitle: "Nos aseguramos de que tu software siga siendo estable y seguro.",
+        list: ["Actualizaciones periódicas","Corrección de errores","Mejoras continuas"]
+      },
+      { icon: "Layers", title: "Escalable y flexible", subtitle: "Tu software crecerá con tu negocio y se adaptará a nuevos retos.",
+        list: ["Arquitectura modular","Preparado para integraciones futuras","Gestión sencilla"]
+      },
+      { icon: "Zap", title: "Alto rendimiento", subtitle: "Optimizamos el software para garantizar rapidez y eficiencia.",
+        list: ["Procesamiento veloz","Uso eficiente de recursos","Experiencia fluida para usuarios"]
+      },
+      { icon: "Shield", title: "Seguridad", subtitle: "Protegemos tu software frente a vulnerabilidades.",
+        list: ["Cifrado de datos","Prácticas de seguridad modernas","Monitoreo constante"]
+      }
+    ],
+    benefits: [
+      { icon: "BarChart", title: "Optimización de procesos", description: "Automatizamos y mejoramos la eficiencia operativa de tu negocio."},
+      { icon: "TrendingUp", title: "Escalabilidad del negocio", description: "Un software bien diseñado impulsa el crecimiento de la empresa."},
+      { icon: "Gift", title: "Experiencia de usuario", description: "Interfaces intuitivas que facilitan la adopción del software por parte de tus equipos."},
+      { icon: "Globe", title: "Alcance global", description: "Soluciones preparadas para usarse en diferentes regiones e idiomas."},
+      { icon: "Headphones", title: "Soporte y asesoría", description: "Te acompañamos en la implementación y evolución de tu software."}
+    ],
+    servicesData: [
+      { icon: "Globe", title: "Aplicaciones Web", subtitle: "Plataformas accesibles desde cualquier navegador."},
+      { icon: "Smartphone", title: "Apps móviles", subtitle: "Desarrollo nativo e híbrido para iOS y Android."},
+      { icon: "Building2", title: "Sistemas empresariales", subtitle: "ERP, CRM y software de gestión a medida."},
+      { icon: "Database", title: "Integraciones", subtitle: "Conexión con APIs y sistemas externos."},
+      { icon: "User", title: "Software interno", subtitle: "Herramientas para optimizar la operación diaria."},
+      { icon: "GraduationCap", title: "Plataformas educativas", subtitle: "Soluciones de e-learning y gestión académica."}
+    ],
+    stackTech: [
+      { description: "Trabajamos con las tecnologías necesarias para construir software moderno, escalable y seguro.",
+        tech: [
+          { icon: "Database", color: "blue", title: "Base de datos", listTech: ["Postgres", "MySQL", "MongoDB"]},
+          { icon: "Server", color: "green", title: "Back-End", listTech: ["Node.js", "Java", "Python", "NestJS"]},
+          { icon: "Laptop", color: "purple", title: "Front-End / Mobile", listTech: ["React", "React Native", "Flutter", "TypeScript"]}
+        ]
+      }
+    ],
+    process: [
+      { number: 1, title: "Reunión Inicial", description: "Analizamos tus objetivos, procesos y requerimientos técnicos. Definimos el problema que el software resolverá."},
+      { number: 2, title: "Planificación", description: "Diseñamos la arquitectura de software y establecemos entregables claros.", points: ["Arquitectura del sistema","Definición de módulos","Plazos de entrega"]},
+      { number: 3, title: "Diseño UI/UX", description: "Creamos prototipos y wireframes para validar la experiencia de usuario.", points: ["Wireframes","Prototipos","Feedback con el cliente"]},
+      { number: 4, title: "Desarrollo", description: "Construimos el software aplicando buenas prácticas de código y metodologías ágiles.", points: ["Metodología ágil","Integraciones con APIs","Código escalable"]},
+      { number: 5, title: "Pruebas", description: "Validamos funcionalidad, rendimiento y seguridad antes de la entrega.", points: ["Pruebas unitarias","Pruebas de carga","Auditorías de seguridad"]},
+      { number: 6, title: "Entrega & Soporte", description: "Implementamos el software en tu infraestructura y damos soporte continuo."}
+    ],
+    faq: [
+      { id: 1, question: "¿Cuánto tiempo tarda en desarrollarse un software?", answer: "Depende del alcance y la complejidad. Proyectos pequeños pueden tomar 1-2 meses, mientras que sistemas grandes requieren varios meses con entregas parciales."},
+      { id: 2, question: "¿El software funcionará en móviles y escritorio?", answer: "Sí, desarrollamos soluciones multiplataforma que funcionan en navegadores, apps móviles y escritorios."},
+      { id: 3, question: "¿Puedo escalar el software en el futuro?", answer: "Sí, diseñamos arquitecturas escalables que permiten agregar nuevas funciones o integraciones."},
+      { id: 4, question: "¿Incluye medidas de seguridad?", answer: "Sí, implementamos cifrado, control de accesos y auditorías para proteger tus datos."},
+      { id: 5, question: "¿Ofrecen soporte después de la entrega?", answer: "Sí, contamos con planes de mantenimiento y soporte técnico continuo."}
+    ]
+  }
+
 };

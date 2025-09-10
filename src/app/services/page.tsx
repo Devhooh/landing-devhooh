@@ -1,55 +1,83 @@
 import CaroulselSection from "@/sections/services/CaroulselSection";
 import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
-import ServicesSection from "@/sections/services/ServicesSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
-import ContactCTA from "@/components/ui/ContactCTA";
 import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
 import FAQSection from "@/sections/portfolio/FAQSection";
 import { faqDataServices } from "@/data/faqDataServices";
 import { projectsData } from "@/data/portfolioData";
+import HeroSlider from "@/sections/services/HeroSlider";
+import CTAServices from "@/sections/services/CTAServices";
+import GarantiasSection from "@/sections/services/GarantiasSection";
+import BeneficiosSection from "@/sections/services/BeneficiosSection";
+import ReviewSection from "@/sections/services/ReviewSection";
 
 export default function Services() {
   return (
-    <div className="flex flex-col gap-10">
-      <ServicesSection/>
+    <div className="flex flex-col">
+      {/* <ServicesHeroSection/> */}
+
+      <HeroSlider/>
+
       <ServicesCardsSection/>
 
-      <div className="w-full py-10 bg-indigo-950/90 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 space-y-10">
-          <div className="flex items-center justify-center py-8 rounded-2xl bg-sky-400">
-            <h3 className="font-extrabold text-3xl table-lg:text-5xl text-center">
-              Servicios que ofrecemos
-            </h3>
-          </div>
+      <div className="w-full bg-white py-16 overflow-hidden">
+        <div className="w-full mx-auto space-y-16">
 
           <CaroulselSection
             title="Desarrollo Personalizado"
+            features={[
+              { icon: "Zap", text: "Rendimiento optimizado" },
+              { icon: "Shield", text: "Seguridad empresarial" },
+              { icon: "Layers", text: "Escalabilidad garantizada" },
+            ]}
             cardData={customDevelopmentCardData}
           />
           <CaroulselSection
             title="Servicios de IA"
+            features={[
+              { icon: "Bot", text: "Automatización de procesos" },
+              { icon: "BarChart3", text: "Análisis predictivo" },
+              { icon: "MessageSquare", text: "Chatbots y asistentes virtuales" },
+            ]}
             cardData={ServicesIACardData}
           />
           <CaroulselSection
             title="Infraestructura y Soporte"
+            features={[
+              { icon: "Cloud", text: "Soluciones en la nube" },
+              { icon: "ShieldCheck", text: "Monitoreo 24/7" },
+              { icon: "Cog", text: "Mantenimiento continuo" },
+            ]}
             cardData={InfraestructureSupportCardData}
           />
           <CaroulselSection
             title="Diseño y QA"
+            features={[
+              { icon: "Palette", text: "Interfaces modernas" },
+              { icon: "FlaskConical", text: "Pruebas automatizadas" },
+              { icon: "Smartphone", text: "Diseño responsive" },
+            ]}
             cardData={DesignerQACardData}
           />
         </div>
       </div>
 
+      <GarantiasSection/>
+
       <ServicesSliderProjects 
-        title="Proyectos que usaron nuestros servicios" 
+        title="Proyectos que usaron nuestros servicios: " 
+        subtitle="Desde software personalizado y aplicaciones móviles hasta inteligencia artificial y diseño web. Cada caso refleja cómo ayudamos a empresas a innovar y crecer."
         projects={projectsData}
         showService={true}
       />
 
-      <FAQSection itemsDate={faqDataServices}/>
+      <BeneficiosSection/>
 
-      <ContactCTA/>
+      <ReviewSection/>
+
+      <CTAServices/>
+
+      <FAQSection itemsDate={faqDataServices}/>
     </div>
   )
 }

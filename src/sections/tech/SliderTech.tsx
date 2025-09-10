@@ -3,7 +3,6 @@ import { IconType } from "react-icons";
 
 interface Logo {
   icon: IconType;
-  color: string,
   alt: string;
 }
 
@@ -12,23 +11,51 @@ interface LogoSliderProps {
   direction?: "left" | "right";
 }
 
-export function SliderTech({logos, direction = "left",}: LogoSliderProps) {
-  const directionLogo = direction === "right" ? "animate-scroll-reverse" : "animate-scroll";
+export function SliderTech({ logos, direction = "left" }: LogoSliderProps) {
+  const directionLogo =
+    direction === "right" ? "animate-scroll-reverse" : "animate-scroll";
 
   // duplicamos logos para loop infinito
   const logosLoop = logos.concat(logos);
 
   return (
-    <div className="overflow-hidden bg-white m-0">
+    <div className="overflow-hidden m-0">
       <div
-        
         className={`flex ${directionLogo} gap-12`}
-        style={{ minWidth: `${logosLoop.length * 10}rem` }} // opcional, asegura que no se corte
+        style={{ minWidth: `${logosLoop.length * 10}rem` }}
       >
-          {logosLoop.map((logo, i) => {
-            const Icon = logo.icon; // asignamos el componente del icono
-            return <Icon key={i} className={`${logo.color} m-2 flex items-center justify-center w-14 h-14 md-tablet:w-16 md-tablet:h-16 table-lg:w-20 table-lg:h-20`} aria-label={logo.alt} />;
-          })}
+        {logosLoop.map((logo, i) => {
+          const Icon = logo.icon;
+          return (
+            <div
+              key={i}
+              className="
+                group relative flex items-center justify-center
+                w-16 h-16 md-tablet:w-20 md-tablet:h-20 table-lg:w-24 table-lg:h-24
+                transition-all duration-300
+              "
+            >
+              {/* Glow animado */}
+              <div
+                className="
+                  absolute inset-0 rounded-full opacity-0 group-hover:opacity-80
+                  blur-lg bg-colorHover2
+                  transition-opacity duration-500
+                "
+              />
+
+              {/* Icono */}
+              <Icon
+                aria-label={logo.alt}
+                className="
+                  relative z-10 text-gray-400 group-hover:text-white
+                  transition-colors duration-300
+                  w-12 h-12 md-tablet:w-14 md-tablet:h-14 table-lg:w-16 table-lg:h-16
+                "
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

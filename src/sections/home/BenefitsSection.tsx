@@ -1,50 +1,180 @@
 "use client";
-import styles from "./BenefitsSection.module.css";
+import { motion } from "framer-motion";
+import { Zap, Shield, Palette, Check } from "lucide-react";
+import Image from "next/image";
+
+// Animación para letras del título
+const letterVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
+// Animación para las cards
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
 
 export function BenefitsSection() {
+  const benefits = [
+  {
+    icon: Zap,
+    title: "Entrega de proyectos optimizada",
+    description:
+      "Implementamos procesos ágiles para que tus proyectos web estén listos a tiempo, sin sacrificar calidad ni funcionalidad.",
+    gradient: "from-colorPrimario5 to-colorPrimario6",
+  },
+  {
+    icon: Shield,
+    title: "Seguridad y estabilidad garantizadas",
+    description:
+      "Desarrollamos soluciones confiables con estándares modernos de seguridad y mantenimiento para proteger tu negocio digital.",
+    gradient: "from-colorPrimario5 to-colorPrimario6",
+  },
+  {
+    icon: Palette,
+    title: "Diseño personalizado y profesional",
+    description:
+      "Cada proyecto se adapta a tu marca y objetivos, con interfaces únicas, atractivas y funcionales para tu audiencia.",
+    gradient: "from-colorPrimario5 to-colorPrimario6",
+  },
+];
+
+const checklistItems = [
+  "Diseño responsive y optimizado para móviles y tablets",
+  "Optimización SEO para mejorar tu visibilidad online",
+  "Hosting confiable y dominio propio configurado",
+  "Panel de administración intuitivo y fácil de usar",
+  "Integración con redes sociales y herramientas de marketing",
+  "Certificado SSL gratuito para mayor seguridad",
+];
+
+  const splitText = (text: string) => text.split("");
+
   return (
-    <section className="bg-white px-6 py-16 md-tablet:px-8 table-lg:px-32 relative">
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-2">
-
-        {/* FILA SUPERIOR DE CÍRCULOS */}
-        <div className="w-full flex justify-between">
-          <div className={`w-32 h-32 md-tablet:w-52 md-tablet:h-52 bg-orange-500 rounded-full flex flex-col items-center justify-center text-white p-4 ${styles.orangeCircle}`}>
-            <h3 className="font-semibold text-sm text-gray-900 md-tablet:text-xl text-center">Entrega rápida</h3>
-            <p className="text-xs md-tablet:text-base text-center mt-1">
-              Tu proyecto listo en tiempo récord sin perder calidad.
-            </p>
-          </div>
-
-          <div className={`w-32 h-32 md-tablet:w-52 md-tablet:h-52 bg-blue-600 rounded-full flex flex-col items-center justify-center text-white p-4 ${styles.blueCircle}`}>
-            <h3 className="font-semibold text-sm text-gray-900 md-tablet:text-xl text-center">Seguro y confiable</h3>
-            <p className="text-xs md-tablet:text-base text-center mt-1">
-              Usamos buenas prácticas y tecnología moderna.
-            </p>
-          </div>
+    <section className="relative bg-gradient-to-b from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 px-4 py-20 md-tablet:px-8 table-lg:px-16">
+      <div className="max-w-[1400px] mx-auto">
+        
+        {/* TÍTULO Y SUBTÍTULO */}
+        <div className="text-center mb-16">
+          <motion.h2
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold leading-tight mb-6"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+          >
+            {splitText("Beneficios de nuestros proyectos").map((letter, idx) => (
+              <motion.span
+                key={idx}
+                className="text-white"
+                variants={letterVariants}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.h2>
+          
+          <motion.p
+            className="text-lg md-tablet:text-xl text-colorHover5 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Descubre por qué miles de clientes confían en nosotros para llevar sus proyectos al siguiente nivel
+          </motion.p>
         </div>
 
-        {/* TEXTO EN EL CENTRO */}
-        <h2 className="text-4xl md-tablet:text-6xl table-lg:text-7xl font-extrabold text-center leading-tight">
-          <span className="text-indigo-900">Beneficios</span>
-          <br />
-          <span className="text-blue-400">inmediatos</span>
-        </h2>
+        {/* CARDS HORIZONTALES */}
+        <div className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              className={`
+                  relative p-6 rounded-2xl bg-gradient-to-br ${benefit.gradient} shadow-[0_0_30px_rgba(103,61,230,0.25)] 
+                  hover:shadow-[0_0_40px_rgba(103,61,230,0.4)] transition-all duration-300`}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+            >
+              <div className="flex flex-col items-start text-left">
+                <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm mb-4">
+                  <benefit.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl md-tablet:text-2xl font-bold text-white mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-colorHover5 leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-        {/* FILA INFERIOR DE CÍRCULOS */}
-        <div className="w-full flex justify-between">
-          <div className={`w-32 h-32 md-tablet:w-52 md-tablet:h-52 bg-red-500 rounded-full flex flex-col items-center justify-center text-white p-4 ${styles.redCircle}`}>
-            <h3 className="font-semibold text-sm text-gray-900 md-tablet:text-xl text-center">100% personalizado</h3>
-            <p className="text-xs md-tablet:text-base text-center mt-1">
-              Nada de plantillas, todo hecho a tu medida.
-            </p>
-          </div>
+        {/* SECCIÓN INFERIOR: LISTA E IMAGEN */}
+        <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
+          
+          {/* BLOQUE DE LISTA */}
+          <motion.div
+            className="space-y-6 text-center table-lg:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl md-tablet:text-4xl font-bold text-white mb-8">
+              Lo que incluye tu proyecto
+            </h3>
+            
+            <ul className="space-y-4 inline-block table-lg:block text-left">
+              {checklistItems.map((item, index) => (
+                <motion.li
+                  key={index}
+                  className="flex items-center gap-4 text-colorHover5 text-lg"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex-shrink-0 p-1 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  <span>{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
 
-          <div className={`w-32 h-32 md-tablet:w-52 md-tablet:h-52 bg-lime-500 rounded-full flex flex-col items-center justify-center text-white p-4 ${styles.greenCircle}`}>
-            <h3 className="font-semibold text-sm text-gray-900 md-tablet:text-xl text-center">Soporte constante</h3>
-            <p className="text-xs md-tablet:text-base text-center mt-1">
-              No te dejamos solo después de la entrega.
-            </p>
-          </div>
+          {/* BLOQUE DE IMAGEN */}
+          <motion.div
+            className="relative flex justify-center table-lg:justify-end mx-5"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative p-6 md-tablet:p-4 table-lg:p-8 rounded-3xl bg-gradient-to-br from-colorSecundario1/20 to-colorSecundario3/20 backdrop-blur-sm border border-white/10 w-fit">
+              {/* Contenedor de imagen con tamaño fijo */}
+              <div className="w-90 h-90 md-tablet:w-[450px] md-tablet:h-[450x] table-lg:w-96 table-lg:h-96 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorSecundario3 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/assets/images/webSoftware.png"
+                  width={500}
+                  height={500}
+                  alt="Desarrollo, Beneficios proyectos"
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              </div>
+              
+              {/* Efectos decorativos */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-colorPrimario6 animate-pulse"></div>
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 rounded-full bg-colorSecundario2 animate-pulse delay-1000"></div>
+            </div>
+          </motion.div>
         </div>
 
       </div>

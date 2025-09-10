@@ -30,34 +30,34 @@ import {
 
 interface TechLogo {
   icon: IconType;
-  color: string;
+  color?: string;
   alt: string;
 }
 
 export const sliderLogoTech: TechLogo[] = [
-  { icon: FaJsSquare, color: "text-gray-400", alt: "javascript"},
-  { icon: FaReact, color:"text-gray-400" , alt: "react" },
-  { icon: SiNextdotjs, color:"text-gray-400", alt: "nextjs" },
-  { icon: SiNestjs, color:"text-gray-400", alt: "nestjs" },
-  { icon: SiTailwindcss, color:"text-gray-400", alt: "tailwind" },
-  { icon: SiKotlin, color:"text-gray-400", alt: "kotlin" },
-  { icon: SiFlutter, color:"text-gray-400", alt: "flutter" },
-  { icon: FaSwift, color:"text-gray-400", alt: "swift" },
-  { icon: SiTypescript, color:"text-gray-400", alt: "typescript" },
-  { icon: FaJava , color:"text-gray-400", alt: "java " },
-  { icon: FaPython, color:"text-gray-400", alt: "python" },
-  { icon: FaAngular, color:"text-gray-400", alt: "angular" },
-  { icon: FaGithub, color:"text-gray-400", alt: "github" },
-  { icon: FaGitAlt, color:"text-gray-400", alt: "git" },
-  { icon: FaNode, color:"text-gray-400", alt: "node" },
-  { icon: SiKubernetes, color:"text-gray-400", alt: "kubernetes" },
-  { icon: SiPostgresql, color:"text-gray-400", alt: "postgresql" },
-  { icon: SiMongodb, color:"text-gray-400", alt: "mongodb" },
-  { icon: FaDocker, color:"text-gray-400", alt: "docker" },
-  { icon: SiVite, color:"text-gray-400", alt: "vite" },
-  { icon: FaAws, color:"text-gray-400", alt: "aws" },
-  { icon: SiVercel, color:"text-gray-400", alt: "vercel" },
-  { icon: SiMysql, color:"text-gray-400", alt: "mysql" },
+  { icon: FaJsSquare, alt: "javascript"},
+  { icon: FaReact,  alt: "react" },
+  { icon: SiNextdotjs, alt: "nextjs" },
+  { icon: SiNestjs, alt: "nestjs" },
+  { icon: SiTailwindcss, alt: "tailwind" },
+  { icon: SiKotlin, alt: "kotlin" },
+  { icon: SiFlutter, alt: "flutter" },
+  { icon: FaSwift, alt: "swift" },
+  { icon: SiTypescript, alt: "typescript" },
+  { icon: FaJava , alt: "java " },
+  { icon: FaPython, alt: "python" },
+  { icon: FaAngular, alt: "angular" },
+  { icon: FaGithub, alt: "github" },
+  { icon: FaGitAlt, alt: "git" },
+  { icon: FaNode, alt: "node" },
+  { icon: SiKubernetes, alt: "kubernetes" },
+  { icon: SiPostgresql, alt: "postgresql" },
+  { icon: SiMongodb, alt: "mongodb" },
+  { icon: FaDocker, alt: "docker" },
+  { icon: SiVite, alt: "vite" },
+  { icon: FaAws, alt: "aws" },
+  { icon: SiVercel, alt: "vercel" },
+  { icon: SiMysql, alt: "mysql" },
 ];
 
 

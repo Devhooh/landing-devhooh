@@ -3,21 +3,60 @@
 import * as Icons from "lucide-react";
 import { LucideProps } from "lucide-react";
 import { ServicesData } from "@/data/ServicesDetails";
+import { motion, Variants } from "framer-motion";
 
 interface BenefitsSectionProps {
   service: ServicesData;
 }
 
+// Variantes para títulos
+const titleVariant: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+// Variantes para las cards
+const cardVariant: Variants = {
+  hidden: { opacity: 0, y: 50, scale: 0.95 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      delay: i * 0.15, // escalonado
+    },
+  }),
+};
+
 export default function ServicesBenefits({ service }: BenefitsSectionProps) {
   return (
-    <section className="p-6 md-tablet:px-8 table-lg:px-12 bg-gray-50">
+    <section className="p-6 md-tablet:px-8 table-lg:px-12 bg-blue-50">
       <div className="w-auto px-auto">
-        <h2 className="text-3xl font-extrabold mb-1 text-center md-tablet:text-left">
-          Beneficios de nuestro servicio de 
-        </h2>
-        <h2 className="text-3xl font-extrabold mb-10 text-center md-tablet:text-left">
-          <span className="text-blue-600">{service.name}</span>
-        </h2>
+        <motion.h2
+          variants={titleVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-3xl font-extrabold mb-1 text-center md-tablet:text-left text-colorPrimario2"
+        >
+          Beneficios de nuestro servicio de
+        </motion.h2>
+
+        <motion.h2
+          variants={titleVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-3xl font-extrabold mb-10 text-center md-tablet:text-left"
+        >
+          <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text underline">{service.name}</span>
+        </motion.h2>
       </div>
 
       <div className="grid grid-cols-1 md-tablet:grid-cols-2 gap-6 table-lg:gap-8">
@@ -28,13 +67,18 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
             >) || Icons.HelpCircle;
 
           return (
-            <div
+            <motion.div
               key={index}
-              className="flex flex-col md-tablet:flex-row items-start md-tablet:items-center bg-white p-6 rounded-2xl shadow-md border border-gray-200 hover:shadow-lg transition"
+              variants={cardVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              custom={index}
+              className="flex flex-col md-tablet:flex-row items-start md-tablet:items-center bg-white p-6 rounded-2xl shadow-md border border-fuchsia-300 hover:shadow-lg transition"
             >
               {/* Icono */}
               <div className="flex-shrink-0 mb-4 md-tablet:mb-0 md-tablet:mr-4">
-                <Icon className="w-10 h-10 text-blue-500" />
+                <Icon className="w-10 h-10 text-colorSecundario3" />
               </div>
 
               {/* Texto */}
@@ -42,7 +86,7 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
                 <h3 className="text-lg font-semibold mb-1">{benefit.title}</h3>
                 <p className="text-gray-600 text-sm">{benefit.description}</p>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

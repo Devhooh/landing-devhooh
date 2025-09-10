@@ -18,6 +18,42 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        colorPrimarioLogo1: "#8159BA", // color principal del logo princpal
+        colorPrimarioLogo2: "#B197D4", // color principal del logo suave
+        colorHover: "#C0ACDC",
+        colorHover2: "#8C85FE",
+        colorHover3: "#D5DFFF", // de hostinger
+        colorHover4: "#CBD2E3", 
+        colorHover5: "#F4F5FF", 
+        colorHover6: "#EBEBFF", 
+
+        colorFondo: "#FFFEFE", // principal de fondo
+        colorPrimario1: "#232323", // color del logo - oscuro suave 1
+        colorPrimario2: "#0A0A0B", // color del logo - oscuro fuerte 1
+        colorPrimario3: "#0D0D0C", // color del logo - oscuro fuerte 2
+        colorPrimario4: "#1C1E21", // color del logo - oscuro suave 2
+
+        colorPrimario5: "#663CE6", // boton de hostinger
+        colorPrimario6: "#734FE7", // color hostionger mas fuerte
+        colorPrimario7: "#8C84FD", // color de hostinger mas suave
+        colorPrimario8: "#8D85FE", // color de hostinger mas suave
+
+        colorPrimario11: "#262730", // color de hostinger mas suave
+        colorPrimario22: "#161619", // color de hostinger mas fuerte
+
+        colorDarkFondo1: "#321A7B", // azul oscuro
+        colorDarkFondo2: "#1E1245", 
+        colorDarkFondo3: "#261559", 
+        colorDarkFondo4: "#221A50", 
+        colorDarkFondo5: "#2E1C6A", // ligeramente suave
+
+        colorSecundario: "#674CC4", // variante 1 del color principal
+        colorSecundario1: "#673DE6", // variante 2 del color principal
+        colorSecundario2: "#7550E7", // variante 3 del color principal
+        colorSecundario3: "#5A29EB", // variante 4 del color principal mas fuerte
+        colorSecundario4: "#5025D1", // variante 5 del color principal
+
+
       },
       keyframes: {
         scroll: {

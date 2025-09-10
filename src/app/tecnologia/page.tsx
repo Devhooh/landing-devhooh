@@ -1,32 +1,31 @@
-import ContactCTA from "@/components/ui/ContactCTA";
-import HeroSection from "@/components/ui/HeroSection";
+import { faqDataTech } from "@/data/faqDataTech";
+import FAQSection from "@/sections/portfolio/FAQSection";
+import CTATech from "@/sections/tech/CTATech";
 import FeaturedSection from "@/sections/tech/FeaturedSection";
+import HeroSectionTech from "@/sections/tech/HeroSectionTech";
 import IntroSection from "@/sections/tech/IntroSection";
 import TechDataSection from "@/sections/tech/TechDataSectionD";
+import TechMetricSection from "@/sections/tech/TechMetricSection";
 import TechProjectSection from "@/sections/tech/TechProjectSection";
 
 export default function Tecnologia() {
   return (
-    <div>
-      <HeroSection 
-        title="La tecnología detrás de nuestras soluciones de vanguardia" 
-        subtitle="Donde los frameworks y la innovación de productos se unen con la experiencia técnica." 
-        cta="Construyamos tu producto" 
-        imageSrc="/assets/images/slide3.png"
-        imageAlt="Ilustración de equipo de desarrollo"
-        ctaLink="/contact" 
-        layout="left"        
-      />
+    <div className="bg-colorFondo">
+      <HeroSectionTech/>
 
       <IntroSection/>
       
       <TechDataSection/>
 
+      <TechMetricSection/>
+
       <FeaturedSection/>
 
       <TechProjectSection/>
 
-      <ContactCTA/>
+      <CTATech/>
+
+      <FAQSection itemsDate={faqDataTech}/>
 
     </div>
   )

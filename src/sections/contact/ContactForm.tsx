@@ -30,12 +30,9 @@ export function ContactForm() {
 
   return (
     <div className="relative">
-      {/* Efectos decorativos de fondo */}
-      {/* <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-colorPrimario5/10 blur-2xl"></div>
-      <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-colorSecundario1/10 blur-2xl"></div> */}
 
       <motion.div
-        className="relative z-10 w-full rounded-3xl bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 text-white p-8 md-tablet:p-10 shadow-[0_0_50px_rgba(103,61,230,0.3)] border border-colorPrimario5/20 backdrop-blur-sm"
+        className="relative z-10 w-full rounded-3xl bg-colorPrimario6 text-white p-8 md-tablet:p-10 shadow-[0_0_50px_rgba(103,61,230,0.3)] border border-colorPrimario5/20 backdrop-blur-sm"
         initial={{ opacity: 0, y: 30, scale: 1 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.1 }}
@@ -64,7 +61,7 @@ export function ContactForm() {
             {splitText("proyecto").map((letter, idx) => (
               <motion.span
                 key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
+                className="text-colorDarkFondo3"
                 variants={letterVariants}
               >
                 {letter}
@@ -80,15 +77,15 @@ export function ContactForm() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
-              <Clock className="w-4 h-4 text-colorPrimario5" />
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorDarkFondo1/50 border border-colorPrimario5/30 backdrop-blur-sm">
+              <Clock className="w-4 h-4 text-white" />
               <span className="text-sm font-semibold text-colorHover5">
                 Respuesta en 24h
               </span>
             </div>
             
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorSecundario1/20 border border-colorSecundario1/30 backdrop-blur-sm">
-              <Shield className="w-4 h-4 text-colorSecundario1" />
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorDarkFondo1/50 border border-colorSecundario1/30 backdrop-blur-sm">
+              <Shield className="w-4 h-4 text-white" />
               <span className="text-sm font-semibold text-colorHover5">
                 Sin compromiso
               </span>
@@ -283,7 +280,7 @@ export function ContactForm() {
           >
             <motion.button
               type="submit"
-              className="group relative w-full py-4 px-8 font-bold text-lg rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white shadow-[0_0_25px_rgba(103,61,230,0.4)] hover:shadow-[0_0_35px_rgba(103,61,230,0.6)] transition-all duration-300 overflow-hidden"
+              className="group relative w-full py-4 px-8 font-bold text-lg rounded-2xl bg-colorDarkFondo1 text-white shadow-[0_0_25px_rgba(103,61,230,0.4)] hover:shadow-[0_0_35px_rgba(103,61,230,0.6)] transition-all duration-300 overflow-hidden"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

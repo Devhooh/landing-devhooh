@@ -48,10 +48,6 @@ export function ContactInfo() {
   return (
     <div className="relative space-y-8">
       
-      {/* Efectos decorativos de fondo */}
-      {/* <div className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-colorPrimario5/5 blur-2xl"></div>
-      <div className="absolute -bottom-20 -right-10 w-40 h-40 rounded-full bg-colorSecundario1/5 blur-2xl"></div> */}
-
       {/* Encabezado principal */}
       <div className="relative z-10 space-y-6 px-3">
         
@@ -134,84 +130,79 @@ export function ContactInfo() {
             label: "Correo electrónico",
             value: "contact@devhooh.com",
             href: "mailto:contact@devhooh.com",
-            gradient: "from-colorPrimario5 to-colorPrimario6",
-            bgGradient: "from-colorPrimario5/10 to-colorPrimario6/10"
           },
           {
             icon: <Phone className="w-6 h-6" />,
             label: "WhatsApp",
             value: "+591 77776666",
             href: "https://wa.me/77776666",
-            gradient: "from-colorSecundario1 to-colorSecundario2",
-            bgGradient: "from-colorSecundario1/10 to-colorSecundario2/10"
           },
           {
             icon: <Clock className="w-6 h-6" />,
             label: "Horarios de atención",
             value: "Lunes a Sábados de 08:00 - 20:00",
             href: null,
-            gradient: "from-colorPrimario7 to-colorPrimario8",
-            bgGradient: "from-colorPrimario7/10 to-colorPrimario8/10"
           },
           {
             icon: <MapPin className="w-6 h-6" />,
             label: "Ubicación",
             value: "Santa Cruz, Bolivia",
             href: null,
-            gradient: "from-colorSecundario3 to-colorSecundario4",
-            bgGradient: "from-colorSecundario3/10 to-colorSecundario4/10"
           }
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            className={`group relative p-6 rounded-2xl bg-gradient-to-br ${item.bgGradient} backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/30 transition-all duration-300 hover:shadow-[0_0_25px_rgba(103,61,230,0.15)]`}
-            variants={contactCardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            custom={i}
-            whileHover={{ y: -4, scale: 1.02 }}
-          >
-            <div className="flex items-start gap-4">
-              {/* Icono animado */}
-              <motion.div
-                className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r ${item.gradient} flex items-center justify-center shadow-lg text-white`}
-                variants={iconFloatVariants}
-                animate="animate"
-                style={{ animationDelay: `${i * 0.2}s` }}
+        ].map((item, i) => {
+          const Wrapper = item.href ? "a" : "div";
+
+          return (
+            <motion.div
+              key={i}
+              className="group relative p-6 rounded-2xl bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10 backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/30 transition-all duration-300 hover:shadow-[0_0_25px_rgba(103,61,230,0.15)]"
+              variants={contactCardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              custom={i}
+              whileHover={{ y: -4, scale: 1.02 }}
+            >
+              <Wrapper
+                href={item.href || undefined}
+                target={item.href ? "_blank" : undefined}
+                rel={item.href ? "noopener noreferrer" : undefined}
+                className="flex items-start gap-4"
               >
-                {item.icon}
-              </motion.div>
+                {/* Icono animado */}
+                <motion.div
+                  className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg text-white"
+                  variants={iconFloatVariants}
+                  animate="animate"
+                  style={{ animationDelay: `${i * 0.2}s` }}
+                >
+                  {item.icon}
+                </motion.div>
 
-              <div className="flex-grow">
-                <h4 className="font-bold text-colorPrimario2 text-lg mb-1">
-                  {item.label}
-                </h4>
-                
-                {item.href ? (
-                  <Link
-                    href={item.href}
-                    className="text-colorPrimario1/80 font-medium hover:text-colorPrimario5 transition-all duration-300 group-hover:text-colorPrimario5"
-                  >
-                    {item.value}
-                  </Link>
-                ) : (
-                  <p className="text-colorPrimario1/80 font-medium">
-                    {item.value}
-                  </p>
+                <div className="flex-grow">
+                  <h4 className="font-bold text-colorPrimario2 text-lg mb-1">
+                    {item.label}
+                  </h4>
+
+                  {item.href ? (
+                    <div className="text-colorPrimario1/80 font-medium hover:text-colorPrimario5 transition-all duration-300 group-hover:text-colorPrimario5">
+                      {item.value}
+                    </div>
+                  ) : (
+                    <p className="text-colorPrimario1/80 font-medium">
+                      {item.value}
+                    </p>
+                  )}
+                </div>
+
+                {/* Indicador de enlace */}
+                {item.href && (
+                  <ArrowRight className="w-5 h-5 text-colorPrimario5/60 group-hover:text-colorPrimario5 group-hover:translate-x-1 transition-all duration-300" />
                 )}
-              </div>
-
-              {/* Indicador de enlace */}
-              {item.href && (
-                <ArrowRight className="w-5 h-5 text-colorPrimario5/60 group-hover:text-colorPrimario5 group-hover:translate-x-1 transition-all duration-300" />
-              )}
-            </div>
-
-            {/* Efecto decorativo */}
-            {/* <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-30 group-hover:opacity-60 transition-opacity duration-300"></div> */}
-          </motion.div>
-        ))}
+              </Wrapper>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Call to action adicional */}

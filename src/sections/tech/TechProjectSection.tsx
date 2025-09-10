@@ -30,11 +30,23 @@ export default function TechProjectSection() {
           viewport={{ once: true }}
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
         >
-          {splitText("Proyectos con nuestra tecnología:").map((letter, idx) => (
-            <motion.span key={idx} variants={letterVariants}>
-              {letter}
-            </motion.span>
-          ))}
+          {splitText("Proyectos con  ").map((letter, idx) => (
+          <motion.span
+            key={idx}
+            variants={letterVariants}
+          >
+            {letter}
+          </motion.span>
+        ))}
+        {splitText("nuestra tecnología:").map((letter, idx) => (
+          <motion.span
+            key={idx + 100}
+            className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
+            variants={letterVariants}
+          >
+            {letter}
+          </motion.span>
+        ))}
         </motion.h2>
 
         {/* Subtítulo */}

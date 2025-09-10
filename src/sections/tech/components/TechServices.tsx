@@ -230,7 +230,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Settings className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold text-lg">
               Especialistas en {name} con experiencia comprobada

@@ -1,21 +1,120 @@
+// "use client";
+
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import { Navigation } from "swiper/modules";
+// import ServicesProjects from "./ServicesProjects";
+// import { Project } from "@/data/portfolioData";
+// import { motion, Variants } from "framer-motion";
+// import { ArrowLeft, ArrowRight } from "lucide-react";
+
+
+// interface ServicesSliderProjectsProps {
+//   projects: Project[];
+//   title?: string;
+//   subtitle?: string;
+//   showService:boolean;
+// }
+
+// const fadeUpTitle: Variants = {
+//   hidden: { opacity: 0, y: 50 },
+//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+// };
+
+
+// export function ServicesSliderProjects({
+//   projects,
+//   title,
+//   subtitle,
+//   showService = true,
+// }: ServicesSliderProjectsProps) {
+//   const limit = 5;
+//   const displayedProjects = projects.slice(0, limit);
+
+//   return (
+//     <section className="py-10 mx-auto w-full">
+//       <div className="text-left mb-8 mx-8 tablet-md:mx-12">
+//         <motion.h2
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true }}
+//           variants={fadeUpTitle}
+//           className="text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2"
+//         >
+//           {title}
+//         </motion.h2>
+
+//         {subtitle && (
+//           <motion.p
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             variants={fadeUpTitle}
+//             className="mt-2 text-base md-tablet:text-lg text-gray-600 max-w-3xl"
+//           >
+//             {subtitle}
+//           </motion.p>
+//         )}
+
+//       </div>
+
+//       <div className="mx-5 tablet-md:mx-10">
+//         <Swiper
+//           modules={[Navigation]}
+//           slidesPerView={1.05}
+//           spaceBetween={25}
+//           navigation={{
+//             nextEl: ".swiper-button-next-custom",
+//             prevEl: ".swiper-button-prev-custom",
+//           }}
+//           loop
+//           pagination={{ clickable: true }}
+//           breakpoints={{
+//             550: { slidesPerView: 1.2, spaceBetween: 25 },
+//             950: { slidesPerView: 3, spaceBetween: 30 },
+//           }}
+//           className="px-2 md-tablet:px-6"
+//         >
+//           {displayedProjects.map((project, index) => (
+//             <SwiperSlide key={project.id} className="flex my-12 px-1 md-tablet:px-2">
+//               <ServicesProjects project={project} showService={showService} index={index} />
+//             </SwiperSlide>
+//           ))}
+
+//           {/* Botones custom */}
+//           <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/40 p-3 rounded-full">
+//             <ArrowLeft className="w-6 h-6 text-white" />
+//           </div>
+//           <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/40 p-3 rounded-full">
+//             <ArrowRight className="w-6 h-6 text-white" />
+//           </div>
+
+//         </Swiper>
+//       </div>
+//     </section>
+//   );
+// }
+
+
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import ServicesProjects from "./ServicesProjects";
 import { Project } from "@/data/portfolioData";
 import { motion, Variants } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-
+import { ArrowLeft, ArrowRight, Trophy, Folder, Sparkles } from "lucide-react";
 
 interface ServicesSliderProjectsProps {
   projects: Project[];
   title?: string;
   subtitle?: string;
-  showService:boolean;
+  showService: boolean;
 }
 
 const fadeUpTitle: Variants = {
@@ -23,6 +122,10 @@ const fadeUpTitle: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+const letterVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
 
 export function ServicesSliderProjects({
   projects,
@@ -30,68 +133,186 @@ export function ServicesSliderProjects({
   subtitle,
   showService = true,
 }: ServicesSliderProjectsProps) {
-  const limit = 5;
+  const limit = 6;
   const displayedProjects = projects.slice(0, limit);
+  const splitText = (text: string) => text.split("");
 
   return (
-    <section className="py-10 mx-auto w-full">
-      <div className="text-left mb-8 mx-8 tablet-md:mx-12">
-        <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUpTitle}
-          className="text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2"
-        >
-          {title}
-        </motion.h2>
+    <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
 
-        {subtitle && (
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
+      <div className="relative z-10 max-w-[1600px] mx-auto px-4">
+        
+        {/* Encabezado mejorado */}
+        <div className="text-center mb-16">
+          
+          {/* Badge superior */}
+          <motion.div
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            variants={fadeUpTitle}
-            className="mt-2 text-base md-tablet:text-lg text-gray-600 max-w-3xl"
           >
-            {subtitle}
-          </motion.p>
-        )}
+            <Trophy className="w-5 h-5 text-colorPrimario5" />
+            <span className="text-colorPrimario5 font-semibold">Nuestra experiencia</span>
+          </motion.div>
 
-      </div>
+          {/* Título con animación letra por letra */}
+          {title && (
+            <motion.h2
+              className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+            >
+              {splitText(title).map((letter, idx) => {
+                const isHighlighted = title.includes('experiencia') && idx > title.indexOf('experiencia') - 1 && idx < title.indexOf('experiencia') + 'experiencia'.length;
+                return (
+                  <motion.span
+                    key={idx}
+                    className={isHighlighted ? "text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" : "text-colorPrimario2"}
+                    variants={letterVariants}
+                  >
+                    {letter}
+                  </motion.span>
+                );
+              })}
+            </motion.h2>
+          )}
 
-      <div className="mx-5 tablet-md:mx-10">
-        <Swiper
-          modules={[Navigation]}
-          slidesPerView={1.05}
-          spaceBetween={25}
-          navigation={{
-            nextEl: ".swiper-button-next-custom",
-            prevEl: ".swiper-button-prev-custom",
-          }}
-          loop
-          pagination={{ clickable: true }}
-          breakpoints={{
-            550: { slidesPerView: 1.2, spaceBetween: 25 },
-            950: { slidesPerView: 3, spaceBetween: 30 },
-          }}
-          className="px-2 md-tablet:px-6"
+          {/* Subtítulo mejorado */}
+          {subtitle && (
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUpTitle}
+              className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-4xl mx-auto leading-relaxed mb-8"
+            >
+              {subtitle}
+            </motion.p>
+          )}
+
+          {/* Estadísticas */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-6 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
+              <div className="text-2xl font-bold text-colorPrimario5">{displayedProjects.length}+</div>
+              <div className="text-sm text-colorPrimario1/70">Proyectos destacados</div>
+            </div>
+            
+            <div className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
+              <div className="text-2xl font-bold text-colorPrimario5">100%</div>
+              <div className="text-sm text-colorPrimario1/70">Casos de éxito</div>
+            </div>
+            
+            <div className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
+              <div className="text-2xl font-bold text-colorPrimario5">5+</div>
+              <div className="text-sm text-colorPrimario1/70">Años de trayectoria</div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Slider mejorado */}
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
         >
-          {displayedProjects.map((project, index) => (
-            <SwiperSlide key={project.id} className="flex mb-12 px-1 md-tablet:px-2">
-              <ServicesProjects project={project} showService={showService} index={index} />
-            </SwiperSlide>
-          ))}
+          
+          {/* Contenedor del slider con glassmorphism */}
+          <div className="relative p-6 rounded-3xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
+            
+            {/* Efectos decorativos del contenedor */}
+            <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40"></div>
+            <div className="absolute bottom-6 left-6 w-2 h-2 rounded-full bg-gradient-to-r from-colorSecundario3 to-colorSecundario4 opacity-50"></div>
 
-          {/* Botones custom */}
-          <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/40 p-3 rounded-full">
-            <ArrowLeft className="w-6 h-6 text-white" />
-          </div>
-          <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/40 p-3 rounded-full">
-            <ArrowRight className="w-6 h-6 text-white" />
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              slidesPerView={1.1}
+              spaceBetween={20}
+              navigation={{
+                nextEl: ".swiper-button-next-custom",
+                prevEl: ".swiper-button-prev-custom",
+              }}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              loop={displayedProjects.length > 3}
+              breakpoints={{
+                550: { slidesPerView: 1.3, spaceBetween: 25 },
+                750: { slidesPerView: 2.1, spaceBetween: 25 },
+                950: { slidesPerView: 3, spaceBetween: 30 },
+              }}
+              className="px-4 py-8"
+            >
+              {displayedProjects.map((project, index) => (
+                <SwiperSlide key={project.id} className="h-auto">
+                  <ServicesProjects 
+                    project={project} 
+                    showService={showService} 
+                    index={index} 
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Botones de navegación mejorados */}
+            <div className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer group">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <ArrowLeft className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            
+            <div className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer group">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario2 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                <ArrowRight className="w-6 h-6 text-white" />
+              </div>
+            </div>
           </div>
 
-        </Swiper>
+          {/* Indicador de slider */}
+          <motion.div
+            className="text-center mt-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-colorSecundario1/10 border border-colorSecundario1/20">
+              <Folder className="w-4 h-4 text-colorSecundario1 flex-shrink-0" />
+              <span className="text-colorSecundario1 font-semibold text-sm">
+                Desliza para ver más proyectos
+              </span>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Call to action final */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
+            <Sparkles className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
+            <span className="text-colorPrimario5 font-semibold text-lg">
+              Cada proyecto es una nueva oportunidad de innovar
+            </span>
+            <Trophy className="w-6 h-6 text-colorSecundario1 flex-shrink-0" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

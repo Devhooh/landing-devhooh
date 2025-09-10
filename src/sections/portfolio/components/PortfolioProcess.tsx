@@ -1,6 +1,7 @@
 "use client"
 import { Project } from "@/data/portfolioDetails";
 import { motion, Variants } from "framer-motion";
+import { Cog, CheckCircle, CodeXml  } from "lucide-react";
 
 interface ChallengeSectionProps {
   project: Project;
@@ -10,80 +11,215 @@ interface ChallengeSectionProps {
 const containerVariants: Variants = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
   },
 };
 
 // Cada card
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 50, scale: 0.98 },
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
-  // El texto saldra uno por uno
 const letterVariants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 }
+};
+
+const listVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const listItemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.3 } }
 };
 
 const splitText = (text: string) => text.split("");
 
 export default function PortfolioProcess({ project }: ChallengeSectionProps) {
   return (
-    <section className="py-16 px-4">
-
-      <motion.h2
-        className="text-3xl font-bold mb-10 text-center text-blue-950 tablet-md:text-4xl"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.05} } }}
-      >
-        {splitText("Proceso de Desarrollo").map((letter, idx) => (
-          <motion.span key={idx} variants={letterVariants}>
-            {letter}
-          </motion.span>
-        ))}
-      </motion.h2>
-
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.1 }}
-        className="
-          grid gap-6 justify-center md-tablet:grid-cols-2 table-lg:grid-cols-3 max-w-6xl mx-auto p-5 rounded-3xl
-          bg-gradient-to-tr from-purple-800 via-purple-200 to-purple-800 border border-purple-300"
-      >
-        {project.process.map((proceso) => (
-          <motion.div 
-            variants={cardVariants}
-            key={proceso.id}
+    <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
+        
+        {/* Encabezado mejorado */}
+        <div className="text-center mb-16">
+          
+          {/* Badge superior */}
+          <motion.div
             className="
-              bg-fuchsia-50 shadow-md rounded-2xl p-6 
-              border border-fuchsia-300
-              hover:shadow-lg transition-shadow
-              flex flex-col items-center text-center"
+              inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
-            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-fuchsia-500 text-white text-lg font-bold mb-4">
-              {proceso.id}
-            </div>
-            <h3 className="text-xl font-semibold text-blue-950 mb-4">{proceso.title}</h3>
-            <ul className="text-gray-600 text-sm mx-3 list-disc text-left">
-              {proceso.process.map((items, idx) => (
-                <li key={idx} className="pb-3">
-                  {items}
-                </li>
-              ))}
-            </ul>
+            <Cog className="w-5 h-5 text-colorPrimario5" />
+            <span className="text-colorPrimario5 font-semibold">Metodología aplicada</span>
           </motion.div>
-        ))}
-      </motion.div>
+
+          {/* Título con animación letra por letra */}
+          <motion.h2
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+          >
+            {splitText("Proceso de ").map((letter, idx) => (
+              <motion.span
+                key={idx}
+                className="text-colorPrimario2"
+                variants={letterVariants}
+              >
+                {letter}
+              </motion.span>
+            ))}
+            {splitText("Desarrollo").map((letter, idx) => (
+              <motion.span
+                key={idx + 100}
+                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
+                variants={letterVariants}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.h2>
+
+          <motion.p
+            className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            La metodología paso a paso que seguimos para garantizar el éxito de cada proyecto
+          </motion.p>
+        </div>
+
+        {/* Contenedor principal mejorado */}
+        <div className="relative p-8 rounded-3xl 
+          bg-gradient-to-br from-colorDarkFondo2/20 via-colorDarkFondo3/20 to-colorDarkFondo4/20 
+          backdrop-blur-sm border border-colorPrimario5/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
+          
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid gap-8 tablet-md:grid-cols-2 table-lg:grid-cols-3 justify-items-center"
+          >
+            {project.process.map((proceso) => {
+
+              return (
+                <motion.div 
+                  variants={cardVariants}
+                  key={proceso.id}
+                  className={`
+                    group relative w-full max-w-sm p-8 rounded-3xl 
+                    bg-colorFondo/80 backdrop-blur-sm
+                    border-2 border-white/20 hover:border-colorPrimario5/40
+                    shadow-[0_0_20px_rgba(0,0,0,0.05)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]
+                    transition-all duration-300 flex flex-col
+                  `}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                >
+                  
+                  {/* Efectos decorativos de la card */}
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
+                  
+                  {/* Badge numerado superior */}
+                  <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white font-bold text-lg flex items-center justify-center shadow-lg">
+                    {proceso.id}
+                  </div>
+
+                  {/* Icono principal */}
+                  <div className="flex justify-center mb-6">
+                    <motion.div 
+                      className={`
+                        w-16 h-16 rounded-2xl 
+                        bg-gradient-to-r from-colorPrimario5 to-colorPrimario6
+                        flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
+                      whileHover={{ rotate: 5, scale: 1.1 }}
+                    >
+                      <CodeXml  className="w-8 h-8 text-white" />
+                    </motion.div>
+                  </div>
+
+                  {/* Título */}
+                  <h3 className="text-xl md-tablet:text-2xl font-bold text-colorPrimario2 mb-6 text-center group-hover:text-colorPrimario5 transition-colors duration-300">
+                    {proceso.title}
+                  </h3>
+
+                  {/* Lista de procesos mejorada */}
+                  <motion.div
+                    className="flex-grow"
+                    variants={listVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                  >
+                    <div className="space-y-3">
+                      {proceso.process.map((item, idx) => (
+                        <motion.div
+                          key={idx}
+                          className="flex items-start gap-3 p-3 rounded-xl bg-colorHover4 border border-white/10 hover:bg-colorHover3 transition-all duration-300"
+                          variants={listItemVariants}
+                        >
+                          <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
+                            <CheckCircle className="w-3 h-3 text-white" />
+                          </div>
+                          <span className="text-colorPrimario1/80 text-sm leading-relaxed">
+                            {item}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Badge de estado */}
+                  <div className="inline-flex items-center gap-2 mt-6 px-4 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm w-fit mx-auto">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    <span className="text-green-600 font-semibold text-xs">
+                      Fase completada
+                    </span>
+                  </div>
+
+                  {/* Efecto de brillo en hover */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+
+        {/* Call to action final */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+            <CheckCircle className="w-6 h-6 text-green-500" />
+            <span className="text-colorPrimario5 font-semibold text-lg">
+              Metodología probada y exitosa
+            </span>
+            <CodeXml  className="w-6 h-6 text-colorPrimario5" />
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

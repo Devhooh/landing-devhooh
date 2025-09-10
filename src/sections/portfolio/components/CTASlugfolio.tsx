@@ -30,7 +30,7 @@ export default function CTATech() {
       {/* Contenedor */}
       <div className="
         relative z-10 mx-5 tablet-md:mx-10 px-4 tablet-md:px-10 py-10 rounded-2xl shadow-xl 
-        bg-colorHover2/70 backdrop-blur-lg text-center">
+        bg-colorHover3 backdrop-blur-lg text-center">
         
         {/* Texto principal */}
         <motion.h2
@@ -40,7 +40,8 @@ export default function CTATech() {
           viewport={{ once: true }}
           className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight mb-4"
         >
-          ¿Necesitas una solución similar?
+          ¿Necesitas una 
+          <span className="text-colorPrimario5"> solución similar?</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -95,7 +96,7 @@ export default function CTATech() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               whileHover={{ scale: 1.05 }}
-              className="px-8 py-4 font-bold text-lg rounded-xl border border-white/30 text-white shadow-md hover:bg-white/10 transition-all duration-500"
+              className="px-8 py-4 font-bold text-lg rounded-xl border border-white/30 text-colorPrimario5 shadow-md hover:bg-white/10 transition-all duration-500"
             >
               Ver portafolio
             </motion.button>

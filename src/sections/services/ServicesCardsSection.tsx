@@ -1,6 +1,6 @@
 "use client";
 
-import { Lightbulb, Rocket, Repeat } from "lucide-react";
+import { Lightbulb, Rocket, Repeat, Sparkles, Target, Zap } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 // Variantes para animaciones
@@ -41,6 +41,14 @@ export default function ServicesCardsSection() {
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl
               "
             >
+              {/* Efectos decorativos */}
+              <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-white opacity-70"></div> 
+
+              {/* Badge numerado */}
+              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white font-bold text-sm flex items-center justify-center shadow-lg">
+                {String(1).padStart(2, '0')}
+              </div>
+
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
                 <div className="bg-colorHover2 p-6 rounded-full flex-shrink-0">
                   <Lightbulb className="h-10 w-10 text-white" />
@@ -50,6 +58,14 @@ export default function ServicesCardsSection() {
                   <p className="text-lg md-tablet:text-xl leading-snug text-gray-200">
                     Construimos la presencia digital de tu startup, prototipos y MVPs funcionales.
                   </p>
+
+                  {/* Badge de especialización */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1 mt-5 rounded-full bg-white/20 border border-white/30">
+                    <Sparkles className="w-3 h-3 text-white" />
+                    <span className="text-white font-semibold text-xs">
+                      Servicio garantizado
+                    </span>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -68,15 +84,33 @@ export default function ServicesCardsSection() {
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl
               "
             >
+
+              {/* Efectos decorativos */}
+              <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-white opacity-70"></div> 
+
+              {/* Badge numerado */}
+              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white font-bold text-sm flex items-center justify-center shadow-lg">
+                {String(2).padStart(2, '0')}
+              </div>
+
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
                 <div className="bg-colorHover2 p-6 rounded-full flex-shrink-0">
                   <Rocket className="h-10 w-10 text-white" />
                 </div>
+
                 <div>
                   <h3 className="text-2xl font-semibold mb-1 text-white">Buscas crecimiento</h3>
                   <p className="text-lg md-tablet:text-xl leading-snug text-gray-200">
                     Desarrollamos soluciones web y móviles robustas para PyMEs, diseñadas para escalar y optimizar procesos.
                   </p>
+
+                  {/* Badge de especialización */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1 mt-5 rounded-full bg-white/20 border border-white/30">
+                    <Sparkles className="w-3 h-3 text-white" />
+                    <span className="text-white font-semibold text-xs">
+                      Servicio garantizado
+                    </span>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -95,6 +129,15 @@ export default function ServicesCardsSection() {
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl
               "
             >
+
+              {/* Efectos decorativos */}
+              <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-white opacity-70"></div>  
+
+              {/* Badge numerado */}
+              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white font-bold text-sm flex items-center justify-center shadow-lg">
+                {String(3).padStart(2, '0')}
+              </div>
+
               <div className="flex flex-col items-center text-center gap-4 table-lg:flex-row table-lg:items-start table-lg:text-left">
                 <div className="bg-colorHover2 p-6 rounded-full flex-shrink-0">
                   <Repeat className="h-10 w-10 text-white" />
@@ -104,6 +147,14 @@ export default function ServicesCardsSection() {
                   <p className="text-lg md-tablet:text-xl leading-snug text-gray-200">
                     Renovamos tu plataforma, añadimos nuevas funcionalidades y optimizamos su rendimiento para que sea más veloz.
                   </p>
+
+                  {/* Badge de especialización */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1 mt-5 rounded-full bg-white/20 border border-white/30">
+                    <Sparkles className="w-3 h-3 text-white" />
+                    <span className="text-white font-semibold text-xs">
+                      Servicio garantizado
+                    </span>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -121,7 +172,7 @@ export default function ServicesCardsSection() {
               ¿En qué etapa se encuentra 
               <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> tu proyecto?</span>
             </h2>
-            <p className="text-xl md-tablet:text-2xl font-medium text-gray-700 mb-8 mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-2xl font-semibold text-gray-700 mb-8 mx-auto table-lg:mx-0">
               No importa si estás dando los primeros pasos o buscas escalar. 
               <span className="text-colorSecundario4"> En Devhooh, </span>
               adaptamos nuestros servicios para
@@ -130,19 +181,21 @@ export default function ServicesCardsSection() {
           </motion.div>
         </div>
 
+        {/* Call to action final */}
         <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
+          className="relative z-10 text-center mt-20"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="
-            inline-flex items-center gap-2 px-6 py-3 rounded-full text-2xl font-semibold
-            bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">
-            <span className="text-colorPrimario5 font-semibold">
+          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl
+            bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20 backdrop-blur-sm">
+            <Target className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
+            <span className="text-colorPrimario5 font-semibold text-lg md-tablet:text-2xl">
               Trabajemos en tu próximo proyecto ahora!
             </span>
+            <Zap className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>
 

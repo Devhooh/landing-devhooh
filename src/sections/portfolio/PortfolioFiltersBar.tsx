@@ -44,7 +44,7 @@ export default function PortfolioFiltersBar({
 
   return (
     <motion.div
-      className="bg-colorSecundario4 shadow-2xl rounded-xl flex flex-col md-tablet:flex-row gap-4 items-center mb-6 p-6 mx-2 md-tablet:mx-8"
+      className="bg-colorSecundario4 shadow-2xl rounded-xl flex flex-col tablet-md:flex-row gap-4 items-center mb-6 p-6 mx-2 md-tablet:mx-4"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"

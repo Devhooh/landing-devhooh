@@ -6,6 +6,7 @@ import { projectsData} from "@/data/portfolioData";
 
 import PortfolioFiltersBar from "./PortfolioFiltersBar";
 import PortfolioCardsGrid from "./PortfolioCardsGrid";
+import { ArrowRight, Filter, Folder, Sparkles } from "lucide-react";
 
 export default function PortfolioFilters() {
   const [selectedProject, setSelectedProject] = useState("Todos");
@@ -22,49 +23,185 @@ export default function PortfolioFilters() {
   });
 
   return (
-    <div className="bg-white w-full max-w-[1550px] mx-auto">
-      
-      {/* Título */}
-      <section className="bg-colorHover3 py-5 my-10 px-2 mx-4 tablet-md:mx-8 rounded-2xl">
-        <div className="mb-6 mx-2 md-tablet:mx-8">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario2"
-          >
-            Vea cómo Devhooh ayudó
-          </motion.h2>
+    <div className="relative bg-white w-full max-w-[1550px] mx-auto overflow-hidden">
+  
+  {/* Sección del título mejorada */}
+  <section className="relative z-10 pb-20 pt-10 mx-4 md-tablet:mx-8">
+    
+    {/* Badge superior */}
+    <motion.div
+      className="flex justify-center mb-8"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
+        <Folder className="w-5 h-5 text-colorPrimario5" />
+        <span className="text-colorPrimario5 font-semibold">Casos de éxito</span>
+      </div>
+    </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-gray-600 mt-2 text-lg md-tablet:text-xl"
-          >
-            a sus clientes a lograr su visión de innovación digital.
-          </motion.p>
+    {/* Contenedor principal con glassmorphism */}
+    <div className="relative p-4 md-tablet:p-10 rounded-3xl bg-gradient-to-br from-colorHover3 to-colorHover5 backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
+      
+      {/* Efectos decorativos del contenedor */}
+      <div className="absolute top-6 right-6 w-4 h-4 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-30"></div>
+      <div className="absolute bottom-6 left-6 w-3 h-3 rounded-full bg-gradient-to-r from-colorSecundario3 to-colorSecundario4 opacity-40"></div>
+
+      <div className="text-center mb-12">
+        
+        {/* Título con animación letra por letra */}
+        <motion.h2
+          className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{ 
+            hidden: {}, 
+            show: { transition: { staggerChildren: 0.03 } } 
+          }}
+        >
+          {["Vea", " ", "cómo", " ", "Devhooh", " ", "ayudó"].map((word, wordIdx) => (
+            <span key={wordIdx}>
+              {word === " " ? " " : 
+                word.split("").map((letter, letterIdx) => (
+                  <motion.span
+                    key={letterIdx}
+                    className={wordIdx === 4 ? "text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" : "text-colorPrimario2"}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      show: { opacity: 1, y: 0 }
+                    }}
+                  >
+                    {letter}
+                  </motion.span>
+                ))
+              }
+            </span>
+          ))}
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto leading-relaxed mb-8"
+        >
+          a sus clientes a lograr su visión de{" "}
+          <span className="font-bold text-colorPrimario5">
+            innovación digital
+          </span>{" "}
+          y transformar sus ideas en soluciones exitosas.
+        </motion.p>
+
+        {/* Estadísticas rápidas */}
+        <motion.div
+          className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
+            <div className="text-2xl font-bold text-colorPrimario5 mb-1">20+</div>
+            <div className="text-sm text-colorPrimario1/70">Proyectos exitosos</div>
+          </div>
+          
+          <div className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
+            <div className="text-2xl font-bold text-colorPrimario5 mb-1">15+</div>
+            <div className="text-sm text-colorPrimario1/70">Países atendidos</div>
+          </div>
+          
+          <div className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
+            <div className="text-2xl font-bold text-colorPrimario5 mb-1">98%</div>
+            <div className="text-sm text-colorPrimario1/70">Satisfacción</div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Barra de filtros mejorada */}
+      <motion.div
+        className="relative"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
+        viewport={{ once: true }}
+      >
+        {/* Encabezado de filtros */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
+            <Filter className="w-4 h-4 text-white" />
+          </div>
+          <h3 className="text-xl font-bold text-colorPrimario2">
+            Filtrar proyectos
+          </h3>
+          <div className="flex-grow h-px bg-gradient-to-r from-colorPrimario5/20 to-transparent"></div>
         </div>
 
-        {/* Barra de filtros */}
-        <PortfolioFiltersBar
-          projectsData={projectsData}
-          selectedProject={selectedProject}
-          setSelectedProject={setSelectedProject}
-          selectedCountry={selectedCountry}
-          setSelectedCountry={setSelectedCountry}
-          selectedService={selectedService}
-          setSelectedService={setSelectedService}
-          selectedTechnology={selectedTechnology}
-          setSelectedTechnology={setSelectedTechnology}
-        />
-      </section>
+        {/* Contenedor de filtros con efectos */}
+        <div className="relative rounded-2xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/20">
+          <PortfolioFiltersBar
+            projectsData={projectsData}
+            selectedProject={selectedProject}
+            setSelectedProject={setSelectedProject}
+            selectedCountry={selectedCountry}
+            setSelectedCountry={setSelectedCountry}
+            selectedService={selectedService}
+            setSelectedService={setSelectedService}
+            selectedTechnology={selectedTechnology}
+            setSelectedTechnology={setSelectedTechnology}
+          />
+        </div>
+      </motion.div>
 
-      {/* Cards filtradas */}
-      <PortfolioCardsGrid filteredProjects={filteredProjects} />
+      {/* Indicador de resultados */}
+      <motion.div
+        className="text-center mt-6"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
+        viewport={{ once: true }}
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-colorSecundario1/10 border border-colorSecundario1/20">
+          <div className="w-2 h-2 rounded-full bg-colorSecundario1 animate-pulse"></div>
+          <span className="text-colorSecundario1 font-semibold text-sm">
+            Mostrando {filteredProjects.length} proyecto{filteredProjects.length !== 1 ? 's' : ''}
+          </span>
+        </div>
+      </motion.div>
     </div>
+  </section>
+
+  {/* Cards filtradas mejoradas */}
+  <motion.div
+    className="relative z-10 px-4 md-tablet:px-8 pb-20"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.3 }}
+    viewport={{ once: true }}
+  >
+    <PortfolioCardsGrid filteredProjects={filteredProjects} />
+  </motion.div>
+
+  {/* Call to action final */}
+  <motion.div
+    className="relative z-10 text-center pb-16"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.8 }}
+    viewport={{ once: true }}
+  >
+    <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
+      <Sparkles className="w-6 h-6 text-colorPrimario5" />
+      <span className="text-colorPrimario5 font-semibold text-lg">
+        ¿Tu proyecto será el próximo caso de éxito?
+      </span>
+      <ArrowRight className="w-6 h-6 text-colorSecundario1" />
+    </div>
+  </motion.div>
+</div>
   );
 }
 

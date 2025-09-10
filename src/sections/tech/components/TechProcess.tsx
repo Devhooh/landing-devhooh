@@ -1,7 +1,9 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { CheckCircle, Clock, Target } from "lucide-react";
+import { CheckCircle, Target } from "lucide-react";
+import * as Icons from "lucide-react";
+import { LucideProps } from "lucide-react";
 
 
 interface ProcessStep {
@@ -97,6 +99,10 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
 
           <div className="flex flex-col gap-8">
             {steps.map((step, index) => {
+              const Icon =
+              (Icons[step.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) ||
+              Icons.HelpCircle;
+
               const isLast = index === steps.length - 1;
               
               return (
@@ -137,7 +143,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
                       {/* Header del step */}
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 flex items-center justify-center border border-colorPrimario5/30">
-                          <Clock className="w-5 h-5 text-colorPrimario5" />
+                          <Icon className="w-5 h-5 text-colorPrimario5" />
                         </div>
                         <div>
                           <h3 className="text-xl md-tablet:text-2xl font-bold text-colorPrimario2 group-hover:text-colorPrimario5 transition-colors duration-300">

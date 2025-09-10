@@ -132,7 +132,7 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
                   <div className="flex-grow group">
                     <motion.div 
                       className="
-                        relative p-8 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-300"
+                        relative p-6 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-300"
                       whileHover={{ y: -5, scale: 1.02 }}
                     >
                       
@@ -142,7 +142,7 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
                       {/* Header del step */}
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 flex items-center justify-center border border-colorPrimario5/30">
-                          <Icon className="w-5 h-5 text-colorPrimario5" />
+                          <Icon className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
                         </div>
                         <div>
                           <h3 className="text-xl md-tablet:text-2xl font-bold text-colorPrimario2 group-hover:text-colorPrimario5 transition-colors duration-300">

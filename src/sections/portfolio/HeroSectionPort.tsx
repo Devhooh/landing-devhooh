@@ -19,28 +19,55 @@ export default function HeroSectionPort() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-4xl font-extrabold leading-tight text-center table-lg:text-right text-colorPrimario2">
-              Realidades digitales. Resultados que hablan por sí solos
+            <h2 className="text-4xl font-extrabold text-center table-lg:text-right text-colorPrimario2 leading-tight drop-shadow-lg">
+              Realidades digitales. {""}
+              <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> 
+                Resultados que hablan {""}
+              </span>
+              por sí solos
             </h2>
           </motion.div>
 
           {/* --- 2) IMAGEN --- */}
           <motion.div
             className="
-              my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4 rounded-xl
-              bg-colorHover5 flex justify-center table-lg:justify-start shadow-xl"
+              my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4
+              flex justify-center table-lg:justify-start"
             initial={{ opacity: 0, x: -50, scale: 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <Image
-              src="/assets/images/hero2.png"
-              alt="Desarrollo de softwara, portafolio"
-              width={500}
-              height={500}
-              className="w-64 md-tablet:w-80 table-lg:w-96 h-auto object-contain rounded-lg"
-            />
+
+            <div className="relative group">
+              <div className="bg-colorHover5 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                <Image
+                  src="/assets/images/hero2.png"
+                  alt="Desarrollo de softwara, portafolio"
+                  width={500}
+                  height={500}
+                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Overlay con gradiente */}
+                <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+
+              {/* Círculos decorativos flotantes */}
+              <motion.div
+                className={`absolute -top-4 -right-4  w-8 h-8 rounded-full bg-gray-500 opacity-20`}
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.2, 0.4, 0.2]
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1 * 0.5
+                }}
+              ></motion.div>
+            </div>
           </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}
@@ -51,7 +78,7 @@ export default function HeroSectionPort() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            <p className="text-lg md-tablet:text-xl text-gray-600 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               Cada proyecto representa una historia de innovación, colaboración y éxito. Mira cómo ayudamos a crecer negocios con tecnología moderna.
             </p>
           </motion.div>

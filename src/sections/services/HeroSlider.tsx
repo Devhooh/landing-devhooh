@@ -24,47 +24,17 @@ export default function HeroSlider() {
       >
         {/* Slide 1: HeroLeft */}
         <SwiperSlide>
-          <HeroLeft
-            title="¿Buscas desarrollo de calidad y escalable? Aquí lo tienes."
-            subtitle="Descubre nuestros servicios de desarrollo y conoce las tecnologías web y herramientas que utilizamos para llevar tus proyectos digitales al siguiente nivel."
-            cta="Empieza tu proyecto"
-            images="/assets/images/webSoftware.png"
-            features={[
-              "Diseño web responsivo y adaptable para todos los dispositivos",
-              "Entrega puntual de proyectos con alta calidad garantizada",
-              "Arquitectura de software escalable y mantenible"
-            ]}
-          />
+          <HeroLeft/>
         </SwiperSlide>
 
         {/* Slide 2: HeroCenter */}
         <SwiperSlide>
-          <HeroCenter
-            title="Soluciones digitales a tu medida"
-            subtitle="Creamos plataformas robustas y personalizadas. Desde la idea hasta el despliegue final."
-            cta="Empieza tu proyecto"
-            images={["/assets/images/slide2.png", "/assets/images/slide3.png"]}
-            features={[
-              "Plataformas web y aplicaciones móviles",
-              "Optimización SEO avanzada",
-              "Cumplimiento de plazos con calidad profesional",
-            ]}
-          />
+          <HeroCenter/>
         </SwiperSlide>
 
         {/* Slide 3: HeroRight */}
         <SwiperSlide>
-          <HeroRight
-            title="Servicios completos con tecnologías actuales"
-            subtitle="IA, apps móviles, blockchain, sitios web y más. Nuestro stack moderno está listo para tu idea."
-            cta="Empieza tu proyecto"
-            images="/assets/images/slide4.png"
-            features={[
-              "Desarrollo de aplicaciones móviles multiplataforma modernas",
-              "Diseño de sitios web rápidos, atractivos y optimizados",
-              "Soluciones digitales personalizadas según tus necesidades"
-            ]}
-          />
+          <HeroRight/>
         </SwiperSlide>
 
         {/* Botones custom */}

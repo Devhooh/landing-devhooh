@@ -39,13 +39,6 @@ export default function StackTech({ project }: StackSectionProps) {
   return (
     <section className="relative w-full bg-gradient-to-br from-colorHover5 via-colorHover6 to-colorHover5 py-20 overflow-hidden">
       
-      {/* Efectos decorativos de fondo */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-colorPrimario5/5 blur-2xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-colorSecundario1/5 blur-2xl"></div>
-        <div className="absolute top-1/2 right-1/3 w-24 h-24 rounded-full bg-colorPrimario7/8 blur-xl"></div>
-      </div>
-
       <div className="relative z-10 max-w-6xl mx-auto px-4 md-tablet:px-8">
         
         {/* Encabezado mejorado */}
@@ -113,30 +106,12 @@ export default function StackTech({ project }: StackSectionProps) {
           {project.stackTech.map((tech, index) => {
             const Icon = iconsData[tech.icon];
             
-            // Gradientes rotativos para cada tecnología
-            const gradients = [
-              "from-colorPrimario5/10 to-colorPrimario6/10",
-              "from-colorSecundario1/10 to-colorSecundario2/10", 
-              "from-colorPrimario7/10 to-colorPrimario8/10",
-              "from-colorSecundario3/10 to-colorSecundario4/10"
-            ];
-            
-            const borderColors = [
-              "border-colorPrimario5/20",
-              "border-colorSecundario1/20",
-              "border-colorPrimario7/20", 
-              "border-colorSecundario3/20"
-            ];
-
-            const gradient = gradients[index % gradients.length];
-            const borderColor = borderColors[index % borderColors.length];
-
             return (
               <motion.div
                 key={tech.name}
                 className={`
-                  group relative p-6 rounded-2xl bg-gradient-to-br ${gradient} 
-                  backdrop-blur-sm border-2 ${borderColor}
+                  group relative p-6 rounded-2xl bg-gradient-to-br from-colorSecundario3/10 to-colorSecundario4/10 
+                  backdrop-blur-sm border-2 border-colorPrimario5/20
                   hover:border-colorPrimario5/40 
                   shadow-[0_0_20px_rgba(0,0,0,0.05)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]
                   transition-all duration-300
@@ -214,19 +189,19 @@ export default function StackTech({ project }: StackSectionProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="text-center p-6 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario5 mb-2">
               {project.stackTech.length}
             </div>
             <div className="text-sm text-colorPrimario1/70">Tecnologías utilizadas</div>
           </div>
           
-          <div className="text-center p-6 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorSecundario1 mb-2">100%</div>
             <div className="text-sm text-colorPrimario1/70">Modernas y actuales</div>
           </div>
           
-          <div className="text-center p-6 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario7 mb-2">✓</div>
             <div className="text-sm text-colorPrimario1/70">Optimizadas para rendimiento</div>
           </div>
@@ -241,7 +216,7 @@ export default function StackTech({ project }: StackSectionProps) {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">
-            <Code2 className="w-5 h-5 text-colorPrimario5" />
+            <Code2 className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold">Stack optimizado para máximo rendimiento</span>
           </div>
         </motion.div>

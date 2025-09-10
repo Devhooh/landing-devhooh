@@ -62,13 +62,6 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
       
       {/* Contenedor principal con gradiente mejorado */}
       <div className="relative bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 rounded-3xl py-16 px-6 md-tablet:px-12 border border-colorPrimario5/20 shadow-[0_0_50px_rgba(103,61,230,0.3)]">
-        
-        {/* Efectos decorativos de fondo */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
-          <div className="absolute top-20 left-20 w-40 h-40 rounded-full bg-colorPrimario5/10 blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-colorSecundario1/10 blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-colorPrimario7/15 blur-2xl"></div>
-        </div>
 
         {/* Título de sección principal */}
         <div className="relative z-10 text-center mb-20">
@@ -261,12 +254,12 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
-            <Target className="w-6 h-6 text-green-400" />
+          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+            <Target className="w-6 h-6 text-green-400 flex-shrink-0" />
             <span className="text-colorHover5 font-semibold text-lg">
               Todos los desafíos superados con éxito
             </span>
-            <Zap className="w-6 h-6 text-colorPrimario5" />
+            <Zap className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>
       </div>

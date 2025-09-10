@@ -48,7 +48,7 @@ const splitText = (text: string) => text.split("");
 
 export default function PortfolioProcess({ project }: ChallengeSectionProps) {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
+    <section className="relative py-20 bg-white overflow-hidden">
       
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         
@@ -108,7 +108,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
         </div>
 
         {/* Contenedor principal mejorado */}
-        <div className="relative p-8 rounded-3xl 
+        <div className="relative p-6 rounded-3xl 
           bg-gradient-to-br from-colorDarkFondo2/20 via-colorDarkFondo3/20 to-colorDarkFondo4/20 
           backdrop-blur-sm border border-colorPrimario5/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
           
@@ -126,7 +126,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
                   variants={cardVariants}
                   key={proceso.id}
                   className={`
-                    group relative w-full max-w-sm p-8 rounded-3xl 
+                    group relative w-full max-w-sm p-4 rounded-3xl 
                     bg-colorFondo/80 backdrop-blur-sm
                     border-2 border-white/20 hover:border-colorPrimario5/40
                     shadow-[0_0_20px_rgba(0,0,0,0.05)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]
@@ -212,11 +212,11 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
-            <CheckCircle className="w-6 h-6 text-green-500" />
+            <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold text-lg">
               Metodología probada y exitosa
             </span>
-            <CodeXml  className="w-6 h-6 text-colorPrimario5" />
+            <CodeXml  className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>
       </div>

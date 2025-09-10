@@ -194,12 +194,12 @@ export default function ImageProject({project}: ChallengeSectionProps) {
             transition={{ duration: 0.6, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
-              <Camera className="w-6 h-6 text-colorPrimario5" />
+            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
+              <Camera className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
               <span className="text-colorPrimario5 font-semibold text-lg">
                 Cada detalle cuenta en el resultado final
               </span>
-              <ZoomIn className="w-6 h-6 text-colorSecundario1" />
+              <ZoomIn className="w-6 h-6 text-colorSecundario1 flex-shrink-0" />
             </div>
           </motion.div>
         </div>

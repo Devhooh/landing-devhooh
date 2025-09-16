@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronRight } from "lucide-react";
-
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +39,7 @@ export default function Navbar() {
             alt="Devhoo-logo"
             width={120}
             height={60}
+            sizes="(max-width: 768px) 50vw, 120px"
             priority
             className="rounded-md"
           />
@@ -100,13 +101,13 @@ export default function Navbar() {
         <div className="flex-none flex justify-between items-center px-6 py-4 border-b border-gray-200">
           <Link href="/" onClick={toggleMenu}>
             <Image
-              className="rounded-xl"
-              src="/assets/images/logoMovil.png"
-              alt="Devhoo-logo"
-              width={60}
-              height={60}
-              style={{ height: "auto", width: "auto" }}
-            />
+            className="rounded-xl"
+            src="/assets/images/logoMovil.png"
+            alt="Devhoo-logo"
+            width={60}
+            height={60}
+            style={{ height: "auto", width: "auto" }}
+          />
           </Link>
           <button
             onClick={toggleMenu}

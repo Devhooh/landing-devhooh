@@ -46,13 +46,13 @@ export default function HeroSectionHome() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
-            <div className="relative z-10 bg-white shadow-2xl rounded-3xl px-4 my-10">
+            <div className="relative w-[420px] h-[420px] rounded-2xl">
               <Image
                 src="/assets/images/hero1.png"
                 alt="Equipo desarrollando software a medida"
-                width={500}
-                height={500}
-                className="w-[420px] h-auto object-contain rounded-2xl"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain"
                 priority
               />
             </div>

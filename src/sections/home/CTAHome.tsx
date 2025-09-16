@@ -42,24 +42,7 @@ export default function CTAHome() {
       {/* Fondo con gradiente mejorado */}
       <div className="absolute inset-0 bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4"></div>
       
-      {/* Efectos de fondo */}
-      <div className="absolute inset-0">
-        {/* Círculos decorativos */}
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-colorPrimario5/10 blur-xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-colorSecundario1/10 blur-xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-20 h-20 rounded-full bg-colorPrimario7/15 blur-lg"></div>
-        
-        {/* Grid pattern sutil */}
-        <div 
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '30px 30px'
-          }}
-        ></div>
-      </div>
-
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 md-tablet:px-10">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
           
           {/* Columna izquierda - Contenido */}
@@ -184,7 +167,7 @@ export default function CTAHome() {
                   variants={floatingVariants}
                   animate="animate"
                 >
-                  <Mail className="w-12 h-12 tablet-md:w-32 tablet-md:h-32 text-white" />
+                  <Mail className="w-20 h-20 tablet-md:w-32 tablet-md:h-32 text-white" />
                 </motion.div>
 
                 {/* Sparkles decorativos */}

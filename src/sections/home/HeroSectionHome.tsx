@@ -47,15 +47,16 @@ export default function HeroSectionHome() {
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
             <div className="relative w-[420px] h-[420px] rounded-2xl">
-              <Image
-                src="/assets/images/hero1.png"
-                alt="Equipo desarrollando software a medida"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain"
-                priority
-              />
-            </div>
+            <Image
+              src="/assets/images/hero1.png"
+              alt="Equipo desarrollando software a medida"
+              fill
+              // Cambia la propiedad sizes para que refleje el tamaño real del contenedor
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 420px"
+              className="object-contain"
+              priority
+            />
+          </div>
           </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}

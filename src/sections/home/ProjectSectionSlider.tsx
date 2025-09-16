@@ -149,9 +149,8 @@ export function ProjectSecitonSlider() {
             <SwiperSlide 
               key={index} 
               className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-105"
-              style={{ width: '70%' }}
             >
-              <div className="bg-white rounded-3xl w-full shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-300">
+              <div className="bg-white px-5 md-tablet:px-10 rounded-3xl w-full shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-300">
                 <ProjectCard {...project} />
               </div>
             </SwiperSlide>

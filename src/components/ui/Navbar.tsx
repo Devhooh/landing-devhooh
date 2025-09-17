@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronRight } from "lucide-react";
@@ -19,15 +19,6 @@ export default function Navbar() {
     { name: "Portafolio", path: "/portfolio" },
     { name: "Nosotros", path: "/about" },
   ];
-
-  // Deshabilita el scroll del body cuando el menú está abierto
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [isOpen]);
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white">
@@ -79,7 +70,6 @@ export default function Navbar() {
           </Link>
         </nav>
 
-
         {/* Boton hamburguesa para mobile */}
         <button
           className="table-lg:hidden p-3 rounded-full bg-colorPrimario2 border-2 border-black text-white focus:outline-none transition-transform duration-300"
@@ -88,6 +78,8 @@ export default function Navbar() {
           <Menu size={28} />
         </button>
       </div>
+
+      {/* ============================================================================================ */}
 
       {/* Menú mobile */}
       <div
@@ -159,21 +151,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

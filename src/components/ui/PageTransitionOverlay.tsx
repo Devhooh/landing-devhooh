@@ -18,7 +18,7 @@ export default function PageTransitionOverlay() {
 
     // Mostrar overlay en cambios de ruta
     setVisible(true);
-    const timer = setTimeout(() => setVisible(false), 700);
+    const timer = setTimeout(() => setVisible(false), 400);
     return () => clearTimeout(timer);
   }, [pathname]);
 
@@ -37,8 +37,9 @@ export default function PageTransitionOverlay() {
             src="/assets/images/noBgBlack.png"
             alt="Cargando Devhoo..."
             width={200}
-            height={100}
-            className="animate-pulse"
+            height={67} // Proporcional al original
+            className="animate-pulse h-auto w-auto"
+            priority
           />
         </motion.div>
       )}

@@ -11,7 +11,7 @@ export function SolutionsSection() {
       title: "Webs & Software",
       description:
         "Desarrollamos páginas web profesionales y software a medida que aumentan la visibilidad online, mejoran la experiencia del cliente y optimizan los procesos internos de tu empresa.",
-      image: "/assets/images/webSoftware.png",
+      image: "/assets/images/webSoft.png",
       benefits: [
         "Código limpio y escalable para crecer sin límites",
         "Diseños adaptados a la identidad de tu marca",

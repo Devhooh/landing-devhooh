@@ -111,8 +111,8 @@ export function SolutionCard({
         >
           <div className="relative p-6 rounded-2xl bg-white/50 backdrop-blur-sm shadow-lg group-hover:shadow-xl transition-all duration-300">
             <Image
-              width={250} // ajusta al tamaño máximo mostrado en pantalla
-              height={220} // ajusta al alto máximo mostrado en pantalla
+              width={450} // ajusta al tamaño máximo mostrado en pantalla
+              height={350} // ajusta al alto máximo mostrado en pantalla
               src={image}
               alt={title}
               sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 250px"

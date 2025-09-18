@@ -39,7 +39,7 @@ export default function StackTech({ project }: StackSectionProps) {
   return (
     <section className="relative w-full bg-gradient-to-br from-colorHover5 via-colorHover6 to-colorHover5 py-20 overflow-hidden">
       
-      <div className="relative z-10 max-w-6xl mx-auto px-4 md-tablet:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md-tablet:px-8">
         
         {/* Encabezado mejorado */}
         <div className="text-center mb-16">
@@ -215,9 +215,10 @@ export default function StackTech({ project }: StackSectionProps) {
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">
+          <div className="inline-flex items-center gap-3 px-4 py-3 rounded-3xl bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">
             <Code2 className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold">Stack optimizado para máximo rendimiento</span>
+            <Code2 className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>
       </div>

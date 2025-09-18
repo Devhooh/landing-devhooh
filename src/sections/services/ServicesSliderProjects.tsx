@@ -201,7 +201,7 @@ export function ServicesSliderProjects({
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-2xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Sparkles className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold text-lg">
               Cada proyecto es una nueva oportunidad de innovar

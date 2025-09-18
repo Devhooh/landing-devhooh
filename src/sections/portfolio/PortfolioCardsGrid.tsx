@@ -38,7 +38,7 @@ export default function PortfolioCardsGrid({ filteredProjects }: CardsProps) {
   const chunkedProjects = chunkArray(filteredProjects, 3);
 
   return (
-    <section className="bg-colorHover3/60 w-full pt-8 pb-8 md-tablet:pb-14">
+    <section className="bg-colorHover3/60 w-full pt-8 pb-8 md-tablet:pb-14 rounded-3xl">
       {/* Grid para PC */}
       <motion.div
         className="hidden table-lg:grid grid-cols-1 mx-2 md-tablet:mx-8 table-lg:grid-cols-2 gap-8 mt-8 "

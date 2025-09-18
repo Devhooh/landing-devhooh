@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import { Settings, CheckCircle, Sparkles, ArrowRight } from "lucide-react";
+import { Settings, CheckCircle, Sparkles } from "lucide-react";
 
 interface Service {
   title: string;
@@ -208,10 +208,6 @@ export default function TechServices({ name, image, services }: TechServicesProp
                       </div>
                     </div>
 
-                    {/* Flecha indicativa */}
-                    <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <ArrowRight className="w-5 h-5 text-colorPrimario5" />
-                    </div>
                   </div>
 
                   {/* Efecto de brillo en hover */}

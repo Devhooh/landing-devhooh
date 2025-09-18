@@ -6,7 +6,7 @@ import { projectsData} from "@/data/portfolioData";
 
 import PortfolioFiltersBar from "./PortfolioFiltersBar";
 import PortfolioCardsGrid from "./PortfolioCardsGrid";
-import { ArrowRight, Filter, Folder, Sparkles } from "lucide-react";
+import { PartyPopper, Filter, Folder, Sparkles } from "lucide-react";
 
 export default function PortfolioFilters() {
   const [selectedProject, setSelectedProject] = useState("Todos");
@@ -187,18 +187,18 @@ export default function PortfolioFilters() {
 
   {/* Call to action final */}
   <motion.div
-    className="relative z-10 text-center pb-16"
+    className="relative z-10 text-center p-8"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay: 0.8 }}
     viewport={{ once: true }}
   >
-    <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
-      <Sparkles className="w-6 h-6 text-colorPrimario5" />
+    <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
+      <Sparkles className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
       <span className="text-colorPrimario5 font-semibold text-lg">
         ¿Tu proyecto será el próximo caso de éxito?
       </span>
-      <ArrowRight className="w-6 h-6 text-colorSecundario1" />
+      <PartyPopper className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
     </div>
   </motion.div>
 </div>

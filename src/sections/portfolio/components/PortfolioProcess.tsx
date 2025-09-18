@@ -211,7 +211,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-4 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold text-lg">
               Metodología probada y exitosa

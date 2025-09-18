@@ -128,7 +128,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                     <span className="text-colorHover5 font-semibold">Desafío {index + 1}</span>
                   </div>
 
-                  <h3 className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-bold text-white mb-4">
+                  <h3 className="text-3xl md-tablet:text-4xl font-bold text-white mb-4">
                     {item.title}
                   </h3>
                 </motion.div>
@@ -147,7 +147,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                     whileInView="show"
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <div className="relative p-8 rounded-3xl bg-gradient-to-br from-colorHover5/5 to-colorHover6/5 backdrop-blur-sm border border-white/10 hover:border-colorPrimario5/30 transition-all duration-300 group">
+                    <div className="relative p-4 md-tablet:p-8 rounded-3xl bg-gradient-to-br from-colorHover5/5 to-colorHover6/5 backdrop-blur-sm border border-white/10 hover:border-colorPrimario5/30 transition-all duration-300 group">
                       
                       {/* Efectos decorativos */}
                       <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
@@ -254,7 +254,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <Target className="w-6 h-6 text-green-400 flex-shrink-0" />
             <span className="text-colorHover5 font-semibold text-lg">
               Todos los desafíos superados con éxito

@@ -154,7 +154,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
               </h3>
               
               {/* Valor */}
-              <p className="text-lg md-tablet:text-xl font-semibold text-white group-hover:text-colorPrimario5 transition-colors duration-300">
+              <p className="text-lg md-tablet:text-xl font-semibold text-white transition-colors duration-300">
                 {detail.value}
               </p>
 

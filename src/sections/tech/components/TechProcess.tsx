@@ -118,22 +118,15 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
                       className="w-16 h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300"
                       whileHover={{ scale: 1.05, rotate: 5 }}
                     >
-                      <span className="text-white font-bold text-xl">{index + 1}</span>
+                      <span className="text-white font-bold text-xl animate-pulse">{index + 1}</span>
                     </motion.div>
-                    
-                    {/* Pulso animado */}
-                    <motion.div
-                      className="absolute inset-0 rounded-2xl border-2 border-colorPrimario5/30"
-                      animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-                    ></motion.div>
                   </div>
 
                   {/* Card del paso mejorada */}
                   <div className="flex-grow group">
                     <motion.div 
                       className="
-                        relative p-8 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-300"
+                        relative p-4 md-tablet:p-8 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-300"
                       whileHover={{ y: -5, scale: 1.02 }}
                     >
                       
@@ -188,7 +181,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold text-lg">
               Proceso optimizado para garantizar el éxito

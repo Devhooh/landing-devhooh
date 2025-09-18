@@ -129,7 +129,7 @@ export function ServicesSliderProjects({
         >
           
           {/* Contenedor del slider con glassmorphism */}
-          <div className="relative p-6 rounded-3xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
+          <div className="relative p-3 rounded-3xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
             
             {/* Efectos decorativos del contenedor */}
             <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40"></div>
@@ -138,7 +138,7 @@ export function ServicesSliderProjects({
             <Swiper
               modules={[Navigation, Autoplay]}
               slidesPerView={1.1}
-              spaceBetween={40}
+              spaceBetween={10}
               navigation={{
                 nextEl: ".swiper-button-next-custom",
                 prevEl: ".swiper-button-prev-custom",
@@ -153,6 +153,7 @@ export function ServicesSliderProjects({
                 750: { slidesPerView: 2.1, spaceBetween: 25 },
                 950: { slidesPerView: 3, spaceBetween: 30 },
               }}
+              // className="px-4 py-8"
             >
               {displayedProjects.map((project, index) => (
                 <SwiperSlide key={project.id} className="h-auto p-4">

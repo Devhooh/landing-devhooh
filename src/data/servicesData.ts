@@ -12,20 +12,20 @@ export const customDevelopmentCardData: CardData[] = [
     title: "Desarrollo web",
     slug: "desarrollo-web",
     details: "Creamos páginas web modernas y personalizadas para negocios, tiendas online y portafolios, enfocadas en diseño atractivo, usabilidad y resultados reales.",
-    icon: "/assets/images/cardImg.png",
+    icon: "/assets/images/desarrollo-web.png",
   },
   {
     slug: "desarrollo-mobile",
     title: "Desarrollo Mobile",
     details: "Desarrollamos apps móviles nativas y multiplataforma para iOS y Android, optimizadas en rendimiento y pensadas para mejorar la experiencia del usuario.",
 
-    icon: "/assets/images/cardImg.png",
+    icon: "/assets/images/desarrollo-movil.png",
   },
   {
     slug: "desarrollo-software",
     title: "Desarrollo Software",
     details: "Construimos software a medida que automatiza procesos, mejora la gestión y se adapta 100% a las necesidades de tu negocio.",
-    icon: "/assets/images/cardImg.png",
+    icon: "/assets/images/desarrollo-software.png",
   },
 ];
 
@@ -35,13 +35,13 @@ export const ServicesIACardData: CardData[] = [
     slug: "inteligencia-artificial",
     title: "Inteligencia Artificial",
     details: "Desarrollamos soluciones de inteligencia artificial que automatizan procesos, mejoran la toma de decisiones y elevan la productividad de tu negocio.",
-    icon: "/assets/images/cardImg.png",
+    icon: "/assets/images/ia-services.png",
   },
   {
     slug: "blockchain",
     title: "Blockchain",
     details: "Creamos aplicaciones y sistemas basados en blockchain que garantizan seguridad, transparencia y confianza en tus operaciones digitales.",
-    icon: "/assets/images/cardImg.png",
+    icon: "/assets/images/blockchain.png",
   },
   // {
   //   slug: "machine-learning",

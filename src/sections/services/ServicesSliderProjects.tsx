@@ -1,103 +1,3 @@
-// "use client";
-
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-// import { Navigation } from "swiper/modules";
-// import ServicesProjects from "./ServicesProjects";
-// import { Project } from "@/data/portfolioData";
-// import { motion, Variants } from "framer-motion";
-// import { ArrowLeft, ArrowRight } from "lucide-react";
-
-
-// interface ServicesSliderProjectsProps {
-//   projects: Project[];
-//   title?: string;
-//   subtitle?: string;
-//   showService:boolean;
-// }
-
-// const fadeUpTitle: Variants = {
-//   hidden: { opacity: 0, y: 50 },
-//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-// };
-
-
-// export function ServicesSliderProjects({
-//   projects,
-//   title,
-//   subtitle,
-//   showService = true,
-// }: ServicesSliderProjectsProps) {
-//   const limit = 5;
-//   const displayedProjects = projects.slice(0, limit);
-
-//   return (
-//     <section className="py-10 mx-auto w-full">
-//       <div className="text-left mb-8 mx-8 tablet-md:mx-12">
-//         <motion.h2
-//           initial="hidden"
-//           whileInView="visible"
-//           viewport={{ once: true }}
-//           variants={fadeUpTitle}
-//           className="text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2"
-//         >
-//           {title}
-//         </motion.h2>
-
-//         {subtitle && (
-//           <motion.p
-//             initial="hidden"
-//             whileInView="visible"
-//             viewport={{ once: true }}
-//             variants={fadeUpTitle}
-//             className="mt-2 text-base md-tablet:text-lg text-gray-600 max-w-3xl"
-//           >
-//             {subtitle}
-//           </motion.p>
-//         )}
-
-//       </div>
-
-//       <div className="mx-5 tablet-md:mx-10">
-//         <Swiper
-//           modules={[Navigation]}
-//           slidesPerView={1.05}
-//           spaceBetween={25}
-//           navigation={{
-//             nextEl: ".swiper-button-next-custom",
-//             prevEl: ".swiper-button-prev-custom",
-//           }}
-//           loop
-//           pagination={{ clickable: true }}
-//           breakpoints={{
-//             550: { slidesPerView: 1.2, spaceBetween: 25 },
-//             950: { slidesPerView: 3, spaceBetween: 30 },
-//           }}
-//           className="px-2 md-tablet:px-6"
-//         >
-//           {displayedProjects.map((project, index) => (
-//             <SwiperSlide key={project.id} className="flex my-12 px-1 md-tablet:px-2">
-//               <ServicesProjects project={project} showService={showService} index={index} />
-//             </SwiperSlide>
-//           ))}
-
-//           {/* Botones custom */}
-//           <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/40 p-3 rounded-full">
-//             <ArrowLeft className="w-6 h-6 text-white" />
-//           </div>
-//           <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/40 p-3 rounded-full">
-//             <ArrowRight className="w-6 h-6 text-white" />
-//           </div>
-
-//         </Swiper>
-//       </div>
-//     </section>
-//   );
-// }
-
-
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -238,7 +138,7 @@ export function ServicesSliderProjects({
             <Swiper
               modules={[Navigation, Autoplay]}
               slidesPerView={1.1}
-              spaceBetween={20}
+              spaceBetween={40}
               navigation={{
                 nextEl: ".swiper-button-next-custom",
                 prevEl: ".swiper-button-prev-custom",
@@ -253,10 +153,9 @@ export function ServicesSliderProjects({
                 750: { slidesPerView: 2.1, spaceBetween: 25 },
                 950: { slidesPerView: 3, spaceBetween: 30 },
               }}
-              className="px-4 py-8"
             >
               {displayedProjects.map((project, index) => (
-                <SwiperSlide key={project.id} className="h-auto">
+                <SwiperSlide key={project.id} className="h-auto p-4">
                   <ServicesProjects 
                     project={project} 
                     showService={showService} 

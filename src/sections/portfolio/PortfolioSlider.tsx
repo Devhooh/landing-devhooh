@@ -1,13 +1,10 @@
-import { ProjectSlider } from "./ProjectSlider";
-import { logos } from "@/data/projects";
-import { projectsData } from "@/data/portfolioData";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { ProjectCard } from "@/sections/home/ProjectCard";
-import { motion} from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+"use client"
 
-export function ProjectSecitonSlider() {
+import { ProjectSlider } from "../home/ProjectSlider";
+import { logos } from "@/data/projects";
+import { motion} from "framer-motion";
+
+export function PortfolioSlider() {
   return (
     <div className="relative my-20 bg-colorFondo">
   
@@ -103,69 +100,6 @@ export function ProjectSecitonSlider() {
         <ProjectSlider logos={logos} direction="right" />
       </motion.div>
 
-      {/* Encabezado para proyectos destacados */}
-      <motion.div
-        className="relative z-10 text-center px-4"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        <h4 className="text-3xl md-tablet:text-5xl font-bold text-colorPrimario2 mb-4">
-          Proyectos destacados
-        </h4>
-        <p className="text-colorPrimario1/70 text-xl md-tablet:text-2xl max-w-2xl mx-auto">
-          Descubre algunos de nuestros trabajos más impactantes y las soluciones que desarrollamos
-        </p>
-      </motion.div>
-
-      {/* Slider de proyectos */}
-      <motion.div 
-        className="relative z-10 max-w-[1550px] mx-auto md-tablet:px-0 mb-10"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          navigation={{
-            nextEl: ".swiper-button-next-custom",
-            prevEl: ".swiper-button-prev-custom",
-          }}
-          autoplay={{ delay: 4500 }}
-          loop
-          centeredSlides
-          slidesPerView="auto"
-          spaceBetween={24}
-          breakpoints={{
-            0: { spaceBetween: 18 },
-            550: { spaceBetween: 24 },
-            950: { spaceBetween: 32 },
-          }}
-          className="max-w-full mx-auto"
-        >
-          {projectsData.slice(0, 4).map((project, index) => (
-            <SwiperSlide 
-              key={index} 
-              className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-105"
-            >
-              <div className="bg-white px-5 md-tablet:px-10 rounded-3xl w-full shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-300">
-                <ProjectCard {...project} />
-              </div>
-            </SwiperSlide>
-          ))}
-
-          {/* Botones custom */}
-          <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-5 rounded-full">
-            <ArrowLeft className="w-6 h-6 text-white" />
-          </div>
-          <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-5 rounded-full">
-            <ArrowRight className="w-6 h-6 text-white" />
-          </div>
-
-        </Swiper>
-      </motion.div>
     </div>
   )
 }

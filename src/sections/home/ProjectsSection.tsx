@@ -1,10 +1,5 @@
-"use client";
-
 import { motion, Variants } from "framer-motion";
 import { CheckCircle, BadgeCheck } from "lucide-react";
-import ReviewsHome from "@/sections/home/ReviewsHome";
-import { BenefitsSection } from "./BenefitsSection";
-import { ProjectSecitonSlider } from "./ProjectSectionSlider";
 
 // Variantes para textos y párrafos
 const textVariants: Variants = {
@@ -117,15 +112,6 @@ export function ProjectsSection() {
           </ul>
         </motion.div>
       </div>
-
-      {/* Beneficios de proyectos */}
-      <BenefitsSection/>
-
-      {/* Nuestros clientes */}
-      <ProjectSecitonSlider/>
-
-      {/* Reviews de clientes */}
-      <ReviewsHome/>
 
     </section>
   );

@@ -1,8 +1,13 @@
+"use client"
+
+import { BenefitsSection } from "@/sections/home/BenefitsSection";
 import CTAHome from "@/sections/home/CTAHome";
 import HeroSectionHome from "@/sections/home/HeroSectionHome";
 import { PlansSection } from "@/sections/home/PlansSection";
 import { ProjectsBenefits } from "@/sections/home/ProjectsBenefits";
+import { ProjectSecitonSlider } from "@/sections/home/ProjectSectionSlider";
 import { ProjectsSection } from "@/sections/home/ProjectsSection";
+import ReviewsHome from "@/sections/home/ReviewsHome";
 import { SolutionsSection } from "@/sections/home/SolutionsSection";
 import TechSection from "@/sections/home/TechSection";
 
@@ -14,6 +19,15 @@ export default function Home() {
       <SolutionsSection/>
 
       <ProjectsSection/>
+
+      {/* Beneficios de proyectos */}
+      <BenefitsSection/>
+
+      {/* Nuestros clientes */}
+      <ProjectSecitonSlider/>
+
+      {/* Reviews de clientes */}
+      <ReviewsHome/>
 
       <ProjectsBenefits/>
 

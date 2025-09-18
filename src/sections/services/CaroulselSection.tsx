@@ -42,7 +42,7 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
       <div className="max-w-[1550px] mx-auto px-3 tablet-md:px-10">
         <motion.h2
           className="
-            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-colorSecundario1 drop-shadow-sm"
+            px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-colorPrimario1 pb-4 drop-shadow-sm"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}

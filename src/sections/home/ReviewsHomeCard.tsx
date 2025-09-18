@@ -67,8 +67,10 @@ export function ReviewsHomeCard({ testimonial, variant = "desktop" }: Testimonia
           <Image
             src={reviewerProfileUrl}
             alt={reviewerName}
-            width={50}
-            height={50}
+            width={64}
+            height={64}
+            sizes="64px"
+            loading="lazy"
             className="rounded-full"
           />
         </div>

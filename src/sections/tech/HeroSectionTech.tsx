@@ -16,7 +16,8 @@ export default function HeroSectionTech() {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, type: "spring" }}
-            className="order-1 text-center table-lg:text-left text-4xl font-extrabold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
+            className="order-1 text-center table-lg:text-left text-4xl font-extrabold drop-shadow-lg
+            leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
           >
             La tecnología detrás de nuestras 
             <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> soluciones de vanguardia</span>
@@ -24,39 +25,45 @@ export default function HeroSectionTech() {
 
           {/* --- 2) IMAGEN --- */}
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="
-              order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center 
-              rounded-lg backdrop-blur-sm shadow-xl bg-gradient-to-t from-colorPrimario1 to-colorPrimario3"
-          >
-            <div className="relative z-10 rounded-3xl p-4">
-              <Image
-                src="/assets/images/hero1.png"
-                alt="Equipo desarrollando software a medida"
-                width={500}
-                height={500}
-                className="w-72 h-auto object-contain rounded-2xl"
-                priority
-              />
-            </div>
-            
-            {/* Círculo decorativo flotante */}
-            <motion.div
-              className={`absolute -top-2 -right-2 w-6 h-6 md-tablet:w-10 md-tablet:h-10 rounded-full bg-colorFondo/50 opacity-20`}
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.2, 0.4, 0.2]
-              }}
-              transition={{ 
-                duration: 3, 
-                repeat: Infinity,
-                delay: 1 * 0.5
-              }}
-            ></motion.div>
+  initial={{ scale: 0.9, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="
+    order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
+>
+  <div className="relative group w-full max-w-md">
+    {/* Añade un contenedor con aspect-square y una altura */}
+    <div className="relative aspect-square w-full">
+      <Image
+        src="/assets/images/hero1.png"
+        alt="Equipo desarrollando software a medida"
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="object-contain transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
+    
+    {/* Overlay con gradiente */}
+    <div className="absolute inset-0 bg-white/10 px-1 py-2 overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+      <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+    </div>
 
-          </motion.div>
+    {/* Círculos decorativos flotantes */}
+    <motion.div
+      className={`absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20`}
+      animate={{ 
+        scale: [1, 1.2, 1],
+        opacity: [0.2, 0.4, 0.2]
+      }}
+      transition={{ 
+        duration: 3, 
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 1 * 0.5
+      }}
+    ></motion.div>
+  </div>
+</motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}
           <motion.p

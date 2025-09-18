@@ -106,7 +106,7 @@ export default function ProblemsSection() {
   ];
 
   return (
-    <section className="relative mt-32 mx-4 md-tablet:mx-8 table-lg:mx-16 overflow-hidden">
+    <section id="soluciones" className="relative mt-32 mx-4 md-tablet:mx-8 table-lg:mx-16 overflow-hidden">
       
       {/* Contenedor principal con gradiente mejorado */}
       <div className="relative bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 rounded-3xl py-16 px-6 md-tablet:px-12 border border-colorPrimario5/20 shadow-[0_0_50px_rgba(103,61,230,0.3)]">

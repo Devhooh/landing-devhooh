@@ -55,25 +55,21 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
       icon: Briefcase,
       label: "Proyecto",
       value: project.projectName,
-      gradient: "from-colorPrimario5 to-colorPrimario6"
     },
     {
       icon: User,
       label: "Cliente",
       value: project.company,
-      gradient: "from-colorSecundario1 to-colorSecundario2"
     },
     {
       icon: Calendar,
       label: "Servicio",
       value: project.service,
-      gradient: "from-colorPrimario7 to-colorPrimario8"
     },
     {
       icon: MapPin,
       label: "Ubicación",
       value: project.location,
-      gradient: "from-colorSecundario3 to-colorSecundario4"
     }
   ];
 
@@ -148,7 +144,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
             >
               
               {/* Icono con gradiente */}
-              <div className={`mx-auto w-12 h-12 rounded-xl bg-gradient-to-r ${detail.gradient} flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+              <div className="mx-auto w-12 h-12 rounded-xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
                 <detail.icon className="w-6 h-6 text-white" />
               </div>
               
@@ -158,7 +154,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
               </h3>
               
               {/* Valor */}
-              <p className="text-lg md-tablet:text-xl font-semibold text-white group-hover:text-colorPrimario5 transition-colors duration-300">
+              <p className="text-lg md-tablet:text-xl font-semibold text-white transition-colors duration-300">
                 {detail.value}
               </p>
 
@@ -238,7 +234,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">
             <span className="text-colorHover5 font-medium">
               Desplázate para ver más detalles del proyecto
             </span>

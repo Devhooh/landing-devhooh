@@ -258,7 +258,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20 backdrop-blur-sm">
             <div className="w-2 h-2 rounded-full bg-colorPrimario5 animate-pulse"></div>
             <span className="text-colorPrimario5 font-semibold text-lg">
               ¿Te interesa un proyecto similar?

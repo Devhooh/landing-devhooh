@@ -36,13 +36,13 @@ export default function CaroulselCard({
         flex flex-col"
     >
       {/* Imagen */}
-      <div className="flex items-center justify-center p-6">
+      <div className="flex items-center justify-center p-6 h-40 md-tablet:h-48">
         <Image
           src={card.icon}
           alt={card.title}
-          width={500}
-          height={500}
-          className="object-contain w-36 h-auto"
+          width={550}
+          height={550}
+          className="object-contain max-h-36 w-auto h-auto"
         />
       </div>
 

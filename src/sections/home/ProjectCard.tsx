@@ -28,7 +28,7 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className="
-      h-[550px] backdrop-blur-md border-b-4 tablet-md:border-b-8 border-colorPrimarioLogo1 border tablet-md:border-2 rounded-3xl 
+      h-[650px] backdrop-blur-md border-b-4 tablet-md:border-b-8 border-colorPrimarioLogo1 border tablet-md:border-2 rounded-3xl 
       overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.01]">
       
       {/* Imagen */}
@@ -36,9 +36,12 @@ export function ProjectCard({
         <Image
           src={imageSrc}
           alt={ProjectName}
-          fill
-          style={{ objectFit: "cover" }}
-          sizes="(max-width: 550px) 100vw, (max-width: 950px) 50vw, 33vw"
+          width={600} // ajusta según el diseño real, por ejemplo 600px de ancho máximo
+          height={256} // ajusta según el alto real mostrado
+          className="w-full h-full object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+          priority={false} // solo pon true si es LCP
+          loading="lazy"
         />
         {/* Overlay elegante */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
@@ -78,7 +81,7 @@ export function ProjectCard({
         </div>
 
         {/* Botón */}
-        <div className="flex justify-center mt-5">
+        <div className="flex justify-center m-5">
           <Link href={`/portfolio/${slug}`}>
             <button className="
               bg-colorSecundario2 hover:bg-colorSecundario3 text-white py-2.5 md-tablet:py-3 px-7 md-tablet:px-14 rounded-xl 

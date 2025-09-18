@@ -33,8 +33,10 @@ export function ProjectSlider({
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={500}
-              height={300}
+              width={120}
+              height={60}
+              sizes="(max-width: 768px) 40vw, 120px"
+              loading="lazy"
               className="object-contain"
             />
           </div>

@@ -15,7 +15,7 @@ export default function IntroSection() {
         {/* Hero de Tecnología */}
           <div className="
             max-w-5xl mx-auto px-10 text-center items-center space-y-4 relative backdrop-blur-md
-            bg-gradient-to-b from-colorHover2 to-colorHover3 py-5 rounded-3xl"
+            bg-gradient-to-b from-colorHover2/10 to-colorHover3 py-5 rounded-3xl"
           >
             {/* Efectos decorativos en la card */}
             <div className="absolute top-6 right-6 w-4 h-4 rounded-full bg-colorPrimario5 opacity-60"></div>
@@ -27,7 +27,7 @@ export default function IntroSection() {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, type: "spring" }}
               viewport={{ once: true }}
-              className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorFondo pb-5"
+              className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorPrimario1 pb-5"
             >
               Todo lo que necesitas para {""}
               <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">construir y escalar</span>

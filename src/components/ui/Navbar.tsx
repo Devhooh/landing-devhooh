@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X, ChevronRight } from "lucide-react";
-
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,15 +20,6 @@ export default function Navbar() {
     { name: "Nosotros", path: "/about" },
   ];
 
-  // Deshabilita el scroll del body cuando el menú está abierto
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [isOpen]);
-
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white">
       <div className="relative max-w-[1550px] mx-auto px-6 py-2 flex justify-between items-center">
@@ -39,6 +30,7 @@ export default function Navbar() {
             alt="Devhoo-logo"
             width={120}
             height={60}
+            sizes="(max-width: 768px) 50vw, 120px"
             priority
             className="rounded-md"
           />
@@ -78,7 +70,6 @@ export default function Navbar() {
           </Link>
         </nav>
 
-
         {/* Boton hamburguesa para mobile */}
         <button
           className="table-lg:hidden p-3 rounded-full bg-colorPrimario2 border-2 border-black text-white focus:outline-none transition-transform duration-300"
@@ -87,6 +78,8 @@ export default function Navbar() {
           <Menu size={28} />
         </button>
       </div>
+
+      {/* ============================================================================================ */}
 
       {/* Menú mobile */}
       <div
@@ -100,13 +93,13 @@ export default function Navbar() {
         <div className="flex-none flex justify-between items-center px-6 py-4 border-b border-gray-200">
           <Link href="/" onClick={toggleMenu}>
             <Image
-              className="rounded-xl"
-              src="/assets/images/logoMovil.png"
-              alt="Devhoo-logo"
-              width={60}
-              height={60}
-              style={{ height: "auto", width: "auto" }}
-            />
+            className="rounded-xl"
+            src="/assets/images/logoMovil.png"
+            alt="Devhoo-logo"
+            width={60}
+            height={60}
+            style={{ height: "auto", width: "auto" }}
+          />
           </Link>
           <button
             onClick={toggleMenu}
@@ -158,21 +151,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

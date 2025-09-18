@@ -62,13 +62,6 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
       
       {/* Contenedor principal con gradiente mejorado */}
       <div className="relative bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 rounded-3xl py-16 px-6 md-tablet:px-12 border border-colorPrimario5/20 shadow-[0_0_50px_rgba(103,61,230,0.3)]">
-        
-        {/* Efectos decorativos de fondo */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
-          <div className="absolute top-20 left-20 w-40 h-40 rounded-full bg-colorPrimario5/10 blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-colorSecundario1/10 blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-colorPrimario7/15 blur-2xl"></div>
-        </div>
 
         {/* Título de sección principal */}
         <div className="relative z-10 text-center mb-20">
@@ -135,7 +128,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                     <span className="text-colorHover5 font-semibold">Desafío {index + 1}</span>
                   </div>
 
-                  <h3 className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-bold text-white mb-4">
+                  <h3 className="text-3xl md-tablet:text-4xl font-bold text-white mb-4">
                     {item.title}
                   </h3>
                 </motion.div>
@@ -154,7 +147,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                     whileInView="show"
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    <div className="relative p-8 rounded-3xl bg-gradient-to-br from-colorHover5/5 to-colorHover6/5 backdrop-blur-sm border border-white/10 hover:border-colorPrimario5/30 transition-all duration-300 group">
+                    <div className="relative p-4 md-tablet:p-8 rounded-3xl bg-gradient-to-br from-colorHover5/5 to-colorHover6/5 backdrop-blur-sm border border-white/10 hover:border-colorPrimario5/30 transition-all duration-300 group">
                       
                       {/* Efectos decorativos */}
                       <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
@@ -261,12 +254,12 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
-            <Target className="w-6 h-6 text-green-400" />
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+            <Target className="w-6 h-6 text-green-400 flex-shrink-0" />
             <span className="text-colorHover5 font-semibold text-lg">
               Todos los desafíos superados con éxito
             </span>
-            <Zap className="w-6 h-6 text-colorPrimario5" />
+            <Zap className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>
       </div>

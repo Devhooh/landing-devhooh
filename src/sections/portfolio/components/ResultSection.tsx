@@ -41,14 +41,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
   const result = project.result;
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 py-20 overflow-hidden">
-      
-      {/* Efectos decorativos de fondo */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-colorPrimario5/5 blur-2xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-colorSecundario1/5 blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-colorPrimario7/8 blur-xl"></div>
-      </div>
+    <section className="relative w-full bg-white py-20 overflow-hidden">
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 md-tablet:px-8">
         
@@ -118,7 +111,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="relative p-8 rounded-3xl bg-gradient-to-br from-red-50/50 to-red-100/30 backdrop-blur-sm border-2 border-red-200/30 shadow-[0_0_20px_rgba(239,68,68,0.1)] hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] transition-all duration-300">
+            <div className="relative p-8 rounded-3xl bg-gradient-to-br from-red-50/60 to-red-100/40 backdrop-blur-sm border-2 border-red-200/30 shadow-[0_0_20px_rgba(239,68,68,0.1)] hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] transition-all duration-300">
               
               {/* Header con icono */}
               <div className="flex items-center gap-3 mb-6">
@@ -173,7 +166,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.2 }}
           >
-            <div className="relative p-8 rounded-3xl bg-gradient-to-br from-green-50/50 to-green-100/30 backdrop-blur-sm border-2 border-green-200/30 shadow-[0_0_20px_rgba(34,197,94,0.1)] hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
+            <div className="relative p-8 rounded-3xl bg-gradient-to-br from-green-50/60 to-green-100/40 backdrop-blur-sm border-2 border-green-200/30 shadow-[0_0_20px_rgba(34,197,94,0.1)] hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
               
               {/* Header con icono */}
               <div className="flex items-center gap-3 mb-6">
@@ -250,17 +243,17 @@ export default function ResultSection({ project }: ResultSectionProps) {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="text-center p-6 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
             <div className="text-sm text-colorPrimario1/70">Objetivos alcanzados</div>
           </div>
           
-          <div className="text-center p-6 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario5 mb-2">✓</div>
             <div className="text-sm text-colorPrimario1/70">Cliente satisfecho</div>
           </div>
           
-          <div className="text-center p-6 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorSecundario1 mb-2">24/7</div>
             <div className="text-sm text-colorPrimario1/70">Funcionamiento óptimo</div>
           </div>
@@ -274,12 +267,12 @@ export default function ResultSection({ project }: ResultSectionProps) {
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
-            <Award className="w-6 h-6 text-green-500" />
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+            <Award className="w-6 h-6 text-green-500 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold text-lg">
               Transformación exitosa completada
             </span>
-            <TrendingUp className="w-6 h-6 text-colorPrimario5" />
+            <TrendingUp className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>
       </div>

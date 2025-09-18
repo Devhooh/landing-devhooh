@@ -158,15 +158,17 @@ const checklistItems = [
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative p-6 md-tablet:p-4 table-lg:p-8 rounded-3xl bg-gradient-to-br from-colorSecundario1/20 to-colorSecundario3/20 backdrop-blur-sm border border-white/10 w-fit">
+            <div className="relative p-6 table-lg:p-4 lg-table:p-8 rounded-3xl bg-gradient-to-br from-colorSecundario1/20 to-colorSecundario3/20 backdrop-blur-sm border border-white/10 w-fit">
               {/* Contenedor de imagen con tamaño fijo */}
               <div className="w-90 h-90 md-tablet:w-[450px] md-tablet:h-[450x] table-lg:w-96 table-lg:h-96 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorSecundario3 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/assets/images/webSoftware.png"
-                  width={500}
-                  height={500}
+                  src="/assets/images/beneficiosweb.png"
+                  width={643}
+                  height={696}    
                   alt="Desarrollo, Beneficios proyectos"
-                  className="w-full h-auto object-cover rounded-2xl"
+                  className="object-cover rounded-2xl"
+                  sizes="(max-width: 768px) 90vw, 384px"
+                  loading="lazy"
                 />
               </div>
               

@@ -41,7 +41,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
   return (
     <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
       
-      <div className="relative z-10 max-w-5xl mx-auto px-6 md-tablet:px-12">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md-tablet:px-12">
         
         {/* Encabezado mejorado */}
         <div className="text-center mb-16">
@@ -126,22 +126,16 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                       className="w-16 h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300"
                       whileHover={{ scale: 1.05, rotate: 5 }}
                     >
-                      <span className="text-white font-bold text-xl">{index + 1}</span>
+                      <span className="text-white font-bold text-xl animate-pulse">{index + 1}</span>
                     </motion.div>
                     
-                    {/* Pulso animado */}
-                    <motion.div
-                      className="absolute inset-0 rounded-2xl border-2 border-colorPrimario5/30"
-                      animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-                    ></motion.div>
                   </div>
 
                   {/* Card del paso mejorada */}
                   <div className="flex-grow group">
                     <motion.div 
                       className="
-                        relative p-8 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-300"
+                        relative p-6 md-tablet:p-8 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-300"
                       whileHover={{ y: -5, scale: 1.02 }}
                     >
                       
@@ -157,7 +151,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                           <h3 className="text-xl md-tablet:text-2xl font-bold text-colorPrimario2 group-hover:text-colorPrimario5 transition-colors duration-300">
                             {step.title}
                           </h3>
-                          <div className="flex items-center gap-2 mt-1">
+                          <div className="flex items-center gap-4 mt-1">
                             <div className="text-sm text-colorPrimario5 font-semibold">Paso {index + 1}</div>
                             <div className="w-1 h-1 rounded-full bg-colorPrimario5/50"></div>
                             <div className="text-xs text-colorPrimario1/60">Fase esencial</div>

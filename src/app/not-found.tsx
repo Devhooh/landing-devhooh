@@ -8,14 +8,14 @@ export default function NotFound() {
       <div className="flex flex-col tablet-md:flex-row items-center text-center tablet-md:text-left gap-8">
         
         {/* Imagen */}
-        <div className="flex-shrink-0">
+        <div className="relative w-48 h-48 md-tablet:w-64 md-tablet:h-64 tablet-md:w-72 tablet-md:h-72 table-lg:w-80 table-lg:h-80">
           <Image
             src="/assets/images/hero1.png"
             alt="Página no encontrada"
-            width={350}
-            height={350}
+            fill
+            sizes="(max-width: 768px) 50vw, 25vw"
+            className="object-contain"
             priority
-            className="w-48 md-tablet:w-64 tablet-md:w-72 table-lg:w-80 h-auto"
           />
         </div>
 

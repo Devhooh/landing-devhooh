@@ -122,22 +122,18 @@ export function ServicesSliderProjects({
         {/* Slider mejorado */}
         <motion.div
           className="relative"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
           
           {/* Contenedor del slider con glassmorphism */}
-          <div className="relative p-3 rounded-3xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
+          <div className="relative rounded-3xl bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
             
-            {/* Efectos decorativos del contenedor */}
-            <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40"></div>
-            <div className="absolute bottom-6 left-6 w-2 h-2 rounded-full bg-gradient-to-r from-colorSecundario3 to-colorSecundario4 opacity-50"></div>
-
             <Swiper
               modules={[Navigation, Autoplay]}
-              slidesPerView={1.1}
+              slidesPerView={1}
               spaceBetween={10}
               navigation={{
                 nextEl: ".swiper-button-next-custom",
@@ -149,8 +145,8 @@ export function ServicesSliderProjects({
               }}
               loop={displayedProjects.length > 3}
               breakpoints={{
-                550: { slidesPerView: 1.3, spaceBetween: 25 },
-                750: { slidesPerView: 2.1, spaceBetween: 25 },
+                550: { slidesPerView: 1, spaceBetween: 10 },
+                750: { slidesPerView: 2, spaceBetween: 20 },
                 950: { slidesPerView: 3, spaceBetween: 30 },
               }}
               // className="px-4 py-8"
@@ -167,13 +163,13 @@ export function ServicesSliderProjects({
             </Swiper>
 
             {/* Botones de navegación mejorados */}
-            <div className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer group">
+            <div className="swiper-button-prev-custom absolute left-1 top-1/2 -translate-y-1/2 z-20 cursor-pointer group">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110">
                 <ArrowLeft className="w-6 h-6 text-white" />
               </div>
             </div>
             
-            <div className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer group">
+            <div className="swiper-button-next-custom absolute right-1 top-1/2 -translate-y-1/2 z-20 cursor-pointer group">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario2 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110">
                 <ArrowRight className="w-6 h-6 text-white" />
               </div>

@@ -48,7 +48,7 @@ export default function HeroSectionHome() {
           >
             <div className="relative w-[420px] h-[420px] rounded-2xl">
             <Image
-              src="/assets/images/hero1.png"
+              src="/assets/images/hero-home.png"
               alt="Equipo desarrollando software a medida"
               fill
               // Cambia la propiedad sizes para que refleje el tamaño real del contenedor

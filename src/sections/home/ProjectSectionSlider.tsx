@@ -111,7 +111,7 @@ export function ProjectSecitonSlider() {
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <h4 className="text-3xl md-tablet:text-5xl font-bold text-colorPrimario5 mb-4">
+        <h4 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario5 mb-4">
           Proyectos destacados
         </h4>
         <p className="text-colorPrimario1/70 text-xl md-tablet:text-2xl max-w-2xl mx-auto">
@@ -148,7 +148,7 @@ export function ProjectSecitonSlider() {
           {projectsData.slice(0, 4).map((project, index) => (
             <SwiperSlide 
               key={index} 
-              className="h-auto px-5 md-tablet:px-10 max-w-5xl flex py-10 justify-center transition-transform duration-300 hover:scale-105"
+              className="h-auto px-5 md-tablet:px-10 max-w-3xl flex py-10 justify-center transition-transform duration-300 hover:scale-105"
             >
               <ProjectCard {...project} />
             </SwiperSlide>

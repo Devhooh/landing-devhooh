@@ -29,7 +29,7 @@ export function ProjectCard({
   return (
     <div className="
       h-[650px] backdrop-blur-md border-b-4 tablet-md:border-b-8 border-colorPrimarioLogo1 border tablet-md:border-2 rounded-3xl 
-      overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.01]">
+      overflow-hidden flex flex-col max-w-3xl transition-transform duration-300 hover:scale-[1.01]">
       
       {/* Imagen */}
       <div className="relative w-full h-48 md-tablet:h-56 table-lg:h-64 border-b border-purple-500/30">

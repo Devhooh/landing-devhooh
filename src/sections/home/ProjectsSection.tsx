@@ -42,7 +42,7 @@ export function ProjectsSection() {
       </motion.div>
 
       {/* Métricas de impacto */}
-      <motion.div
+      <motion.ul
         className="flex justify-center gap-8 flex-wrap mb-12"
         initial="hidden"
         whileInView="show"
@@ -53,7 +53,7 @@ export function ProjectsSection() {
           { text: "10+ industrias distintas" },
           { text: "95% satisfacción de clientes" },
         ].map((metric, idx) => (
-          <motion.div
+          <motion.li
             key={idx}
             custom={idx}
             variants={listItemVariants}
@@ -61,12 +61,12 @@ export function ProjectsSection() {
           >
             <BadgeCheck className="w-6 h-6 tablet-md:w-10 tablet-md:h-10 text-colorPrimario5" />
             <span className="text-colorPrimario2 font-semibold">{metric.text}</span>
-          </motion.div>
+          </motion.li>
         ))}
-      </motion.div>
+      </motion.ul>
 
       {/* Texto + lista */}
-      <div className="max-w-5xl mx-auto px-6 md-tablet:px-12 mb-20 flex flex-col table-lg:flex-row items-start gap-4">
+      <div className="max-w-5xl mx-auto px-6 md-tablet:px-12 mb-10 flex flex-col table-lg:flex-row items-start gap-4">
         
         {/* Bloque de texto */}
         <motion.div
@@ -80,8 +80,12 @@ export function ProjectsSection() {
             variants={textVariants}
             className="text-colorPrimario4 text-base md-tablet:text-lg table-lg:text-xl leading-relaxed mb-6"
           >
-            Creamos soluciones digitales modernas que{" "}
-            <span className="font-semibold text-colorSecundario">mejoran procesos</span>, escalan negocios y sorprenden a los usuarios.
+            En Devhooh, cada proyecto es una oportunidad para {""} 
+            <span className="font-semibold text-colorSecundario">impulsar tu negocio.</span> {""}
+            Nos especializamos en el desarrollo de software a medida y soluciones web y móviles que no solo {""} 
+            <span className="font-semibold text-colorSecundario">resuelven problemas</span>, 
+            sino que también escalan tu negocio y mejoran la {""} 
+            <span className="font-semibold text-colorSecundario">experiencia de tus clientes.</span> 
           </motion.p>
         </motion.div>
 

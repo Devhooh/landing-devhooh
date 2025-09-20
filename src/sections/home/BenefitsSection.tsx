@@ -3,12 +3,6 @@ import { motion } from "framer-motion";
 import { Zap, Shield, Palette, Check } from "lucide-react";
 import Image from "next/image";
 
-// Animación para letras del título
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 // Animación para las cards
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -49,8 +43,6 @@ const checklistItems = [
   "Certificado SSL gratuito para mayor seguridad",
 ];
 
-  const splitText = (text: string) => text.split("");
-
   return (
     <section className="relative bg-gradient-to-b from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 px-4 py-20 md-tablet:px-8 table-lg:px-16">
       <div className="max-w-[1400px] mx-auto">
@@ -58,21 +50,13 @@ const checklistItems = [
         {/* TÍTULO Y SUBTÍTULO */}
         <div className="text-center mb-16">
           <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold leading-tight mb-6"
-            initial="hidden"
-            whileInView="show"
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold leading-tight mb-6 text-white"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Beneficios de nuestros proyectos").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-white"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Beneficios de nuestros proyectos
           </motion.h2>
           
           <motion.p
@@ -87,9 +71,9 @@ const checklistItems = [
         </div>
 
         {/* CARDS HORIZONTALES */}
-        <div className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
+        <ul className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
           {benefits.map((benefit, index) => (
-            <motion.div
+            <motion.li
               key={index}
               className={`
                   relative p-6 rounded-2xl bg-gradient-to-br ${benefit.gradient} shadow-[0_0_30px_rgba(103,61,230,0.25)] 
@@ -112,9 +96,9 @@ const checklistItems = [
                   {benefit.description}
                 </p>
               </div>
-            </motion.div>
+            </motion.li>
           ))}
-        </div>
+        </ul>
 
         {/* SECCIÓN INFERIOR: LISTA E IMAGEN */}
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">

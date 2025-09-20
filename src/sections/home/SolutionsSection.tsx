@@ -48,14 +48,6 @@ export function SolutionsSection() {
     },
   ];
 
-  const splitText = (text: string) => text.split("");
-
-  // Variants para animación letra por letra
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
   // Variants para animación de textos
   const containerVariants: Variants = {
     hidden: {},
@@ -78,13 +70,6 @@ export function SolutionsSection() {
 
   return (
     <section className="w-full py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden relative">
-      
-      {/* Efectos decorativos de fondo */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 -left-32 w-64 h-64 rounded-full bg-colorPrimario5/5 blur-3xl"></div>
-        <div className="absolute bottom-40 -right-32 w-80 h-80 rounded-full bg-colorSecundario1/5 blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 rounded-full bg-colorPrimario7/8 blur-2xl"></div>
-      </div>
 
       {/* Encabezado mejorado */}
       <motion.div
@@ -98,31 +83,12 @@ export function SolutionsSection() {
           
           {/* Título principal con animación letra por letra */}
           <motion.h2
+            variants={textVariants}
             className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Impulsamos tu negocio con ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            <span className="text-colorPrimario2">Impulsamos tu negocio con</span>
             <br />
-            {splitText("soluciones modernas").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text">soluciones modernas</span>
           </motion.h2>
 
           {/* Subtítulo mejorado */}

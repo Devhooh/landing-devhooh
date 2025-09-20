@@ -10,7 +10,7 @@ export default function NotFound() {
         {/* Imagen */}
         <div className="relative w-48 h-48 md-tablet:w-64 md-tablet:h-64 tablet-md:w-72 tablet-md:h-72 table-lg:w-80 table-lg:h-80">
           <Image
-            src="/assets/images/hero1.png"
+            src="/assets/images/notfound.png"
             alt="Página no encontrada"
             fill
             sizes="(max-width: 768px) 50vw, 25vw"

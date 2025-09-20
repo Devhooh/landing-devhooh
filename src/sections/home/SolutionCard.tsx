@@ -10,8 +10,6 @@ interface SolutionCardProps {
   image: string;  
   reverse?: boolean;
   benefits?: string[];
-  gradient?: string;
-  accentColor?: string;
   index?: number;
 }
 

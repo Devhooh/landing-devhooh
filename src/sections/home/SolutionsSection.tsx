@@ -17,8 +17,6 @@ export function SolutionsSection() {
         "Diseños adaptados a la identidad de tu marca",
         "Integraciones fluidas con herramientas de gestión",
       ],
-      gradient: "from-colorPrimario5/10 to-colorPrimario6/10",
-      accentColor: "colorPrimario5"
     },
     {
       title: "Aplicaciones Móviles",
@@ -30,8 +28,6 @@ export function SolutionsSection() {
         "Interfaz intuitiva que mejora la usabilidad",
         "Optimización para un rendimiento rápido y estable",
       ],
-      gradient: "from-colorSecundario1/10 to-colorSecundario2/10",
-      accentColor: "colorSecundario1"
     },
     {
       title: "Inteligencia Artificial",
@@ -43,8 +39,6 @@ export function SolutionsSection() {
         "Predicciones basadas en análisis de datos",
         "Automatización inteligente de procesos repetitivos",
       ],
-      gradient: "from-colorSecundario3/10 to-colorSecundario4/10",
-      accentColor: "colorSecundario3"
     },
   ];
 
@@ -106,24 +100,24 @@ export function SolutionsSection() {
           </motion.p>
 
           {/* Estadísticas rápidas */}
-          <motion.div
+          <motion.ul
             className="flex flex-wrap justify-center gap-8 mt-10"
             variants={textVariants}
             transition={{ delay: 0.2 }}
           >
-            <div className="text-center">
-              <div className="text-2xl font-bold text-colorPrimario5">3+</div>
-              <div className="text-sm text-colorPrimario1/70">Especialidades</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-colorSecundario1">100%</div>
-              <div className="text-sm text-colorPrimario1/70">Personalizado</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-colorSecundario3">24/7</div>
-              <div className="text-sm text-colorPrimario1/70">Soporte</div>
-            </div>
-          </motion.div>
+            <li className="text-center">
+              <div className="text-2xl md-tablet:text-4xl font-bold text-colorPrimario5">3+</div>
+              <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Especialidades</p>
+            </li>
+            <li className="text-center">
+              <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario1">100%</div>
+              <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Personalizado</p>
+            </li>
+            <li className="text-center">
+              <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario3">24/7</div>
+              <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Soporte</p>
+            </li>
+          </motion.ul>
         </div>
       </motion.div>
 
@@ -137,8 +131,6 @@ export function SolutionsSection() {
               description={solution.description}
               image={solution.image}
               benefits={solution.benefits}
-              gradient={solution.gradient}
-              accentColor={solution.accentColor}
               reverse={i % 2 === 1}
               index={i}
             />
@@ -165,7 +157,7 @@ export function SolutionsSection() {
               <span className="relative z-10">
                 Descubre todas nuestras soluciones
               </span>
-              <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </motion.button>
           </Link>
         </motion.div>

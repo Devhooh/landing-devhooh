@@ -52,7 +52,7 @@ export default function HeroSectionHome() {
               alt="Equipo desarrollando software a medida"
               fill
               // Cambia la propiedad sizes para que refleje el tamaño real del contenedor
-              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 420px"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 462px"
               className="object-contain"
               priority
             />

@@ -52,9 +52,9 @@ export function ProjectsBenefits() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h2
-            className="text-4xl tablet-md:text-5xl font-extrabold mb-7 text-white p"
+            className="text-4xl tablet-md:text-5xl font-extrabold mb-7 text-white"
           >
-            Por qué escoger a <span className="text-colorPrimario5"> Devhooh</span>
+            Por qué escoger a <span className="text-colorHover5"> Devhooh</span>
           </motion.h2>
           <motion.p
             className="text-gray-200 text-base tablet-md:text-lg max-w-3xl mx-auto"

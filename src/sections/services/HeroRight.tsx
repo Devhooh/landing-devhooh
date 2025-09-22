@@ -39,7 +39,7 @@ export default function HeroRight() {
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/assets/images/slide4.png"
+                  src="/assets/images/heroright.png"
                   alt="soluciones-a-medida-desarrollo-de-software"
                   width={500}
                   height={350}

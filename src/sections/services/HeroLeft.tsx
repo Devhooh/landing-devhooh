@@ -40,7 +40,7 @@ export default function HeroLeft() {
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/assets/images/webSoftware.png"
+                  src="/assets/images/heroleft.png"
                   alt="Imagen-desarrollo-de-calidad-servicios-de-desarrollo"
                   width={500}
                   height={350}

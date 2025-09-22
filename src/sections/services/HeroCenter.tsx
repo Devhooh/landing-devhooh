@@ -22,7 +22,7 @@ export default function HeroCenter() {
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/assets/images/slide2.png"
+                  src="/assets/images/herocenter1.png"
                   alt="soluciones-a-medida-desarrollo-de-software"  
                   width={500}
                   height={350}
@@ -78,7 +78,7 @@ export default function HeroCenter() {
               <div className="relative group">
                 <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
                   <Image
-                    src="/assets/images/slide2.png"
+                    src="/assets/images/herocenter1.png"
                     alt="soluciones-a-medida-desarrollo-de-software"    
                     width={500}
                     height={350}
@@ -183,7 +183,7 @@ export default function HeroCenter() {
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/assets/images/slide3.png"
+                  src="/assets/images/herocenter2.png"
                   alt="soluciones-a-medida-desarrollo-de-software"    
                   width={500}
                   height={350}

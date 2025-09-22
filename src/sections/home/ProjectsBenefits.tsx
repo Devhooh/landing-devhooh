@@ -54,7 +54,7 @@ export function ProjectsBenefits() {
           <motion.h2
             className="text-4xl tablet-md:text-5xl font-extrabold mb-7 text-white p"
           >
-            Por qué escoger <span className="text-colorSecundario3"> Devhooh</span>
+            Por qué escoger a <span className="text-colorPrimario5"> Devhooh</span>
           </motion.h2>
           <motion.p
             className="text-gray-200 text-base tablet-md:text-lg max-w-3xl mx-auto"
@@ -78,9 +78,9 @@ export function ProjectsBenefits() {
               className="flex flex-col gap-4 bg-colorDarkFondo5 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex-1"
             >
               <div>{benefit.icon}</div>
-              <h4 className="text-xl tablet-md:text-2xl font-bold text-white">
+              <h3 className="text-xl tablet-md:text-2xl font-bold text-white">
                 {benefit.title}
-              </h4>
+              </h3>
               <p className="text-gray-200 text-sm tablet-md:text-base">{benefit.description}</p>
             </motion.div>
           ))}

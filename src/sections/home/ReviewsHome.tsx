@@ -10,32 +10,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { ReviewsHomeCard } from "./ReviewsHomeCard";
 
-// Animación para letras
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
-const splitText = (text: string) => text.split("");
-
 export default function ReviewsHome() {
   return (
     <div className="max-w-8xl bg-colorHover5 py-10 mx-2 px-4">
       {/* Título y descripción */}
       <div className="text-center mb-12">
         <motion.h2
-          className="text-3xl md-tablet:text-4xl table-lg:text-4xl font-extrabold text-colorPrimario2"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
-        >
-          {splitText("Lo que dicen nuestros clientes").map((letter, idx) => (
-            <motion.span key={idx} variants={letterVariants}>
-              {letter}
-            </motion.span>
-          ))}
-        </motion.h2>
+            className="text-3xl md-tablet:text-4xl table-lg:text-4xl font-extrabold text-colorPrimario2"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            Lo que dicen nuestros clientes
+          </motion.h2>
 
         <motion.p
           className="mt-5 text-colorPrimario1 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"

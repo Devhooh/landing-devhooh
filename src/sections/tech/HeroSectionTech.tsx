@@ -25,45 +25,33 @@ export default function HeroSectionTech() {
 
           {/* --- 2) IMAGEN --- */}
           <motion.div
-  initial={{ scale: 0.9, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 0.8, delay: 0.2 }}
-  className="
-    order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
->
-  <div className="relative group w-full max-w-md">
-    {/* Añade un contenedor con aspect-square y una altura */}
-    <div className="relative aspect-square w-full">
-      <Image
-        src="/assets/images/hero1.png"
-        alt="Equipo desarrollando software a medida"
-        fill
-        sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-contain transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
-    
-    {/* Overlay con gradiente */}
-    <div className="absolute inset-0 bg-white/10 px-1 py-2 overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
-      <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-    </div>
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="
+              order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
+          >
+            <div className="relative group w-full max-w-md">
+              {/* Añade un contenedor con aspect-square y una altura */}
+              <div className="relative aspect-square w-full bg-white/10 px-1 py-2 overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                <Image
+                  src="/assets/images/tecnologia.png"
+                  alt="Equipo desarrollando software a medida"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Overlay con gradiente */}
+                <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
 
-    {/* Círculos decorativos flotantes */}
-    <motion.div
-      className={`absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20`}
-      animate={{ 
-        scale: [1, 1.2, 1],
-        opacity: [0.2, 0.4, 0.2]
-      }}
-      transition={{ 
-        duration: 3, 
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 1 * 0.5
-      }}
-    ></motion.div>
-  </div>
-</motion.div>
+              {/* Círculos decorativos flotantes */}
+              <motion.div
+                className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
+              ></motion.div>
+            </div>
+          </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}
           <motion.p

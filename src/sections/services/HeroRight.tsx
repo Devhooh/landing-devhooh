@@ -40,9 +40,9 @@ export default function HeroRight() {
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
                   src="/assets/images/heroright.png"
-                  alt="soluciones-a-medida-desarrollo-de-software"
-                  width={500}
-                  height={350}
+                  alt="servicios-completos-con-tecnologias-actuales"
+                  width={800}
+                  height={520}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 

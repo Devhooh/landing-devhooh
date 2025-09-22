@@ -23,9 +23,9 @@ export default function HeroCenter() {
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
                 <Image
                   src="/assets/images/herocenter1.png"
-                  alt="soluciones-a-medida-desarrollo-de-software"  
-                  width={500}
-                  height={350}
+                  alt="soluciones-a-medida-desarrollo-de-software"
+                  width={600}
+                  height={565}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
@@ -79,9 +79,9 @@ export default function HeroCenter() {
                 <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
                   <Image
                     src="/assets/images/herocenter1.png"
-                    alt="soluciones-a-medida-desarrollo-de-software"    
-                    width={500}
-                    height={350}
+                    alt="soluciones-a-medida-desarrollo-de-software"
+                    width={600}
+                    height={565}
                     className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   
@@ -184,9 +184,9 @@ export default function HeroCenter() {
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
                 <Image
                   src="/assets/images/herocenter2.png"
-                  alt="soluciones-a-medida-desarrollo-de-software"    
-                  width={500}
-                  height={350}
+                  alt="soluciones-a-medida-desarrollo-de-software"
+                  width={662}
+                  height={574}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 

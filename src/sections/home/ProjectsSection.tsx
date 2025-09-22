@@ -37,7 +37,7 @@ export function ProjectsSection() {
           variants={textVariants}
           className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-colorPrimario2 to-colorPrimario1"
         >
-          Proyectos que <span className="text-colorSecundario3">impulsan resultados</span>
+          Proyectos que impulsan resultados
         </motion.h2>
       </motion.div>
 

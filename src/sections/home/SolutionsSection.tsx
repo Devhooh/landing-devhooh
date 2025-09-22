@@ -78,11 +78,10 @@ export function SolutionsSection() {
           {/* Título principal con animación letra por letra */}
           <motion.h2
             variants={textVariants}
-            className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight"
+            className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"
           >
-            <span className="text-colorPrimario2">Impulsamos tu negocio con</span>
-            <br />
-            <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text">soluciones modernas</span>
+            Impulsamos tu negocio con
+            soluciones modernas
           </motion.h2>
 
           {/* Subtítulo mejorado */}
@@ -90,13 +89,7 @@ export function SolutionsSection() {
             className="text-colorPrimario1/80 text-lg md-tablet:text-xl leading-relaxed max-w-3xl mx-auto"
             variants={textVariants}
           >
-            Desde tu primera idea hasta el lanzamiento, desarrollamos{" "}
-            <span className="font-semibold text-colorPrimario5">webs</span>,{" "}
-            <span className="font-semibold text-colorSecundario1">apps</span> y{" "}
-            <span className="font-semibold text-colorSecundario3">
-              sistemas inteligentes
-            </span>{" "}
-            que transforman tu presencia digital y optimizan cada proceso de tu negocio.
+            Desde tu primera idea hasta el lanzamiento, desarrollamos webs, apps y sistemas inteligentes que transforman tu presencia digital y optimizan cada proceso de tu negocio.
           </motion.p>
 
           {/* Estadísticas rápidas */}

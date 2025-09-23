@@ -26,10 +26,11 @@ export default function TechHero({ tech }: TechHeroProps) {
           <div className="relative group">
             <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
               <Image
-                src={tech.image}
+                src="/assets/images/herotech.png"
                 alt={tech.title}
-                width={500}
-                height={500}
+                width={600}
+                height={600}
+                priority
                 className="w-80 max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />
               

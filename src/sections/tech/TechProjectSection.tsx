@@ -7,14 +7,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-// Texto letra por letra
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
-const splitText = (text: string) => text.split("");
-
 export default function TechProjectSection() {
   const limit: number = 5;
   const displayedProjects = projectsData.slice(0, limit);
@@ -25,28 +17,15 @@ export default function TechProjectSection() {
         {/* Título animado */}
         <motion.h2
           className="px-6 text-3xl md-tablet:text-4xl font-extrabold text-white"
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
         >
-          {splitText("Proyectos con  ").map((letter, idx) => (
-          <motion.span
-            key={idx}
-            variants={letterVariants}
-          >
-            {letter}
-          </motion.span>
-        ))}
-        {splitText("nuestra tecnología:").map((letter, idx) => (
-          <motion.span
-            key={idx + 100}
-            className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-            variants={letterVariants}
-          >
-            {letter}
-          </motion.span>
-        ))}
+          Proyectos con nuestra{" "}
+          <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
+            tecnología:
+          </span>
         </motion.h2>
 
         {/* Subtítulo */}

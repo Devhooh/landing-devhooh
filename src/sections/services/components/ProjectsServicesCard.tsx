@@ -35,9 +35,9 @@ export default function ProjectsServicesCard({ projects }: { projects: ProjectCa
       <div className="w-full h-full rounded-2xl shadow-lg p-4 flex flex-col justify-between relative z-10">
         {/* Header */}
         <div className="mb-6">
-          <h4 className="text-xl font-bold text-white group-hover:text-colorPrimario5 transition-colors duration-300 mb-2">
+          <h2 className="text-xl font-bold text-white group-hover:text-colorPrimario5 transition-colors duration-300 mb-2">
             {projects.company}
-          </h4>
+          </h2>
           <div className="flex items-center gap-2 text-colorHover5/80 text-sm">
             <MapPin className="w-4 h-4" />
             <span>{projects.location}</span>
@@ -53,6 +53,7 @@ export default function ProjectsServicesCard({ projects }: { projects: ProjectCa
               width={150}
               height={150}
               className="w-32 h-32 rounded-xl object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
             />
           </div>
         </div>
@@ -61,7 +62,7 @@ export default function ProjectsServicesCard({ projects }: { projects: ProjectCa
         <div className="flex-grow">
           <div className="flex items-center gap-2 mb-3">
             <Briefcase className="w-4 h-4 text-colorPrimario5" />
-            <h5 className="text-lg font-semibold text-white">{projects.ProjectName}</h5>
+            <h3 className="text-lg font-semibold text-white">{projects.ProjectName}</h3>
           </div>
 
           <p className="text-colorHover5/90 text-sm leading-relaxed mb-4 line-clamp-3">

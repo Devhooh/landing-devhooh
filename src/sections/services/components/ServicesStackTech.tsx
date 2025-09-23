@@ -37,16 +37,16 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
   return (
     <section className="py-8 px-6 md-tablet:px-12 bg-violet-50">
       {/* Encabezado */}
-      <motion.div initial="hidden" whileInView="show" viewport={{ once: true }}>
-        <motion.h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-2" variants={textVariants}>
+      <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={textVariants}>
+        <h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-2">
           Stack de tecnología que utilizamos
-        </motion.h2>
-        <motion.h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2  mb-4" variants={textVariants}>
+        </h2>
+        <h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2  mb-4">
           para <span className="text-colorPrimario5">{service.name}</span>
-        </motion.h2>
-        <motion.p className="mt-3 text-colorPrimario1 text-lg md-tablet:text-xl leading-relaxed" variants={textVariants}>
+        </h2>
+        <p className="mt-3 text-colorPrimario1 text-lg md-tablet:text-xl leading-relaxed">
           {stack.description}
-        </motion.p>
+        </p>
       </motion.div>
 
       {/* Grid de tecnologías */}

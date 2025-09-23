@@ -43,7 +43,7 @@ export default function HeroRight() {
                   alt="servicios-completos-con-tecnologias-actuales"
                   width={800}
                   height={520}
-                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* Overlay con gradiente */}

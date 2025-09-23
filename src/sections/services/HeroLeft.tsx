@@ -40,11 +40,11 @@ export default function HeroLeft() {
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/assets/images/heroleft.png"
+                  src="/assets/images/image5.png"
                   alt="Imagen-desarrollo-de-calidad-servicios-de-desarrollo"
                   // Se usan las dimensiones originales para que Next.js las optimice correctamente
-                  width={750}
-                  height={482}
+                  width={520}
+                  height={523}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />

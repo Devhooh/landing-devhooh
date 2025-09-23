@@ -26,13 +26,6 @@ interface CardCaroulselSectionProps {
   cardData: CardData[];
 }
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
-const splitText = (text: string) => text.split("");
-
 export default function CaroulselSection({ title, cardData, features }: CardCaroulselSectionProps) {
   return (
     <section
@@ -43,16 +36,12 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
         <motion.h2
           className="
             px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-colorPrimario1 pb-4 drop-shadow-sm"
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.02 } } }}
         >
-          {splitText(title).map((letter, idx) => (
-            <motion.span key={idx} variants={letterVariants}>
-              {letter}
-            </motion.span>
-          ))}
+          {title}
         </motion.h2>
 
         {features && (
@@ -99,11 +88,11 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
           ))}
 
           {/* Botones custom */}
-          <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
-            <ArrowLeft className="w-6 h-6 text-white" />
+          <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/20 p-3 rounded-full">
+            <ArrowLeft className="w-6 h-6 text-colorPrimario1" />
           </div>
-          <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
-            <ArrowRight className="w-6 h-6 text-white" />
+          <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/20 p-3 rounded-full">
+            <ArrowRight className="w-6 h-6 text-colorPrimario1" />
           </div>
 
         </Swiper>

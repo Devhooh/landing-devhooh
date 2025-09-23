@@ -3,13 +3,10 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 interface ReviewCardProps {
-  logoUrl: string;
-  projectTitle: string;
   reviewBody: string;
   reviewerName: string;
   position: string;
   reviewerProfileUrl: string;
-  rating: number;
 }
 
 export default function ReviewSectionCard({
@@ -35,6 +32,8 @@ export default function ReviewSectionCard({
             width={120}
             height={120}
             className="rounded-full object-cover border-4 border-colorPrimario5 shadow-lg"
+            loading="lazy"
+            sizes="120px"
           />
           <div className="absolute -bottom-2 -right-2 w-7 h-7 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 shadow-md"></div>
         </div>
@@ -54,9 +53,9 @@ export default function ReviewSectionCard({
         {/* Nombre y cargo */}
         <div className="flex items-center gap-4 pt-4 border-t border-colorPrimario5/30">
           <div className="flex flex-col">
-            <h4 className="font-bold text-colorPrimario5 text-xl mb-1">
+            <p className="font-bold text-colorPrimario5 text-xl mb-1">
               {reviewerName}
-            </h4>
+            </p>
             <p className="text-colorPrimario1/70 text-sm font-semibold">
               {position}
             </p>

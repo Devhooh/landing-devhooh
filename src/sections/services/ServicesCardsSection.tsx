@@ -54,7 +54,7 @@ export default function ServicesCardsSection() {
                   <Lightbulb className="h-10 w-10 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-1 text-white">Tienes una gran idea</h3>
+                  <h2 className="text-2xl font-semibold mb-1 text-white">Tienes una gran idea</h2>
                   <p className="text-lg md-tablet:text-xl leading-snug text-gray-200">
                     Construimos la presencia digital de tu startup, prototipos y MVPs funcionales.
                   </p>
@@ -99,7 +99,7 @@ export default function ServicesCardsSection() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold mb-1 text-white">Buscas crecimiento</h3>
+                  <h2 className="text-2xl font-semibold mb-1 text-white">Buscas crecimiento</h2>
                   <p className="text-lg md-tablet:text-xl leading-snug text-gray-200">
                     Desarrollamos soluciones web y móviles robustas para PyMEs, diseñadas para escalar y optimizar procesos.
                   </p>
@@ -143,7 +143,7 @@ export default function ServicesCardsSection() {
                   <Repeat className="h-10 w-10 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold mb-1 text-white">Necesitas actualizarte</h3>
+                  <h2 className="text-2xl font-semibold mb-1 text-white">Necesitas actualizarte</h2>
                   <p className="text-lg md-tablet:text-xl leading-snug text-gray-200">
                     Renovamos tu plataforma, añadimos nuevas funcionalidades y optimizamos su rendimiento para que sea más veloz.
                   </p>
@@ -186,7 +186,7 @@ export default function ServicesCardsSection() {
           className="relative z-10 text-center mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.4,}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl
@@ -218,10 +218,10 @@ export default function ServicesCardsSection() {
         {/* Glow animado */}
         <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-400 via-purple-500 to-sky-400 opacity-30 blur-2xl animate-pulse" />
         
-        <h2 className="relative text-3xl md-tablet:text-4xl font-extrabold text-white leading-tight italic table-lg:not-italic">
+        <h3 className="relative text-3xl md-tablet:text-4xl font-extrabold text-white leading-tight italic table-lg:not-italic">
           Tenemos una amplia <span className="text-colorDarkFondo2">gama de servicios. </span>  
           Escoge el ideal <span className="text-colorDarkFondo2">para ti</span>
-        </h2>
+        </h3>
       </motion.div>
     </section>
   );

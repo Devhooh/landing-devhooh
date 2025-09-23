@@ -48,11 +48,6 @@ const itemVariants: Variants = {
 export default function CTAServices() {
   return (
     <section className="relative w-full h-auto my-10 py-16 flex justify-center items-center overflow-hidden px-4">
-      {/* CAMBIO: Fondo con blobs decorativos para dar profundidad */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <div className="absolute top-0 -left-16 w-72 h-72 rounded-full bg-colorPrimario5/20 blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-0 -right-16 w-72 h-72 rounded-full bg-colorSecundario1/20 blur-2xl animate-pulse [animation-delay:2s]"></div>
-      </div>
       
       {/* Contenedor principal del CTA */}
       <motion.div
@@ -80,17 +75,20 @@ export default function CTAServices() {
           </motion.p>
           
           {/* CAMBIO: Contenido enriquecido con puntos clave */}
-          <motion.div variants={itemVariants} className="flex flex-col md-tablet:flex-row gap-6 mb-8 w-full justify-center tablet-md:justify-start">
-            <div className="flex items-center gap-2 text-sm text-colorHover5">
-              <ShieldCheck className="w-5 h-5 text-colorPrimario7" /> Fiabilidad Garantizada
-            </div>
-            <div className="flex items-center gap-2 text-sm text-colorHover5">
-              <Zap className="w-5 h-5 text-colorPrimario7" /> Desarrollo Ágil
-            </div>
-            <div className="flex items-center gap-2 text-sm text-colorHover5">
-              <BarChart3 className="w-5 h-5 text-colorPrimario7" /> Soluciones Escalables
-            </div>
-          </motion.div>
+          <motion.ul variants={itemVariants} className="flex flex-col md-tablet:flex-row gap-6 mb-8 w-full justify-center tablet-md:justify-start">
+            <li className="flex items-center gap-2 text-sm text-colorHover5">
+              <ShieldCheck className="w-5 h-5 text-colorPrimario7" />
+              <p>Fiabilidad Garantizada</p>
+            </li>
+            <li className="flex items-center gap-2 text-sm text-colorHover5">
+              <Zap className="w-5 h-5 text-colorPrimario7" /> 
+              <p>Desarrollo Ágil</p>
+            </li>
+            <li className="flex items-center gap-2 text-sm text-colorHover5">
+              <BarChart3 className="w-5 h-5 text-colorPrimario7" /> 
+              <p>Soluciones Escalables</p>
+            </li>
+          </motion.ul>
 
           {/* CAMBIO: Botón con efecto "shine" de CTAHome */}
           <motion.div variants={itemVariants}>
@@ -116,13 +114,7 @@ export default function CTAServices() {
             className="relative hidden tablet-md:flex w-48 h-48 lg:w-56 lg:h-56 flex-shrink-0"
         >
           <motion.div variants={floatingVariants} animate="animate">
-            <Cog className="w-full h-full text-colorDarkFondo5/50" />
-          </motion.div>
-          <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" variants={floatingVariants} animate="animate" style={{ animationDelay: '0.2s' }}>
-            <Cog className="w-2/3 h-2/3 text-colorPrimarioLogo1/70" />
-          </motion.div>
-          <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Sparkles className="w-1/3 h-1/3 text-colorPrimarioLogo2" />
+            <Cog className="w-full h-full text-cyan-500" />
           </motion.div>
           <motion.div className="absolute top-4 right-4 text-colorPrimarioLogo2" variants={sparkleVariants} animate="animate">
             <Sparkles className="w-6 h-6" />

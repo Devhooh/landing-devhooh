@@ -19,13 +19,13 @@ export default function HeroSectionPort() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-4xl font-extrabold text-center table-lg:text-right text-colorPrimario2 leading-tight drop-shadow-lg">
+            <h1 className="text-4xl font-extrabold text-center table-lg:text-right text-colorPrimario2 leading-tight drop-shadow-lg">
               Realidades digitales. {""}
               <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> 
                 Resultados que hablan {""}
               </span>
               por sí solos
-            </h2>
+            </h1>
           </motion.div>
 
           {/* --- 2) IMAGEN --- */}
@@ -42,10 +42,11 @@ export default function HeroSectionPort() {
             <div className="relative group">
               <div className="bg-colorHover5 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/assets/images/hero2.png"
+                  src="/assets/images/heroportfolio.png"
                   alt="Desarrollo de softwara, portafolio"
-                  width={500}
-                  height={500}
+                  width={2345}
+                  height={1825}
+                  priority
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 

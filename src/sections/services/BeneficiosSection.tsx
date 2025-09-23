@@ -54,7 +54,7 @@ export default function BeneficiosSection() {
             viewport={{ once: true }}
           >
             <Image
-              src="/assets/images/webSoftware.png"
+              src="/assets/images/webSoft.png"
               alt="Confianza y seguridad"
               width={500}
               height={400}
@@ -173,7 +173,7 @@ export default function BeneficiosSection() {
             viewport={{ once: true }}
           >
             <Image
-              src="/assets/images/webSoftware.png"
+              src="/assets/images/webSoft.png"
               alt="Ahorro de tiempo"
               width={500}
               height={400}
@@ -199,7 +199,7 @@ export default function BeneficiosSection() {
             viewport={{ once: true }}
           >
             <Image
-              src="/assets/images/webSoftware.png"
+              src="/assets/images/webSoft.png"
               alt="Soporte continuo"
               width={500}
               height={400}

@@ -58,7 +58,7 @@ export default function GarantiasSection() {
             viewport={{ once: true }}
           >
             <Image
-              src="/assets/images/webSoftware.png" // reemplaza con tu imagen real
+              src="/assets/images/webSoft.png" // reemplaza con tu imagen real
               alt="Garantía de servicios"
               width={500}
               height={500}

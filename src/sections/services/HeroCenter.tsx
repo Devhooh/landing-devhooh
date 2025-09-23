@@ -69,7 +69,7 @@ export default function HeroCenter() {
 
             {/* Imagen para mobile */}
             <motion.div
-              className="table-lg:hidden my-14 bg-white/10 shadow-2xl rounded-3xl px-4"
+              className="table-lg:hidden my-7 bg-white/10 shadow-2xl rounded-3xl px-4"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
@@ -113,7 +113,7 @@ export default function HeroCenter() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <p className="text-lg md-tablet:text-xl text-gray-200 max-w-2xl">
+              <p className="text-lg md-tablet:text-xl text-white max-w-2xl">
                 Creamos plataformas robustas y personalizadas. Desde la idea hasta el despliegue final.
               </p>
             </motion.div>

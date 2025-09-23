@@ -75,7 +75,7 @@ export default function HeroRight() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            <p className="text-lg md-tablet:text-xl text-gray-200 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               IA, apps móviles, blockchain, sitios web y más. Nuestro stack moderno está listo para tu idea.
             </p>
           </motion.div>

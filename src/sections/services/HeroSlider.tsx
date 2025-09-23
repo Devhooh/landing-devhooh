@@ -38,10 +38,10 @@ export default function HeroSlider() {
         </SwiperSlide>
 
         {/* Botones custom */}
-          <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/60 hover:bg-white/40 p-5 rounded-full">
+          <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/35 hover:bg-white/20 p-5 rounded-full">
             <ArrowLeft className="w-6 h-6 text-colorPrimario1" />
           </div>
-          <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/60 hover:bg-white/40 p-5 rounded-full">
+          <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/35 hover:bg-white/20 p-5 rounded-full">
             <ArrowRight className="w-6 h-6 text-colorPrimario1" />
           </div>
 

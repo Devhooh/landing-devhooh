@@ -29,7 +29,7 @@ export function ProjectCard({
   return (
     <div className="
       h-[650px] backdrop-blur-md border-b-4 tablet-md:border-b-8 border-colorPrimarioLogo1 border tablet-md:border-2 rounded-3xl 
-      overflow-hidden flex flex-col w-full transition-transform duration-300 hover:scale-[1.01]">
+      overflow-hidden flex flex-col max-w-3xl transition-transform duration-300 hover:scale-[1.01]">
       
       {/* Imagen */}
       <div className="relative w-full h-48 md-tablet:h-56 table-lg:h-64 border-b border-purple-500/30">
@@ -49,9 +49,9 @@ export function ProjectCard({
 
       {/* Contenido */}
       <div className="p-6 md-tablet:p-7 table-lg:p-8 flex flex-col gap-3 flex-1">
-        <h3 className="text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold text-colorPrimario2">
+        <h2 className="text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold text-colorPrimario2">
           {ProjectName}
-        </h3>
+        </h2>
         {company && (
           <p className="text-colorSecundario3 text-base md-tablet:text-xl font-semibold">
             Empresa: {company}

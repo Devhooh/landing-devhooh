@@ -22,7 +22,7 @@ export interface DataTech {
   color: string;
   title: string;
   subtitle: string;
-  image: string;
+  image: string[];
   beneficios: TechDates[];
   servicios: Servicios[]
   whyTech: string
@@ -39,7 +39,7 @@ export const techData: Record<string, DataTech> = {
     title: "JavaScript",
     subtitle:
       "El lenguaje estándar universal para aplicaciones web, flexible y dinámico en todas partes.",
-    image: "/assets/images/slide1.png",
+    image: ["/assets/images/herocenter1.png", "/assets/images/herocenter2.png"],
     whyTech: "En nuestra agencia hemos logrado optimizar proyectos con React JS alcanzando hasta un 100% en PageSpeed y Lighthouse. Pasando de cargas de 1.5s a 0.2s al migrar de WordPress a React, mejorando así la experiencia del usuario y el posicionamiento web.",
     beneficios: [
       { icon: "Code", title: "Lenguaje universal", description: "Se usa tanto en frontend como backend." },
@@ -76,7 +76,7 @@ export const techData: Record<string, DataTech> = {
     title: "TypeScript",
     subtitle:
       "Superconjunto de JavaScript que agrega tipado estático, ideal para proyectos grandes y mantenibles.",
-    image: "/assets/images/slide2.png",
+    image: ["/assets/images/herocenter1.png", "/assets/images/herocenter2.png"],
     whyTech: "Con TypeScript hemos logrado mejorar la calidad del código y reducir los errores en producción gracias a su tipado estático. Esto se traduce en proyectos más escalables, seguros y fáciles de mantener, mejorando la velocidad de desarrollo en equipos grandes.",
     beneficios: [
       { icon: "Code", title: "Tipado estático", description: "Reduce errores y mejora la productividad." },
@@ -113,7 +113,7 @@ export const techData: Record<string, DataTech> = {
     title: "Tailwind CSS",
     subtitle:
       "Framework de utilidades para CSS que acelera el desarrollo de interfaces modernas y responsivas.",
-    image: "/assets/images/slide3.png",
+    image: ["/assets/images/herocenter1.png", "/assets/images/herocenter2.png"],
     whyTech: "Tailwind CSS nos permite diseñar interfaces modernas y responsivas sin sacrificar velocidad. Hemos reducido un 60% el tiempo de maquetado y logrado diseños consistentes y escalables, ideales para proyectos que necesitan flexibilidad y personalización.",
     beneficios: [
       { icon: "Zap", title: "Alta productividad", description: "Diseña interfaces sin salir del HTML." },
@@ -145,7 +145,7 @@ export const techData: Record<string, DataTech> = {
     title: "Next.js",
     subtitle:
       "Framework de React optimizado para producción, con soporte para SSR, SSG y APIs integradas.",
-    image: "/assets/images/slide4.png",
+    image: ["/assets/images/herocenter1.png", "/assets/images/herocenter2.png"],
     whyTech: "Next.js ha sido clave para optimizar proyectos con renderizado del lado del servidor (SSR) y generación estática (SSG). Gracias a él, hemos mejorado SEO, reducido tiempos de carga y alcanzado puntuaciones perfectas en Google PageSpeed.",
     beneficios: [
       { icon: "Rocket", title: "SSR y SSG", description: "Carga rápida y SEO mejorado." },
@@ -181,7 +181,7 @@ export const techData: Record<string, DataTech> = {
     title: "Angular",
     subtitle:
       "Framework robusto de Google para aplicaciones web empresariales con TypeScript.",
-    image: "/assets/images/slide1.png",
+    image: ["/assets/images/herocenter1.png", "/assets/images/herocenter2.png"],
     whyTech: "Hemos implementado proyectos complejos con Angular para clientes corporativos, logrando aplicaciones escalables con una arquitectura modular que redujo en un 40% los costos de mantenimiento a largo plazo.",
     beneficios: [
       { icon: "Shield", title: "Soporte de Google", description: "Mantenido y actualizado constantemente." },
@@ -218,7 +218,7 @@ export const techData: Record<string, DataTech> = {
     title: "React",
     subtitle:
       "Librería de JavaScript para construir interfaces de usuario interactivas y dinámicas.",
-    image: "/assets/images/slide2.png",
+    image: ["/assets/images/herocenter1.png", "/assets/images/herocenter2.png"],
     whyTech: "React nos permite construir interfaces modernas y reactivas con gran eficiencia. Con su enfoque basado en componentes, hemos reducido tiempos de desarrollo en un 40% y logrado experiencias de usuario más fluidas y rápidas en proyectos empresariales.",
     beneficios: [
       { icon: "Zap", title: "Componentes reutilizables", description: "Crea interfaces modulares y mantenibles." },

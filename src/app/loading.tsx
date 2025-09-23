@@ -10,7 +10,6 @@ export default function Loading() {
           width={200}
           height={67} // Proporcional al original
           className="animate-pulse h-auto w-auto"
-          priority
         />
       </div>
     </div>

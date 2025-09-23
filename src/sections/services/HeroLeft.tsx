@@ -19,13 +19,13 @@ export default function HeroLeft() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="
+            <h1 className="
               text-4xl font-extrabold leading-tight text-center table-lg:text-left 
               text-white drop-shadow-lg"
             >
               ¿Buscas desarrollo de calidad y escalable? 
               <span className="text-colorPrimario2"> Aquí lo tienes.</span>
-            </h2>
+            </h1>
           </motion.div>
 
           {/* Imagen mejorada */}
@@ -40,11 +40,13 @@ export default function HeroLeft() {
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/assets/images/webSoftware.png"
+                  src="/assets/images/heroleft.png"
                   alt="Imagen-desarrollo-de-calidad-servicios-de-desarrollo"
-                  width={500}
-                  height={350}
+                  // Se usan las dimensiones originales para que Next.js las optimice correctamente
+                  width={750}
+                  height={482}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
                 />
                 
                 {/* Overlay con gradiente */}

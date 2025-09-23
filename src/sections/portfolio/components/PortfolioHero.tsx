@@ -149,9 +149,9 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
               </div>
               
               {/* Etiqueta */}
-              <h3 className="text-sm font-bold text-colorHover5 uppercase tracking-wider mb-2">
+              <h2 className="text-sm font-bold text-colorHover5 uppercase tracking-wider mb-2">
                 {detail.label}
-              </h3>
+              </h2>
               
               {/* Valor */}
               <p className="text-lg md-tablet:text-xl font-semibold text-white transition-colors duration-300">
@@ -181,6 +181,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
                 alt={project.projectName}
                 width={900}
                 height={500}
+                priority
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />
               

@@ -10,8 +10,6 @@ interface SolutionCardProps {
   image: string;  
   reverse?: boolean;
   benefits?: string[];
-  gradient?: string;
-  accentColor?: string;
   index?: number;
 }
 
@@ -45,7 +43,7 @@ export function SolutionCard({
   };
 
   const imageVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8, rotate: reverse ? -5 : 5 },
+    hidden: { opacity: 1, scale: 0.8, rotate: reverse ? -5 : 5 },
     show: { 
       opacity: 1, 
       scale: 1, 
@@ -70,11 +68,6 @@ export function SolutionCard({
         delay: 0.4 + index * 0.2
       } 
     },
-  };
-
-  const benefitVariants: Variants = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0 },
   };
 
   return (
@@ -155,23 +148,17 @@ export function SolutionCard({
 
           {/* Lista de beneficios mejorada */}
           {benefits.length > 0 && (
-            <motion.div
+            <div
               className="space-y-4"
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
             >
               <h4 className="text-lg font-semibold text-colorPrimario2 mb-4">
                 Características principales:
               </h4>
               <ul className="space-y-3">
                 {benefits.map((benefit, i) => (
-                  <motion.li
+                  <li
                     key={i}
                     className="flex items-start gap-3 group/item"
-                    variants={benefitVariants}
-                    transition={{ duration: 0.4 }}
                   >
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center mt-0.5 shadow-sm group-hover/item:shadow-md transition-all duration-200">
                       <Check className="w-3.5 h-3.5 text-white" />
@@ -179,10 +166,10 @@ export function SolutionCard({
                     <span className="text-colorPrimario1/80 text-sm md-tablet:text-base leading-relaxed">
                       {benefit}
                     </span>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           )}
 
           {/* Badge de tecnología */}

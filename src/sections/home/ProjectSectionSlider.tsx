@@ -10,13 +10,6 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 export function ProjectSecitonSlider() {
   return (
     <div className="relative my-20 bg-colorFondo">
-  
-      {/* Efectos decorativos de fondo */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-colorPrimario5/5 blur-2xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-colorSecundario1/5 blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-colorPrimario7/8 blur-xl"></div>
-      </div>
 
       {/* Título y subtítulo mejorados */}
       <motion.div 
@@ -27,35 +20,15 @@ export function ProjectSecitonSlider() {
         viewport={{ once: true }}
       >
         {/* Título principal con animación letra por letra */}
-        <motion.h3
-          className="text-3xl tablet-md:text-5xl font-extrabold mb-6"
-          initial="hidden"
-          whileInView="show"
+        <motion.h2
+          className="text-3xl tablet-md:text-5xl font-extrabold mb-6 text-colorPrimario2"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
           viewport={{ once: true }}
-          variants={{ 
-            hidden: {}, 
-            show: { transition: { staggerChildren: 0.03 } } 
-          }}
         >
-          {["Empresas", " ", "que", " ", "confían", " ", "en", " ", "nosotros"].map((word, wordIdx) => (
-            <span key={wordIdx}>
-              {word === " " ? " " : 
-                word.split("").map((letter, letterIdx) => (
-                  <motion.span
-                    key={letterIdx}
-                    className={wordIdx < 2 ? "text-colorPrimario2" : "text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      show: { opacity: 1, y: 0 }
-                    }}
-                  >
-                    {letter}
-                  </motion.span>
-                ))
-              }
-            </span>
-          ))}
-        </motion.h3>
+          Empresas que confían en nosotros
+        </motion.h2>
 
         {/* Subtítulo descriptivo */}
         <motion.p
@@ -69,26 +42,26 @@ export function ProjectSecitonSlider() {
         </motion.p>
 
         {/* Estadísticas de impacto */}
-        <motion.div
+        <motion.ul
           className="flex flex-wrap justify-center gap-8 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+          <li className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-2xl md-tablet:text-3xl font-bold text-colorPrimario5">20+</div>
-            <div className="text-sm text-colorPrimario1/70">Empresas atendidas</div>
-          </div>
-          <div className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+            <p className="text-sm text-colorPrimario1/70">Empresas atendidas</p>
+          </li>
+          <li className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-2xl md-tablet:text-3xl font-bold text-colorSecundario1">98%</div>
-            <div className="text-sm text-colorPrimario1/70">Tasa de éxito</div>
-          </div>
-          <div className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+            <p className="text-sm text-colorPrimario1/70">Tasa de éxito</p>
+          </li>
+          <li className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-2xl md-tablet:text-3xl font-bold text-colorSecundario3">24m</div>
-            <div className="text-sm text-colorPrimario1/70">Tiempo promedio</div>
-          </div>
-        </motion.div>
+            <p className="text-sm text-colorPrimario1/70">Tiempo promedio</p>
+          </li>
+        </motion.ul>
       </motion.div>
 
       {/* Sliders de logos con animación mejorada */}
@@ -111,9 +84,9 @@ export function ProjectSecitonSlider() {
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <h4 className="text-3xl md-tablet:text-5xl font-bold text-colorPrimario2 mb-4">
+        <h3 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario5 mb-4">
           Proyectos destacados
-        </h4>
+        </h3>
         <p className="text-colorPrimario1/70 text-xl md-tablet:text-2xl max-w-2xl mx-auto">
           Descubre algunos de nuestros trabajos más impactantes y las soluciones que desarrollamos
         </p>
@@ -148,11 +121,9 @@ export function ProjectSecitonSlider() {
           {projectsData.slice(0, 4).map((project, index) => (
             <SwiperSlide 
               key={index} 
-              className="h-auto flex py-10 justify-center transition-transform duration-300 hover:scale-105"
+              className="h-auto px-5 md-tablet:px-10 max-w-3xl flex py-10 justify-center transition-transform duration-300 hover:scale-105"
             >
-              <div className="bg-white px-5 md-tablet:px-10 rounded-3xl w-full shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-300">
-                <ProjectCard {...project} />
-              </div>
+              <ProjectCard {...project} />
             </SwiperSlide>
           ))}
 

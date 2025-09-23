@@ -5,17 +5,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function CTASlugfolio() {
-  const splitText = (text: string) => text.split("");
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
 
   const stats = [
     { value: "50+", label: "Proyectos completados", color: "from-colorPrimario5 to-colorSecundario1" },
-    { value: "98%", label: "Clientes satisfechos", color: "from-colorSecundario1 to-colorPrimario7" },
-    { value: "24h", label: "Soporte garantizado", color: "from-colorPrimario7 to-colorPrimario5" },
+    { value: "98%", label: "Clientes satisfechos", color: "from-colorPrimario5 to-colorSecundario1" },
+    { value: "24h", label: "Soporte garantizado", color: "from-colorPrimario5 to-colorSecundario1" },
   ];
 
   return (
@@ -26,16 +20,12 @@ export default function CTASlugfolio() {
         {/* Título animado letra por letra */}
         <motion.h2
           className="text-3xl tablet-md:text-5xl font-extrabold leading-tight"
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
         >
-          {splitText("Innovación tecnológica que impulsa tu negocio").map((letter, idx) => (
-            <motion.span key={idx} variants={letterVariants}>
-              {letter}
-            </motion.span>
-          ))}
+          Innovación tecnológica que impulsa tu negocio
         </motion.h2>
 
         {/* Subtítulo */}

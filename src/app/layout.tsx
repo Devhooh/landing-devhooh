@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Devhoo",
+  title: "Devhooh",
   description: "Soluciones web, móviles y empresariales integrando IA, Blockchain y software a medida para optimizar tu negocio.",
   robots: {
     index: true,

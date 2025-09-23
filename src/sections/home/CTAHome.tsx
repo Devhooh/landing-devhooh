@@ -5,12 +5,6 @@ import Link from "next/link";
 import { Mail, Sparkles, ArrowRight } from "lucide-react";
 
 export default function CTAHome() {
-  const splitText = (text: string) => text.split("");
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
 
   const floatingVariants: Variants = {
     animate: {
@@ -20,19 +14,6 @@ export default function CTAHome() {
         duration: 3,
         repeat: Infinity,
         ease: "easeInOut"
-      }
-    }
-  };
-
-  const sparkleVariants: Variants = {
-    animate: {
-      scale: [1, 1.2, 1],
-      opacity: [0.7, 1, 0.7],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 0.5
       }
     }
   };
@@ -55,32 +36,18 @@ export default function CTAHome() {
           >
             {/* Título principal animado */}
             <motion.h2
-              className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
-              initial="hidden"
-              whileInView="show"
+              className="text-3xl md-tablet:text-5xl font-extrabold mb-6 leading-tight text-white"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
             >
-              {splitText("Queremos que tu empresa sea nuestro próximo ").map((letter, idx) => (
-                <motion.span
-                  key={idx}
-                  className="text-white"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-              <br />
-              {splitText("caso de éxito").map((letter, idx) => (
-                <motion.span
-                  key={idx + 100}
-                  className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+              Queremos que tu empresa sea nuestro próximo{" "}
+              <span className="text-green-500">
+                caso de éxito
+              </span>
             </motion.h2>
+
 
             {/* Subtítulo */}
             <motion.p
@@ -94,26 +61,26 @@ export default function CTAHome() {
             </motion.p>
 
             {/* Estadísticas rápidas */}
-            <motion.div
+            <motion.ul
               className="flex flex-wrap justify-center table-lg:justify-start gap-8 mb-10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="text-center">
+              <li className="text-center">
                 <div className="text-2xl font-bold text-colorPrimario7">20+</div>
-                <div className="text-sm text-colorHover5">Proyectos</div>
-              </div>
-              <div className="text-center">
+                <p className="text-sm text-colorHover5">Proyectos</p>
+              </li>
+              <li className="text-center">
                 <div className="text-2xl font-bold text-colorPrimario7">99%</div>
-                <div className="text-sm text-colorHover5">Satisfacción</div>
-              </div>
-              <div className="text-center">
+                <p className="text-sm text-colorHover5">Satisfacción</p>
+              </li>
+              <li className="text-center">
                 <div className="text-2xl font-bold text-colorPrimario7">24/7</div>
-                <div className="text-sm text-colorHover5">Soporte</div>
-              </div>
-            </motion.div>
+                <p className="text-sm text-colorHover5">Soporte</p>
+              </li>
+            </motion.ul>
 
             {/* Botón principal */}
             <motion.div
@@ -172,54 +139,30 @@ export default function CTAHome() {
 
                 {/* Sparkles decorativos */}
                 <motion.div
-                  className="absolute top-16 right-16 text-colorPrimario5"
-                  variants={sparkleVariants}
-                  animate="animate"
+                  className="absolute top-16 right-16 text-colorPrimario5 animate-pulse"
                 >
                   <Sparkles className="w-8 h-8" />
                 </motion.div>
 
                 <motion.div
-                  className="absolute bottom-20 left-12 text-colorSecundario1"
-                  variants={sparkleVariants}
-                  animate="animate"
-                  style={{ animationDelay: "1s" }}
+                  className="absolute bottom-20 left-12 text-colorSecundario1 animate-pulse"
                 >
                   <Sparkles className="w-6 h-6" />
                 </motion.div>
 
                 <motion.div
-                  className="absolute top-24 left-20 text-colorPrimario7"
-                  variants={sparkleVariants}
-                  animate="animate"
-                  style={{ animationDelay: "1.5s" }}
+                  className="absolute top-24 left-20 text-colorPrimario7 animate-pulse"
                 >
                   <Sparkles className="w-5 h-5" />
                 </motion.div>
 
                 {/* Círculos orbitales */}
                 <motion.div
-                  className="absolute top-8 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-colorPrimario5"
-                  animate={{ 
-                    rotate: 360,
-                    scale: [1, 1.2, 1]
-                  }}
-                  transition={{ 
-                    rotate: { duration: 8, repeat: Infinity, ease: "linear" },
-                    scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-                  }}
+                  className="animate-pulse absolute top-8 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-colorPrimario5"
                 ></motion.div>
 
                 <motion.div
-                  className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-colorSecundario1"
-                  animate={{ 
-                    rotate: -360,
-                    scale: [1, 1.3, 1]
-                  }}
-                  transition={{ 
-                    rotate: { duration: 6, repeat: Infinity, ease: "linear" },
-                    scale: { duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
-                  }}
+                  className="animate-pulse absolute bottom-8 left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-colorSecundario1"
                 ></motion.div>
               </div>
             </div>

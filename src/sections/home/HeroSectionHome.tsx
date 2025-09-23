@@ -35,8 +35,7 @@ export default function HeroSectionHome() {
             transition={{ duration: 0.6, type: "spring" }}
             className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
           >
-            Desarrollo de{" "}
-            <span className="text-colorSecundario">software inteligente</span> a tu medida
+            Desarrollo de software inteligente a tu medida
           </motion.h1>
 
           {/* --- 2) IMAGEN --- */}
@@ -48,11 +47,11 @@ export default function HeroSectionHome() {
           >
             <div className="relative w-[420px] h-[420px] rounded-2xl">
             <Image
-              src="/assets/images/hero1.png"
+              src="/assets/images/hero-home.png"
               alt="Equipo desarrollando software a medida"
               fill
               // Cambia la propiedad sizes para que refleje el tamaño real del contenedor
-              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 420px"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 462px"
               className="object-contain"
               priority
             />
@@ -68,9 +67,8 @@ export default function HeroSectionHome() {
               text-center table-lg:text-left
             text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
           >
-            Creamos soluciones web, móviles y empresariales integrando{" "}
-            <span className="font-semibold text-colorSecundario1">inteligencia artificial</span>
-            {" "}para impulsar la innovación y mejorar la eficiencia de tu negocio.
+            Creamos soluciones web, móviles y empresariales integrando inteligencia artificial
+            para impulsar la innovación y mejorar la eficiencia de tu negocio.
           </motion.p>
 
           {/* --- 4) LISTA SEO --- */}
@@ -113,7 +111,7 @@ export default function HeroSectionHome() {
                 // whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                  bg-colorSecundario2/90 hover:bg-colorSecundario3  text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  bg-colorSecundario3  text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Ver nuestros servicios
               </motion.button>

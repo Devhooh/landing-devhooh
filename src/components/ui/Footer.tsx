@@ -37,7 +37,7 @@ export default function Footer() {
             <div className="py-5 md-tablet:justify-items-center table-lg:justify-items-start flex-1 min-w-[150px]">
             <ul className="space-y-3 text-gray-300 text-sm">
               <li className="flex items-center gap-2 leading-none">
-                <FaEnvelope className="text-fuchsia-400 w-5 h-5 shrink-0" />
+                <FaEnvelope className="text-colorPrimarioLogo1 w-5 h-5 shrink-0" />
                 <a 
                   href="mailto:contacto@devhooh.com" 
                   target="_blank" 
@@ -47,7 +47,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2 leading-none">
-                <FaEnvelope className="text-fuchsia-400 w-5 h-5 shrink-0" />
+                <FaEnvelope className="text-colorPrimarioLogo1 w-5 h-5 shrink-0" />
                 <a 
                   href="mailto:soporte@devhooh.com" 
                   target="_blank" 
@@ -59,7 +59,7 @@ export default function Footer() {
 
               {/* Celular: */}
               <li className="flex items-center gap-2 leading-none">
-                <FaPhone className="text-fuchsia-400 w-5 h-5 shrink-0" />
+                <FaPhone className="text-colorPrimarioLogo1 w-5 h-5 shrink-0" />
                 <a 
                   href="tel:+59177770000" 
                   target="_blank" 
@@ -69,7 +69,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2 leading-none">
-                <FaPhone className="text-fuchsia-400 w-5 h-5 shrink-0" />
+                <FaPhone className="text-colorPrimarioLogo1 w-5 h-5 shrink-0" />
                 <a 
                   href="tel:+59166660000" 
                   target="_blank" 
@@ -85,34 +85,38 @@ export default function Footer() {
 
           <div className="px-4 text-left md-tablet:justify-items-center table-lg:justify-items-start w-full">
             <h4 className="text-xl sm:text-2xl font-semibold mb-4 text-white">Síguenos</h4>
-            <div className="flex gap-4 text-2xl table-lg:text-4xl text-fuchsia-400">
+            <div className="flex gap-4 text-2xl table-lg:text-4xl text-colorPrimarioLogo1">
               <a 
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <FaFacebook className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" />
+                <FaFacebook className="text-3xl table-lg:text-4xl hover:text-colorPrimario5 transition" />
+                <span className="sr-only">Facebook</span>
               </a>
               <a 
                 href="https://github.com/Devhooh" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <FaGithub className="text-3xl table-lg:text-4xl hover:text-fuchsia-500" />
+                <FaGithub className="text-3xl table-lg:text-4xl hover:text-colorPrimario5 transition" />
+                <span className="sr-only">GitHub</span>
               </a>
               <a 
                 href="https://x.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <FaXTwitter className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" />
+                <FaXTwitter className="text-3xl table-lg:text-4xl hover:text-colorPrimario5 transition" />
+                <span className="sr-only">X (Twitter)</span>
               </a>
               <a 
                 href="https://www.linkedin.com/company/devhooh/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="text-3xl table-lg:text-4xl hover:text-fuchsia-500 transition" />
+                <FaLinkedin className="text-3xl table-lg:text-4xl hover:text-colorPrimario5 transition" />
+                <span className="sr-only">LinkedIn</span>
               </a>
             </div>
           </div>
@@ -161,8 +165,3 @@ export default function Footer() {
     </footer>
   )
 }
-
-
-
-
-

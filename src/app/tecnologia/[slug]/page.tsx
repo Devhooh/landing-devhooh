@@ -27,11 +27,11 @@ export default function TechPage({ params }: Props) {
     <div>
       <TechHero tech={tech} />
 
-      <TechWhy title={tech.title} color={tech.color} description={tech.whyTech} image={tech.image}/>
+      <TechWhy title={tech.title} color={tech.color} description={tech.whyTech} image={tech.image[0]}/>
 
       <TechBenefits benefits={tech.beneficios} name={tech.title}/>
 
-      <TechServices image={tech.image} name={tech.title} services={tech.servicios} />
+      <TechServices image={tech.image[1]} name={tech.title} services={tech.servicios} />
 
       <ServicesSliderProjects title="Nuestra experiencia:" projects={projectsData} showService={false}/>
 

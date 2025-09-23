@@ -36,14 +36,6 @@ export default function TechSection() {
     },
   ];
 
-  const splitText = (text: string) => text.split("");
-
-  // Variants para animar letra por letra
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
   // Variants para fade + slide-up de bloques
   const blockVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -58,16 +50,12 @@ export default function TechSection() {
           {/* Título animado letra por letra */}
           <motion.h2
             className="text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold mb-6 text-colorPrimario2"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Nuestro stack tecnológico").map((letter, idx) => (
-              <motion.span key={idx} variants={letterVariants}>
-                {letter}
-              </motion.span>
-            ))}
+            Nuestro stack tecnológico
           </motion.h2>
           
           <motion.p

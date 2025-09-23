@@ -75,6 +75,7 @@ export default function Navbar() {
           className="table-lg:hidden p-3 rounded-full bg-colorPrimario2 border-2 border-black text-white focus:outline-none transition-transform duration-300"
           onClick={toggleMenu}
         >
+          <span className="sr-only">Abrir menú</span>
           <Menu size={28} />
         </button>
       </div>
@@ -105,6 +106,7 @@ export default function Navbar() {
             onClick={toggleMenu}
             className="p-3 rounded-full bg-colorPrimario2 border-2 border-black text-white transition-colors duration-300"
           >
+            <span className="sr-only">Cerrar menú</span>
             <X size={28} />
           </button>
         </div>

@@ -39,7 +39,7 @@ export default function PageTransitionOverlay() {
             width={200}
             height={67} // Proporcional al original
             className="animate-pulse h-auto w-auto"
-            priority
+            loading="lazy"
           />
         </motion.div>
       )}

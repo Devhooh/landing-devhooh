@@ -17,8 +17,6 @@ export function SolutionsSection() {
         "Diseños adaptados a la identidad de tu marca",
         "Integraciones fluidas con herramientas de gestión",
       ],
-      gradient: "from-colorPrimario5/10 to-colorPrimario6/10",
-      accentColor: "colorPrimario5"
     },
     {
       title: "Aplicaciones Móviles",
@@ -30,8 +28,6 @@ export function SolutionsSection() {
         "Interfaz intuitiva que mejora la usabilidad",
         "Optimización para un rendimiento rápido y estable",
       ],
-      gradient: "from-colorSecundario1/10 to-colorSecundario2/10",
-      accentColor: "colorSecundario1"
     },
     {
       title: "Inteligencia Artificial",
@@ -43,18 +39,8 @@ export function SolutionsSection() {
         "Predicciones basadas en análisis de datos",
         "Automatización inteligente de procesos repetitivos",
       ],
-      gradient: "from-colorSecundario3/10 to-colorSecundario4/10",
-      accentColor: "colorSecundario3"
     },
   ];
-
-  const splitText = (text: string) => text.split("");
-
-  // Variants para animación letra por letra
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
 
   // Variants para animación de textos
   const containerVariants: Variants = {
@@ -78,13 +64,6 @@ export function SolutionsSection() {
 
   return (
     <section className="w-full py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden relative">
-      
-      {/* Efectos decorativos de fondo */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 -left-32 w-64 h-64 rounded-full bg-colorPrimario5/5 blur-3xl"></div>
-        <div className="absolute bottom-40 -right-32 w-80 h-80 rounded-full bg-colorSecundario1/5 blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 rounded-full bg-colorPrimario7/8 blur-2xl"></div>
-      </div>
 
       {/* Encabezado mejorado */}
       <motion.div
@@ -98,31 +77,11 @@ export function SolutionsSection() {
           
           {/* Título principal con animación letra por letra */}
           <motion.h2
-            className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+            variants={textVariants}
+            className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"
           >
-            {splitText("Impulsamos tu negocio con ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            <br />
-            {splitText("soluciones modernas").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Impulsamos tu negocio con
+            soluciones modernas
           </motion.h2>
 
           {/* Subtítulo mejorado */}
@@ -130,34 +89,28 @@ export function SolutionsSection() {
             className="text-colorPrimario1/80 text-lg md-tablet:text-xl leading-relaxed max-w-3xl mx-auto"
             variants={textVariants}
           >
-            Desde tu primera idea hasta el lanzamiento, desarrollamos{" "}
-            <span className="font-semibold text-colorPrimario5">webs</span>,{" "}
-            <span className="font-semibold text-colorSecundario1">apps</span> y{" "}
-            <span className="font-semibold text-colorSecundario3">
-              sistemas inteligentes
-            </span>{" "}
-            que transforman tu presencia digital y optimizan cada proceso de tu negocio.
+            Desde tu primera idea hasta el lanzamiento, desarrollamos webs, apps y sistemas inteligentes que transforman tu presencia digital y optimizan cada proceso de tu negocio.
           </motion.p>
 
           {/* Estadísticas rápidas */}
-          <motion.div
+          <motion.ul
             className="flex flex-wrap justify-center gap-8 mt-10"
             variants={textVariants}
             transition={{ delay: 0.2 }}
           >
-            <div className="text-center">
-              <div className="text-2xl font-bold text-colorPrimario5">3+</div>
-              <div className="text-sm text-colorPrimario1/70">Especialidades</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-colorSecundario1">100%</div>
-              <div className="text-sm text-colorPrimario1/70">Personalizado</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-colorSecundario3">24/7</div>
-              <div className="text-sm text-colorPrimario1/70">Soporte</div>
-            </div>
-          </motion.div>
+            <li className="text-center">
+              <div className="text-2xl md-tablet:text-4xl font-bold text-colorPrimario5">3+</div>
+              <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Especialidades</p>
+            </li>
+            <li className="text-center">
+              <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario1">100%</div>
+              <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Personalizado</p>
+            </li>
+            <li className="text-center">
+              <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario3">24/7</div>
+              <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Soporte</p>
+            </li>
+          </motion.ul>
         </div>
       </motion.div>
 
@@ -171,8 +124,6 @@ export function SolutionsSection() {
               description={solution.description}
               image={solution.image}
               benefits={solution.benefits}
-              gradient={solution.gradient}
-              accentColor={solution.accentColor}
               reverse={i % 2 === 1}
               index={i}
             />
@@ -199,7 +150,7 @@ export function SolutionsSection() {
               <span className="relative z-10">
                 Descubre todas nuestras soluciones
               </span>
-              <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </motion.button>
           </Link>
         </motion.div>

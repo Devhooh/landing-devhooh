@@ -45,7 +45,7 @@ export default function HeroLeft() {
                   // Se usan las dimensiones originales para que Next.js las optimice correctamente
                   width={750}
                   height={482}
-                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
                 

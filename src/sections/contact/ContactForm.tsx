@@ -42,14 +42,14 @@ export function ContactForm() {
         {/* Encabezado mejorado */}
         <div className="mb-10 text-center">
           {/* Título principal */}
-          <motion.h3
+          <motion.h2
             className="text-2xl md-tablet:text-3xl font-extrabold mb-6"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Comencemos tu ").map((letter, idx) => (
+            {splitText("Comencemos tu proyecto").map((letter, idx) => (
               <motion.span
                 key={idx}
                 className="text-white"
@@ -58,45 +58,36 @@ export function ContactForm() {
                 {letter}
               </motion.span>
             ))}
-            {splitText("proyecto").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-colorDarkFondo3"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </motion.h3>
+          </motion.h2>
 
           {/* Badges de confianza */}
-          <motion.div
+          <motion.ul
             className="flex flex-wrap justify-center gap-4 mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4}}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorDarkFondo1/50 border border-colorPrimario5/30 backdrop-blur-sm">
+            <li className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorDarkFondo1/50 border border-colorPrimario5/30 backdrop-blur-sm">
               <Clock className="w-4 h-4 text-white" />
-              <span className="text-sm font-semibold text-colorHover5">
+              <p className="text-sm font-semibold text-colorHover5">
                 Respuesta en 24h
-              </span>
-            </div>
+              </p>
+            </li>
             
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorDarkFondo1/50 border border-colorSecundario1/30 backdrop-blur-sm">
+            <li className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorDarkFondo1/50 border border-colorSecundario1/30 backdrop-blur-sm">
               <Shield className="w-4 h-4 text-white" />
-              <span className="text-sm font-semibold text-colorHover5">
+              <p className="text-sm font-semibold text-colorHover5">
                 Sin compromiso
-              </span>
-            </div>
-          </motion.div>
+              </p>
+            </li>
+          </motion.ul>
 
           <motion.p
             className="text-colorHover5 text-sm md-tablet:text-base max-w-md mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4}}
             viewport={{ once: true }}
           >
             Cuéntanos sobre tu idea y te ayudaremos a convertirla en una solución digital exitosa
@@ -111,13 +102,13 @@ export function ContactForm() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4}}
         >
           {/* Nombre */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <InputForm
@@ -134,7 +125,7 @@ export function ContactForm() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <InputForm
@@ -152,7 +143,7 @@ export function ContactForm() {
             className="grid grid-cols-1 md-tablet:grid-cols-3 gap-4"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <Select label="País" id="pais" name="pais" required>
@@ -178,7 +169,7 @@ export function ContactForm() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <InputForm
@@ -195,7 +186,7 @@ export function ContactForm() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <InputForm
@@ -212,7 +203,7 @@ export function ContactForm() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <Select label="Tipo de proyecto" id="proyecto" name="proyecto" required>
@@ -230,7 +221,7 @@ export function ContactForm() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <FileUpload
@@ -252,7 +243,7 @@ export function ContactForm() {
             className="space-y-2"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <label
@@ -274,8 +265,8 @@ export function ContactForm() {
           {/* Botón mejorado */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <motion.button
@@ -298,8 +289,8 @@ export function ContactForm() {
           <motion.p
             className="text-xs text-colorHover5/70 text-center leading-relaxed mt-4"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             Al enviar este formulario aceptas que podamos contactarte para discutir tu proyecto. 

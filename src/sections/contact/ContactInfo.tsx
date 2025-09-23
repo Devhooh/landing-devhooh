@@ -3,12 +3,6 @@ import { Mail, Phone, ArrowRight, Clock, MapPin, Star } from "lucide-react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
-// Variante para los títulos letra por letra
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 // Variante para los párrafos (desde la izquierda)
 const paragraphVariants: Variants = {
   hidden: { opacity: 0, x: -30 },
@@ -30,20 +24,7 @@ const contactCardVariants: Variants = {
   })
 };
 
-// Variante para iconos flotantes
-const iconFloatVariants: Variants = {
-  animate: {
-    y: [0, -8, 0],
-    transition: {
-      duration: 2.5,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
-
 export function ContactInfo() {
-  const splitText = (text: string) => text.split("");
 
   return (
     <div className="relative space-y-8">
@@ -54,29 +35,12 @@ export function ContactInfo() {
         {/* Título animado */}
         <motion.h2
           className="text-3xl md-tablet:text-4xl font-extrabold"
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4}}
           viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
         >
-          {splitText("¡Hablemos de tu ").map((letter, idx) => (
-            <motion.span
-              key={idx}
-              className="text-colorPrimario2"
-              variants={letterVariants}
-            >
-              {letter}
-            </motion.span>
-          ))}
-          {splitText("proyecto!").map((letter, idx) => (
-            <motion.span
-              key={idx + 100}
-              className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-              variants={letterVariants}
-            >
-              {letter}
-            </motion.span>
-          ))}
+          ¡Hablemos de tu proyecto!
         </motion.h2>
 
         {/* Párrafos introductorios mejorados */}
@@ -101,7 +65,6 @@ export function ContactInfo() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.6 }}
-            transition={{ delay: 0.2 }}
           >
             Completa el formulario y empecemos a transformar tu idea en realidad.
           </motion.p>
@@ -112,7 +75,7 @@ export function ContactInfo() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.4}}
           viewport={{ once: true }}
         >
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
@@ -170,19 +133,16 @@ export function ContactInfo() {
                 className="flex items-start gap-4"
               >
                 {/* Icono animado */}
-                <motion.div
+                <div
                   className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg text-white"
-                  variants={iconFloatVariants}
-                  animate="animate"
-                  style={{ animationDelay: `${i * 0.2}s` }}
                 >
                   {item.icon}
-                </motion.div>
+                </div>
 
                 <div className="flex-grow">
-                  <h4 className="font-bold text-colorPrimario2 text-lg mb-1">
+                  <h3 className="font-bold text-colorPrimario2 text-lg mb-1">
                     {item.label}
-                  </h4>
+                  </h3>
 
                   {item.href ? (
                     <div className="text-colorPrimario1/80 font-medium hover:text-colorPrimario5 transition-all duration-300 group-hover:text-colorPrimario5">
@@ -210,7 +170,7 @@ export function ContactInfo() {
         className="relative z-10 pt-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
+        transition={{ duration: 0.4}}
         viewport={{ once: true }}
       >
         <Link href="/about">
@@ -224,7 +184,7 @@ export function ContactInfo() {
                 <Star className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="font-bold text-lg">Conoce más sobre Devhooh</h4>
+                <h3 className="font-bold text-lg">Conoce más sobre Devhooh</h3>
                 <p className="text-colorHover5 text-sm">Descubre nuestra historia y experiencia</p>
               </div>
             </div>

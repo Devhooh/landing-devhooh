@@ -27,7 +27,7 @@ export default function InputForm({placeholder, nameHtmlFor, title, id, name, ty
         placeholder={placeholder}
         value={valor}
         onChange={(e) => setValor(e.target.value)}
-        className={`w-full rounded-xl border px-4 py-3 text-black placeholder-gray-500 
+        className={`w-full rounded-xl border px-4 py-3 text-black placeholder-gray-200
           focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-500/50 outline-none transition
           ${
             valor.trim() === ""

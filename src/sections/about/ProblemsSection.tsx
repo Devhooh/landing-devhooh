@@ -46,13 +46,7 @@ const cardVariants: Variants = {
   }
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 export default function ProblemsSection() {
-  const splitText = (text: string) => text.split("");
 
   const problems = [
     {
@@ -110,7 +104,6 @@ export default function ProblemsSection() {
       
       {/* Contenedor principal con gradiente mejorado */}
       <div className="relative bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 rounded-3xl py-16 px-6 md-tablet:px-12 border border-colorPrimario5/20 shadow-[0_0_50px_rgba(103,61,230,0.3)]">
-        
         <motion.div 
           className="relative z-10 max-w-6xl mx-auto text-center mb-16"
           variants={containerVariants}
@@ -121,34 +114,12 @@ export default function ProblemsSection() {
           {/* Título mejorado con animación letra por letra */}
           <motion.h2
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("¿Qué problemas ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-white"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("solucionamos").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("?").map((letter, idx) => (
-              <motion.span key={idx + 200} className="text-white" variants={letterVariants}>
-                {letter}
-              </motion.span>
-            ))}
+            ¿Qué problemas solucionamos?
           </motion.h2>
 
           {/* Subtítulo mejorado */}

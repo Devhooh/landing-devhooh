@@ -6,12 +6,6 @@ import { motion } from "framer-motion";
 export default function HeroAbout() {
   return (
     <section className="relative h-auto bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
-      {/* Efectos decorativos de fondo */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-colorPrimario5/10 blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-colorSecundario1/10 blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-colorPrimario7/20 blur-2xl"></div>
-      </div>
       
       <div className="max-w-[1550px] mx-auto px-6 pt-16 md-tablet:pt-10 table-lg:pt-0 md-tablet:px-12 relative z-10">
         <div className="grid grid-cols-1 items-center gap-6">
@@ -20,12 +14,12 @@ export default function HeroAbout() {
             {/* Título */}
             <motion.div
               className="md-tablet:mt-2"
-              initial={{ opacity: 0, y: -40 }}
+              initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true }}
             >
-              <h2 className="mt-5 text-colorPrimario2 table-lg:px-24 text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
+              <h1 className="mt-5 text-colorPrimario2 table-lg:px-24 text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
                 Somos Devhooh: {""}
                 <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
                   Tecnología con propósito.
@@ -34,13 +28,13 @@ export default function HeroAbout() {
                 <span className="block text-lg md-tablet:text-2xl font-semibold text-colorPrimario1/80 mt-2">
                   Nuestra misión va más allá del software
                 </span>
-              </h2>
+              </h1>
             </motion.div>
             {/* Subtítulo */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.4}}
               viewport={{ once: true }}
             >
               <p className="text-lg md-tablet:text-xl text-colorPrimario1/70 max-w-xl mb-5 md-tablet:mb-16 mx-auto">

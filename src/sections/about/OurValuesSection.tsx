@@ -11,7 +11,6 @@ export default function OurValuesSection() {
       image: "/assets/images/innovacion.png",
       alt: "Innovación constante",
       icon: Lightbulb,
-      // gradient: "from-colorPrimario5/10 to-colorPrimario6/10",
       iconGradient: "from-colorPrimario5 to-colorPrimario6",
       borderColor: "colorPrimario5/20"
     },
@@ -21,7 +20,6 @@ export default function OurValuesSection() {
       image: "/assets/images/calidad.png",
       alt: "Calidad y enfoque al cliente",
       icon: Heart,
-      // gradient: "from-colorSecundario1/10 to-colorSecundario2/10",
       iconGradient: "from-colorSecundario1 to-colorSecundario2",
       borderColor: "colorSecundario1/20"
     },
@@ -31,7 +29,6 @@ export default function OurValuesSection() {
       image: "/assets/images/transparencia.png",
       alt: "Transparencia y colaboración",
       icon: Users,
-      // gradient: "from-colorPrimario7/10 to-colorPrimario8/10",
       iconGradient: "from-colorPrimario7 to-colorPrimario8",
       borderColor: "colorPrimario7/20"
     },
@@ -41,7 +38,6 @@ export default function OurValuesSection() {
       image: "/assets/images/crecimiento.png",
       alt: "Crecimiento y excelencia continua",
       icon: TrendingUp,
-      // gradient: "from-colorSecundario3/10 to-colorSecundario4/10",
       iconGradient: "from-colorSecundario3 to-colorSecundario4",
       borderColor: "colorSecundario3/20"
     },
@@ -51,7 +47,6 @@ export default function OurValuesSection() {
       image: "/assets/images/responsabilidad.png",
       alt: "Responsabilidad y cumplimiento",
       icon: Shield,
-      // gradient: "from-colorPrimario5/10 to-colorSecundario1/10",
       iconGradient: "from-colorPrimario5 to-colorSecundario1",
       borderColor: "colorPrimario5/20"
     },

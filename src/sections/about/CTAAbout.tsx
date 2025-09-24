@@ -1,28 +1,10 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Shield, Users, Zap, Star } from "lucide-react";
 
 export default function CTAAbout() {
-  const splitText = (text: string) => text.split("");
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
-  const floatingVariants: Variants = {
-    animate: {
-      y: [0, -10, 0],
-      rotate: [0, 3, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
 
   const features = [
     {
@@ -71,34 +53,9 @@ export default function CTAAbout() {
               viewport={{ once: true }}
               variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
             >
-              {splitText("Devhooh es el socio ").map((letter, idx) => (
-                <motion.span
-                  key={idx}
-                  className="text-colorPrimario2"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+              Devhooh es el socio 
               <br />
-              {splitText("en quien puedes ").map((letter, idx) => (
-                <motion.span
-                  key={idx + 100}
-                  className="text-colorPrimario2"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-              {splitText("confiar").map((letter, idx) => (
-                <motion.span
-                  key={idx + 200}
-                  className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+              en quien puedes confiar
             </motion.h2>
 
             <motion.p
@@ -131,14 +88,11 @@ export default function CTAAbout() {
                 transition={{ duration: 0.6, delay: 0.1 * idx }}
                 viewport={{ once: true }}
               >
-                <motion.div
+                <div
                   className={`w-12 h-12 rounded-xl bg-gradient-to-r from-${feature.color} to-colorSecundario2 flex items-center justify-center mb-4 mx-auto shadow-lg`}
-                  variants={floatingVariants}
-                  animate="animate"
-                  style={{ animationDelay: `${idx * 0.3}s` }}
                 >
                   <feature.icon className="w-6 h-6 text-white" />
-                </motion.div>
+                </div>
                 
                 <h3 className="text-lg font-bold text-colorPrimario2 mb-2">
                   {feature.title}
@@ -206,26 +160,26 @@ export default function CTAAbout() {
           </motion.div>
 
           {/* Estadísticas de confianza */}
-          <motion.div
+          <motion.ul
             className="flex flex-wrap justify-center gap-8 pt-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.0 }}
             viewport={{ once: true }}
           >
-            <div className="text-center">
+            <li className="text-center">
               <div className="text-3xl font-bold text-colorPrimario5">5+</div>
-              <div className="text-sm text-colorPrimario1/70">Años de experiencia</div>
-            </div>
-            <div className="text-center">
+              <p className="text-sm text-colorPrimario1/70">Años de experiencia</p>
+            </li>
+            <li className="text-center">
               <div className="text-3xl font-bold text-colorPrimario5">20+</div>
-              <div className="text-sm text-colorPrimario1/70">Proyectos entregados</div>
-            </div>
-            <div className="text-center">
+              <p className="text-sm text-colorPrimario1/70">Proyectos entregados</p>
+            </li>
+            <li className="text-center">
               <div className="text-3xl font-bold text-colorPrimario5">98%</div>
-              <div className="text-sm text-colorPrimario1/70">Satisfacción del cliente</div>
-            </div>
-          </motion.div>
+              <p className="text-sm text-colorPrimario1/70">Satisfacción del cliente</p>
+            </li>
+          </motion.ul>
 
           {/* Mensaje final */}
           <motion.p

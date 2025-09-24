@@ -19,10 +19,6 @@ export default function AboutSectionCard() {
       {/* Contenedor de las */}
         <div className="relative px-4 md-tablet:px-8 py-20 bg-gradient-to-b from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 rounded-3xl mx-4 border border-colorPrimario5/20">
           
-          {/* Efectos decorativos en el contenedor */}
-          <div className="absolute top-10 right-10 w-24 h-24 rounded-full bg-colorPrimario5/10 blur-xl"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-colorSecundario1/10 blur-xl"></div>
-
           <div className="space-y-20 relative z-10">
             
             {/* Card Visión mejorada */}
@@ -66,9 +62,9 @@ export default function AboutSectionCard() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg">
                     <Eye className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-3xl md-tablet:text-4xl font-bold text-colorPrimario2">
+                  <h2 className="text-3xl md-tablet:text-4xl font-bold text-colorPrimario2">
                     Visión
-                  </h3>
+                  </h2>
                 </div>
                 
                 <p className="text-base md-tablet:text-lg text-colorPrimario1/80 mb-6 leading-relaxed">
@@ -128,9 +124,9 @@ export default function AboutSectionCard() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 flex items-center justify-center shadow-lg">
                     <Users className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-3xl md-tablet:text-4xl font-bold text-colorPrimario2">
+                  <h2 className="text-3xl md-tablet:text-4xl font-bold text-colorPrimario2">
                     Misión
-                  </h3>
+                  </h2>
                 </div>
                 
                 <p className="text-base md-tablet:text-lg text-colorPrimario1/80 mb-6 leading-relaxed">

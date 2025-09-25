@@ -32,7 +32,7 @@ export function ContactForm() {
     <div className="relative">
 
       <motion.div
-        className="relative z-10 w-full rounded-3xl bg-colorPrimario6 text-white p-8 md-tablet:p-10 shadow-[0_0_50px_rgba(103,61,230,0.3)] border border-colorPrimario5/20 backdrop-blur-sm"
+        className="relative z-10 w-full rounded-3xl bg-colorPrimario6 text-white p-6 md-tablet:p-8 table-lg:p-10 shadow-[0_0_50px_rgba(103,61,230,0.3)] border border-colorPrimario5/20 backdrop-blur-sm"
         initial={{ opacity: 0, y: 30, scale: 1 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.1 }}

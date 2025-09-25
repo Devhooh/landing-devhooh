@@ -17,7 +17,8 @@ export function ContactSection() {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        ¡Comienza a Trabajar Con Nosotros!
+        ¡Comienza a Trabajar con {""}
+        <span className="text-colorPrimario5">Nosotros!</span>
       </motion.h1>
 
       <div className="mx-auto max-w-6xl grid gap-10 tablet-md:grid-cols-2">

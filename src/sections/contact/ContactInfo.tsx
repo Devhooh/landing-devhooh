@@ -34,7 +34,7 @@ export function ContactInfo() {
         
         {/* Título animado */}
         <motion.h2
-          className="text-3xl md-tablet:text-4xl font-extrabold"
+          className="text-2xl md-tablet:text-4xl text-center tablet-md:text-left font-extrabold italic"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4}}

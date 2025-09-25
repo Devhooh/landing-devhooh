@@ -15,11 +15,6 @@ interface TechServicesProps {
   services: Service[];
 }
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -51,7 +46,6 @@ const imageVariants: Variants = {
 };
 
 export default function TechServices({ name, image, services }: TechServicesProps) {
-  const splitText = (text: string) => text.split("");
 
   return (
     <section className="
@@ -87,41 +81,30 @@ export default function TechServices({ name, image, services }: TechServicesProp
             
             {/* Título con animación letra por letra */}
             <motion.h2
-              className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold leading-tight"
-              initial="hidden"
-              whileInView="show"
+              className="text-3xl md-tablet:text-4xl table-lg:text-5xl text-center table-lg:text-left font-extrabold leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
             >
-              {splitText("Servicios de ").map((letter, idx) => (
-                <motion.span
-                  key={idx}
-                  className="text-colorPrimario2"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-              {splitText(name).map((letter, idx) => (
-                <motion.span
-                  key={idx + 100}
-                  className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+              Servicios de {""}
+                <span className="text-colorPrimario5">
+                  {name}
+                </span>
               <br />
-              {splitText("que brindamos").map((letter, idx) => (
-                <motion.span
-                  key={idx + 200}
-                  className="text-colorPrimario2"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+              que brindamos
             </motion.h2>
+
+            <motion.p
+              className="text-lg md-tablet:text-xl text-gray-600 text-center table-lg:text-left max-w-xl mx-auto table-lg:mx-0"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              {/* Usando la Opción 1 de texto SEO */}
+              Transformamos su visión en realidad digital con soluciones escalables y de alto rendimiento utilizando la tecnología {name}. Nuestro equipo experto garantiza un producto final robusto y optimizado.
+            </motion.p>
 
             {/* Imagen mejorada */}
             <motion.div
@@ -137,6 +120,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
                   alt={`Imagen de ${name}`}
                   width={500}
                   height={300}
+                  loading="lazy"
                   className="w-full h-auto rounded-2xl object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
@@ -148,7 +132,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
           </motion.div>
 
           {/* Columna derecha - Servicios */}
-          <motion.div
+          <motion.ul
             className="space-y-6"
             variants={containerVariants}
             initial="hidden"
@@ -157,7 +141,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
           >
             {services.map((service, index) => {
               return (
-                <motion.div
+                <motion.li
                   key={index}
                   className={`
                     group relative p-6 md-tablet:p-8 rounded-3xl 
@@ -212,10 +196,10 @@ export default function TechServices({ name, image, services }: TechServicesProp
 
                   {/* Efecto de brillo en hover */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                </motion.div>
+                </motion.li>
               );
             })}
-          </motion.div>
+          </motion.ul>
         </div>
 
         {/* Call to action final */}
@@ -226,12 +210,12 @@ export default function TechServices({ name, image, services }: TechServicesProp
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
-            <Settings className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
+            <Settings className="w-6 h-6 text-cyan-500 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold text-lg">
               Especialistas en {name} con experiencia comprobada
             </span>
-            <CheckCircle className="w-6 h-6 text-colorSecundario1 flex-shrink-0" />
+            <CheckCircle className="w-6 h-6 text-cyan-500 flex-shrink-0" />
           </div>
         </motion.div>
       </div>

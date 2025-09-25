@@ -75,6 +75,7 @@ export default function ServicesProjects({
                 alt={project.imageAlt || project.ProjectName}
                 fill
                 style={{ objectFit: "cover" }}
+                loading="lazy"
                 sizes="(max-width: 750px) 100vw, (max-width: 950px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />

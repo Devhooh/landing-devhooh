@@ -35,13 +35,6 @@ const cardVariants: Variants = {
   },
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
-const splitText = (text: string) => text.split("");
-
 export default function TechBenefits({benefits, name}: TechBenefitsProps) {
   return (
     <section className="relative py-20 bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 overflow-hidden">
@@ -66,29 +59,12 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
           {/* Título con animación letra por letra */}
           <motion.h2
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Beneficios al usar ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-white"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText(name).map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Beneficios al usar {name}
           </motion.h2>
 
           <motion.p

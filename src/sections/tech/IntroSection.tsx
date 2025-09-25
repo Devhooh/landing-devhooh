@@ -1,9 +1,34 @@
 "use client";
 
-import { sliderLogoTech } from "@/data/sliderLogoTech";
-import { SliderTech } from "./SliderTech";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
+
+// 1. Cargamos el componente SliderTech Y los datos (sliderLogoTech) de forma dinámica.
+const DynamicSliderCarousel = dynamic(() =>
+  Promise.all([
+    import("./SliderTech").then((mod) => mod.SliderTech),
+    import("@/data/sliderLogoTech").then((mod) => mod.sliderLogoTech),
+  ]).then(([SliderTech, sliderLogoTech]) => {
+    
+    const DynamicRenderer = () => (
+      <>
+        <SliderTech logos={sliderLogoTech} direction="left" />
+        <SliderTech logos={sliderLogoTech} direction="right" />
+      </>
+    );
+
+    // 2. Asigna el display name
+    DynamicRenderer.displayName = "DynamicSliderRenderer"; 
+
+    // 3. Devuelve el componente con nombre
+    return DynamicRenderer;
+  }),
+  {
+    loading: () => <div className="h-20 w-full bg-gray-900 animate-pulse border-y border-gray-700"></div>, 
+    ssr: false, 
+  }
+);
 
 export default function IntroSection() {
   return (
@@ -70,8 +95,8 @@ export default function IntroSection() {
         viewport={{ once: true }}
         className="overflow-hidden mt-12 py-5 mx-auto bg-colorPrimario5 border-y border-colorSecundario3"
       >
-        <SliderTech logos={sliderLogoTech} direction="left" />
-        <SliderTech logos={sliderLogoTech} direction="right" />
+        {/* Renderizamos el componente dinámico sin pasar props */}
+        <DynamicSliderCarousel /> 
       </motion.div>
 
       {/* Bloque de Kit Tecnológico */}

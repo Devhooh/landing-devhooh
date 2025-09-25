@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function HeroSectionTech() {
 
   return (
-    <section className="relative w-full overflow-hidden bg-colorPrimario2">
+    <section className="relative w-full overflow-hidden bg-black">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
@@ -19,8 +19,8 @@ export default function HeroSectionTech() {
             className="order-1 text-center table-lg:text-left text-4xl font-extrabold drop-shadow-lg
             leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
           >
-            La tecnología detrás de nuestras 
-            <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> soluciones de vanguardia</span>
+            La tecnología detrás de nuestras soluciones de 
+            <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> vanguardia</span>
           </motion.h1>
 
           {/* --- 2) IMAGEN --- */}

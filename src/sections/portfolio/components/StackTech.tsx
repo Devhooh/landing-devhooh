@@ -8,11 +8,6 @@ interface StackSectionProps {
   project: Project;
 }
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -34,7 +29,6 @@ const techVariants: Variants = {
 };
 
 export default function StackTech({ project }: StackSectionProps) {
-  const splitText = (text: string) => text.split("");
 
   return (
     <section className="relative w-full bg-gradient-to-br from-colorHover5 via-colorHover6 to-colorHover5 py-20 overflow-hidden">
@@ -59,29 +53,15 @@ export default function StackTech({ project }: StackSectionProps) {
           {/* Título con animación letra por letra */}
           <motion.h2
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Stack de ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("tecnologías").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Stack de {""}
+            <span className="text-colorPrimario5">
+              tecnologías
+            </span>
           </motion.h2>
 
           <motion.p
@@ -96,7 +76,7 @@ export default function StackTech({ project }: StackSectionProps) {
         </div>
 
         {/* Grid de tecnologías mejorado */}
-        <motion.div
+        <motion.ul
           className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
@@ -107,7 +87,7 @@ export default function StackTech({ project }: StackSectionProps) {
             const Icon = iconsData[tech.icon];
             
             return (
-              <motion.div
+              <motion.li
                 key={tech.name}
                 className={`
                   group relative p-6 rounded-2xl bg-gradient-to-br from-colorSecundario3/10 to-colorSecundario4/10 
@@ -137,21 +117,9 @@ export default function StackTech({ project }: StackSectionProps) {
                     </div>
                     
                     {/* Sparkle flotante */}
-                    <motion.div
-                      className="absolute -top-1 -right-1 text-colorPrimario5"
-                      animate={{ 
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 180, 360]
-                      }}
-                      transition={{ 
-                        duration: 4, 
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.5
-                      }}
-                    >
+                    <div className="animate-pulse absolute -top-1 -right-1 text-colorPrimario5">
                       <Sparkles className="w-4 h-4" />
-                    </motion.div>
+                    </div>
                   </div>
 
                   {/* Información de la tecnología */}
@@ -176,36 +144,36 @@ export default function StackTech({ project }: StackSectionProps) {
 
                 {/* Efecto de brillo en hover */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              </motion.div>
+              </motion.li>
             );
           })}
-        </motion.div>
+        </motion.ul>
 
         {/* Estadísticas del stack */}
-        <motion.div
+        <motion.ul
           className="mt-16 grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario5 mb-2">
               {project.stackTech.length}
             </div>
-            <div className="text-sm text-colorPrimario1/70">Tecnologías utilizadas</div>
-          </div>
+            <p className="text-sm text-colorPrimario1/70">Tecnologías utilizadas</p>
+          </li>
           
-          <div className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorSecundario1 mb-2">100%</div>
-            <div className="text-sm text-colorPrimario1/70">Modernas y actuales</div>
-          </div>
+            <p className="text-sm text-colorPrimario1/70">Modernas y actuales</p>
+          </li>
           
-          <div className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario7 mb-2">✓</div>
-            <div className="text-sm text-colorPrimario1/70">Optimizadas para rendimiento</div>
-          </div>
-        </motion.div>
+            <p className="text-sm text-colorPrimario1/70">Optimizadas para rendimiento</p>
+          </li>
+        </motion.ul>
 
         {/* Call to action final */}
         <motion.div

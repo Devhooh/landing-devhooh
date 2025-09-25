@@ -48,10 +48,6 @@ export default function ImageProject({project}: ChallengeSectionProps) {
         {/* Contenedor principal mejorado */}
         <div className="relative p-4 md-tablet:p-12 rounded-3xl bg-colorFondo/70 backdrop-blur-sm border border-colorPrimario5/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
           
-          {/* Efectos decorativos del contenedor */}
-          <div className="absolute top-6 right-6 w-4 h-4 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-30"></div>
-          <div className="absolute bottom-6 left-6 w-3 h-3 rounded-full bg-gradient-to-r from-colorSecundario3 to-colorSecundario4 opacity-40"></div>
-
           {/* Encabezado mejorado */}
           <div className="text-center mb-16">
             
@@ -135,18 +131,12 @@ export default function ImageProject({project}: ChallengeSectionProps) {
                   {String(index + 1).padStart(2, '0')}
                 </div>
 
-                {/* Overlay con zoom icon */}
-                <div className="absolute inset-0 bg-gradient-to-t from-colorDarkFondo4/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                    <ZoomIn className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-
                 {/* Imagen */}
                 <div className="relative p-4">
                   <Image
                     src={src}
                     alt={`Imagen del proyecto ${project.projectName} - ${index + 1}`}
+                    loading="lazy"
                     width={600}
                     height={400}
                     className="w-full h-auto rounded-2xl object-cover transition-transform duration-700 group-hover:scale-105 shadow-lg"
@@ -156,9 +146,9 @@ export default function ImageProject({project}: ChallengeSectionProps) {
                 {/* Información adicional */}
                 <div className="absolute bottom-4 left-4 right-4 z-10">
                   <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h4 className="text-colorPrimario2 font-bold text-sm mb-1">
+                    <h3 className="text-colorPrimario2 font-bold text-sm mb-1">
                       Vista {index + 1}
-                    </h4>
+                    </h3>
                     <p className="text-colorPrimario1/70 text-xs">
                       {project.projectName} - Captura del proyecto
                     </p>
@@ -166,19 +156,9 @@ export default function ImageProject({project}: ChallengeSectionProps) {
                 </div>
 
                 {/* Efectos decorativos */}
-                <motion.div
-                  className="absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.4, 0.8, 0.4]
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: index * 0.5
-                  }}
-                ></motion.div>
+                <div
+                  className="animate-pulse absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40"
+                ></div>
 
                 {/* Efecto de brillo en hover */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>

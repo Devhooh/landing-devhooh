@@ -47,13 +47,7 @@ const listItem: Variants = {
   show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 export default function ChallengeSection({ project }: ChallengeSectionProps) {
-  const splitText = (text: string) => text.split("");
 
   const sectionIcons = [Target, Lightbulb, Zap]; // Iconos rotativos para cada sección
 
@@ -66,30 +60,16 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
         {/* Título de sección principal */}
         <div className="relative z-10 text-center mb-20">
           <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial="hidden"
-            whileInView="show"
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Desafíos y ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-white"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("Soluciones").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Desafíos y {""}
+            <span className="text-colorPrimario5">
+              soluciones
+            </span>
           </motion.h2>
 
           <motion.p
@@ -165,7 +145,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                           whileInView="show"
                           viewport={{ once: true, amount: 0.3 }}
                         >
-                          <h4 className="text-white font-bold text-lg mb-4 text-center table-lg:text-left">
+                          <h4 className="text-white font-bold text-xl mb-4 text-center table-lg:text-left">
                             Soluciones implementadas:
                           </h4>
                           <ul className="space-y-3">
@@ -210,6 +190,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                         <Image
                           src={item.image}
                           alt={`${item.title} - ${project.projectName}`}
+                          loading="lazy"
                           width={500}
                           height={350}
                           className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
@@ -220,19 +201,9 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                       </div>
 
                       {/* Círculos decorativos flotantes */}
-                      <motion.div
-                        className={`absolute ${isEven ? '-bottom-4 -right-4' : '-top-4 -left-4'} w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-20`}
-                        animate={{ 
-                          scale: [1, 1.2, 1],
-                          opacity: [0.2, 0.4, 0.2]
-                        }}
-                        transition={{ 
-                          duration: 3, 
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.5
-                        }}
-                      ></motion.div>
+                      <div
+                        className={`animate-pulse absolute ${isEven ? '-bottom-4 -right-4' : '-top-4 -left-4'} w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-20`}
+                      ></div>
 
                       {/* Badge de imagen */}
                       <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-colorPrimario5/90 backdrop-blur-sm text-white font-semibold text-xs shadow-lg">

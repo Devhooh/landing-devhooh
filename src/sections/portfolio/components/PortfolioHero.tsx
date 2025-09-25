@@ -41,14 +41,6 @@ const imageVariants: Variants = {
   },
 };
 
-// El texto saldra uno por uno
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
-const splitText = (text: string) => text.split("");
-
 export default function PortfolioHero({ project }: PortfolioHeroProps) {
   const projectDetails = [
     {
@@ -95,25 +87,13 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
 
           {/* Título principal con animación letra por letra */}
           <motion.h1
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
-            initial="hidden"
-            whileInView="show"
+            className="text-3xl md-tablet:text-5xl text-white font-extrabold mb-6 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText(project.title).map((letter, idx) => {
-              // Destacar ciertas palabras con gradiente
-              const isHighlighted = idx > project.title.length * 0.6; // Últimas palabras
-              return (
-                <motion.span 
-                  key={idx} 
-                  className={isHighlighted ? "text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" : "text-white"}
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              );
-            })}
+            {project.title}
           </motion.h1>
 
           <motion.p

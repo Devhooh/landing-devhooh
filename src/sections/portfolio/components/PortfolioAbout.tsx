@@ -29,13 +29,7 @@ const imageVariants: Variants = {
   },
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 export default function PortfolioAbout({ project }: ProjectAboutProps) {
-  const splitText = (text: string) => text.split("");
 
   return (
     <section className="relative w-full bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 py-20 overflow-hidden">
@@ -46,29 +40,15 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
         <div className="text-center mb-20">
           <motion.h2
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Conoce más del ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("proyecto").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Conoce más del {""}
+            <span className="text-colorPrimario5">
+              proyecto
+            </span>
           </motion.h2>
 
           <motion.p
@@ -142,6 +122,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
                   width={600}
                   height={400}
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
                 
                 {/* Overlay con gradiente */}
@@ -149,18 +130,9 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
               </div>
 
               {/* Círculos decorativos flotantes */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              ></motion.div>
+              <div
+                className="animate-pulse absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
+              ></div>
             </div>
           </motion.div>
         </div>
@@ -226,6 +198,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
                   width={400}
                   height={300}
                   className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
                 
                 {/* Overlay con gradiente */}
@@ -233,19 +206,9 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
               </div>
 
               {/* Círculos decorativos flotantes */}
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-6 h-6 rounded-full bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 opacity-30"
-                animate={{ 
-                  scale: [1, 1.3, 1],
-                  opacity: [0.3, 0.6, 0.3]
-                }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              ></motion.div>
+              <div
+                className="animate-pulse absolute -bottom-4 -left-4 w-6 h-6 rounded-full bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 opacity-30"
+              ></div>
             </div>
           </motion.div>
         </div>

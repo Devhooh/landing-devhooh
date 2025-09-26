@@ -38,8 +38,8 @@ export default function PageTransitionOverlay() {
             alt="Cargando Devhoo..."
             width={200}
             height={67} // Proporcional al original
+            priority
             className="animate-pulse h-auto w-auto"
-            loading="lazy"
           />
         </motion.div>
       )}

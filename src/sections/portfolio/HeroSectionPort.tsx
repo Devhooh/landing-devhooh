@@ -44,12 +44,12 @@ export default function HeroSectionPort() {
                 <Image
                   src="/assets/images/heroportfolio.png"
                   alt="Desarrollo de softwara, portafolio"
-                  width={2345}
+                  width={2345} 
                   height={1825}
                   priority
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 400px"
                 />
-                
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>

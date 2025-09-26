@@ -46,6 +46,7 @@ export default function HeroSectionPort() {
                   alt="Desarrollo de software, portafolio"
                   width={709}
                   height={514}
+                  priority
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Overlay con gradiente */}

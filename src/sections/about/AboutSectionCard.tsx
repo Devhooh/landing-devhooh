@@ -30,18 +30,19 @@ export default function AboutSectionCard() {
               className="w-full table-lg:w-4/5 table-lg:self-start mx-auto bg-gradient-to-br from-colorHover5 to-colorHover6 rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row border border-white/20 backdrop-blur-sm group"
             >
               {/* Imagen mejorada */}
-              <div className="relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10">
+              <div className="rounded-full relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10">
                 <motion.div
                   className="relative"
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    width={300}
-                    height={300}
+                    width={800}
+                    height={821}
                     src="/assets/images/vision.png"
                     alt="Visión de la empresa"
                     className="w-64 h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 60vw, 300px"
                   />
                   
                   {/* Efecto de brillo en hover */}
@@ -92,18 +93,19 @@ export default function AboutSectionCard() {
               className="w-full table-lg:w-4/5 table-lg:self-end table-lg:ml-auto bg-gradient-to-br from-colorHover5 to-colorHover6 rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row-reverse border border-white/20 backdrop-blur-sm group"
             >
               {/* Imagen mejorada */}
-              <div className="relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorSecundario1/10 to-colorSecundario2/10">
+              <div className="rounded-full relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorSecundario1/10 to-colorSecundario2/10">
                 <motion.div
                   className="relative"
                   whileHover={{ scale: 1.05, rotate: -2 }}
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    width={300}
-                    height={300}
+                    width={800}
+                    height={650}
                     src="/assets/images/mision.png"
                     alt="Misión de la empresa"
                     className="w-64 h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 60vw, 300px"
                   />
                   
                   {/* Efecto de brillo en hover */}

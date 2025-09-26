@@ -40,15 +40,13 @@ export default function HeroSectionPort() {
           >
 
             <div className="relative group">
-              <div className="bg-colorHover5 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+              <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
                   src="/assets/images/heroportfolio.png"
-                  alt="Desarrollo de softwara, portafolio"
-                  width={2345} 
-                  height={1825}
-                  priority
-                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 400px"
+                  alt="Desarrollo de software, portafolio"
+                  width={709}
+                  height={514}
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>

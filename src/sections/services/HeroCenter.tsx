@@ -27,6 +27,7 @@ export default function HeroCenter() {
                   width={600}
                   height={565}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 33vw, 400px" 
                 />
                 
                 {/* Overlay con gradiente */}
@@ -83,6 +84,7 @@ export default function HeroCenter() {
                     width={600}
                     height={565}
                     className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 33vw, 400px" 
                   />
                   
                   {/* Overlay con gradiente */}
@@ -188,6 +190,7 @@ export default function HeroCenter() {
                   width={662}
                   height={574}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 33vw, 400px"
                 />
                 
                 {/* Overlay con gradiente */}

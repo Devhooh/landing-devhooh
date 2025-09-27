@@ -58,9 +58,9 @@ export default function CTASlugfolio() {
         </motion.div>
 
         {/* Stats / badges */}
-        <motion.div className="flex flex-wrap justify-center gap-6 mt-12">
+        <motion.ul className="flex flex-wrap justify-center gap-6 mt-12">
           {stats.map((stat, idx) => (
-            <motion.div
+            <motion.li
               key={idx}
               className={`px-6 py-4 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg`}
               initial={{ opacity: 0, y: 20 }}
@@ -69,10 +69,10 @@ export default function CTASlugfolio() {
               viewport={{ once: true }}
             >
               <div className="text-2xl font-bold">{stat.value}</div>
-              <div className="text-sm">{stat.label}</div>
-            </motion.div>
+              <p className="text-base">{stat.label}</p>
+            </motion.li>
           ))}
-        </motion.div>
+        </motion.ul>
       </div>
     </section>
   );

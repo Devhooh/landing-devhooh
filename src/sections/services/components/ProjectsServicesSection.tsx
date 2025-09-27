@@ -6,11 +6,6 @@ import { projectsData } from "@/data/portfolioData";
 import { motion } from "framer-motion";
 import { ArrowRight, Folder, Sparkles, Award } from "lucide-react";
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -21,21 +16,12 @@ const containerVariants = {
   },
 };
 
-const splitText = (text: string) => text.split("");
-
 export default function ProjectsServicesSection() {
   const limit: number = 6;
   const displayedProjects = projectsData.slice(0, limit);
 
   return (
     <section className="relative py-20 bg-colorFondo overflow-hidden">
-      
-      {/* Efectos decorativos de fondo */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-colorPrimario5/5 blur-2xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-colorSecundario1/5 blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-colorPrimario7/8 blur-xl"></div>
-      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md-tablet:px-8">
         
@@ -57,30 +43,15 @@ export default function ProjectsServicesSection() {
           {/* Título con animación letra por letra */}
           <motion.h2
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.02 } } }}
           >
-            {splitText("Los proyectos que hemos ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Los proyectos que hemos
             <br />
-            {splitText("hecho realidad").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            hecho realidad
+            
           </motion.h2>
 
           <motion.p
@@ -99,30 +70,30 @@ export default function ProjectsServicesSection() {
         </div>
 
         {/* Estadísticas rápidas */}
-        <motion.div
+        <motion.ul
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="text-center p-6 rounded-2xl bg- bg-colorHover4 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg- bg-colorHover4 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario5 mb-2">
               {projectsData.length}+
             </div>
-            <div className="text-sm text-colorPrimario1/70">Proyectos completados</div>
-          </div>
+            <p className="text-sm text-colorPrimario1/70">Proyectos completados</p>
+          </li>
           
-          <div className="text-center p-6 rounded-2xl bg- bg-colorHover4 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg- bg-colorHover4 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorSecundario1 mb-2">100%</div>
-            <div className="text-sm text-colorPrimario1/70">Clientes satisfechos</div>
-          </div>
+            <p className="text-sm text-colorPrimario1/70">Clientes satisfechos</p>
+          </li>
           
-          <div className="text-center p-6 rounded-2xl bg- bg-colorHover4 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg- bg-colorHover4 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario7 mb-2">5+</div>
-            <div className="text-sm text-colorPrimario1/70">Años de experiencia</div>
-          </div>
-        </motion.div>
+            <p className="text-sm text-colorPrimario1/70">Años de experiencia</p>
+          </li>
+        </motion.ul>
 
         {/* Grid de proyectos mejorado */}
         <motion.div

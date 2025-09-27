@@ -53,9 +53,9 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="text-3xl font-extrabold mb-10 text-center md-tablet:text-left"
+          className="text-3xl font-extrabold mb-10 text-center md-tablet:text-left text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" 
         >
-          <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text underline">{service.name}</span>
+          {service.name}
         </motion.h2>
       </div>
 

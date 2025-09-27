@@ -49,9 +49,9 @@ export function ProjectCard({
 
       {/* Contenido */}
       <div className="p-6 md-tablet:p-7 table-lg:p-8 flex flex-col gap-3 flex-1">
-        <h2 className="text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold text-colorPrimario2">
+        <h4 className="text-xl md-tablet:text-2xl table-lg:text-3xl font-extrabold text-colorPrimario2">
           {ProjectName}
-        </h2>
+        </h4>
         {company && (
           <p className="text-colorSecundario3 text-base md-tablet:text-xl font-semibold">
             Empresa: {company}

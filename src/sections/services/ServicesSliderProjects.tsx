@@ -8,7 +8,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import ServicesProjects from "./ServicesProjects";
 import { Project } from "@/data/portfolioData";
 import { motion, Variants } from "framer-motion";
-import { ArrowLeft, ArrowRight, Trophy, Folder, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Trophy, Sparkles } from "lucide-react";
 
 interface ServicesSliderProjectsProps {
   projects: Project[];
@@ -22,11 +22,6 @@ const fadeUpTitle: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 export function ServicesSliderProjects({
   projects,
   title,
@@ -35,7 +30,6 @@ export function ServicesSliderProjects({
 }: ServicesSliderProjectsProps) {
   const limit = 6;
   const displayedProjects = projects.slice(0, limit);
-  const splitText = (text: string) => text.split("");
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
@@ -58,28 +52,15 @@ export function ServicesSliderProjects({
           </motion.div>
 
           {/* Título con animación letra por letra */}
-          {title && (
-            <motion.h2
-              className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
-            >
-              {splitText(title).map((letter, idx) => {
-                const isHighlighted = title.includes('experiencia') && idx > title.indexOf('experiencia') - 1 && idx < title.indexOf('experiencia') + 'experiencia'.length;
-                return (
-                  <motion.span
-                    key={idx}
-                    className={isHighlighted ? "text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" : "text-colorPrimario2"}
-                    variants={letterVariants}
-                  >
-                    {letter}
-                  </motion.span>
-                );
-              })}
-            </motion.h2>
-          )}
+          <motion.h2
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            {title}
+          </motion.h2>
 
           {/* Subtítulo mejorado */}
           {subtitle && (
@@ -95,28 +76,28 @@ export function ServicesSliderProjects({
           )}
 
           {/* Estadísticas */}
-          <motion.div
+          <motion.ul
             className="flex flex-wrap justify-center gap-6 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <div className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
+            <li className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
               <div className="text-2xl font-bold text-colorPrimario5">{displayedProjects.length}+</div>
-              <div className="text-sm text-colorPrimario1/70">Proyectos destacados</div>
-            </div>
+              <p className="text-sm text-colorPrimario1/70">Proyectos destacados</p>
+            </li>
             
-            <div className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
+            <li className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
               <div className="text-2xl font-bold text-colorPrimario5">100%</div>
-              <div className="text-sm text-colorPrimario1/70">Casos de éxito</div>
-            </div>
+              <p className="text-sm text-colorPrimario1/70">Casos de éxito</p>
+            </li>
             
-            <div className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
+            <li className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">
               <div className="text-2xl font-bold text-colorPrimario5">5+</div>
-              <div className="text-sm text-colorPrimario1/70">Años de trayectoria</div>
-            </div>
-          </motion.div>
+              <p className="text-sm text-colorPrimario1/70">Años de trayectoria</p>
+            </li>
+          </motion.ul>
         </div>
 
         {/* Slider mejorado */}
@@ -175,22 +156,6 @@ export function ServicesSliderProjects({
               </div>
             </div>
           </div>
-
-          {/* Indicador de slider */}
-          <motion.div
-            className="text-center mt-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-colorSecundario1/10 border border-colorSecundario1/20">
-              <Folder className="w-4 h-4 text-colorSecundario1 flex-shrink-0" />
-              <span className="text-colorSecundario1 font-semibold text-sm">
-                Desliza para ver más proyectos
-              </span>
-            </div>
-          </motion.div>
         </motion.div>
 
         {/* Call to action final */}

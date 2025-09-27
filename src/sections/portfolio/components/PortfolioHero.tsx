@@ -41,14 +41,6 @@ const imageVariants: Variants = {
   },
 };
 
-// El texto saldra uno por uno
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
-const splitText = (text: string) => text.split("");
-
 export default function PortfolioHero({ project }: PortfolioHeroProps) {
   const projectDetails = [
     {
@@ -95,25 +87,13 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
 
           {/* Título principal con animación letra por letra */}
           <motion.h1
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
-            initial="hidden"
-            whileInView="show"
+            className="text-3xl md-tablet:text-5xl text-white font-extrabold mb-6 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText(project.title).map((letter, idx) => {
-              // Destacar ciertas palabras con gradiente
-              const isHighlighted = idx > project.title.length * 0.6; // Últimas palabras
-              return (
-                <motion.span 
-                  key={idx} 
-                  className={isHighlighted ? "text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" : "text-white"}
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              );
-            })}
+            {project.title}
           </motion.h1>
 
           <motion.p
@@ -128,7 +108,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
         </div>
 
         {/* Grid de detalles mejorado */}
-        <motion.div
+        <motion.ul
           className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16"
           variants={containerVariants}
           initial="hidden"
@@ -136,7 +116,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
           viewport={{ once: true }}
         >
           {projectDetails.map((detail, index) => (
-            <motion.div
+            <motion.li
               key={index}
               className="group relative p-6 rounded-2xl bg-gradient-to-br from-colorHover5/10 to-colorHover6/10 backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/40 transition-all duration-300 text-center hover:shadow-[0_0_25px_rgba(103,61,230,0.15)]"
               variants={itemVariants}
@@ -149,9 +129,9 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
               </div>
               
               {/* Etiqueta */}
-              <h2 className="text-sm font-bold text-colorHover5 uppercase tracking-wider mb-2">
+              <p className="text-sm font-bold text-colorHover5 uppercase tracking-wider mb-2">
                 {detail.label}
-              </h2>
+              </p>
               
               {/* Valor */}
               <p className="text-lg md-tablet:text-xl font-semibold text-white transition-colors duration-300">
@@ -160,9 +140,9 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
 
               {/* Efecto decorativo */}
               <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-30 group-hover:opacity-60 transition-opacity duration-300"></div>
-            </motion.div>
+            </motion.li>
           ))}
-        </motion.div>
+        </motion.ul>
 
         {/* Imagen principal mejorada */}
         <motion.div

@@ -31,7 +31,7 @@ export default function HeroLeft() {
           {/* Imagen mejorada */}
           <motion.div
             className="
-              order-2 mt-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center"
+              order-2 mt-5 mb-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center"
             initial={{ opacity: 0, x: -60, scale: 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -40,12 +40,12 @@ export default function HeroLeft() {
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/assets/images/heroleft.png"
+                  src="/assets/images/image5.png"
                   alt="Imagen-desarrollo-de-calidad-servicios-de-desarrollo"
                   // Se usan las dimensiones originales para que Next.js las optimice correctamente
-                  width={750}
-                  height={482}
-                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  width={520}
+                  height={523}
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
                 
@@ -79,7 +79,7 @@ export default function HeroLeft() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-lg md-tablet:text-xl text-gray-200 text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
+            <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
               Descubre nuestros servicios de desarrollo y conoce las tecnologías web y herramientas que utilizamos para llevar tus proyectos digitales al siguiente nivel.
             </p>
           </motion.div>

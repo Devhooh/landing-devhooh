@@ -91,7 +91,7 @@ export default function FAQSection({itemsDate}: listFAQ ) {
   };
 
   return (
-    <div className="bg-colorHover5 pb-24 pt-8 sm:px-6 table-lg:px-8 flex items-center justify-center">
+    <section className="bg-colorHover5 pb-24 pt-8 sm:px-6 table-lg:px-8 flex items-center justify-center">
       <div className="w-full max-w-4xl mx-auto px-10">
         <div className="text-center mb-12">
           <motion.h2
@@ -130,6 +130,6 @@ export default function FAQSection({itemsDate}: listFAQ ) {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

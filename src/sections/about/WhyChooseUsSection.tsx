@@ -3,12 +3,6 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { Zap, Wrench, Users, Shield, TrendingUp, Check } from "lucide-react";
 
-// Animación del título letra por letra
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 // Animación general escalonada (container → hijos)
 const container: Variants = {
   hidden: { opacity: 1 },
@@ -39,8 +33,6 @@ const imageVariants: Variants = {
     transition: { duration: 0.5, ease: "easeOut" },
   },
 };
-
-const splitText = (text: string) => text.split("");
 
 export default function WhyChooseUsSection() {
   const features = [
@@ -106,30 +98,12 @@ export default function WhyChooseUsSection() {
           {/* Título animado letra por letra */}
           <motion.h2
             className="text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold mb-6 text-colorPrimario2"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("¿Por qué elegir ").map((letter, idx) => (
-              <motion.span key={idx} variants={letterVariants}>
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("Devhooh").map((letter, idx) => (
-              <motion.span 
-                key={idx + 100} 
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("?").map((letter, idx) => (
-              <motion.span key={idx + 200} className="text-colorPrimario2" variants={letterVariants}>
-                {letter}
-              </motion.span>
-            ))}
+            ¿Por qué elegir Devhooh?
           </motion.h2>
 
           <motion.p
@@ -215,11 +189,11 @@ export default function WhyChooseUsSection() {
                   </p>
 
                   {/* Lista de beneficios */}
-                  <div className={`flex flex-wrap gap-3 ${
+                  <ul className={`flex flex-wrap gap-3 ${
                     index % 2 === 0 ? "justify-center table-lg:justify-start" : "justify-center table-lg:justify-end"
                   }`}>
                     {feature.benefits.map((benefit, idx) => (
-                      <motion.div
+                      <motion.li
                         key={idx}
                         className="flex items-center gap-2 px-4 py-2 rounded-full bg-white backdrop-blur-sm border border-white/30 hover:bg-white transition-all duration-300"
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -228,12 +202,12 @@ export default function WhyChooseUsSection() {
                         viewport={{ once: true }}
                       >
                         <Check className="w-4 h-4 text-colorPrimario5" />
-                        <span className="text-sm font-medium text-colorPrimario2">
+                        <p className="text-sm font-medium text-colorPrimario2">
                           {benefit}
-                        </span>
-                      </motion.div>
+                        </p>
+                      </motion.li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
 
                 {/* Efecto de brillo en hover */}

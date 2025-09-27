@@ -26,11 +26,6 @@ const cardVariants: Variants = {
   },
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
 const listVariants = {
   hidden: { opacity: 0 },
   show: {
@@ -43,8 +38,6 @@ const listItemVariants = {
   hidden: { opacity: 0, x: -20 },
   show: { opacity: 1, x: 0, transition: { duration: 0.3 } }
 };
-
-const splitText = (text: string) => text.split("");
 
 export default function PortfolioProcess({ project }: ChallengeSectionProps) {
   return (
@@ -71,29 +64,15 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
           {/* Título con animación letra por letra */}
           <motion.h2
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Proceso de ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("Desarrollo").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Proceso de {""} 
+            <span className="text-colorPrimario5">
+              desarrollo
+            </span>
           </motion.h2>
 
           <motion.p
@@ -145,15 +124,14 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
 
                   {/* Icono principal */}
                   <div className="flex justify-center mb-6">
-                    <motion.div 
+                    <div 
                       className={`
                         w-16 h-16 rounded-2xl 
                         bg-gradient-to-r from-colorPrimario5 to-colorPrimario6
                         flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
-                      whileHover={{ rotate: 5, scale: 1.1 }}
                     >
                       <CodeXml  className="w-8 h-8 text-white" />
-                    </motion.div>
+                    </div>
                   </div>
 
                   {/* Título */}
@@ -169,9 +147,9 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
                     whileInView="show"
                     viewport={{ once: true }}
                   >
-                    <div className="space-y-3">
+                    <ul className="space-y-3">
                       {proceso.process.map((item, idx) => (
-                        <motion.div
+                        <motion.li
                           key={idx}
                           className="flex items-start gap-3 p-3 rounded-xl bg-colorHover4 border border-white/10 hover:bg-colorHover3 transition-all duration-300"
                           variants={listItemVariants}
@@ -179,12 +157,12 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
                           <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
                             <CheckCircle className="w-3 h-3 text-white" />
                           </div>
-                          <span className="text-colorPrimario1/80 text-sm leading-relaxed">
+                          <p className="text-colorPrimario1/80 text-sm leading-relaxed">
                             {item}
-                          </span>
-                        </motion.div>
+                          </p>
+                        </motion.li>
                       ))}
-                    </div>
+                    </ul>
                   </motion.div>
 
                   {/* Badge de estado */}

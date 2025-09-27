@@ -54,23 +54,23 @@ export default function CTATech() {
         </motion.p>
 
         {/* Stats / Beneficios */}
-        <div className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
+        <ul className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 mb-12">
+          <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <Zap className="w-8 h-8 text-colorPrimario5 mb-2" />
-            <h4 className="text-xl font-bold text-colorPrimario1">+200%</h4>
+            <h3 className="text-xl font-bold text-colorPrimario1">+200%</h3>
             <p className="text-sm text-gray-700">Rendimiento optimizado</p>
-          </div>
-          <div className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
+          </li>
+          <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <ShieldCheck className="w-8 h-8 text-colorPrimario5 mb-2" />
-            <h4 className="text-xl font-bold text-colorPrimario1">99.9%</h4>
+            <h3 className="text-xl font-bold text-colorPrimario1">99.9%</h3>
             <p className="text-sm text-gray-700">Seguridad garantizada</p>
-          </div>
-          <div className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
+          </li>
+          <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <Rocket className="w-8 h-8 text-colorPrimario5 mb-2" />
-            <h4 className="text-xl font-bold text-colorPrimario1">Escalabilidad</h4>
+            <h3 className="text-xl font-bold text-colorPrimario1">Escalabilidad</h3>
             <p className="text-sm text-gray-700">Preparado para crecer</p>
-          </div>
-        </div>
+          </li>
+        </ul>
 
         {/* CTA */}
         <div className="flex flex-col md-tablet:flex-row items-center justify-center gap-4">

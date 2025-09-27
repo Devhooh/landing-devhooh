@@ -58,11 +58,12 @@ export default function GarantiasSection() {
             viewport={{ once: true }}
           >
             <Image
-              src="/assets/images/webSoftware.png" // reemplaza con tu imagen real
+              src="/assets/images/garantia.png"
               alt="Garantía de servicios"
-              width={500}
-              height={500}
+              width={1500}
+              height={1500}
               className="rounded-2xl shadow-lg"
+              loading="lazy"
             />
           </motion.div>
 

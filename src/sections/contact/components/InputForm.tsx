@@ -27,12 +27,14 @@ export default function InputForm({placeholder, nameHtmlFor, title, id, name, ty
         placeholder={placeholder}
         value={valor}
         onChange={(e) => setValor(e.target.value)}
-        className={`w-full rounded-xl border px-4 py-3 text-black placeholder-gray-500 
-          focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-500/50 outline-none transition
+        className={`w-full rounded-xl border px-4 py-3 
+        focus:border-fuchsia-500 focus:ring-2 focus:ring-fuchsia-500/50 outline-none transition
           ${
             valor.trim() === ""
-              ? "bg-gray-950  border-gray-700"
-              : "bg-gray-100 text-gray-900 border-gray-300"
+            ? 
+            "bg-gray-950 text-white placeholder-gray-400 border-gray-700" 
+            : 
+            "bg-gray-100 text-gray-900 border-gray-300"
           }`}
         required
       />

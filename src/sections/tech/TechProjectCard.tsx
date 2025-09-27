@@ -40,30 +40,31 @@ export default function TechProjectCard({ projects }: { projects: ProjectCardPro
       alt={projects.ProjectName}
       fill
       style={{ objectFit: "cover" }}
+      loading="lazy"
       className="object-contain transition-transform duration-300 hover:scale-105"
     />
   </div>
 
   {/* Contenido principal */}
   <div className="flex-1 flex flex-col justify-start px-2 mt-2">
-    <h4 className="text-xl md:text-2xl text-center font-bold text-white">
+    <h2 className="text-xl md:text-2xl text-center font-bold text-white">
       {projects.ProjectName}
-    </h4>
+    </h2>
 
     <p className="text-sm md:text-base text-center text-gray-300 italic mt-1">
       {projects.company} · {projects.location}
     </p>
 
-    <div className="flex justify-center flex-wrap gap-2 mt-4">
+    <ul className="flex justify-center flex-wrap gap-2 mt-4">
       {projects.technologies.map((tech) => (
-        <span
+        <li
           key={tech}
           className="bg-white/10 text-gray-100 border border-white/20 text-xs font-medium px-4 py-1.5 rounded-full transition-all hover:bg-white/20"
         >
           {tech}
-        </span>
+        </li>
       ))}
-    </div>
+    </ul>
 
     {/* Botón empujado hacia abajo */}
     <div className="mt-auto flex justify-center mb-4">

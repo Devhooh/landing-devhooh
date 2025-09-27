@@ -26,7 +26,6 @@ const floatingVariants: Variants = {
 
 export default function TechWhy({
   title,
-  color,
   description,
   image,
 }: TechWhyProps) {
@@ -72,6 +71,7 @@ export default function TechWhy({
               alt={`Imagen de ${title}`}
               width={500}
               height={300}
+              loading="lazy"
               className="rounded-2xl object-cover w-80 h-auto shadow-lg"
             />
           </motion.div>
@@ -85,8 +85,7 @@ export default function TechWhy({
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              ¿Por qué desarrollar con{" "}
-              <span className={`${color}`}>{title}</span>?
+              ¿Por qué desarrollar con {title}
             </motion.h2>
 
             <motion.p
@@ -128,38 +127,38 @@ export default function TechWhy({
         </div>
 
         {/* Estadísticas del stack */}
-        <motion.div
+        <motion.ul
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario5 mb-2">
               100%
             </div>
-            <div className="text-sm text-colorPrimario1/90">
+            <p className="text-sm text-colorPrimario1/90">
               Experiencia de uso
-            </div>
-          </div>
+            </p>
+          </li>
 
-          <div className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario5 mb-2">
               100%
             </div>
-            <div className="text-sm text-colorPrimario1/90">
+            <p className="text-sm text-colorPrimario1/90">
               Buenas practicas
-            </div>
-          </div>
+            </p>
+          </li>
 
-          <div className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario5 mb-2">✓</div>
-            <div className="text-sm text-colorPrimario1/90">
+            <p className="text-sm text-colorPrimario1/90">
               Rendimiento garantizado
-            </div>
-          </div>
-        </motion.div>
+            </p>
+          </li>
+        </motion.ul>
 
         {/* Call to action final */}
         <motion.div

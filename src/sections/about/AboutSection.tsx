@@ -8,11 +8,6 @@ const centralVariant: Variants = {
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 const floatingVariants: Variants = {
   animate: {
     y: [0, -8, 0],
@@ -26,7 +21,6 @@ const floatingVariants: Variants = {
 };
 
 export default function AboutSection() {
-  const splitText = (text: string) => text.split("");
 
   return (
     <div className="relative bg-colorFondo pt-20 w-full overflow-hidden">
@@ -67,39 +61,15 @@ export default function AboutSection() {
             {/* Título con animación letra por letra */}
             <motion.h2
               className="text-2xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-8 leading-tight"
-              initial="hidden"
-              whileInView="show"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+
             >
-              {splitText("Cuando la confianza es alta, ").map((letter, idx) => (
-                <motion.span
-                  key={idx}
-                  className="text-white"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+              Cuando la confianza es alta, 
               <br />
-              {splitText("la comunicación es ").map((letter, idx) => (
-                <motion.span
-                  key={idx + 100}
-                  className="text-white"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-              {splitText("efectiva").map((letter, idx) => (
-                <motion.span
-                  key={idx + 200}
-                  className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+              la comunicación es efectiva
             </motion.h2>
 
             <motion.p
@@ -122,7 +92,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
             >
               <Award className="w-5 h-5 text-colorPrimario5" />
-              <span className="text-colorHover5 font-semibold">5+ años de experiencia</span>
+              <p className="text-colorHover5 font-semibold">5+ años de experiencia</p>
             </motion.div>
           </motion.div>
         </div>

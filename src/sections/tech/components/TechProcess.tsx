@@ -38,14 +38,8 @@ const stepVariant: Variants = {
   },
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 export default function TechProcess({ name, steps }: TechProcessProps) {
   if (!steps || steps.length === 0) return null;
-  const splitText = (text: string) => text.split("");
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
@@ -58,20 +52,12 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
           {/* Título con animación letra por letra */}
           <motion.h2
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText(`Cómo trabajamos con ${name}`).map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Cómo trabajamos con {name}
           </motion.h2>
 
           <motion.p
@@ -97,7 +83,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
           {/* Línea principal del timeline */}
           <div className="absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-colorPrimario5 via-colorSecundario1 to-colorPrimario5 rounded-full shadow-lg"></div>
 
-          <div className="flex flex-col gap-8">
+          <ul className="flex flex-col gap-8">
             {steps.map((step, index) => {
               const Icon =
               (Icons[step.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) ||
@@ -106,7 +92,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
               const isLast = index === steps.length - 1;
               
               return (
-                <motion.div 
+                <motion.li
                   key={index} 
                   className="relative flex items-start gap-2 md-tablet:gap-8"
                   variants={stepVariant}
@@ -167,10 +153,10 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
                     </motion.div>
 
                   </div>
-                </motion.div>
+                </motion.li>
               );
             })}
-          </div>
+          </ul>
         </motion.div>
 
         {/* Resumen final */}

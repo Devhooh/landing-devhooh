@@ -44,26 +44,26 @@ export default function CTASlugServices() {
 
 
             {/* Estadísticas rápidas */}
-            <motion.div
+            <motion.ul
               className="flex gap-8 mb-8 justify-center tablet-md:justify-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="text-center">
+              <li className="text-center">
                 <div className="text-2xl font-bold text-colorPrimario7">+15</div>
-                <div className="text-sm text-colorPrimario4">Clientes Agradecidos</div>
-              </div>
-              <div className="text-center">
+                <p className="text-sm text-colorPrimario4">Clientes Agradecidos</p>
+              </li>
+              <li className="text-center">
                 <div className="text-2xl font-bold text-colorPrimario7">99%</div>
-                <div className="text-sm text-colorPrimario4">Satisfacción</div>
-              </div>
-              <div className="text-center">
+                <p className="text-sm text-colorPrimario4">Satisfacción</p>
+              </li>
+              <li className="text-center">
                 <div className="text-2xl font-bold text-colorPrimario7">24/7</div>
-                <div className="text-sm text-colorPrimario4">Soporte</div>
-              </div>
-            </motion.div>
+                <p className="text-sm text-colorPrimario4">Soporte</p>
+              </li>
+            </motion.ul>
 
             {/* Botón premium */}
             <motion.div

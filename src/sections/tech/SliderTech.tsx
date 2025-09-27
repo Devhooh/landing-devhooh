@@ -20,14 +20,14 @@ export function SliderTech({ logos, direction = "left" }: LogoSliderProps) {
 
   return (
     <div className="overflow-hidden m-0">
-      <div
+      <ul
         className={`flex ${directionLogo} gap-12`}
         style={{ minWidth: `${logosLoop.length * 10}rem` }}
       >
         {logosLoop.map((logo, i) => {
           const Icon = logo.icon;
           return (
-            <div
+            <li
               key={i}
               className="
                 group relative flex items-center justify-center
@@ -53,10 +53,10 @@ export function SliderTech({ logos, direction = "left" }: LogoSliderProps) {
                   w-12 h-12 md-tablet:w-14 md-tablet:h-14 table-lg:w-16 table-lg:h-16
                 "
               />
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

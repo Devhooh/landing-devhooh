@@ -63,40 +63,40 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
             {/* Contenido de texto mejorado */}
             <div className={`text-center`}>
               
-              <h3 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario2 mb-4 group-hover:text-colorPrimario5 transition-colors duration-300">
+              <h2 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario2 mb-4 group-hover:text-colorPrimario5 transition-colors duration-300">
                 ¿Por qué elegirnos para tu proyecto de  {""}
-                <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">{service.name.toLowerCase()}?</span>
-              </h3>
+                <span className="text-colorPrimario5 group-hover:text-colorPrimario2">{service.name.toLowerCase()}?</span>
+              </h2>
               
               <p className="text-colorPrimario1/80 text-lg md-tablet:text-xl leading-relaxed mb-6 py-5">
                 {service.description}
               </p>
 
               {/* Lista de beneficios */}
-              <div className="justify-center flex flex-wrap gap-3">
-              {[
-                { text: "Calidad", icon: Award },       // premio / medalla
-                { text: "Seguridad", icon: Shield },    // escudo
-                { text: "Soporte", icon: LifeBuoy },    // flotador / soporte
-              ].map((benefit, idx) => {
-                const Icon = benefit.icon;
-                return (
-                  <motion.div
-                    key={idx}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-white backdrop-blur-sm border border-white/30 hover:bg-white transition-all duration-300"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: idx * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <Icon className="w-4 h-4 md-tablet:w-7 md-tablet:h-7 text-colorPrimario5 flex-shrink-0" />
-                    <span className="text-sm md-tablet:text-lg font-medium text-colorPrimario2">
-                      {benefit.text}
-                    </span>
-                  </motion.div>
-                );
-              })}
-            </div>
+              <ul className="justify-center flex flex-wrap gap-3">
+                {[
+                  { text: "Calidad", icon: Award },
+                  { text: "Seguridad", icon: Shield },
+                  { text: "Soporte", icon: LifeBuoy },
+                ].map((benefit, idx) => {
+                  const Icon = benefit.icon;
+                  return (
+                    <motion.li
+                      key={idx}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full bg-white backdrop-blur-sm border border-white/30 hover:bg-white transition-all duration-300"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: idx * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <Icon className="w-4 h-4 md-tablet:w-7 md-tablet:h-7 text-colorPrimario5 flex-shrink-0" />
+                      <p className="text-sm md-tablet:text-lg font-medium text-colorPrimario2">
+                        {benefit.text}
+                      </p>
+                    </motion.li>
+                  );
+                })}
+              </ul>
             </div>
 
             {/* Efecto de brillo en hover */}
@@ -106,7 +106,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
       </motion.div>
 
       {/* Título secundario */}
-      <motion.h2
+      <motion.h3
         className="text-3xl md-tablet:text-4xl font-extrabold text-center text-colorPrimario2"
         initial="hidden"
         whileInView="show"
@@ -115,7 +115,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
       >
         Lo que incluye nuestro servicio de{" "}
         <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">{service.name}</span>
-      </motion.h2>
+      </motion.h3>
 
       <motion.p
         className="max-w-2xl mx-auto text-center text-lg md-tablet:text-xl text-gray-600 my-10"
@@ -153,9 +153,9 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
                 <div className="p-3 rounded-full bg-purple-100">
                   <Icon className="w-7 h-7 text-colorSecundario4" />
                 </div>
-                <h3 className="ml-3 text-lg font-semibold text-gray-900">
+                <h4 className="ml-3 text-lg font-semibold text-gray-900">
                   {benefit.title}
-                </h3>
+                </h4>
               </div>
 
               {/* Subtítulo */}

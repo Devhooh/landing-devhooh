@@ -19,10 +19,6 @@ export default function AboutSectionCard() {
       {/* Contenedor de las */}
         <div className="relative px-4 md-tablet:px-8 py-20 bg-gradient-to-b from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 rounded-3xl mx-4 border border-colorPrimario5/20">
           
-          {/* Efectos decorativos en el contenedor */}
-          <div className="absolute top-10 right-10 w-24 h-24 rounded-full bg-colorPrimario5/10 blur-xl"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-colorSecundario1/10 blur-xl"></div>
-
           <div className="space-y-20 relative z-10">
             
             {/* Card Visión mejorada */}
@@ -34,18 +30,19 @@ export default function AboutSectionCard() {
               className="w-full table-lg:w-4/5 table-lg:self-start mx-auto bg-gradient-to-br from-colorHover5 to-colorHover6 rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row border border-white/20 backdrop-blur-sm group"
             >
               {/* Imagen mejorada */}
-              <div className="relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10">
+              <div className="rounded-full relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10">
                 <motion.div
                   className="relative"
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    width={300}
-                    height={300}
+                    width={800}
+                    height={821}
                     src="/assets/images/vision.png"
                     alt="Visión de la empresa"
                     className="w-64 h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 60vw, 300px"
                   />
                   
                   {/* Efecto de brillo en hover */}
@@ -66,9 +63,9 @@ export default function AboutSectionCard() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg">
                     <Eye className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-3xl md-tablet:text-4xl font-bold text-colorPrimario2">
+                  <h2 className="text-3xl md-tablet:text-4xl font-bold text-colorPrimario2">
                     Visión
-                  </h3>
+                  </h2>
                 </div>
                 
                 <p className="text-base md-tablet:text-lg text-colorPrimario1/80 mb-6 leading-relaxed">
@@ -96,18 +93,19 @@ export default function AboutSectionCard() {
               className="w-full table-lg:w-4/5 table-lg:self-end table-lg:ml-auto bg-gradient-to-br from-colorHover5 to-colorHover6 rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row-reverse border border-white/20 backdrop-blur-sm group"
             >
               {/* Imagen mejorada */}
-              <div className="relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorSecundario1/10 to-colorSecundario2/10">
+              <div className="rounded-full relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorSecundario1/10 to-colorSecundario2/10">
                 <motion.div
                   className="relative"
                   whileHover={{ scale: 1.05, rotate: -2 }}
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    width={300}
-                    height={300}
+                    width={800}
+                    height={650}
                     src="/assets/images/mision.png"
                     alt="Misión de la empresa"
                     className="w-64 h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 60vw, 300px"
                   />
                   
                   {/* Efecto de brillo en hover */}
@@ -128,9 +126,9 @@ export default function AboutSectionCard() {
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 flex items-center justify-center shadow-lg">
                     <Users className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-3xl md-tablet:text-4xl font-bold text-colorPrimario2">
+                  <h2 className="text-3xl md-tablet:text-4xl font-bold text-colorPrimario2">
                     Misión
-                  </h3>
+                  </h2>
                 </div>
                 
                 <p className="text-base md-tablet:text-lg text-colorPrimario1/80 mb-6 leading-relaxed">

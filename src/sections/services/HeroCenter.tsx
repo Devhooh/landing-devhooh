@@ -9,24 +9,42 @@ export default function HeroCenter() {
   return (
     <section className="h-auto">
       <div className="max-w-[1550px] mx-auto px-6 pt-10 md-tablet:pt-4 table-lg:pt-0 md-tablet:px-12">
-        <div className="grid grid-cols-1 table-lg:grid-cols-3 items-center gap-6">
+        
+        {/* Grid que cambia completamente entre móvil y desktop */}
+        <div className="flex flex-col table-lg:grid table-lg:grid-cols-3 table-lg:items-center gap-6">
 
-          {/* Imagen izquierda */}
+          {/* 1. TÍTULO - Móvil: primero | Desktop: dentro del centro */}
           <motion.div
-            className="hidden table-lg:flex justify-end table-lg:mb-16"
+            className="order-1 table-lg:hidden text-center"
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="mt-5 text-4xl md-tablet:text-5xl font-extrabold leading-tight drop-shadow-lg text-white">
+              Soluciones digitales
+              <span className="text-colorPrimario2"> a tu medida</span>
+            </h2>
+          </motion.div>
+
+          {/* 2. IMAGEN IZQUIERDA - Móvil: segunda (reutilizada) | Desktop: primera columna */}
+          <motion.div
+            className="order-2 table-lg:order-none flex justify-center table-lg:justify-end mb-8 table-lg:mb-14 table-lg:mt-8"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative group">
-              <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
+            <div className="relative group w-full max-w-md">
+              <div className="bg-white/10 px-1 py-2 relative overflow-hidden w-full h-auto rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500" 
+                   style={{ aspectRatio: '600 / 565' }}>
                 <Image
                   src="/assets/images/herocenter1.png"
                   alt="soluciones-a-medida-desarrollo-de-software"
-                  width={600}
-                  height={565}
-                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 549px) 85vw, (max-width: 749px) 70vw, (max-width: 949px) 60vw, (min-width: 950px) 400px"
+                  priority={true}
                 />
                 
                 {/* Overlay con gradiente */}
@@ -35,92 +53,44 @@ export default function HeroCenter() {
 
               {/* Círculos decorativos flotantes */}
               <motion.div
-                className={`absolute -top-4 -right-4 w-8 h-8 rounded-full bg-white opacity-20`}
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1 * 0.5
-                }}
+                className="animate-pulse absolute -top-4 -right-4 table-lg:-right-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></motion.div>
             </div>
           </motion.div>
 
-          {/* Contenedor central */}
-          <div className="flex flex-col items-center text-center gap-8 col-span-1">
+          {/* 3. CONTENEDOR CENTRAL - Móvil: dividido en partes | Desktop: columna central completa */}
+          <div className="order-3 table-lg:order-none flex flex-col items-center text-center gap-8 col-span-1">
             
-            {/* Título */}
+            {/* Título para Desktop */}
             <motion.div
-              className="md-tablet:mt-2"
+              className="hidden table-lg:block md-tablet:mt-2"
               initial={{ opacity: 0, y: -40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="mt-5 text-4xl md-tablet:text-5xl table-lg:text-4xl font-extrabold leading-tight drop-shadow-lg text-white">
+              <h2 className="mt-5 text-4xl font-extrabold leading-tight drop-shadow-lg text-white">
                 Soluciones digitales
                 <span className="text-colorPrimario2"> a tu medida</span>
               </h2>
             </motion.div>
 
-            {/* Imagen para mobile */}
-            <motion.div
-              className="table-lg:hidden my-14 bg-white/10 shadow-2xl rounded-3xl px-4"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative group">
-                <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
-                  <Image
-                    src="/assets/images/herocenter1.png"
-                    alt="soluciones-a-medida-desarrollo-de-software"
-                    width={600}
-                    height={565}
-                    className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  
-                  {/* Overlay con gradiente */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-  
-                {/* Círculos decorativos flotantes */}
-                <motion.div
-                  className={`absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20`}
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.2, 0.4, 0.2]
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1 * 0.5
-                  }}
-                ></motion.div>
-              </div>
-            </motion.div>
-
             {/* Subtítulo */}
             <motion.div
+              className="order-3 table-lg:order-none"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <p className="text-lg md-tablet:text-xl text-gray-200 max-w-2xl">
+              <p className="text-lg md-tablet:text-xl text-white max-w-2xl">
                 Creamos plataformas robustas y personalizadas. Desde la idea hasta el despliegue final.
               </p>
             </motion.div>
 
             {/* Lista */}
             <motion.ul
-              className="mt-10 table-lg:mt-0 md-tablet:mt-4 space-y-4 text-white text-left max-w-md"
+              className="order-4 table-lg:order-none mt-6 table-lg:mt-0 space-y-4 text-white text-left max-w-md"
               initial="hidden"
               whileInView="show"
               variants={{
@@ -151,11 +121,11 @@ export default function HeroCenter() {
 
             {/* Botón CTA */}
             <motion.div
+              className="order-5 table-lg:order-none mt-8 table-lg:mt-4"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="mt-10 table-lg:mt-1 mb-8 table-lg:my-8 "
             >
               <Link href="/contact">
                 <motion.button
@@ -171,23 +141,24 @@ export default function HeroCenter() {
             </motion.div>
           </div>
 
-          {/* Imagen derecha */}
+          {/* 4. IMAGEN DERECHA - Móvil: oculta | Desktop: tercera columna */}
           <motion.div
-            className="hidden table-lg:flex justify-start table-lg:mb-16"
+            className="hidden table-lg:flex justify-start mb-14 table-lg:mt-8"
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            
-            <div className="relative group">
-              <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
+            <div className="relative group w-full max-w-md">
+              <div className="bg-white/10 px-1 py-2 relative overflow-hidden w-full h-auto rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500" 
+                   style={{ aspectRatio: '662 / 574' }}>
                 <Image
                   src="/assets/images/herocenter2.png"
                   alt="soluciones-a-medida-desarrollo-de-software"
-                  width={662}
-                  height={574}
-                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 950px) 400px, 0px"
+                  priority={false}
                 />
                 
                 {/* Overlay con gradiente */}
@@ -196,17 +167,7 @@ export default function HeroCenter() {
 
               {/* Círculos decorativos flotantes */}
               <motion.div
-                className={`absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20`}
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1 * 0.5
-                }}
+                className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></motion.div>
             </div>
           </motion.div>

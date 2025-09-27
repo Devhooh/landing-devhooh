@@ -30,13 +30,6 @@ const listItem: Variants = {
   show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
-const splitText = (text: string) => text.split("");
-
 export default function ResultSection({ project }: ResultSectionProps) {
   const result = project.result;
 
@@ -63,29 +56,17 @@ export default function ResultSection({ project }: ResultSectionProps) {
           {/* Título con animación letra por letra */}
           <motion.h2
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Resultados ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("obtenidos").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Resultados {""}
+            <span
+              className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
+            >
+              obtenidos
+            </span>
           </motion.h2>
 
           {/* Descripción mejorada */}
@@ -213,51 +194,30 @@ export default function ResultSection({ project }: ResultSectionProps) {
           </motion.div>
         </div>
 
-        {/* Flecha de transformación */}
-        <motion.div
-          className="flex justify-center mb-16"
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="relative">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center shadow-lg">
-              <TrendingUp className="w-8 h-8 text-white" />
-            </div>
-            
-            {/* Círculos decorativos pulsantes */}
-            <motion.div
-              className="absolute inset-0 rounded-full border-2 border-colorPrimario5/30"
-              animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            ></motion.div>
-          </div>
-        </motion.div>
 
         {/* Métricas de impacto */}
-        <motion.div
+        <motion.ul
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-            <div className="text-sm text-colorPrimario1/70">Objetivos alcanzados</div>
-          </div>
+            <p className="text-sm text-colorPrimario1/70">Objetivos alcanzados</p>
+          </li>
           
-          <div className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorPrimario5 mb-2">✓</div>
-            <div className="text-sm text-colorPrimario1/70">Cliente satisfecho</div>
-          </div>
+            <p className="text-sm text-colorPrimario1/70">Cliente satisfecho</p>
+          </li>
           
-          <div className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold text-colorSecundario1 mb-2">24/7</div>
-            <div className="text-sm text-colorPrimario1/70">Funcionamiento óptimo</div>
-          </div>
-        </motion.div>
+            <p className="text-sm text-colorPrimario1/70">Funcionamiento óptimo</p>
+          </li>
+        </motion.ul>
 
         {/* Call to action final */}
         <motion.div

@@ -43,7 +43,7 @@ export function SolutionCard({
   };
 
   const imageVariants: Variants = {
-    hidden: { opacity: 1, scale: 0.8, rotate: reverse ? -5 : 5 },
+    hidden: { opacity: 0, scale: 0.8, rotate: reverse ? -5 : 5 },
     show: { 
       opacity: 1, 
       scale: 1, 

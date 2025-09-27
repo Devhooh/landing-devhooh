@@ -64,7 +64,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
         </div>
 
         {/* Título con animación letra por letra */}
-        <motion.h2
+        <motion.h3
           className="text-2xl md-tablet:text-3xl font-extrabold text-white mb-4 leading-tight"
           initial="hidden"
           whileInView="show"
@@ -82,7 +82,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
               </motion.span>
             );
           })}
-        </motion.h2>
+        </motion.h3>
 
         {/* Subtítulo mejorado */}
         <motion.p

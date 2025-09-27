@@ -13,20 +13,19 @@ export default function HeroCenter() {
 
           {/* Imagen izquierda */}
           <motion.div
-            className="hidden table-lg:flex justify-end table-lg:mb-16"
+            className="hidden table-lg:flex justify-end mb-14 table-lg:mt-8"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative group">
-              <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
+            <div className="relative group w-full max-w-md">
+              <div className="bg-white/10 px-1 py-2 relative overflow-hidden w-full h-auto rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 " style={{ aspectRatio: '600 / 565' }}> 
                 <Image
                   src="/assets/images/herocenter1.png"
                   alt="soluciones-a-medida-desarrollo-de-software"
-                  width={600}
-                  height={565}
-                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(min-width: 1024px) 33vw, 400px" 
                 />
                 
@@ -36,17 +35,7 @@ export default function HeroCenter() {
 
               {/* Círculos decorativos flotantes */}
               <motion.div
-                className={`absolute -top-4 -right-4 w-8 h-8 rounded-full bg-white opacity-20`}
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1 * 0.5
-                }}
+                className="animate-pulse absolute -top-4 -right-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></motion.div>
             </div>
           </motion.div>
@@ -76,15 +65,18 @@ export default function HeroCenter() {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <div className="relative group">
-                <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
+              <div className="relative group w-full"> 
+                <div 
+                    className="bg-white/10 px-1 py-2 relative overflow-hidden w-full h-auto rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 " 
+                    style={{ aspectRatio: '600 / 565' }}
+                > 
                   <Image
                     src="/assets/images/herocenter1.png"
                     alt="soluciones-a-medida-desarrollo-de-software"
                     width={600}
                     height={565}
-                    className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(min-width: 1024px) 33vw, 400px" 
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1023px) 90vw"
                   />
                   
                   {/* Overlay con gradiente */}
@@ -93,17 +85,7 @@ export default function HeroCenter() {
   
                 {/* Círculos decorativos flotantes */}
                 <motion.div
-                  className={`absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20`}
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.2, 0.4, 0.2]
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1 * 0.5
-                  }}
+                  className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
                 ></motion.div>
               </div>
             </motion.div>
@@ -175,21 +157,20 @@ export default function HeroCenter() {
 
           {/* Imagen derecha */}
           <motion.div
-            className="hidden table-lg:flex justify-start table-lg:mb-16"
+            className="hidden table-lg:flex justify-start mb-14 table-lg:mt-8"
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
             
-            <div className="relative group">
-              <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500">
+            <div className="relative group w-full max-w-md">
+              <div className="bg-white/10 px-1 py-2 relative overflow-hidden w-full h-auto rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500" style={{ aspectRatio: '662 / 574' }}>
                 <Image
                   src="/assets/images/herocenter2.png"
                   alt="soluciones-a-medida-desarrollo-de-software"
-                  width={662}
-                  height={574}
-                  className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(min-width: 1024px) 33vw, 400px"
                 />
                 
@@ -199,17 +180,7 @@ export default function HeroCenter() {
 
               {/* Círculos decorativos flotantes */}
               <motion.div
-                className={`absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20`}
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1 * 0.5
-                }}
+                className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></motion.div>
             </div>
           </motion.div>

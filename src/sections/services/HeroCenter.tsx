@@ -44,7 +44,7 @@ export default function HeroCenter() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 549px) 85vw, (max-width: 749px) 70vw, (max-width: 949px) 60vw, (min-width: 950px) 400px"
-                  priority={true}
+                  loading="lazy"
                 />
                 
                 {/* Overlay con gradiente */}

@@ -72,11 +72,11 @@ export default function HeroCenter() {
                 > 
                   <Image
                     src="/assets/images/herocenter1.png"
-                    alt="soluciones-a-medida-desarrollo-de-software"
+                    alt="..."
                     width={600}
                     height={565}
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 1023px) 90vw"
+                    sizes="(max-width: 768px) 360px, (max-width: 1023px) 480px, 600px"
+                    className="object-cover"
                   />
                   
                   {/* Overlay con gradiente */}

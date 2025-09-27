@@ -49,8 +49,8 @@ export default function HeroSectionHome() {
             <Image
               src="/assets/images/hero-home.png"
               alt="Equipo desarrollando software a medida"
-              width={600}
-              height={600}
+              width={462}
+              height={462}
               // Cambia la propiedad sizes para que refleje el tamaño real del contenedor
               sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 462px"
               className="object-contain"

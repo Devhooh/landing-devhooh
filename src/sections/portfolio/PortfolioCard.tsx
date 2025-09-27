@@ -21,8 +21,6 @@ export default function PortfolioCard({ project }: { project: Project }) {
       {/* Imagen */}
       <div className="bg-colorFondo p-3 flex items-center justify-center relative w-full h-48 md-tablet:h-56 table-lg:h-64">
         <Image
-          // width={400}
-          // height={400}
           src={project.imageSrc}
           alt={project.imageAlt || project.ProjectName}
           fill
@@ -35,9 +33,9 @@ export default function PortfolioCard({ project }: { project: Project }) {
       {/* Info principal */}
       <div className="p-6 flex flex-col flex-1 justify-between h-full">
         <div>
-          <h3 className="text-xl font-semibold text-colorPrimario2 mb-2">
+          <h2 className="text-xl font-semibold text-colorPrimario2 mb-2">
             {project.ProjectName}
-          </h3>
+          </h2>
 
           <p className="text-sm text-gray-700 pb-5 line-clamp-3 overflow-hidden">
             {project.description}

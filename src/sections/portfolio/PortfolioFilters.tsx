@@ -54,32 +54,16 @@ export default function PortfolioFilters() {
         {/* Título con animación letra por letra */}
         <motion.h2
           className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          variants={{ 
-            hidden: {}, 
-            show: { transition: { staggerChildren: 0.03 } } 
-          }}
         >
-          {["Vea", " ", "cómo", " ", "Devhooh", " ", "ayudó"].map((word, wordIdx) => (
-            <span key={wordIdx}>
-              {word === " " ? " " : 
-                word.split("").map((letter, letterIdx) => (
-                  <motion.span
-                    key={letterIdx}
-                    className={wordIdx === 4 ? "text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" : "text-colorPrimario2"}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      show: { opacity: 1, y: 0 }
-                    }}
-                  >
-                    {letter}
-                  </motion.span>
-                ))
-              }
-            </span>
-          ))}
+          Vea cómo {""}
+          <span className="text-colorPrimario5">
+            Devhooh {""}
+          </span>
+          ayudó
         </motion.h2>
 
         <motion.p
@@ -97,28 +81,28 @@ export default function PortfolioFilters() {
         </motion.p>
 
         {/* Estadísticas rápidas */}
-        <motion.div
+        <motion.ul
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
+          <li className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
             <div className="text-2xl font-bold text-colorPrimario5 mb-1">20+</div>
-            <div className="text-sm text-colorPrimario1/70">Proyectos exitosos</div>
-          </div>
+            <p className="text-sm text-colorPrimario1/70">Proyectos exitosos</p>
+          </li>
           
-          <div className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
+          <li className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
             <div className="text-2xl font-bold text-colorPrimario5 mb-1">15+</div>
-            <div className="text-sm text-colorPrimario1/70">Países atendidos</div>
-          </div>
+            <p className="text-sm text-colorPrimario1/70">Países atendidos</p>
+          </li>
           
-          <div className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
+          <li className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
             <div className="text-2xl font-bold text-colorPrimario5 mb-1">98%</div>
-            <div className="text-sm text-colorPrimario1/70">Satisfacción</div>
-          </div>
-        </motion.div>
+            <p className="text-sm text-colorPrimario1/70">Satisfacción</p>
+          </li>
+        </motion.ul>
       </div>
 
       {/* Barra de filtros mejorada */}

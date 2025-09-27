@@ -37,7 +37,8 @@ export default function HeroSectionTech() {
                 <Image
                   src="/assets/images/tecnologia.png"
                   alt="Equipo desarrollando software a medida"
-                  fill
+                  width={755}
+                  height={680}
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain transition-transform duration-700 group-hover:scale-105"

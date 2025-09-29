@@ -26,47 +26,13 @@ export function SolutionCard({
   const cardVariants: Variants = {
     hidden: { 
       opacity: 0, 
-      y: 60,
-      scale: 0.95
+      y: 20,
+      scale: 0.90
     },
     show: { 
       opacity: 1, 
       y: 0,
       scale: 1,
-      transition: { 
-        type: "spring", 
-        stiffness: 50, 
-        damping: 15,
-        delay: index * 0.2
-      } 
-    },
-  };
-
-  const imageVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8, rotate: reverse ? -5 : 5 },
-    show: { 
-      opacity: 1, 
-      scale: 1, 
-      rotate: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 60, 
-        damping: 12,
-        delay: 0.3 + index * 0.2
-      } 
-    },
-  };
-
-  const contentVariants: Variants = {
-    hidden: { opacity: 0, x: reverse ? 50 : -50 },
-    show: { 
-      opacity: 1, 
-      x: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 50,
-        delay: 0.4 + index * 0.2
-      } 
     },
   };
 
@@ -74,7 +40,7 @@ export function SolutionCard({
     <motion.div
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={cardVariants}
       className={`relative max-w-5xl mx-auto
         ${reverse ? "table-lg:ml-auto table-lg:mr-0" : "table-lg:ml-0 table-lg:mr-auto"}`}
@@ -98,9 +64,8 @@ export function SolutionCard({
         <div className={`absolute bottom-6 ${reverse ? 'right-6' : 'left-6'} w-2 h-2 rounded-full bg-gradient-to-r from-colorSecundario3 to-colorSecundario4 opacity-40`}></div>
 
         {/* Contenedor de imagen */}
-        <motion.div 
+        <div 
           className="table-lg:w-2/5 flex items-center justify-center relative"
-          variants={imageVariants}
         >
           <div className="relative p-6 rounded-2xl bg-white/50 backdrop-blur-sm shadow-lg group-hover:shadow-xl transition-all duration-300">
             <Image
@@ -119,19 +84,13 @@ export function SolutionCard({
 
           {/* Círculo decorativo flotante */}
           <motion.div
-            className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+            className="animate-pulse absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
           ></motion.div>
-        </motion.div>
+        </div>
 
         {/* Contenido de texto */}
-        <motion.div 
+        <div 
           className="table-lg:w-3/5 flex flex-col justify-center text-center table-lg:text-left"
-          variants={contentVariants}
         >
           {/* Número de índice */}
           <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white font-bold text-sm mb-4 ${reverse ? 'table-lg:ml-auto' : ''} mx-auto table-lg:mx-0`}>
@@ -178,7 +137,7 @@ export function SolutionCard({
               Tecnología de vanguardia
             </span>
           </div>
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

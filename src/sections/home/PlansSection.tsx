@@ -64,13 +64,8 @@ export function PlansSection() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 60 },
     show: { opacity: 1, y: 0 },
-  };
-
-  const bulletVariants = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0 },
   };
 
   return (
@@ -153,14 +148,9 @@ export function PlansSection() {
                   {/* Lista de beneficios */}
                   <ul className="space-y-4 mb-8 text-left">
                     {plan.beneficio.map((item, idx) => (
-                      <motion.li
+                      <li
                         key={idx}
                         className="flex items-start gap-3"
-                        variants={bulletVariants}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: idx * 0.1 }}
                       >
                         <div className={`flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r ${plan.iconGradient} flex items-center justify-center mt-0.5`}>
                           <CheckCircle className="w-3 h-3 text-white" />
@@ -168,7 +158,7 @@ export function PlansSection() {
                         <span className={`text-sm ${plan.popular ? 'text-colorHover5' : 'text-colorPrimario1/80'}`}>
                           {item}
                         </span>
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -206,7 +196,7 @@ export function PlansSection() {
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.8 }}
           viewport={{ once: true }}
         >
           <p className="text-colorPrimario1/70 mb-4 font-medium text-xl">

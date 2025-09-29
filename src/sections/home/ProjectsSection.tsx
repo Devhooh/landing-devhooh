@@ -30,7 +30,7 @@ export function ProjectsSection() {
         className="text-center max-w-4xl mx-auto px-6 mb-6 md-tablet:mb-12"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <motion.h2
           custom={0}
@@ -46,7 +46,7 @@ export function ProjectsSection() {
         className="flex justify-center gap-8 flex-wrap mb-12"
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         {[
           { text: "20+ proyectos entregados" },
@@ -73,7 +73,7 @@ export function ProjectsSection() {
           className="flex-1 text-center table-lg:text-left"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           <motion.p
             custom={0}
@@ -94,7 +94,7 @@ export function ProjectsSection() {
           className="flex-1 flex flex-col justify-center items-center table-lg:items-start"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           <ul className="flex flex-col gap-3 text-gray-800 text-base md-tablet:text-lg table-lg:text-xl">
             {[

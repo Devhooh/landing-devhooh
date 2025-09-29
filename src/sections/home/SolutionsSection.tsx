@@ -70,8 +70,11 @@ export function SolutionsSection() {
           
           {/* Título principal con animación letra por letra */}
           <motion.h2
-            variants={textVariants}
             className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
           >
             Impulsamos tu negocio con
             soluciones modernas
@@ -80,7 +83,10 @@ export function SolutionsSection() {
           {/* Subtítulo mejorado */}
           <motion.p
             className="text-colorPrimario1/80 text-lg md-tablet:text-xl leading-relaxed max-w-3xl mx-auto"
-            variants={textVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             Desde tu primera idea hasta el lanzamiento, desarrollamos webs, apps y sistemas inteligentes que transforman tu presencia digital y optimizan cada proceso de tu negocio.
           </motion.p>

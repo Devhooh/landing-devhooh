@@ -39,7 +39,7 @@ export default function CTAHome() {
               className="text-3xl md-tablet:text-5xl font-extrabold mb-6 leading-tight text-white"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.3 }}
               viewport={{ once: true }}
             >
               Queremos que tu empresa sea nuestro próximo{" "}
@@ -54,7 +54,7 @@ export default function CTAHome() {
               className="text-lg md-tablet:text-xl text-colorHover5 mb-8 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.4}}
               viewport={{ once: true }}
             >
               Impulsa tu proyecto con soluciones digitales innovadoras, hechas a tu medida y respaldadas por años de experiencia
@@ -65,7 +65,7 @@ export default function CTAHome() {
               className="flex flex-wrap justify-center table-lg:justify-start gap-8 mb-10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.5}}
               viewport={{ once: true }}
             >
               <li className="text-center">
@@ -87,7 +87,7 @@ export default function CTAHome() {
               className="flex flex-col md-tablet:flex-row gap-4 justify-center table-lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
+              transition={{ duration: 0.4}}
               viewport={{ once: true }}
             >
               <Link href="/contact">
@@ -114,7 +114,7 @@ export default function CTAHome() {
             className="flex justify-center table-lg:justify-end"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
             <div className="relative">
@@ -138,32 +138,26 @@ export default function CTAHome() {
                 </motion.div>
 
                 {/* Sparkles decorativos */}
-                <motion.div
-                  className="absolute top-16 right-16 text-colorPrimario5 animate-pulse"
-                >
+                <div className="absolute top-16 right-16 text-colorPrimario5 animate-pulse">
                   <Sparkles className="w-8 h-8" />
-                </motion.div>
+                </div>
 
-                <motion.div
-                  className="absolute bottom-20 left-12 text-colorSecundario1 animate-pulse"
-                >
+                <div className="absolute bottom-20 left-12 text-colorSecundario1 animate-pulse">
                   <Sparkles className="w-6 h-6" />
-                </motion.div>
+                </div>
 
-                <motion.div
-                  className="absolute top-24 left-20 text-colorPrimario7 animate-pulse"
-                >
+                <div className="absolute top-24 left-20 text-colorPrimario7 animate-pulse">
                   <Sparkles className="w-5 h-5" />
-                </motion.div>
+                </div>
 
                 {/* Círculos orbitales */}
-                <motion.div
+                <div
                   className="animate-pulse absolute top-8 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-colorPrimario5"
-                ></motion.div>
+                ></div>
 
-                <motion.div
+                <div
                   className="animate-pulse absolute bottom-8 left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full bg-colorSecundario1"
-                ></motion.div>
+                ></div>
               </div>
             </div>
           </motion.div>

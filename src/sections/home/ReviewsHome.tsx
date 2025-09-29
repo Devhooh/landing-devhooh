@@ -16,10 +16,10 @@ export default function ReviewsHome() {
       {/* Título y descripción */}
       <div className="text-center mb-12">
         <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-4xl font-extrabold text-colorPrimario2"
+            className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario2"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             Lo que dicen nuestros clientes
@@ -29,7 +29,7 @@ export default function ReviewsHome() {
           className="mt-5 text-colorPrimario1 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4}}
           viewport={{ once: true }}
         >
           Opiniones reales de clientes satisfechos que confían en nuestro trabajo y nuestras soluciones digitales.

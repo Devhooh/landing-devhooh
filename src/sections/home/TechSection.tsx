@@ -50,9 +50,9 @@ export default function TechSection() {
           {/* Título animado letra por letra */}
           <motion.h2
             className="text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold mb-6 text-colorPrimario2"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             Nuestro stack tecnológico
@@ -64,7 +64,7 @@ export default function TechSection() {
             whileInView="show"
             viewport={{ once: true }}
             variants={blockVariants}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4}}
           >
             Utilizamos las tecnologías más modernas y confiables para crear soluciones robustas y escalables
           </motion.p>
@@ -82,24 +82,12 @@ export default function TechSection() {
                 key={idx}
                 className={`relative group p-6 rounded-3xl bg-gradient-to-br ${tech.gradient} backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]`}
                 variants={blockVariants}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.5 }}
                 whileHover={{ y: -8, scale: 1.02 }}
               >
                 {/* Icono flotante */}
-                <motion.div
+                <div
                   className={`relative mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br ${tech.iconBg} flex items-center justify-center mb-4 shadow-lg`}
-                  initial={{ y: 0 }}
-                  animate={{ 
-                    y: [0, -5, 0, -3, 0],
-                    rotate: [0, 2, 0, -2, 0]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    ease: "easeInOut",
-                    delay: idx * 0.4,
-                  }}
                 >
                   <div className="text-white">
                     {tech.icon}
@@ -107,7 +95,7 @@ export default function TechSection() {
                   
                   {/* Efecto de brillo */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </motion.div>
+                </div>
 
                 <h3 className="text-xl font-bold text-colorPrimario2 mb-3">
                   {tech.title}
@@ -129,7 +117,7 @@ export default function TechSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.3}}
           >
             <Link href="/tecnologia" className="group">
               <motion.button 

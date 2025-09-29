@@ -49,15 +49,24 @@ export function ProjectsBenefits() {
           className="text-center mb-8"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
-          <motion.h2
+          <motion.h2 
             className="text-4xl tablet-md:text-5xl font-extrabold mb-7 text-white"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
           >
             Por qué escoger a <span className="text-colorHover5"> Devhooh</span>
           </motion.h2>
-          <motion.p
+
+          <motion.p 
             className="text-gray-200 text-base tablet-md:text-lg max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             Nos destacamos por nuestra calidad, enfoque al cliente y compromiso con cada proyecto. Transparencia, colaboración y excelencia continua son los valores que garantizan resultados efectivos y negocios que crecen.
           </motion.p>
@@ -68,7 +77,7 @@ export function ProjectsBenefits() {
           className="flex flex-col tablet-md:flex-row gap-6"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {benefits.map((benefit, idx) => (
             <motion.div

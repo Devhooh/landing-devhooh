@@ -20,7 +20,7 @@ export default function HeroSectionHome() {
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 60 } },
+    show: { opacity: 1, x: 0},
   };
 
   return (
@@ -32,7 +32,7 @@ export default function HeroSectionHome() {
           <motion.h1
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, type: "spring" }}
+            transition={{ duration: 0.3, type: "spring" }}
             className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
           >
             Desarrollo de software inteligente a tu medida
@@ -42,7 +42,7 @@ export default function HeroSectionHome() {
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
             <div className="relative w-[420px] h-[420px] rounded-2xl">
@@ -63,7 +63,7 @@ export default function HeroSectionHome() {
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="order-3 text-lg md-tablet:text-xl 
               text-center table-lg:text-left
             text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
@@ -104,12 +104,12 @@ export default function HeroSectionHome() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
           >
             <Link href="/services">
               <motion.button
-                // whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
                   bg-colorSecundario3  text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
@@ -120,7 +120,7 @@ export default function HeroSectionHome() {
 
             <Link href="/portfolio">
               <motion.button
-                // whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
                   bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white transition-all duration-300"

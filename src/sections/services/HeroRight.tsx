@@ -14,10 +14,10 @@ export default function HeroRight() {
           {/* --- 1) TÍTULO --- */}
           <motion.div
             className="order-1 table-lg:order-2 mt-10 table-lg:mt-2"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.3}}
           >
             <h2 className="text-4xl font-extrabold leading-tight drop-shadow-lg text-center table-lg:text-right text-white">
               Servicios completos con
@@ -30,10 +30,10 @@ export default function HeroRight() {
             className="
               my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4 
               flex justify-center table-lg:justify-start"
-            initial={{ opacity: 0, x: -50, scale: 0.9 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            initial={{ opacity: 0, x: -50}}
+            whileInView={{ opacity: 1, x: 0}}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.4}}
           >
 
             <div className="relative group">
@@ -51,29 +51,19 @@ export default function HeroRight() {
               </div>
 
               {/* Círculos decorativos flotantes */}
-              <motion.div
-                className={`absolute -top-4 -right-4  w-8 h-8 rounded-full bg-white opacity-20`}
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1 * 0.5
-                }}
-              ></motion.div>
+              <div
+                className="absolute -top-4 -right-4  w-8 h-8 rounded-full bg-white opacity-20"
+              ></div>
             </div>
           </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}
           <motion.div
             className="order-3 mb-5 table-lg:mb-0"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.4}}
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               IA, apps móviles, blockchain, sitios web y más. Nuestro stack moderno está listo para tu idea.
@@ -83,10 +73,10 @@ export default function HeroRight() {
           {/* --- 4) LISTA --- */}
           <motion.div
             className="order-4 flex justify-end"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.5}}
           >
             <ul className="space-y-3 text-white text-left max-w-md mx-auto table-lg:mx-0">
               {[
@@ -100,7 +90,7 @@ export default function HeroRight() {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <BadgeCheck className="w-6 h-6 text-cyan-400 flex-shrink-0" />
                   <span className="text-base md-tablet:text-xl">{feature}</span>
@@ -115,7 +105,7 @@ export default function HeroRight() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.4}}
           >
             <Link href="/contact">
               <button className="

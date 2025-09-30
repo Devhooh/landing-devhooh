@@ -14,9 +14,9 @@ export default function HeroLeft() {
           {/* --- 1) TÍTULO --- */}
           <motion.div
             className="order-1 mt-6 table-lg:mt-2"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <h1 className="
@@ -32,9 +32,9 @@ export default function HeroLeft() {
           <motion.div
             className="
               order-2 mt-5 mb-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center"
-            initial={{ opacity: 0, x: -60, scale: 0.9 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, x: -30}}
+            whileInView={{ opacity: 1, x: 0}}
+            transition={{ duration: 0.4}}
             viewport={{ once: true }}
           >
             <div className="relative group">
@@ -54,19 +54,9 @@ export default function HeroLeft() {
               </div>
 
               {/* Círculos decorativos flotantes */}
-              <motion.div
-                className={`absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20`}
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1 * 0.5
-                }}
-              ></motion.div>
+              <div
+                className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
+              ></div>
             </div>
           </motion.div>
 
@@ -74,9 +64,9 @@ export default function HeroLeft() {
           {/* --- 3) SUBTÍTULO --- */}
           <motion.div
             className="order-3 mb-5 table-lg:mb-0"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.4}}
             viewport={{ once: true }}
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
@@ -106,10 +96,10 @@ export default function HeroLeft() {
                 key={index}
                 className="flex items-start gap-3"
                 variants={{
-                  hidden: { opacity: 0, x: -40 },
+                  hidden: { opacity: 0, x: -30 },
                   show: { opacity: 1, x: 0 },
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <BadgeCheck   className="w-6 h-6 text-cyan-400 flex-shrink-0" />
                 <span className="text-base md-tablet:text-lg">{feature}</span>
@@ -120,9 +110,9 @@ export default function HeroLeft() {
           {/* --- 5) BOTÓN --- */}
           <motion.div
             className="order-5 flex justify-center table-lg:justify-start mt-10 mb-5 table-lg:mt-5"
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.4}}
             viewport={{ once: true }}
           >
             <Link href="/contact">

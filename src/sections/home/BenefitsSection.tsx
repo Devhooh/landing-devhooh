@@ -53,7 +53,7 @@ const checklistItems = [
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold leading-tight mb-6 text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             Beneficios de nuestros proyectos
@@ -63,7 +63,7 @@ const checklistItems = [
             className="text-lg md-tablet:text-xl text-colorHover5 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             viewport={{ once: true }}
           >
             Descubre por qué miles de clientes confían en nosotros para llevar sus proyectos al siguiente nivel
@@ -82,8 +82,8 @@ const checklistItems = [
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              whileHover={{ scale: 1.02,}}
             >
               <div className="flex flex-col items-start text-left">
                 <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm mb-4">
@@ -106,9 +106,9 @@ const checklistItems = [
           {/* BLOQUE DE LISTA */}
           <motion.div
             className="space-y-6 text-center table-lg:text-left"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <h3 className="text-3xl md-tablet:text-4xl font-bold text-white mb-8">
@@ -122,7 +122,7 @@ const checklistItems = [
                   className="flex items-center gap-4 text-colorHover5 text-lg"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <div className="flex-shrink-0 p-1 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6">
@@ -139,7 +139,7 @@ const checklistItems = [
             className="relative flex justify-center table-lg:justify-end mx-5"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
             <div className="relative p-6 table-lg:p-4 lg-table:p-8 rounded-3xl bg-gradient-to-br from-colorSecundario1/20 to-colorSecundario3/20 backdrop-blur-sm border border-white/10 w-fit">

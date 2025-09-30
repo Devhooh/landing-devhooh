@@ -12,19 +12,14 @@ export function ProjectSecitonSlider() {
     <div className="relative my-20 bg-colorFondo">
 
       {/* Título y subtítulo mejorados */}
-      <motion.div 
-        className="relative z-10 text-center mb-16 px-4"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
+      <div className="relative z-10 text-center mb-16 px-4">
+
         {/* Título principal con animación letra por letra */}
         <motion.h2
           className="text-3xl tablet-md:text-5xl font-extrabold mb-6 text-colorPrimario2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           viewport={{ once: true }}
         >
           Empresas que confían en nosotros
@@ -35,7 +30,7 @@ export function ProjectSecitonSlider() {
           className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto leading-relaxed mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           viewport={{ once: true }}
         >
           Desde startups hasta grandes corporaciones, hemos transformado ideas en soluciones digitales exitosas que impulsan el crecimiento empresarial
@@ -46,7 +41,7 @@ export function ProjectSecitonSlider() {
           className="flex flex-wrap justify-center gap-8 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.5 }}
           viewport={{ once: true }}
         >
           <li className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
@@ -62,7 +57,7 @@ export function ProjectSecitonSlider() {
             <p className="text-sm text-colorPrimario1/70">Tiempo promedio</p>
           </li>
         </motion.ul>
-      </motion.div>
+      </div>
 
       {/* Sliders de logos con animación mejorada */}
       <motion.div 
@@ -81,7 +76,7 @@ export function ProjectSecitonSlider() {
         className="relative z-10 text-center px-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
       >
         <h3 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario5 mb-4">
@@ -97,7 +92,7 @@ export function ProjectSecitonSlider() {
         className="relative z-10 max-w-[1550px] mx-auto md-tablet:px-0 mb-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
         viewport={{ once: true }}
       >
         <Swiper

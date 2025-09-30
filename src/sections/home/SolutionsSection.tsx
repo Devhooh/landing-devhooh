@@ -42,12 +42,6 @@ export function SolutionsSection() {
     },
   ];
 
-  // Variants para animación de textos
-  const containerVariants: Variants = {
-    hidden: {},
-    show: { transition: { staggerChildren: 0.1 } },
-  };
-
   const textVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50, damping: 15 } },
@@ -68,17 +62,19 @@ export function SolutionsSection() {
       {/* Encabezado mejorado */}
       <motion.div
         className="relative z-10 px-4 md-tablet:px-8 flex flex-col text-center items-center mb-20"
-        variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <div className="max-w-4xl">
           
           {/* Título principal con animación letra por letra */}
           <motion.h2
-            variants={textVariants}
             className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
           >
             Impulsamos tu negocio con
             soluciones modernas
@@ -87,7 +83,10 @@ export function SolutionsSection() {
           {/* Subtítulo mejorado */}
           <motion.p
             className="text-colorPrimario1/80 text-lg md-tablet:text-xl leading-relaxed max-w-3xl mx-auto"
-            variants={textVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             Desde tu primera idea hasta el lanzamiento, desarrollamos webs, apps y sistemas inteligentes que transforman tu presencia digital y optimizan cada proceso de tu negocio.
           </motion.p>
@@ -147,9 +146,9 @@ export function SolutionsSection() {
               {/* Efecto de brillo animado */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               
-              <span className="relative z-10">
+              <p className="relative z-10">
                 Descubre todas nuestras soluciones
-              </span>
+              </p>
               <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </motion.button>
           </Link>

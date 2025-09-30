@@ -7,7 +7,7 @@ export default function BeneficiosSection2() {
       className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.1 }}
+      transition={{ duration: 0.3, delay: 0.1 }}
       viewport={{ once: true }}
     >
       {/* Texto */}
@@ -40,10 +40,10 @@ export default function BeneficiosSection2() {
             key={i}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+            transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md-tablet:text-3xl font-bold text-colorFondo">{item.title}</h2>
+            <h2 className="text-2xl md-tablet:text-3xl font-bold text-cyan-500">{item.title}</h2>
             <p className="text-gray-200 mt-1">{item.desc}</p>
           </motion.div>
         ))}
@@ -54,7 +54,7 @@ export default function BeneficiosSection2() {
         className="order-2 table-lg:order-2"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
         <Image

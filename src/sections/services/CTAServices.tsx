@@ -16,19 +16,6 @@ const floatingVariants: Variants = {
   },
 };
 
-const sparkleVariants: Variants = {
-  animate: {
-    scale: [1, 1.2, 1],
-    opacity: [0.5, 1, 0.5],
-    transition: {
-      duration: 2.5,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: Math.random() * 1.5,
-    },
-  },
-};
-
 // Variantes para la animación de entrada secuencial
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -42,7 +29,7 @@ const containerVariants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  show: { opacity: 1, y: 0},
 };
 
 export default function CTAServices() {
@@ -67,7 +54,7 @@ export default function CTAServices() {
         {/* Columna izquierda - Contenido de texto */}
         <div className="flex flex-col items-center tablet-md:items-start text-center tablet-md:text-left">
           <motion.h2 variants={itemVariants} className="text-3xl tablet-md:text-4xl font-extrabold text-white mb-4 leading-tight">
-            Transforma tu Visión en <span className="text-transparent bg-gradient-to-r from-colorPrimario7 to-colorSecundario2 bg-clip-text">Realidad Digital</span>
+            Transforma tu visión en <span className="text-transparent bg-gradient-to-r from-colorPrimario7 to-colorSecundario2 bg-clip-text">Realidad Digital</span>
           </motion.h2>
           
           <motion.p variants={itemVariants} className="text-md tablet-md:text-lg text-colorHover5 mb-8 max-w-lg">
@@ -116,12 +103,12 @@ export default function CTAServices() {
           <motion.div variants={floatingVariants} animate="animate">
             <Cog className="w-full h-full text-cyan-500" />
           </motion.div>
-          <motion.div className="absolute top-4 right-4 text-colorPrimarioLogo2" variants={sparkleVariants} animate="animate">
+          <div className="absolute top-4 right-4 text-colorPrimarioLogo2 animate-pulse">
             <Sparkles className="w-6 h-6" />
-          </motion.div>
-          <motion.div className="absolute bottom-4 left-4 text-colorHover" variants={sparkleVariants} animate="animate" style={{ animationDelay: '0.5s' }}>
+          </div>
+          <div className="absolute bottom-4 left-4 text-colorHover animate-pulse">
             <Sparkles className="w-5 h-5" />
-          </motion.div>
+          </div>
         </motion.div>
       </motion.div>
     </section>

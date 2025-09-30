@@ -8,7 +8,7 @@ export default function BeneficiosSection3() {
           className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           viewport={{ once: true }}
         >
           {/* Imagen */}
@@ -16,7 +16,7 @@ export default function BeneficiosSection3() {
             className="order-2 table-lg:order-1"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <Image
@@ -38,10 +38,10 @@ export default function BeneficiosSection3() {
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15 } } }}
           >
             <motion.h2
-              className="text-2xl md-tablet:text-3xl font-bold text-colorFondo"
+              className="text-2xl md-tablet:text-3xl font-bold text-cyan-500"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
             >
               Soporte continuo para tu éxito
@@ -75,7 +75,7 @@ export default function BeneficiosSection3() {
                   transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <CheckCircle className="w-5 h-5 text-colorPrimario5" />
+                  <CheckCircle className="w-5 h-5 text-cyan-500" />
                   <span>{item}</span>
                 </motion.li>
               ))}

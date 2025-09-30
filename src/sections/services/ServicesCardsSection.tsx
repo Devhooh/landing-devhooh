@@ -186,7 +186,7 @@ export default function ServicesCardsSection() {
           className="relative z-10 text-center mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4,}}
+          transition={{ duration: 0.3,}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl

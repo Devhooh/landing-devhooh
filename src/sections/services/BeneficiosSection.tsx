@@ -15,7 +15,7 @@ export default function BeneficiosSection() {
           className="text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
         >
           <motion.h2
@@ -52,7 +52,7 @@ export default function BeneficiosSection() {
           className="flex flex-wrap justify-center gap-8 mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
           <li className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">

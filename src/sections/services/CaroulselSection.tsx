@@ -8,11 +8,6 @@ import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
 import { ArrowLeft, ArrowRight, LucideProps } from "lucide-react";
 
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 interface CardData {
   slug: string;
   title: string;
@@ -36,9 +31,9 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
         <motion.h2
           className="
             px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-colorPrimario1 pb-4 drop-shadow-sm"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
           {title}

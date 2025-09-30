@@ -2,9 +2,6 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 import { motion } from "framer-motion"; // <-- import framer-motion
 import ReviewSectionCard from "./ReviewSectionCard";
@@ -19,7 +16,7 @@ export default function ReviewSection() {
           className="inline-flex items-center gap-2 px-4 py-2 bg-colorPrimarioLogo1/10 rounded-full border border-colorPrimarioLogo1/20 mb-6"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <div className="w-2 h-2 bg-colorPrimarioLogo1 rounded-full animate-pulse"></div>
@@ -31,7 +28,7 @@ export default function ReviewSection() {
           className="text-3xl md-tablet:text-5xl font-extrabold text-primary mb-5"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.4}}
           viewport={{ once: true }}
         >
           Lo que opinan nuestros clientes
@@ -41,7 +38,7 @@ export default function ReviewSection() {
           className="text-base md-tablet:text-xl text-colorPrimario1/70 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.5}}
           viewport={{ once: true }}
         >
           Descubre por qué miles de clientes confían en nosotros

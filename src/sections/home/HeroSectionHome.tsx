@@ -52,7 +52,7 @@ export default function HeroSectionHome() {
               // width={462}
               // height={462}
               fill
-              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 462px"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 600px"
               className="object-contain"
               priority
             />

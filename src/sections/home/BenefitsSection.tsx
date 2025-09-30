@@ -83,7 +83,7 @@ const checklistItems = [
               whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02,}}
+              whileHover={{ scale: 1.02}}
             >
               <div className="flex flex-col items-start text-left">
                 <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm mb-4">

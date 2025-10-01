@@ -17,7 +17,7 @@ export default function HeroSectionPort() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <h1 className="text-4xl font-extrabold text-center table-lg:text-right text-colorPrimario2 leading-tight drop-shadow-lg">
               Realidades digitales. {""}
@@ -36,7 +36,7 @@ export default function HeroSectionPort() {
             initial={{ opacity: 0, x: -50, scale: 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
 
             <div className="relative group">
@@ -55,17 +55,7 @@ export default function HeroSectionPort() {
 
               {/* Círculos decorativos flotantes */}
               <motion.div
-                className={`absolute -top-4 -right-4  w-8 h-8 rounded-full bg-gray-500 opacity-20`}
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.2, 0.4, 0.2]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1 * 0.5
-                }}
+                className="animate-pulse absolute -top-4 -right-4  w-8 h-8 rounded-full bg-gray-500 opacity-20"
               ></motion.div>
             </div>
           </motion.div>
@@ -76,7 +66,7 @@ export default function HeroSectionPort() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
           >
             <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               Cada proyecto representa una historia de innovación, colaboración y éxito. Mira cómo ayudamos a crecer negocios con tecnología moderna.
@@ -89,7 +79,7 @@ export default function HeroSectionPort() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
           >
               <ul className="space-y-3 text-gray-800 text-left max-w-md mx-auto table-lg:mx-0">
                 {[
@@ -105,7 +95,7 @@ export default function HeroSectionPort() {
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
                     <Check className="w-6 h-6 text-green-600 flex-shrink-0" />
                     <span className="text-base md-tablet:text-xl">{feature}</span>
@@ -120,7 +110,7 @@ export default function HeroSectionPort() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
           >
             <Link href="/contact">
               <button className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-colorPrimario6 text-white rounded-xl shadow-md hover:scale-105 transform transition-all duration-300">

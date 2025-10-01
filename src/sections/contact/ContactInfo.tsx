@@ -9,7 +9,7 @@ const paragraphVariants: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: "easeOut" }
+    transition: { duration: 0.4, ease: "easeOut" }
   }
 };
 
@@ -20,7 +20,7 @@ const contactCardVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, delay: i * 0.15, ease: "easeOut" }
+    transition: { duration: 0.3, delay: i * 0.15, ease: "easeOut" }
   })
 };
 
@@ -37,7 +37,7 @@ export function ContactInfo() {
           className="text-2xl md-tablet:text-4xl text-center tablet-md:text-left font-extrabold italic"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4}}
+          transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
           ¡Hablemos de tu proyecto!
@@ -50,7 +50,7 @@ export function ContactInfo() {
             variants={paragraphVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true }}
           >
             Gracias por tu interés en{" "}
             <span className="font-bold text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
@@ -64,7 +64,7 @@ export function ContactInfo() {
             variants={paragraphVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true }}
           >
             Completa el formulario y empecemos a transformar tu idea en realidad.
           </motion.p>
@@ -122,7 +122,7 @@ export function ContactInfo() {
               variants={contactCardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true }}
               custom={i}
               whileHover={{ y: -4, scale: 1.02 }}
             >
@@ -170,7 +170,7 @@ export function ContactInfo() {
         className="relative z-10 pt-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4}}
+        transition={{ duration: 0.3}}
         viewport={{ once: true }}
       >
         <Link href="/about">

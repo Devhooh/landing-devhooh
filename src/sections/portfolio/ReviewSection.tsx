@@ -7,8 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { motion, Variants } from "framer-motion";
 
-import "swiper/css";
-import "swiper/css/pagination";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const containerVariant = {
@@ -57,7 +55,7 @@ export default function ReviewsSection() {
           <motion.p
             initial={{ x: -40, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
             className="mt-4 text-xl text-gray-600"
           >
@@ -71,7 +69,7 @@ export default function ReviewsSection() {
             variants={containerVariant}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <Swiper
               modules={[Navigation, Pagination]}

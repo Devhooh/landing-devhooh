@@ -5,12 +5,6 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 
 export default function CTAServices() {
-  const splitText = (text: string) => text.split("");
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
 
   const floatingVariants: Variants = {
     animate: {
@@ -34,64 +28,26 @@ export default function CTAServices() {
         <div className="space-y-8">
           
           {/* Título principal animado */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <motion.h2
-              className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-4 leading-tight"
-              initial="hidden"
-              whileInView="show"
+              className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-4 leading-tight text-white"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
               viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
             >
-              {splitText("Cuando estés listo:").map((letter, idx) => (
-                <motion.span
-                  key={idx}
-                  className="text-white"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+              Cuando estés listo:
+              <br/>
+              Hablemos sobre tu <span className="text-colorPrimario5"> proyecto </span>
             </motion.h2>
-            
-            <motion.h3
-              className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-bold"
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03, delayChildren: 0.3 } } }}
-            >
-              {splitText("Hablemos sobre tu ").map((letter, idx) => (
-                <motion.span
-                  key={idx}
-                  className="text-colorHover5"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-              {splitText("proyecto").map((letter, idx) => (
-                <motion.span
-                  key={idx + 100}
-                  className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </motion.h3>
-          </motion.div>
+          </div>
 
           {/* Elementos visuales decorativos */}
           <motion.div
             className="flex justify-center items-center gap-8 my-12"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             {/* Sparkles flotantes */}
@@ -125,7 +81,7 @@ export default function CTAServices() {
             className="flex justify-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             <Link href="/contact">
@@ -146,33 +102,33 @@ export default function CTAServices() {
           </motion.div>
 
           {/* Estadísticas de confianza */}
-          <motion.div
+          <motion.ul
             className="flex flex-wrap justify-center gap-8 mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.3, delay: 0.3}}
             viewport={{ once: true }}
           >
-            <div className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+            <li className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
               <div className="text-2xl font-bold text-colorPrimario5">50+</div>
-              <div className="text-sm text-colorHover5">Proyectos exitosos</div>
-            </div>
-            <div className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+              <p className="text-sm text-colorHover5">Proyectos exitosos</p>
+            </li>
+            <li className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
               <div className="text-2xl font-bold text-colorSecundario1">98%</div>
-              <div className="text-sm text-colorHover5">Clientes satisfechos</div>
-            </div>
-            <div className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+              <p className="text-sm text-colorHover5">Clientes satisfechos</p>
+            </li>
+            <li className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
               <div className="text-2xl font-bold text-colorPrimario7">24h</div>
-              <div className="text-sm text-colorHover5">Tiempo de respuesta</div>
-            </div>
-          </motion.div>
+              <p className="text-sm text-colorHover5">Tiempo de respuesta</p>
+            </li>
+          </motion.ul>
 
           {/* Mensaje final mejorado */}
           <motion.div
             className="max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
             viewport={{ once: true }}
           >
             <p className="text-lg md-tablet:text-xl text-colorHover5 font-semibold leading-relaxed mb-6">
@@ -184,11 +140,11 @@ export default function CTAServices() {
             
             {/* Call to action secundario */}
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link href="/portfolio" className="text-colorHover5 hover:text-colorPrimario5 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
+              <Link href="/portfolio" className="text-colorHover5 hover:text-colorPrimario7 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
                 Ver nuestro portafolio
               </Link>
               <span className="text-colorHover5/50">•</span>
-              <Link href="/about" className="text-colorHover5 hover:text-colorSecundario1 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
+              <Link href="/about" className="text-colorHover5 hover:text-colorPrimario7 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
                 Conoce nuestro equipo
               </Link>
               <span className="text-colorHover5/50">•</span>

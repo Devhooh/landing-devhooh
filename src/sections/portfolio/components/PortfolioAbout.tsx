@@ -11,12 +11,12 @@ interface ProjectAboutProps {
 // Variantes de animación mejoradas
 const slideLeft: Variants = {
   hidden: { opacity: 0, x: -50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const slideRight: Variants = {
   hidden: { opacity: 0, x: 50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const imageVariants: Variants = {
@@ -25,7 +25,7 @@ const imageVariants: Variants = {
     opacity: 1, 
     scale: 1, 
     rotate: 0,
-    transition: { duration: 0.7, ease: "easeOut" } 
+    transition: { duration: 0.4, ease: "easeOut" } 
   },
 };
 
@@ -42,7 +42,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             Conoce más del {""}
@@ -55,7 +55,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Descubre los detalles detrás de esta solución y la empresa que confió en nosotros
@@ -71,7 +71,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
             variants={slideLeft}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true}}
           >
             <div className="relative p-8 md-tablet:p-10 rounded-3xl bg-white backdrop-blur-sm border border-white/20 shadow-[0_0_30px_rgba(103,61,230,0.1)] hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-300 group">
               
@@ -112,7 +112,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
             variants={imageVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true}}
           >
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-[0_0_40px_rgba(103,61,230,0.2)] group-hover:shadow-[0_0_50px_rgba(103,61,230,0.3)] transition-all duration-500">
@@ -146,7 +146,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
             variants={slideRight}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true}}
           >
             <div className="relative p-8 md-tablet:p-10 rounded-3xl bg-white backdrop-blur-sm border border-white/20 shadow-[0_0_30px_rgba(103,61,230,0.1)] hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-300 group">
               
@@ -187,7 +187,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
             variants={imageVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true}}
             transition={{ delay: 0.2 }}
           >
             <div className="relative group">
@@ -218,7 +218,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
           className="text-center mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20 backdrop-blur-sm">

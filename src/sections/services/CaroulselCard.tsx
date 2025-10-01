@@ -20,10 +20,10 @@ export default function CaroulselCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30, scale: 0.98 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 30}}
+      whileInView={{ opacity: 1, y: 0}}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay: index * 0.2}}
+      transition={{ duration: 0.4, delay: index * 0.2}}
       whileHover={{
         scale: 1.04,
         rotateX: 1.5,

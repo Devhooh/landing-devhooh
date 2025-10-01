@@ -29,12 +29,12 @@ const containerVariant = {
 
 // Variantes para cada step
 const stepVariant: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
@@ -54,7 +54,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             Cómo trabajamos con {name}
@@ -64,7 +64,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Así trabajamos el servicio de <span className="font-bold text-colorPrimario5">{name}</span>, paso a paso con metodología ágil
@@ -164,7 +164,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.4}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">

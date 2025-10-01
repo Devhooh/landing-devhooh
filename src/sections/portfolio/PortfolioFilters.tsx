@@ -33,7 +33,7 @@ export default function PortfolioFilters() {
       className="flex justify-center mb-8"
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.3 }}
       viewport={{ once: true }}
     >
       <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
@@ -56,7 +56,7 @@ export default function PortfolioFilters() {
           className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           Vea cómo {""}
@@ -69,7 +69,7 @@ export default function PortfolioFilters() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto leading-relaxed mb-8"
         >
@@ -85,7 +85,7 @@ export default function PortfolioFilters() {
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           viewport={{ once: true }}
         >
           <li className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30">
@@ -110,7 +110,7 @@ export default function PortfolioFilters() {
         className="relative"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
+        transition={{ duration: 0.4, delay: 0.3}}
         viewport={{ once: true }}
       >
         {/* Encabezado de filtros */}
@@ -145,12 +145,12 @@ export default function PortfolioFilters() {
         className="text-center mt-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.9 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
         viewport={{ once: true }}
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-colorSecundario1/10 border border-colorSecundario1/20">
           <div className="w-2 h-2 rounded-full bg-colorSecundario1 animate-pulse"></div>
-          <span className="text-colorSecundario1 font-semibold text-sm">
+          <span className="text-colorSecundario1 font-semibold text-base md-tablet:text-xl">
             Mostrando {filteredProjects.length} proyecto{filteredProjects.length !== 1 ? 's' : ''}
           </span>
         </div>
@@ -163,7 +163,7 @@ export default function PortfolioFilters() {
     className="relative z-10 px-4 md-tablet:px-8 pb-20"
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, delay: 0.3 }}
+    transition={{ duration: 0.3, delay: 0.3 }}
     viewport={{ once: true }}
   >
     <PortfolioCardsGrid filteredProjects={filteredProjects} />
@@ -174,7 +174,7 @@ export default function PortfolioFilters() {
     className="relative z-10 text-center p-8"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.8 }}
+    transition={{ duration: 0.4, delay: 0.2 }}
     viewport={{ once: true }}
   >
     <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">

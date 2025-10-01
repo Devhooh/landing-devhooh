@@ -33,18 +33,12 @@ const stepVariant: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
-};
-
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
 };
 
 export default function ProcessPortfolio({ steps }: TechProcessProps) {
   if (!steps || steps.length === 0) return null;
-  const splitText = (text: string) => text.split("");
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
@@ -56,28 +50,20 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
           
           {/* Título con animación letra por letra */}
           <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial="hidden"
-            whileInView="show"
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl text-colorPrimario5 font-extrabold mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
           >
-            {splitText("Proceso de desarrollo de tu proyecto").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario5"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
+            Proceso de desarrollo de tu proyecto
           </motion.h2>
 
           <motion.p
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4}}
             viewport={{ once: true }}
           >
             Así realizamos tu proyecto paso a paso como ves en nuestro portafolio
@@ -89,7 +75,7 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true}}
           className="relative"
         >
           
@@ -178,7 +164,7 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.2}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">

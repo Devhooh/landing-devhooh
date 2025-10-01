@@ -35,8 +35,8 @@ export function ContactForm() {
         className="relative z-10 w-full rounded-3xl bg-colorPrimario6 text-white p-6 md-tablet:p-8 table-lg:p-10 shadow-[0_0_50px_rgba(103,61,230,0.3)] border border-colorPrimario5/20 backdrop-blur-sm"
         initial={{ opacity: 0, y: 30, scale: 1 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
       >
         
         {/* Encabezado mejorado */}
@@ -65,7 +65,7 @@ export function ContactForm() {
             className="flex flex-wrap justify-center gap-4 mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4}}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <li className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorDarkFondo1/50 border border-colorPrimario5/30 backdrop-blur-sm">
@@ -87,7 +87,7 @@ export function ContactForm() {
             className="text-colorHover5 text-sm md-tablet:text-base max-w-md mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4}}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             Cuéntanos sobre tu idea y te ayudaremos a convertirla en una solución digital exitosa

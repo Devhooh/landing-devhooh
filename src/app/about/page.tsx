@@ -4,6 +4,7 @@ import HeroAbout from "@/sections/about/HeroAbout";
 import OurValuesSection from "@/sections/about/OurValuesSection";
 import ProblemsSection from "@/sections/about/ProblemsSection";
 import WhyChooseUsSection from "@/sections/about/WhyChooseUsSection";
+import AboutSectionCard from "@/sections/about/AboutSectionCard";
 
 export default function About() {
   return (
@@ -12,6 +13,8 @@ export default function About() {
       <HeroAbout/>
 
       <AboutSection/>
+
+      <AboutSectionCard/>
 
       <OurValuesSection/>
 

@@ -11,7 +11,7 @@ const containerVariants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
 };
 
 interface FiltersProps {
@@ -48,7 +48,7 @@ export default function PortfolioFiltersBar({
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <motion.div variants={itemVariants} className="w-full text-white">
         <CustomSelect label="Proyectos" options={uniqueProjects} value={selectedProject} onChange={setSelectedProject} />

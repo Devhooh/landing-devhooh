@@ -14,13 +14,8 @@ interface Project {
 
 const cardVariants: Variants = {
   
-  hidden: { opacity: 0, y: 50, scale: 0.95 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" }
-  },
+  hidden: { opacity: 0, y: 50},
+  show: { opacity: 1, y: 0},
 };
 
 const imageVariants: Variants = {
@@ -51,7 +46,7 @@ export default function ServicesProjects({
           whileInView="show"
           viewport={{ once: true }}
           variants={cardVariants}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
+          transition={{ duration: 0.3, delay: index * 0.1 }}
           className="group relative h-[450px] rounded-3xl overflow-hidden bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 border border-colorPrimario5/20 shadow-[0_0_25px_rgba(103,61,230,0.15)] hover:shadow-[0_0_35px_rgba(103,61,230,0.25)] transition-all duration-500"
           whileHover={{ y: -8, scale: 1.02 }}
         >

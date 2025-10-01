@@ -17,13 +17,13 @@ const containerVariants: Variants = {
 const itemVariants: Variants = {
   hidden: { 
     opacity: 0, 
-    y: 50 
+    y: 30 
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: [0.25, 0.46, 0.45, 0.94]
     }
   }
@@ -32,7 +32,7 @@ const itemVariants: Variants = {
 const cardVariants: Variants = {
   hidden: { 
     opacity: 0, 
-    y: 50,
+    y: 30,
     scale: 0.95
   },
   visible: {
@@ -40,7 +40,7 @@ const cardVariants: Variants = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.7,
+      duration: 0.4,
       ease: [0.25, 0.46, 0.45, 0.94]
     }
   }
@@ -113,10 +113,10 @@ export default function ProblemsSection() {
         >
           {/* Título mejorado con animación letra por letra */}
           <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight text-white"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             ¿Qué problemas solucionamos?
@@ -235,7 +235,7 @@ export default function ProblemsSection() {
           className="relative z-10 mt-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">

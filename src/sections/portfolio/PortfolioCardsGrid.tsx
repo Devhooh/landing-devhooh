@@ -6,10 +6,6 @@ import { motion, Variants } from "framer-motion";
 
 import PortfolioCard from "@/sections/portfolio/PortfolioCard";
 import { Project } from "@/data/portfolioData";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const gridContainer = {
@@ -19,7 +15,7 @@ const gridContainer = {
 
 const cardItem: Variants = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
 };
 
 interface CardsProps {
@@ -45,7 +41,7 @@ export default function PortfolioCardsGrid({ filteredProjects }: CardsProps) {
         variants={gridContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         {filteredProjects.map((project) => (
           <motion.div key={project.id} variants={cardItem}>

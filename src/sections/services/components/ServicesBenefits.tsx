@@ -11,25 +11,24 @@ interface BenefitsSectionProps {
 
 // Variantes para títulos
 const titleVariant: Variants = {
-  hidden: { opacity: 0, x: -40 },
+  hidden: { opacity: 0, x: -30 },
   show: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
 // Variantes para las cards
 const cardVariant: Variants = {
-  hidden: { opacity: 0, y: 50, scale: 0.95 },
+  hidden: { opacity: 0, y: 50, scale: 0.80 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.6,
-      ease: "easeOut",
-      delay: i * 0.15, // escalonado
+      duration: 0.3,
+      delay: i * 0.1, // escalonado
     },
   }),
 };
@@ -43,19 +42,13 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="text-3xl font-extrabold mb-1 text-center md-tablet:text-left text-colorPrimario2"
+          className="text-3xl font-extrabold mb-5 text-center md-tablet:text-left text-colorPrimario2"
         >
           Beneficios de nuestro servicio de
-        </motion.h2>
-
-        <motion.h2
-          variants={titleVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="text-3xl font-extrabold mb-10 text-center md-tablet:text-left text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" 
-        >
+          <br/>
+          <span className="text-colorPrimario5">
           {service.name}
+          </span>
         </motion.h2>
       </div>
 

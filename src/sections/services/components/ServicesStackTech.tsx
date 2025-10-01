@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import * as Icons from "lucide-react";
-import { LucideProps } from "lucide-react";
+import { LucideProps, ArrowRight } from "lucide-react";
 import { ServicesData } from "@/data/ServicesDetails";
 import { motion, Variants } from "framer-motion";
 
@@ -16,7 +16,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
   // Variantes
   const textVariants: Variants = {
     hidden: { opacity: 0, x: -40 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    show: { opacity: 1, x: 0, transition: { duration: 0.3} },
   };
 
   const cardVariants: Variants = {
@@ -25,23 +25,22 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.5, delay: i * 0.15, ease: "easeOut" },
+      transition: { duration: 0.3, delay: i * 0.1},
     }),
   };
 
   const buttonVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay: stack.tech.length * 0.15 } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut", delay: stack.tech.length * 0.15 } },
   };
 
   return (
     <section className="py-8 px-6 md-tablet:px-12 bg-violet-50">
       {/* Encabezado */}
       <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={textVariants}>
-        <h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-2">
+        <h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-4">
           Stack de tecnología que utilizamos
-        </h2>
-        <h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2  mb-4">
+          <br/>
           para <span className="text-colorPrimario5">{service.name}</span>
         </h2>
         <p className="mt-3 text-colorPrimario1 text-lg md-tablet:text-xl leading-relaxed">
@@ -132,15 +131,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
           `}
         >
           <span>Ver todas las tecnologías</span>
-          <svg
-            className="w-5 h-5 md-tablet:w-6 md-tablet:h-6 text-white transition-transform duration-300 group-hover:translate-x-1"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+          <ArrowRight className="w-6 h-6 flex-shrink-0"/>
         </Link>
       </motion.div>
 

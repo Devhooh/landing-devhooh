@@ -6,9 +6,9 @@ export default function BeneficiosSection1 () {
   return (
     <motion.div
       className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.1 }}
+      transition={{ duration: 0.3, delay: 0.1 }}
       viewport={{ once: true }}
     >
       {/* Imagen */}
@@ -16,7 +16,7 @@ export default function BeneficiosSection1 () {
         className="order-2 table-lg:order-1"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
         viewport={{ once: true }}
       >
         <Image

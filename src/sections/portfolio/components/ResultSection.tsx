@@ -8,13 +8,13 @@ interface ResultSectionProps {
 }
 
 const descriptionVariant: Variants = {
-  hidden: { opacity: 0, y: 60 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.3, ease: "easeOut" } },
 };
 
 const listContainer = {
@@ -23,11 +23,6 @@ const listContainer = {
     opacity: 1,
     transition: { staggerChildren: 0.1 },
   },
-};
-
-const listItem: Variants = {
-  hidden: { opacity: 0, x: -20, y: 10 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function ResultSection({ project }: ResultSectionProps) {
@@ -46,7 +41,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <Award className="w-5 h-5 text-green-500" />
@@ -58,7 +53,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             Resultados {""}
@@ -75,7 +70,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
             variants={descriptionVariant}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
           >
             {result.descripcion}
           </motion.p>
@@ -90,7 +85,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
             variants={cardVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
           >
             <div className="relative p-8 rounded-3xl bg-gradient-to-br from-red-50/60 to-red-100/40 backdrop-blur-sm border-2 border-red-200/30 shadow-[0_0_20px_rgba(239,68,68,0.1)] hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] transition-all duration-300">
               
@@ -110,12 +105,11 @@ export default function ResultSection({ project }: ResultSectionProps) {
                 variants={listContainer}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true }}
                 className="space-y-4"
               >
                 {result.antes.map((item, index) => (
-                  <motion.li 
-                    variants={listItem}
+                  <li 
                     key={index} 
                     className="flex items-start gap-3 p-3 rounded-xl bg-red-50/50 border border-red-200/30 hover:bg-red-50/80 transition-all duration-300"
                   >
@@ -123,7 +117,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
                       <X className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-colorPrimario1/80 leading-relaxed">{item}</span>
-                  </motion.li>
+                  </li>
                 ))}
               </motion.ul>
 
@@ -144,7 +138,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
             variants={cardVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
             <div className="relative p-8 rounded-3xl bg-gradient-to-br from-green-50/60 to-green-100/40 backdrop-blur-sm border-2 border-green-200/30 shadow-[0_0_20px_rgba(34,197,94,0.1)] hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300">
@@ -169,8 +163,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
                 className="space-y-4"
               >
                 {result.despues.map((item, index) => (
-                  <motion.li 
-                    variants={listItem}
+                  <li 
                     key={index} 
                     className="flex items-start gap-3 p-3 rounded-xl bg-green-50/50 border border-green-200/30 hover:bg-green-50/80 transition-all duration-300"
                   >
@@ -178,7 +171,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-colorPrimario1/80 leading-relaxed">{item}</span>
-                  </motion.li>
+                  </li>
                 ))}
               </motion.ul>
 
@@ -200,7 +193,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.4, delay: 0.3}}
           viewport={{ once: true }}
         >
           <li className="text-center p-6 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
@@ -224,7 +217,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">

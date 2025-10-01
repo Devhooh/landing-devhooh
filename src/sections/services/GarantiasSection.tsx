@@ -16,7 +16,7 @@ export default function GarantiasSection() {
           {/* Texto */}
           <motion.div
             className="flex flex-col gap-6"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
@@ -39,7 +39,7 @@ export default function GarantiasSection() {
                   className="flex items-center gap-3"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <CheckCircle className="w-6 h-6 text-colorPrimario5" />
@@ -54,7 +54,7 @@ export default function GarantiasSection() {
             className="flex justify-center"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
             <Image
@@ -96,7 +96,7 @@ export default function GarantiasSection() {
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+                transition={{ duration: 0.3, delay: i * 0.1 }}
                 className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-gradient-to-br from-colorDarkFondo2 to-colorDarkFondo4 shadow-lg"
               >
                 <div className="p-4 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario7 shadow-md">

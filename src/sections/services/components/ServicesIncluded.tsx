@@ -12,7 +12,7 @@ interface BenefitsSectionProps {
 // Variantes para textos (título y descripción)
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3} },
 };
 
 // Variantes container para escalonar las cards
@@ -27,7 +27,7 @@ const container: Variants = {
 // Variantes individuales para cada card
 const card: Variants = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3} },
 };
 
 export default function ServicesIncluded({ service }: BenefitsSectionProps) {
@@ -122,7 +122,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         Descubre cada una de las características y beneficios que forman parte de este servicio. 
         Nos aseguramos de brindarte soluciones completas y adaptadas a tus necesidades.

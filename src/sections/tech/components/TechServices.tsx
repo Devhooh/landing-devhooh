@@ -31,7 +31,7 @@ const serviceVariants: Variants = {
     opacity: 1, 
     x: 0, 
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" } 
+    transition: { duration: 0.3, ease: "easeOut" } 
   },
 };
 
@@ -41,7 +41,7 @@ const imageVariants: Variants = {
     opacity: 1, 
     scale: 1, 
     rotate: 0,
-    transition: { duration: 0.8, ease: "easeOut" } 
+    transition: { duration: 0.4, ease: "easeOut" } 
   },
 };
 
@@ -59,7 +59,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
           className="text-center mb-8"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
@@ -75,7 +75,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
             className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
             
@@ -84,7 +84,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
               className="text-3xl md-tablet:text-4xl table-lg:text-5xl text-center table-lg:text-left font-extrabold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.2}}
               viewport={{ once: true }}
             >
               Servicios de {""}
@@ -99,7 +99,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
               className="text-lg md-tablet:text-xl text-gray-600 text-center table-lg:text-left max-w-xl mx-auto table-lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
               viewport={{ once: true }}
             >
               {/* Usando la Opción 1 de texto SEO */}
@@ -137,7 +137,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             {services.map((service, index) => {
               return (
@@ -207,7 +207,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">

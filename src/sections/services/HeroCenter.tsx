@@ -16,9 +16,9 @@ export default function HeroCenter() {
           {/* 1. TÍTULO - Móvil: primero | Desktop: dentro del centro */}
           <motion.div
             className="order-1 table-lg:hidden text-center"
-            initial={{ opacity: 0, y: -40 }}
+            initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <h2 className="mt-5 text-4xl md-tablet:text-5xl font-extrabold leading-tight drop-shadow-lg text-white">
@@ -30,9 +30,9 @@ export default function HeroCenter() {
           {/* 2. IMAGEN IZQUIERDA - Móvil: segunda (reutilizada) | Desktop: primera columna */}
           <motion.div
             className="order-2 table-lg:order-none flex justify-center table-lg:justify-end mb-8 table-lg:mb-14 table-lg:mt-8"
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
             <div className="relative group w-full max-w-md">
@@ -64,9 +64,9 @@ export default function HeroCenter() {
             {/* Título para Desktop */}
             <motion.div
               className="hidden table-lg:block md-tablet:mt-2"
-              initial={{ opacity: 0, y: -40 }}
+              initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3 }}
               viewport={{ once: true }}
             >
               <h2 className="mt-5 text-4xl font-extrabold leading-tight drop-shadow-lg text-white">
@@ -80,7 +80,7 @@ export default function HeroCenter() {
               className="order-3 table-lg:order-none"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.4}}
               viewport={{ once: true }}
             >
               <p className="text-lg md-tablet:text-xl text-white max-w-2xl">
@@ -124,7 +124,7 @@ export default function HeroCenter() {
               className="order-5 table-lg:order-none mt-8 table-lg:mt-4"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.4}}
               viewport={{ once: true }}
             >
               <Link href="/contact">
@@ -144,9 +144,9 @@ export default function HeroCenter() {
           {/* 4. IMAGEN DERECHA - Móvil: oculta | Desktop: tercera columna */}
           <motion.div
             className="hidden table-lg:flex justify-start mb-14 table-lg:mt-8"
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
             <div className="relative group w-full max-w-md">

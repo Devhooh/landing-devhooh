@@ -19,7 +19,7 @@ export default function TechProjectSection() {
           className="px-6 text-3xl md-tablet:text-4xl font-extrabold text-white"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           Proyectos con nuestra{" "}
@@ -32,7 +32,7 @@ export default function TechProjectSection() {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           viewport={{ once: true }}
           className="px-6 mt-4 text-gray-300 max-w-2xl text-lg md-tablet:text-xl"
         >

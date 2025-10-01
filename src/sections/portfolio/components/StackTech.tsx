@@ -24,7 +24,7 @@ const techVariants: Variants = {
     opacity: 1, 
     y: 0, 
     scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" } 
+    transition: { duration: 0.4, ease: "easeOut" } 
   },
 };
 
@@ -43,7 +43,7 @@ export default function StackTech({ project }: StackSectionProps) {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <Code2 className="w-5 h-5 text-colorPrimario5" />
@@ -55,7 +55,7 @@ export default function StackTech({ project }: StackSectionProps) {
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             Stack de {""}
@@ -68,7 +68,7 @@ export default function StackTech({ project }: StackSectionProps) {
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Las herramientas y frameworks que hicieron posible este proyecto
@@ -81,7 +81,7 @@ export default function StackTech({ project }: StackSectionProps) {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
         >
           {project.stackTech.map((tech, index) => {
             const Icon = iconsData[tech.icon];
@@ -154,7 +154,7 @@ export default function StackTech({ project }: StackSectionProps) {
           className="mt-16 grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           viewport={{ once: true }}
         >
           <li className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
@@ -180,7 +180,7 @@ export default function StackTech({ project }: StackSectionProps) {
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 py-3 rounded-3xl bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">

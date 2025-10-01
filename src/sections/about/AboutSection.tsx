@@ -1,11 +1,11 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import { Sparkles, Award } from "lucide-react";
-import AboutSectionCard from "./AboutSectionCard";
+
 
 const centralVariant: Variants = {
-  hidden: { opacity: 0, y: 60, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const floatingVariants: Variants = {
@@ -33,7 +33,7 @@ export default function AboutSection() {
             variants={centralVariant}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             className="relative bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 text-white rounded-3xl p-8 md-tablet:p-12 shadow-[0_0_50px_rgba(103,61,230,0.3)] border border-colorPrimario5/20 backdrop-blur-md max-w-5xl text-center"
           >
             {/* Efectos decorativos en la card */}
@@ -59,46 +59,31 @@ export default function AboutSection() {
             </motion.div>
 
             {/* Título con animación letra por letra */}
-            <motion.h2
+            <h2
               className="text-2xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-8 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-
             >
               Cuando la confianza es alta, 
               <br />
               la comunicación es efectiva
-            </motion.h2>
+            </h2>
 
-            <motion.p
+            <p
               className="text-lg table-lg:text-xl font-light leading-relaxed max-w-4xl mx-auto text-colorHover5"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
             >
               En solo 5 años, Devhooh ha ayudado a startups y empresas a transformar sus ideas en soluciones digitales exitosas. 
               Con un equipo apasionado por la innovación, combinamos diseño, desarrollo y tecnologías de vanguardia para que tu proyecto destaque desde el primer día.
-            </motion.p>
+            </p>
 
             {/* Badge de años de experiencia */}
-            <motion.div
+            <div
               className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
             >
               <Award className="w-5 h-5 text-colorPrimario5" />
               <p className="text-colorHover5 font-semibold">5+ años de experiencia</p>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
 
-        {/* Componente de las cards */}
-        <AboutSectionCard/>
       </div>
     </div>
   );

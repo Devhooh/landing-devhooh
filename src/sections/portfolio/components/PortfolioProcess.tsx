@@ -22,7 +22,7 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
@@ -32,11 +32,6 @@ const listVariants = {
     opacity: 1,
     transition: { staggerChildren: 0.1 }
   }
-};
-
-const listItemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.3 } }
 };
 
 export default function PortfolioProcess({ project }: ChallengeSectionProps) {
@@ -54,7 +49,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
               inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <Cog className="w-5 h-5 text-colorPrimario5" />
@@ -66,7 +61,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             Proceso de {""} 
@@ -79,7 +74,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             La metodología paso a paso que seguimos para garantizar el éxito de cada proyecto
@@ -95,7 +90,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true}}
             className="grid gap-8 tablet-md:grid-cols-2 table-lg:grid-cols-3 justify-items-center"
           >
             {project.process.map((proceso) => {
@@ -149,10 +144,9 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
                   >
                     <ul className="space-y-3">
                       {proceso.process.map((item, idx) => (
-                        <motion.li
+                        <li
                           key={idx}
                           className="flex items-start gap-3 p-3 rounded-xl bg-colorHover4 border border-white/10 hover:bg-colorHover3 transition-all duration-300"
-                          variants={listItemVariants}
                         >
                           <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
                             <CheckCircle className="w-3 h-3 text-white" />
@@ -160,7 +154,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
                           <p className="text-colorPrimario1/80 text-sm leading-relaxed">
                             {item}
                           </p>
-                        </motion.li>
+                        </li>
                       ))}
                     </ul>
                   </motion.div>
@@ -186,7 +180,7 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">

@@ -36,7 +36,7 @@ export default function CTATech() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
           className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight mb-4"
         >

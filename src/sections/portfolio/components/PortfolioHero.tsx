@@ -26,7 +26,7 @@ const itemVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
@@ -37,7 +37,7 @@ const imageVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.8, ease: "easeOut", delay: 0.4 },
+    transition: { duration: 0.4, ease: "easeOut", delay: 0.4 },
   },
 };
 
@@ -78,7 +78,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <Sparkles className="w-5 h-5 text-colorPrimario5" />
@@ -90,7 +90,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
             className="text-3xl md-tablet:text-5xl text-white font-extrabold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             {project.title}
@@ -100,7 +100,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
             className="text-lg md-tablet:text-xl text-colorHover5 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Explora los detalles de esta solución digital y cómo transformamos la visión del cliente en realidad
@@ -212,7 +212,7 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
           className="text-center mt-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">

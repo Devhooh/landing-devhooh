@@ -11,17 +11,17 @@ interface ChallengeSectionProps {
 // Variantes de animación mejoradas
 const titleVariant: Variants = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const descLeft: Variants = {
   hidden: { opacity: 0, x: -50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const descRight: Variants = {
   hidden: { opacity: 0, x: 50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const imageVariants: Variants = {
@@ -30,7 +30,7 @@ const imageVariants: Variants = {
     opacity: 1, 
     scale: 1, 
     rotate: 0,
-    transition: { duration: 0.7, ease: "easeOut" } 
+    transition: { duration: 0.3, ease: "easeOut" } 
   },
 };
 
@@ -44,7 +44,7 @@ const listContainer = {
 
 const listItem: Variants = {
   hidden: { opacity: 0, x: -20, y: 10 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 export default function ChallengeSection({ project }: ChallengeSectionProps) {
@@ -63,7 +63,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 text-white"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             Desafíos y {""}
@@ -76,7 +76,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
             className="text-lg text-colorHover5 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Cada proyecto presenta desafíos únicos. Aquí te mostramos cómo los enfrentamos
@@ -97,7 +97,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                   variants={titleVariant}
                   initial="hidden"
                   whileInView="show"
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true}}
                 >
                   {/* Badge con icono y número */}
                   <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
@@ -125,7 +125,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                     variants={isEven ? descRight : descLeft}
                     initial="hidden"
                     whileInView="show"
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true}}
                   >
                     <div className="relative p-4 md-tablet:p-8 rounded-3xl bg-gradient-to-br from-colorHover5/5 to-colorHover6/5 backdrop-blur-sm border border-white/10 hover:border-colorPrimario5/30 transition-all duration-300 group">
                       
@@ -143,7 +143,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                           variants={listContainer}
                           initial="hidden"
                           whileInView="show"
-                          viewport={{ once: true, amount: 0.3 }}
+                          viewport={{ once: true}}
                         >
                           <h4 className="text-white font-bold text-xl mb-4 text-center table-lg:text-left">
                             Soluciones implementadas:
@@ -182,7 +182,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                     variants={imageVariants}
                     initial="hidden"
                     whileInView="show"
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true}}
                     transition={{ delay: 0.2 }}
                   >
                     <div className="relative group">
@@ -222,7 +222,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
           className="relative z-10 text-center mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">

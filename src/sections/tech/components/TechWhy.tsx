@@ -41,7 +41,7 @@ export default function TechWhy({
         "
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.3 }}
         viewport={{ once: true }}
       >
         {/* Decorativos */}
@@ -63,7 +63,7 @@ export default function TechWhy({
             className="flex justify-center order-2 tablet-md:order-1"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             <Image
@@ -82,7 +82,7 @@ export default function TechWhy({
               className="text-2xl tablet-md:text-3xl font-extrabold mb-4 leading-tight"
               initial={{ opacity: 0, y: -40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               ¿Por qué desarrollar con {title}
@@ -92,7 +92,7 @@ export default function TechWhy({
               className="text-colorHover5 leading-relaxed mb-6 max-w-md"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
               viewport={{ once: true }}
             >
               {description}
@@ -102,7 +102,7 @@ export default function TechWhy({
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
               viewport={{ once: true }}
             >
               <Link
@@ -131,7 +131,7 @@ export default function TechWhy({
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.4}}
           viewport={{ once: true }}
         >
           <li className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
@@ -165,7 +165,7 @@ export default function TechWhy({
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full 

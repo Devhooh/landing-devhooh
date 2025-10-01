@@ -26,12 +26,12 @@ const containerVariants: Variants = {
 
 // Cada card
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.9 },
+  hidden: { opacity: 0, y: 30, scale: 0.9 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.3},
   },
 };
 
@@ -49,7 +49,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <Award className="w-5 h-5 text-green-400" />
@@ -58,10 +58,10 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
 
           {/* Título con animación letra por letra */}
           <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
+            className="text-3xl md-tablet:text-4xl table-lg:text-5xl text-colorHover3 font-extrabold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Beneficios al usar {name}
@@ -71,7 +71,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
             className="text-lg md-tablet:text-xl text-colorHover5 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Descubre por qué {name} es la elección perfecta para tu próximo proyecto
@@ -153,7 +153,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
           className="text-center mt-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">

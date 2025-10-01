@@ -1,8 +1,6 @@
 "use client"
 import { DataTech } from "@/data/techDataPage";
-import { motion } from "framer-motion";
 import Image from "next/image";
-
 
 interface TechHeroProps {
   tech: DataTech;
@@ -39,19 +37,9 @@ export default function TechHero({ tech }: TechHeroProps) {
             </div>
 
             {/* Círculos decorativos flotantes */}
-            <motion.div
-              className={`absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gray-500 opacity-20`}
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.2, 0.4, 0.2]
-              }}
-              transition={{ 
-                duration: 3, 
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1 * 0.5
-              }}
-            ></motion.div>
+            <div
+              className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gray-500 opacity-20"
+            ></div>
           </div>
         </div>
       </div>

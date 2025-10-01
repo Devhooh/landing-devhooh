@@ -77,7 +77,7 @@ export function ServicesSliderProjects({
             className="flex flex-wrap justify-center gap-6 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4}}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <li className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30">

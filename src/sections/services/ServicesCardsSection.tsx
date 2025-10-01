@@ -173,9 +173,7 @@ export default function ServicesCardsSection() {
               <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> tu proyecto?</span>
             </h2>
             <p className="text-lg md-tablet:text-2xl font-semibold text-gray-700 mb-8 mx-auto table-lg:mx-0">
-              No importa si estás dando los primeros pasos o buscas escalar. 
-              <span className="text-colorSecundario4"> En Devhooh, </span>
-              adaptamos nuestros servicios para
+              Desde la conceptualización (MVP y Startups) hasta el crecimiento (PyMEs) y la modernización de plataformas (Legacy), adaptamos nuestra experiencia para 
               <span className="text-colorSecundario4"> impulsar tu visión. </span>
             </p>
           </motion.div>

@@ -33,7 +33,7 @@ export default function ProjectsServicesSection() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <Folder className="w-5 h-5 text-colorPrimario5" />
@@ -45,20 +45,19 @@ export default function ProjectsServicesSection() {
             className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             Los proyectos que hemos
             <br />
             hecho realidad
-            
           </motion.h2>
 
           <motion.p
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Estos son algunos de los proyectos donde aplicamos{" "}
@@ -74,7 +73,7 @@ export default function ProjectsServicesSection() {
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
           viewport={{ once: true }}
         >
           <li className="text-center p-6 rounded-2xl bg- bg-colorHover4 backdrop-blur-sm border border-white/20">
@@ -126,7 +125,7 @@ export default function ProjectsServicesSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
           {/* Texto motivacional */}
           <div className="mb-8">
@@ -173,13 +172,13 @@ export default function ProjectsServicesSection() {
           className="flex justify-center mt-12"
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
+          transition={{ duration: 0.3, delay: 0.3}}
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-4">
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             >
               <Sparkles className="w-6 h-6 text-colorPrimario5" />
             </motion.div>
@@ -190,7 +189,7 @@ export default function ProjectsServicesSection() {
             
             <motion.div
               animate={{ rotate: -360 }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             >
               <Sparkles className="w-6 h-6 text-colorSecundario1" />
             </motion.div>

@@ -20,12 +20,12 @@ const containerVariant = {
 
 // Variantes para cada step
 const stepVariant: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
@@ -51,7 +51,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             <Target className="w-5 h-5 text-colorPrimario5" />
@@ -90,7 +90,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Así trabajamos el servicio de <span className="font-bold text-colorPrimario5">{service.name}</span>, paso a paso con metodología ágil
@@ -209,7 +209,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                         className="flex items-center gap-2 mt-4 ml-4 text-colorPrimario1/60"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
                         viewport={{ once: true }}
                       >
                         <ArrowRight className="w-4 h-4" />
@@ -228,7 +228,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">

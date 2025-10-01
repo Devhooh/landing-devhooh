@@ -8,25 +8,15 @@ import { motion, Variants } from "framer-motion";
 interface BenefitsSectionProps {
   service: ServicesData;
 }
-
-// Texto con efecto "letra por letra"
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
-const splitText = (text: string) => text.split("");
-
 // Variantes para las cards (fade + scale-up desde el centro)
 const cardVariant: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.95 },
   show: (i: number) => ({
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.6,
-      ease: "easeOut",
-      delay: i * 0.15, // escalonado
+      duration: 0.3,
+      delay: i * 0.1, // escalonado
     },
   }),
 };
@@ -38,16 +28,12 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
       <div className="pb-10 items-center text-center">
         <motion.h2
           className="text-3xl md-tablet:text-4xl font-extrabold text-center text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
         >
-          {splitText(`Servicios de ${service.name}`).map((letter, idx) => (
-            <motion.span key={idx} variants={letterVariants}>
-              {letter}
-            </motion.span>
-          ))}
+          Servicios de {service.name}
         </motion.h2>
 
         {/* Subtítulo */}
@@ -103,7 +89,7 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
           className="relative z-10 text-center mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.5 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-colorPrimario5/20 border border-colorPrimarioLogo1/30 backdrop-blur-sm">

@@ -7,40 +7,40 @@ import { ArrowRight } from "lucide-react";
 
 export function SolutionsSection() {
   const solutions = [
-    {
-      title: "Webs & Software",
-      description:
-        "Desarrollamos páginas web profesionales y software a medida que aumentan la visibilidad online, mejoran la experiencia del cliente y optimizan los procesos internos de tu empresa.",
-      image: "/assets/images/webSoft.png",
-      benefits: [
-        "Código limpio y escalable para crecer sin límites",
-        "Diseños adaptados a la identidad de tu marca",
-        "Integraciones fluidas con herramientas de gestión",
-      ],
-    },
-    {
-      title: "Aplicaciones Móviles",
-      description:
-        "Creamos aplicaciones móviles nativas y multiplataforma que combinan diseño atractivo, alto rendimiento y compatibilidad total con iOS y Android para maximizar tu alcance.",
-      image: "/assets/images/mobil.png",
-      benefits: [
-        "Notificaciones push para aumentar la retención",
-        "Interfaz intuitiva que mejora la usabilidad",
-        "Optimización para un rendimiento rápido y estable",
-      ],
-    },
-    {
-      title: "Inteligencia Artificial",
-      description:
-        "Implementamos soluciones de inteligencia artificial y machine learning que automatizan tareas, reducen costes y aportan datos valiosos para decisiones más estratégicas.",
-      image: "/assets/images/ia.png",
-      benefits: [
-        "Chatbots y asistentes virtuales personalizados",
-        "Predicciones basadas en análisis de datos",
-        "Automatización inteligente de procesos repetitivos",
-      ],
-    },
-  ];
+  {
+    title: "Desarrollo de Software Web Escalable", // Título más largo y específico
+    description:
+      "Creamos páginas web de alto rendimiento, e-commerce escalables y software a medida que aumentan tu visibilidad online. Optimizamos tus procesos empresariales con código limpio y tecnología moderna.",
+    image: "/assets/images/webSoft.png",
+    benefits: [
+      "Código limpio y escalable para crecer sin límites",
+      "Diseños adaptados a la identidad de tu marca y SEO",
+      "Integraciones fluidas con herramientas de gestión (CRM/ERP)",
+    ],
+  },
+  {
+    title: "Apps Móviles Nativas (iOS & Android)", // Título con palabras clave
+    description:
+      "Especialistas en el desarrollo de Apps Móviles Nativas y multiplataforma. Creamos experiencias fluidas con alto rendimiento para iOS y Android, garantizando máxima usabilidad y retención de usuarios.",
+    image: "/assets/images/mobil.png",
+    benefits: [
+      "Notificaciones push para aumentar la retención de usuarios",
+      "Interfaz intuitiva que mejora la usabilidad (UX)",
+      "Optimización para un rendimiento rápido y estable",
+    ],
+  },
+  {
+    title: "Integración de Machine Learning e IA", // Palabras clave específicas de IA
+    description:
+      "Implementamos Inteligencia Artificial y Machine Learning para automatizar la toma de decisiones. Desarrollamos chatbots avanzados, sistemas de predicción y automatización de procesos para reducir costos operativos.",
+    image: "/assets/images/ia.png",
+    benefits: [
+      "Chatbots y asistentes virtuales personalizados",
+      "Predicciones basadas en análisis de datos (Business Intelligence)",
+      "Automatización inteligente de procesos repetitivos",
+    ],
+  },
+];
 
   const textVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -76,8 +76,7 @@ export function SolutionsSection() {
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
-            Impulsamos tu negocio con
-            soluciones modernas
+            Desarrollo de <strong>Soluciones Web, Móviles e IA</strong> para tu Empresa
           </motion.h2>
 
           {/* Subtítulo mejorado */}
@@ -88,7 +87,7 @@ export function SolutionsSection() {
             transition={{ duration: 0.4, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Desde tu primera idea hasta el lanzamiento, desarrollamos webs, apps y sistemas inteligentes que transforman tu presencia digital y optimizan cada proceso de tu negocio.
+            Creamos páginas web profesionales, aplicaciones móviles nativas y multiplataforma y sistemas empresariales con inteligencia artificial. Te acompañamos desde la idea hasta el lanzamiento para mejorar tu presencia digital, automatizar procesos y hacer tu negocio más competitivo.
           </motion.p>
 
           {/* Estadísticas rápidas */}

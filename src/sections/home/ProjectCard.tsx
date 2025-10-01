@@ -73,7 +73,7 @@ export function ProjectCard({
           {technologies?.slice(0, 3).map((tech, idx) => (
             <span 
               key={idx} 
-              className="bg-colorHover3 text-colorPrimario2 text-xs md-tablet:text-sm px-2 py-1 rounded-md"
+              className="bg-colorHover3 text-colorPrimario2 text-base md-tablet:text-lg px-2 py-1 rounded-lg border border-colorPrimarioLogo2"
             >
               {tech}
             </span>
@@ -85,7 +85,7 @@ export function ProjectCard({
           <Link href={`/portfolio/${slug}`}>
             <button className="
               bg-colorSecundario2 hover:bg-colorSecundario3 text-white py-2.5 md-tablet:py-3 px-7 md-tablet:px-14 rounded-xl 
-              text-sm md-tablet:text-base font-semibold shadow-md transition-all duration-300">
+              text-lg md-tablet:text-xl font-semibold shadow-md transition-all duration-300">
               Ver proyecto
             </button>
           </Link>

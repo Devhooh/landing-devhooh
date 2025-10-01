@@ -45,10 +45,10 @@ export default function HeroSectionHome() {
             transition={{ duration: 0.3, delay: 0.1 }}
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
-            <div className="relative w-[600px] h-[600px] rounded-2xl">
+            <div className="relative w-[460px] h-[460px] md-tablet:w-[600px] md-tablet:h-[600px] rounded-2xl">
             <Image
               src="/assets/images/hero-home.png"
-              alt="Equipo desarrollando software a medida"
+              alt="Equipo de desarrollo creando software a medida con inteligencia artificial"
               // width={462}
               // height={462}
               fill
@@ -60,7 +60,7 @@ export default function HeroSectionHome() {
           </motion.div>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <motion.p
+          <motion.h2
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.2 }}
@@ -68,9 +68,8 @@ export default function HeroSectionHome() {
               text-center table-lg:text-left
             text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
           >
-            Creamos soluciones web, móviles y empresariales integrando inteligencia artificial
-            para impulsar la innovación y mejorar la eficiencia de tu negocio.
-          </motion.p>
+            Desarrollo de páginas web modernas, aplicaciones móviles y sistemas empresariales con inteligencia artificial para que tu negocio sea más innovador, eficiente y competitivo en el mercado digital.
+          </motion.h2>
 
           {/* --- 4) LISTA SEO --- */}
           <motion.ul
@@ -84,10 +83,10 @@ export default function HeroSectionHome() {
             "
           >
             {[
-              "Aplicaciones web rápidas y escalables",
-              "Apps móviles modernas y fluidas",
-              "Integración de inteligencia artificial en tus procesos",
-              "Sistemas empresariales personalizados",
+              <>Aplicaciones <strong>web rápidas y escalables</strong> (Next.js)</>,
+              <><strong>Apps móviles modernas y fluidas</strong> (iOS y Android)</>,
+              <><strong>Integración de Inteligencia Artificial</strong> en tus procesos empresariales</>,
+              <>Desarrollo de <strong>Sistemas empresariales personalizados</strong> (CRM, ERP)</>,
             ].map((item, idx) => (
               <motion.li
                 key={idx}

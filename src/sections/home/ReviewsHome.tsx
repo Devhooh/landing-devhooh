@@ -20,17 +20,19 @@ export default function ReviewsHome() {
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
+            Testimonios y Reseñas:
+            <br/>
             Lo que dicen nuestros clientes
           </motion.h2>
 
         <motion.p
-          className="mt-5 text-colorPrimario1 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"
+          className="my-8 text-colorPrimario1 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4}}
           viewport={{ once: true }}
         >
-          Opiniones reales de clientes satisfechos que confían en nuestro trabajo y nuestras soluciones digitales.
+          Conoce las historias de éxito de empresas que han transformado sus operaciones con nuestras soluciones web, móviles y de IA a la medida.
         </motion.p>
       </div>
 

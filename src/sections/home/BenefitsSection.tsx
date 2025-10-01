@@ -15,32 +15,32 @@ export function BenefitsSection() {
     icon: Zap,
     title: "Entrega de proyectos optimizada",
     description:
-      "Implementamos procesos ágiles para que tus proyectos web estén listos a tiempo, sin sacrificar calidad ni funcionalidad.",
+    "Implementamos procesos ágiles (Scrum/Kanban) y un ciclo de entrega continua (CI/CD) para que tu software web y móvil esté listo a tiempo, sin sacrificar la calidad del código ni la funcionalidad.",
     gradient: "from-colorPrimario5 to-colorPrimario6",
   },
   {
     icon: Shield,
     title: "Seguridad y estabilidad garantizadas",
     description:
-      "Desarrollamos soluciones confiables con estándares modernos de seguridad y mantenimiento para proteger tu negocio digital.",
+    "Desarrollamos soluciones de software confiables siguiendo los estándares modernos de seguridad (OWASP) y ofrecemos mantenimiento proactivo para proteger tu aplicación y tus datos contra ataques.",
     gradient: "from-colorPrimario5 to-colorPrimario6",
   },
   {
     icon: Palette,
     title: "Diseño personalizado y profesional",
     description:
-      "Cada proyecto se adapta a tu marca y objetivos, con interfaces únicas, atractivas y funcionales para tu audiencia.",
+    "Cada proyecto se adapta a tu marca y objetivos. Creamos interfaces únicas, atractivas y funcionales, priorizando la Experiencia de Usuario (UX) y el diseño responsivo en todos los dispositivos.",
     gradient: "from-colorPrimario5 to-colorPrimario6",
   },
 ];
 
 const checklistItems = [
   "Diseño responsive y optimizado para móviles y tablets",
-  "Optimización SEO para mejorar tu visibilidad online",
-  "Hosting confiable y dominio propio configurado",
-  "Panel de administración intuitivo y fácil de usar",
-  "Integración con redes sociales y herramientas de marketing",
-  "Certificado SSL gratuito para mayor seguridad",
+  "Optimización SEO (On-Page) para mejorar tu visibilidad online",
+  "Hosting de alto rendimiento y dominio propio configurado",
+  "Panel de administración intuitivo (CMS) y fácil de usar",
+  "Integración con redes sociales y herramientas de marketing (Analytics)",
+  "Certificado SSL gratuito para mayor seguridad de datos",
 ];
 
   return (
@@ -56,7 +56,7 @@ const checklistItems = [
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
-            Beneficios de nuestros proyectos
+            Beneficios de nuestro desarrollo de software
           </motion.h2>
           
           <motion.p
@@ -66,7 +66,7 @@ const checklistItems = [
             transition={{ duration: 0.4, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Descubre por qué miles de clientes confían en nosotros para llevar sus proyectos al siguiente nivel
+            Nuestra metodología se centra en la calidad, el rendimiento y la seguridad. Ofrecemos soluciones digitales robustas y escalables, respaldadas por un equipo experto.
           </motion.p>
         </div>
 
@@ -149,7 +149,7 @@ const checklistItems = [
                   src="/assets/images/beneficiosweb.png"
                   width={643}
                   height={696}    
-                  alt="Desarrollo, Beneficios proyectos"
+                  alt="Checklist de beneficios y servicios incluidos en el desarrollo de software web y móvil"
                   className="object-cover rounded-2xl"
                   sizes="(max-width: 768px) 90vw, 384px"
                   loading="lazy"

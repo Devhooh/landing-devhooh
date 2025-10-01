@@ -23,19 +23,19 @@ const benefits: Benefit[] = [
     icon: <Star className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     title: "Calidad y enfoque al cliente",
     description:
-      "Nos comprometemos a entregar soluciones de alto nivel, diseñadas para sorprender a tus usuarios y ajustadas a tus necesidades específicas.",
+    "Garantizamos la entrega de soluciones de software de alto nivel, con código limpio, escalable y diseñado para ofrecer una Experiencia de Usuario (UX) sorprendente."
   },
   {
     icon: <Wrench className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     title: "Transparencia y colaboración",
     description:
-      "Trabajamos de la mano contigo, manteniendo comunicación constante y claridad en cada etapa del proyecto.",
+      "Trabajamos de la mano contigo en ciclos cortos (Sprints). Mantenemos comunicación constante a través de herramientas de gestión para total transparencia en cada avance."
   },
   {
     icon: <Shield className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     title: "Responsabilidad y cumplimiento",
     description:
-      "Cumplimos con los plazos, estándares y compromisos adquiridos, asegurando confianza y resultados consistentes para tu negocio.",
+      "Nuestro compromiso es con el resultado final. Cumplimos con los plazos de entrega acordados y con los estándares internacionales de calidad y seguridad de datos en el desarrollo."
   },
 ];
 
@@ -58,7 +58,9 @@ export function ProjectsBenefits() {
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
-            Por qué escoger a <span className="text-colorHover5"> Devhooh</span>
+            ¿Por qué Devhooh?
+            <br/>
+            Nuestras ventajas competitivas
           </motion.h2>
 
           <motion.p 
@@ -68,7 +70,7 @@ export function ProjectsBenefits() {
             transition={{ duration: 0.4, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Nos destacamos por nuestra calidad, enfoque al cliente y compromiso con cada proyecto. Transparencia, colaboración y excelencia continua son los valores que garantizan resultados efectivos y negocios que crecen.
+            Vamos más allá de la programación. Nuestro valor reside en la excelencia continua, la metodología ágil y el compromiso total con la visión de tu proyecto. Aseguramos que cada solución de software a medida impulse el crecimiento y la eficiencia de tu negocio.
           </motion.p>
         </motion.div>
 

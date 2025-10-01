@@ -20,9 +20,9 @@ export default function CTASlugfolio() {
         {/* Título animado letra por letra */}
         <motion.h2
           className="text-3xl tablet-md:text-5xl font-extrabold leading-tight"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           Innovación tecnológica que impulsa tu negocio
@@ -33,14 +33,14 @@ export default function CTASlugfolio() {
           className="text-base tablet-md:text-xl text-gray-200 max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
           Desarrollamos soluciones digitales con seguridad, escalabilidad y un enfoque personalizado para maximizar tu crecimiento.
         </motion.p>
 
         {/* Botón principal */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} viewport={{ once: true }}>
           <Link href="/contact">
             <motion.button
               className="relative group inline-flex items-center gap-3 px-10 py-4 font-bold text-lg rounded-xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 shadow-lg overflow-hidden"
@@ -65,7 +65,7 @@ export default function CTASlugfolio() {
               className={`px-6 py-4 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              transition={{ duration: 0.4, delay: idx * 0.2 }}
               viewport={{ once: true }}
             >
               <div className="text-2xl font-bold">{stat.value}</div>

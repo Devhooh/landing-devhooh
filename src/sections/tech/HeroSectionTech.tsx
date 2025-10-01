@@ -15,7 +15,7 @@ export default function HeroSectionTech() {
           <motion.h1
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, type: "spring" }}
+            transition={{ duration: 0.3, type: "spring" }}
             className="order-1 text-center table-lg:text-left text-4xl font-extrabold drop-shadow-lg
             leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
           >
@@ -27,7 +27,7 @@ export default function HeroSectionTech() {
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="
               order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
@@ -59,7 +59,7 @@ export default function HeroSectionTech() {
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="order-3 text-lg md-tablet:text-xl 
               text-center table-lg:text-left my-5 table-lg:pr-32
             text-gray-200 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
@@ -71,7 +71,7 @@ export default function HeroSectionTech() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="order-5 flex justify-center table-lg:justify-start"
           >
             <Link href="/contact">

@@ -50,7 +50,7 @@ export default function IntroSection() {
             <motion.h2
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, type: "spring" }}
+              transition={{ duration: 0.3, type: "spring" }}
               viewport={{ once: true }}
               className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorPrimario1 pb-5"
             >
@@ -62,7 +62,7 @@ export default function IntroSection() {
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
               className="text-lg text-colorPrimario1 md-tablet:text-xl max-w-3xl mx-auto"
             >
@@ -76,7 +76,7 @@ export default function IntroSection() {
               className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-colorPrimario5 border border-colorPrimario5/30 backdrop-blur-sm"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
               viewport={{ once: true }}
             >
               <Award className="w-5 h-5 text-white flex-shrink-0" />
@@ -91,7 +91,7 @@ export default function IntroSection() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
         viewport={{ once: true }}
         className="overflow-hidden mt-12 py-5 mx-auto bg-colorPrimario5 border-y border-colorSecundario3"
       >
@@ -104,7 +104,7 @@ export default function IntroSection() {
         <motion.h3
           initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario1"
         >
@@ -114,7 +114,7 @@ export default function IntroSection() {
         <motion.p
           initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-lg md-tablet:text-xl max-w-2xl text-gray-700"
         >

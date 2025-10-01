@@ -20,7 +20,7 @@ interface TechCardProps {
 
 const subtitleVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.2 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut", delay: 0.2 } },
 };
 
 const gridVariants: Variants = {
@@ -35,7 +35,7 @@ const gridVariants: Variants = {
 
 const techItemVariants: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const letterVariants = {
@@ -162,7 +162,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
           className="text-center my-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.4, delay: 0.4}}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">

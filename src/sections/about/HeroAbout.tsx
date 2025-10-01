@@ -16,7 +16,7 @@ export default function HeroAbout() {
               className="md-tablet:mt-2"
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.2 }}
               viewport={{ once: true }}
             >
               <h1 className="mt-5 text-colorPrimario2 table-lg:px-24 text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold leading-tight drop-shadow-lg">
@@ -34,7 +34,7 @@ export default function HeroAbout() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4}}
+              transition={{ duration: 0.3}}
               viewport={{ once: true }}
             >
               <p className="text-lg md-tablet:text-xl text-colorPrimario1/70 max-w-xl mb-5 md-tablet:mb-16 mx-auto">
@@ -47,7 +47,7 @@ export default function HeroAbout() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
               className="mt-10 table-lg:mt-1 mb-8 table-lg:my-8 "
             >

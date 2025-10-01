@@ -20,17 +20,17 @@ const fadeUp: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
 const imageVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8, rotate: -10 },
+  hidden: { opacity: 0, scale: 0.4, rotate: -10 },
   show: {
     opacity: 1,
     scale: 1,
     rotate: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
@@ -43,7 +43,7 @@ export default function WhyChooseUsSection() {
       alt: "Entregas rápidas y confiables",
       icon: Zap,
       gradient: "from-colorPrimario5/10 to-colorPrimario6/10",
-      iconGradient: "from-colorPrimario5 to-colorPrimario6",
+      iconGradient: "from-colorSecundario1 to-colorSecundario2",
       benefits: ["Metodologías ágiles", "Plazos garantizados", "Entregas por sprints"]
     },
     {
@@ -63,7 +63,7 @@ export default function WhyChooseUsSection() {
       alt: "Trabajo colaborativo",
       icon: Users,
       gradient: "from-colorPrimario7/10 to-colorPrimario8/10",
-      iconGradient: "from-colorPrimario7 to-colorPrimario8",
+      iconGradient: "from-colorSecundario1 to-colorSecundario2",
       benefits: ["Comunicación directa", "Updates constantes", "Tu participación activa"]
     },
     {
@@ -73,7 +73,7 @@ export default function WhyChooseUsSection() {
       alt: "Seguridad y calidad",
       icon: Shield,
       gradient: "from-colorSecundario3/10 to-colorSecundario4/10",
-      iconGradient: "from-colorSecundario3 to-colorSecundario4",
+      iconGradient: "from-colorSecundario1 to-colorSecundario2",
       benefits: ["Código limpio", "Testing riguroso", "Seguridad avanzada"]
     },
     {
@@ -83,7 +83,7 @@ export default function WhyChooseUsSection() {
       alt: "Crecimiento garantizado",
       icon: TrendingUp,
       gradient: "from-colorPrimario5/10 to-colorSecundario1/10",
-      iconGradient: "from-colorPrimario5 to-colorSecundario1",
+      iconGradient: "from-colorSecundario1 to-colorSecundario2",
       benefits: ["Arquitectura escalable", "Métricas de rendimiento", "Soporte continuo"]
     },
   ];
@@ -100,7 +100,7 @@ export default function WhyChooseUsSection() {
             className="text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold mb-6 text-colorPrimario2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
             ¿Por qué elegir Devhooh?
@@ -110,7 +110,7 @@ export default function WhyChooseUsSection() {
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Cinco razones clave que nos convierten en el socio ideal para transformar tu visión en una solución digital exitosa
@@ -123,7 +123,7 @@ export default function WhyChooseUsSection() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true }}
         >
           {features.map((feature, index) => (
             <motion.div
@@ -222,7 +222,7 @@ export default function WhyChooseUsSection() {
           className="mt-20 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20 backdrop-blur-sm">

@@ -70,18 +70,18 @@ export default function OurValuesSection() {
       opacity: 1, 
       y: 0, 
       scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" } 
+      transition: { duration: 0.3, ease: "easeOut" } 
     },
   };
 
   // Variantes para imágenes
   const imageVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8, rotate: -5 },
+    hidden: { opacity: 0, scale: 0.4, rotate: -5 },
     show: { 
       opacity: 1, 
       scale: 1, 
       rotate: 0,
-      transition: { duration: 0.5, ease: "easeOut" } 
+      transition: { duration: 0.3, ease: "easeOut" } 
     },
   };
 
@@ -127,7 +127,7 @@ export default function OurValuesSection() {
             className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             Los principios que guían cada proyecto y definen nuestra forma de trabajar contigo
@@ -179,18 +179,9 @@ export default function OurValuesSection() {
                 </div>
 
                 {/* Círculo decorativo flotante */}
-                <motion.div
-                  className={`absolute -top-2 -left-2 w-6 h-6 rounded-full bg-gradient-to-r ${value.iconGradient} opacity-20`}
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.2, 0.4, 0.2]
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity,
-                    delay: index * 0.5
-                  }}
-                ></motion.div>
+                <div
+                  className={`animate-pulse absolute -top-2 -left-2 w-6 h-6 rounded-full bg-gradient-to-r ${value.iconGradient} opacity-20`}
+                ></div>
               </motion.div>
 
               {/* Contenido de texto */}
@@ -219,7 +210,7 @@ export default function OurValuesSection() {
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <p className="text-colorPrimario1/70 mb-4 text-lg">

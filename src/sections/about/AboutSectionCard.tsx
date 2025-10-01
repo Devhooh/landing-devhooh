@@ -4,13 +4,13 @@ import { motion, Variants } from "framer-motion";
 import { Eye, Target, Users, Globe} from "lucide-react";
 
 const visionVariant: Variants = {
-  hidden: { opacity: 0, x: -50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  hidden: { opacity: 0, x: -30},
+  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 const missionVariant: Variants = {
-  hidden: { opacity: 0, x: 50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  hidden: { opacity: 0, x: 30},
+  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 export default function AboutSectionCard() {
@@ -26,7 +26,7 @@ export default function AboutSectionCard() {
               variants={visionVariant}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true }}
               className="w-full table-lg:w-4/5 table-lg:self-start mx-auto bg-gradient-to-br from-colorHover5 to-colorHover6 rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row border border-white/20 backdrop-blur-sm group"
             >
               {/* Imagen mejorada */}
@@ -50,11 +50,9 @@ export default function AboutSectionCard() {
                 </motion.div>
 
                 {/* Círculo decorativo */}
-                <motion.div
-                  className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                ></motion.div>
+                <div
+                  className="animate-pulse absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
+                ></div>
               </div>
 
               {/* Contenido de texto mejorado */}
@@ -89,7 +87,7 @@ export default function AboutSectionCard() {
               variants={missionVariant}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true}}
               className="w-full table-lg:w-4/5 table-lg:self-end table-lg:ml-auto bg-gradient-to-br from-colorHover5 to-colorHover6 rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row-reverse border border-white/20 backdrop-blur-sm group"
             >
               {/* Imagen mejorada */}
@@ -113,11 +111,9 @@ export default function AboutSectionCard() {
                 </motion.div>
 
                 {/* Círculo decorativo */}
-                <motion.div
-                  className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 opacity-20"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                ></motion.div>
+                <div
+                  className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 opacity-20"
+                ></div>
               </div>
 
               {/* Contenido de texto mejorado */}
@@ -147,7 +143,7 @@ export default function AboutSectionCard() {
                       className="flex items-start gap-3 p-3 rounded-xl bg-white backdrop-blur-sm border border-white/20 hover:bg-white/50 transition-all duration-300 group/item"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: idx * 0.1 }}
+                      transition={{ duration: 0.3, delay: idx * 0.1 }}
                       viewport={{ once: true }}
                     >
                       <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 flex items-center justify-center flex-shrink-0 shadow-sm group-hover/item:shadow-md transition-all duration-200">

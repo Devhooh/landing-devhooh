@@ -43,7 +43,7 @@ export default function CTAAbout() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
             <motion.h2
@@ -62,7 +62,7 @@ export default function CTAAbout() {
               className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
               viewport={{ once: true }}
             >
               Transformamos tu visión en soluciones digitales exitosas. Mejoramos la experiencia de usuario, 
@@ -75,7 +75,7 @@ export default function CTAAbout() {
             className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
             viewport={{ once: true }}
           >
             {features.map((feature, idx) => (
@@ -85,7 +85,7 @@ export default function CTAAbout() {
                 whileHover={{ y: -5, scale: 1.02 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * idx }}
+                transition={{ duration: 0.3, delay: 0.1 * idx }}
                 viewport={{ once: true }}
               >
                 <div
@@ -112,7 +112,7 @@ export default function CTAAbout() {
             className="flex justify-center mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.3}}
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20 backdrop-blur-sm">
@@ -129,7 +129,7 @@ export default function CTAAbout() {
             className="flex flex-col md-tablet:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
             viewport={{ once: true }}
           >
             <Link href="/contact">
@@ -164,7 +164,7 @@ export default function CTAAbout() {
             className="flex flex-wrap justify-center gap-8 pt-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
+            transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
             <li className="text-center">
@@ -186,7 +186,7 @@ export default function CTAAbout() {
             className="text-colorPrimario1/60 text-sm italic max-w-2xl mx-auto pt-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             Transformando ideas en soluciones digitales exitosas desde 2021

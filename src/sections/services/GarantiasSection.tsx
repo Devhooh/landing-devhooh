@@ -24,15 +24,16 @@ export default function GarantiasSection() {
             <h2 className="
               text-3xl tablet-md:text-5xl font-extrabold 
               text-colorPrimario1">
-              Confianza y seguridad en cada entrega
+              Confianza y calidad en cada entrega
             </h2>
             
             <ul className="flex flex-col gap-4 text-colorPrimario1 text-lg">
-              {[ "Transparencia total en cada proyecto.",
-                 "Revisión y mejoras incluidas.",
-                 "Política clara de tiempos y entregas.",
-                 "Soporte técnico garantizado.",
-                 "Resultados preparados para escalar."
+              {[ 
+                "Transparencia total en la gestión y desarrollo del proyecto.",
+                "Revisión continua de código y mejoras post-lanzamiento incluidas.",
+                "Política clara de tiempos de entrega y alcances definidos.",
+                "Soporte técnico y mantenimiento garantizado.",
+                "Arquitectura de software preparada para escalabilidad y futuro crecimiento."
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -59,7 +60,7 @@ export default function GarantiasSection() {
           >
             <Image
               src="/assets/images/garantia.png"
-              alt="Garantía de servicios"
+              alt="Sello de garantía que representa la calidad, seguridad y confianza en los servicios de desarrollo de software profesional."
               width={1500}
               height={1500}
               className="rounded-2xl shadow-lg"

@@ -21,7 +21,7 @@ export default function BeneficiosSection3() {
           >
             <Image
               src="/assets/images/beneficio3.png"
-              alt="Soporte continuo"
+              alt="Servicio de soporte y mantenimiento de software post-implementación para garantizar la longevidad y el uptime de la plataforma digital."
               width={748}
               height={563}
               className="rounded-2xl shadow-lg bg-colorHover2/10"
@@ -31,41 +31,41 @@ export default function BeneficiosSection3() {
 
           {/* Texto */}
           <motion.div
-            className="flex flex-col gap-4 order-1 table-lg:order-2"
+            className="flex flex-col gap-8 order-1 table-lg:order-2"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15 } } }}
           >
-            <motion.h2
-              className="text-2xl md-tablet:text-3xl font-bold text-cyan-500"
+            <motion.h3
+              className="text-2xl md-tablet:text-4xl font-bold text-cyan-500"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Soporte continuo para tu éxito
-            </motion.h2>
+              Mantenimiento, soporte y asesoría técnica
+            </motion.h3>
             <motion.p
-              className="text-gray-200"
+              className="text-gray-200 text-base md-tablet:text-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              No solo entregamos un producto, nos aseguramos de que tengas el apoyo necesario después de la implementación.
+              Establecemos un partnership estratégico para garantizar la longevidad de tu inversión. Nuestro soporte asegura un alto uptime y la evolución continuas del software, manteniéndolo siempre actualizado y competitivo.
             </motion.p>
             <motion.ul
-              className="flex flex-col gap-3 text-colorFondo"
+              className="flex flex-col gap-3 text-colorFondo text-base md-tablet:text-lg"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
             >
               {[
-                "Atención al cliente 24/7.",
-                "Soporte gratuito inicial.",
-                "Actualizaciones y mejoras constantes."
+                "Monitoreo y Soporte especializado 24/7.",
+                "Garantía y Soporte gratuito durante la etapa de Go-Live.",
+                "Actualizaciones de seguridad y Mantenimiento preventivo."
               ].map((item, i) => (
                 <motion.li
                   key={i}

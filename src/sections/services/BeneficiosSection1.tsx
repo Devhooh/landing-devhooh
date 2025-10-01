@@ -21,7 +21,7 @@ export default function BeneficiosSection1 () {
       >
         <Image
           src="/assets/images/beneficio1.png"
-          alt="Confianza y seguridad"
+          alt="Proceso de desarrollo de software transparente basado en metodología ágil, con foco en seguridad, pruebas y comunicación continua con el cliente."
           width={1939}
           height={1940}
           className="rounded-2xl shadow-lg bg-colorHover2/10"
@@ -31,42 +31,42 @@ export default function BeneficiosSection1 () {
 
       {/* Texto */}
       <motion.div
-        className="flex flex-col gap-4 order-1 table-lg:order-2"
+        className="flex flex-col gap-8 order-1 table-lg:order-2"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15 } } }}
       >
-        <motion.h2
-          className="text-2xl md-tablet:text-3xl font-bold text-cyan-500"
+        <motion.h3
+          className="text-2xl md-tablet:text-4xl font-bold text-cyan-500"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
           Confianza y seguridad
-        </motion.h2>
+        </motion.h3>
         <motion.p
-          className="text-white"
+          className="text-white text-base md-tablet:text-lg"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          Nos aseguramos de que cada proyecto sea transparente, seguro y confiable.
+          Garantizamos la transparencia total de la inversión. Aplicamos una metodología ágil y DevOps para un desarrollo seguro, fiable y con entregas incrementales que puedes ver en tiempo real.
         </motion.p>
         <motion.ul
-          className="flex flex-col gap-3 text-colorFondo"
+          className="flex flex-col gap-3 text-colorFondo text-base md-tablet:text-lg"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
         >
           {[
-            "Procesos claros desde el inicio.",
-            "Revisiones periódicas durante el desarrollo.",
-            "Seguridad en cada entrega.",
-            "Compromiso con tu satisfacción."
+            "Metodología Ágil con procesos y flujos de trabajo claros.",
+            "Revisiones de código y sprints periódicos durante el desarrollo.",
+            "Pruebas de seguridad y calidad en cada entrega final.",
+            "Compromiso con la satisfacción del cliente y orientación a resultados."
           ].map((item, i) => (
             <motion.li
               key={i}

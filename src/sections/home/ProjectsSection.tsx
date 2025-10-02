@@ -37,7 +37,7 @@ export function ProjectsSection() {
           variants={textVariants}
           className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-colorPrimario2 to-colorPrimario1"
         >
-          Proyectos que impulsan resultados
+          Proyectos que generan resultados reales
         </motion.h2>
       </motion.div>
 
@@ -81,11 +81,9 @@ export function ProjectsSection() {
             className="text-colorPrimario4 text-base md-tablet:text-lg table-lg:text-xl leading-relaxed mb-6"
           >
             En Devhooh, cada proyecto es una oportunidad para {""} 
-            <span className="font-semibold text-colorSecundario">impulsar tu negocio.</span> {""}
-            Nos especializamos en el desarrollo de software a medida y soluciones web y móviles que no solo {""} 
-            <span className="font-semibold text-colorSecundario">resuelven problemas</span>, 
-            sino que también escalan tu negocio y mejoran la {""} 
-            <span className="font-semibold text-colorSecundario">experiencia de tus clientes.</span> 
+            <strong>impulsar tu negocio</strong>. Nos especializamos en el desarrollo de <strong>software a medida</strong>,
+            integrando <strong>soluciones web, móviles e Inteligencia Artificial</strong>. No solo resolvemos problemas; 
+            <strong> escalamos tu negocio</strong> y mejoramos la experiencia de tus clientes a través de la tecnología.
           </motion.p>
         </motion.div>
 
@@ -98,10 +96,10 @@ export function ProjectsSection() {
         >
           <ul className="flex flex-col gap-3 text-gray-800 text-base md-tablet:text-lg table-lg:text-xl">
             {[
-              "Soluciones personalizadas y escalables",
-              "Integración de inteligencia artificial",
-              "Diseño moderno y experiencia premium",
-              "Soporte y acompañamiento dedicado",
+              <><strong>Soluciones de software personalizadas</strong> y escalables (Next.js/React)</>,
+              <>Integración de <strong>Inteligencia Artificial</strong> y Machine Learning</>,
+              <><strong>Diseño UX/UI</strong> moderno y experiencia de usuario premium</>,
+              <>Soporte y <strong>acompañamiento técnico</strong> dedicado post-lanzamiento</>,
             ].map((item, idx) => (
               <motion.li
                 key={idx}

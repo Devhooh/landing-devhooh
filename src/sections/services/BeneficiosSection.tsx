@@ -34,7 +34,7 @@ export default function BeneficiosSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Lo que ganas al trabajar con nosotros va más allá de un simple servicio: son resultados tangibles y duraderos.
+            Nuestro enfoque en el desarrollo ágil y la eficiencia operacional se traduce en resultados tangibles: ahorro de costes, ventaja competitiva y un crecimiento sostenible para tu plataforma digital.
           </motion.p>
         </motion.div>
 

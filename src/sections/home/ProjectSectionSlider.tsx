@@ -33,7 +33,7 @@ export function ProjectSecitonSlider() {
           transition={{ duration: 0.4, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          Desde startups hasta grandes corporaciones, hemos transformado ideas en soluciones digitales exitosas que impulsan el crecimiento empresarial
+          Hemos colaborado con startups innovadoras y grandes corporaciones para ofrecer soluciones digitales a medida que aceleran la transformación digital y garantizan el crecimiento empresarial sostenible.
         </motion.p>
 
         {/* Estadísticas de impacto */}
@@ -73,17 +73,17 @@ export function ProjectSecitonSlider() {
 
       {/* Encabezado para proyectos destacados */}
       <motion.div
-        className="relative z-10 text-center px-4"
+        className="relative z-10 text-center px-4 mb-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <h3 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario5 mb-4">
+        <h3 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario5 mb-8">
           Proyectos destacados
         </h3>
         <p className="text-colorPrimario1/70 text-xl md-tablet:text-2xl max-w-2xl mx-auto">
-          Descubre algunos de nuestros trabajos más impactantes y las soluciones que desarrollamos
+          Explora nuestro portafolio de Aplicaciones Web y Móviles funcionales y proyectos de Integración de Inteligencia Artificial que generaron un impacto real.
         </p>
       </motion.div>
 
@@ -116,7 +116,7 @@ export function ProjectSecitonSlider() {
           {projectsData.slice(0, 4).map((project, index) => (
             <SwiperSlide 
               key={index} 
-              className="h-auto px-5 md-tablet:px-10 max-w-3xl flex py-10 justify-center transition-transform duration-300 hover:scale-105"
+              className="h-auto px-5 md-tablet:px-10 max-w-3xl flex py-10 justify-center"
             >
               <ProjectCard {...project} />
             </SwiperSlide>

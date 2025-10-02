@@ -22,8 +22,8 @@ export default function HeroCenter() {
             viewport={{ once: true }}
           >
             <h2 className="mt-5 text-4xl md-tablet:text-5xl font-extrabold leading-tight drop-shadow-lg text-white">
-              Soluciones digitales
-              <span className="text-colorPrimario2"> a tu medida</span>
+              De la estrategia a tu
+              <span className="text-colorPrimario2"> producto digital</span>
             </h2>
           </motion.div>
 
@@ -40,7 +40,7 @@ export default function HeroCenter() {
                    style={{ aspectRatio: '600 / 565' }}>
                 <Image
                   src="/assets/images/herocenter1.png"
-                  alt="soluciones-a-medida-desarrollo-de-software"
+                  alt="Proceso de consultoría y desarrollo de producto digital a medida, enfocado en estrategia de negocio y despliegue tecnológico."
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 549px) 85vw, (max-width: 749px) 70vw, (max-width: 949px) 60vw, (min-width: 950px) 400px"
@@ -70,8 +70,8 @@ export default function HeroCenter() {
               viewport={{ once: true }}
             >
               <h2 className="mt-5 text-4xl font-extrabold leading-tight drop-shadow-lg text-white">
-                Soluciones digitales
-                <span className="text-colorPrimario2"> a tu medida</span>
+                De la estrategia a tu
+              <span className="text-colorPrimario2"> producto digital</span>
               </h2>
             </motion.div>
 
@@ -84,7 +84,7 @@ export default function HeroCenter() {
               viewport={{ once: true }}
             >
               <p className="text-lg md-tablet:text-xl text-white max-w-2xl">
-                Creamos plataformas robustas y personalizadas. Desde la idea hasta el despliegue final.
+                Ofrecemos un servicio de consultoría integral. Te guiamos a través de la definición del producto, diseño UX/UI y desarrollo de un MVP
               </p>
             </motion.div>
 
@@ -100,9 +100,9 @@ export default function HeroCenter() {
               viewport={{ once: true }}
             >
               {[
-                "Plataformas web y aplicaciones móviles",
-                "Optimización SEO avanzada",
-                "Cumplimiento de plazos con calidad profesional",
+                "Desarrollo de Plataformas (Web, Móvil, SaaS)",
+                "Optimización SEO Avanzada y Estrategia de Contenido",
+                "Garantía de Calidad del Código y Cumplimiento de Plazos",
               ].map((feature, index) => (
                 <motion.li
                   key={index}
@@ -121,7 +121,7 @@ export default function HeroCenter() {
 
             {/* Botón CTA */}
             <motion.div
-              className="order-5 table-lg:order-none mt-8 table-lg:mt-4"
+              className="order-5 table-lg:order-none mt-8 table-lg:mt-4 mb-10"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4}}
@@ -154,7 +154,7 @@ export default function HeroCenter() {
                    style={{ aspectRatio: '662 / 574' }}>
                 <Image
                   src="/assets/images/herocenter2.png"
-                  alt="soluciones-a-medida-desarrollo-de-software"
+                  alt="Proceso de consultoría y desarrollo de producto digital a medida, enfocado en estrategia de negocio y despliegue tecnológico."
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(min-width: 950px) 400px, 0px"

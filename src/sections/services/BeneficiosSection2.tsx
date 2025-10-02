@@ -12,7 +12,7 @@ export default function BeneficiosSection2() {
     >
       {/* Texto */}
       <motion.div
-        className="flex flex-col gap-6 order-1 table-lg:order-1"
+        className="flex flex-col gap-8 order-1 table-lg:order-1"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -20,20 +20,20 @@ export default function BeneficiosSection2() {
       >
         {[
           {
-            title: "Ahorro de tiempo y recursos",
-            desc: "Procesos automatizados y eficientes que reducen costes y aceleran resultados sin sacrificar calidad."
+            title: "Optimización y Automatización de Procesos",
+            desc: "Aceleramos la eficiencia operacional mediante la automatización de procesos y la reducción del TCO (Costo Total de Propiedad) sin sacrificar la calidad del código."
           },
           {
-            title: "Escalabilidad y futuro garantizado",
-            desc: "Cada solución está diseñada para crecer contigo, asegurando estabilidad y flexibilidad a largo plazo."
+            title: "Arquitectura Escalable y a Prueba de Futuro",
+            desc: "Diseñamos con Arquitectura Cloud y código limpio para garantizar la estabilidad y flexibilidad a largo plazo, permitiendo un crecimiento ilimitado."
           },
           {
-            title: "Mayor visibilidad online",
-            desc: "Optimizamos tu presencia digital con SEO y estrategias modernas que generan impacto real."
+            title: "Estrategia SEO/SEM y Posicionamiento de Marca",
+            desc: "Tu producto digital será optimizado para SEO desde el frontend y backend, asegurando una mayor visibilidad y captación de clientes cualificados.."
           },
           {
-            title: "Experiencias que convierten",
-            desc: "Creamos interfaces intuitivas que no solo atraen, sino que fidelizan a tus clientes."
+            title: "Diseño UX/UI para Alta Conversión",
+            desc: "Aplicamos un Diseño UX/UI centrado en el usuario para crear experiencias intuitivas que maximizan la retención y las tasas de conversión."
           }
         ].map((item, i) => (
           <motion.div
@@ -43,8 +43,8 @@ export default function BeneficiosSection2() {
             transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md-tablet:text-3xl font-bold text-cyan-500">{item.title}</h2>
-            <p className="text-gray-200 mt-1">{item.desc}</p>
+            <h3 className="text-2xl md-tablet:text-3xl font-bold text-cyan-500">{item.title}</h3>
+            <p className="text-gray-200 mt-1 text-base md-tablet:text-lg">{item.desc}</p>
           </motion.div>
         ))}
       </motion.div>
@@ -59,7 +59,7 @@ export default function BeneficiosSection2() {
       >
         <Image
           src="/assets/images/beneficio2.png"
-          alt="Ahorro de tiempo"
+          alt="Beneficios de la optimización de procesos de software: ahorro de costes, escalabilidad, arquitectura a prueba de futuro y crecimiento de negocio a largo plazo."
           width={1200}
           height={1200}
           className="rounded-2xl shadow-lg bg-colorHover2/10"

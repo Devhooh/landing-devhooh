@@ -40,7 +40,7 @@ export default function HeroRight() {
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
                   src="/assets/images/heroright.png"
-                  alt="servicios-completos-con-tecnologias-actuales"
+                  alt="Desarrollo con tecnologías de vanguardia: Inteligencia Artificial, apps móviles y blockchain para soluciones completas."
                   width={800}
                   height={520}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
@@ -66,7 +66,7 @@ export default function HeroRight() {
             transition={{ duration: 0.4}}
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
-              IA, apps móviles, blockchain, sitios web y más. Nuestro stack moderno está listo para tu idea.
+              Impulsamos la innovación en tu negocio. Nuestro Stack Tecnológico incluye Inteligencia Artificial, Apps Móviles nativas (iOS/Android), Blockchain y arquitectura Cloud para máxima escalabilidad.
             </p>
           </motion.div>
 

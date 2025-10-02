@@ -1,36 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Database, Smartphone, Cloud } from "lucide-react";
+import { Code, Database, Smartphone, Cloud, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function TechSection() {
   const technologies = [
     {
       icon: <Code className="w-7 h-7 text-white" />,
-      title: "Frontend",
-      description: "React, TypeScript y TailwindCSS para interfaces rápidas y modernas.",
+      title: "Desarrollo Frontend (UI/UX)",
+      description: "React (Next.js), TypeScript y TailwindCSS para crear interfaces rápidas, modernas y centradas en la Experiencia de Usuario (UX).",
       gradient: "from-colorPrimario5/10 to-colorPrimario6/10",
       iconBg: "from-colorSecundario1 to-colorSecundario2"
     },
     {
       icon: <Database className="w-7 h-7 text-white" />,
-      title: "Backend",
-      description: "Node.js y APIs modulares con buenas prácticas.",
+      title: "Arquitectura Backend y APIs",
+      description: "Node.js (Express) y diseño de APIs modulares con buenas prácticas de seguridad y alto rendimiento.",
       gradient: "from-colorSecundario1/10 to-colorSecundario2/10",
       iconBg: "from-colorSecundario1 to-colorSecundario2"
     },
     {
       icon: <Smartphone className="w-7 h-7 text-white" />,
-      title: "Mobile",
-      description: "Apps multiplataforma con React Native / Flutter.",
+      title: "Desarrollo de Apps Móviles Multiplataforma",
+      description: "Aplicaciones multiplataforma rápidas con React Native o Flutter, garantizando la misma experiencia de alta calidad en iOS y Android.",
       gradient: "from-colorPrimario7/10 to-colorPrimario8/10",
       iconBg: "from-colorSecundario1 to-colorSecundario2"
     },
     {
       icon: <Cloud className="w-7 h-7 text-white" />,
-      title: "Cloud",
-      description: "Despliegue y escalado en Vercel / AWS.",
+      title: "Cloud Computing y DevOps",
+      description: "Despliegue escalable y DevOps usando Vercel o AWS/Azure, asegurando la alta disponibilidad y el rendimiento 24/7.",
       gradient: "from-colorSecundario3/10 to-colorSecundario4/10",
       iconBg: "from-colorSecundario1 to-colorSecundario2"
     },
@@ -66,7 +66,7 @@ export default function TechSection() {
             variants={blockVariants}
             transition={{ duration: 0.4}}
           >
-            Utilizamos las tecnologías más modernas y confiables para crear soluciones robustas y escalables
+            Nuestro enfoque se basa en el alto rendimiento y la escalabilidad. Utilizamos tecnologías de vanguardia como Next.js, React y Node.js para construir aplicaciones robústas, seguras y a prueba de futuro.
           </motion.p>
 
           {/* Grid de tecnologías */}
@@ -101,7 +101,7 @@ export default function TechSection() {
                   {tech.title}
                 </h3>
                 
-                <p className="text-colorPrimario1/70 text-sm leading-relaxed">
+                <p className="text-colorPrimario1/70 text-base leading-relaxed">
                   {tech.description}
                 </p>
 
@@ -119,18 +119,19 @@ export default function TechSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.3}}
           >
-            <Link href="/tecnologia" className="group">
+            <Link href="/services" className="group">
               <motion.button 
-                className="relative overflow-hidden text-lg md-tablet:text-xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario2 text-white py-4 px-10 rounded-2xl font-semibold shadow-[0_0_25px_rgba(103,61,230,0.3)] hover:shadow-[0_0_35px_rgba(103,61,230,0.5)] transition-all duration-300"
+                className="relative overflow-hidden text-lg md-tablet:text-xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario2 text-white py-4 px-10 rounded-2xl font-semibold shadow-[0_0_25px_rgba(103,61,230,0.3)] hover:shadow-[0_0_35px_rgba(103,61,230,0.5)] transition-all duration-300 flex items-center gap-3"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Efecto de brillo animado */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 
-                <span className="relative z-10">
-                  Explora todas nuestras tecnologías
-                </span>
+                <p className="relative z-10">
+                  Explora todas nuestras tecnologias
+                </p>
+                <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
             </Link>
           </motion.div>

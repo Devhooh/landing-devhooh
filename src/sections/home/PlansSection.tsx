@@ -8,7 +8,7 @@ export function PlansSection() {
   const planes = [
     {
       title: "Plan Starter",
-      subtitle: "Ideal para emprendedores y pequeñas empresas que buscan su primera presencia digital.",
+      subtitle: "Ideal para Emprendedores y pequeñas empresas que buscan su primera Aplicación Web o MVP.",
       icon: CheckCircle,
       gradient: "from-white to-white",
       iconGradient: "from-colorPrimario5 to-colorPrimario6",
@@ -24,7 +24,7 @@ export function PlansSection() {
     },
     {
       title: "Plan Enterprise",
-      subtitle: "Para empresas que buscan desarrollo avanzado con soporte continuo y escalabilidad.",
+      subtitle: "Para Corporaciones que requieren Desarrollo Avanzado, Integración de IA y Soporte Dedicado.",
       icon: Star,
       gradient: "from-colorDarkFondo2 to-colorDarkFondo4",
       iconGradient: "from-colorSecundario1 to-colorSecundario3",
@@ -40,7 +40,7 @@ export function PlansSection() {
     },
     {
       title: "Plan Business",
-      subtitle: "Para negocios en crecimiento que necesitan soluciones más robustas y escalables.",
+      subtitle: "Para Negocios en Crecimiento que necesitan Soluciones Robustas (API, CMS) y Escalabilidad.",
       icon: Shield,
       gradient: "from-white to-white",
       iconGradient: "from-colorSecundario3 to-colorSecundario4",
@@ -94,7 +94,7 @@ export function PlansSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Elige el plan que mejor se adapte a las necesidades de tu proyecto
+          Elige el plan que mejor se adapte a las necesidades iniciales de tu proyecto y comienza tu camino hacia el desarrollo de software a la medida con transparencia y precios claros.
         </motion.p>
 
         {/* Grid de planes */}

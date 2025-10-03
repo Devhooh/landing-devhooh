@@ -41,7 +41,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
         <h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-4">
           Stack de tecnología que utilizamos
           <br/>
-          para <span className="text-colorPrimario5">{service.name}</span>
+          para <strong className="text-colorPrimario5">{service.name}</strong>
         </h2>
         <p className="mt-3 text-colorPrimario1 text-lg md-tablet:text-xl leading-relaxed">
           {stack.description}
@@ -49,13 +49,13 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
       </motion.div>
 
       {/* Grid de tecnologías */}
-      <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6 mt-8 px-4">
+      <ul className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6 mt-8 px-4">
         {stack.tech.map((item, index) => {
           const Icon =
             (Icons[item.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) || Icons.HelpCircle;
 
           return (
-            <motion.div
+            <motion.li
               key={index}
               custom={index}
               initial="hidden"
@@ -94,7 +94,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
                 {item.listTech.map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-colorHover3 text-colorSecundario4 text-xs font-medium px-3 py-1 rounded-full"
+                    className="bg-colorHover3 text-colorSecundario4 text-base font-medium px-3 py-1 rounded-full"
                   >
                     {tech}
                   </span>
@@ -103,10 +103,10 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
 
               {/* Efecto de brillo en hover */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </motion.div>
+            </motion.li>
           );
         })}
-      </div>
+      </ul>
 
       {/* Botón */}
       <motion.div

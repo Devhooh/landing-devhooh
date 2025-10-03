@@ -187,10 +187,10 @@ export default function ServicesCardsSection() {
           transition={{ duration: 0.3,}}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl
             bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20 backdrop-blur-sm">
             <Target className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
-            <span className="text-colorPrimario5 font-semibold text-lg md-tablet:text-2xl">
+            <span className="text-colorPrimario5 font-semibold text-base md-tablet:text-2xl">
               Trabajemos en tu próximo proyecto ahora!
             </span>
             <Zap className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />

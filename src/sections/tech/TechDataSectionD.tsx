@@ -12,7 +12,7 @@ import {
 
 export default function TechDataSection() {
   return (
-    <div className="grid md-tablet:grid-cols-2 lg-table:grid-cols-1 gap-8 px-10 pb-16">
+    <div className="grid md-tablet:grid-cols-2 lg-table:grid-cols-1 gap-8 px-7 md-tablet:px-10 pb-16">
       <TechCard
         title="Front-End"
         subtitle="Interfaces modernas, responsivas y optimizadas para brindar experiencias de usuario fluidas."

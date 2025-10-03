@@ -39,7 +39,7 @@ export default function TechWhy({
           shadow-[0_0_50px_rgba(103,61,230,0.3)] border border-colorPrimario5/20 
           backdrop-blur-md max-w-6xl w-full
         "
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function TechWhy({
           variants={floatingVariants}
           animate="animate"
         >
-          <Sparkles className="w-6 h-6" />
+          <Sparkles className="w-6 h-6 flex-shrink-0" />
         </motion.div>
 
         {/* Grid principal: imagen + texto */}
@@ -168,12 +168,12 @@ export default function TechWhy({
           transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full 
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-3 rounded-3xl
             bg-gradient-to-r from-colorPrimario5/50 to-colorSecundario1/50 border border-colorPrimario5/20">
             <Code2 className="w-5 h-5 text-colorDarkFondo1 flex-shrink-0" />
-            <span className="text-white font-semibold">
+            <strong className="text-white font-semibold">
               Stack optimizado para máximo rendimiento
-            </span>
+            </strong>
           </div>
         </motion.div>
       </motion.div>

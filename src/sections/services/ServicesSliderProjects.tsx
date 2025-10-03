@@ -44,7 +44,7 @@ export function ServicesSliderProjects({
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
-            <Trophy className="w-5 h-5 text-colorPrimario5" />
+            <Trophy className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold">Nuestra experiencia</span>
           </motion.div>
 
@@ -165,7 +165,7 @@ export function ServicesSliderProjects({
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-2xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Sparkles className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
-            <span className="text-colorPrimario5 font-semibold text-lg">
+            <span className="text-colorPrimario5 font-semibold text-base">
               Cada proyecto es una nueva oportunidad de innovar
             </span>
             <Trophy className="w-6 h-6 text-colorSecundario1 flex-shrink-0" />

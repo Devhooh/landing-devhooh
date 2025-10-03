@@ -61,9 +61,9 @@ export default function ProjectsServicesSection() {
             viewport={{ once: true }}
           >
             Estos son algunos de los proyectos donde aplicamos{" "}
-            <span className="font-bold text-colorPrimario5">
+            <strong className="font-bold text-colorPrimario5">
               nuestra experiencia y tecnología
-            </span>{" "}
+            </strong>{" "}
             para crear soluciones digitales que transforman negocios.
           </motion.p>
         </div>
@@ -95,7 +95,7 @@ export default function ProjectsServicesSection() {
         </motion.ul>
 
         {/* Grid de proyectos mejorado */}
-        <motion.div
+        <motion.ul
           className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-8 mb-16"
           variants={containerVariants}
           initial="hidden"
@@ -103,7 +103,7 @@ export default function ProjectsServicesSection() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {displayedProjects.map((project, index) => (
-            <div
+            <li
               key={project.id}
               className="group relative"
             >
@@ -115,9 +115,9 @@ export default function ProjectsServicesSection() {
               )}
               
                 <ProjectsServicesCard projects={project} />
-            </div>
+            </li>
           ))}
-        </motion.div>
+        </motion.ul>
 
         {/* Sección de call to action mejorada */}
         <motion.div

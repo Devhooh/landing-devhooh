@@ -40,7 +40,7 @@ export default function HeroCenter() {
                    style={{ aspectRatio: '600 / 565' }}>
                 <Image
                   src="/assets/images/herocenter1.png"
-                  alt="Proceso de consultoría y desarrollo de producto digital a medida, enfocado en estrategia de negocio y despliegue tecnológico."
+                  alt="Fase de consultoría estratégica y definición de objetivos para el desarrollo de software a medida y soluciones digitales."
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 549px) 85vw, (max-width: 749px) 70vw, (max-width: 949px) 60vw, (min-width: 950px) 400px"
@@ -154,7 +154,7 @@ export default function HeroCenter() {
                    style={{ aspectRatio: '662 / 574' }}>
                 <Image
                   src="/assets/images/herocenter2.png"
-                  alt="Proceso de consultoría y desarrollo de producto digital a medida, enfocado en estrategia de negocio y despliegue tecnológico."
+                  alt="Despliegue y ejecución del desarrollo de producto digital con código de alta calidad, enfocado en escalabilidad y resultado tecnológico final."
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(min-width: 950px) 400px, 0px"

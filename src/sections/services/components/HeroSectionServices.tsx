@@ -34,7 +34,7 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
     >
       {/* Sparkles decorativo */}
       <motion.div
-        className="absolute top-8 right-8 text-colorFondo opacity-60"
+        className="animate-pulse absolute top-8 right-8 text-colorFondo opacity-60"
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
@@ -46,7 +46,7 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
         variants={fadeUp}
         className="
           text-4xl md-tablet:text-6xl table-lg:text-7xl font-extrabold mb-6 
-          text-colorFondo drop-shadow-lg"
+          text-white drop-shadow-lg"
       >
         {service.name}
       </motion.h1>
@@ -74,7 +74,7 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
             className="px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 transform transition-all duration-300 flex items-center gap-3 drop-shadow-lg"
           >
             <span className="inline-block w-3 h-3 rounded-full bg-colorPrimario5 animate-pulse"></span>
-            Contáctanos
+            Cotiza tu proyecto
             <span className="inline-block w-3 h-3 rounded-full bg-colorSecundario1 animate-pulse"></span>
           </motion.button>
         </Link>

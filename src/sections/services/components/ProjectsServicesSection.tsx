@@ -50,7 +50,7 @@ export default function ProjectsServicesSection() {
           >
             Los proyectos que hemos
             <br />
-            hecho realidad
+            <strong className="text-colorPrimario5"> hecho realidad</strong>
           </motion.h2>
 
           <motion.p

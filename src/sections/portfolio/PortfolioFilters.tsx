@@ -167,7 +167,7 @@ export default function PortfolioFilters() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: 0.3 }}
       viewport={{ once: true }}
-      key={selectedFilterKey} // <--- ¡LA SOLUCIÓN!
+      key={selectedFilterKey}
     >
       <PortfolioCardsGrid filteredProjects={filteredProjects} />
     </motion.div>

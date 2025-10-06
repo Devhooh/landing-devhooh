@@ -76,7 +76,7 @@ export function SolutionsSection() {
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
-            Desarrollo de <strong>soluciones web, móviles e IA</strong> para tu empresa
+            Impulsamos tu empresa con <strong className="text-colorPrimario2">soluciones modernas</strong>
           </motion.h2>
 
           {/* Subtítulo mejorado */}

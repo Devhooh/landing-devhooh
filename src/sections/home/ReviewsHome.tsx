@@ -20,7 +20,7 @@ export default function ReviewsHome() {
             transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
-            Testimonios y Reseñas:
+            <strong className="text-colorPrimario5">Testimonios y Reseñas: </strong>
             <br/>
             Lo que dicen nuestros clientes
           </motion.h2>

@@ -101,9 +101,9 @@ export default function ServicesProjects({
               {showService && project.service && (
                 <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm w-fit">
                   <Tag className="w-4 h-4 text-colorHover4" />
-                  <span className="text-colorPrimario5 font-semibold text-sm">
+                  <strong className="text-colorPrimario5 font-semibold text-sm">
                     {project.service}
-                  </span>
+                  </strong>
                 </div>
               )}
             </div>

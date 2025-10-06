@@ -73,13 +73,13 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
         >
           {splitText(title).map((letter, idx) => {
             return (
-              <motion.span 
+              <motion.strong
                 key={idx} 
                 className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
                 variants={letterVariants}
               >
                 {letter}
-              </motion.span>
+              </motion.strong>
             );
           })}
         </motion.h3>

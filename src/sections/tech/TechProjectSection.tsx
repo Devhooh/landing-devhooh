@@ -22,10 +22,10 @@ export default function TechProjectSection() {
           transition={{ duration: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Proyectos con nuestra{" "}
-          <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
-            tecnología:
-          </span>
+          Proyectos con {" "}
+          <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
+            nuestra tecnología:
+          </strong>
         </motion.h2>
 
         {/* Subtítulo */}

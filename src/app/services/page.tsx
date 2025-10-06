@@ -65,7 +65,6 @@ export default function Services() {
       <GarantiasSection/>
 
       <ServicesSliderProjects 
-        title="Proyectos que usaron nuestros servicios: " 
         subtitle="Desde software personalizado y aplicaciones móviles hasta inteligencia artificial y diseño web. Cada caso refleja cómo ayudamos a empresas a innovar y crecer."
         projects={projectsData}
         showService={true}

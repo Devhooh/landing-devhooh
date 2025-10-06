@@ -116,7 +116,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
                       <X className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-colorPrimario1/80 leading-relaxed">{item}</span>
+                    <p className="text-colorPrimario1/80 leading-relaxed">{item}</p>
                   </li>
                 ))}
               </motion.ul>
@@ -170,7 +170,7 @@ export default function ResultSection({ project }: ResultSectionProps) {
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-colorPrimario1/80 leading-relaxed">{item}</span>
+                    <p className="text-colorPrimario1/80 leading-relaxed">{item}</p>
                   </li>
                 ))}
               </motion.ul>
@@ -222,9 +222,9 @@ export default function ResultSection({ project }: ResultSectionProps) {
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <Award className="w-6 h-6 text-green-500 flex-shrink-0" />
-            <span className="text-colorPrimario5 font-semibold text-lg">
+            <p className="text-colorPrimario5 font-semibold text-lg">
               Transformación exitosa completada
-            </span>
+            </p>
             <TrendingUp className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>

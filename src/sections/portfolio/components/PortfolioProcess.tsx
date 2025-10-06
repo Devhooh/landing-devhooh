@@ -65,9 +65,9 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
             viewport={{ once: true }}
           >
             Proceso de {""} 
-            <span className="text-colorPrimario5">
+            <strong className="text-colorPrimario5">
               desarrollo
-            </span>
+            </strong>
           </motion.h2>
 
           <motion.p

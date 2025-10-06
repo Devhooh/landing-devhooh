@@ -38,7 +38,7 @@ export default function CTAServices() {
             >
               Cuando estés listo:
               <br/>
-              Hablemos sobre tu <span className="text-colorPrimario5"> proyecto </span>
+              Hablemos sobre tu <strong className="text-colorPrimario5"> proyecto </strong>
             </motion.h2>
           </div>
 

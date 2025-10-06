@@ -76,9 +76,9 @@ export default function PortfolioFilters() {
           className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto leading-relaxed mb-8"
         >
           a sus clientes a lograr su visión de{" "}
-          <span className="font-bold text-colorPrimario5">
+          <strong className="font-bold text-colorPrimario5">
             innovación digital
-          </span>{" "}
+          </strong>{" "}
           y transformar sus ideas en soluciones exitosas.
         </motion.p>
 
@@ -182,9 +182,9 @@ export default function PortfolioFilters() {
   >
     <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
       <Sparkles className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
-      <span className="text-colorPrimario5 font-semibold text-lg">
+      <strong className="text-colorPrimario5 font-semibold text-lg">
         ¿Tu proyecto será el próximo caso de éxito?
-      </span>
+      </strong>
       <PartyPopper className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
     </div>
   </motion.div>

@@ -41,7 +41,7 @@ export default function CTATech() {
           className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight mb-4"
         >
           ¿Necesitas una 
-          <span className="text-colorPrimario5"> solución similar?</span>
+          <strong className="text-colorPrimario5"> solución similar?</strong>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -58,12 +58,12 @@ export default function CTATech() {
           <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <Zap className="w-8 h-8 text-colorPrimario5 mb-2" />
             <h3 className="text-xl font-bold text-colorPrimario1">+200%</h3>
-            <p className="text-sm text-gray-700">Rendimiento optimizado</p>
+            <strong className="text-sm text-gray-700">Rendimiento optimizado</strong>
           </li>
           <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <ShieldCheck className="w-8 h-8 text-colorPrimario5 mb-2" />
             <h3 className="text-xl font-bold text-colorPrimario1">99.9%</h3>
-            <p className="text-sm text-gray-700">Seguridad garantizada</p>
+            <strong className="text-sm text-gray-700">Seguridad garantizada</strong>
           </li>
           <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <Rocket className="w-8 h-8 text-colorPrimario5 mb-2" />

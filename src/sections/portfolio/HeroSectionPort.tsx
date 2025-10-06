@@ -21,9 +21,9 @@ export default function HeroSectionPort() {
           >
             <h1 className="text-4xl font-extrabold text-center table-lg:text-right text-colorPrimario2 leading-tight drop-shadow-lg">
               Realidades digitales. {""}
-              <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> 
+              <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> 
                 Resultados que hablan {""}
-              </span>
+              </strong>
               por sí solos
             </h1>
           </motion.div>

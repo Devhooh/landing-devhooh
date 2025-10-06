@@ -67,9 +67,9 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
             viewport={{ once: true }}
           >
             Desafíos y {""}
-            <span className="text-colorPrimario5">
+            <strong className="text-colorPrimario5">
               soluciones
-            </span>
+            </strong>
           </motion.h2>
 
           <motion.p
@@ -158,7 +158,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
                                   <CircleCheckIcon className="w-4 h-4 text-white" />
                                 </div>
-                                <span className="text-colorHover5 leading-relaxed">{items}</span>
+                                <p className="text-colorHover5 leading-relaxed">{items}</p>
                               </motion.li>
                             ))}
                           </ul>

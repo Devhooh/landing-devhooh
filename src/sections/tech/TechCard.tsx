@@ -56,7 +56,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
         {/* Badge superior */}
         <div className="flex items-center gap-2 mb-6">
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg">
-            <Code className="w-5 h-5 text-white" />
+            <Code className="w-5 h-5 text-white flex-shrink-0" />
           </div>
           <div className="px-3 py-1 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <span className="text-white font-semibold text-sm">Especialización</span>
@@ -97,7 +97,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
 
         {/* Contador de tecnologías */}
         <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-          <Sparkles className="w-4 h-4 text-colorSecundario1" />
+          <Sparkles className="w-4 h-4 text-colorSecundario1 flex-shrink-0" />
           <span className="text-colorHover5 font-semibold text-sm">
             {technologies.length} tecnologías disponibles
           </span>

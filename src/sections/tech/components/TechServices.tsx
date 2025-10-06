@@ -63,7 +63,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
-            <Settings className="w-5 h-5 text-colorPrimario5" />
+            <Settings className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold">Especialización técnica</span>
           </div>
         </motion.div>
@@ -73,9 +73,9 @@ export default function TechServices({ name, image, services }: TechServicesProp
           {/* Columna izquierda - Imagen y título */}
           <motion.div 
             className="space-y-8"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
           >
             
@@ -88,9 +88,9 @@ export default function TechServices({ name, image, services }: TechServicesProp
               viewport={{ once: true }}
             >
               Servicios de {""}
-                <span className="text-colorPrimario5">
+                <strong className="text-colorPrimario5">
                   {name}
-                </span>
+                </strong>
               <br />
               que brindamos
             </motion.h2>
@@ -185,7 +185,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
 
                       {/* Badge de especialización */}
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 border border-white/30">
-                        <Sparkles className="w-3 h-3 text-colorPrimario5" />
+                        <Sparkles className="w-3 h-3 text-colorPrimario5 flex-shrink-0" />
                         <span className="text-colorPrimario5 font-semibold text-xs">
                           Servicio especializado
                         </span>

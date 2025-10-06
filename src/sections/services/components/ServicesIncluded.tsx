@@ -65,7 +65,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
               
               <h2 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario2 mb-4 group-hover:text-colorPrimario5 transition-colors duration-300">
                 ¿Por qué elegirnos para tu proyecto de  {""}
-                <span className="text-colorPrimario5 group-hover:text-colorPrimario2">{service.name.toLowerCase()}?</span>
+                <strong className="text-colorPrimario5 group-hover:text-colorPrimario2">{service.name.toLowerCase()}?</strong>
               </h2>
               
               <p className="text-colorPrimario1/80 text-lg md-tablet:text-xl leading-relaxed mb-6 py-5">
@@ -114,7 +114,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
         variants={fadeUp}
       >
         Lo que incluye nuestro servicio de{" "}
-        <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">{service.name}</span>
+        <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">{service.name}</strong>
       </motion.h3>
 
       <motion.p
@@ -129,7 +129,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
       </motion.p>
 
       {/* Grid de beneficios */}
-      <motion.div
+      <motion.ul
         className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6"
         variants={container}
         initial="hidden"
@@ -143,7 +143,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
             >) || Icons.HelpCircle;
 
           return (
-            <motion.div
+            <motion.li
               key={index}
               variants={card}
               className="flex flex-col p-6 rounded-2xl bg-gradient-to-t from-white to-purple-200 border shadow-sm hover:shadow-xl hover:border-fuchsia-400 transition duration-300"
@@ -177,10 +177,10 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </motion.li>
           );
         })}
-      </motion.div>
+      </motion.ul>
     </section>
   );
 }

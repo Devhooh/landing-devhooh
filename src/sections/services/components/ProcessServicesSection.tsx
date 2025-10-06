@@ -25,7 +25,7 @@ const stepVariant: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transition: { duration: 0.3},
   },
 };
 
@@ -102,7 +102,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true}}
           className="relative"
         >
           
@@ -145,7 +145,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                       {/* Header del step */}
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 flex items-center justify-center border border-colorPrimario5/30">
-                          <Clock className="w-5 h-5 text-colorPrimario5" />
+                          <Clock className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
                         </div>
                         <div>
                           <h3 className="text-xl md-tablet:text-2xl font-bold text-colorPrimario2 group-hover:text-colorPrimario5 transition-colors duration-300">
@@ -168,7 +168,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                       {step.points && (
                         <div className="space-y-3">
                           <h4 className="text-colorPrimario2 font-semibold text-sm uppercase tracking-wide flex items-center gap-2">
-                            <CheckCircle className="w-4 h-4 text-colorPrimario5" />
+                            <CheckCircle className="w-4 h-4 text-colorPrimario5 flex-shrink-0" />
                             Incluye:
                           </h4>
                           <ul className="space-y-2">
@@ -182,7 +182,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                                 viewport={{ once: true }}
                               >
                                 <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
-                                  <CheckCircle className="w-3 h-3 text-white" />
+                                  <CheckCircle className="w-3 h-3 text-white flex-shrink-0" />
                                 </div>
                                 <span className="text-colorPrimario1/80 text-sm leading-relaxed">{item}</span>
                               </motion.li>
@@ -212,7 +212,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                         transition={{ duration: 0.4, delay: 0.3 }}
                         viewport={{ once: true }}
                       >
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4 flex-shrink-0"/>
                         <span className="text-sm font-medium">Siguiente paso</span>
                       </motion.div>
                     )}
@@ -231,7 +231,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
           transition={{ duration: 0.3, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold text-lg">
               Proceso optimizado para garantizar el éxito

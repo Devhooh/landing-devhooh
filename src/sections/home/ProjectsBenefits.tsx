@@ -52,7 +52,7 @@ export function ProjectsBenefits() {
           viewport={{ once: true, amount: 0.1 }}
         >
           <motion.h2 
-            className="text-4xl tablet-md:text-5xl font-extrabold mb-7 text-white"
+            className="text-3xl tablet-md:text-5xl font-extrabold mb-7 text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}

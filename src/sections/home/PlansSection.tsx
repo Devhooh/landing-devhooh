@@ -196,7 +196,7 @@ export function PlansSection() {
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.8 }}
+          transition={{ duration: 0.2, delay: 0.2}}
           viewport={{ once: true }}
         >
           <p className="text-colorPrimario1/70 mb-4 font-medium text-xl">

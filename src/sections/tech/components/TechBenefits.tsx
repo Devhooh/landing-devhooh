@@ -120,7 +120,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
                     className={`w-16 h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
                     whileHover={{ rotate: 5, scale: 1.1 }}
                   >
-                    <Icon className="w-8 h-8 text-white" />
+                    <Icon className="w-8 h-8 text-white flex-shrink-0" />
                   </motion.div>
                 </div>
 
@@ -135,7 +135,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
 
                 {/* Badge de beneficio */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm">
-                  <TrendingUp className="w-4 h-4 text-green-500" />
+                  <TrendingUp className="w-4 h-4 text-green-500 flex-shrink-0" />
                   <span className="text-green-600 font-semibold text-sm">
                     Beneficio clave
                   </span>
@@ -156,7 +156,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
           transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-2 md-tablet:py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <Award className="w-6 h-6 text-green-400 flex-shrink-0" />
             <span className="text-colorHover5 font-semibold text-lg">
               Aprovecha todas estas ventajas en tu próximo proyecto

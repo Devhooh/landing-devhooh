@@ -39,7 +39,7 @@ export default function ProjectsServicesCard({ projects }: { projects: ProjectCa
             {projects.company}
           </h2>
           <div className="flex items-center gap-2 text-colorHover5/80 text-sm">
-            <MapPin className="w-4 h-4" />
+            <MapPin className="w-4 h-4 flex-shrink-0"/>
             <span>{projects.location}</span>
           </div>
         </div>

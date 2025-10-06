@@ -46,13 +46,13 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
         >
           Beneficios de nuestro servicio de
           <br/>
-          <span className="text-colorPrimario5">
+          <strong className="text-colorPrimario5">
           {service.name}
-          </span>
+          </strong>
         </motion.h2>
       </div>
 
-      <div className="grid grid-cols-1 md-tablet:grid-cols-2 gap-6 table-lg:gap-8">
+      <ul className="grid grid-cols-1 md-tablet:grid-cols-2 gap-6 table-lg:gap-8">
         {service.benefits.map((benefit, index) => {
           const Icon =
             (Icons[benefit.icon as keyof typeof Icons] as React.ComponentType<
@@ -60,7 +60,7 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
             >) || Icons.HelpCircle;
 
           return (
-            <motion.div
+            <motion.li
               key={index}
               variants={cardVariant}
               initial="hidden"
@@ -79,10 +79,10 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
                 <h3 className="text-lg font-semibold mb-1">{benefit.title}</h3>
                 <p className="text-gray-600 text-sm">{benefit.description}</p>
               </div>
-            </motion.div>
+            </motion.li>
           );
         })}
-      </div>
+      </ul>
     </section>
   );
 }

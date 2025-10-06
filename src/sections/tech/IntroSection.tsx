@@ -39,7 +39,7 @@ export default function IntroSection() {
 
         {/* Hero de Tecnología */}
           <div className="
-            max-w-5xl mx-auto px-10 text-center items-center space-y-4 relative backdrop-blur-md
+            max-w-5xl mx-auto px-6 md-tablet:px-10 text-center items-center space-y-4 relative backdrop-blur-md
             bg-gradient-to-b from-colorHover2/10 to-colorHover3 py-5 rounded-3xl"
           >
             {/* Efectos decorativos en la card */}
@@ -73,7 +73,7 @@ export default function IntroSection() {
 
             {/* Badge de años de experiencia */}
             <motion.div
-              className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-colorPrimario5 border border-colorPrimario5/30 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 mt-8 px-4 md-tablet:px-8 py-3 rounded-full bg-colorPrimario5 border border-colorPrimario5/30 backdrop-blur-sm"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.3 }}

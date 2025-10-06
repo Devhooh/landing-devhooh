@@ -34,7 +34,7 @@ export default function FeaturedSection() {
   const containerVariants: Variants = {
     hidden: {},
     show: {
-      transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+      transition: { staggerChildren: 0.15},
     },
   };
 
@@ -67,7 +67,7 @@ export default function FeaturedSection() {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
-            <Star className="w-5 h-5 text-colorPrimario5" />
+            <Star className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold">Nuestras especialidades</span>
           </div>
         </motion.div>
@@ -120,7 +120,7 @@ export default function FeaturedSection() {
         </motion.ul>
 
         {/* Grid mejorado con cards premium */}
-        <motion.div
+        <motion.ul
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -128,7 +128,7 @@ export default function FeaturedSection() {
           className="grid grid-cols-1 table-lg:grid-cols-2 gap-8"
         >
           {items.map((item, index) => (
-            <motion.div
+            <motion.li
               key={index}
               variants={cardVariants}
               className={`
@@ -163,8 +163,8 @@ export default function FeaturedSection() {
                     {item.title}
                   </h3>
                   <div className="flex items-center gap-2 mt-1">
-                    <TrendingUp className="w-4 h-4 text-colorPrimario5" />
-                    <span className="text-sm text-colorPrimario5 font-semibold">Especialidad destacada</span>
+                    <TrendingUp className="w-4 h-4 text-colorPrimario5 flex-shrink-0" />
+                    <p className="text-sm text-colorPrimario5 font-semibold">Especialidad destacada</p>
                   </div>
                 </div>
               </div>
@@ -184,24 +184,24 @@ export default function FeaturedSection() {
 
               {/* Efecto de brillo en hover */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </motion.div>
+            </motion.li>
           ))}
-        </motion.div>
+        </motion.ul>
 
         {/* Call to action final */}
         <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-2xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Star className="flex-shrink-0 w-6 h-6 text-colorPrimario5" />
             <span className="text-white font-semibold text-lg">
               ¿Cuál de estas especialidades necesita tu proyecto?
             </span>
-            <TrendingUp className="flex-shrink-0 w-6 h-6 text-colorSecundario1" />
+            <TrendingUp className="flex-shrink-0 w-6 h-6 text-colorPrimario5" />
           </div>
         </motion.div>
       </div>

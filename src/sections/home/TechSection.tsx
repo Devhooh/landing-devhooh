@@ -129,7 +129,7 @@ export default function TechSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 
                 <p className="relative z-10">
-                  Explora todas nuestras tecnologias
+                  Explora todas nuestras tecnologías
                 </p>
                 <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>

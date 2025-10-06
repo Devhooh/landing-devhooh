@@ -39,15 +39,15 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
         {/* Subtítulo */}
         <p className="mt-4 text-lg md-tablet:text-lg text-colorPrimario4 max-w-2xl mx-auto">
           Estos son los servicios que ofrecemos en{" "}
-          <span className="font-semibold text-colorSecundario2">
+          <strong className="font-semibold text-colorSecundario2">
             {service.name}
-          </span>
+          </strong>
           , diseñados para adaptarse a tus necesidades y potenciar tu negocio.
         </p>
       </div>
 
       {/* Grid de servicios */}
-      <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6">
+      <ul className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6">
         {service.servicesData.map((item, index) => {
           const Icon =
             (Icons[item.icon as keyof typeof Icons] as React.ComponentType<
@@ -55,7 +55,7 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
             >) || Icons.HelpCircle;
 
           return (
-            <motion.div
+            <motion.li
               key={index}
               variants={cardVariant}
               initial="hidden"
@@ -69,7 +69,7 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
               "
             >
               {/* Icono */}
-              <Icon className="w-14 h-14 text-colorSecundario4 mb-4" />
+              <Icon className="w-14 h-14 text-colorSecundario4 mb-4 flex-shrink-0" />
 
               {/* Título */}
               <h3 className="text-lg font-semibold mb-2">
@@ -80,10 +80,10 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
               <p className="text-gray-300 text-sm leading-relaxed">
                 {item.subtitle}
               </p>
-            </motion.div>
+            </motion.li>
           );
         })}
-      </div>
+      </ul>
 
       <motion.div
           className="relative z-10 text-center mt-20"
@@ -92,7 +92,7 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
           transition={{ duration: 0.3, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-colorPrimario5/20 border border-colorPrimarioLogo1/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-colorPrimario5/20 border border-colorPrimarioLogo1/30 backdrop-blur-sm">
             <Target className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario2 font-semibold text-lg">
               ¿Listo para empezar tu proyecto?

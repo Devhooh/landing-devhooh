@@ -120,7 +120,7 @@ export default function GarantiasSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 rounded-xl font-semibold text-white bg-colorPrimario5 hover:bg-colorPrimario6 transition-all"
+                className="px-4 md-tablet:px-8 py-4 rounded-xl font-semibold text-white bg-colorPrimario5 hover:bg-colorPrimario6 transition-all"
               >
                 Descubre cómo nuestras garantías hacen la diferencia
               </motion.button>

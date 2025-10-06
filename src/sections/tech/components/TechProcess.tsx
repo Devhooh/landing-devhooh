@@ -67,7 +67,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
             transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Así trabajamos el servicio de <span className="font-bold text-colorPrimario5">{name}</span>, paso a paso con metodología ágil
+            Así trabajamos el servicio de <strong className="font-bold text-colorPrimario5">{name}</strong>, paso a paso con metodología ágil
           </motion.p>
         </div>
 
@@ -122,7 +122,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
                       {/* Header del step */}
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 flex items-center justify-center border border-colorPrimario5/30">
-                          <Icon className="w-5 h-5 text-colorPrimario5" />
+                          <Icon className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
                         </div>
                         <div>
                           <h3 className="text-xl md-tablet:text-2xl font-bold text-colorPrimario2 group-hover:text-colorPrimario5 transition-colors duration-300">

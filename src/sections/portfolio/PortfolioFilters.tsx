@@ -14,6 +14,8 @@ export default function PortfolioFilters() {
   const [selectedService, setSelectedService] = useState("Todos");
   const [selectedTechnology, setSelectedTechnology] = useState("Todos");
 
+  const selectedFilterKey = `${selectedProject}-${selectedCountry}-${selectedService}-${selectedTechnology}`;
+
   const filteredProjects = projectsData.filter((project) => {
     const projectMatch = selectedProject === "Todos" || project.ProjectName === selectedProject;
     const countryMatch = selectedCountry === "Todos" || project.location === selectedCountry;
@@ -160,14 +162,15 @@ export default function PortfolioFilters() {
 
   {/* Cards filtradas mejoradas */}
   <motion.div
-    className="relative z-10 px-4 md-tablet:px-8 pb-20"
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3, delay: 0.3 }}
-    viewport={{ once: true }}
-  >
-    <PortfolioCardsGrid filteredProjects={filteredProjects} />
-  </motion.div>
+      className="relative z-10 px-4 md-tablet:px-8 pb-20"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 0.3 }}
+      viewport={{ once: true }}
+      key={selectedFilterKey} // <--- ¡LA SOLUCIÓN!
+    >
+      <PortfolioCardsGrid filteredProjects={filteredProjects} />
+    </motion.div>
 
   {/* Call to action final */}
   <motion.div

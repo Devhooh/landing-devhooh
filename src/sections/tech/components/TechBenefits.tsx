@@ -53,7 +53,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
             viewport={{ once: true }}
           >
             <Award className="w-5 h-5 text-green-400" />
-            <span className="text-green-300 font-semibold">Ventajas competitivas</span>
+            <strong className="text-green-300 font-semibold">Ventajas competitivas</strong>
           </motion.div>
 
           {/* Título con animación letra por letra */}

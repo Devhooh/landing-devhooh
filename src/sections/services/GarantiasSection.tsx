@@ -24,7 +24,8 @@ export default function GarantiasSection() {
             <h2 className="
               text-3xl tablet-md:text-5xl font-extrabold 
               text-colorPrimario1">
-              Confianza y calidad en cada entrega
+              Confianza y calidad en 
+              <strong className="text-colorPrimario5"> cada entrega</strong>
             </h2>
             
             <ul className="flex flex-col gap-4 text-colorPrimario1 text-lg">

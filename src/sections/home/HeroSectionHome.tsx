@@ -35,7 +35,9 @@ export default function HeroSectionHome() {
             transition={{ duration: 0.3, type: "spring" }}
             className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
           >
-            Desarrollo de software inteligente a tu medida
+            Desarrollo de 
+            <strong className="text-colorPrimario5"> software inteligente </strong> 
+            a tu medida
           </motion.h1>
 
           {/* --- 2) IMAGEN --- */}

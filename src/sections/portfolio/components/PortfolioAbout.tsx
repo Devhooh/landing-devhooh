@@ -46,9 +46,9 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
             viewport={{ once: true }}
           >
             Conoce más del {""}
-            <span className="text-colorPrimario5">
+            <strong className="text-colorPrimario5">
               proyecto
-            </span>
+            </strong>
           </motion.h2>
 
           <motion.p

@@ -72,11 +72,9 @@ export default function ImageProject({project}: ChallengeSectionProps) {
               variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
             >
               {splitText(project.company).map((letter, idx) => {
-                const isHighlighted = idx > project.company.length * 0.4;
                 return (
                   <motion.span 
                     key={idx} 
-                    className={isHighlighted ? "text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text" : "text-colorPrimario2"}
                     variants={letterVariants}
                   >
                     {letter}

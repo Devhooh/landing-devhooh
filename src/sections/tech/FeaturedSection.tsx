@@ -68,7 +68,7 @@ export default function FeaturedSection() {
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Star className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
-            <span className="text-colorPrimario5 font-semibold">Nuestras especialidades</span>
+            <strong className="text-colorPrimario5 font-semibold">Nuestras especialidades</strong>
           </div>
         </motion.div>
 
@@ -81,7 +81,7 @@ export default function FeaturedSection() {
         className="text-3xl table-lg:text-5xl font-extrabold text-center mb-4 text-white"
       >
         En qué nos 
-        <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> destacamos</span>
+        <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> destacamos</strong>
       </motion.h2>
 
         {/* Subtítulo mejorado */}
@@ -177,9 +177,9 @@ export default function FeaturedSection() {
               {/* Badge de tecnología */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
                 <div className="w-2 h-2 rounded-full bg-colorPrimario5 animate-pulse"></div>
-                <span className="text-white font-semibold text-sm">
+                <strong className="text-white font-semibold text-sm">
                   Tecnología de vanguardia
-                </span>
+                </strong>
               </div>
 
               {/* Efecto de brillo en hover */}
@@ -198,9 +198,9 @@ export default function FeaturedSection() {
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-2xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Star className="flex-shrink-0 w-6 h-6 text-colorPrimario5" />
-            <span className="text-white font-semibold text-lg">
+            <p className="text-white font-semibold text-lg">
               ¿Cuál de estas especialidades necesita tu proyecto?
-            </span>
+            </p>
             <TrendingUp className="flex-shrink-0 w-6 h-6 text-colorPrimario5" />
           </div>
         </motion.div>

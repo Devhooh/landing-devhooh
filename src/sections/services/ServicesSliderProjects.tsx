@@ -21,7 +21,6 @@ const fadeUpTitle: Variants = {
 
 export function ServicesSliderProjects({
   projects,
-  title,
   subtitle,
   showService = true,
 }: ServicesSliderProjectsProps) {
@@ -56,7 +55,7 @@ export function ServicesSliderProjects({
             transition={{ duration: 0.3}}
             viewport={{ once: true }}
           >
-            {title}
+            Proyectos que usaron <strong className="text-colorPrimario5"> nuestros servicios:</strong> 
           </motion.h2>
 
           {/* Subtítulo mejorado */}

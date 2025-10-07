@@ -64,7 +64,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Settings className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
-            <span className="text-colorPrimario5 font-semibold">Especialización técnica</span>
+            <strong className="text-colorPrimario5 font-semibold">Especialización técnica</strong>
           </div>
         </motion.div>
 
@@ -186,9 +186,9 @@ export default function TechServices({ name, image, services }: TechServicesProp
                       {/* Badge de especialización */}
                       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 border border-white/30">
                         <Sparkles className="w-3 h-3 text-colorPrimario5 flex-shrink-0" />
-                        <span className="text-colorPrimario5 font-semibold text-xs">
+                        <strong className="text-colorPrimario5 font-semibold text-xs">
                           Servicio especializado
-                        </span>
+                        </strong>
                       </div>
                     </div>
 

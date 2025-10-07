@@ -55,7 +55,7 @@ export default function IntroSection() {
               className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorPrimario1 pb-5"
             >
               Todo lo que necesitas para {""}
-              <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">construir y escalar</span>
+              <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">construir y escalar</strong>
               
             </motion.h2>
 
@@ -80,7 +80,7 @@ export default function IntroSection() {
               viewport={{ once: true }}
             >
               <Award className="w-5 h-5 text-white flex-shrink-0" />
-              <span className="text-colorHover5 font-semibold">Empieza tu proyecto con calidad</span>
+              <strong className="text-colorHover5 font-semibold">Empieza tu proyecto con calidad</strong>
             </motion.div>
 
           </div>
@@ -108,7 +108,9 @@ export default function IntroSection() {
           viewport={{ once: true }}
           className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario1"
         >
-          De un vistazo a nuestro kit <br />de herramientas <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> tecnológicas</span>
+          De un vistazo a nuestro kit 
+          <br/>de 
+          <strong className="text-colorPrimario5">  herramientas tecnológicas</strong>
         </motion.h3>
 
         <motion.p

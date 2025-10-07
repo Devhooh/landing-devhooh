@@ -22,7 +22,7 @@ export function ProjectSecitonSlider() {
           transition={{ duration: 0.3, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Empresas que confían en nosotros
+          Empresas que <strong className="text-colorPrimario5"> confían en nosotros</strong>
         </motion.h2>
 
         {/* Subtítulo descriptivo */}

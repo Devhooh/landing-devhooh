@@ -57,7 +57,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
             transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Cómo trabajamos con {name}
+            Cómo trabajamos con <strong className="text-colorPrimario5"> {name}</strong>
           </motion.h2>
 
           <motion.p

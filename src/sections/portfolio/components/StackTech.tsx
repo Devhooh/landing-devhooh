@@ -47,7 +47,7 @@ export default function StackTech({ project }: StackSectionProps) {
             viewport={{ once: true }}
           >
             <Code2 className="w-5 h-5 text-colorPrimario5" />
-            <span className="text-colorPrimario5 font-semibold">Tecnologías utilizadas</span>
+            <strong className="text-colorPrimario5 font-semibold">Tecnologías utilizadas</strong>
           </motion.div>
 
           {/* Título con animación letra por letra */}
@@ -59,9 +59,9 @@ export default function StackTech({ project }: StackSectionProps) {
             viewport={{ once: true }}
           >
             Stack de {""}
-            <span className="text-colorPrimario5">
+            <strong className="text-colorPrimario5">
               tecnologías
-            </span>
+            </strong>
           </motion.h2>
 
           <motion.p
@@ -129,9 +129,9 @@ export default function StackTech({ project }: StackSectionProps) {
                     </h3>
                     <div className="flex items-center gap-2">
                       <Layers className="w-4 h-4 text-colorPrimario1/60" />
-                      <span className="text-sm text-colorPrimario1/60 font-medium">
+                      <strong className="text-sm text-colorPrimario1/60 font-medium">
                         Tecnología principal
-                      </span>
+                      </strong>
                     </div>
                   </div>
                 </div>

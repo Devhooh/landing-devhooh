@@ -6,7 +6,7 @@ import { motion, Variants } from "framer-motion";
 
 import PortfolioCard from "@/sections/portfolio/PortfolioCard";
 import { Project } from "@/data/portfolioData";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const gridContainer = {
   hidden: { opacity: 0 },
@@ -82,10 +82,10 @@ export default function PortfolioCardsGrid({ filteredProjects }: CardsProps) {
 
               {/* Botones custom */}
               <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
-                <ArrowLeft className="w-6 h-6 text-white" />
+                <ChevronLeft className="w-6 h-6 text-white" />
               </div>
               <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-3 rounded-full">
-                <ArrowRight className="w-6 h-6 text-white" />
+                <ChevronRight className="w-6 h-6 text-white" />
               </div>
 
             </Swiper>

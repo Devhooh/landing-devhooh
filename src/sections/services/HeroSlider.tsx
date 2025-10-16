@@ -4,7 +4,7 @@ import HeroCenter from "./HeroCenter";
 import HeroRight from "./HeroRight";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HeroSlider() {
   return (
@@ -36,10 +36,10 @@ export default function HeroSlider() {
 
         {/* Botones custom */}
           <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/35 hover:bg-white/20 p-5 rounded-full">
-            <ArrowLeft className="w-6 h-6 text-colorPrimario1" />
+            <ChevronLeft className="w-8 h-8 text-colorPrimario1" />
           </div>
           <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/35 hover:bg-white/20 p-5 rounded-full">
-            <ArrowRight className="w-6 h-6 text-colorPrimario1" />
+            <ChevronRight className="w-8 h-8 text-colorPrimario1" />
           </div>
 
       </Swiper>

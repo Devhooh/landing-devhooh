@@ -5,7 +5,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import TechProjectCard from "./TechProjectCard";
 import { Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function TechProjectSection() {
   const limit: number = 5;
@@ -75,10 +75,10 @@ export default function TechProjectSection() {
 
           {/* Botones custom */}
           <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/60 hover:bg-white/60 p-3 rounded-full">
-            <ArrowLeft className="w-6 h-6 text-colorPrimario1" />
+            <ChevronLeft className="w-6 h-6 text-colorPrimario1" />
           </div>
           <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/60 hover:bg-white/60 p-3 rounded-full">
-            <ArrowRight className="w-6 h-6 text-colorPrimario1" />
+            <ChevronRight className="w-6 h-6 text-colorPrimario1" />
           </div>
         </Swiper>
       </motion.div>

@@ -33,7 +33,7 @@ export default function TechPage({ params }: Props) {
 
       <TechServices image={tech.image[1]} name={tech.title} services={tech.servicios} />
 
-      <ServicesSliderProjects title="Nuestra experiencia:" projects={projectsData} showService={false}/>
+      <ServicesSliderProjects projects={projectsData} showService={false}/>
 
       <TechProcess name={tech.title} steps={tech.proceso || []}/>
 

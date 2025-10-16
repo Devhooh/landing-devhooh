@@ -75,7 +75,7 @@ export default function BeneficiosSection3() {
                   transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <CheckCircle className="w-5 h-5 text-cyan-500" />
+                  <CheckCircle className="w-6 h-6 text-cyan-500 flex-shrink-0" />
                   <span>{item}</span>
                 </motion.li>
               ))}

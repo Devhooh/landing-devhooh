@@ -24,8 +24,8 @@ export default function GarantiasSection() {
             <h2 className="
               text-3xl tablet-md:text-5xl font-extrabold 
               text-colorPrimario1">
-              Confianza y calidad en 
-              <strong className="text-colorPrimario5"> cada entrega</strong>
+              <strong className="text-colorPrimario5">Confianza y calidad </strong>
+              en cada entrega
             </h2>
             
             <ul className="flex flex-col gap-4 text-colorPrimario1 text-lg">
@@ -44,7 +44,7 @@ export default function GarantiasSection() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <CheckCircle className="w-6 h-6 text-colorPrimario5" />
+                  <CheckCircle className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
                   <span>{item}</span>
                 </motion.li>
               ))}

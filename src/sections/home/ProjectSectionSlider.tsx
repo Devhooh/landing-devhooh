@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { ProjectCard } from "@/sections/home/ProjectCard";
 import { motion} from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function ProjectSecitonSlider() {
   return (
@@ -124,10 +124,10 @@ export function ProjectSecitonSlider() {
 
           {/* Botones custom */}
           <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-5 rounded-full">
-            <ArrowLeft className="w-6 h-6 text-white" />
+            <ChevronLeft className="w-6 h-6 text-white" />
           </div>
           <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/60 hover:bg-colorPrimario1/40 p-5 rounded-full">
-            <ArrowRight className="w-6 h-6 text-white" />
+            <ChevronRight className="w-6 h-6 text-white" />
           </div>
 
         </Swiper>

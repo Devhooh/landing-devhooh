@@ -59,7 +59,7 @@ export default function Navbar() {
             <button
               className="
                 relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
-                bg-gradient-to-r from-gray-900 via-gray-700 to-black
+                bg-gradient-to-l from-gray-900 via-gray-500 to-black
                 animate-gradient
                 transition-all duration-700 ease-in-out
                 hover:scale-[1.05] hover:shadow-[0_0_20px_rgba(236,72,153,0.6)]

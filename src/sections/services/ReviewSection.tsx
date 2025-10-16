@@ -81,7 +81,7 @@ export default function ReviewSection() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center group"
+              className="text-center group bg-sky-100 p-2 md-tablet:p-4 rounded-xl"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1}}
               transition={{ duration: 0.3,}}
@@ -90,7 +90,7 @@ export default function ReviewSection() {
               <div className="text-2xl md-tablet:text-3xl font-bold bg-gradient-to-r from-colorPrimarioLogo1 to-colorSecundario bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                 {stat.number}
               </div>
-              <div className="text-sm text-colorPrimario1/60 font-medium">
+              <div className="text-sm text-colorPrimario2 font-bold">
                 {stat.label}
               </div>
             </motion.div>

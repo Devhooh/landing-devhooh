@@ -5,7 +5,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import ServicesProjects from "./ServicesProjects";
 import { Project } from "@/data/portfolioData";
 import { motion, Variants } from "framer-motion";
-import { ArrowLeft, ArrowRight, Trophy, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, Trophy, Sparkles } from "lucide-react";
 
 interface ServicesSliderProjectsProps {
   projects: Project[];
@@ -142,13 +142,13 @@ export function ServicesSliderProjects({
             {/* Botones de navegación mejorados */}
             <div className="swiper-button-prev-custom absolute left-1 top-1/2 -translate-y-1/2 z-20 cursor-pointer group">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                <ArrowLeft className="w-6 h-6 text-white" />
+                <ChevronLeft className="w-6 h-6 text-white" />
               </div>
             </div>
             
             <div className="swiper-button-next-custom absolute right-1 top-1/2 -translate-y-1/2 z-20 cursor-pointer group">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario2 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                <ArrowRight className="w-6 h-6 text-white" />
+                <ChevronRight className="w-6 h-6 text-white" />
               </div>
             </div>
           </div>

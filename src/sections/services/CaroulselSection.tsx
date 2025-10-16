@@ -6,7 +6,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import CaroulselCard from "./CaroulselCard";
 import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
-import { ArrowLeft, ArrowRight, LucideProps } from "lucide-react";
+import { ChevronLeft, ChevronRight, LucideProps } from "lucide-react";
 
 interface CardData {
   slug: string;
@@ -84,10 +84,10 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
 
           {/* Botones custom */}
           <div className="swiper-button-prev-custom absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/20 p-3 rounded-full">
-            <ArrowLeft className="w-6 h-6 text-colorPrimario1" />
+            <ChevronLeft className="w-6 h-6 text-colorPrimario1" />
           </div>
           <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-colorPrimario1/40 hover:bg-colorPrimario1/20 p-3 rounded-full">
-            <ArrowRight className="w-6 h-6 text-colorPrimario1" />
+            <ChevronRight className="w-6 h-6 text-colorPrimario1" />
           </div>
 
         </Swiper>

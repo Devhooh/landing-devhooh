@@ -55,15 +55,15 @@ export default function BeneficiosSection() {
           transition={{ duration: 0.3}}
           viewport={{ once: true }}
         >
-          <li className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-2xl md-tablet:text-3xl font-bold text-colorPrimario5">+50</div>
             <p className="text-sm text-colorPrimario1/70">proyectos entregados con éxito.</p>
           </li>
-          <li className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-2xl md-tablet:text-3xl font-bold text-colorSecundario1">Hasta 3x</div>
             <p className="text-sm text-colorPrimario1/70">más rápido en implementación que la media.</p>
           </li>
-          <li className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
+          <li className="text-center p-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20">
             <div className="text-2xl md-tablet:text-3xl font-bold text-colorSecundario3">99%</div>
             <p className="text-sm text-colorPrimario1/70">uptime en soluciones en la nube.</p>
           </li>

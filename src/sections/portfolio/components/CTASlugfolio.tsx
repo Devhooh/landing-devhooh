@@ -58,12 +58,12 @@ export default function CTATech() {
           <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <Zap className="w-8 h-8 text-colorPrimario5 mb-2" />
             <h3 className="text-xl font-bold text-colorPrimario1">+200%</h3>
-            <strong className="text-sm text-gray-700">Rendimiento optimizado</strong>
+            <p className="text-sm text-gray-700">Rendimiento optimizado</p>
           </li>
           <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <ShieldCheck className="w-8 h-8 text-colorPrimario5 mb-2" />
             <h3 className="text-xl font-bold text-colorPrimario1">99.9%</h3>
-            <strong className="text-sm text-gray-700">Seguridad garantizada</strong>
+            <p className="text-sm text-gray-700">Seguridad garantizada</p>
           </li>
           <li className="bg-white/70 rounded-xl p-6 flex flex-col items-center">
             <Rocket className="w-8 h-8 text-colorPrimario5 mb-2" />

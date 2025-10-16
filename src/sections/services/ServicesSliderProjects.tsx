@@ -9,7 +9,6 @@ import { ChevronLeft, ChevronRight, Trophy, Sparkles } from "lucide-react";
 
 interface ServicesSliderProjectsProps {
   projects: Project[];
-  title?: string;
   subtitle?: string;
   showService: boolean;
 }

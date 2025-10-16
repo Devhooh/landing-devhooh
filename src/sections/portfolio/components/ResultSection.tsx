@@ -222,9 +222,9 @@ export default function ResultSection({ project }: ResultSectionProps) {
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <Award className="w-6 h-6 text-green-500 flex-shrink-0" />
-            <p className="text-colorPrimario5 font-semibold text-lg">
+            <strong className="text-colorPrimario5 font-semibold text-lg">
               Transformación exitosa completada
-            </p>
+            </strong>
             <TrendingUp className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
         </motion.div>

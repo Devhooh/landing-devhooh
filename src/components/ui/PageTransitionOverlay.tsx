@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function PageTransitionOverlay() {
   const pathname = usePathname();
-  const [visible, setVisible] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const firstLoad = useRef(true);
 
   useEffect(() => {
@@ -17,14 +17,14 @@ export default function PageTransitionOverlay() {
     }
 
     // Mostrar overlay en cambios de ruta
-    setVisible(true);
-    const timer = setTimeout(() => setVisible(false), 400);
+    setIsTransitioning(true);
+    const timer = setTimeout(() => setIsTransitioning(false), 500);
     return () => clearTimeout(timer);
   }, [pathname]);
 
   return (
     <AnimatePresence initial={false}>
-      {visible && (
+      {isTransitioning && (
         <motion.div
           key={pathname}
           className="fixed inset-0 flex items-center justify-center bg-white z-50"

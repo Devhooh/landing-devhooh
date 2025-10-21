@@ -75,19 +75,18 @@ export function SolutionsSection() {
             className="p-0"
           >
             <ul className="flex flex-wrap justify-center gap-8 mt-10">
-              <li className="text-center">
-                <div className="text-2xl md-tablet:text-4xl font-bold text-colorPrimario5">3+</div>
-                <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Especialidades</p>
-              </li>
+              {[
+                { label: "Especialidades", value: "3+" },
+                { label: "Personalizado", value: "100%" },
+                { label: "Soporte", value: "24/7" },
+              ].map((stat, index) => (
+
+                <li key={index} className="text-center">
+                  <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario1">{stat.value}</div>
+                  <p className="text-base md-tablet:text-xl text-colorPrimario1/70">{stat.label}</p>
+                </li>
+              ))}
               {/* ... el resto de <li> ... */}
-              <li className="text-center">
-                <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario1">100%</div>
-                <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Personalizado</p>
-              </li>
-              <li className="text-center">
-                <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario3">24/7</div>
-                <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Soporte</p>
-              </li>
             </ul>
           </InViewAnimationWrapper>
 

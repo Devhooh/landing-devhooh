@@ -1,5 +1,3 @@
-"use client"
-
 import { BenefitsSection } from "@/sections/home/BenefitsSection";
 import CTAHome from "@/sections/home/CTAHome";
 import HeroSectionHome from "@/sections/home/HeroSectionHome";

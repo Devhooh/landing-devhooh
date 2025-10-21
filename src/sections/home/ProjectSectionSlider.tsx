@@ -1,3 +1,4 @@
+"use client";
 import { ProjectSlider } from "./ProjectSlider";
 import { logos } from "@/data/projects";
 import { projectsData } from "@/data/portfolioData";

@@ -3,7 +3,7 @@ import { projectsData } from "@/data/portfolioData";
 import { ProjectSlider } from "./ProjectSlider";
 import { ProjectSwiper } from "./ProjectSwiper";
 import React from 'react';
-import { AnimatedHeading } from "./AnimatedHeading";
+import { AnimatedHeading } from "../../components/ui/AnimatedHeading";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItem } from "@/components/ui/StaggerListItem";
 
@@ -13,8 +13,6 @@ export default function ProjectSectionSlider() {
 
       {/* TÍTULO Y SUBTÍTULO (Contenido Server) */}
       <div className="relative z-10 text-center mb-16 px-4">
-        
-        {/* Título y Subtítulo con motion.h2/motion.p (se renderizan como div/p estáticos, el JS de framer-motion llega después) */}
         <AnimatedHeading className="mb-6" delay={0.2}>
           <h2 className="text-3xl tablet-md:text-5xl font-extrabold mb-6 text-colorPrimario2">
             Empresas que <strong className="text-colorPrimario5"> confían en nosotros</strong>

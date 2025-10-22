@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "@/utils/Motion";
 import React from 'react';
 
 interface ProjectStaggerWrapperProps {

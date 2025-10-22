@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,11 +34,11 @@ export function ProjectCard({
         <Image
           src={imageSrc}
           alt={ProjectName}
-          width={600} // ajusta según el diseño real, por ejemplo 600px de ancho máximo
-          height={256} // ajusta según el alto real mostrado
+          width={600}
+          height={256}
           className="w-full h-full object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-          priority={false} // solo pon true si es LCP
+          priority={false}
           loading="lazy"
         />
         {/* Overlay elegante */}

@@ -1,7 +1,7 @@
 import { SolutionCard } from "./SolutionCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import InViewAnimationWrapper from "@/components/ui/InViewAnimationWrapper";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 
 export function SolutionsSection() {
   const solutions = [
@@ -42,57 +42,53 @@ export function SolutionsSection() {
 
   return (
     <section className="w-full py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden relative">
-
       {/* Encabezado mejorado */}
-      <InViewAnimationWrapper 
-        className="relative z-10 px-4 md-tablet:px-8 flex flex-col text-center items-center mb-20"
-        amount={0.1}
-      >
+      <div className="relative z-10 px-4 md-tablet:px-8 flex flex-col text-center items-center mb-20">
         <div className="max-w-4xl">
-            
           {/* Título principal */}
-          <h2
-            className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"
+          <AnimatedHeading
+            direction="y" offset={40} delay={0.1}
+            className="p-0"
           >
-            Impulsamos tu empresa con <strong className="text-colorPrimario2">soluciones modernas</strong>
-          </h2>
+            <h2
+              className="text-4xl md-tablet:text-5xl font-extrabold mb-8 leading-tight text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario3 bg-clip-text"
+            >
+              Impulsamos tu empresa con <strong className="text-colorPrimario2">soluciones modernas</strong>
+            </h2>
+          </AnimatedHeading>
 
           {/* Subtítulo mejorado */}
-          <InViewAnimationWrapper 
-            transition={{ delay: 0.2 }} // Sobreescribimos el delay
-            amount={0.1}
-            className="p-0" // Aseguramos que no rompa el layout
+          <AnimatedHeading 
+            direction="y" offset={30} delay={0.2}
+            className="p-0" 
           >
             <p className="text-colorPrimario1/80 text-lg md-tablet:text-xl leading-relaxed max-w-3xl mx-auto">
               Creamos páginas web profesionales, aplicaciones móviles nativas y multiplataforma y sistemas empresariales con inteligencia artificial. Te acompañamos desde la idea hasta el lanzamiento para mejorar tu presencia digital, automatizar procesos y hacer tu negocio más competitivo.
             </p>
-          </InViewAnimationWrapper>
+          </AnimatedHeading>
 
           {/* Estadísticas rápidas - También envueltas */}
-          <InViewAnimationWrapper 
-            transition={{ delay: 0.4 }} // Otro delay
-            amount={0.1}
+          <AnimatedHeading 
+            direction="y" offset={20} delay={0.3}
             className="p-0"
           >
             <ul className="flex flex-wrap justify-center gap-8 mt-10">
-              <li className="text-center">
-                <div className="text-2xl md-tablet:text-4xl font-bold text-colorPrimario5">3+</div>
-                <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Especialidades</p>
-              </li>
-              {/* ... el resto de <li> ... */}
-              <li className="text-center">
-                <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario1">100%</div>
-                <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Personalizado</p>
-              </li>
-              <li className="text-center">
-                <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario3">24/7</div>
-                <p className="text-base md-tablet:text-xl text-colorPrimario1/70">Soporte</p>
-              </li>
+              {/* ... Los <li> ya se animarán juntos como bloque ... */}
+              {[
+                { label: "Especialidades", value: "3+" },
+                { label: "Personalizado", value: "100%" },
+                { label: "Soporte", value: "24/7" },
+              ].map((stat, index) => (
+                <li key={index} className="text-center">
+                  <div className="text-2xl md-tablet:text-4xl font-bold text-colorSecundario1">{stat.value}</div>
+                  <p className="text-base md-tablet:text-xl text-colorPrimario1/70">{stat.label}</p>
+                </li>
+              ))}
             </ul>
-          </InViewAnimationWrapper>
+          </AnimatedHeading>
 
         </div>
-      </InViewAnimationWrapper>
+      </div>
 
       {/* Cards mejoradas */}
       <div className="relative z-10 w-full px-4 md-tablet:px-8">
@@ -111,10 +107,9 @@ export function SolutionsSection() {
         </div>
 
         {/* Botón mejorado */}
-        <InViewAnimationWrapper
+        <AnimatedHeading
           className="flex justify-center mt-20"
-          transition={{ delay: 0.3 }}
-          amount={0.3}
+          direction="y" offset={20} delay={0.2}
         >
           <Link href="/services" className="group">
             <button 
@@ -137,7 +132,7 @@ export function SolutionsSection() {
               <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
           </Link>
-        </InViewAnimationWrapper>
+        </AnimatedHeading>
       </div>
     </section>
   );

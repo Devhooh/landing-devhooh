@@ -6,25 +6,38 @@ import React from 'react';
 interface StaggerListContainerProps {
   className: string;
   children: React.ReactNode;
+  staggerDelay?: number; 
+  initialDelay?: number; 
+  viewportAmount?: number;
+  once?: boolean;
 }
 
-const containerVariants: Variants = {
-  show: {
-    transition: {
-      staggerChildren: 0.1,
+export default function StaggerListContainer({ 
+  children, 
+  className, 
+  staggerDelay = 0.1, 
+  initialDelay = 0,
+  viewportAmount = 0.1,
+  once = true,
+}: StaggerListContainerProps) {
+  
+  const containerVariants: Variants = {
+    show: {
+      transition: {
+        staggerChildren: staggerDelay,
+        delayChildren: initialDelay,
+      },
     },
-  },
-  hidden: {}, 
-};
+    hidden: {}, 
+  };
 
-export default function StaggerListContainer({ children, className }: StaggerListContainerProps) {
   return (
     <motion.ul
       className={className}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.1 }}
-      variants={containerVariants} // Aplica la orquestación
+      whileInView="show" 
+      viewport={{ once: once, amount: viewportAmount }}
+      variants={containerVariants}
     >
       {children}
     </motion.ul>

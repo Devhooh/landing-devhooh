@@ -1,13 +1,15 @@
 "use client";
-import { motion } from "@/utils/Motion"; 
+import { motion, Variants, Transition} from "@/utils/Motion"; 
 import React, { ReactNode } from 'react';
 
 interface AnimatedHeadingProps {
-    children: ReactNode;
-    className?: string;
-    delay?: number;
-    direction?: 'x' | 'y';
-    offset?: number;
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  direction?: 'x' | 'y';
+  offset?: number;
+  variants?: Variants;
+  transition?: Transition;
 }
 
 export function AnimatedHeading({ 
@@ -16,23 +18,24 @@ export function AnimatedHeading({
   delay = 0.1,
   direction = 'y',
   offset = 30,
+  variants,
+  transition,
 }: AnimatedHeadingProps) {
-    const initialProps = { 
-      opacity: 0,
-      [direction]: offset 
-    };
 
-    const viewProps = {
-      opacity: 1,
-      [direction]: 0 
-    };
+  const defaultTransition: Transition = { duration: 0.3, delay: delay };
+
+  const finalVariants = variants || {
+    hidden: { opacity: 0, [direction]: offset },
+    show: { opacity: 1, [direction]: 0 },
+  };
 
   return (
     <motion.div
       className={className}
-      initial={initialProps}
-      whileInView={viewProps}
-      transition={{ duration: 0.3, delay: delay }}
+      transition={transition ? transition : defaultTransition}
+      variants={finalVariants} // 💡 USAR finalVariants
+      initial="hidden"
+      whileInView="show"
       viewport={{ once: true }}
     >
       {children}

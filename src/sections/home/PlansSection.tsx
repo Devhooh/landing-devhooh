@@ -1,8 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { CheckCircle, Star, Shield, ArrowRight } from "lucide-react";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import { AnimatedLetters } from "@/components/ui/AnimatedLetters";
 
 export function PlansSection() {
   const planes = [
@@ -56,54 +56,33 @@ export function PlansSection() {
     },
   ];
 
-  const splitText = (text: string) => text.split("");
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 60 },
-    show: { opacity: 1, y: 0 },
-  };
-
   return (
     <section className="w-full py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6">
       <div className="max-w-[1400px] mx-auto px-4 text-center">
         
         {/* Título animado */}
-        <motion.h2
+        <AnimatedLetters 
+          text="Planes estimados"
           className="text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold mb-6 text-colorPrimario2"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
-        >
-          {splitText("Planes estimados").map((letter, idx) => (
-            <motion.span key={idx} variants={letterVariants}>
-              {letter}
-            </motion.span>
-          ))}
-        </motion.h2>
+        />
 
-        <motion.p
+        <AnimatedHeading
           className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
+          direction="y"
+          offset={30}
+          delay={0.3}
         >
           Elige el plan que mejor se adapte a las necesidades iniciales de tu proyecto y comienza tu camino hacia el desarrollo de software a la medida con transparencia y precios claros.
-        </motion.p>
+        </AnimatedHeading>
 
         {/* Grid de planes */}
         <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-8">
           {planes.map((plan, index) => {
             const Icon = plan.icon;
             return (
-              <motion.div
+              <ProjectStaggerWrapper
                 key={index}
+                index={index}
                 className={`
                   relative rounded-3xl p-8 flex flex-col h-full
                   bg-gradient-to-br ${plan.gradient}
@@ -111,14 +90,8 @@ export function PlansSection() {
                   backdrop-blur-sm
                   ${plan.popular ? 'shadow-[0_0_40px_rgba(103,61,230,0.3)] ring-2 ring-colorSecundario1/20' : 'shadow-[0_0_25px_rgba(0,0,0,0.1)]'}
                   hover:shadow-[0_0_50px_rgba(103,61,230,0.2)]
-                  transition-all duration-300
+                  transition-all duration-300 
                 `}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                whileHover={{ y: -8, scale: 1.02 }}
               >
                 
                 {/* Badge de Popular */}
@@ -165,7 +138,7 @@ export function PlansSection() {
 
                 {/* Botón */}
                 <Link href="/contact" className="w-full">
-                  <motion.button
+                  <button
                     className={`
                       group w-full py-4 px-6 rounded-2xl font-semibold text-lg
                       flex items-center justify-center gap-2
@@ -174,43 +147,41 @@ export function PlansSection() {
                         ? 'bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 text-white shadow-[0_0_25px_rgba(103,61,230,0.4)] hover:shadow-[0_0_35px_rgba(103,61,230,0.6)]'
                         : 'bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 text-white shadow-[0_0_20px_rgba(102,60,230,0.3)] hover:shadow-[0_0_30px_rgba(102,60,230,0.5)]'
                       }
-                      hover:scale-105
+                      hover:scale-[1.05] active:scale-[0.98] transform
                     `}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.98 }}
                   >
                     Cotiza tu proyecto
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </motion.button>
+                  </button>
                 </Link>
 
                 {/* Efecto decorativo */}
                 <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-60"></div>
-              </motion.div>
+              </ProjectStaggerWrapper>
             );
           })}
         </div>
 
         {/* Call to action adicional */}
-        <motion.div
+        <AnimatedHeading
           className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2, delay: 0.2}}
-          viewport={{ once: true }}
+          direction="y"
+          offset={30}
+          delay={0.3}
         >
           <p className="text-colorPrimario1/70 mb-4 font-medium text-xl">
             ¿No encuentras el plan perfecto para ti?
           </p>
           <Link href="/contact">
-            <motion.button
-              className="text-colorSecundario1 hover:text-colorSecundario3 font-semibold underline underline-offset-4 hover:underline-offset-8 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
+            <button
+              className="text-colorSecundario1 hover:text-colorSecundario3 
+              font-semibold underline underline-offset-4 hover:underline-offset-8 transition-all duration-300
+              hover:scale-[1.05] active:scale-[0.98] transform"
             >
               Hablemos de tu proyecto personalizado
-            </motion.button>
+            </button>
           </Link>
-        </motion.div>
+        </AnimatedHeading>
       </div>
     </section>
   );

@@ -4,8 +4,8 @@ import { ProjectSlider } from "./ProjectSlider";
 import { ProjectSwiper } from "./ProjectSwiper";
 import React from 'react';
 import { AnimatedHeading } from "../../components/ui/AnimatedHeading";
-import { FlexibleAnimatedList } from "@/components/ui/FlexibleAnimatedList";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
 
 export default function ProjectSectionSlider() {
   return (
@@ -26,7 +26,7 @@ export default function ProjectSectionSlider() {
         </AnimatedHeading>
 
         {/* Estadísticas de impacto */}
-        <FlexibleAnimatedList 
+        <StaggerListContainer
           className="flex flex-wrap justify-center gap-8 mb-12"
         >
           {[
@@ -44,7 +44,7 @@ export default function ProjectSectionSlider() {
               <p className="text-sm text-colorPrimario1/70">{val.label}</p>
             </StaggerListItemClient>
           ))}
-        </FlexibleAnimatedList>
+        </StaggerListContainer>
       </div>
 
       {/* SLIDERS DE LOGOS */}

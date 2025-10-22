@@ -1,8 +1,8 @@
 import React from 'react';
 import { CheckCircle, BadgeCheck } from "lucide-react";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
-import { FlexibleAnimatedList } from "@/components/ui/FlexibleAnimatedList"; 
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import StaggerListContainer from '@/components/ui/StaggerListContainer';
 
 export function ProjectsSection() {
   return (
@@ -21,7 +21,7 @@ export function ProjectsSection() {
       </AnimatedHeading>
 
         {/* Métricas de impacto (Lista) */}
-      <FlexibleAnimatedList className="flex justify-center gap-8 flex-wrap mb-12">
+      <StaggerListContainer className="flex justify-center gap-8 flex-wrap mb-12">
         {[
           { text: "20+ proyectos entregados" },
           { text: "10+ industrias distintas" },
@@ -37,7 +37,7 @@ export function ProjectsSection() {
             <span className="text-colorPrimario2 font-semibold">{metric.text}</span>
           </StaggerListItemClient>
         ))}
-        </FlexibleAnimatedList>
+        </StaggerListContainer>
 
       {/* Texto + lista */}
       <div className="max-w-5xl mx-auto px-6 md-tablet:px-12 mb-10 flex flex-col table-lg:flex-row items-start gap-4">
@@ -58,7 +58,7 @@ export function ProjectsSection() {
 
         {/* Lista */}
         <div className="flex-1 flex flex-col justify-center items-center table-lg:items-start">
-          <FlexibleAnimatedList className="flex flex-col gap-3 text-gray-800 text-base md-tablet:text-lg table-lg:text-xl">
+          <StaggerListContainer className="flex flex-col gap-3 text-gray-800 text-base md-tablet:text-lg table-lg:text-xl">
             {[
               <><strong>Soluciones de software personalizadas</strong> y escalables (Next.js/React)</>,
               <>Integración de <strong>Inteligencia Artificial</strong> y Machine Learning</>,
@@ -75,7 +75,7 @@ export function ProjectsSection() {
                 <span>{item}</span>
               </StaggerListItemClient>
             ))}
-          </FlexibleAnimatedList>
+          </StaggerListContainer>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import ImageAnimatedWrapper from "@/components/ui/ImageAnimatedWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { CircleCheck } from "lucide-react";
-import { FlexibleAnimatedList } from "@/components/ui/FlexibleAnimatedList";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
 
 export default function HeroSectionHome() {
   const listItems = [
@@ -53,7 +53,7 @@ export default function HeroSectionHome() {
             </h2>
           </AnimatedHeading>
     
-          <FlexibleAnimatedList
+          <StaggerListContainer
             className="order-4 space-y-2 text-base..."
           >
             {listItems.map((item, idx) => (
@@ -67,7 +67,7 @@ export default function HeroSectionHome() {
                 <span>{item}</span>
               </StaggerListItemClient>
             ))}
-          </FlexibleAnimatedList>
+          </StaggerListContainer>
     
           {/* Botones: */}
           <AnimatedHeading

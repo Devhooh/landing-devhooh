@@ -6,7 +6,6 @@ import React from 'react';
 interface ProjectStaggerWrapperProps {
   children: React.ReactNode;
   className?: string;
-  isListItem?: boolean;
   index?: number; 
 }
 
@@ -20,48 +19,22 @@ const generateTextVariants = (i: number): Variants => ({
   },
 });
 
-// Devuelve las variantes de lista
-const generateListItemVariants = (): Variants => ({
-  hidden: { opacity: 0, x: -20 },
-  show: { opacity: 1, x: 0 },
-});
-
-
 export default function ProjectStaggerWrapper({
   children,
   className,
-  isListItem = false,
   index = 0
 }: ProjectStaggerWrapperProps) {
 
-   // 1. Calcular las variantes a aplicar
-  const variantsToApply: Variants = isListItem 
-    ? generateListItemVariants() 
-    : generateTextVariants(index);
-
-      // 2. Si es un bloque (motion.div)
-  if (!isListItem) {
-    return (
-      <motion.div
-        className={className}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={variantsToApply}
-        custom={index} 
-      >
-        {children}
-      </motion.div>
-    );
-  }
-
-    // 3. Si es un elemento de lista (motion.li)
   return (
-    <motion.li
+    <motion.div
       className={className}
-      variants={variantsToApply}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={generateTextVariants(index)}
+      custom={index} 
     >
       {children}
-    </motion.li>
+    </motion.div>
   );
 }

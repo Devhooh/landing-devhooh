@@ -26,14 +26,13 @@ interface ProjectSwiperProps {
   projectsData: ProjectData[]; 
 }
 
-// 💡 2. Variante del CONTENEDOR: Define el CÚANDO y el CADA CUÁNTO.
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
       delay: 0.3, 
-      staggerChildren: 0.15, // ⬅️ CLAVE: Retraso entre la entrada de cada tarjeta (0.15s)
+      staggerChildren: 0.2,
       delayChildren: 0.2, 
     },
   },
@@ -43,9 +42,9 @@ export function ProjectSwiper({ projectsData }: ProjectSwiperProps) {
   return (
     <motion.div 
       className="relative z-10 max-w-[1550px] mx-auto md-tablet:px-0 mb-10"
-      variants={containerVariants} // Usamos las variantes del contenedor
+      variants={containerVariants} 
       initial="hidden"
-      whileInView="show" // Se dispara la cascada cuando el Swiper entra en el viewport
+      whileInView="show"
       viewport={{ once: true }}
     >
       <Swiper
@@ -66,7 +65,6 @@ export function ProjectSwiper({ projectsData }: ProjectSwiperProps) {
         }}
         className="max-w-full mx-auto"
       >
-        {/* 💡 SwiperSlide es CLIENTE, pero envuelve a ProjectCard que es SERVER */}
         {projectsData.slice(0, 4).map((project, index) => (
           <SwiperSlide 
             key={index} 

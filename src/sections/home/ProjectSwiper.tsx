@@ -3,9 +3,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { ProjectCard } from "@/sections/home/ProjectCard";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from 'react';
+import { AnimatedProjectSlide } from "@/components/ui/AnimatedProjectSlide";
 
 interface ProjectData {
   id: number;
@@ -25,13 +26,26 @@ interface ProjectSwiperProps {
   projectsData: ProjectData[]; 
 }
 
+// 💡 2. Variante del CONTENEDOR: Define el CÚANDO y el CADA CUÁNTO.
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delay: 0.3, 
+      staggerChildren: 0.15, // ⬅️ CLAVE: Retraso entre la entrada de cada tarjeta (0.15s)
+      delayChildren: 0.2, 
+    },
+  },
+};
+
 export function ProjectSwiper({ projectsData }: ProjectSwiperProps) {
   return (
     <motion.div 
       className="relative z-10 max-w-[1550px] mx-auto md-tablet:px-0 mb-10"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: 0.4 }}
+      variants={containerVariants} // Usamos las variantes del contenedor
+      initial="hidden"
+      whileInView="show" // Se dispara la cascada cuando el Swiper entra en el viewport
       viewport={{ once: true }}
     >
       <Swiper
@@ -58,8 +72,9 @@ export function ProjectSwiper({ projectsData }: ProjectSwiperProps) {
             key={index} 
             className="h-auto px-5 md-tablet:px-10 max-w-3xl flex py-10 justify-center"
           >
-            {/* ProjectCard se renderiza en el servidor y su HTML se inserta aquí */}
-            <ProjectCard {...project} />
+            <AnimatedProjectSlide> 
+              <ProjectCard {...project} />
+            </AnimatedProjectSlide>
           </SwiperSlide>
         ))}
 

@@ -13,7 +13,7 @@ export default function ReviewsHome() {
         <AnimatedHeading
           direction="y"
           offset={30}
-          delay={0.3}
+          delay={0.2}
           className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario2"
         >
           <h2>
@@ -26,7 +26,7 @@ export default function ReviewsHome() {
         <AnimatedHeading
           direction="y"
           offset={30}
-          delay={0.4}
+          delay={0.3}
           className="my-8 text-colorPrimario1 text-base md-tablet:text-lg table-lg:text-xl max-w-2xl mx-auto leading-relaxed"
         >
           <p>

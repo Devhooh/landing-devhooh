@@ -70,7 +70,7 @@ export function BenefitsSection() {
         </div>
   
         {/* CARDS HORIZONTALES */}
-        <StaggerListContainer className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
           {benefits.map((benefit, index) => {
             const IconComponent = IconMap[benefit.icon];
   
@@ -96,7 +96,7 @@ export function BenefitsSection() {
               </ProjectStaggerWrapper>
             )
           })}
-        </StaggerListContainer>
+        </div>
   
         {/* SECCIÓN INFERIOR: LISTA E IMAGEN */}
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">

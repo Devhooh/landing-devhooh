@@ -3,7 +3,7 @@
 import { motion, Variants } from "@/utils/Motion";
 import React from 'react';
 
-interface AnimatedH2Props {
+interface AnimatedLettersProps {
   text: string;
   className?: string;
   staggerDelay?: number;
@@ -24,7 +24,7 @@ export function AnimatedLetters({
   className, 
   staggerDelay = 0.03, 
   initialY = 20,
-}: AnimatedH2Props) {
+}: AnimatedLettersProps) {
   
   // 2. Variantes del contenedor (para el staggerChildren)
   const containerVariants: Variants = {

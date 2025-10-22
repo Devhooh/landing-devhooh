@@ -54,7 +54,7 @@ export default function HeroSectionHome() {
           </AnimatedHeading>
     
           <StaggerListContainer
-            className="order-4 space-y-2 text-base..."
+            className="order-4 space-y-2 text-base md-tablet:text-lg text-gray-800 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
           >
             {listItems.map((item, idx) => (
               <StaggerListItemClient

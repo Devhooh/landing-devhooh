@@ -32,7 +32,7 @@ export default function ProjectSectionSlider() {
           {[
             { value: "20+", label: "Empresas atendidas"},
             { value: "98%", label: "Tasa de éxito" },
-            { value: "24m", label: "Tiempo promedio"},  
+            { value: "24m", label: "Tiempo promedio"},
           ].map((val, index) => (
             <StaggerListItemClient
               key={index}

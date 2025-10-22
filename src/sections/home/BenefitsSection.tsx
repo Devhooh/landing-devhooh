@@ -133,7 +133,7 @@ export function BenefitsSection() {
             
             <ImageAnimatedWrapper
               direction="x" // Lo muevo desde la derecha
-              offset={30}
+              offset={20}
               className="w-fit"
             >
               <div className="relative p-6 table-lg:p-4 lg-table:p-8 rounded-3xl bg-gradient-to-br from-colorSecundario1/20 to-colorSecundario3/20 backdrop-blur-sm border border-white/10 w-fit">

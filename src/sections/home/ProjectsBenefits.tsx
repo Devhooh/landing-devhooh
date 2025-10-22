@@ -1,16 +1,6 @@
-"use client";
-
-import { motion, Variants } from "framer-motion";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 import { Shield, Star, Wrench } from "lucide-react";
-
-const listItemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, type: "spring", stiffness: 50 },
-  }),
-};
 
 interface Benefit {
   icon: JSX.Element;
@@ -45,47 +35,36 @@ export function ProjectsBenefits() {
 
       <div className="max-w-6xl mx-auto ">
         {/* Título SEO y descripción */}
-        <motion.div
-          className="text-center mb-8"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <motion.h2 
-            className="text-3xl tablet-md:text-5xl font-extrabold mb-7 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
+        <div className="text-center mb-8">
+          <AnimatedHeading
+            direction="y"
+            offset={30}
+            delay={0.3}
           >
-            ¿Por qué Devhooh?
-            <br/>
-            Nuestras ventajas competitivas
-          </motion.h2>
+            <h2 className="text-3xl tablet-md:text-5xl font-extrabold mb-7 text-white">
+              ¿Por qué Devhooh?
+              <br/>
+              Nuestras ventajas competitivas
+            </h2>
+          </AnimatedHeading>
 
-          <motion.p 
-            className="text-gray-200 text-base tablet-md:text-lg max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            viewport={{ once: true }}
+          <AnimatedHeading
+            direction="y"
+            offset={30}
+            delay={0.4}
           >
-            Vamos más allá de la programación. Nuestro valor reside en la excelencia continua, la metodología ágil y el compromiso total con la visión de tu proyecto. Aseguramos que cada solución de software a medida impulse el crecimiento y la eficiencia de tu negocio.
-          </motion.p>
-        </motion.div>
+            <p className="text-gray-200 text-base tablet-md:text-lg max-w-3xl mx-auto">
+              Vamos más allá de la programación. Nuestro valor reside en la excelencia continua, la metodología ágil y el compromiso total con la visión de tu proyecto. Aseguramos que cada solución de software a medida impulse el crecimiento y la eficiencia de tu negocio.
+            </p>
+          </AnimatedHeading>
+        </div>
 
         {/* Cards de beneficios */}
-        <motion.div
-          className="flex flex-col tablet-md:flex-row gap-6"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.1 }}
-        >
+        <div className="flex flex-col tablet-md:flex-row gap-6">
           {benefits.map((benefit, idx) => (
-            <motion.div
+            <ProjectStaggerWrapper
               key={idx}
-              custom={idx}
-              variants={listItemVariants}
+              index={idx}
               className="flex flex-col gap-4 bg-colorDarkFondo5 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex-1"
             >
               <div>{benefit.icon}</div>
@@ -93,9 +72,9 @@ export function ProjectsBenefits() {
                 {benefit.title}
               </h3>
               <p className="text-gray-200 text-sm tablet-md:text-base">{benefit.description}</p>
-            </motion.div>
+            </ProjectStaggerWrapper>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

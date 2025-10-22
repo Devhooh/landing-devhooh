@@ -1,22 +1,11 @@
-"use client";
-
-import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { Mail, Sparkles, ArrowRight } from "lucide-react";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import { FloatingWrapper } from "@/components/ui/FloatingWrapper";
 
 export default function CTAHome() {
-
-  const floatingVariants: Variants = {
-    animate: {
-      y: [0, -10, 0],
-      rotate: [0, 5, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
 
   return (
     <section className="relative w-full py-20 overflow-hidden">
@@ -27,74 +16,64 @@ export default function CTAHome() {
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
           
           {/* Columna izquierda - Contenido */}
-          <motion.div
-            className="text-center table-lg:text-left"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center table-lg:text-left">
             {/* Título principal animado */}
-            <motion.h2
-              className="text-3xl md-tablet:text-5xl font-extrabold mb-6 leading-tight text-white"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: true }}
+            <AnimatedHeading
+              direction="y"
+              offset={30}
+              delay={0.3}
             >
-              Queremos que tu empresa sea nuestro próximo{" "}
-              <span className="text-green-500">
-                caso de éxito
-              </span>
-            </motion.h2>
-
+              <h2 className="text-3xl md-tablet:text-5xl font-extrabold mb-6 leading-tight text-white">
+                Queremos que tu empresa sea nuestro próximo{" "}
+                <span className="text-green-500">
+                  caso de éxito
+                </span>
+              </h2>
+            </AnimatedHeading>
 
             {/* Subtítulo */}
-            <motion.p
-              className="text-lg md-tablet:text-xl text-colorHover5 mb-8 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4}}
-              viewport={{ once: true }}
+            <AnimatedHeading
+              direction="y"
+              offset={20}
+              delay={0.4}
             >
-              Impulsa tu proyecto con soluciones digitales innovadoras, hechas a tu medida y respaldadas por años de experiencia
-            </motion.p>
+              <p className="text-lg md-tablet:text-xl text-colorHover5 mb-8 max-w-2xl mx-auto">
+                Impulsa tu proyecto con soluciones digitales innovadoras, hechas a tu medida y respaldadas por años de experiencia
+              </p>
+            </AnimatedHeading>
 
             {/* Estadísticas rápidas */}
-            <motion.ul
+            <StaggerListContainer
               className="flex flex-wrap justify-center table-lg:justify-start gap-8 mb-10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5}}
-              viewport={{ once: true }}
-            >
-              <li className="text-center">
-                <div className="text-2xl font-bold text-colorPrimario7">20+</div>
-                <p className="text-sm text-colorHover5">Proyectos</p>
-              </li>
-              <li className="text-center">
-                <div className="text-2xl font-bold text-colorPrimario7">99%</div>
-                <p className="text-sm text-colorHover5">Satisfacción</p>
-              </li>
-              <li className="text-center">
-                <div className="text-2xl font-bold text-colorPrimario7">24/7</div>
-                <p className="text-sm text-colorHover5">Soporte</p>
-              </li>
-            </motion.ul>
+            >{[
+              {data: "20+", text: "Proyectos"},
+              {data: "99%", text: "Satisfacción"},
+              {data: "24/7", text: "Soporte"},
+
+            ].map((value, index) => (
+
+              <StaggerListItemClient 
+                direction="x"
+                offset={-20}
+                key={index} className="text-center"
+              >
+                <div className="text-2xl font-bold text-colorPrimario7">{value.data}</div>
+                <p className="text-sm text-colorHover5">{value.text}</p>
+              </StaggerListItemClient>
+            ))}
+            </StaggerListContainer>
 
             {/* Botón principal */}
-            <motion.div
+            <AnimatedHeading
               className="flex flex-col md-tablet:flex-row gap-4 justify-center table-lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4}}
-              viewport={{ once: true }}
+              direction="y"
+              offset={20}
+              delay={0.4}
             >
               <Link href="/contact">
-                <motion.button
-                  className="group relative overflow-hidden px-8 py-4 rounded-2xl font-bold text-lg bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white shadow-[0_0_30px_rgba(103,61,230,0.4)] hover:shadow-[0_0_40px_rgba(103,61,230,0.6)] transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
+                <button
+                  className="group relative overflow-hidden px-8 py-4 rounded-2xl font-bold text-lg bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+                  text-white shadow-[0_0_30px_rgba(103,61,230,0.4)] hover:shadow-[0_0_40px_rgba(103,61,230,0.6)] transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] transform"
                 >
                   {/* Efecto de brillo */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -103,39 +82,35 @@ export default function CTAHome() {
                     ¡Empezamos tu proyecto hoy!
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
-                </motion.button>
+                </button>
               </Link>
 
-            </motion.div>
-          </motion.div>
+            </AnimatedHeading>
+          </div>
 
           {/* Columna derecha - Visual */}
-          <motion.div
+          <AnimatedHeading
             className="flex justify-center table-lg:justify-end"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true }}
+            direction="x"
+            offset={20}
+            delay={0.4}
           >
             <div className="relative">
               {/* Contenedor principal del visual */}
               <div className="relative w-80 h-80 md-tablet:w-96 md-tablet:h-96">
                 
                 {/* Círculo principal */}
-                <motion.div
+
+                <FloatingWrapper
                   className="absolute inset-0 rounded-full bg-gradient-to-br from-colorPrimario5/20 to-colorSecundario1/20 backdrop-blur-sm border border-white/10"
-                  variants={floatingVariants}
-                  animate="animate"
-                ></motion.div>
+                />
 
                 {/* Mail icon central */}
-                <motion.div
+                <FloatingWrapper
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 flex items-center justify-center"
-                  variants={floatingVariants}
-                  animate="animate"
                 >
                   <Mail className="w-20 h-20 tablet-md:w-32 tablet-md:h-32 text-white" />
-                </motion.div>
+                </FloatingWrapper>
 
                 {/* Sparkles decorativos */}
                 <div className="absolute top-16 right-16 text-colorPrimario5 animate-pulse">
@@ -160,7 +135,7 @@ export default function CTAHome() {
                 ></div>
               </div>
             </div>
-          </motion.div>
+          </AnimatedHeading>
         </div>
       </div>
     </section>

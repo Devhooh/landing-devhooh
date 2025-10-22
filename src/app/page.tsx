@@ -3,7 +3,7 @@ import CTAHome from "@/sections/home/CTAHome";
 import HeroSectionHome from "@/sections/home/HeroSectionHome";
 import { PlansSection } from "@/sections/home/PlansSection";
 import { ProjectsBenefits } from "@/sections/home/ProjectsBenefits";
-import ProjectSecitonSlider  from "@/sections/home/ProjectSectionSlider";
+import ProjectSectionSlider  from "@/sections/home/ProjectSectionSlider";
 import { ProjectsSection } from "@/sections/home/ProjectsSection";
 import ReviewsHome from "@/sections/home/ReviewsHome";
 import { SolutionsSection } from "@/sections/home/SolutionsSection";
@@ -22,7 +22,7 @@ export default function Home() {
       <BenefitsSection/>
 
       {/* Nuestros clientes */}
-      <ProjectSecitonSlider/>
+      <ProjectSectionSlider/>
 
       {/* Reviews de clientes */}
       <ReviewsHome/>

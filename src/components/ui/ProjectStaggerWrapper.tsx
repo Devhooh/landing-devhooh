@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "@/utils/Motion";
 import React from 'react';
 
 interface ProjectStaggerWrapperProps {
@@ -11,11 +11,11 @@ interface ProjectStaggerWrapperProps {
 
 // Devuelve las variantes de texto/párrafo
 const generateTextVariants = (i: number): Variants => ({
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, type: "spring", stiffness: 50 },
+    transition: { delay: i * 0.1, stiffness: 50 },
   },
 });
 

@@ -70,7 +70,7 @@ export function BenefitsSection() {
         </div>
   
         {/* CARDS HORIZONTALES */}
-        <StaggerListContainer className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
           {benefits.map((benefit, index) => {
             const IconComponent = IconMap[benefit.icon];
   
@@ -96,7 +96,7 @@ export function BenefitsSection() {
               </ProjectStaggerWrapper>
             )
           })}
-        </StaggerListContainer>
+        </div>
   
         {/* SECCIÓN INFERIOR: LISTA E IMAGEN */}
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
@@ -137,7 +137,7 @@ export function BenefitsSection() {
               className="w-fit"
             >
               <div className="relative p-6 table-lg:p-4 lg-table:p-8 rounded-3xl bg-gradient-to-br from-colorSecundario1/20 to-colorSecundario3/20 backdrop-blur-sm border border-white/10 w-fit">
-                <div className="w-90 h-90 md-tablet:w-[450px] md-tablet:h-[450x] table-lg:w-96 table-lg:h-96 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorSecundario3 flex items-center justify-center overflow-hidden">
+                <div className="w-90 h-90 md-tablet:w-[450px] md-tablet:h-[450px] table-lg:w-96 table-lg:h-96 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorSecundario3 flex items-center justify-center overflow-hidden">
                   <Image
                     src="/assets/images/beneficiosweb.png"
                     width={643}

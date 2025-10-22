@@ -33,7 +33,7 @@ export function AnimatedHeading({
     <motion.div
       className={className}
       transition={transition ? transition : defaultTransition}
-      variants={finalVariants} // 💡 USAR finalVariants
+      variants={finalVariants}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}

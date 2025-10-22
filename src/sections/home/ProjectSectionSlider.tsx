@@ -4,8 +4,8 @@ import { ProjectSlider } from "./ProjectSlider";
 import { ProjectSwiper } from "./ProjectSwiper";
 import React from 'react';
 import { AnimatedHeading } from "../../components/ui/AnimatedHeading";
-import StaggerListContainer from "@/components/ui/StaggerListContainer";
-import { StaggerListItem } from "@/components/ui/StaggerListItem";
+import { FlexibleAnimatedList } from "@/components/ui/FlexibleAnimatedList";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
 export default function ProjectSectionSlider() {
   return (
@@ -26,20 +26,25 @@ export default function ProjectSectionSlider() {
         </AnimatedHeading>
 
         {/* Estadísticas de impacto */}
-        <StaggerListContainer className="flex flex-wrap justify-center gap-8 mb-12">
+        <FlexibleAnimatedList 
+          className="flex flex-wrap justify-center gap-8 mb-12"
+        >
           {[
             { value: "20+", label: "Empresas atendidas"},
             { value: "98%", label: "Tasa de éxito" },
-            { value: "24m", label: "Tiempo promedio"},  
-          ].map((val, idx) => (
-            <StaggerListItem 
+            { value: "24m", label: "Tiempo promedio"},  
+          ].map((val, index) => (
+            <StaggerListItemClient
+              key={index}
               className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20"
-              key={idx}>
-                <div className="text-2xl md-tablet:text-3xl font-bold text-colorPrimario5">{val.value}</div>
-                <p className="text-sm text-colorPrimario1/70">{val.label}</p>
-            </StaggerListItem>
+              direction="y" 
+              offset={40} 
+            >
+              <div className="text-2xl md-tablet:text-3xl font-bold text-colorPrimario5">{val.value}</div>
+              <p className="text-sm text-colorPrimario1/70">{val.label}</p>
+            </StaggerListItemClient>
           ))}
-        </StaggerListContainer>
+        </FlexibleAnimatedList>
       </div>
 
       {/* SLIDERS DE LOGOS */}

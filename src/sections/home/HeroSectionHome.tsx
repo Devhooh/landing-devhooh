@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from 'react';
+import Image from "next/image";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
-import HeroImageAnimation from "@/components/ui/HeroImageAnimation";
+import ImageAnimatedWrapper from "@/components/ui/ImageAnimatedWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { CircleCheck } from "lucide-react";
 import { FlexibleAnimatedList } from "@/components/ui/FlexibleAnimatedList";
@@ -29,10 +30,20 @@ export default function HeroSectionHome() {
           </AnimatedHeading>
     
           {/* Contenedor para la image: */}
-          <HeroImageAnimation
+          <ImageAnimatedWrapper
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
-          </HeroImageAnimation>
+            <div className="relative w-[460px] h-[460px] md-tablet:w-[600px] md-tablet:h-[600px] rounded-2xl">
+              <Image
+                src="/assets/images/hero-home.png"
+                alt="Equipo de desarrollo creando software a medida con inteligencia artificial"
+                fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 462px"
+                className="object-contain"
+                priority
+              />
+            </div>
+          </ImageAnimatedWrapper>
     
           <AnimatedHeading 
             className="order-3 text-lg md-tablet:text-xl text-center table-lg:text-left text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"

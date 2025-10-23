@@ -38,7 +38,7 @@ export default function ImageAnimatedWrapper({
   children,
   className,
   direction = 'y',
-  offset = 40,
+  offset = 30,
   scale = 1,
   viewportAmount = 0.3
 }: AnimatedWrapperProps) {

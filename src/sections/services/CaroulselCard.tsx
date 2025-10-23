@@ -1,4 +1,3 @@
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,21 +10,16 @@ interface CardData {
 
 export default function CaroulselCard({
   card,
-  index = 0,
 }: {
   card: CardData;
   index?: number;
 }) {
   return (
-    <InViewAnimationWrapper
-      direction="y"
-      offset={30}
-      delay={index * 0.2}
-      transition={{ duration: 0.4, delay: index * 0.2}}
+    <div
       className="
         bg-white border border-colorPrimarioLogo2 hover:border-colorPrimarioLogo1
         rounded-2xl shadow-xl overflow-hidden h-[490px] flex flex-col 
-        hover:scale-[1.05] active:scale-[0.98] transform transition-all"
+        hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
     >
       {/* Imagen */}
       <div className="flex items-center justify-center p-6 h-40 md-tablet:h-48">
@@ -55,8 +49,7 @@ export default function CaroulselCard({
         <Link href="/contact">
           <button 
             className="
-            relative w-full py-2 rounded-lg bg-colorPrimario5 text-white font-semibold overflow-hidden
-            hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
+            relative w-full py-2 rounded-lg bg-colorPrimario5 text-white font-semibold overflow-hidden"
           >
             <span className="relative z-10">Cotiza tu proyecto</span>
             <span className="absolute inset-0 bg-white/30 -translate-x-full rotate-45 animate-shine" />
@@ -65,13 +58,12 @@ export default function CaroulselCard({
 
         <Link href={`/services/${card.slug}`}>
           <button className="
-            w-full py-2 rounded-lg border border-colorSecundario2 text-colorPrimario4 font-medium bg-white
-            hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
+            w-full py-2 rounded-lg border border-colorSecundario2 text-colorPrimario4 font-medium bg-white"
           >
             Ver más detalles
           </button>
         </Link>
       </div>
-    </InViewAnimationWrapper>
+    </div>
   );
 }

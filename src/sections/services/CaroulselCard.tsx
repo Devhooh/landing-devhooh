@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,21 +17,15 @@ export default function CaroulselCard({
   index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30}}
-      whileInView={{ opacity: 1, y: 0}}
-      viewport={{ once: true, amount: 0.2 }}
+    <InViewAnimationWrapper
+      direction="y"
+      offset={30}
+      delay={index * 0.2}
       transition={{ duration: 0.4, delay: index * 0.2}}
-      whileHover={{
-        scale: 1.04,
-        rotateX: 1.5,
-        rotateY: -1.5,
-        transition: { duration: 0.2 },
-      }}
       className="
         bg-white border border-colorPrimarioLogo2 hover:border-colorPrimarioLogo1
-        rounded-2xl shadow-xl overflow-hidden h-[490px]
-        flex flex-col"
+        rounded-2xl shadow-xl overflow-hidden h-[490px] flex flex-col 
+        hover:scale-[1.05] active:scale-[0.98] transform transition-all"
     >
       {/* Imagen */}
       <div className="flex items-center justify-center p-6 h-40 md-tablet:h-48">
@@ -61,18 +53,25 @@ export default function CaroulselCard({
       {/* Botones */}
       <div className="mb-12 px-5 flex flex-col gap-4">
         <Link href="/contact">
-          <button className="relative w-full py-2 rounded-lg bg-colorPrimario5 text-white font-semibold overflow-hidden">
+          <button 
+            className="
+            relative w-full py-2 rounded-lg bg-colorPrimario5 text-white font-semibold overflow-hidden
+            hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
+          >
             <span className="relative z-10">Cotiza tu proyecto</span>
             <span className="absolute inset-0 bg-white/30 -translate-x-full rotate-45 animate-shine" />
           </button>
         </Link>
 
         <Link href={`/services/${card.slug}`}>
-          <button className="w-full py-2 rounded-lg border border-colorSecundario2 text-colorPrimario4 font-medium transition bg-white hover:bg-colorHover3">
+          <button className="
+            w-full py-2 rounded-lg border border-colorSecundario2 text-colorPrimario4 font-medium bg-white
+            hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
+          >
             Ver más detalles
           </button>
         </Link>
       </div>
-    </motion.div>
+    </InViewAnimationWrapper>
   );
 }

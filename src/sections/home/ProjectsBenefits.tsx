@@ -1,4 +1,4 @@
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 import { Shield, Star, Wrench } from "lucide-react";
 
@@ -36,7 +36,7 @@ export function ProjectsBenefits() {
       <div className="max-w-6xl mx-auto ">
         {/* Título SEO y descripción */}
         <div className="text-center mb-8">
-          <AnimatedHeading
+          <InViewAnimationWrapper
             direction="y"
             offset={30}
             delay={0.3}
@@ -46,9 +46,9 @@ export function ProjectsBenefits() {
               <br/>
               Nuestras ventajas competitivas
             </h2>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
 
-          <AnimatedHeading
+          <InViewAnimationWrapper
             direction="y"
             offset={30}
             delay={0.4}
@@ -56,7 +56,7 @@ export function ProjectsBenefits() {
             <p className="text-gray-200 text-base tablet-md:text-lg max-w-3xl mx-auto">
               Vamos más allá de la programación. Nuestro valor reside en la excelencia continua, la metodología ágil y el compromiso total con la visión de tu proyecto. Aseguramos que cada solución de software a medida impulse el crecimiento y la eficiencia de tu negocio.
             </p>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
         </div>
 
         {/* Cards de beneficios */}

@@ -1,4 +1,4 @@
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 import { Code, Database, Smartphone, Cloud, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -33,7 +33,7 @@ export default function TechSection() {
         {/* Contenido principal */}
         <div className="max-w-[1400px] mx-auto px-4">
           {/* Título animado letra por letra */}
-          <AnimatedHeading
+          <InViewAnimationWrapper
             direction="y"
             offset={30}
             delay={0.2}
@@ -41,9 +41,9 @@ export default function TechSection() {
             <h2 className="text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold mb-6 text-colorPrimario2">
               Nuestro stack tecnológico
             </h2>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
           
-          <AnimatedHeading
+          <InViewAnimationWrapper
             direction="y"
             offset={30}
             delay={0.3}
@@ -51,7 +51,7 @@ export default function TechSection() {
             <p className="text-colorPrimario1/80 mb-16 max-w-3xl mx-auto text-lg md-tablet:text-xl">
               Nuestro enfoque se basa en el alto rendimiento y la escalabilidad. Utilizamos tecnologías de vanguardia como Next.js, React y Node.js para construir aplicaciones robústas, seguras y a prueba de futuro.
             </p>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
 
           {/* Grid de tecnologías */}
           <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-4 gap-8 mb-16">
@@ -90,7 +90,7 @@ export default function TechSection() {
           </div>
 
           {/* Botón */}
-          <AnimatedHeading
+          <InViewAnimationWrapper
             className="flex justify-center"
             direction="y" offset={20} delay={0.2}
           >
@@ -111,7 +111,7 @@ export default function TechSection() {
                 <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </Link>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
         </div>
       </div>
     </section>

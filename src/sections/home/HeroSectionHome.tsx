@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from 'react';
 import Image from "next/image";
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import ImageAnimatedWrapper from "@/components/ui/ImageAnimatedWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { CircleCheck } from "lucide-react";
@@ -19,7 +19,7 @@ export default function HeroSectionHome() {
     <section className="relative w-full bg-colorFondo overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6 mb-10">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
-          <AnimatedHeading 
+          <InViewAnimationWrapper 
             className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
             direction="y" offset={40} delay={0.2}>
             <h1>
@@ -27,7 +27,7 @@ export default function HeroSectionHome() {
               <strong className="text-colorPrimario5"> software inteligente </strong> 
               a tu medida
             </h1>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
     
           {/* Contenedor para la image: */}
           <ImageAnimatedWrapper
@@ -45,13 +45,13 @@ export default function HeroSectionHome() {
             </div>
           </ImageAnimatedWrapper>
     
-          <AnimatedHeading 
+          <InViewAnimationWrapper 
             className="order-3 text-lg md-tablet:text-xl text-center table-lg:text-left text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
             direction="y" offset={30} delay={0.3}>
             <h2>
               Desarrollo de páginas web modernas, aplicaciones móviles y sistemas empresariales con inteligencia artificial para que tu negocio sea más innovador, eficiente y competitivo en el mercado digital.
             </h2>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
     
           <StaggerListContainer
             className="order-4 space-y-2 text-base md-tablet:text-lg text-gray-800 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
@@ -70,7 +70,7 @@ export default function HeroSectionHome() {
           </StaggerListContainer>
     
           {/* Botones: */}
-          <AnimatedHeading
+          <InViewAnimationWrapper
             direction="y" offset={20} delay={0.3}
             className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
           >
@@ -93,7 +93,7 @@ export default function HeroSectionHome() {
                 Ver nuestro portafolio
               </button>
             </Link>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ interface AnimatedHeadingProps {
   transition?: Transition;
 }
 
-export function AnimatedHeading({ 
+export function InViewAnimationWrapper({ 
   children, 
   className, 
   delay = 0.1,

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, Sparkles, ArrowRight } from "lucide-react";
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { FloatingWrapper } from "@/components/ui/FloatingWrapper";
@@ -18,7 +18,7 @@ export default function CTAHome() {
           {/* Columna izquierda - Contenido */}
           <div className="text-center table-lg:text-left">
             {/* Título principal animado */}
-            <AnimatedHeading
+            <InViewAnimationWrapper
               direction="y"
               offset={30}
               delay={0.3}
@@ -29,10 +29,10 @@ export default function CTAHome() {
                   caso de éxito
                 </span>
               </h2>
-            </AnimatedHeading>
+            </InViewAnimationWrapper>
 
             {/* Subtítulo */}
-            <AnimatedHeading
+            <InViewAnimationWrapper
               direction="y"
               offset={20}
               delay={0.4}
@@ -40,7 +40,7 @@ export default function CTAHome() {
               <p className="text-lg md-tablet:text-xl text-colorHover5 mb-8 max-w-2xl mx-auto">
                 Impulsa tu proyecto con soluciones digitales innovadoras, hechas a tu medida y respaldadas por años de experiencia
               </p>
-            </AnimatedHeading>
+            </InViewAnimationWrapper>
 
             {/* Estadísticas rápidas */}
             <StaggerListContainer
@@ -64,7 +64,7 @@ export default function CTAHome() {
             </StaggerListContainer>
 
             {/* Botón principal */}
-            <AnimatedHeading
+            <InViewAnimationWrapper
               className="flex flex-col md-tablet:flex-row gap-4 justify-center table-lg:justify-start"
               direction="y"
               offset={20}
@@ -85,11 +85,11 @@ export default function CTAHome() {
                 </button>
               </Link>
 
-            </AnimatedHeading>
+            </InViewAnimationWrapper>
           </div>
 
           {/* Columna derecha - Visual */}
-          <AnimatedHeading
+          <InViewAnimationWrapper
             className="flex justify-center table-lg:justify-end"
             direction="x"
             offset={20}
@@ -135,7 +135,7 @@ export default function CTAHome() {
                 ></div>
               </div>
             </div>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
         </div>
       </div>
     </section>

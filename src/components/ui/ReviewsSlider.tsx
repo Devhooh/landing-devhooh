@@ -2,29 +2,13 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ReviewData } from "@/data/reviewData";
 import { Pagination } from "swiper/modules";
 import { ReviewsHomeCard } from "@/sections/home/ReviewsHomeCard"; 
 
-// 💡 Usamos el tipo COMPLETO. Si lo tienes en otro archivo, impórtalo.
-interface Review {
-  id: number;
-  logoUrl: string;
-  projectTitle: string;
-  reviewBody: string;
-  reviewerName: string;
-  position: string;
-  reviewerProfileUrl: string;
-  rating: number;
-  quality: number;
-  schedule: number;
-  cost: number;
-  willingnessToRecommend: number;
-}
-
-
 interface ReviewsSliderProps {
   // 💡 Cambiamos ReviewItem por Review
-  reviews: Review[]; 
+  reviews: ReviewData[]; 
   variant: "mobile" | "tablet"; // Define la variante de la tarjeta a renderizar
 }
 

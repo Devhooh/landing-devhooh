@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CheckCircle, Star, Shield, ArrowRight } from "lucide-react";
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 import { AnimatedLetters } from "@/components/ui/AnimatedLetters";
 
@@ -66,14 +66,14 @@ export function PlansSection() {
           className="text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold mb-6 text-colorPrimario2"
         />
 
-        <AnimatedHeading
+        <InViewAnimationWrapper
           className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto mb-16"
           direction="y"
           offset={30}
           delay={0.3}
         >
           Elige el plan que mejor se adapte a las necesidades iniciales de tu proyecto y comienza tu camino hacia el desarrollo de software a la medida con transparencia y precios claros.
-        </AnimatedHeading>
+        </InViewAnimationWrapper>
 
         {/* Grid de planes */}
         <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-8">
@@ -163,7 +163,7 @@ export function PlansSection() {
         </div>
 
         {/* Call to action adicional */}
-        <AnimatedHeading
+        <InViewAnimationWrapper
           className="mt-16 text-center"
           direction="y"
           offset={30}
@@ -181,7 +181,7 @@ export function PlansSection() {
               Hablemos de tu proyecto personalizado
             </button>
           </Link>
-        </AnimatedHeading>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

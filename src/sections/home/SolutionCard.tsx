@@ -20,11 +20,7 @@ export function SolutionCard({
   index = 0
 }: SolutionCardProps) {
   return (
-    <InViewAnimationWrapper // 💡 ¡Reemplazo aquí!
-      variants={{
-        hidden: { opacity: 0, y: 20, scale: 0.90 },
-        show: { opacity: 1, y: 0, scale: 1 },
-      }}
+    <InViewAnimationWrapper
       transition={{ type: "spring", stiffness: 50, damping: 15, delay: 0.1 * index! }} 
       className={`
         relative max-w-5xl mx-auto

@@ -1,9 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { BadgeCheck   } from "lucide-react";
-import { motion } from "framer-motion";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
 export default function HeroLeft() {
   return (
@@ -12,12 +12,11 @@ export default function HeroLeft() {
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <motion.div
+          <InViewAnimationWrapper
             className="order-1 mt-6 table-lg:mt-2"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3}}
-            viewport={{ once: true }}
+            direction="x"
+            offset={-20}
+            delay={0.2}
           >
             <h1 className="
               text-4xl font-extrabold leading-tight text-center table-lg:text-left 
@@ -26,16 +25,15 @@ export default function HeroLeft() {
               ¿Buscas desarrollo de calidad y escalable? 
               <span className="text-colorPrimario2"> Aquí lo tienes.</span>
             </h1>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* Imagen mejorada */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={20}
+            delay={0.3}
             className="
               order-2 mt-5 mb-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center"
-            initial={{ opacity: 0, x: -30}}
-            whileInView={{ opacity: 1, x: 0}}
-            transition={{ duration: 0.4}}
-            viewport={{ once: true }}
           >
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
@@ -58,75 +56,59 @@ export default function HeroLeft() {
                 className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></div>
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
 
 
           {/* --- 3) SUBTÍTULO --- */}
-          <motion.div
+          <InViewAnimationWrapper
             className="order-3 mb-5 table-lg:mb-0"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4}}
-            viewport={{ once: true }}
+            direction="x"
+            offset={-20}
+            delay={0.3}
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
               Descubre nuestros servicios de desarrollo y conoce las tecnologías web y herramientas que utilizamos para llevar tus proyectos digitales al siguiente nivel.
             </p>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* --- 4) LISTA --- */}
-          <motion.ul
+          <StaggerListContainer
             className="order-4 flex justify-center table-lg:justify-start flex-col space-y-4 text-white text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
-            initial="hidden"
-            whileInView="show"
-            variants={{
-              hidden: {},
-              show: {
-                transition: { staggerChildren: 0.15 },
-              },
-            }}
-            viewport={{ once: true }}
           >
             {[
               "Diseño web responsivo y adaptable para todos los dispositivos",
               "Entrega puntual de proyectos con alta calidad garantizada",
               "Arquitectura de software escalable y mantenible"
             ].map((feature, index) => (
-              <motion.li
+              <StaggerListItemClient
                 key={index}
+                direction="x"
+                offset={-20}
                 className="flex items-start gap-3"
-                variants={{
-                  hidden: { opacity: 0, x: -30 },
-                  show: { opacity: 1, x: 0 },
-                }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <BadgeCheck   className="w-6 h-6 text-cyan-400 flex-shrink-0" />
                 <span className="text-base md-tablet:text-lg">{feature}</span>
-              </motion.li>
+              </StaggerListItemClient>
             ))}
-          </motion.ul>
+          </StaggerListContainer>
 
           {/* --- 5) BOTÓN --- */}
-          <motion.div
+          <InViewAnimationWrapper
             className="order-5 flex justify-center table-lg:justify-start mt-10 mb-5 table-lg:mt-5"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4}}
-            viewport={{ once: true }}
+            direction="x"
+            offset={-20}
+            delay={0.3}
           >
             <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 className="
                   px-10 py-3 text-lg md-tablet:text-xl font-semibold bg-white text-black rounded-lg shadow-md 
-                  transform transition-all duration-300 border border-colorSecundario2"
+                  transition-all duration-300 border border-colorSecundario2 hover:scale-[1.05] active:scale-[0.98] transform"
               >
                 Empieza tu proyecto
-              </motion.button>
+              </button>
             </Link>
-          </motion.div>
+          </InViewAnimationWrapper>
 
         </div>
       </div>

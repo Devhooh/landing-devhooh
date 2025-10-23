@@ -17,6 +17,7 @@ export default function HeroCenter() {
             direction="y"
             offset={20}
             delay={0.3}
+            transition={{duration: 0.5}}
           >
             <h2 className="mt-5 text-4xl md-tablet:text-5xl font-extrabold leading-tight drop-shadow-lg text-white">
               De la estrategia a tu
@@ -29,6 +30,7 @@ export default function HeroCenter() {
             direction="x"
             offset={-20}
             delay={0.3}
+            transition={{duration: 0.6}}
             className="order-2 table-lg:order-none flex justify-center table-lg:justify-end mb-8 table-lg:mb-14 table-lg:mt-8"
           >
             <div className="relative group w-full max-w-md">
@@ -61,6 +63,7 @@ export default function HeroCenter() {
               direction="y"
               offset={20}
               delay={0.3}
+              transition={{duration: 0.5}}
               className="hidden table-lg:block md-tablet:mt-2"
             >
               <h2 className="mt-5 text-4xl font-extrabold leading-tight drop-shadow-lg text-white">
@@ -74,6 +77,7 @@ export default function HeroCenter() {
               direction="y"
               offset={-20}
               delay={0.3}
+              transition={{duration: 0.5}}
               className="order-3 table-lg:order-none"
             >
               <p className="text-lg md-tablet:text-xl text-white max-w-2xl">
@@ -107,6 +111,7 @@ export default function HeroCenter() {
               direction="y"
               offset={20}
               delay={0.3}
+              transition={{duration: 0.4}}
               className="order-5 table-lg:order-none mt-8 table-lg:mt-4 mb-10"
             >
               <Link href="/contact">
@@ -126,6 +131,7 @@ export default function HeroCenter() {
             direction="x"
             offset={20}
             delay={0.3}
+            transition={{duration: 0.6}}
             className="hidden table-lg:flex justify-start mb-14 table-lg:mt-8"
           >
             <div className="relative group w-full max-w-md">

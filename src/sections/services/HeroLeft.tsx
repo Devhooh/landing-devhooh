@@ -16,7 +16,8 @@ export default function HeroLeft() {
             className="order-1 mt-6 table-lg:mt-2"
             direction="x"
             offset={-20}
-            delay={0.2}
+            delay={0.3}
+            transition={{duration: 0.5}}
           >
             <h1 className="
               text-4xl font-extrabold leading-tight text-center table-lg:text-left 
@@ -32,6 +33,7 @@ export default function HeroLeft() {
             direction="x"
             offset={20}
             delay={0.3}
+            transition={{ duration: 0.4}}
             className="
               order-2 mt-5 mb-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center"
           >
@@ -65,6 +67,7 @@ export default function HeroLeft() {
             direction="x"
             offset={-20}
             delay={0.3}
+            transition={{ duration: 0.5}}
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
               Descubre nuestros servicios de desarrollo y conoce las tecnologías web y herramientas que utilizamos para llevar tus proyectos digitales al siguiente nivel.
@@ -98,6 +101,7 @@ export default function HeroLeft() {
             direction="x"
             offset={-20}
             delay={0.3}
+            transition={{ duration: 0.4}}
           >
             <Link href="/contact">
               <button

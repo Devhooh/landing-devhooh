@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 
 interface SolutionCardProps {
   title: string;
@@ -20,7 +20,7 @@ export function SolutionCard({
   index = 0
 }: SolutionCardProps) {
   return (
-    <AnimatedHeading // 💡 ¡Reemplazo aquí!
+    <InViewAnimationWrapper // 💡 ¡Reemplazo aquí!
       variants={{
         hidden: { opacity: 0, y: 20, scale: 0.90 },
         show: { opacity: 1, y: 0, scale: 1 },
@@ -109,6 +109,6 @@ export function SolutionCard({
           </div>
         </div>
       </div>
-    </AnimatedHeading>
+    </InViewAnimationWrapper>
   );
 }

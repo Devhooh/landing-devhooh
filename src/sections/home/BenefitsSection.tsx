@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import React from 'react';
 
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import StaggerListContainer from "@/components/ui/StaggerListContainer"; 
 import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
@@ -52,7 +52,7 @@ export function BenefitsSection() {
         
         {/* TÍTULO Y SUBTÍTULO */}
         <div className="text-center mb-16">
-          <AnimatedHeading 
+          <InViewAnimationWrapper 
             direction="y" 
             offset={30} 
             delay={0}
@@ -60,13 +60,13 @@ export function BenefitsSection() {
             <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold leading-tight mb-6 text-white">
               Beneficios de nuestro desarrollo de software
             </h2>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
           
-          <AnimatedHeading direction="y" offset={20} delay={0.2}>
+          <InViewAnimationWrapper direction="y" offset={20} delay={0.2}>
             <p className="text-lg md-tablet:text-xl text-colorHover5 max-w-2xl mx-auto">
               Nuestra metodología se centra en la calidad, el rendimiento y la seguridad. Ofrecemos soluciones digitales robustas y escalables, respaldadas por un equipo experto.
             </p>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
         </div>
   
         {/* CARDS HORIZONTALES */}
@@ -101,7 +101,7 @@ export function BenefitsSection() {
         {/* SECCIÓN INFERIOR: LISTA E IMAGEN */}
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-center table-lg:text-left">
-            <AnimatedHeading
+            <InViewAnimationWrapper
               direction="y" 
               offset={30} 
               delay={0}
@@ -109,7 +109,7 @@ export function BenefitsSection() {
               <h3 className="text-3xl md-tablet:text-4xl font-bold text-white mb-8">
                 Lo que incluye tu proyecto
               </h3>
-            </AnimatedHeading>
+            </InViewAnimationWrapper>
             
             <StaggerListContainer className="space-y-4 inline-block table-lg:block text-left">
               {checklistItems.map((item, index) => (

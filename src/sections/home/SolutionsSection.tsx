@@ -1,7 +1,7 @@
 import { SolutionCard } from "./SolutionCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 
 export function SolutionsSection() {
   const solutions = [
@@ -46,7 +46,7 @@ export function SolutionsSection() {
       <div className="relative z-10 px-4 md-tablet:px-8 flex flex-col text-center items-center mb-20">
         <div className="max-w-4xl">
           {/* Título principal */}
-          <AnimatedHeading
+          <InViewAnimationWrapper
             direction="y" offset={40} delay={0.1}
             className="p-0"
           >
@@ -55,20 +55,20 @@ export function SolutionsSection() {
             >
               Impulsamos tu empresa con <strong className="text-colorPrimario2">soluciones modernas</strong>
             </h2>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
 
           {/* Subtítulo mejorado */}
-          <AnimatedHeading 
+          <InViewAnimationWrapper 
             direction="y" offset={30} delay={0.2}
             className="p-0" 
           >
             <p className="text-colorPrimario1/80 text-lg md-tablet:text-xl leading-relaxed max-w-3xl mx-auto">
               Creamos páginas web profesionales, aplicaciones móviles nativas y multiplataforma y sistemas empresariales con inteligencia artificial. Te acompañamos desde la idea hasta el lanzamiento para mejorar tu presencia digital, automatizar procesos y hacer tu negocio más competitivo.
             </p>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
 
           {/* Estadísticas rápidas - También envueltas */}
-          <AnimatedHeading 
+          <InViewAnimationWrapper 
             direction="y" offset={20} delay={0.3}
             className="p-0"
           >
@@ -85,7 +85,7 @@ export function SolutionsSection() {
                 </li>
               ))}
             </ul>
-          </AnimatedHeading>
+          </InViewAnimationWrapper>
 
         </div>
       </div>
@@ -107,7 +107,7 @@ export function SolutionsSection() {
         </div>
 
         {/* Botón mejorado */}
-        <AnimatedHeading
+        <InViewAnimationWrapper
           className="flex justify-center mt-20"
           direction="y" offset={20} delay={0.2}
         >
@@ -132,7 +132,7 @@ export function SolutionsSection() {
               <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
           </Link>
-        </AnimatedHeading>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

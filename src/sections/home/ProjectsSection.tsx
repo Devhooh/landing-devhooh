@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle, BadgeCheck } from "lucide-react";
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import StaggerListContainer from '@/components/ui/StaggerListContainer';
 
@@ -9,7 +9,7 @@ export function ProjectsSection() {
     <section className="w-full pb-10 pt-10 tablet-md:pt-32 mb-10 bg-white">
 
       {/* Título */}
-      <AnimatedHeading 
+      <InViewAnimationWrapper 
         className="text-center max-w-4xl mx-auto px-6 mb-6 md-tablet:mb-12"
         direction="y"
         offset={40}
@@ -18,7 +18,7 @@ export function ProjectsSection() {
         <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-colorPrimario2 to-colorPrimario1">
           Proyectos que generan <strong className="text-colorPrimario5"> resultados reales</strong>
         </h2>
-      </AnimatedHeading>
+      </InViewAnimationWrapper>
 
         {/* Métricas de impacto (Lista) */}
       <StaggerListContainer className="flex justify-center gap-8 flex-wrap mb-12">
@@ -42,7 +42,7 @@ export function ProjectsSection() {
       {/* Texto + lista */}
       <div className="max-w-5xl mx-auto px-6 md-tablet:px-12 mb-10 flex flex-col table-lg:flex-row items-start gap-4">
         {/* Bloque de texto (Párrafo) */}
-        <AnimatedHeading
+        <InViewAnimationWrapper
           className="flex-1 text-center table-lg:text-left"
           direction="y"
           offset={30}
@@ -54,7 +54,7 @@ export function ProjectsSection() {
             integrando <strong>soluciones web, móviles e Inteligencia Artificial</strong>. No solo resolvemos problemas; 
             <strong> escalamos tu negocio</strong> y mejoramos la experiencia de tus clientes a través de la tecnología.
           </p>
-        </AnimatedHeading>
+        </InViewAnimationWrapper>
 
         {/* Lista */}
         <div className="flex-1 flex flex-col justify-center items-center table-lg:items-start">

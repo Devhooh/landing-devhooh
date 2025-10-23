@@ -2,7 +2,7 @@ import React from "react";
 import { reviewData } from "@/data/reviewData";
 
 import { ReviewsHomeCard } from "./ReviewsHomeCard";
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import { ReviewsSlider } from "@/components/ui/ReviewsSlider";
 
 export default function ReviewsHome() {
@@ -10,7 +10,7 @@ export default function ReviewsHome() {
     <div className="max-w-8xl bg-colorHover5 py-10 mx-2 px-4">
       {/* Título y descripción */}
       <div className="text-center mb-12">
-        <AnimatedHeading
+        <InViewAnimationWrapper
           direction="y"
           offset={30}
           delay={0.2}
@@ -21,9 +21,9 @@ export default function ReviewsHome() {
             <br/>
             Lo que dicen nuestros clientes
           </h2>
-        </AnimatedHeading>
+        </InViewAnimationWrapper>
 
-        <AnimatedHeading
+        <InViewAnimationWrapper
           direction="y"
           offset={30}
           delay={0.3}
@@ -32,7 +32,7 @@ export default function ReviewsHome() {
           <p>
             Conoce las historias de éxito de empresas que han transformado sus operaciones con nuestras soluciones web, móviles y de IA a la medida.
           </p>
-        </AnimatedHeading>
+        </InViewAnimationWrapper>
 
       </div>
 

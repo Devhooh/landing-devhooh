@@ -1,8 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
 export default function CTASlugfolio() {
 
@@ -18,34 +18,40 @@ export default function CTASlugfolio() {
       <div className="relative z-10 max-w-4xl w-full flex flex-col items-center gap-8 bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 p-10 rounded-3xl shadow-2xl text-center">
         
         {/* Título animado letra por letra */}
-        <motion.h2
-          className="text-3xl tablet-md:text-5xl font-extrabold leading-tight"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          viewport={{ once: true }}
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.3, delay: 0.2 }}
         >
-          Innovación tecnológica que impulsa tu negocio
-        </motion.h2>
+          <h2 className="text-3xl tablet-md:text-5xl font-extrabold leading-tight">
+            Innovación tecnológica que impulsa tu negocio
+          </h2>
+        </InViewAnimationWrapper>
 
         {/* Subtítulo */}
-        <motion.p
-          className="text-base tablet-md:text-xl text-gray-200 max-w-3xl"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
-          Desarrollamos soluciones digitales con seguridad, escalabilidad y un enfoque personalizado para maximizar tu crecimiento.
-        </motion.p>
+          <p className="text-base tablet-md:text-xl text-gray-200 max-w-3xl">
+            Desarrollamos soluciones digitales con seguridad, escalabilidad y un enfoque personalizado para maximizar tu crecimiento.
+          </p>
+        </InViewAnimationWrapper>
+
 
         {/* Botón principal */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} viewport={{ once: true }}>
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{duration:0.4, delay: 0.3}}
+        >
           <Link href="/contact">
-            <motion.button
-              className="relative group inline-flex items-center gap-3 px-10 py-4 font-bold text-lg rounded-xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 shadow-lg overflow-hidden"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            <button
+              className="
+                relative group inline-flex items-center gap-3 px-10 py-4 font-bold text-lg rounded-xl 
+                bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 shadow-lg overflow-hidden
+                hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
             >
               {/* Brillo animado */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -53,26 +59,24 @@ export default function CTASlugfolio() {
                 Ponte en contacto
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
-            </motion.button>
+            </button>
           </Link>
-        </motion.div>
+        </InViewAnimationWrapper>
 
         {/* Stats / badges */}
-        <motion.ul className="flex flex-wrap justify-center gap-6 mt-12">
+        <StaggerListContainer className="flex flex-wrap justify-center gap-6 mt-12">
           {stats.map((stat, idx) => (
-            <motion.li
+            <StaggerListItemClient
               key={idx}
+              direction="y"
+              offset={30}
               className={`px-6 py-4 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: idx * 0.2 }}
-              viewport={{ once: true }}
             >
               <div className="text-2xl font-bold">{stat.value}</div>
               <p className="text-base">{stat.label}</p>
-            </motion.li>
+            </StaggerListItemClient>
           ))}
-        </motion.ul>
+        </StaggerListContainer>
       </div>
     </section>
   );

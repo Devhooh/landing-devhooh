@@ -45,8 +45,7 @@ export default function CardServicesSlider({cardData}: CardCaroulselSectionProps
           <CardInViewWrapper
             direction="y"
             offset={30}
-            delay={0.2}
-            transition={{ delay: index * 0.2}}
+            transition={{ delay: index * 0.1, duration: 0.2}}
           >
             <CaroulselCard card={card} index={index}/>
           </CardInViewWrapper>

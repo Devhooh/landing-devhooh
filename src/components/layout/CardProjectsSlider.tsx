@@ -27,7 +27,7 @@ export default function CardProjectsSlider({projects, showService = true,}: Serv
           prevEl: ".swiper-button-prev-custom",
         }}
         autoplay={{
-          delay: 3000,
+          delay: 2500,
           disableOnInteraction: false,
         }}
         loop={displayedProjects.length > 3}
@@ -44,8 +44,7 @@ export default function CardProjectsSlider({projects, showService = true,}: Serv
             <CardInViewWrapper
               direction="y"
               offset={30}
-              delay={0.2}
-              transition={{ delay: index * 0.2}}
+              transition={{ delay: index * 0.1, duration: 0.2}}
             >
               <ServicesProjects 
                 project={project} 

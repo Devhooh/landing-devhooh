@@ -1,6 +1,6 @@
 "use client"
 import { Project } from "@/data/portfolioDetails";
-import { iconsData } from "@/data/techData";
+import { iconsData } from "@/data/portfolioDetails";
 import { motion, Variants } from "framer-motion";
 import { Code2, Layers, Sparkles } from "lucide-react";
 

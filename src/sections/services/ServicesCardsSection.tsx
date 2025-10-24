@@ -1,6 +1,7 @@
 import { Lightbulb, Rocket, Repeat, Sparkles, Target, Zap } from "lucide-react";
 import Link from "next/link";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import { CardInViewWrapper } from "@/components/ui/CardInViewWrapper";
 
 export default function ServicesCardsSection() {
   return (
@@ -12,11 +13,10 @@ export default function ServicesCardsSection() {
           <div className="flex flex-col gap-10 self-start order-last table-lg:order-first">
             
             {/* Tarjeta pequeña */}
-            <InViewAnimationWrapper
+            <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.2}
-              transition={{duration: 0.5}}
+              delay={0.3}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -51,14 +51,13 @@ export default function ServicesCardsSection() {
                   </div>
                 </div>
               </div>
-            </InViewAnimationWrapper>
+            </CardInViewWrapper>
 
             {/* Tarjeta mediana */}
-            <InViewAnimationWrapper
+            <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.2}
-              transition={{duration: 0.5}}
+              delay={0.3}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -95,14 +94,13 @@ export default function ServicesCardsSection() {
                   </div>
                 </div>
               </div>
-            </InViewAnimationWrapper>
+            </CardInViewWrapper>
 
             {/* Tarjeta grande */}
-            <InViewAnimationWrapper
+            <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.2}
-              transition={{duration: 0.5}}
+              delay={0.3}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -138,7 +136,7 @@ export default function ServicesCardsSection() {
                   </div>
                 </div>
               </div>
-            </InViewAnimationWrapper>
+            </CardInViewWrapper>
           </div>
           
           {/* Lado derecho - Título y subtítulo */}

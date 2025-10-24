@@ -1,4 +1,3 @@
-"use client"
 import TechCard from "./TechCard";
 import {
   backendTech,

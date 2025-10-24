@@ -84,7 +84,7 @@ export default function FAQSection({itemsDate}: listFAQ ) {
         <div className="text-center mb-12">
           <AnimatedLetters 
             text="Preguntas frecuentes" 
-            className="text-3xl sm:text-4xl table-lg:text-5xl font-extrabold text-black mb-4"
+            className="text-xl md-tablet:text-4xl table-lg:text-5xl font-extrabold text-black mb-4"
           />
 
           <InViewAnimationWrapper
@@ -92,7 +92,7 @@ export default function FAQSection({itemsDate}: listFAQ ) {
             offset={30}
             delay={0.3}
           >
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base md-tablet:text-lg text-gray-600 max-w-2xl mx-auto">
               ¿Tiene preguntas sobre nuestros servicios digitales? Explore nuestra sección de preguntas frecuentes o póngase en contacto con nosotros directamente para obtener asistencia e información personalizadas.
             </p>
           </InViewAnimationWrapper>

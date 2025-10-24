@@ -1,7 +1,8 @@
-"use client";
-
 import { Brain, Smartphone, Database, Layers, Star, TrendingUp } from "lucide-react";
-import { motion, Variants } from "framer-motion";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 
 export default function FeaturedSection() {
   const items = [
@@ -31,27 +32,6 @@ export default function FeaturedSection() {
     },
   ];
 
-  const containerVariants: Variants = {
-    hidden: {},
-    show: {
-      transition: { staggerChildren: 0.15},
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.3, ease: "easeOut" },
-    },
-  };
-
-    const titleVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
-  };
 
   return (
     <section className="relative my-24 mx-4 md-tablet:mx-8 py-20 rounded-3xl bg-colorPrimario4 overflow-hidden">
@@ -59,86 +39,80 @@ export default function FeaturedSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md-tablet:px-8">
         
         {/* Badge superior */}
-        <motion.div
+        <InViewAnimationWrapper
           className="flex justify-center mb-8"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.1, delay: 0.2 }}
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Star className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <strong className="text-colorPrimario5 font-semibold">Nuestras especialidades</strong>
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
 
-        {/* Título con animación letra por letra */}
-        <motion.h2
-        variants={titleVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="text-3xl table-lg:text-5xl font-extrabold text-center mb-4 text-white"
-      >
-        En qué nos 
-        <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> destacamos</strong>
-      </motion.h2>
+        {/* Título */}
+
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{duration: 0.2, delay: 0.3}}
+        >
+          <h2 className="text-3xl table-lg:text-5xl font-extrabold text-center mb-4 text-white">
+            En qué nos 
+            <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> destacamos</strong>
+          </h2>
+        </InViewAnimationWrapper>
 
         {/* Subtítulo mejorado */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-center text-colorHover5 mb-8 max-w-3xl mx-auto text-lg md-tablet:text-xl leading-relaxed"
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
-          Soluciones tecnológicas de vanguardia que marcan la diferencia en cada proyecto que desarrollamos.
-        </motion.p>
+          <p
+            className="text-center text-colorHover5 mb-8 max-w-3xl mx-auto text-lg md-tablet:text-xl leading-relaxed"
+          >
+            Soluciones tecnológicas de vanguardia que marcan la diferencia en cada proyecto que desarrollamos.
+          </p>
+        </InViewAnimationWrapper>
 
         {/* Estadísticas rápidas */}
-        <motion.ul
+        <StaggerListContainer
           className="flex flex-wrap justify-center gap-6 mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <li className="text-center px-4 py-2 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
-            <div className="text-2xl font-bold text-colorPrimario7">4</div>
-            <p className="text-sm text-colorHover5">Especialidades</p>
-          </li>
-          
-          <li className="text-center px-4 py-2 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
-            <div className="text-2xl font-bold text-colorPrimario7">5+</div>
-            <p className="text-sm text-colorHover5">Años perfeccionando</p>
-          </li>
-          
-          <li className="text-center px-4 py-2 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
-            <div className="text-2xl font-bold text-colorPrimario7">100%</div>
-            <p className="text-sm text-colorHover5">Tecnología moderna</p>
-          </li>
-        </motion.ul>
+        >{[
+            {data: "4", text: "Especialidades"},
+            {data: "5+", text: "Años perfeccionando"},
+            {data: "100%", text: "Tecnología moderna"},
+          ].map((value, index) => (
+
+            <StaggerListItemClient
+              key={index}
+              direction="y"
+              offset={30}
+              className="text-center px-4 py-2 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20"
+            >
+              <div className="text-2xl font-bold text-colorPrimario7">{value.data}</div>
+              <p className="text-sm text-colorHover5">{value.text}</p>
+            </StaggerListItemClient>
+          ))}
+        </StaggerListContainer>
 
         {/* Grid mejorado con cards premium */}
-        <motion.ul
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.1 }}
+        <div
           className="grid grid-cols-1 table-lg:grid-cols-2 gap-8"
         >
           {items.map((item, index) => (
-            <motion.li
+            <ProjectStaggerWrapper
               key={index}
-              variants={cardVariants}
+              index={index}
               className={`
                 group relative p-8 rounded-3xl 
                 bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10 backdrop-blur-sm
                 border-2 border-white/20 hover:border-colorPrimario5/40
                 shadow-[0_0_25px_rgba(103,61,230,0.1)] hover:shadow-[0_0_35px_rgba(103,61,230,0.2)]
-                transition-all duration-500
+                hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300
               `}
-              whileHover={{ y: -8, scale: 1.02 }}
             >
               
               {/* Efectos decorativos */}
@@ -151,12 +125,11 @@ export default function FeaturedSection() {
 
               {/* Icono principal */}
               <div className="flex items-center gap-4 mb-6">
-                <motion.div
+                <div
                   className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario2 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
-                  whileHover={{ rotate: 5, scale: 1.1 }}
                 >
                   {item.icon}
-                </motion.div>
+                </div>
                 
                 <div>
                   <h3 className="text-xl md-tablet:text-2xl font-bold text-white transition-colors duration-300">
@@ -184,17 +157,16 @@ export default function FeaturedSection() {
 
               {/* Efecto de brillo en hover */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </motion.li>
+            </ProjectStaggerWrapper>
           ))}
-        </motion.ul>
+        </div>
 
         {/* Call to action final */}
-        <motion.div
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
           className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.2 }}
-          viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-2xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Star className="flex-shrink-0 w-6 h-6 text-colorPrimario5" />
@@ -203,7 +175,7 @@ export default function FeaturedSection() {
             </strong>
             <TrendingUp className="flex-shrink-0 w-6 h-6 text-colorPrimario5" />
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

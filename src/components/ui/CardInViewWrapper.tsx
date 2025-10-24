@@ -1,5 +1,5 @@
 "use client";
-import { motion, Variants, Transition } from "framer-motion"; // Ajusta la importación si tu Motion está en utils
+import { motion, Variants, Transition } from "@/utils/Motion"; 
 import React, { ReactNode } from 'react';
 
 type Direction = 'x' | 'y';
@@ -9,10 +9,8 @@ interface CardInViewWrapperProps {
   className?: string;
   delay?: number;
   direction?: Direction;
-  // Offset por defecto mucho menor para un efecto "flotante" suave
   offset?: number; 
   transition?: Transition;
-  // El viewport amount puede ser mayor, ya que la card es grande
   viewportAmount?: number; 
 }
 
@@ -25,9 +23,8 @@ interface CustomProps {
 
 // 3. Variantes para el efecto de tarjeta (menos opacidad y menos movimiento)
 const cardAnimationVariants: Variants = {
-  // Estado inicial: Semi-visible, ligeramente encogido y desplazado hacia abajo.
   hidden: (custom: CustomProps) => ({ 
-    opacity: 0.8, // Menos desvanecimiento
+    opacity: 0, // Menos desvanecimiento
     scale: 0.98,  // Ligera contracción
     [custom.direction]: custom.offset,
   }),
@@ -49,7 +46,7 @@ export function CardInViewWrapper({
   direction = 'y',
   offset = 15, 
   transition,
-  viewportAmount = 0.2,
+  viewportAmount = 0.1,
 }: CardInViewWrapperProps) {
 
   // Transición por defecto más suave y rápida para cards

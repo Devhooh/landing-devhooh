@@ -1,63 +1,30 @@
-import { IconType } from "react-icons";
-import { 
-  FaJsSquare, 
-  FaNode, 
-  FaReact, 
-  FaAngular, 
-  FaPython,
-  FaSwift,
-  FaJava,
-  FaGitAlt,
-  FaGithub,
-  FaDocker,
-  FaAws
-} from "react-icons/fa";
-
-import { 
-  SiMongodb, 
-  SiNextdotjs, 
-  SiTailwindcss, 
-  SiTypescript, 
-  SiVite, 
-  SiNestjs, 
-  SiMysql,
-  SiPostgresql,
-  SiKotlin,
-  SiFlutter,
-  SiVercel,
-  SiKubernetes
-} from "react-icons/si";
-
 interface TechLogo {
-  icon: IconType;
-  color?: string;
+  iconKey: string;
   alt: string;
 }
 
 export const sliderLogoTech: TechLogo[] = [
-  { icon: FaJsSquare, alt: "javascript"},
-  { icon: FaReact,  alt: "react" },
-  { icon: SiNextdotjs, alt: "nextjs" },
-  { icon: SiNestjs, alt: "nestjs" },
-  { icon: SiTailwindcss, alt: "tailwind" },
-  { icon: SiKotlin, alt: "kotlin" },
-  { icon: SiFlutter, alt: "flutter" },
-  { icon: FaSwift, alt: "swift" },
-  { icon: SiTypescript, alt: "typescript" },
-  { icon: FaJava , alt: "java " },
-  { icon: FaPython, alt: "python" },
-  { icon: FaAngular, alt: "angular" },
-  { icon: FaGithub, alt: "github" },
-  { icon: FaGitAlt, alt: "git" },
-  { icon: FaNode, alt: "node" },
-  { icon: SiKubernetes, alt: "kubernetes" },
-  { icon: SiPostgresql, alt: "postgresql" },
-  { icon: SiMongodb, alt: "mongodb" },
-  { icon: FaDocker, alt: "docker" },
-  { icon: SiVite, alt: "vite" },
-  { icon: FaAws, alt: "aws" },
-  { icon: SiVercel, alt: "vercel" },
-  { icon: SiMysql, alt: "mysql" },
+  { iconKey: "FaJsSquare", alt: "javascript" },
+  { iconKey: "FaReact", alt: "react" },
+  { iconKey: "SiNextdotjs", alt: "nextjs" },
+  { iconKey: "SiNestjs", alt: "nestjs" },
+  { iconKey: "SiTailwindcss", alt: "tailwind" },
+  { iconKey: "SiKotlin", alt: "kotlin" },
+  { iconKey: "SiFlutter", alt: "flutter" },
+  { iconKey: "FaSwift", alt: "swift" },
+  { iconKey: "SiTypescript", alt: "typescript" },
+  { iconKey: "FaJava", alt: "java" },
+  { iconKey: "FaPython", alt: "python" },
+  { iconKey: "FaAngular", alt: "angular" },
+  { iconKey: "FaGithub", alt: "github" },
+  { iconKey: "FaGitAlt", alt: "git" },
+  { iconKey: "FaNode", alt: "node" },
+  { iconKey: "SiKubernetes", alt: "kubernetes" },
+  { iconKey: "SiPostgresql", alt: "postgresql" },
+  { iconKey: "SiMongodb", alt: "mongodb" },
+  { iconKey: "FaDocker", alt: "docker" },
+  { iconKey: "SiVite", alt: "vite" },
+  { iconKey: "FaAws", alt: "aws" },
+  { iconKey: "SiVercel", alt: "vercel" },
+  { iconKey: "SiMysql", alt: "mysql" },
 ];
-
-

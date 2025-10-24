@@ -1,8 +1,8 @@
 "use client";
-import { IconType } from "react-icons";
+import { TechIcon } from "@/components/utils/TechIconMapper";
 
 interface Logo {
-  icon: IconType;
+  iconKey: string; // ⬅️ Ahora esperamos una clave de texto
   alt: string;
 }
 
@@ -25,7 +25,6 @@ export function SliderTech({ logos, direction = "left" }: LogoSliderProps) {
         style={{ minWidth: `${logosLoop.length * 10}rem` }}
       >
         {logosLoop.map((logo, i) => {
-          const Icon = logo.icon;
           return (
             <li
               key={i}
@@ -40,12 +39,12 @@ export function SliderTech({ logos, direction = "left" }: LogoSliderProps) {
                 className="
                   absolute inset-0 rounded-full opacity-0 group-hover:opacity-80
                   blur-lg bg-colorHover2
-                  transition-opacity duration-500
-                "
+                  transition-opacity duration-500"
               />
 
               {/* Icono */}
-              <Icon
+              <TechIcon
+                iconKey={logo.iconKey}
                 aria-label={logo.alt}
                 className="
                   relative z-10 text-gray-400 group-hover:text-white

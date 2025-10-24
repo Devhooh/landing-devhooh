@@ -1,8 +1,6 @@
-"use client";
-
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
 import { Award } from "lucide-react";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 
 // 1. Cargamos el componente SliderTech Y los datos (sliderLogoTech) de forma dinámica.
 const DynamicSliderCarousel = dynamic(() =>
@@ -46,85 +44,85 @@ export default function IntroSection() {
             <div className="absolute top-6 right-6 w-4 h-4 rounded-full bg-colorPrimario5 opacity-60"></div>
             <div className="absolute bottom-6 left-6 w-3 h-3 rounded-full bg-colorSecundario3 opacity-40"></div>
             
-            
-            <motion.h2
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3, type: "spring" }}
-              viewport={{ once: true }}
-              className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorPrimario1 pb-5"
+            <InViewAnimationWrapper
+              direction="y"
+              offset={30}
+              transition={{ duration: 0.2, delay: 0.2 }}
             >
-              Todo lo que necesitas para {""}
-              <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">construir y escalar</strong>
-              
-            </motion.h2>
+              <h2
+                className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorPrimario1 pb-5"
+              >
+                Todo lo que necesitas para {""}
+                <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">construir y escalar</strong>
+              </h2>
+            </InViewAnimationWrapper>
 
-            <motion.p
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-lg text-colorPrimario1 md-tablet:text-xl max-w-3xl mx-auto"
+            <InViewAnimationWrapper
+              direction="y"
+              offset={30}
+              transition={{ duration: 0.2, delay: 0.3 }}
             >
-              Utilizamos herramientas modernas que aseguran rendimiento,
-              escalabilidad y experiencias inolvidables. No solo se trata de usar
-              tecnología, sino de cómo la aplicamos para hacer crecer tu proyecto.
-            </motion.p>
+              <p className="text-lg text-colorPrimario1 md-tablet:text-xl max-w-3xl mx-auto">
+                Utilizamos herramientas modernas que aseguran rendimiento,
+                escalabilidad y experiencias inolvidables. No solo se trata de usar
+                tecnología, sino de cómo la aplicamos para hacer crecer tu proyecto.
+              </p>
+            </InViewAnimationWrapper>
+
 
             {/* Badge de años de experiencia */}
-            <motion.div
+            <InViewAnimationWrapper
+              direction="y"
+              offset={30}
               className="inline-flex items-center gap-2 mt-8 px-4 md-tablet:px-8 py-3 rounded-full bg-colorPrimario5 border border-colorPrimario5/30 backdrop-blur-sm"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.4 }}
             >
               <Award className="w-5 h-5 text-white flex-shrink-0" />
               <strong className="text-colorHover5 font-semibold">Empieza tu proyecto con calidad</strong>
-            </motion.div>
+            </InViewAnimationWrapper>
 
           </div>
         </div>
       </div>
 
       {/* Carrusel de logos */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+      <InViewAnimationWrapper
+        direction="y"
+        offset={30}
         transition={{ duration: 0.4, delay: 0.4 }}
-        viewport={{ once: true }}
         className="overflow-hidden mt-12 py-5 mx-auto bg-colorPrimario5 border-y border-colorSecundario3"
       >
         {/* Renderizamos el componente dinámico sin pasar props */}
         <DynamicSliderCarousel /> 
-      </motion.div>
+      </InViewAnimationWrapper>
 
       {/* Bloque de Kit Tecnológico */}
       <div className="overflow-hidden mx-auto mt-16 px-5 md-tablet:px-10 space-y-4 pb-5 text-left">
-        <motion.h3
-          initial={{ x: -40, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+        <InViewAnimationWrapper
+          direction="x"
+          offset={-20}
           transition={{ duration: 0.3, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario1"
         >
-          De un vistazo a nuestro kit 
-          <br/>de 
-          <strong className="text-colorPrimario5">  herramientas tecnológicas</strong>
-        </motion.h3>
+          <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario1">
+            De un vistazo a nuestro kit 
+            <br/>de 
+            <strong className="text-colorPrimario5">  herramientas tecnológicas</strong>
+          </h3>
+        </InViewAnimationWrapper>
+        
+        <InViewAnimationWrapper
+          direction="x"
+          offset={-20}
+          transition={{ duration: 0.3, delay: 0.2 }}
+        >
+          <p className="text-lg md-tablet:text-xl max-w-2xl text-gray-700">
+            Profundizamos en las necesidades de su proyecto para asegurarnos de
+            seleccionar las mejores herramientas y marcos para su producto. La
+            mayoría de los proyectos en los que trabajamos se dividen en el
+            siguiente stack de tecnológicas.
+          </p>
+        </InViewAnimationWrapper>
 
-        <motion.p
-          initial={{ x: -40, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-lg md-tablet:text-xl max-w-2xl text-gray-700"
-        >
-          Profundizamos en las necesidades de su proyecto para asegurarnos de
-          seleccionar las mejores herramientas y marcos para su producto. La
-          mayoría de los proyectos en los que trabajamos se dividen en el
-          siguiente stack de tecnológicas.
-        </motion.p>
       </div>
     </section>
   );

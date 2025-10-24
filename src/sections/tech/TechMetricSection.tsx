@@ -1,6 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { Server, Rocket, ShieldCheck, Users } from "lucide-react";
 
 const metrics = [
@@ -29,22 +28,20 @@ const metrics = [
 export default function TechMetricSection() {
   return (
     <section className="py-16 px-8 bg-colorPrimario3">
-      <ul className="max-w-6xl mx-auto grid grid-cols-1 md-tablet:grid-cols-2 lg-table:grid-cols-4 gap-10 text-center">
+      <StaggerListContainer className="max-w-6xl mx-auto grid grid-cols-1 md-tablet:grid-cols-2 lg-table:grid-cols-4 gap-10 text-center">
         {metrics.map((item, index) => (
-          <motion.li
+          <StaggerListItemClient
             key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            viewport={{ once: true }}
+            direction="y"
+            offset={30}
             className="bg-colorSecundario4 rounded-3xl p-8 shadow-xl hover:scale-105 transition-transform duration-300"
           >
             <div className="flex justify-center mb-4">{item.icon}</div>
             <h2 className="text-4xl font-extrabold text-white">{item.value}</h2>
             <p className="text-lg text-gray-300 mt-2">{item.label}</p>
-          </motion.li>
+          </StaggerListItemClient>
         ))}
-      </ul>
+      </StaggerListContainer>
     </section>
   );
 }

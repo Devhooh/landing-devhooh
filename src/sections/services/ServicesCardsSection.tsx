@@ -16,7 +16,7 @@ export default function ServicesCardsSection() {
             <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.3}
+              delay={0.1 * 0.2}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -57,7 +57,7 @@ export default function ServicesCardsSection() {
             <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.3}
+              delay={0.1 * 0.2}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -100,7 +100,7 @@ export default function ServicesCardsSection() {
             <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.3}
+              delay={0.1 * 0.2}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2

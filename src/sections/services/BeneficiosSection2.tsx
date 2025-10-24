@@ -1,23 +1,13 @@
-import { motion } from "framer-motion";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import Image from "next/image";
 
 export default function BeneficiosSection2() {
   return (
-    <motion.div
-      className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: 0.1 }}
-      viewport={{ once: true }}
-    >
+    <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
       {/* Texto */}
-      <motion.div
-        className="flex flex-col gap-8 order-1 table-lg:order-1"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.15 } } }}
-      >
+      <StaggerListContainer className="flex flex-col gap-8 order-1 table-lg:order-1">
         {[
           {
             title: "Optimización y Automatización de Procesos",
@@ -36,26 +26,24 @@ export default function BeneficiosSection2() {
             desc: "Aplicamos un Diseño UX/UI centrado en el usuario para crear experiencias intuitivas que maximizan la retención y las tasas de conversión."
           }
         ].map((item, i) => (
-          <motion.div
+          <StaggerListItemClient
             key={i}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
-            viewport={{ once: true }}
+            direction="x"
+            offset={-20}
           >
             <h3 className="text-2xl md-tablet:text-3xl font-bold text-cyan-500">{item.title}</h3>
             <p className="text-gray-200 mt-1 text-base md-tablet:text-lg">{item.desc}</p>
-          </motion.div>
+          </StaggerListItemClient>
         ))}
-      </motion.div>
+      </StaggerListContainer>
 
       {/* Imagen */}
-      <motion.div
+      <InViewAnimationWrapper
+        direction="x"
+        offset={20}
+        delay={0.3}
         className="order-2 table-lg:order-2"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
       >
         <Image
           src="/assets/images/beneficio2.png"
@@ -65,7 +53,7 @@ export default function BeneficiosSection2() {
           className="rounded-2xl shadow-lg bg-colorHover2/10"
           loading="lazy"
         />
-      </motion.div>
-    </motion.div>
+      </InViewAnimationWrapper>
+    </div>
   )
 }

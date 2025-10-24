@@ -1,8 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 
 export default function HeroSectionTech() {
 
@@ -12,22 +10,24 @@ export default function HeroSectionTech() {
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, type: "spring" }}
-            className="order-1 text-center table-lg:text-left text-4xl font-extrabold drop-shadow-lg
-            leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{ duration: 0.3, delay: 0.1}}
           >
-            La tecnología detrás de nuestras  
-            <strong className="text-colorPrimario5"> soluciones de vanguardia</strong>
-          </motion.h1>
+            <h1 className="order-1 text-center table-lg:text-left text-4xl font-extrabold drop-shadow-lg
+              leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
+            >
+              La tecnología detrás de nuestras  
+              <strong className="text-colorPrimario5"> soluciones de vanguardia</strong>
+            </h1>
+          </InViewAnimationWrapper>
 
           {/* --- 2) IMAGEN --- */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+          <InViewAnimationWrapper
+            direction="x"
+            offset={20}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="
               order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
@@ -49,46 +49,46 @@ export default function HeroSectionTech() {
               </div>
 
               {/* Círculos decorativos flotantes */}
-              <motion.div
+              <div
                 className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
-              ></motion.div>
+              ></div>
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{duration: 0.3, delay: 0.3}}
             className="order-3 text-lg md-tablet:text-xl 
               text-center table-lg:text-left my-5 table-lg:pr-32
             text-gray-200 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
           >
-            Donde los frameworks y la innovación de productos se unen con la experiencia técnica.
-          </motion.p>
+            <p>
+              Donde los frameworks y la innovación de productos se unen con la experiencia técnica.
+            </p>
+          </InViewAnimationWrapper>
 
           {/* --- 5) BOTÓN --- */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
             transition={{ duration: 0.3, delay: 0.3 }}
             className="order-5 flex justify-center table-lg:justify-start"
           >
             <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 className="
                   px-8 py-4 text-lg md-tablet:text-xl font-semibold
                   bg-colorPrimario5 hover:bg-colorSecundario2 text-white
                   rounded-2xl shadow-lg
-                  hover:shadow-xl transition-all duration-300
+                  hover:shadow-xl hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300
                 "
               >
                 Construyamos tu proyecto!
-              </motion.button>
+              </button>
             </Link>
-          </motion.div>
+          </InViewAnimationWrapper>
         </div>
       </div>
     </section>

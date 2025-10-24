@@ -1,6 +1,6 @@
 import NotFound from "@/app/not-found";
 import { ServicesDetails } from "@/data/ServicesDetails";
-import FAQSection from "@/sections/portfolio/FAQSection";
+import FAQSection from "@/components/ui/FAQSection";
 import CTASlugServices from "@/sections/services/components/CTASlugServices";
 import HeroSectionServices from "@/sections/services/components/HeroSectionServices";
 import ProcessServicesSection from "@/sections/services/components/ProcessServicesSection";

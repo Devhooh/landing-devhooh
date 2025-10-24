@@ -6,7 +6,7 @@ import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjec
 import { projectsData } from "@/data/portfolioData";
 import TechWhy from "@/sections/tech/components/TechWhy";
 import TechProcess from "@/sections/tech/components/TechProcess";
-import FAQSection from "@/sections/portfolio/FAQSection";
+import FAQSection from "@/components/ui/FAQSection";
 import NotFound from "@/app/not-found";
 
 interface Props {

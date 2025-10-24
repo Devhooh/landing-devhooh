@@ -41,9 +41,8 @@ export default function BeneficiosSection2() {
       <InViewAnimationWrapper
         direction="x"
         offset={20}
-        delay={0.3}
         className="order-2 table-lg:order-2"
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.2, delay: 0.2 }}
       >
         <Image
           src="/assets/images/beneficio2.png"

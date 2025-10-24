@@ -16,7 +16,7 @@ export default function ServicesCardsSection() {
             <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.1 * 0.2}
+              transition={{duration: 0.1, delay: 0.2}}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -57,7 +57,7 @@ export default function ServicesCardsSection() {
             <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.1 * 0.2}
+              transition={{duration: 0.1, delay: 0.3}}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -100,7 +100,7 @@ export default function ServicesCardsSection() {
             <CardInViewWrapper
               direction="x"
               offset={-20}
-              delay={0.1 * 0.2}
+              transition={{duration: 0.1, delay: 0.4}}
               className="
                 bg-colorSecundario4
                 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -140,22 +140,33 @@ export default function ServicesCardsSection() {
           </div>
           
           {/* Lado derecho - Título y subtítulo */}
-          <InViewAnimationWrapper
-            direction="x"
-            offset={20}
-            delay={0.3}
-            transition={{duration: 0.5}}
+          <div
             className="text-center table-lg:text-right order-first table-lg:order-last"
           >
-            <h2 className="text-4xl md-tablet:text-7xl font-extrabold text-colorPrimario2 mb-8">
-              ¿En qué etapa se encuentra 
-              <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> tu proyecto?</span>
-            </h2>
-            <p className="text-lg md-tablet:text-2xl font-semibold text-gray-700 mb-8 mx-auto table-lg:mx-0">
-              Desde la conceptualización (MVP y Startups) hasta el crecimiento (PyMEs) y la modernización de plataformas (Legacy), adaptamos nuestra experiencia para 
-              <span className="text-colorSecundario4"> impulsar tu visión. </span>
-            </p>
-          </InViewAnimationWrapper>
+            <InViewAnimationWrapper
+              direction="x"
+              offset={20}
+              transition={{duration: 0.3, delay: 0.2}}
+            >
+              <h2 className="text-4xl md-tablet:text-7xl font-extrabold text-colorPrimario2 mb-8">
+                ¿En qué etapa se encuentra 
+                <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> tu proyecto?</span>
+              </h2>
+            </InViewAnimationWrapper>
+
+            <InViewAnimationWrapper
+              direction="x"
+              offset={20}
+              transition={{duration: 0.3, delay: 0.3}}
+            >
+              <p className="text-lg md-tablet:text-2xl font-semibold text-gray-700 mb-8 mx-auto table-lg:mx-0">
+                Desde la conceptualización (MVP y Startups) hasta el crecimiento (PyMEs) y la modernización de plataformas (Legacy), adaptamos nuestra experiencia para 
+                <span className="text-colorSecundario4"> impulsar tu visión. </span>
+              </p>
+            </InViewAnimationWrapper>
+          </div>
+        
+            
         </div>
 
         {/* Call to action final */}
@@ -163,8 +174,7 @@ export default function ServicesCardsSection() {
           className="relative z-10 text-center mt-20"
           direction="y"
           offset={20}
-          delay={0.3}
-          transition={{ duration: 0.3,}}
+          transition={{ duration: 0.3, delay: 0.4}}
         >
           <Link
             href="/contact"

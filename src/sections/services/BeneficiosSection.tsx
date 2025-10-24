@@ -26,7 +26,7 @@ export default function BeneficiosSection() {
           <InViewAnimationWrapper
             direction="y"
             offset={20}
-            transition={{ duration: 0., delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
           >
             <p className="mt-4 text-lg md-tablet:text-2xl text-gray-200">
               Nuestro enfoque en el desarrollo ágil y la eficiencia operacional se traduce en resultados tangibles: ahorro de costes, ventaja competitiva y un crecimiento sostenible para tu plataforma digital.

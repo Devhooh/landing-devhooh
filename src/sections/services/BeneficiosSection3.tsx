@@ -11,7 +11,7 @@ export default function BeneficiosSection3() {
       <InViewAnimationWrapper
         direction="x"
         offset={-20}
-        delay={0.2}
+        transition={{duration: 0.2, delay: 0.2}}
         className="order-2 table-lg:order-1"
       >
         <Image
@@ -29,7 +29,7 @@ export default function BeneficiosSection3() {
         <InViewAnimationWrapper
           direction="y"
           offset={20}
-          transition={{ duration: 0.4, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
         >
           <h3
             className="text-2xl md-tablet:text-4xl font-bold text-cyan-500">
@@ -40,7 +40,7 @@ export default function BeneficiosSection3() {
         <InViewAnimationWrapper
           direction="y"
           offset={20}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
           <p className="text-gray-200 text-base md-tablet:text-lg">
             Establecemos un partnership estratégico para garantizar la longevidad de tu inversión. Nuestro soporte asegura un alto uptime y la evolución continuas del software, manteniéndolo siempre actualizado y competitivo.

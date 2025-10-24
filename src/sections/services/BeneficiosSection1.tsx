@@ -11,7 +11,7 @@ export default function BeneficiosSection1 () {
       <InViewAnimationWrapper
         direction="x"
         offset={-20}
-        delay={0.2}
+        transition={{duration: 0.2, delay: 0.2}}
         className="order-2 table-lg:order-1"
       >
         <Image
@@ -26,11 +26,10 @@ export default function BeneficiosSection1 () {
 
       {/* Texto */}
       <div className="flex flex-col gap-8 order-1 table-lg:order-2">
-
         <InViewAnimationWrapper
           direction="x"
           offset={20}
-          transition={{ duration: 0.3, delay: 0.3 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
         >
           <h3 className="text-2xl md-tablet:text-4xl font-bold text-cyan-500">
             Confianza y seguridad
@@ -40,7 +39,7 @@ export default function BeneficiosSection1 () {
         <InViewAnimationWrapper
           direction="x"
           offset={20}
-          transition={{ duration: 0.4, delay: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
           <p className="text-white text-base md-tablet:text-lg">
             Garantizamos la transparencia total de la inversión. Aplicamos una metodología ágil y DevOps para un desarrollo seguro, fiable y con entregas incrementales que puedes ver en tiempo real.

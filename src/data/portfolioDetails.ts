@@ -1,4 +1,92 @@
-import { iconsData } from "./techData";
+import { BiLogoPostgresql, BiLogoGoLang  } from "react-icons/bi";
+import { TbBrandReactNative, TbBrandBlender } from "react-icons/tb";
+import { TbBrandCSharp } from "react-icons/tb";
+import { DiDjango } from "react-icons/di";
+import { PiFigmaLogoFill } from "react-icons/pi";
+
+import { 
+  FaJsSquare, 
+  FaNode, 
+  FaReact, 
+  FaAngular, 
+  FaPython,
+  FaSwift,
+  FaJava,
+  FaGitAlt,
+  FaGithub,
+  FaDocker,
+  FaAws,
+  FaSketch 
+} from "react-icons/fa";
+
+import { 
+  SiMongodb, 
+  SiNextdotjs, 
+  SiTailwindcss, 
+  SiTypescript, 
+  SiVite, 
+  SiNestjs, 
+  SiMysql,
+  SiKotlin,
+  SiFlutter,
+  SiVercel,
+  SiKubernetes,
+  SiExpress,
+  SiDotnet,
+  SiCplusplus,
+  SiRust,
+  SiAdobexd,
+  SiTensorflow,
+  SiOpenai,
+  SiFastapi,
+  SiFlask
+} from "react-icons/si";
+
+export const iconsData = {
+  js: FaJsSquare,
+  node: FaNode,
+  react: FaReact,
+  angular: FaAngular,
+  python: FaPython,
+  swift: FaSwift,
+  java: FaJava,
+  git: FaGitAlt,
+  github: FaGithub,
+  docker: FaDocker,
+  aws: FaAws,
+  sketch: FaSketch,
+
+  mongodb: SiMongodb,
+  nextjs: SiNextdotjs,
+  tailwind: SiTailwindcss,
+  typescript: SiTypescript,
+  vite: SiVite,
+  nestjs: SiNestjs,
+  mysql: SiMysql,
+  kotlin: SiKotlin,
+  flutter: SiFlutter,
+  vercel: SiVercel,
+  kubernetes: SiKubernetes,
+  express: SiExpress,
+  dotnet: SiDotnet,
+  cpp: SiCplusplus,
+  rust: SiRust,
+  adobexd: SiAdobexd,
+
+  postgresql: BiLogoPostgresql,
+  golang: BiLogoGoLang,
+  reactnative: TbBrandReactNative,
+  blender: TbBrandBlender,
+  csharp: TbBrandCSharp,
+  django: DiDjango,
+  figma: PiFigmaLogoFill,
+  tensorflox: SiTensorflow,
+  openia: SiOpenai,
+  fastapi: SiFastapi,
+  flask: SiFlask
+
+};
+
 
 interface Tech {
   name: string;       

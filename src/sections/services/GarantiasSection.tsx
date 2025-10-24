@@ -4,10 +4,11 @@ import Link from "next/link";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import { CardInViewWrapper } from "@/components/ui/CardInViewWrapper";
 
 export default function GarantiasSection() {
   return (
-    <section className="relative w-full py-20 bg-colorFondo">
+    <section className="relative w-full pb-20 bg-colorFondo">
       <div className="container mx-auto px-6 tablet-md:px-12 max-w-7xl">
         
         {/* Bloque 1 */}
@@ -74,7 +75,7 @@ export default function GarantiasSection() {
 
         {/* Bloque 2 */}
         <div className="mt-20 bg-colorPrimario22 rounded-3xl shadow-xl p-7 flex flex-col items-center gap-12">
-          <StaggerListContainer className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-4 gap-8 w-full">
+          <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-4 gap-8 w-full">
             {/* Tarjetas */}
             {[
               { icon: <Shield className="w-8 h-8 text-white" />, title: "Garantía de satisfacción", text: "Si no cumple lo prometido, lo ajustamos hasta que estés conforme." },
@@ -82,9 +83,11 @@ export default function GarantiasSection() {
               { icon: <Headphones className="w-8 h-8 text-white" />, title: "Soporte continuo", text: "Incluye soporte gratuito post-entrega (30-60 días)." },
               { icon: <TrendingUp className="w-8 h-8 text-white" />, title: "Escalabilidad asegurada", text: "Diseño y código listos para crecer junto a tu negocio." }
             ].map((item, i) => (
-              <StaggerListItemClient
+              <CardInViewWrapper
                 key={i}
                 direction="y"
+                delay={0.2}
+                transition={{ delay: i * 0.2}}
                 offset={20}
                 className="
                   flex flex-col items-center text-center gap-4 p-6 rounded-2xl 
@@ -95,9 +98,9 @@ export default function GarantiasSection() {
                 </div>
                 <h3 className="text-xl font-bold text-white">{item.title}</h3>
                 <p className="text-sm text-slate-300">{item.text}</p>
-              </StaggerListItemClient>
+              </CardInViewWrapper>
             ))}
-          </StaggerListContainer>
+          </div>
 
           {/* CTA */}
           <InViewAnimationWrapper

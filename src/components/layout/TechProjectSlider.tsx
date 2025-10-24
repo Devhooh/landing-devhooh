@@ -1,7 +1,7 @@
 "use client"
 
 import { SwiperSlide, Swiper } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import TechProjectCard from "@/sections/tech/TechProjectCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
@@ -14,11 +14,15 @@ export default function TechProjectSlider() {
   return( 
     <div>
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={30}
         navigation={{
           nextEl: ".swiper-button-next-custom",
           prevEl: ".swiper-button-prev-custom",
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
         }}
         pagination={{ clickable: true }}
         loop

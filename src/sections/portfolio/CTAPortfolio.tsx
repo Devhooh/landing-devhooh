@@ -1,21 +1,11 @@
-"use client";
-
-import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import { FloatingWrapper } from "@/components/ui/FloatingWrapper";
 
 export default function CTAServices() {
-
-  const floatingVariants: Variants = {
-    animate: {
-      y: [0, -8, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
 
   return (
     <section className="relative w-full py-20 overflow-hidden">
@@ -28,67 +18,58 @@ export default function CTAServices() {
         <div className="space-y-8">
           
           {/* Título principal animado */}
-          <div>
-            <motion.h2
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.2, delay: 0.3 }}
+          >
+            <h2
               className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-4 leading-tight text-white"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: true }}
             >
               Cuando estés listo:
               <br/>
               Hablemos sobre tu <strong className="text-colorPrimario5"> proyecto </strong>
-            </motion.h2>
-          </div>
+            </h2>
+          </InViewAnimationWrapper>
 
           {/* Elementos visuales decorativos */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
             className="flex justify-center items-center gap-8 my-12"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            viewport={{ once: true }}
           >
             {/* Sparkles flotantes */}
-            <motion.div variants={floatingVariants} animate="animate">
+            <FloatingWrapper>
               <Sparkles className="w-8 h-8 text-colorPrimario5" />
-            </motion.div>
+            </FloatingWrapper>
             
             <div className="h-px w-16 bg-gradient-to-r from-transparent via-colorHover5 to-transparent"></div>
             
-            <motion.div 
-              variants={floatingVariants} 
-              animate="animate"
-              style={{ animationDelay: "1s" }}
-            >
+            <FloatingWrapper>
               <Users className="w-10 h-10 text-colorSecundario1" />
-            </motion.div>
+            </FloatingWrapper>
             
             <div className="h-px w-16 bg-gradient-to-r from-transparent via-colorHover5 to-transparent"></div>
             
-            <motion.div 
-              variants={floatingVariants} 
-              animate="animate"
-              style={{ animationDelay: "0.5s" }}
-            >
+            <FloatingWrapper>
               <Sparkles className="w-6 h-6 text-colorPrimario7" />
-            </motion.div>
-          </motion.div>
+            </FloatingWrapper>
+          </InViewAnimationWrapper>
 
           {/* Botón principal mejorado */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="y"
+            offset={20}
             className="flex justify-center mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            viewport={{ once: true }}
           >
             <Link href="/contact">
-              <motion.button
-                className="group relative overflow-hidden px-10 py-5 text-xl font-bold rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white shadow-[0_0_30px_rgba(103,61,230,0.5)] hover:shadow-[0_0_40px_rgba(103,61,230,0.7)] transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+              <button
+                className="
+                  group relative overflow-hidden px-10 py-5 text-xl font-bold rounded-2xl 
+                  bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white shadow-[0_0_30px_rgba(103,61,230,0.5)] hover:shadow-[0_0_40px_rgba(103,61,230,0.7)]
+                  hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
               >
                 {/* Efecto de brillo animado */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -97,39 +78,37 @@ export default function CTAServices() {
                   Ponte en contacto
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
-              </motion.button>
+              </button>
             </Link>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* Estadísticas de confianza */}
-          <motion.ul
-            className="flex flex-wrap justify-center gap-8 mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.3}}
-            viewport={{ once: true }}
-          >
-            <li className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
-              <div className="text-2xl font-bold text-colorPrimario5">50+</div>
-              <p className="text-sm text-colorHover5">Proyectos exitosos</p>
-            </li>
-            <li className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
-              <div className="text-2xl font-bold text-colorSecundario1">98%</div>
-              <p className="text-sm text-colorHover5">Clientes satisfechos</p>
-            </li>
-            <li className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
-              <div className="text-2xl font-bold text-colorPrimario7">24h</div>
-              <p className="text-sm text-colorHover5">Tiempo de respuesta</p>
-            </li>
-          </motion.ul>
+          <StaggerListContainer className="flex flex-wrap justify-center gap-8 mb-10">
+            {[
+              {data: "50+", text: "Proyectos exitosos"},
+              {data: "98%", text: "Clientes satisfechos"},
+              {data: "24h", text: "Tiempo de respuesta"},
+            ].map((value, index)=> (
+              <StaggerListItemClient
+                key={index} 
+                index={index}
+                direction="y"
+                offset={30}
+                delayBase={0.2}
+                className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20"
+              >
+                <div className="text-2xl font-bold text-colorPrimario5">{value.data}</div>
+                <p className="text-sm text-colorHover5">{value.text}</p>
+              </StaggerListItemClient>
+            ))}
+          </StaggerListContainer>
 
           {/* Mensaje final mejorado */}
-          <motion.div
-            className="max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
             transition={{ duration: 0.4, delay: 0.4 }}
-            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
           >
             <p className="text-lg md-tablet:text-xl text-colorHover5 font-semibold leading-relaxed mb-6">
               Desde startups hasta grandes empresas, 
@@ -140,19 +119,27 @@ export default function CTAServices() {
             
             {/* Call to action secundario */}
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link href="/portfolio" className="text-colorHover5 hover:text-colorPrimario7 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
+              <Link 
+                href="/portfolio" 
+                className="text-colorHover5 hover:text-colorPrimario7 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
                 Ver nuestro portafolio
               </Link>
               <span className="text-colorHover5/50">•</span>
-              <Link href="/about" className="text-colorHover5 hover:text-colorPrimario7 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
+
+              <Link 
+                href="/about" 
+                className="text-colorHover5 hover:text-colorPrimario7 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
                 Conoce nuestro equipo
               </Link>
               <span className="text-colorHover5/50">•</span>
-              <Link href="/services" className="text-colorHover5 hover:text-colorPrimario7 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
+              
+              <Link 
+                href="/services" 
+                className="text-colorHover5 hover:text-colorPrimario7 transition-colors duration-300 underline underline-offset-4 hover:underline-offset-8">
                 Nuestros servicios
               </Link>
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
         </div>
       </div>
     </section>

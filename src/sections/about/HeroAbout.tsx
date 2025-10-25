@@ -50,7 +50,7 @@ export default function HeroAbout() {
               <Link href="/contact">
                 <button
                   className="
-                    px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+                    px-7 md-tablet:px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
                     text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 flex items-center gap-3 drop-shadow-lg 
                     transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] transform"
                 >

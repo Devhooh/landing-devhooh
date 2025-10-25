@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Eye, Target, Users, Globe} from "lucide-react";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import ImageAnimatedWrapper from "@/components/ui/ImageAnimatedWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
@@ -25,7 +24,7 @@ export default function AboutSectionCard() {
             >
               {/* Imagen mejorada */}
               <div className="rounded-full relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10">
-                <ImageAnimatedWrapper
+                <div
                   className="relative"
                 >
                   <Image
@@ -39,7 +38,7 @@ export default function AboutSectionCard() {
                   
                   {/* Efecto de brillo en hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                </ImageAnimatedWrapper>
+                </div>
 
                 {/* Círculo decorativo */}
                 <div className="animate-pulse absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
@@ -85,9 +84,7 @@ export default function AboutSectionCard() {
             >
               {/* Imagen mejorada */}
               <div className="rounded-full relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorSecundario1/10 to-colorSecundario2/10">
-                <ImageAnimatedWrapper
-                  className="relative"
-                >
+                <div className="relative">
                   <Image
                     width={800}
                     height={650}
@@ -99,7 +96,7 @@ export default function AboutSectionCard() {
                   
                   {/* Efecto de brillo en hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                </ImageAnimatedWrapper>
+                </div>
 
                 {/* Círculo decorativo */}
                 <div
@@ -132,7 +129,8 @@ export default function AboutSectionCard() {
                     <StaggerListItemClient
                       key={idx}
                       index={idx}
-                      delayBase={0.2}
+                      direction="x"
+                      offset={20}
                       className="flex items-start gap-3 p-3 rounded-xl bg-white backdrop-blur-sm border border-white/20 hover:bg-white/50 transition-all duration-300 group/item"
                     >
                       <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 flex items-center justify-center flex-shrink-0 shadow-sm group-hover/item:shadow-md transition-all duration-200">

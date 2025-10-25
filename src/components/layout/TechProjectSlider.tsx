@@ -39,7 +39,7 @@ export default function TechProjectSlider() {
             className="flex my-6 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
             <ProjectStaggerWrapper
-              key={index}
+              key={project.id}
               index={index}
             >
               <TechProjectCard projects={project} />

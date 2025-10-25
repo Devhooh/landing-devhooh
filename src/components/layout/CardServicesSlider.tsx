@@ -38,7 +38,7 @@ export default function CardServicesSlider({cardData}: CardCaroulselSectionProps
     >
       {cardData.map((card, index) => (
         <SwiperSlide
-          key={index}
+          key={card.slug}
           className="px-4 py-8 md-tablet:pb-10 flex justify-center items-center"
         >
           {/* pasamos index para el stagger */}

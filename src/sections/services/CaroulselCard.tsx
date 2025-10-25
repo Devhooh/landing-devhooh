@@ -49,7 +49,7 @@ export default function CaroulselCard({
         <Link href="/contact">
           <button 
             className="
-            relative w-full py-2 rounded-lg bg-colorPrimario5 text-white font-semibold overflow-hidden"
+            relative w-full py-2 rounded-lg bg-colorPrimario5 text-white font-semibold overflow-hidden hover:bg-colorPrimario5/90 transition-colors"
           >
             <span className="relative z-10">Cotiza tu proyecto</span>
             <span className="absolute inset-0 bg-white/30 -translate-x-full rotate-45 animate-shine" />
@@ -58,7 +58,7 @@ export default function CaroulselCard({
 
         <Link href={`/services/${card.slug}`}>
           <button className="
-            w-full py-2 rounded-lg border border-colorSecundario2 text-colorPrimario4 font-medium bg-white"
+            w-full py-2 rounded-lg border border-colorSecundario2 text-colorPrimario4 font-medium bg-white hover:bg-gray-100 transition-colors"
           >
             Ver más detalles
           </button>

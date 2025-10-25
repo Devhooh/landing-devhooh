@@ -174,9 +174,9 @@ export default function WhyChooseUsSection() {
                     {feature.benefits.map((benefit, idx) => (
                       <StaggerListItemClient
                         key={idx}
-                        index={index}
-                        direction="x"
-                        offset={20}
+                        index={idx}
+                        direction="y"
+                        offset={30}
                         className="flex items-center gap-2 px-4 py-2 rounded-full bg-white backdrop-blur-sm border border-white/30 hover:bg-white transition-all duration-300"
                       >
                         <div className="w-6 h-6 rounded-xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 flex items-center justify-center flex-shrink-0 shadow-sm group-hover/item:shadow-md transition-all duration-200">

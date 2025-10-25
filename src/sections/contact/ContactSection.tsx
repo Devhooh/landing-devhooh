@@ -4,11 +4,11 @@ import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 
 export function ContactSection() {
   return (
-    <section className="w-full px-3 pt-5 pb-12 bg-white">
+    <section className="w-full px-3 pt-5 md-tablet:pt-10 pb-12 bg-white">
       {/* Título */}
       <InViewAnimationWrapper
         direction="y"
-        offset={30}
+        offset={20}
         transition={{ duration: 0.3, delay: 0.3 }}
       >
         <h1

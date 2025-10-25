@@ -1,4 +1,4 @@
-import FAQSection from "@/sections/portfolio/FAQSection";
+import FAQSection from "@/components/ui/FAQSection";
 import PortfolioFilters from "@/sections/portfolio/PortfolioFilters";
 import ReviewsSection from "@/sections/portfolio/ReviewSection";
 import { faqData} from '@/data/faqData';

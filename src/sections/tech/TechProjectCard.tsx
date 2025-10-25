@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
 
 interface ProjectCardProps {
   id: number;
@@ -16,18 +13,9 @@ interface ProjectCardProps {
   slug: string;
 }
 
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
 export default function TechProjectCard({ projects }: { projects: ProjectCardProps }) {
   return (
-    <motion.section
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.1 }}
+    <section
       className="w-full h-auto"
     >
       <div className="min-h-[500px] max-h-[600px] py-4 border border-colorHover3 rounded-2xl shadow-xl overflow-hidden flex flex-col
@@ -76,6 +64,6 @@ export default function TechProjectCard({ projects }: { projects: ProjectCardPro
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

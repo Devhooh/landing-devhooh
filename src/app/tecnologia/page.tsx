@@ -1,5 +1,5 @@
 import { faqDataTech } from "@/data/faqDataTech";
-import FAQSection from "@/sections/portfolio/FAQSection";
+import FAQSection from "@/components/ui/FAQSection";
 import CTATech from "@/sections/tech/CTATech";
 import FeaturedSection from "@/sections/tech/FeaturedSection";
 import HeroSectionTech from "@/sections/tech/HeroSectionTech";

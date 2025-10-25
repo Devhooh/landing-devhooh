@@ -52,18 +52,22 @@ const config: Config = {
         colorSecundario2: "#7550E7", // variante 3 del color principal
         colorSecundario3: "#5A29EB", // variante 4 del color principal mas fuerte
         colorSecundario4: "#5025D1", // variante 5 del color principal
-
-
       },
       keyframes: {
         scroll: {
         '0%': { transform: 'translateX(0)' },
         '100%': { transform: 'translateX(-50%)' }, // mueve la mitad del contenedor
         },
+        'card-image-in': {
+          // El mismo efecto de Framer Motion
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
       },
       animation: {
         scroll: 'scroll 40s linear infinite',
         'scroll-reverse': 'scroll 40s linear infinite reverse',
+        'card-image-in': 'card-image-in 0.5s ease-out forwards',
       }
     },
   },

@@ -21,7 +21,7 @@ export default function HeroSectionHome() {
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
           <InViewAnimationWrapper 
             className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
-            direction="y" offset={40} delay={0.2}>
+            direction="x" offset={-20} delay={0.2}>
             <h1>
               Desarrollo de 
               <strong className="text-colorPrimario5"> software inteligente </strong> 
@@ -31,6 +31,8 @@ export default function HeroSectionHome() {
     
           {/* Contenedor para la image: */}
           <ImageAnimatedWrapper
+            direction="x"
+            offset={20}
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
             <div className="relative w-[460px] h-[460px] md-tablet:w-[600px] md-tablet:h-[600px] rounded-2xl">
@@ -47,7 +49,7 @@ export default function HeroSectionHome() {
     
           <InViewAnimationWrapper 
             className="order-3 text-lg md-tablet:text-xl text-center table-lg:text-left text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
-            direction="y" offset={30} delay={0.3}>
+            direction="x" offset={-20} delay={0.3}>
             <h2>
               Desarrollo de páginas web modernas, aplicaciones móviles y sistemas empresariales con inteligencia artificial para que tu negocio sea más innovador, eficiente y competitivo en el mercado digital.
             </h2>
@@ -61,7 +63,7 @@ export default function HeroSectionHome() {
                 key={idx}
                 className="flex items-center gap-3"
                 direction="y"
-                offset={40}
+                offset={30}
               >
                 <CircleCheck className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
                 <span>{item}</span>
@@ -71,7 +73,7 @@ export default function HeroSectionHome() {
     
           {/* Botones: */}
           <InViewAnimationWrapper
-            direction="y" offset={20} delay={0.3}
+            direction="x" offset={-10} delay={0.3}
             className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
           >
             <Link href="/services">

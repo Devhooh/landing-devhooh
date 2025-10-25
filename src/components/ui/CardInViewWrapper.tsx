@@ -4,34 +4,31 @@ import React, { ReactNode } from 'react';
 
 type Direction = 'x' | 'y';
 
-interface AnimateInViewProps {
+interface CardInViewWrapperProps {
   children: ReactNode;
   className?: string;
   delay?: number;
   direction?: Direction;
-  offset?: number;
-  scale?: number;
+  offset?: number; 
   transition?: Transition;
-  viewportAmount?: number;
+  viewportAmount?: number; 
 }
 
-// 2. Interfaz para la prop 'custom'
+// 2. Interfaz para la prop 'custom' (solo necesitamos la dirección y el offset)
 interface CustomProps {
   direction: Direction;
   offset: number;
-  scale: number;
   transition: Transition;
 }
 
-// 3. Variantes estáticas usando la función custom
-const animationVariants: Variants = {
-  // Estado inicial (oculto y desplazado)
+// 3. Variantes para el efecto de tarjeta (menos opacidad y menos movimiento)
+const cardAnimationVariants: Variants = {
   hidden: (custom: CustomProps) => ({ 
-    opacity: 0, 
-    scale: custom.scale, 
+    opacity: 0, // Menos desvanecimiento
+    scale: 0.98,  // Ligera contracción
     [custom.direction]: custom.offset,
   }),
-  // Estado final (visible y en posición)
+  // Estado final: Totalmente visible y en su posición.
   show: (custom: CustomProps) => ({ 
     opacity: 1, 
     scale: 1, 
@@ -42,36 +39,35 @@ const animationVariants: Variants = {
 };
 
 
-export function InViewAnimationWrapper({ 
+export function CardInViewWrapper({ 
   children, 
   className, 
   delay = 0.1,
   direction = 'y',
-  offset = 30,
-  scale = 1,
+  offset = 15, 
   transition,
-  viewportAmount = 0.3,
-}: AnimateInViewProps) {
+  viewportAmount = 0.1,
+}: CardInViewWrapperProps) {
 
-  // Transición por defecto tipo 'spring' (como ImageWrapper)
+  // Transición por defecto más suave y rápida para cards
   const defaultTransition: Transition = { 
-    duration: 0.5, 
+    duration: 0.1, // Un poco más rápida
     delay: delay,
-    type: "spring",
-    stiffness: 80,
+    type: "tween", // 'tween' es más ligero que 'spring'
+    ease: "easeInOut",
   }; 
 
   // Objeto 'custom' que pasamos a Framer Motion
   const customProps: CustomProps = {
     direction,
     offset,
-    scale,
     transition: transition ? transition : defaultTransition,
   };
-  // Fix de SSR: Renderiza el estado 'hidden' en el servidor para evitar el salto
+  
+  // Fix de SSR: Renderiza el estado 'hidden' en el servidor
   const initialStyle = { 
-    opacity: 0, 
-    scale: scale,
+    opacity: 0.8, // Coincide con la variante 'hidden'
+    scale: 0.98, // Coincide con la variante 'hidden'
     [direction]: offset 
   };
   
@@ -80,7 +76,7 @@ export function InViewAnimationWrapper({
       className={className}
       initial="hidden" 
       whileInView="show"
-      variants={animationVariants}
+      variants={cardAnimationVariants}
       custom={customProps}
       viewport={{ once: true, amount: viewportAmount }} 
       style={initialStyle} 

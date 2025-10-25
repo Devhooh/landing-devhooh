@@ -1,9 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
 export default function HeroSectionPort() {
   return (
@@ -12,12 +12,11 @@ export default function HeroSectionPort() {
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={20}
+            transition={{ duration: 0.2, delay: 0.2 }}
             className="order-1 table-lg:order-2 mt-10 table-lg:mt-2"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <h1 className="text-4xl font-extrabold text-center table-lg:text-right text-colorPrimario2 leading-tight drop-shadow-lg">
               Realidades digitales. {""}
@@ -26,19 +25,17 @@ export default function HeroSectionPort() {
               </strong>
               por sí solos
             </h1>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* --- 2) IMAGEN --- */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="
               my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4
               flex justify-center table-lg:justify-start"
-            initial={{ opacity: 0, x: -50, scale: 0.9 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
           >
-
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
@@ -54,33 +51,26 @@ export default function HeroSectionPort() {
               </div>
 
               {/* Círculos decorativos flotantes */}
-              <motion.div
+              <div
                 className="animate-pulse absolute -top-4 -right-4  w-8 h-8 rounded-full bg-gray-500 opacity-20"
-              ></motion.div>
+              ></div>
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={20}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="order-3 mb-5 table-lg:mb-0"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
           >
             <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               Cada proyecto representa una historia de innovación, colaboración y éxito. Mira cómo ayudamos a crecer negocios con tecnología moderna.
             </p>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* --- 4) LISTA --- */}
-          <motion.div
-            className="order-4 flex justify-end"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
-          >
+          <StaggerListContainer className="order-4 flex justify-end">
               <ul className="space-y-3 text-gray-800 text-left max-w-md mx-auto table-lg:mx-0">
                 {[
                   "Tiendas online con integración de pagos",
@@ -89,35 +79,34 @@ export default function HeroSectionPort() {
                   "Proyectos con inteligencia artificial aplicada"
 
                 ].map((feature, index) => (
-                  <motion.li
+                  <StaggerListItemClient
                     key={index}
+                    direction="x"
+                    offset={20}
                     className="flex items-start gap-3"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
                     <Check className="w-6 h-6 text-green-600 flex-shrink-0" />
                     <span className="text-base md-tablet:text-xl">{feature}</span>
-                  </motion.li>
+                  </StaggerListItemClient>
                 ))}
               </ul>
-          </motion.div>
+          </StaggerListContainer>
 
           {/* Boton CTA */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={20}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="order-5 flex justify-center table-lg:justify-end mt-10 table-lg:mt-1 mb-5 table-lg:my-8 "
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
           >
             <Link href="/contact">
-              <button className="px-8 py-4 text-lg md-tablet:text-xl font-semibold bg-colorPrimario6 text-white rounded-xl shadow-md hover:scale-105 transform transition-all duration-300">
+              <button className="px-8 py-4 text-lg md-tablet:text-xl font-semibold 
+                bg-colorPrimario6 text-white rounded-xl shadow-md 
+                hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300">
                 Cotiza tu proyecto ahora
               </button>
             </Link>
-          </motion.div>
+          </InViewAnimationWrapper>
 
         </div>
       </div>

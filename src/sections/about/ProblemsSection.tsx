@@ -1,50 +1,7 @@
-"use client";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
 import { AlertTriangle, CheckCircle, ArrowRight } from "lucide-react";
-
-// Configuración de animaciones
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15
-    }
-  }
-};
-
-const itemVariants: Variants = {
-  hidden: { 
-    opacity: 0, 
-    y: 30 
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
-};
-
-const cardVariants: Variants = {
-  hidden: { 
-    opacity: 0, 
-    y: 30,
-    scale: 0.95
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  }
-};
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 
 export default function ProblemsSection() {
 
@@ -104,53 +61,49 @@ export default function ProblemsSection() {
       
       {/* Contenedor principal con gradiente mejorado */}
       <div className="relative bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 rounded-3xl py-16 px-6 md-tablet:px-12 border border-colorPrimario5/20 shadow-[0_0_50px_rgba(103,61,230,0.3)]">
-        <motion.div 
-          className="relative z-10 max-w-6xl mx-auto text-center mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="relative z-10 max-w-6xl mx-auto text-center mb-16">
           {/* Título mejorado con animación letra por letra */}
-          <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight text-white"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
             transition={{ duration: 0.3, delay: 0.2 }}
-            viewport={{ once: true }}
           >
-            ¿Qué problemas solucionamos?
-          </motion.h2>
+            <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight text-white">
+              ¿Qué problemas solucionamos?
+            </h2>
+          </InViewAnimationWrapper>
 
           {/* Subtítulo mejorado */}
-          <motion.p 
-            className="text-lg md-tablet:text-xl text-colorHover5 mb-8"
-            variants={itemVariants}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{duration: 0.4, delay: 0.3}}
           >
-            Si alguno de estos problemas te resulta familiar, tenemos la solución perfecta para ti
-          </motion.p>
+            <p className="text-lg md-tablet:text-xl text-colorHover5 mb-8">
+              Si alguno de estos problemas te resulta familiar, tenemos la solución perfecta para ti
+            </p>
+          </InViewAnimationWrapper>
 
           {/* Badge informativo */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{duration: 0.4, delay: 0.4}}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm"
-            variants={itemVariants}
           >
             <AlertTriangle className="w-5 h-5 text-colorPrimario5" />
             <span className="text-colorHover5 font-semibold">Problemas comunes que enfrentan las empresas</span>
-          </motion.div>
-        </motion.div>
+          </InViewAnimationWrapper>
+        </div>
 
         {/* Grid de cards mejorado */}
-        <motion.div 
+        <div
           className="relative z-10 grid grid-cols-1 table-lg:grid-cols-2 gap-6 md-tablet:gap-8 max-w-7xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={containerVariants}
         >
           {problems.map((problem, index) => (
-            <motion.div
+            <ProjectStaggerWrapper
               key={index}
+              index={index}
               className={`
                 group relative bg-colorFondo backdrop-blur-sm
                 border-2 border-white/20 hover:border-colorPrimario5/40
@@ -159,15 +112,6 @@ export default function ProblemsSection() {
                 transition-all duration-500
                 flex flex-col md-tablet:flex-row items-start md-tablet:items-center gap-6
               `}
-              variants={cardVariants}
-              whileHover={{ 
-                y: -8, 
-                scale: 1.02,
-                transition: { 
-                  duration: 0.3,
-                  ease: "easeOut"
-                } 
-              }}
             >
               
               {/* Efectos decorativos */}
@@ -226,17 +170,16 @@ export default function ProblemsSection() {
 
               {/* Efecto de brillo en hover */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </motion.div>
+            </ProjectStaggerWrapper>
           ))}
-        </motion.div>
+        </div>
 
         {/* Call to action final */}
-        <motion.div
-          className="relative z-10 mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
           transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
+          className="relative z-10 mt-16 text-center"
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
@@ -245,7 +188,7 @@ export default function ProblemsSection() {
             </span>
             <CheckCircle className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

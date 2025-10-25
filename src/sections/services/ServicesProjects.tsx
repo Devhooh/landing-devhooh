@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Eye, Tag } from "lucide-react";
 import Link from "next/link";
-import { AnimateOnVisible } from "@/components/layout/AnimateOnVisible";
+import AnimateOnVisible from "@/components/layout/AnimateOnVisible";
 
 interface Project {
   slug: string;
@@ -22,7 +22,6 @@ export default function ServicesProjects({
   showService = true,
   index = 0,
 }: ServicesProjectsProps) {
-  const initialImageStyle = "opacity-0 scale-90";
 
   return (
     <Link href={`/portfolio/${project.slug}`}>
@@ -39,8 +38,7 @@ export default function ServicesProjects({
           {/* Contenedor de imagen mejorado */}
           <div className="relative h-64 overflow-hidden">
             <AnimateOnVisible
-              animationClass="animate-card-image-in"
-              className={`relative w-full h-full bg-white/5 backdrop-blur-sm ${initialImageStyle}`}
+              className="relative w-full h-full bg-white/5 backdrop-blur-sm"
             >
               <Image
                 src={project.imageSrc}

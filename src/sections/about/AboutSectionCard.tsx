@@ -1,17 +1,8 @@
-"use client";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
 import { Eye, Target, Users, Globe} from "lucide-react";
-
-const visionVariant: Variants = {
-  hidden: { opacity: 0, x: -30},
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
-const missionVariant: Variants = {
-  hidden: { opacity: 0, x: 30},
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
 export default function AboutSectionCard() {
   return(
@@ -22,19 +13,19 @@ export default function AboutSectionCard() {
           <div className="space-y-20 relative z-10">
             
             {/* Card Visión mejorada */}
-            <motion.div
-              variants={visionVariant}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="w-full table-lg:w-4/5 table-lg:self-start mx-auto bg-gradient-to-br from-colorHover5 to-colorHover6 rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row border border-white/20 backdrop-blur-sm group"
+            <InViewAnimationWrapper
+              direction="x"
+              offset={-20}
+              transition={{duration:0.2, delay: 0.3}}
+              className="w-full table-lg:w-4/5 table-lg:self-start mr-auto bg-gradient-to-br from-colorHover5 to-colorHover6 
+              rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] 
+              transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row border border-white/20 
+              backdrop-blur-sm group"
             >
               {/* Imagen mejorada */}
               <div className="rounded-full relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10">
-                <motion.div
+                <div
                   className="relative"
-                  whileHover={{ scale: 1.05, rotate: 2 }}
-                  transition={{ duration: 0.3 }}
                 >
                   <Image
                     width={800}
@@ -47,11 +38,10 @@ export default function AboutSectionCard() {
                   
                   {/* Efecto de brillo en hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                </motion.div>
+                </div>
 
                 {/* Círculo decorativo */}
-                <div
-                  className="animate-pulse absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
+                <div className="animate-pulse absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
                 ></div>
               </div>
 
@@ -80,23 +70,21 @@ export default function AboutSectionCard() {
                   <span className="text-sm font-semibold text-colorPrimario5">Meta 2030</span>
                 </div>
               </div>
-            </motion.div>
+            </InViewAnimationWrapper>
 
             {/* Card Misión mejorada */}
-            <motion.div
-              variants={missionVariant}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true}}
-              className="w-full table-lg:w-4/5 table-lg:self-end table-lg:ml-auto bg-gradient-to-br from-colorHover5 to-colorHover6 rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row-reverse border border-white/20 backdrop-blur-sm group"
+            <InViewAnimationWrapper
+              direction="x"
+              offset={20}
+              transition={{duration: 0.3, delay: 0.4}}
+              className="w-full table-lg:w-4/5 table-lg:self-end table-lg:ml-auto bg-gradient-to-br from-colorHover5 to-colorHover6 
+              rounded-3xl shadow-[0_0_30px_rgba(103,61,230,0.15)] hover:shadow-[0_0_40px_rgba(103,61,230,0.25)] 
+              transition-all duration-300 overflow-hidden flex flex-col table-lg:flex-row-reverse border border-white/20 
+              backdrop-blur-sm group"
             >
               {/* Imagen mejorada */}
               <div className="rounded-full relative p-8 table-lg:w-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-colorSecundario1/10 to-colorSecundario2/10">
-                <motion.div
-                  className="relative"
-                  whileHover={{ scale: 1.05, rotate: -2 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <div className="relative">
                   <Image
                     width={800}
                     height={650}
@@ -108,7 +96,7 @@ export default function AboutSectionCard() {
                   
                   {/* Efecto de brillo en hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                </motion.div>
+                </div>
 
                 {/* Círculo decorativo */}
                 <div
@@ -132,19 +120,18 @@ export default function AboutSectionCard() {
                 </p>
 
                 {/* Lista de valores mejorada */}
-                <div className="space-y-4">
+                <StaggerListContainer className="space-y-4">
                   {[
                     { icon: Users, text: "Contratar y desarrollar el mejor talento nacional e internacional" },
                     { icon: Globe, text: "Mantener transparencia total en operaciones y comunicaciones" },
                     { icon: Target, text: "Trabajar siempre de la mano con el cliente para cada proyecto" }
                   ].map((item, idx) => (
-                    <motion.div
+                    <StaggerListItemClient
                       key={idx}
+                      index={idx}
+                      direction="x"
+                      offset={20}
                       className="flex items-start gap-3 p-3 rounded-xl bg-white backdrop-blur-sm border border-white/20 hover:bg-white/50 transition-all duration-300 group/item"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: idx * 0.1 }}
-                      viewport={{ once: true }}
                     >
                       <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 flex items-center justify-center flex-shrink-0 shadow-sm group-hover/item:shadow-md transition-all duration-200">
                         <item.icon className="w-4 h-4 text-white" />
@@ -152,11 +139,11 @@ export default function AboutSectionCard() {
                       <span className="text-sm md-tablet:text-base text-colorPrimario1/80 leading-relaxed">
                         {item.text}
                       </span>
-                    </motion.div>
+                    </StaggerListItemClient>
                   ))}
-                </div>
+                </StaggerListContainer>
               </div>
-            </motion.div>
+            </InViewAnimationWrapper>
           </div>
         </div>
     </div>

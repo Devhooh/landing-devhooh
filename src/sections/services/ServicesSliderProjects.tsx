@@ -24,9 +24,8 @@ export function ServicesSliderProjects({
           <InViewAnimationWrapper
             direction="y"
             offset={20}
-            delay={0.2}
+            transition={{ duration: 0.2, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
-            transition={{ duration: 0.3 }}
           >
             <Trophy className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold">Nuestra experiencia</span>
@@ -36,8 +35,7 @@ export function ServicesSliderProjects({
           <InViewAnimationWrapper
             direction="y"
             offset={20}
-            delay={0.3}
-            transition={{ duration: 0.5}}
+            transition={{ duration: 0.3, delay: 0.4}}
           >
             <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 leading-tight">
               Proyectos que usaron <strong className="text-colorPrimario5"> nuestros servicios:</strong> 
@@ -48,8 +46,7 @@ export function ServicesSliderProjects({
           <InViewAnimationWrapper
             direction="y"
             offset={20}
-            delay={0.3}
-            transition={{ duration: 0.5}}
+            transition={{ duration: 0.3, delay: 0.5}}
           >
             <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-4xl mx-auto leading-relaxed mb-8">
               {subtitle}
@@ -65,6 +62,8 @@ export function ServicesSliderProjects({
             ].map((value, index) => (
               <StaggerListItemClient
                 key={index}
+                index={index}
+                delayBase={0.2}
                 direction="y"
                 offset={20}
                 className="text-center px-4 py-2 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/30"

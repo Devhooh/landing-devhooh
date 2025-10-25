@@ -24,7 +24,7 @@ interface CustomProps {
 // 3. Variantes para el efecto de tarjeta (menos opacidad y menos movimiento)
 const cardAnimationVariants: Variants = {
   hidden: (custom: CustomProps) => ({ 
-    opacity: 0, // Menos desvanecimiento
+    opacity: 0.9, // Menos desvanecimiento
     scale: 0.98,  // Ligera contracción
     [custom.direction]: custom.offset,
   }),
@@ -46,7 +46,7 @@ export function CardInViewWrapper({
   direction = 'y',
   offset = 15, 
   transition,
-  viewportAmount = 0.1,
+  viewportAmount = 0.2,
 }: CardInViewWrapperProps) {
 
   // Transición por defecto más suave y rápida para cards
@@ -66,7 +66,7 @@ export function CardInViewWrapper({
   
   // Fix de SSR: Renderiza el estado 'hidden' en el servidor
   const initialStyle = { 
-    opacity: 0.8, // Coincide con la variante 'hidden'
+    opacity: 0.9, // Coincide con la variante 'hidden'
     scale: 0.98, // Coincide con la variante 'hidden'
     [direction]: offset 
   };

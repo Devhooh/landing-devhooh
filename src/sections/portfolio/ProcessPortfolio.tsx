@@ -1,6 +1,5 @@
-"use client";
-
-import { motion, Variants } from "framer-motion";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 import { CheckCircle, Target } from "lucide-react";
 import * as Icons from "lucide-react";
 import { LucideProps } from "lucide-react";
@@ -16,27 +15,6 @@ interface TechProcessProps {
   steps: ProcessStep[];
 }
 
-// Variantes para el contenedor (controla escalonado)
-const containerVariant = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-// Variantes para cada step
-const stepVariant: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.3, ease: "easeOut" },
-  },
-};
-
 export default function ProcessPortfolio({ steps }: TechProcessProps) {
   if (!steps || steps.length === 0) return null;
 
@@ -49,35 +27,29 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
         <div className="text-center mb-16">
           
           {/* Título con animación letra por letra */}
-          <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl text-colorPrimario5 font-extrabold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{duration: 0.2, delay: 0.3}}
           >
-            Proceso de desarrollo de tu proyecto
-          </motion.h2>
+            <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl text-colorPrimario5 font-extrabold mb-6">
+              Proceso de desarrollo de tu proyecto
+            </h2>
+          </InViewAnimationWrapper>
 
-          <motion.p
-            className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4}}
-            viewport={{ once: true }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{duration: 0.3, delay: 0.4}}
           >
-            Así realizamos tu proyecto paso a paso como ves en nuestro portafolio
-          </motion.p>
+            <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto">
+              Así realizamos tu proyecto paso a paso como ves en nuestro portafolio
+            </p>
+          </InViewAnimationWrapper>
         </div>
 
         {/* Timeline mejorado */}
-        <motion.div 
-          variants={containerVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true}}
-          className="relative"
-        >
+        <div className="relative">
           
           {/* Línea principal del timeline */}
           <div className="absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-colorPrimario5 via-colorSecundario1 to-colorPrimario5 rounded-full shadow-lg"></div>
@@ -91,29 +63,31 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
               const isLast = index === steps.length - 1;
               
               return (
-                <motion.div 
+                <ProjectStaggerWrapper
                   key={index} 
-                  className="relative flex items-start gap-2 md-tablet:gap-8"
-                  variants={stepVariant}
+                  index={index}
+                  className="relative flex items-start gap-3 md-tablet:gap-8"
                 >
                   
                   {/* Número del timeline mejorado */}
                   <div className="relative z-10 flex-shrink-0">
-                    <motion.div 
-                      className="w-16 h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300"
-                      whileHover={{ scale: 1.05, rotate: 5 }}
+                    <div 
+                      className="
+                        w-16 h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+                        flex items-center justify-center shadow-lg group hover:shadow-xl
+                        hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
                     >
                       <span className="text-white font-bold text-xl animate-pulse">{index + 1}</span>
-                    </motion.div>
-                    
+                    </div>
                   </div>
 
                   {/* Card del paso mejorada */}
                   <div className="flex-grow group">
-                    <motion.div 
+                    <div 
                       className="
-                        relative p-4 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-300"
-                      whileHover={{ y: -5, scale: 1.02 }}
+                        relative p-4 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 
+                        shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]
+                        hover:scale-[1.02] active:scale-[0.98] transform transition-all duration-300"
                     >
                       
                       {/* Efectos decorativos */}
@@ -150,22 +124,21 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
 
                       {/* Efecto de brillo en hover */}
                       <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                    </motion.div>
+                    </div>
 
                   </div>
-                </motion.div>
+                </ProjectStaggerWrapper>
               );
             })}
           </div>
-        </motion.div>
+        </div>
 
         {/* Resumen final */}
-        <motion.div
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.4, delay: 0.3}}
           className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2}}
-          viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
@@ -174,7 +147,7 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
             </span>
             <Target className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

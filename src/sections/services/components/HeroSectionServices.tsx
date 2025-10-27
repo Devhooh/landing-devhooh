@@ -31,7 +31,7 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
       >
         <h1
           className="
-            text-4xl md-tablet:text-6xl table-lg:text-7xl font-extrabold mb-6 
+            text-5xl md-tablet:text-6xl table-lg:text-7xl font-extrabold mb-6 
             text-white drop-shadow-lg"
         >
           {service.name}
@@ -57,8 +57,8 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
         transition={{duration: 0.3, delay: 0.6}}
       >
         <p className="
-          text-lg md-tablet:text-2xl table-lg:text-3xl text-colorPrimario1 
-          mb-10 max-w-3xl mx-auto font-medium drop-shadow-sm"
+          text-xl md-tablet:text-2xl table-lg:text-3xl text-black 
+          my-10 max-w-3xl px-10 md-tablet:px-5 mx-auto font-normal drop-shadow-sm"
         >
           {service.subtitle}
         </p>
@@ -68,19 +68,17 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
       <InViewAnimationWrapper
         direction="y"
         offset={20}
-        transition={{duration: 0.3, delay: 0.1}}
+        transition={{duration: 0.3, delay: 0.2}}
         className="my-8 mx-10"
       >
         <Link href="/contact">
           <button
             className="
-              px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+              px-5 md-tablet:px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
               text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 transform transition-all duration-300 
               flex items-center gap-3 drop-shadow-lg hover:scale-[1.05] active:scale-[0.98]"
           >
-            <span className="inline-block w-3 h-3 rounded-full bg-colorPrimario5 animate-pulse"></span>
             Cotiza tu proyecto
-            <span className="inline-block w-3 h-3 rounded-full bg-colorSecundario1 animate-pulse"></span>
           </button>
         </Link>
       </InViewAnimationWrapper>

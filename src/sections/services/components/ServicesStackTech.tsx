@@ -1,10 +1,10 @@
-"use client";
-
 import Link from "next/link";
 import * as Icons from "lucide-react";
 import { LucideProps, ArrowRight } from "lucide-react";
 import { ServicesData } from "@/data/ServicesDetails";
-import { motion, Variants } from "framer-motion";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
 interface TechStackSectionProps {
   service: ServicesData;
@@ -13,55 +13,43 @@ interface TechStackSectionProps {
 export default function ServicesStackTech({ service }: TechStackSectionProps) {
   const stack = service.stackTech[0]; // asumimos que siempre hay un stackTech
 
-  // Variantes
-  const textVariants: Variants = {
-    hidden: { opacity: 0, x: -40 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.3} },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
-    show: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.3, delay: i * 0.1},
-    }),
-  };
-
-  const buttonVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut", delay: stack.tech.length * 0.15 } },
-  };
-
   return (
     <section className="py-8 px-6 md-tablet:px-12 bg-violet-50">
       {/* Encabezado */}
-      <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={textVariants}>
+      <InViewAnimationWrapper
+        direction="y"
+        offset={-20}
+        transition={{duration: 0.3, delay: 0.4}}
+      >
         <h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-4">
           Stack de tecnología que utilizamos
           <br/>
           para <strong className="text-colorPrimario5">{service.name}</strong>
         </h2>
+      </InViewAnimationWrapper>
+
+      <InViewAnimationWrapper
+        direction="x"
+        offset={-20}
+        transition={{duration: 0.3, delay: 0.5}}
+      >
         <p className="mt-3 text-colorPrimario1 text-lg md-tablet:text-xl leading-relaxed">
           {stack.description}
         </p>
-      </motion.div>
+      </InViewAnimationWrapper>
 
       {/* Grid de tecnologías */}
-      <ul className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6 mt-8 px-4">
+      <StaggerListContainer className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6 mt-8 px-4">
         {stack.tech.map((item, index) => {
           const Icon =
             (Icons[item.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) || Icons.HelpCircle;
 
           return (
-            <motion.li
+            <StaggerListItemClient
               key={index}
-              custom={index}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={cardVariants}
+              direction="x"
+              offset={-20}
+              index={index + 1 }
               className={`
                 group relative bg-white/70 
                 border-2 border-${item.color}-400
@@ -69,7 +57,6 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
                 w-full hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]
                 transition-all duration-300 hover:border-colorPrimario5/40
               `}
-              whileHover={{ y: -8, scale: 1.02 }}
             >
               {/* Badge numerado */}
               <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white font-bold text-sm flex items-center justify-center shadow-lg">
@@ -103,19 +90,13 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
 
               {/* Efecto de brillo en hover */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </motion.li>
+            </StaggerListItemClient>
           );
         })}
-      </ul>
+      </StaggerListContainer>
 
       {/* Botón */}
-      <motion.div
-        className="mt-10 text-center"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={buttonVariants}
-      >
+      <div className="mt-10 text-center">
         <Link
           href="/tecnologia"
           className={`
@@ -133,8 +114,8 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
           <span>Ver todas las tecnologías</span>
           <ArrowRight className="w-6 h-6 flex-shrink-0"/>
         </Link>
-      </motion.div>
+      </div>
 
     </section>
   );
-}
+} 

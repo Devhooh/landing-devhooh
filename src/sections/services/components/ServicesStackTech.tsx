@@ -31,7 +31,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
       <InViewAnimationWrapper
         direction="x"
         offset={-20}
-        transition={{duration: 0.3, delay: 0.5}}
+        transition={{duration: 0.4, delay: 0.5}}
       >
         <p className="mt-3 text-colorPrimario1 text-lg md-tablet:text-xl leading-relaxed">
           {stack.description}
@@ -96,7 +96,12 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
       </StaggerListContainer>
 
       {/* Botón */}
-      <div className="mt-10 text-center">
+      <InViewAnimationWrapper 
+        direction="y"
+        offset={30}
+        transition={{duration: 0.5, delay: 0.6}}
+        className="mt-10 text-center"
+      >
         <Link
           href="/tecnologia"
           className={`
@@ -114,7 +119,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
           <span>Ver todas las tecnologías</span>
           <ArrowRight className="w-6 h-6 flex-shrink-0"/>
         </Link>
-      </div>
+      </InViewAnimationWrapper>
 
     </section>
   );

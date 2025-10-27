@@ -1,110 +1,65 @@
-"use client";
-
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { ServicesData } from "@/data/ServicesDetails";
-import { motion, Variants } from "framer-motion";
 import { CheckCircle, ArrowRight, Clock, Target } from "lucide-react";
 
 interface DevelopmentProcessProps {
   service: ServicesData;
 }
 
-// Variantes para el contenedor (controla escalonado)
-const containerVariant = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-// Variantes para cada step
-const stepVariant: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.3},
-  },
-};
-
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
 export default function ProcessServicesSection({ service }: DevelopmentProcessProps) {
   const steps = service.process;
-  const splitText = (text: string) => text.split("");
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
-      
       <div className="relative z-10 max-w-5xl mx-auto px-4 md-tablet:px-12">
         
         {/* Encabezado mejorado */}
         <div className="text-center mb-16">
           
           {/* Badge superior */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
           >
             <Target className="w-5 h-5 text-colorPrimario5" />
             <span className="text-colorPrimario5 font-semibold">Metodología probada</span>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* Título con animación letra por letra */}
-          <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{duration: 0.4, delay: 0.4}}
           >
-            {splitText("Proceso de ").map((letter, idx) => (
-              <motion.span
-                key={idx}
-                className="text-colorPrimario2"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-            {splitText("Desarrollo").map((letter, idx) => (
-              <motion.span
-                key={idx + 100}
-                className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"
-                variants={letterVariants}
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </motion.h2>
+            <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6">
+              <span className="text-colorPrimario2">
+                Proceso de
+              </span>
+              <span className="text-colorPrimario5">
+                Desarrollo
+              </span>
+            </h2>
+          </InViewAnimationWrapper>
 
-          <motion.p
-            className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-            viewport={{ once: true }}
+
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.4, delay: 0.5 }}
           >
-            Así trabajamos el servicio de <span className="font-bold text-colorPrimario5">{service.name}</span>, paso a paso con metodología ágil
-          </motion.p>
+            <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto">
+              Así trabajamos el servicio de <span className="font-bold text-colorPrimario5">{service.name}</span>, paso a paso con metodología ágil
+            </p>
+          </InViewAnimationWrapper>
         </div>
 
         {/* Timeline mejorado */}
-        <motion.div 
-          variants={containerVariant}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true}}
-          className="relative"
-        >
+        <div className="relative">
           
           {/* Línea principal del timeline */}
           <div className="absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-colorPrimario5 via-colorSecundario1 to-colorPrimario5 rounded-full shadow-lg"></div>
@@ -114,29 +69,32 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
               const isLast = index === steps.length - 1;
               
               return (
-                <motion.div 
+                <ProjectStaggerWrapper 
                   key={index} 
+                  index={index}
                   className="relative flex items-start gap-2 md-tablet:gap-8"
-                  variants={stepVariant}
                 >
                   
                   {/* Número del timeline mejorado */}
                   <div className="relative z-10 flex-shrink-0">
-                    <motion.div 
-                      className="w-16 h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300"
-                      whileHover={{ scale: 1.05, rotate: 5 }}
+                    <div
+                      className="
+                        w-16 h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+                        flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300
+                        hover:scale-[1.05] active:scale-[0.98] transform"
                     >
                       <span className="text-white font-bold text-xl animate-pulse">{index + 1}</span>
-                    </motion.div>
+                    </div>
                     
                   </div>
 
                   {/* Card del paso mejorada */}
                   <div className="flex-grow group">
-                    <motion.div 
+                    <div 
                       className="
-                        relative p-6 md-tablet:p-8 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20 hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-300"
-                      whileHover={{ y: -5, scale: 1.02 }}
+                        relative p-6 md-tablet:p-8 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20
+                        hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] 
+                        hover:scale-[1.02] active:scale-[0.98] transform transition-all duration-300"
                     >
                       
                       {/* Efectos decorativos */}
@@ -171,23 +129,23 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                             <CheckCircle className="w-4 h-4 text-colorPrimario5 flex-shrink-0" />
                             Incluye:
                           </h4>
-                          <ul className="space-y-2">
+                          <StaggerListContainer className="space-y-2">
                             {step.points.map((item, i) => (
-                              <motion.li 
+                              <StaggerListItemClient
                                 key={i}
+                                direction="y"
+                                offset={-20}
+                                index={i}
+                                delayBase={0.2}
                                 className="flex items-start gap-3 p-3 rounded-xl bg-colorHover4/50 border border-white/10 transition-all duration-300"
-                                initial={{ opacity: 0, x: -10 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.3, delay: i * 0.1 }}
-                                viewport={{ once: true }}
                               >
                                 <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
                                   <CheckCircle className="w-3 h-3 text-white flex-shrink-0" />
                                 </div>
                                 <span className="text-colorPrimario1/80 text-sm leading-relaxed">{item}</span>
-                              </motion.li>
+                              </StaggerListItemClient>
                             ))}
-                          </ul>
+                          </StaggerListContainer>
                         </div>
                       )}
 
@@ -201,35 +159,33 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
 
                       {/* Efecto de brillo en hover */}
                       <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                    </motion.div>
+                    </div>
 
                     {/* Conector al siguiente paso */}
                     {!isLast && (
-                      <motion.div
-                        className="flex items-center gap-2 mt-4 ml-4 text-colorPrimario1/60"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                      <InViewAnimationWrapper
+                        direction="x"
+                        offset={-20}
                         transition={{ duration: 0.4, delay: 0.3 }}
-                        viewport={{ once: true }}
+                        className="flex items-center gap-2 mt-4 ml-4 text-colorPrimario1/60"
                       >
                         <ArrowRight className="w-4 h-4 flex-shrink-0"/>
                         <span className="text-sm font-medium">Siguiente paso</span>
-                      </motion.div>
+                      </InViewAnimationWrapper>
                     )}
                   </div>
-                </motion.div>
+                </ProjectStaggerWrapper>
               );
             })}
           </div>
-        </motion.div>
+        </div>
 
         {/* Resumen final */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <InViewAnimationWrapper
+          direction="y"
+          offset={40}
           transition={{ duration: 0.3, delay: 0.3 }}
-          viewport={{ once: true }}
+          className="text-center mt-16"
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
@@ -238,7 +194,7 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
             </span>
             <Target className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

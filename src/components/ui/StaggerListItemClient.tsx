@@ -23,10 +23,6 @@ const itemVariants: Variants = {
     x: 0, 
     y: 0, 
     transition: { 
-      type: "spring", 
-      stiffness: 100, 
-      damping: 20,
-      // 3. ¡La clave! Aplicamos el retraso escalonado
       delay: custom.index * custom.delayBase, 
     } 
   }),

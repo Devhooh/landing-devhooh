@@ -11,7 +11,7 @@ interface ProjectStaggerWrapperProps {
 
 // Devuelve las variantes de texto/párrafo
 const generateTextVariants = (i: number): Variants => ({
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   show: {
     opacity: 1,
     y: 0,

@@ -1,28 +1,7 @@
-"use client";
 import { Mail, Phone, ArrowRight, Clock, MapPin, Star } from "lucide-react";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
-
-// Variante para los párrafos (desde la izquierda)
-const paragraphVariants: Variants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.4, ease: "easeOut" }
-  }
-};
-
-// Variante para los datos de contacto (desde abajo)
-const contactCardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.3, delay: i * 0.15, ease: "easeOut" }
-  })
-};
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 
 export function ContactInfo() {
 
@@ -33,56 +12,57 @@ export function ContactInfo() {
       <div className="relative z-10 space-y-6 px-3">
         
         {/* Título animado */}
-        <motion.h2
-          className="text-2xl md-tablet:text-4xl text-center tablet-md:text-left font-extrabold italic"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3}}
-          viewport={{ once: true }}
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.3, delay: 0.4}}
         >
-          ¡Hablemos de tu proyecto!
-        </motion.h2>
+          <h2 className="text-2xl md-tablet:text-4xl text-center tablet-md:text-left font-extrabold italic">
+            ¡Hablemos de tu proyecto!
+          </h2>
+        </InViewAnimationWrapper>
 
         {/* Párrafos introductorios mejorados */}
         <div className="space-y-4">
-          <motion.p
-            className="text-colorPrimario1/80 font-medium text-lg leading-relaxed"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            Gracias por tu interés en{" "}
-            <span className="font-bold text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
-              Devhooh
-            </span>
-            . Queremos conocer mejor tus necesidades para crear la solución digital perfecta para tu negocio.
-          </motion.p>
 
-          <motion.p
-            className="text-colorPrimario1/80 font-medium text-lg leading-relaxed"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{duration: 0.3, delay: 0.5}}
           >
-            Completa el formulario y empecemos a transformar tu idea en realidad.
-          </motion.p>
+            <p className="text-colorPrimario1/80 font-medium text-lg leading-relaxed">
+              Gracias por tu interés en{" "}
+              <span className="font-bold text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
+                Devhooh
+              </span>
+              . Queremos conocer mejor tus necesidades para crear la solución digital perfecta para tu negocio.
+            </p>
+          </InViewAnimationWrapper>
+
+
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{duration: 0.3, delay: 0.6}}
+          >
+            <p className="text-colorPrimario1/80 font-medium text-lg leading-relaxed">
+              Completa el formulario y empecemos a transformar tu idea en realidad.
+            </p>
+          </InViewAnimationWrapper>
         </div>
 
         {/* Badge de disponibilidad */}
-        <motion.div
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.4, delay: 0.7}}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4}}
-          viewport={{ once: true }}
         >
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
           <span className="text-sm font-semibold text-colorPrimario5">
             Disponibles ahora
           </span>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
 
       {/* Información de contacto mejorada */}
@@ -116,15 +96,13 @@ export function ContactInfo() {
           const Wrapper = item.href ? "a" : "div";
 
           return (
-            <motion.div
+            <ProjectStaggerWrapper
               key={i}
-              className="group relative p-6 rounded-2xl bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10 backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/30 transition-all duration-300 hover:shadow-[0_0_25px_rgba(103,61,230,0.15)]"
-              variants={contactCardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={i}
-              whileHover={{ y: -4, scale: 1.02 }}
+              index={i}
+              className="
+                group relative p-6 rounded-2xl bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10 
+                backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/30 transition-all duration-300 
+                hover:shadow-[0_0_25px_rgba(103,61,230,0.15)] hover:scale-[1.02] active:scale-[0.98] transform"
             >
               <Wrapper
                 href={item.href || undefined}
@@ -160,24 +138,24 @@ export function ContactInfo() {
                   <ArrowRight className="w-5 h-5 text-colorPrimario5/60 group-hover:text-colorPrimario5 group-hover:translate-x-1 transition-all duration-300" />
                 )}
               </Wrapper>
-            </motion.div>
+            </ProjectStaggerWrapper>
           );
         })}
       </div>
 
       {/* Call to action adicional */}
-      <motion.div
-        className="relative z-10 pt-6"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+      <InViewAnimationWrapper
+        direction="y"
+        offset={30}
         transition={{ duration: 0.3}}
-        viewport={{ once: true }}
+        className="relative z-10 pt-6"
       >
         <Link href="/about">
-          <motion.div
-            className="group flex items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-colorDarkFondo2 to-colorDarkFondo4 text-white hover:from-colorDarkFondo3 hover:to-colorDarkFondo5 transition-all duration-300 cursor-pointer"
-            whileHover={{ scale: 1.02, y: -2 }}
-            whileTap={{ scale: 0.98 }}
+          <div
+            className="
+              group flex items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-colorDarkFondo2 to-colorDarkFondo4 
+              text-white hover:from-colorDarkFondo3 hover:to-colorDarkFondo5 transition-all duration-300 cursor-pointer
+              hover:scale-[1.05] active:scale-[0.98] transform"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
@@ -189,9 +167,9 @@ export function ContactInfo() {
               </div>
             </div>
             <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-          </motion.div>
+          </div>
         </Link>
-      </motion.div>
+      </InViewAnimationWrapper>
     </div>
   );
 }

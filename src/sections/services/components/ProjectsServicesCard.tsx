@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Briefcase } from "lucide-react";
 
 interface ProjectCardProps {
@@ -19,18 +16,13 @@ interface ProjectCardProps {
 
 export default function ProjectsServicesCard({ projects }: { projects: ProjectCardProps }) {
   return (
-    <motion.div
+    <div
       className="
         group relative w-full h-full rounded-3xl overflow-hidden 
         bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 
         border border-colorPrimario5/20 shadow-[0_0_25px_rgba(103,61,230,0.15)] hover:shadow-[0_0_35px_rgba(103,61,230,0.25)]
         transition-all duration-500
       "
-      whileHover={{ y: -8, scale: 1.02 }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
     >
       <div className="w-full h-full rounded-2xl shadow-lg p-4 flex flex-col justify-between relative z-10">
         {/* Header */}
@@ -120,6 +112,6 @@ export default function ProjectsServicesCard({ projects }: { projects: ProjectCa
       {/* Overlays decorativos: desactivados para el mouse */}
       <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div className="pointer-events-none absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-colorPrimario5/30 transition-all duration-300"></div>
-    </motion.div>
+    </div>
   );
 }

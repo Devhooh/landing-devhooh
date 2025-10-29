@@ -100,7 +100,7 @@ export default function CTASlugServices() {
             >
               {/* Círculo con 'glow' animado */}
               <div
-                className="absolute inset-0 rounded-full bg-colorPrimario5/70 border border-white/10"
+                className="absolute inset-0 rounded-full bg-colorPrimario5/90 border border-white/10"
               ></div>
               
               {/* Icono del cohete flotando */}

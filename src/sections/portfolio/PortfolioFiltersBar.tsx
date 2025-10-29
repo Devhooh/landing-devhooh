@@ -36,8 +36,8 @@ export default function PortfolioFiltersBar({
     >
       <InViewAnimationWrapper
         direction="y"
-        offset={30}
-        transition={{duration: 0.2, delay: 0.3}}
+        offset={10}
+        transition={{duration: 0.2, delay: 0.2}}
         className="w-full text-white"
       >
         <CustomSelect 
@@ -50,7 +50,7 @@ export default function PortfolioFiltersBar({
 
       <InViewAnimationWrapper
         direction="y"
-        offset={30}
+        offset={10}
         transition={{duration: 0.3, delay: 0.3}}
         className="w-full"
       >
@@ -64,8 +64,8 @@ export default function PortfolioFiltersBar({
       
       <InViewAnimationWrapper
         direction="y"
-        offset={30}
-        transition={{duration: 0.4, delay: 0.3}}
+        offset={10}
+        transition={{duration: 0.3, delay: 0.4}}
         className="w-full"
       >
         <CustomSelect 
@@ -78,8 +78,8 @@ export default function PortfolioFiltersBar({
       
       <InViewAnimationWrapper
         direction="y"
-        offset={30}
-        transition={{duration: 0.5, delay: 0.3}}
+        offset={10}
+        transition={{duration: 0.3, delay: 0.5}}
         className="w-full"
       >
         <CustomSelect 

@@ -7,8 +7,7 @@ import PortfolioFiltersBar from "./PortfolioFiltersBar";
 import PortfolioCardsGrid from "./PortfolioCardsGrid";
 import { PartyPopper, Filter, Folder, Sparkles } from "lucide-react";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import StaggerListContainer from "@/components/ui/StaggerListContainer";
-import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 
 export default function PortfolioFilters() {
   const [selectedProject, setSelectedProject] = useState("Todos");
@@ -85,25 +84,23 @@ export default function PortfolioFilters() {
 
 
         {/* Estadísticas rápidas */}
-        <StaggerListContainer
+        <div
           className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8"
         >{[
             {data: "20+", text:"Proyectos exitosos"},
             {data: "15+", text:"Países atendidos"},
             {data: "98%", text:"Satisfacción"},
           ].map((value, index) => (
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               key={index} 
               index={index}
-              direction="y"
-              offset={30}
               className="text-center p-4 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/30"
             >
               <div className="text-2xl font-bold text-colorPrimario5 mb-1">{value.data}</div>
               <p className="text-sm text-colorPrimario1/70">{value.text}</p>
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
           ))}
-        </StaggerListContainer>
+        </div>
       </div>
 
       {/* Barra de filtros mejorada */}

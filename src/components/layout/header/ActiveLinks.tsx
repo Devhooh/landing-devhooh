@@ -42,13 +42,15 @@ export default function ActiveLinks() {
       <Link href="/contact">
         <button
           className="
-            relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
-            bg-gradient-to-l from-gray-900 via-gray-500 to-black
-            animate-gradient
+            group relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
+            bg-gradient-to-l from-gray-900 via-gray-600 to-black
+            bg-[size:200%_200%]
+            animate-gradient
             transition-all duration-700 ease-in-out
             hover:scale-[1.05] hover:shadow-[0_0_20px_rgba(236,72,153,0.6)]
           "
         >
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           Contáctanos
         </button>
       </Link>

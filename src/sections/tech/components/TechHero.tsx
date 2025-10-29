@@ -15,7 +15,7 @@ export default function TechHero({ tech }: TechHeroProps) {
             direction="x"
             offset={-20}
             transition={{duration: 0.3, delay: 0.3}}
-            >
+          >
             <h1 className="text-3xl md-tablet:text-4xl tablet-md:text-6xl text-colorPrimario2 font-bold drop-shadow-lg">
               Servicios de desarrollo con <strong className="text-colorPrimario5">{tech.title}</strong>
             </h1>

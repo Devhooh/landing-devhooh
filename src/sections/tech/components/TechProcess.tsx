@@ -1,5 +1,6 @@
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { CheckCircle, Target } from "lucide-react";
 import * as Icons from "lucide-react";
 import { LucideProps } from "lucide-react";
@@ -21,9 +22,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
 
   return (
     <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
-      
       <div className="relative z-10 max-w-5xl mx-auto px-6 md-tablet:px-12">
-        
         {/* Encabezado mejorado */}
         <div className="text-center mb-16">
           {/* Título */}
@@ -54,7 +53,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
           {/* Línea principal del timeline */}
           <div className="absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-colorPrimario5 via-colorSecundario1 to-colorPrimario5 rounded-full shadow-lg"></div>
 
-          <div className="flex flex-col gap-8">
+          <StaggerListContainer className="flex flex-col gap-8">
             {steps.map((step, index) => {
               const Icon =
               (Icons[step.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) ||
@@ -63,8 +62,11 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
               const isLast = index === steps.length - 1;
               
               return (
-                <ProjectStaggerWrapper
+                <StaggerListItemClient
                   key={index}
+                  direction="y"
+                  offset={30}
+                  delayBase={0.2}
                   index={index}
                   className="relative flex items-start gap-2 md-tablet:gap-8"
                 >
@@ -127,10 +129,10 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
                     </div>
 
                   </div>
-                </ProjectStaggerWrapper>
+                </StaggerListItemClient>
               );
             })}
-          </div>
+          </StaggerListContainer>
         </div>
 
         {/* Resumen final */}

@@ -100,7 +100,7 @@ export default function TechWhy({
                 <span className="relative z-10">Solicita presupuesto</span>
                 <div
                   className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/20 via-transparent to-white/20 
-                  group-hover:translate-x-[100%] transition-transform duration-700"
+                  translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
                 />
               </Link>
             </InViewAnimationWrapper>

@@ -1,8 +1,8 @@
-"use client";
-
-import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Settings, CheckCircle, Sparkles } from "lucide-react";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
 interface Service {
   title: string;
@@ -15,36 +15,6 @@ interface TechServicesProps {
   services: Service[];
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const serviceVariants: Variants = {
-  hidden: { opacity: 0, x: 50, y: 20 },
-  show: { 
-    opacity: 1, 
-    x: 0, 
-    y: 0,
-    transition: { duration: 0.3, ease: "easeOut" } 
-  },
-};
-
-const imageVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.9, rotate: -3 },
-  show: { 
-    opacity: 1, 
-    scale: 1, 
-    rotate: 0,
-    transition: { duration: 0.4, ease: "easeOut" } 
-  },
-};
-
 export default function TechServices({ name, image, services }: TechServicesProps) {
 
   return (
@@ -55,64 +25,53 @@ export default function TechServices({ name, image, services }: TechServicesProp
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         
         {/* Badge superior */}
-        <motion.div
-          className="text-center mb-8"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
           transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
+          className="text-center mb-8"
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Settings className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <strong className="text-colorPrimario5 font-semibold">Especialización técnica</strong>
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
 
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center px-5 md-tablet:px-2">
-          
           {/* Columna izquierda - Imagen y título */}
-          <motion.div 
-            className="space-y-8"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
-          >
-            
-            {/* Título con animación letra por letra */}
-            <motion.h2
-              className="text-3xl md-tablet:text-4xl table-lg:text-5xl text-center table-lg:text-left font-extrabold leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+          <div className="space-y-8">
+            <InViewAnimationWrapper
+              direction="x"
+              offset={-20}
               transition={{ duration: 0.3, delay: 0.2}}
-              viewport={{ once: true }}
             >
-              Servicios de {""}
-                <strong className="text-colorPrimario5">
-                  {name}
-                </strong>
-              <br />
-              que brindamos
-            </motion.h2>
+              <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl text-center table-lg:text-left font-extrabold leading-tight">
+                Servicios de {""}
+                  <strong className="text-colorPrimario5">
+                    {name}
+                  </strong>
+                <br />
+                que brindamos
+              </h2>
+            </InViewAnimationWrapper>
 
-            <motion.p
-              className="text-lg md-tablet:text-xl text-gray-600 text-center table-lg:text-left max-w-xl mx-auto table-lg:mx-0"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <InViewAnimationWrapper
+              direction="x"
+              offset={-20}
               transition={{ duration: 0.3, delay: 0.3 }}
-              viewport={{ once: true }}
             >
-              {/* Usando la Opción 1 de texto SEO */}
-              Transformamos su visión en realidad digital con soluciones escalables y de alto rendimiento utilizando la tecnología {name}. Nuestro equipo experto garantiza un producto final robusto y optimizado.
-            </motion.p>
+              <p className="text-lg md-tablet:text-xl text-gray-600 text-center table-lg:text-left max-w-xl mx-auto table-lg:mx-0">
+                {/* Usando la Opción 1 de texto SEO */}
+                Transformamos su visión en realidad digital con soluciones escalables y de alto rendimiento utilizando la tecnología {name}. Nuestro equipo experto garantiza un producto final robusto y optimizado.
+              </p>
+            </InViewAnimationWrapper>
 
             {/* Imagen mejorada */}
-            <motion.div
+            <InViewAnimationWrapper
+              direction="x"
+              offset={-20}
+              transition={{duration: 0.3, delay: 0.4}}
               className="relative group"
-              variants={imageVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
             >
               <div className="relative overflow-hidden rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-[0_0_30px_rgba(103,61,230,0.1)] group-hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-500 p-6">
                 <Image
@@ -128,30 +87,25 @@ export default function TechServices({ name, image, services }: TechServicesProp
                 <div className="absolute inset-6 rounded-2xl bg-gradient-to-t from-colorDarkFondo4/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
 
-            </motion.div>
-          </motion.div>
+            </InViewAnimationWrapper>
+          </div>
 
           {/* Columna derecha - Servicios */}
-          <motion.ul
-            className="space-y-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-          >
+          <StaggerListContainer className="space-y-6">
             {services.map((service, index) => {
               return (
-                <motion.li
+                <StaggerListItemClient
                   key={index}
+                  index={index}
+                  direction="x"
+                  offset={20}
                   className={`
                     group relative p-6 md-tablet:p-8 rounded-3xl 
                     bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10 backdrop-blur-sm
                     border-2 border-white/20 hover:border-colorPrimario5/40
                     shadow-[0_0_20px_rgba(0,0,0,0.05)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]
-                    transition-all duration-300
+                    transition-all duration-300 hover:scale-[1.02]
                   `}
-                  variants={serviceVariants}
-                  whileHover={{ y: -5, scale: 1.02 }}
                 >
                   
                   {/* Efectos decorativos */}
@@ -196,19 +150,18 @@ export default function TechServices({ name, image, services }: TechServicesProp
 
                   {/* Efecto de brillo en hover */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                </motion.li>
+                </StaggerListItemClient>
               );
             })}
-          </motion.ul>
+          </StaggerListContainer>
         </div>
 
         {/* Call to action final */}
-        <motion.div
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.3, delay: 0.3}}
           className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3}}
-          viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Settings className="w-6 h-6 text-cyan-500 flex-shrink-0" />
@@ -217,7 +170,7 @@ export default function TechServices({ name, image, services }: TechServicesProp
             </span>
             <CheckCircle className="w-6 h-6 text-cyan-500 flex-shrink-0" />
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

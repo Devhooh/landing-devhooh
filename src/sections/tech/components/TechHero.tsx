@@ -1,4 +1,4 @@
-"use client"
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import { DataTech } from "@/data/techDataPage";
 import Image from "next/image";
 
@@ -11,16 +11,33 @@ export default function TechHero({ tech }: TechHeroProps) {
     <section className="container mx-auto px-6 md-tablet:px-14 py-12">
       <div className="grid grid-cols-1 tablet-md:grid-cols-2 gap-8 items-center">
         <div>
-          <h1 className="text-3xl md-tablet:text-4xl tablet-md:text-6xl text-colorPrimario2 font-bold drop-shadow-lg">
-            Servicios de desarrollo con <strong className="text-colorPrimario5">{tech.title}</strong>
-          </h1>
-          <p className="mt-4 text-lg md-tablet:text-xl tablet-md:text-3xl text-gray-700">
-            {tech.subtitle}
-          </p>
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{duration: 0.3, delay: 0.3}}
+          >
+            <h1 className="text-3xl md-tablet:text-4xl tablet-md:text-6xl text-colorPrimario2 font-bold drop-shadow-lg">
+              Servicios de desarrollo con <strong className="text-colorPrimario5">{tech.title}</strong>
+            </h1>
+          </InViewAnimationWrapper>
+
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{duration: 0.3, delay: 0.4}}
+          >
+            <p className="mt-4 text-lg md-tablet:text-xl tablet-md:text-3xl text-gray-700">
+              {tech.subtitle}
+            </p>
+          </InViewAnimationWrapper>
         </div>
 
-        <div className="flex justify-center md-tablet:justify-center tablet-md:justify-end">
-
+        <InViewAnimationWrapper
+          direction="x"
+          offset={20}
+          transition={{duration: 0.3, delay: 0.5}}
+          className="flex justify-center md-tablet:justify-center tablet-md:justify-end"
+        >
           <div className="relative group">
             <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
               <Image
@@ -41,7 +58,7 @@ export default function TechHero({ tech }: TechHeroProps) {
               className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gray-500 opacity-20"
             ></div>
           </div>
-        </div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

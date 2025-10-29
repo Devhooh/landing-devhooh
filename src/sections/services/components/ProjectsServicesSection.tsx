@@ -177,7 +177,7 @@ export default function ProjectsServicesSection() {
         >
           <div className="flex items-center gap-4">
             <div>
-              <Sparkles className="w-6 h-6 text-colorPrimario5" />
+              <Sparkles className="animate-pulse w-6 h-6 text-colorPrimario5" />
             </div>
             
             <span className="text-colorPrimario1/60 font-medium">
@@ -185,7 +185,7 @@ export default function ProjectsServicesSection() {
             </span>
             
             <div>
-              <Sparkles className="w-6 h-6 text-colorSecundario1" />
+              <Sparkles className="animate-pulse w-6 h-6 text-colorSecundario1" />
             </div>
           </div>
         </InViewAnimationWrapper>

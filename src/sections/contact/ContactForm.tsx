@@ -8,6 +8,7 @@ import InputForm from "./components/InputForm";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 
 export function ContactForm() {
   const [file, setFile] = useState<File | null>(null);
@@ -73,14 +74,12 @@ export function ContactForm() {
           onSubmit={handleSubmit}
           className="space-y-6"
         >
-          <StaggerListContainer
+          <div
             className="space-y-6" 
           >
             {/* Nombre */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={1}
-              direction="x"
-              offset={20}
             >
               <InputForm
               nameHtmlFor="nombre"
@@ -90,13 +89,11 @@ export function ContactForm() {
               type="text"
               placeholder="Ej. Pablo Pérez"
             />
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
             {/* Email */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={2}
-              direction="x"
-              offset={20}
             >
               <InputForm
               nameHtmlFor="email"
@@ -106,13 +103,11 @@ export function ContactForm() {
               type="email"
               placeholder="ejemplo@gmail.com"
             />
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
             {/* Teléfono mejorado */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={3}
-              direction="x"
-              offset={20}
               className="grid grid-cols-1 md-tablet:grid-cols-3 gap-4"
             >
               <Select label="País" id="pais" name="pais" required>
@@ -132,13 +127,11 @@ export function ContactForm() {
                   placeholder="+591 77776666"
                 />
               </div>
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
               {/* Empresa */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={4}
-              direction="x"
-              offset={20}
             >
               <InputForm
                 nameHtmlFor="empresa"
@@ -148,13 +141,11 @@ export function ContactForm() {
                 type="text"
                 placeholder="Ej. Mi Startup SRL"
               />
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
             {/* Ubicación */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={5}
-              direction="x"
-              offset={20}
             >
               <InputForm
                 nameHtmlFor="location"
@@ -164,13 +155,11 @@ export function ContactForm() {
                 type="text"
                 placeholder="Ej. Santa Cruz, Bolivia"
               />
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
             {/* Tipo de proyecto */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={6}
-              direction="x"
-              offset={20}
             >
               <Select label="Tipo de proyecto" id="proyecto" name="proyecto" required>
                 <option value="">Selecciona una opción</option>
@@ -181,13 +170,11 @@ export function ContactForm() {
                 <option value="ia">Solución con IA</option>
                 <option value="otro">Otro proyecto</option>
               </Select>
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
             {/* Subir archivo mejorado */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={7}
-              direction="x"
-              offset={20}
             >
               <FileUpload
                 label="Adjuntar documentos (opcional)"
@@ -201,13 +188,11 @@ export function ContactForm() {
                   </p>
                 </div>
               )}
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
             {/* Descripción mejorada */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={8}
-              direction="x"
-              offset={20}
             >
               <label
                 htmlFor="descripcion"
@@ -223,13 +208,11 @@ export function ContactForm() {
                 placeholder="Describe tu idea, objetivos, funcionalidades que necesitas, presupuesto estimado, tiempos, etc. Mientras más detalles, mejor podremos ayudarte..."
                 required
               />
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
             {/* Botón mejorado */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={9}
-              direction="x"
-              offset={20}
             >
               <button
                 type="submit"
@@ -246,20 +229,18 @@ export function ContactForm() {
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </button>
-            </StaggerListItemClient>
+            </ProjectStaggerWrapper>
 
             {/* Nota de privacidad */}
-            <StaggerListItemClient
+            <ProjectStaggerWrapper
               index={10}
-              direction="x"
-              offset={20}
             >
               <p className="text-xs text-colorHover5/70 text-center leading-relaxed mt-4">
                 Al enviar este formulario aceptas que podamos contactarte para discutir tu proyecto. 
                 Tus datos están protegidos y no serán compartidos con terceros.
               </p>
-            </StaggerListItemClient>
-          </StaggerListContainer>
+            </ProjectStaggerWrapper>
+          </div>
         </form>
       </div>
     </div>

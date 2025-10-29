@@ -1,50 +1,17 @@
-"use client"
 import { Project } from "@/data/portfolioDetails";
-import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Camera, Grid, ZoomIn } from "lucide-react";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 
 interface ChallengeSectionProps {
   project: Project;
 }
 
-// Contenedor de cards (staggerChildren)
-const containerVariants: Variants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-  },
-};
-
-// Cada imagen
-const imageVariants: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.9 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.3, ease: "easeOut" },
-  },
-};
-
-const descriptionVariant: Variants = {
-  hidden: { opacity: 0, y: 60 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
-const splitText = (text: string) => text.split("");
-
 export default function ImageProject({project}: ChallengeSectionProps) {
   return (
     <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
-      
       <div className="relative z-10 max-w-7xl mx-auto px-4">
-        
         {/* Contenedor principal mejorado */}
         <div className="relative p-4 md-tablet:p-12 rounded-3xl bg-colorFondo/70 backdrop-blur-sm border border-colorPrimario5/20 shadow-[0_0_40px_rgba(103,61,230,0.1)]">
           
@@ -52,76 +19,58 @@ export default function ImageProject({project}: ChallengeSectionProps) {
           <div className="text-center mb-16">
             
             {/* Badge superior */}
-            <motion.div
+            <InViewAnimationWrapper
+              direction="y"
+              offset={30}
+              transition={{ duration: 0.3, delay: 0.3 }}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: true }}
             >
               <Camera className="w-5 h-5 text-colorPrimario5" />
               <span className="text-colorPrimario5 font-semibold">Galería del proyecto</span>
-            </motion.div>
+            </InViewAnimationWrapper>
 
             {/* Título con animación letra por letra */}
-            <motion.h2
-              className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.03 } } }}
+            <InViewAnimationWrapper
+              direction="y"
+              offset={30}
+              transition={{duration: 0.3, delay: 0.4}}
             >
-              {splitText(project.company).map((letter, idx) => {
-                return (
-                  <motion.span 
-                    key={idx} 
-                    variants={letterVariants}
-                  >
-                    {letter}
-                  </motion.span>
-                );
-              })}
-            </motion.h2>
+              <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6">
+                {project.company}
+              </h2>
+            </InViewAnimationWrapper>
               
-            <motion.p
-              className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto leading-relaxed"
-              variants={descriptionVariant}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
+            <InViewAnimationWrapper
+              direction="y"
+              offset={30}
+              transition={{duration: 0.3, delay: 0.5}}
             >
-              {project.pictures.descripcion}
-            </motion.p>
+              <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto leading-relaxed">
+                {project.pictures.descripcion}
+              </p>
+            </InViewAnimationWrapper>
 
             {/* Contador de imágenes */}
-            <motion.div
+            <InViewAnimationWrapper
+              direction="y"
+              offset={30}
+              transition={{ duration: 0.3, delay: 0.6 }}
               className="inline-flex items-center gap-2 mt-6 px-4 py-2 rounded-full bg-colorSecundario1/10 border border-colorSecundario1/20"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: 0.3 }}
-              viewport={{ once: true }}
             >
               <Grid className="w-4 h-4 text-colorSecundario1" />
               <span className="text-colorSecundario1 font-semibold text-sm">
                 {project.pictures.images.length} imágenes del proyecto
               </span>
-            </motion.div>
+            </InViewAnimationWrapper>
           </div>
 
           {/* Grid de imágenes mejorado */}
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 md-tablet:grid-cols-2 gap-8"
-          >
+          <div className="grid grid-cols-1 md-tablet:grid-cols-2 gap-8">
             {project.pictures.images.map((src, index) => (
-              <motion.div
-                variants={imageVariants}
+              <ProjectStaggerWrapper
                 key={index} 
+                index={index}
                 className="group relative overflow-hidden rounded-3xl bg-colorHover6 backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/40 shadow-[0_0_20px_rgba(0,0,0,0.05)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] transition-all duration-500"
-                whileHover={{ y: -8, scale: 1.02 }}
               >
                 
                 {/* Badge numerado */}
@@ -160,17 +109,16 @@ export default function ImageProject({project}: ChallengeSectionProps) {
 
                 {/* Efecto de brillo en hover */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              </motion.div>
+              </ProjectStaggerWrapper>
             ))}
-          </motion.div>
+          </div>
 
           {/* Call to action final */}
-          <motion.div
-            className="text-center mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
             transition={{ duration: 0.3}}
-            viewport={{ once: true }}
+            className="text-center mt-16"
           >
             <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 border border-colorPrimario5/30 backdrop-blur-sm">
               <Camera className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
@@ -179,7 +127,7 @@ export default function ImageProject({project}: ChallengeSectionProps) {
               </span>
               <ZoomIn className="w-6 h-6 text-colorSecundario1 flex-shrink-0" />
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
         </div>
       </div>
     </section>

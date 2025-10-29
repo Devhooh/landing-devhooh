@@ -1,51 +1,13 @@
-"use client";
 import Image from "next/image";
 import { Project } from "@/data/portfolioDetails";
 import { CircleCheckIcon, Target, Lightbulb, Zap } from "lucide-react";
-import { motion, Variants } from "framer-motion";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 
 interface ChallengeSectionProps {
   project: Project;
 }
-
-// Variantes de animación mejoradas
-const titleVariant: Variants = {
-  hidden: { opacity: 0, y: 60, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
-const descLeft: Variants = {
-  hidden: { opacity: 0, x: -50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
-const descRight: Variants = {
-  hidden: { opacity: 0, x: 50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
-const imageVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.9, rotate: 3 },
-  show: { 
-    opacity: 1, 
-    scale: 1, 
-    rotate: 0,
-    transition: { duration: 0.3, ease: "easeOut" } 
-  },
-};
-
-const listContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12 },
-  },
-};
-
-const listItem: Variants = {
-  hidden: { opacity: 0, x: -20, y: 10 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
 
 export default function ChallengeSection({ project }: ChallengeSectionProps) {
 
@@ -53,34 +15,33 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
 
   return (
     <section className="relative my-16 mx-4 md-tablet:mx-8 table-lg:mx-16 overflow-hidden">
-      
       {/* Contenedor principal con gradiente mejorado */}
       <div className="relative bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 rounded-3xl py-16 px-6 md-tablet:px-12 border border-colorPrimario5/20 shadow-[0_0_50px_rgba(103,61,230,0.3)]">
 
         {/* Título de sección principal */}
         <div className="relative z-10 text-center mb-20">
-          <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 text-white"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            viewport={{ once: true }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
-            Desafíos y {""}
-            <strong className="text-colorPrimario5">
-              soluciones
-            </strong>
-          </motion.h2>
+            <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6 text-white">
+              Desafíos y {""}
+              <strong className="text-colorPrimario5">
+                soluciones
+              </strong>
+            </h2>
+          </InViewAnimationWrapper>
 
-          <motion.p
-            className="text-lg text-colorHover5 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            viewport={{ once: true }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.3, delay: 0.4 }}
           >
-            Cada proyecto presenta desafíos únicos. Aquí te mostramos cómo los enfrentamos
-          </motion.p>
+            <p className="text-lg text-colorHover5 max-w-3xl mx-auto">
+              Cada proyecto presenta desafíos únicos. Aquí te mostramos cómo los enfrentamos
+            </p>
+          </InViewAnimationWrapper>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-20">
@@ -92,12 +53,11 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
               <div key={item.title} className="flex flex-col gap-12">
                 
                 {/* Título de la sección */}
-                <motion.div
+                <InViewAnimationWrapper
+                  direction="y"
+                  offset={30}
+                  transition={{duration: 0.4, delay: 0.3}}
                   className="text-center"
-                  variants={titleVariant}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true}}
                 >
                   {/* Badge con icono y número */}
                   <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
@@ -111,7 +71,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                   <h3 className="text-3xl md-tablet:text-4xl font-bold text-white mb-4">
                     {item.title}
                   </h3>
-                </motion.div>
+                </InViewAnimationWrapper>
 
                 {/* Contenido en zig-zag */}
                 <div
@@ -120,12 +80,11 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                   }`}
                 >
                   {/* Contenido de texto */}
-                  <motion.div
+                  <InViewAnimationWrapper
+                    direction="x"
+                    offset={isEven ? 20 : -20}
+                    transition={{duration: 0.3, delay: 0.2}}
                     className="table-lg:w-1/2"
-                    variants={isEven ? descRight : descLeft}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true}}
                   >
                     <div className="relative p-4 md-tablet:p-8 rounded-3xl bg-gradient-to-br from-colorHover5/5 to-colorHover6/5 backdrop-blur-sm border border-white/10 hover:border-colorPrimario5/30 transition-all duration-300 group">
                       
@@ -139,30 +98,27 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
 
                       {/* Lista mejorada */}
                       {item.listData && (
-                        <motion.div
-                          variants={listContainer}
-                          initial="hidden"
-                          whileInView="show"
-                          viewport={{ once: true}}
-                        >
+                        <div>
                           <h4 className="text-white font-bold text-xl mb-4 text-center table-lg:text-left">
                             Soluciones implementadas:
                           </h4>
-                          <ul className="space-y-3">
+                          <StaggerListContainer className="space-y-3">
                             {item.listData.map((items, i) => (
-                              <motion.li
+                              <StaggerListItemClient
                                 key={i}
+                                direction="y"
+                                offset={20}
+                                index={i + 1}
                                 className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
-                                variants={listItem}
                               >
                                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
                                   <CircleCheckIcon className="w-4 h-4 text-white" />
                                 </div>
                                 <p className="text-colorHover5 leading-relaxed">{items}</p>
-                              </motion.li>
+                              </StaggerListItemClient>
                             ))}
-                          </ul>
-                        </motion.div>
+                          </StaggerListContainer>
+                        </div>
                       )}
 
                       {/* Badge de resultado */}
@@ -174,16 +130,14 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                       {/* Efecto de brillo en hover */}
                       <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                     </div>
-                  </motion.div>
+                  </InViewAnimationWrapper>
 
                   {/* Imagen mejorada */}
-                  <motion.div
+                  <InViewAnimationWrapper
+                    direction="x"
+                    offset={isEven ? -20 : 20}
+                    transition={{duration: 0.3, delay: 0.3}}
                     className="table-lg:w-1/2 flex justify-center"
-                    variants={imageVariants}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true}}
-                    transition={{ delay: 0.2 }}
                   >
                     <div className="relative group">
                       <div className="relative overflow-hidden rounded-3xl shadow-[0_0_40px_rgba(103,61,230,0.2)] group-hover:shadow-[0_0_50px_rgba(103,61,230,0.3)] transition-all duration-500">
@@ -210,7 +164,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                         Evidencia
                       </div>
                     </div>
-                  </motion.div>
+                  </InViewAnimationWrapper>
                 </div>
               </div>
             );
@@ -218,12 +172,11 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
         </div>
 
         {/* Call to action final */}
-        <motion.div
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.3, delay: 0.4}}
           className="relative z-10 text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3}}
-          viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 md-tablet:px-8 py-4 rounded-3xl bg-gradient-to-r from-green-500/20 to-colorPrimario5/20 border border-green-400/30 backdrop-blur-sm">
             <Target className="w-6 h-6 text-green-400 flex-shrink-0" />
@@ -232,7 +185,7 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
             </span>
             <Zap className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

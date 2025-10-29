@@ -1,33 +1,11 @@
-"use client";
 import Image from "next/image";
 import { Project } from "@/data/portfolioDetails";
-import { motion, Variants } from "framer-motion";
 import { FileText, Building2, Target, Users } from "lucide-react";
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 
 interface ProjectAboutProps {
   project: Project;
 }
-
-// Variantes de animación mejoradas
-const slideLeft: Variants = {
-  hidden: { opacity: 0, x: -50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
-const slideRight: Variants = {
-  hidden: { opacity: 0, x: 50, y: 30 },
-  show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
-const imageVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.9, rotate: 3 },
-  show: { 
-    opacity: 1, 
-    scale: 1, 
-    rotate: 0,
-    transition: { duration: 0.4, ease: "easeOut" } 
-  },
-};
 
 export default function PortfolioAbout({ project }: ProjectAboutProps) {
 
@@ -38,46 +16,41 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
         
         {/* Título de sección */}
         <div className="text-center mb-20">
-          <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            viewport={{ once: true }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
-            Conoce más del {""}
-            <strong className="text-colorPrimario5">
-              proyecto
-            </strong>
-          </motion.h2>
-
-          <motion.p
-            className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            viewport={{ once: true }}
+            <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6">
+              Conoce más del {""}
+              <strong className="text-colorPrimario5">
+                proyecto
+              </strong>
+            </h2>
+          </InViewAnimationWrapper>
+          
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.3, delay: 0.4 }}
           >
-            Descubre los detalles detrás de esta solución y la empresa que confió en nosotros
-          </motion.p>
+            <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto">
+              Descubre los detalles detrás de esta solución y la empresa que confió en nosotros
+            </p>
+          </InViewAnimationWrapper>
         </div>
 
         {/* Sobre el proyecto */}
         <div className="flex flex-col table-lg:flex-row items-center gap-12 mb-24">
-          
           {/* Contenido de texto */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{duration: 0.3, delay: 0.5}}
             className="table-lg:w-1/2 relative"
-            variants={slideLeft}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true}}
           >
             <div className="relative p-8 md-tablet:p-10 rounded-3xl bg-white backdrop-blur-sm border border-white/20 shadow-[0_0_30px_rgba(103,61,230,0.1)] hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-300 group">
-              
-              {/* Efectos decorativos */}
               <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
-              
               {/* Badge con icono */}
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg">
@@ -104,15 +77,14 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
               {/* Efecto de brillo en hover */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* Imagen del proyecto */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={20}
+            transition={{duration: 0.3, delay: 0.6}}
             className="table-lg:w-1/2 relative"
-            variants={imageVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true}}
           >
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-[0_0_40px_rgba(103,61,230,0.2)] group-hover:shadow-[0_0_50px_rgba(103,61,230,0.3)] transition-all duration-500">
@@ -134,23 +106,19 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
                 className="animate-pulse absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 opacity-20"
               ></div>
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
         </div>
 
         {/* Sobre la compañía */}
         <div className="flex flex-col table-lg:flex-row-reverse items-center gap-12">
-          
           {/* Contenido de texto */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={20}
+            transition={{duration: 0.3, delay: 0.5}}
             className="table-lg:w-1/2 relative"
-            variants={slideRight}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true}}
           >
             <div className="relative p-8 md-tablet:p-10 rounded-3xl bg-white backdrop-blur-sm border border-white/20 shadow-[0_0_30px_rgba(103,61,230,0.1)] hover:shadow-[0_0_40px_rgba(103,61,230,0.15)] transition-all duration-300 group">
-              
-              {/* Efectos decorativos */}
               <div className="absolute top-6 left-6 w-2 h-2 rounded-full bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
               
               {/* Badge con icono */}
@@ -179,16 +147,14 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
               {/* Efecto de brillo en hover */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* Imagen de la compañía */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="x"
+            offset={-20}
+            transition={{ duration: 0.3, delay: 0.5, }}
             className="table-lg:w-1/2 relative flex justify-center"
-            variants={imageVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true}}
-            transition={{ delay: 0.2 }}
           >
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-[0_0_40px_rgba(103,61,230,0.2)] group-hover:shadow-[0_0_50px_rgba(103,61,230,0.3)] transition-all duration-500 max-w-sm">
@@ -210,16 +176,15 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
                 className="animate-pulse absolute -bottom-4 -left-4 w-6 h-6 rounded-full bg-gradient-to-r from-colorSecundario1 to-colorSecundario3 opacity-30"
               ></div>
             </div>
-          </motion.div>
+          </InViewAnimationWrapper>
         </div>
 
         {/* Call to action final */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
           transition={{ duration: 0.3, delay: 0.2 }}
-          viewport={{ once: true }}
+          className="text-center mt-20"
         >
           <div className="inline-flex items-center gap-3 px-8 py-4 rounded-3xl bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20 backdrop-blur-sm">
             <div className="w-2 h-2 rounded-full bg-colorPrimario5 animate-pulse"></div>
@@ -228,7 +193,7 @@ export default function PortfolioAbout({ project }: ProjectAboutProps) {
             </span>
             <div className="w-2 h-2 rounded-full bg-colorSecundario1 animate-pulse"></div>
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

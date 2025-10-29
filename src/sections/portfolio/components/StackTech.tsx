@@ -1,103 +1,74 @@
-"use client"
+import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { Project } from "@/data/portfolioDetails";
 import { iconsData } from "@/data/portfolioDetails";
-import { motion, Variants } from "framer-motion";
 import { Code2, Layers, Sparkles } from "lucide-react";
 
 interface StackSectionProps {
   project: Project;
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const techVariants: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.9 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1,
-    transition: { duration: 0.4, ease: "easeOut" } 
-  },
-};
-
 export default function StackTech({ project }: StackSectionProps) {
 
   return (
     <section className="relative w-full bg-gradient-to-br from-colorHover5 via-colorHover6 to-colorHover5 py-20 overflow-hidden">
-      
       <div className="relative z-10 max-w-6xl mx-auto px-6 md-tablet:px-8">
-        
-        {/* Encabezado mejorado */}
         <div className="text-center mb-16">
           
           {/* Badge superior */}
-          <motion.div
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm mb-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
           >
             <Code2 className="w-5 h-5 text-colorPrimario5" />
             <strong className="text-colorPrimario5 font-semibold">Tecnologías utilizadas</strong>
-          </motion.div>
+          </InViewAnimationWrapper>
 
           {/* Título con animación letra por letra */}
-          <motion.h2
-            className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            viewport={{ once: true }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.3, delay: 0.4 }}
           >
-            Stack de {""}
-            <strong className="text-colorPrimario5">
-              tecnologías
-            </strong>
-          </motion.h2>
+            <h2 className="text-3xl md-tablet:text-4xl table-lg:text-5xl font-extrabold mb-6">
+              Stack de {""}
+              <strong className="text-colorPrimario5">
+                tecnologías
+              </strong>
+            </h2>
+          </InViewAnimationWrapper>
 
-          <motion.p
-            className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            viewport={{ once: true }}
+          <InViewAnimationWrapper
+            direction="y"
+            offset={30}
+            transition={{ duration: 0.4, delay: 0.5 }}
           >
-            Las herramientas y frameworks que hicieron posible este proyecto
-          </motion.p>
+            <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto">
+              Las herramientas y frameworks que hicieron posible este proyecto
+            </p>
+          </InViewAnimationWrapper>
         </div>
 
         {/* Grid de tecnologías mejorado */}
-        <motion.ul
-          className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
+        <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6">
           {project.stackTech.map((tech, index) => {
             const Icon = iconsData[tech.icon];
             
             return (
-              <motion.li
+              <ProjectStaggerWrapper
                 key={tech.name}
+                index={index}
                 className={`
                   group relative p-6 rounded-2xl bg-gradient-to-br from-colorSecundario3/10 to-colorSecundario4/10 
                   backdrop-blur-sm border-2 border-colorPrimario5/20
                   hover:border-colorPrimario5/40 
                   shadow-[0_0_20px_rgba(0,0,0,0.05)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]
-                  transition-all duration-300
+                  transition-all duration-300 hover:scale-[1.02]
                 `}
-                variants={techVariants}
-                whileHover={{ y: -8, scale: 1.02 }}
               >
                 
                 {/* Efectos decorativos */}
@@ -144,51 +115,46 @@ export default function StackTech({ project }: StackSectionProps) {
 
                 {/* Efecto de brillo en hover */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              </motion.li>
+              </ProjectStaggerWrapper>
             );
           })}
-        </motion.ul>
+        </div>
 
         {/* Estadísticas del stack */}
-        <motion.ul
-          className="mt-16 grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <li className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
-            <div className="text-3xl font-bold text-colorPrimario5 mb-2">
-              {project.stackTech.length}
-            </div>
-            <p className="text-sm text-colorPrimario1/70">Tecnologías utilizadas</p>
-          </li>
-          
-          <li className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
-            <div className="text-3xl font-bold text-colorSecundario1 mb-2">100%</div>
-            <p className="text-sm text-colorPrimario1/70">Modernas y actuales</p>
-          </li>
-          
-          <li className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20">
-            <div className="text-3xl font-bold text-colorPrimario7 mb-2">✓</div>
-            <p className="text-sm text-colorPrimario1/70">Optimizadas para rendimiento</p>
-          </li>
-        </motion.ul>
+        <StaggerListContainer className="mt-16 grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            {data: project.stackTech.length, text: "Tecnologías utilizadas"},
+            {data: "100%", text: "Modernas y actuales"},
+            {data: "✓", text: "Optimizadas para rendimiento"},
+          ].map((value, index) => (
+            <StaggerListItemClient
+              key={index} 
+              index={index}
+              direction="y"
+              offset={30}
+              className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20"
+            >
+              <div className="text-3xl font-bold text-colorPrimario5 mb-2">
+                {value.data}
+              </div>
+              <p className="text-sm text-colorPrimario1/70">{value.text}</p>
+            </StaggerListItemClient>
+          ))}
+        </StaggerListContainer>
 
         {/* Call to action final */}
-        <motion.div
+        <InViewAnimationWrapper
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.3, delay: 0.4 }}
           className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-3 px-4 py-3 rounded-3xl bg-gradient-to-r from-colorPrimario5/10 to-colorSecundario1/10 border border-colorPrimario5/20">
             <Code2 className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <span className="text-colorPrimario5 font-semibold">Stack optimizado para máximo rendimiento</span>
             <Code2 className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
           </div>
-        </motion.div>
+        </InViewAnimationWrapper>
       </div>
     </section>
   );

@@ -55,7 +55,6 @@ export default function CTAServices() {
           {/* CAMBIO: Contenido enriquecido con puntos clave */}
           <StaggerListContainer 
             className="flex flex-col md-tablet:flex-row gap-6 mb-8 w-full justify-center tablet-md:justify-start"
-            staggerDelay={0.1}
           >
           {keyFeatures.map((feature, index) => (
             <StaggerListItemClient

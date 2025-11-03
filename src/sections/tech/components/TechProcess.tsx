@@ -66,8 +66,6 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
                   key={index}
                   direction="y"
                   offset={30}
-                  delayBase={0.2}
-                  index={index}
                   className="relative flex items-start gap-2 md-tablet:gap-8"
                 >
                   

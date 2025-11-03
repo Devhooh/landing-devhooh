@@ -135,8 +135,6 @@ export default function ProcessServicesSection({ service }: DevelopmentProcessPr
                                 key={i}
                                 direction="y"
                                 offset={-20}
-                                index={i}
-                                delayBase={0.2}
                                 className="flex items-start gap-3 p-3 rounded-xl bg-colorHover4/50 border border-white/10 transition-all duration-300"
                               >
                                 <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">

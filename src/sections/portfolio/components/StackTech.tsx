@@ -129,7 +129,6 @@ export default function StackTech({ project }: StackSectionProps) {
           ].map((value, index) => (
             <StaggerListItemClient
               key={index} 
-              index={index}
               direction="y"
               offset={30}
               className="text-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/20"

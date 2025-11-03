@@ -174,7 +174,6 @@ export default function WhyChooseUsSection() {
                     {feature.benefits.map((benefit, idx) => (
                       <StaggerListItemClient
                         key={idx}
-                        index={idx}
                         direction="y"
                         offset={30}
                         className="flex items-center gap-2 px-4 py-2 rounded-full bg-white backdrop-blur-sm border border-white/30 hover:bg-white transition-all duration-300"

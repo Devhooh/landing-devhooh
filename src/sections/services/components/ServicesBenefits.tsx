@@ -39,10 +39,8 @@ export default function ServicesBenefits({ service }: BenefitsSectionProps) {
           return (
             <StaggerListItemClient
               key={index}
-              index={index + 1}
               direction="y"
               offset={60}
-              delayBase={0.2}
               className="flex flex-col md-tablet:flex-row items-start md-tablet:items-center bg-white p-6 rounded-2xl shadow-md border border-fuchsia-300 hover:shadow-lg transition"
             >
               {/* Icono */}

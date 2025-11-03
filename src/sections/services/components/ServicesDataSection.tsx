@@ -55,7 +55,6 @@ export default function ServicesDataSection({ service }: BenefitsSectionProps) {
               key={index}
               direction="y"
               offset={40}
-              index={index + 1}
               className="
                 flex flex-col items-center text-center p-8 rounded-2xl 
                 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white border-blue-200 shadow-sm hover:shadow-xl 

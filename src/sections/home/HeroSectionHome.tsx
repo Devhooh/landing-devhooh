@@ -61,9 +61,11 @@ export default function HeroSectionHome() {
             {listItems.map((item, idx) => (
               <StaggerListItemClient
                 key={idx}
+                index={idx}
+                delayBase={0.2}
                 className="flex items-center gap-3"
-                direction="y"
-                offset={30}
+                direction="x"
+                offset={-20}
               >
                 <CircleCheck className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
                 <span>{item}</span>
@@ -72,30 +74,41 @@ export default function HeroSectionHome() {
           </StaggerListContainer>
     
           {/* Botones: */}
-          <InViewAnimationWrapper
-            direction="x" offset={-10} delay={0.3}
+          <div
             className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
           >
-            <Link href="/services">
-              <button
-                className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
+            <InViewAnimationWrapper
+              direction="y" 
+              offset={20}
+              transition={{duration: 0.2, delay: 0.2}}
+              >
+              <Link href="/services">
+                <button
+                  className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
                   bg-colorSecundario3 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
                   hover:scale-[1.05] active:scale-[0.98] transform"
-              >
-                Ver nuestros servicios
-              </button>
-            </Link>
+                  >
+                  Ver nuestros servicios
+                </button>
+              </Link>
+            </InViewAnimationWrapper>
     
-            <Link href="/portfolio">
-              <button
-                className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                  bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white transition-all duration-300
-                  hover:scale-[1.05] active:scale-[0.98] transform"
-              >
-                Ver nuestro portafolio
-              </button>
-            </Link>
-          </InViewAnimationWrapper>
+            <InViewAnimationWrapper
+              direction="y" 
+              offset={20} 
+              transition={{duration: 0.2, delay: 0.3}}
+            >
+              <Link href="/portfolio">
+                <button
+                  className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
+                    bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white transition-all duration-300
+                    hover:scale-[1.05] active:scale-[0.98] transform"
+                >
+                  Ver nuestro portafolio
+                </button>
+              </Link>
+            </InViewAnimationWrapper>
+          </div>
         </div>
       </div>
     </section>

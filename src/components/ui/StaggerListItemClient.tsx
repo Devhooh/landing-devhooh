@@ -54,7 +54,7 @@ export function StaggerListItemClient({
 
   return (
     <motion.li
-      className={className}
+      className={`${className} list-none`}
       variants={itemVariants}
       custom={customProps}
       transition={finalTransition}

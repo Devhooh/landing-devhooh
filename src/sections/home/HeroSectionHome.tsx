@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from "next/image";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { CircleCheck } from "lucide-react";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
@@ -101,7 +100,7 @@ export default function HeroSectionHome() {
                 </ButtonCta>
             </SimpleInViewWrapper>
     
-            <InViewAnimationWrapper
+            <SimpleInViewWrapper
               direction="y" 
               offset={20} 
               transition={{duration: 0.2, delay: 0.3}}
@@ -114,7 +113,7 @@ export default function HeroSectionHome() {
               >
                 Ver nuestro portafolio
               </ButtonCta>
-            </InViewAnimationWrapper>
+            </SimpleInViewWrapper>
           </div>
         </div>
       </div>

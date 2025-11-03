@@ -1,63 +1,63 @@
 "use client";
-import { motion, Variants } from "@/utils/Motion";
-import React from 'react';
-import { ReactNode } from "react";
+
+import { motion, Variants, Transition } from "@/utils/Motion";
+import React, { ReactNode } from 'react';
 
 type Direction = 'x' | 'y';
 
-interface CustomProps {
-  direction: Direction;
-  offset: number;
-  index: number;
-  delayBase: number;
-}
-
-// 2. Variantes actualizadas para usar el índice y el retraso base en 'show'
-const itemVariants: Variants = { 
-  hidden: (custom: CustomProps) => ({ 
-    opacity: 0, 
-    [custom.direction]: custom.offset 
-  }),
-  show: (custom: CustomProps) => ({
-    opacity: 1, 
-    x: 0, 
-    y: 0, 
-    transition: { 
-      delay: custom.index * custom.delayBase, 
-    } 
-  }),
-};
-
-interface StaggerListItemClientProps {
+interface StaggerItemProps {
   children: ReactNode;
   className?: string;
-  direction?: Direction; 
+  transition?: Transition; 
+  direction?: Direction;
   offset?: number;
-  index?: number;
-  delayBase?: number;
 }
 
-export function StaggerListItemClient({ 
-  children, 
-  className, 
-  direction = 'x',
-  offset = -20,
-  index = 0,
-  delayBase = 0.1
-}: StaggerListItemClientProps) {
+interface ItemCustomProps {
+  direction: Direction;
+  offset: number;
+}
 
-  const customProps: CustomProps = {
+const itemVariants: Variants = {
+  hidden: (custom: ItemCustomProps) => ({
+    opacity: 0,
+    [custom.direction]: custom.offset,
+  }),
+  show: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" } 
+  },
+};
+
+export function StaggerListItemClient({
+  children,
+  className,
+  transition,
+  direction = 'x', 
+  offset = -20, 
+}: StaggerItemProps) {
+
+  const defaultTransition: Transition = { 
+    type: "tween",
+    duration: 0.6, 
+    ease: "easeOut", 
+  };
+  
+  const finalTransition = transition ? transition : defaultTransition;
+  
+  const customProps: ItemCustomProps = {
     direction,
     offset,
-    index,
-    delayBase,
   };
 
   return (
     <motion.li
-      variants={itemVariants}
       className={className}
-      custom={ customProps }
+      variants={itemVariants}
+      custom={customProps}
+      transition={finalTransition}
     >
       {children}
     </motion.li>

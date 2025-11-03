@@ -68,12 +68,18 @@ const config: Config = {
           '50%': { 'background-position': '100% 50%' },
           '100%': { 'background-position': '0% 50%' },
         },
+        shine: {
+          '0%': { transform: 'translateX(-100%) rotate(45deg)' },
+          '50%': { transform: 'translateX(200%) rotate(45deg)' }, 
+          '100%': { transform: 'translateX(-100%) rotate(45deg)' },
+        },
       },
       animation: {
         scroll: 'scroll 40s linear infinite',
         'scroll-reverse': 'scroll 40s linear infinite reverse',
         'card-image-in': 'card-image-in 0.5s ease-out forwards',
         gradient: 'gradientShift 6s ease infinite',
+        shine: 'shine 3s linear infinite',
       }
     },
   },

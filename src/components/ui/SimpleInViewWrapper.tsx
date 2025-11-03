@@ -45,7 +45,7 @@ export function SimpleInViewWrapper({
   offset = 30,
   scale = 1,
   transition,
-  viewportAmount = 0.3,
+  viewportAmount = 0.2,
 }: SimpleInViewProps) {
 
   const defaultTransition: Transition = { 

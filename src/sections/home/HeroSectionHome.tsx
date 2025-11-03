@@ -5,6 +5,7 @@ import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { CircleCheck } from "lucide-react";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import ButtonCta from "@/components/ui/ButtonCta";
+import TextRevealClient from '@/components/ui/TextRevealClient';
 
 export default function HeroSectionHome() {
   const listItems = [
@@ -18,10 +19,10 @@ export default function HeroSectionHome() {
     <section className="relative w-full bg-colorFondo overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6 mb-10">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
-          <InViewAnimationWrapper 
-            direction="x" 
-            offset={-20} 
-            transition={{duration: 0.3, delay: 0.2}}
+          <TextRevealClient
+            direction="x"
+            offset={-30}
+            transition={{ duration: 0.4, delay: 0.2, ease: "easeInOut" }}
             className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
           >
             <h1>
@@ -29,7 +30,7 @@ export default function HeroSectionHome() {
               <strong className="text-colorPrimario5"> software inteligente </strong> 
               a tu medida
             </h1>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
     
           {/* Contenedor para la image: */}
           <InViewAnimationWrapper
@@ -50,13 +51,16 @@ export default function HeroSectionHome() {
             </div>
           </InViewAnimationWrapper>
     
-          <InViewAnimationWrapper 
+          <TextRevealClient
+            direction="x"
+            offset={-30}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
             className="order-3 text-lg md-tablet:text-xl text-center table-lg:text-left text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
-            direction="x" offset={-20} delay={0.3}>
+          >
             <h2>
               Desarrollo de páginas web modernas, aplicaciones móviles y sistemas empresariales con inteligencia artificial para que tu negocio sea más innovador, eficiente y competitivo en el mercado digital.
             </h2>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
     
           <StaggerListContainer
             className="order-4 space-y-2 text-base md-tablet:text-lg text-gray-800 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"

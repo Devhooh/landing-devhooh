@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 
 interface SolutionCardProps {
   title: string;
@@ -20,10 +19,7 @@ export function SolutionCard({
   index = 0
 }: SolutionCardProps) {
   return (
-    <InViewAnimationWrapper
-      transition={{ type: "spring", stiffness: 50, damping: 15, delay: 0.1 * index! }} 
-      className={`
-        relative max-w-5xl mx-auto
+    <div className={`relative max-w-5xl mx-auto
         ${reverse ? "table-lg:ml-auto table-lg:mr-0" : "table-lg:ml-0 table-lg:mr-auto"}`}
     >
       <div
@@ -105,6 +101,6 @@ export function SolutionCard({
           </div>
         </div>
       </div>
-    </InViewAnimationWrapper>
+    </div>
   );
 }

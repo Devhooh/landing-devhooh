@@ -64,15 +64,16 @@ export default function HeroSectionHome() {
     
           <StaggerListContainer
             className="order-4 space-y-2 text-base md-tablet:text-lg text-gray-800 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
+            staggerChildren={0.15}
+            delayChildren={0.4}
           >
             {listItems.map((item, idx) => (
               <StaggerListItemClient
                 key={idx}
-                index={idx}
-                delayBase={0.2}
-                className="flex items-center gap-3"
                 direction="x"
                 offset={-20}
+                transition={{duration: 0.2, delay: 0.3, ease: 'backInOut'}}
+                className="flex items-center gap-3"
               >
                 <CircleCheck className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
                 <span>{item}</span>

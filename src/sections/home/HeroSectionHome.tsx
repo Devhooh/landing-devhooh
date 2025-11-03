@@ -1,11 +1,10 @@
-import Link from "next/link";
 import React from 'react';
 import Image from "next/image";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import ImageAnimatedWrapper from "@/components/ui/ImageAnimatedWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { CircleCheck } from "lucide-react";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 export default function HeroSectionHome() {
   const listItems = [
@@ -20,8 +19,11 @@ export default function HeroSectionHome() {
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6 mb-10">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
           <InViewAnimationWrapper 
+            direction="x" 
+            offset={-20} 
+            transition={{duration: 0.3, delay: 0.2}}
             className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
-            direction="x" offset={-20} delay={0.2}>
+          >
             <h1>
               Desarrollo de 
               <strong className="text-colorPrimario5"> software inteligente </strong> 
@@ -30,9 +32,10 @@ export default function HeroSectionHome() {
           </InViewAnimationWrapper>
     
           {/* Contenedor para la image: */}
-          <ImageAnimatedWrapper
+          <InViewAnimationWrapper
             direction="x"
             offset={20}
+            transition={{duration: 0.3, delay: 0.2}}
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
             <div className="relative w-[460px] h-[460px] md-tablet:w-[600px] md-tablet:h-[600px] rounded-2xl">
@@ -45,7 +48,7 @@ export default function HeroSectionHome() {
                 priority
               />
             </div>
-          </ImageAnimatedWrapper>
+          </InViewAnimationWrapper>
     
           <InViewAnimationWrapper 
             className="order-3 text-lg md-tablet:text-xl text-center table-lg:text-left text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
@@ -82,15 +85,14 @@ export default function HeroSectionHome() {
               offset={20}
               transition={{duration: 0.2, delay: 0.2}}
               >
-              <Link href="/services">
-                <button
+                <ButtonCta 
+                  href="/services"
                   className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
                   bg-colorSecundario3 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
                   hover:scale-[1.05] active:scale-[0.98] transform"
-                  >
+                >
                   Ver nuestros servicios
-                </button>
-              </Link>
+                </ButtonCta>
             </InViewAnimationWrapper>
     
             <InViewAnimationWrapper
@@ -98,15 +100,14 @@ export default function HeroSectionHome() {
               offset={20} 
               transition={{duration: 0.2, delay: 0.3}}
             >
-              <Link href="/portfolio">
-                <button
-                  className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                    bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white transition-all duration-300
-                    hover:scale-[1.05] active:scale-[0.98] transform"
-                >
-                  Ver nuestro portafolio
-                </button>
-              </Link>
+              <ButtonCta
+                href="/portfolio"
+                className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
+                  bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white transition-all duration-300
+                  hover:scale-[1.05] active:scale-[0.98] transform"
+              >
+                Ver nuestro portafolio
+              </ButtonCta>
             </InViewAnimationWrapper>
           </div>
         </div>

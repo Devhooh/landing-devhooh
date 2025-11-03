@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 export default function HeroSectionTech() {
 
@@ -76,18 +76,16 @@ export default function HeroSectionTech() {
             transition={{ duration: 0.3, delay: 0.3 }}
             className="order-5 flex justify-center table-lg:justify-start"
           >
-            <Link href="/contact">
-              <button
-                className="
-                  px-8 py-4 text-lg md-tablet:text-xl font-semibold
-                  bg-colorPrimario5 hover:bg-colorSecundario2 text-white
-                  rounded-2xl shadow-lg
-                  hover:shadow-xl hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300
-                "
-              >
-                Construyamos tu proyecto!
-              </button>
-            </Link>
+            <ButtonCta
+              href="/contact"
+              className="
+                px-8 py-4 text-lg md-tablet:text-xl font-semibold
+                bg-colorPrimario5 hover:bg-colorSecundario2 text-white
+                rounded-2xl shadow-lg
+                hover:shadow-xl hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
+            >
+              Construyamos tu proyecto!
+            </ButtonCta>
           </InViewAnimationWrapper>
         </div>
       </div>

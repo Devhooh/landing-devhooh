@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 export default function HeroAbout() {
   return (
@@ -47,18 +47,17 @@ export default function HeroAbout() {
               transition={{ duration: 0.3, delay: 0.2 }}
               className="table-lg:mt-1 mb-8 table-lg:my-10 "
             >
-              <Link href="/contact">
-                <button
-                  className="
-                    px-7 md-tablet:px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
-                    text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 flex items-center gap-3 drop-shadow-lg 
-                    transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] transform"
-                >
-                  <span className="inline-block w-3 h-3 rounded-full bg-white animate-pulse"></span>
-                    Hablemos de tu proyecto
-                  <span className="inline-block w-3 h-3 rounded-full bg-white animate-pulse"></span>
-                </button>
-              </Link>
+              <ButtonCta 
+                href="/contact" 
+                className="
+                  px-7 md-tablet:px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+                  text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 flex items-center gap-3 drop-shadow-lg 
+                  transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] transform"
+              >
+                <span className="inline-block w-3 h-3 rounded-full bg-white animate-pulse"></span>
+                  Hablemos de tu proyecto
+                <span className="inline-block w-3 h-3 rounded-full bg-white animate-pulse"></span>
+              </ButtonCta>
             </InViewAnimationWrapper>
           </div>
         </div>

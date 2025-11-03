@@ -1,5 +1,6 @@
 "use client";
 
+import ButtonCta from "@/components/ui/ButtonCta";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -39,20 +40,18 @@ export default function ActiveLinks() {
         );
       })}
 
-      <Link href="/contact">
-        <button
-          className="
-            group relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
-            bg-gradient-to-l from-gray-900 via-gray-600 to-black
-            bg-[size:200%_200%]
-            animate-gradient
-            transition-all duration-700 ease-in-out
-            hover:scale-[1.05] hover:shadow-[0_0_20px_rgba(236,72,153,0.6)]
-          "
-        >
-          Contáctanos
-        </button>
-      </Link>
+      <ButtonCta
+        href="/contact"
+        className="
+          group relative px-8 py-2 rounded-2xl text-white font-semibold shadow-md
+          bg-gradient-to-l from-gray-900 via-gray-600 to-black
+          bg-[size:200%_200%]
+              animate-gradient
+          transition-all duration-300 ease-in-out
+          hover:scale-[1.05] hover:shadow-[0_0_20px_rgba(236,72,153,0.6)]"
+      >
+        Contáctanos
+      </ButtonCta>
     </nav>
   );
 }

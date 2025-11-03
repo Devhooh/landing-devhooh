@@ -6,6 +6,7 @@ import { CircleCheck } from "lucide-react";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import ButtonCta from "@/components/ui/ButtonCta";
 import TextRevealClient from '@/components/ui/TextRevealClient';
+import { SimpleInViewWrapper } from '@/components/ui/SimpleInViewWrapper';
 
 export default function HeroSectionHome() {
   const listItems = [
@@ -33,7 +34,7 @@ export default function HeroSectionHome() {
           </TextRevealClient>
     
           {/* Contenedor para la image: */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
             transition={{duration: 0.3, delay: 0.2}}
@@ -49,7 +50,7 @@ export default function HeroSectionHome() {
                 priority
               />
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
     
           <TextRevealClient
             direction="x"
@@ -85,7 +86,7 @@ export default function HeroSectionHome() {
           <div
             className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
           >
-            <InViewAnimationWrapper
+            <SimpleInViewWrapper
               direction="y" 
               offset={20}
               transition={{duration: 0.2, delay: 0.2}}
@@ -98,7 +99,7 @@ export default function HeroSectionHome() {
                 >
                   Ver nuestros servicios
                 </ButtonCta>
-            </InViewAnimationWrapper>
+            </SimpleInViewWrapper>
     
             <InViewAnimationWrapper
               direction="y" 

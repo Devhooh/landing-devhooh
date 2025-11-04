@@ -1,4 +1,4 @@
-import { SolutionCard } from "./SolutionCard";
+import { SolutionCard } from "../../components/cards/home/SolutionCard";
 import { ArrowRight } from "lucide-react";
 import TextRevealClient from "@/components/ui/TextRevealClient";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
@@ -6,44 +6,9 @@ import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 import ButtonCta from "@/components/ui/ButtonCta";
 import CardInViewStagger from "@/components/ui/CardInViewStagger";
+import { solutionsData } from "@/data/sections/home/solutionsData";
 
 export function SolutionsSection() {
-  const solutions = [
-  {
-    title: "Desarrollo de Software Web Escalable",
-    description:
-      "Creamos páginas web de alto rendimiento, e-commerce escalables y software a medida que aumentan tu visibilidad online. Optimizamos tus procesos empresariales con código limpio y tecnología moderna.",
-    image: "/assets/images/webSoft.png",
-    benefits: [
-      "Código limpio y escalable para crecer sin límites",
-      "Diseños adaptados a la identidad de tu marca y SEO",
-      "Integraciones fluidas con herramientas de gestión (CRM/ERP)",
-    ],
-  },
-  {
-    title: "Apps Móviles Nativas (iOS & Android)",
-    description:
-      "Especialistas en el desarrollo de Apps Móviles Nativas y multiplataforma. Creamos experiencias fluidas con alto rendimiento para iOS y Android, garantizando máxima usabilidad y retención de usuarios.",
-    image: "/assets/images/mobil.png",
-    benefits: [
-      "Notificaciones push para aumentar la retención de usuarios",
-      "Interfaz intuitiva que mejora la usabilidad (UX)",
-      "Optimización para un rendimiento rápido y estable",
-    ],
-  },
-  {
-    title: "Integración de Machine Learning e IA",
-    description:
-      "Implementamos Inteligencia Artificial y Machine Learning para automatizar la toma de decisiones. Desarrollamos chatbots avanzados, sistemas de predicción y automatización de procesos para reducir costos operativos.",
-    image: "/assets/images/ia.png",
-    benefits: [
-      "Chatbots y asistentes virtuales personalizados",
-      "Predicciones basadas en análisis de datos (Business Intelligence)",
-      "Automatización inteligente de procesos repetitivos",
-    ],
-  },
-];
-
   return (
     <section className="w-full py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden relative">
       {/* Encabezado mejorado */}
@@ -103,7 +68,7 @@ export function SolutionsSection() {
       {/* Cards mejoradas */}
       <div className="relative z-10 w-full px-4 md-tablet:px-8">
         <div className="mx-auto flex flex-col gap-16 max-w-[1400px] justify-center">
-          {solutions.map((solution, i) => (
+          {solutionsData.map((solution, i) => (
             <CardInViewStagger
               key={i}
               index={i + 0.1}

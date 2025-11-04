@@ -6,7 +6,7 @@ import { ProjectCard } from "@/sections/home/ProjectCard";
 import { motion, Variants } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from 'react';
-import { AnimatedProjectSlide } from "@/components/ui/AnimatedProjectSlide";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 interface ProjectData {
   id: number;
@@ -70,9 +70,13 @@ export function ProjectSwiper({ projectsData }: ProjectSwiperProps) {
             key={index} 
             className="h-auto px-5 md-tablet:px-10 max-w-3xl flex py-10 justify-center"
           >
-            <AnimatedProjectSlide> 
+            <SimpleInViewWrapper
+              direction="y"
+              offset={30}
+              transition={{duration: 0.2, delay: 0.1}}
+            > 
               <ProjectCard {...project} />
-            </AnimatedProjectSlide>
+            </SimpleInViewWrapper>
           </SwiperSlide>
         ))}
 

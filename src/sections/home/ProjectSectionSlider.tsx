@@ -3,9 +3,9 @@ import { projectsData } from "@/data/portfolioData";
 import { ProjectSlider } from "./ProjectSlider";
 import { ProjectSwiper } from "./ProjectSwiper";
 import React from 'react';
-import { InViewAnimationWrapper } from "../../components/ui/InViewAnimationWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import TextRevealClient from "@/components/ui/TextRevealClient";
 
 export default function ProjectSectionSlider() {
   return (
@@ -13,17 +13,27 @@ export default function ProjectSectionSlider() {
 
       {/* TÍTULO Y SUBTÍTULO (Contenido Server) */}
       <div className="relative z-10 text-center mb-16 px-4">
-        <InViewAnimationWrapper className="mb-6" delay={0.2}>
+        <TextRevealClient
+          direction="y"
+          offset={30}
+          transition={{duration: 0.3, delay: 0.2, ease: "easeOut"}}
+          className="mb-6"
+        >
           <h2 className="text-3xl tablet-md:text-5xl font-extrabold mb-6 text-colorPrimario2">
             Empresas que <strong className="text-colorPrimario5"> confían en nosotros</strong>
           </h2>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
-        <InViewAnimationWrapper className="mb-20" delay={0.3}>
+        <TextRevealClient
+          direction="y"
+          offset={30}
+          transition={{duration: 0.3, delay: 0.3, ease: "easeOut"}}
+          className="mb-10" 
+        >
           <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 max-w-3xl mx-auto leading-relaxed mb-8">
             Hemos colaborado con startups innovadoras y grandes corporaciones para ofrecer soluciones digitales a medida que aceleran la transformación digital y garantizan el crecimiento empresarial sostenible.
           </p>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
         {/* Estadísticas de impacto */}
         <StaggerListContainer
@@ -36,9 +46,10 @@ export default function ProjectSectionSlider() {
           ].map((val, index) => (
             <StaggerListItemClient
               key={index}
-              className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20"
               direction="y" 
-              offset={40} 
+              offset={40}
+              transition={{duration: 0.3, delay: 0.3}}
+              className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20"
             >
               <div className="text-2xl md-tablet:text-3xl font-bold text-colorPrimario5">{val.value}</div>
               <p className="text-sm text-colorPrimario1/70">{val.label}</p>
@@ -57,16 +68,24 @@ export default function ProjectSectionSlider() {
 
       {/* ENCABEZADO */}
       <div className="relative z-10 text-center px-4 mb-4">
-        <InViewAnimationWrapper delay={0.2}>
+        <TextRevealClient
+          direction="y"
+          offset={30}
+          transition={{duration: 0.3, delay: 0.2, ease: "easeOut"}}
+        >
           <h3 className="text-3xl md-tablet:text-5xl font-extrabold text-colorPrimario5 mb-8">
             Proyectos destacados
           </h3>
-        </InViewAnimationWrapper>
-        <InViewAnimationWrapper delay={0.3}>
+        </TextRevealClient>
+        <TextRevealClient
+          direction="y"
+          offset={30}
+          transition={{duration: 0.3, delay: 0.3, ease: "easeOut"}}
+        >
           <p className="text-colorPrimario1/70 text-xl md-tablet:text-2xl max-w-2xl mx-auto">
             Explora nuestro portafolio de Aplicaciones Web y Móviles funcionales y proyectos de Integración de Inteligencia Artificial que generaron un impacto real.
           </p>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
       </div>
       
       <ProjectSwiper projectsData={projectsData} />

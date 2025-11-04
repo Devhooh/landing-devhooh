@@ -64,7 +64,7 @@ export default function TextRevealClient({
             variants={revealVariants}
             transition={finalTransition}
             custom={customProps}
-            viewport={{ once: true, amount: 0.5 }} 
+            viewport={{ once: true, amount: 0.3 }} 
             style={initialStyle} 
             suppressHydrationWarning={true}
         >

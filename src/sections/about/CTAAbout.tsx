@@ -70,10 +70,8 @@ export default function CTAAbout() {
             {features.map((feature, idx) => (
               <StaggerListItemClient
                 key={idx}
-                index={idx}
                 direction="y"
                 offset={30}
-                delayBase={0.2}
                 className="relative p-6 rounded-2xl bg-white backdrop-blur-sm border border-white/30 hover:bg-white/70 transition-all duration-300 group"
               >
                 <div
@@ -164,8 +162,6 @@ export default function CTAAbout() {
             ].map((value, index) => (
               <StaggerListItemClient 
                 key={index} 
-                index={index + 1}
-                delayBase={0.2}
                 direction="y"
                 offset={30}
                 className="text-center"

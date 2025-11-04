@@ -119,7 +119,6 @@ export default function TechWhy({
 
             <StaggerListItemClient
               key={index} 
-              index={index}
               direction="y"
               offset={30}
               className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20"

@@ -1,5 +1,5 @@
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
+import TextRevealClient from "@/components/ui/TextRevealClient";
 import { Shield, Star, Wrench } from "lucide-react";
 
 interface Benefit {
@@ -36,35 +36,35 @@ export function ProjectsBenefits() {
       <div className="max-w-6xl mx-auto ">
         {/* Título SEO y descripción */}
         <div className="text-center mb-8">
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="y"
             offset={30}
-            delay={0.3}
+            transition={{duration: 0.3, delay: 0.3, ease: "easeInOut"}}
           >
             <h2 className="text-3xl tablet-md:text-5xl font-extrabold mb-7 text-white">
               ¿Por qué Devhooh?
               <br/>
               Nuestras ventajas competitivas
             </h2>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="y"
             offset={30}
-            delay={0.4}
+            transition={{duration: 0.4, delay: 0.4, ease: "easeInOut"}}
           >
             <p className="text-gray-200 text-base tablet-md:text-lg max-w-3xl mx-auto">
               Vamos más allá de la programación. Nuestro valor reside en la excelencia continua, la metodología ágil y el compromiso total con la visión de tu proyecto. Aseguramos que cada solución de software a medida impulse el crecimiento y la eficiencia de tu negocio.
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
         </div>
 
         {/* Cards de beneficios */}
         <div className="flex flex-col tablet-md:flex-row gap-6">
           {benefits.map((benefit, idx) => (
-            <ProjectStaggerWrapper
+            <CardInViewStagger
               key={idx}
-              index={idx}
+              index={idx + 0.1}
               className="flex flex-col gap-4 bg-colorDarkFondo5 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex-1"
             >
               <div>{benefit.icon}</div>
@@ -72,7 +72,7 @@ export function ProjectsBenefits() {
                 {benefit.title}
               </h3>
               <p className="text-gray-200 text-sm tablet-md:text-base">{benefit.description}</p>
-            </ProjectStaggerWrapper>
+            </CardInViewStagger>
           ))}
         </div>
       </div>

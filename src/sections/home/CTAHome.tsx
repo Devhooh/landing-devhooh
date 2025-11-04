@@ -1,9 +1,10 @@
-import Link from "next/link";
 import { Mail, Sparkles, ArrowRight } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { FloatingWrapper } from "@/components/ui/FloatingWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 export default function CTAHome() {
 
@@ -18,10 +19,10 @@ export default function CTAHome() {
           {/* Columna izquierda - Contenido */}
           <div className="text-center table-lg:text-left">
             {/* Título principal animado */}
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={30}
-              delay={0.3}
+              transition={{duration: 0.3, delay: 0.3, ease: "easeOut"}}
             >
               <h2 className="text-3xl md-tablet:text-5xl font-extrabold mb-6 leading-tight text-white">
                 Queremos que tu empresa sea nuestro próximo{" "}
@@ -29,18 +30,18 @@ export default function CTAHome() {
                   caso de éxito
                 </span>
               </h2>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
             {/* Subtítulo */}
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={20}
-              delay={0.4}
+              transition={{duration: 0.3, delay: 0.4, ease: "easeOut"}}
             >
               <p className="text-lg md-tablet:text-xl text-colorHover5 mb-8 max-w-2xl mx-auto">
                 Impulsa tu proyecto con soluciones digitales innovadoras, hechas a tu medida y respaldadas por años de experiencia
               </p>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
             {/* Estadísticas rápidas */}
             <StaggerListContainer
@@ -53,9 +54,11 @@ export default function CTAHome() {
             ].map((value, index) => (
 
               <StaggerListItemClient 
+                key={index} 
                 direction="x"
                 offset={-20}
-                key={index} className="text-center"
+                transition={{duration: 0.3, delay: 0.4, ease: "easeOut"}}
+                className="text-center"
               >
                 <div className="text-2xl font-bold text-colorPrimario7">{value.data}</div>
                 <p className="text-sm text-colorHover5">{value.text}</p>
@@ -64,32 +67,30 @@ export default function CTAHome() {
             </StaggerListContainer>
 
             {/* Botón principal */}
-            <InViewAnimationWrapper
+            <SimpleInViewWrapper
               className="flex flex-col md-tablet:flex-row gap-4 justify-center table-lg:justify-start"
               direction="y"
               offset={20}
               delay={0.4}
             >
-              <Link href="/contact">
-                <button
-                  className="group relative overflow-hidden px-8 py-4 rounded-2xl font-bold text-lg bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+              <ButtonCta
+                href="/contact"
+                className="group relative overflow-hidden px-5 md-tablet:px-8 py-4 rounded-2xl font-bold text-lg bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
                   text-white shadow-[0_0_30px_rgba(103,61,230,0.4)] hover:shadow-[0_0_40px_rgba(103,61,230,0.6)] transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] transform"
-                >
-                  {/* Efecto de brillo */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700">
+                </div>
                   <span className="relative z-10 flex items-center gap-3">
                     ¡Empezamos tu proyecto hoy!
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
-                </button>
-              </Link>
+              </ButtonCta>
 
-            </InViewAnimationWrapper>
+            </SimpleInViewWrapper>
           </div>
 
           {/* Columna derecha - Visual */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             className="flex justify-center table-lg:justify-end"
             direction="x"
             offset={20}
@@ -100,7 +101,6 @@ export default function CTAHome() {
               <div className="relative w-80 h-80 md-tablet:w-96 md-tablet:h-96">
                 
                 {/* Círculo principal */}
-
                 <FloatingWrapper
                   className="absolute inset-0 rounded-full bg-gradient-to-br from-colorPrimario5/20 to-colorSecundario1/20 backdrop-blur-sm border border-white/10"
                 />
@@ -135,7 +135,7 @@ export default function CTAHome() {
                 ></div>
               </div>
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

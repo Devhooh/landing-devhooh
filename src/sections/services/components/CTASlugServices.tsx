@@ -51,7 +51,6 @@ export default function CTASlugServices() {
               ].map((value, index) => (
                 <StaggerListItemClient
                   key={index} 
-                  index={index}
                   direction="y"
                   offset={20}
                   className="text-center"

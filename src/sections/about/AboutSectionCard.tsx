@@ -128,7 +128,6 @@ export default function AboutSectionCard() {
                   ].map((item, idx) => (
                     <StaggerListItemClient
                       key={idx}
-                      index={idx}
                       direction="x"
                       offset={20}
                       className="flex items-start gap-3 p-3 rounded-xl bg-white backdrop-blur-sm border border-white/20 hover:bg-white/50 transition-all duration-300 group/item"

@@ -47,8 +47,6 @@ export function PortfolioSlider() {
 
             <StaggerListItemClient 
               key={index} 
-              index={index}
-              delayBase={0.2}
               direction="y"
               offset={40}
               className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20"

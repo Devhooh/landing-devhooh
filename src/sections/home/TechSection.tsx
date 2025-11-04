@@ -1,7 +1,8 @@
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import ButtonCta from "@/components/ui/ButtonCta";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
 import { Code, Database, Smartphone, Cloud, ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 export default function TechSection() {
   const technologies = [
@@ -33,32 +34,32 @@ export default function TechSection() {
         {/* Contenido principal */}
         <div className="max-w-[1400px] mx-auto px-4">
           {/* Título animado letra por letra */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="y"
             offset={30}
-            delay={0.2}
+            transition={{duration: 0.3, delay: 0.3, ease: "easeInOut"}}
           >
             <h2 className="text-4xl md-tablet:text-5xl table-lg:text-6xl font-extrabold mb-6 text-colorPrimario2">
               Nuestro stack tecnológico
             </h2>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
           
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="y"
             offset={30}
-            delay={0.3}
+            transition={{duration: 0.3, delay: 0.4, ease: "easeInOut"}}
           >
             <p className="text-colorPrimario1/80 mb-16 max-w-3xl mx-auto text-lg md-tablet:text-xl">
               Nuestro enfoque se basa en el alto rendimiento y la escalabilidad. Utilizamos tecnologías de vanguardia como Next.js, React y Node.js para construir aplicaciones robústas, seguras y a prueba de futuro.
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* Grid de tecnologías */}
           <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-4 gap-8 mb-16">
             {technologies.map((tech, idx) => (
-              <ProjectStaggerWrapper
+              <CardInViewStagger
                 key={idx}
-                index={idx}
+                index={idx + 0.1}
                 className="relative group p-6 rounded-3xl bg-gradient-to-br from-colorSecundario3/10 to-colorSecundario4/10 
                   backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]"
               >
@@ -85,33 +86,34 @@ export default function TechSection() {
 
                 {/* Indicador decorativo */}
                 <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-colorPrimario5/30 group-hover:bg-colorPrimario5 transition-colors duration-300"></div>
-              </ProjectStaggerWrapper>
+              </CardInViewStagger>
             ))}
           </div>
 
           {/* Botón */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
+            direction="y" 
+            offset={20} 
+            transition={{duration: 0.3, delay: 0.2}}
             className="flex justify-center"
-            direction="y" offset={20} delay={0.2}
           >
-            <Link href="/services" className="group">
-              <button 
+            <div className="group">
+              <ButtonCta
+                href="/services"
+                icon={ArrowRight}
                 className="relative overflow-hidden text-lg md-tablet:text-xl 
-                bg-gradient-to-r from-colorPrimario5 to-colorSecundario2 
-                text-white py-4 px-10 rounded-2xl font-semibold 
-                shadow-[0_0_25px_rgba(103,61,230,0.3)] hover:shadow-[0_0_35px_rgba(103,61,230,0.5)] transition-all duration-300 flex items-center gap-3
-                hover:scale-[1.05] active:scale-[0.98] transform"
+                  bg-gradient-to-r from-colorPrimario5 to-colorSecundario2 
+                  text-white py-4 px-10 rounded-2xl font-semibold 
+                  shadow-[0_0_25px_rgba(103,61,230,0.3)] hover:shadow-[0_0_35px_rgba(103,61,230,0.5)] transition-all duration-300 flex items-center gap-3
+                  hover:scale-[1.05] active:scale-[0.98] transform"
               >
-                {/* Efecto de brillo animado */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                
-                <p className="relative z-10">
-                  Explora todas nuestras tecnologías
-                </p>
-                <ArrowRight className="flex-shrink-0 relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </Link>
-          </InViewAnimationWrapper>
+                  <p className="relative z-10">
+                    Explora todas nuestras tecnologías
+                  </p>
+              </ButtonCta>
+            </div>
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

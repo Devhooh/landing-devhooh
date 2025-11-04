@@ -12,7 +12,7 @@ export interface BenefitItem {
   icon: keyof typeof IconMap; 
   title: string;
   description: string;
-  gradient: string;
+  gradient?: string;
 }
 
 // Tipamos las props del componente cliente para poder importarlas

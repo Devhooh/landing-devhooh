@@ -101,7 +101,6 @@ export default function PortfolioProcess({ project }: ChallengeSectionProps) {
                       {proceso.process.map((item, idx) => (
                         <StaggerListItemClient
                           key={idx}
-                          index={idx}
                           direction="y"
                           offset={20}
                           className="flex items-start gap-3 p-3 rounded-xl bg-colorHover4 border border-white/10 hover:bg-colorHover3 transition-all duration-300"

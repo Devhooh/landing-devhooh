@@ -96,7 +96,6 @@ export default function TechServices({ name, image, services }: TechServicesProp
               return (
                 <StaggerListItemClient
                   key={index}
-                  index={index}
                   direction="x"
                   offset={20}
                   className={`

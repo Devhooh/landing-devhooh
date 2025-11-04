@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Check } from "lucide-react";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 export default function HeroSectionPort() {
   return (
@@ -71,25 +71,25 @@ export default function HeroSectionPort() {
 
           {/* --- 4) LISTA --- */}
           <StaggerListContainer className="order-4 flex justify-end">
-              <ul className="space-y-3 text-gray-800 text-left max-w-md mx-auto table-lg:mx-0">
-                {[
-                  "Tiendas online con integración de pagos",
-                  "Aplicaciones móviles multiplataforma",
-                  "Dashboards empresariales con análisis en tiempo real",
-                  "Proyectos con inteligencia artificial aplicada"
+            <ul className="space-y-3 text-gray-800 text-left max-w-md mx-auto table-lg:mx-0">
+              {[
+                "Tiendas online con integración de pagos",
+                "Aplicaciones móviles multiplataforma",
+                "Dashboards empresariales con análisis en tiempo real",
+                "Proyectos con inteligencia artificial aplicada"
 
-                ].map((feature, index) => (
-                  <StaggerListItemClient
-                    key={index}
-                    direction="x"
-                    offset={20}
-                    className="flex items-start gap-3"
-                  >
-                    <Check className="w-6 h-6 text-green-600 flex-shrink-0" />
-                    <span className="text-base md-tablet:text-xl">{feature}</span>
-                  </StaggerListItemClient>
-                ))}
-              </ul>
+              ].map((feature, index) => (
+                <StaggerListItemClient
+                  key={index}
+                  direction="x"
+                  offset={20}
+                  className="flex items-start gap-3"
+                >
+                  <Check className="w-6 h-6 text-green-600 flex-shrink-0" />
+                  <span className="text-base md-tablet:text-xl">{feature}</span>
+                </StaggerListItemClient>
+              ))}
+            </ul>
           </StaggerListContainer>
 
           {/* Boton CTA */}
@@ -99,15 +99,15 @@ export default function HeroSectionPort() {
             transition={{ duration: 0.3, delay: 0.3 }}
             className="order-5 flex justify-center table-lg:justify-end mt-10 table-lg:mt-1 mb-5 table-lg:my-8 "
           >
-            <Link href="/contact">
-              <button className="px-8 py-4 text-lg md-tablet:text-xl font-semibold 
+            <ButtonCta
+              href="/contact"
+              className="px-8 py-4 text-lg md-tablet:text-xl font-semibold 
                 bg-colorPrimario6 text-white rounded-xl shadow-md 
-                hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300">
-                Cotiza tu proyecto ahora
-              </button>
-            </Link>
+                hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
+            >
+              Cotiza tu proyecto ahora
+            </ButtonCta>
           </InViewAnimationWrapper>
-
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ReviewData } from "@/data/reviewData";
 import { Pagination } from "swiper/modules";
-import { ReviewsHomeCard } from "@/sections/home/ReviewsHomeCard"; 
+import { ReviewsHomeCard } from "@/components/cards/home/ReviewsHomeCard"; 
 
 interface ReviewsSliderProps {
   // 💡 Cambiamos ReviewItem por Review

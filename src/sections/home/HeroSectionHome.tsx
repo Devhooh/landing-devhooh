@@ -87,8 +87,8 @@ export default function HeroSectionHome() {
           >
             <SimpleInViewWrapper
               direction="y" 
-              offset={20}
-              transition={{duration: 0.2, delay: 0.2}}
+              offset={30}
+              transition={{duration: 0.3, delay: 0.3}}
               >
                 <ButtonCta 
                   href="/services"
@@ -102,8 +102,8 @@ export default function HeroSectionHome() {
     
             <SimpleInViewWrapper
               direction="y" 
-              offset={20} 
-              transition={{duration: 0.2, delay: 0.3}}
+              offset={30} 
+              transition={{duration: 0.3, delay: 0.4}}
             >
               <ButtonCta
                 href="/portfolio"

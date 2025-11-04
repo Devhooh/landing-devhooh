@@ -51,7 +51,7 @@ export default function CardInViewStagger({
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.2}}
       variants={generateStaggerVariants(index, direction, offset)}
       custom={index} 
     >

@@ -8,6 +8,7 @@ import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { IconMap } from "@/data/types";
 import TextRevealClient from "@/components/ui/TextRevealClient";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
 
 // Definición de los datos se queda aquí (es estático)
 const benefits: BenefitItem[] = [
@@ -70,20 +71,15 @@ export function BenefitsSection() {
         </div>
   
         {/* CARDS HORIZONTALES */}
-        <StaggerListContainer
-          staggerChildren={0.2}
-          delayChildren={0.3}
-          className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20"
-        >
+        <div className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
           {benefits.map((benefit, index) => {
             const IconComponent = IconMap[benefit.icon];
-  
             return (
-              <StaggerListItemClient
+              <CardInViewStagger
                 key={index}
+                index={index + 0.1}
                 direction="y"
                 offset={40}
-                transition={{duration: 0.2, ease: 'easeOut'}}
                 className="
                     relative p-6 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorPrimario6 shadow-[0_0_30px_rgba(103,61,230,0.25)] 
                     hover:shadow-[0_0_40px_rgba(103,61,230,0.4)] transition-all duration-300"
@@ -99,10 +95,10 @@ export function BenefitsSection() {
                     {benefit.description}
                   </p>
                 </div>
-              </StaggerListItemClient>
+              </CardInViewStagger>
             )
           })}
-        </StaggerListContainer>
+        </div>
   
         {/* SECCIÓN INFERIOR: LISTA E IMAGEN */}
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">

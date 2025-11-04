@@ -1,5 +1,4 @@
-import StaggerListContainer from "@/components/ui/StaggerListContainer";
-import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
 import TextRevealClient from "@/components/ui/TextRevealClient";
 import { Shield, Star, Wrench } from "lucide-react";
 
@@ -61,15 +60,11 @@ export function ProjectsBenefits() {
         </div>
 
         {/* Cards de beneficios */}
-        <StaggerListContainer 
-          className="flex flex-col tablet-md:flex-row gap-6"
-        >
+        <div className="flex flex-col tablet-md:flex-row gap-6">
           {benefits.map((benefit, idx) => (
-            <StaggerListItemClient
+            <CardInViewStagger
               key={idx}
-              direction="y"
-              offset={30}
-              transition={{duration: 0.3, delay: 0.3, ease: "backInOut"}}
+              index={idx + 0.1}
               className="flex flex-col gap-4 bg-colorDarkFondo5 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex-1"
             >
               <div>{benefit.icon}</div>
@@ -77,9 +72,9 @@ export function ProjectsBenefits() {
                 {benefit.title}
               </h3>
               <p className="text-gray-200 text-sm tablet-md:text-base">{benefit.description}</p>
-            </StaggerListItemClient>
+            </CardInViewStagger>
           ))}
-        </StaggerListContainer>
+        </div>
       </div>
     </section>
   );

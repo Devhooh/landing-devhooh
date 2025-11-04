@@ -1,7 +1,6 @@
 import ButtonCta from "@/components/ui/ButtonCta";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
-import StaggerListContainer from "@/components/ui/StaggerListContainer";
-import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import TextRevealClient from "@/components/ui/TextRevealClient";
 import { Code, Database, Smartphone, Cloud, ArrowRight } from "lucide-react";
 
@@ -56,15 +55,11 @@ export default function TechSection() {
           </TextRevealClient>
 
           {/* Grid de tecnologías */}
-          <StaggerListContainer 
-            className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-4 gap-8 mb-16"
-          >
+          <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-4 gap-8 mb-16">
             {technologies.map((tech, idx) => (
-              <StaggerListItemClient
+              <CardInViewStagger
                 key={idx}
-                direction="y"
-                offset={40}
-                transition={{duration: 0.2, delay: 0.2, ease: "easeInOut"}}
+                index={idx + 0.1}
                 className="relative group p-6 rounded-3xl bg-gradient-to-br from-colorSecundario3/10 to-colorSecundario4/10 
                   backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]"
               >
@@ -91,9 +86,9 @@ export default function TechSection() {
 
                 {/* Indicador decorativo */}
                 <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-colorPrimario5/30 group-hover:bg-colorPrimario5 transition-colors duration-300"></div>
-              </StaggerListItemClient>
+              </CardInViewStagger>
             ))}
-          </StaggerListContainer>
+          </div>
 
           {/* Botón */}
           <SimpleInViewWrapper

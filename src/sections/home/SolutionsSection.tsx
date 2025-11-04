@@ -5,6 +5,7 @@ import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 import ButtonCta from "@/components/ui/ButtonCta";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
 
 export function SolutionsSection() {
   const solutions = [
@@ -103,11 +104,11 @@ export function SolutionsSection() {
       <div className="relative z-10 w-full px-4 md-tablet:px-8">
         <div className="mx-auto flex flex-col gap-16 max-w-[1400px] justify-center">
           {solutions.map((solution, i) => (
-            <SimpleInViewWrapper
+            <CardInViewStagger
               key={i}
+              index={i + 0.1}
               direction={i % 2 === 0 ? 'x' : 'x'}
               offset={i % 2 === 0 ? -50 : 50}
-              transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}} 
             >
               <SolutionCard
                 title={solution.title}
@@ -117,7 +118,7 @@ export function SolutionsSection() {
                 reverse={i % 2 === 1}
                 index={i}
               />
-            </SimpleInViewWrapper>
+            </CardInViewStagger>
           ))}
         </div>
 

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { CheckCircle, Star, Shield, ArrowRight } from "lucide-react";
-import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
 import TextRevealClient from "@/components/ui/TextRevealClient";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 import ButtonCta from "@/components/ui/ButtonCta";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
 
 export function PlansSection() {
   const planes = [
@@ -88,9 +88,11 @@ export function PlansSection() {
           {planes.map((plan, index) => {
             const Icon = plan.icon;
             return (
-              <ProjectStaggerWrapper
+              <CardInViewStagger
                 key={index}
                 index={index}
+                direction="y"
+                offset={40}
                 className={`
                   relative rounded-3xl p-8 flex flex-col h-full
                   bg-gradient-to-br ${plan.gradient}
@@ -165,7 +167,7 @@ export function PlansSection() {
 
                 {/* Efecto decorativo */}
                 <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-60"></div>
-              </ProjectStaggerWrapper>
+              </CardInViewStagger>
             );
           })}
         </div>

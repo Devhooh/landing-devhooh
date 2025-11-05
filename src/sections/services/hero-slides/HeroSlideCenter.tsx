@@ -1,9 +1,10 @@
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import ButtonCta from "@/components/ui/ButtonCta";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 export default function HeroSlideCenter() {
   return (
@@ -12,25 +13,23 @@ export default function HeroSlideCenter() {
         {/* Grid que cambia completamente entre móvil y desktop */}
         <div className="flex flex-col table-lg:grid table-lg:grid-cols-3 table-lg:items-center gap-6">
           {/* 1. TÍTULO - Móvil: primero | Desktop: dentro del centro */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             className="order-1 table-lg:hidden text-center"
             direction="y"
             offset={20}
-            delay={0.3}
-            transition={{duration: 0.5}}
+            transition={{duration: 0.4, delay: 0.3, ease: "backIn"}}
           >
             <h2 className="mt-5 text-4xl md-tablet:text-5xl font-extrabold leading-tight drop-shadow-lg text-white">
               De la estrategia a tu
               <span className="text-colorPrimario2"> producto digital</span>
             </h2>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* 2. IMAGEN IZQUIERDA - Móvil: segunda (reutilizada) | Desktop: primera columna */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={-20}
-            delay={0.3}
-            transition={{duration: 0.6}}
+            transition={{duration: 0.4, delay: 0.4}}
             className="order-2 table-lg:order-none flex justify-center table-lg:justify-end mb-8 table-lg:mb-14 table-lg:mt-8"
           >
             <div className="relative group w-full max-w-md">
@@ -50,43 +49,42 @@ export default function HeroSlideCenter() {
               </div>
 
               {/* Círculos decorativos flotantes */}
-              <div
-                className="animate-pulse absolute -top-4 -right-4 table-lg:-right-4 w-8 h-8 rounded-full bg-white opacity-20"
+              <div className="animate-pulse absolute -top-4 -right-4 table-lg:-right-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></div>
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
 
           {/* 3. CONTENEDOR CENTRAL - Móvil: dividido en partes | Desktop: columna central completa */}
           <div className="order-3 table-lg:order-none flex flex-col items-center text-center gap-8 col-span-1">
             {/* Título para Desktop */}
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={20}
-              delay={0.3}
-              transition={{duration: 0.5}}
+              transition={{duration: 0.4, delay: 0.3, ease: "backIn"}}
               className="hidden table-lg:block md-tablet:mt-2"
             >
               <h2 className="mt-5 text-4xl font-extrabold leading-tight drop-shadow-lg text-white">
                 De la estrategia a tu
               <span className="text-colorPrimario2"> producto digital</span>
               </h2>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
             {/* Subtítulo */}
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={-20}
-              delay={0.3}
-              transition={{duration: 0.5}}
+              transition={{duration: 0.4, delay: 0.4, ease: "backIn"}}
               className="order-3 table-lg:order-none"
             >
               <p className="text-lg md-tablet:text-xl text-white max-w-2xl">
                 Ofrecemos un servicio de consultoría integral. Te guiamos a través de la definición del producto, diseño UX/UI y desarrollo de un MVP
               </p>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
             {/* Lista */}
             <StaggerListContainer
+              staggerChildren={0.15}
+              delayChildren={0.4}
               className="order-4 table-lg:order-none mt-6 table-lg:mt-0 space-y-4 text-white text-left max-w-md"
             >
               {[
@@ -97,7 +95,8 @@ export default function HeroSlideCenter() {
                 <StaggerListItemClient
                   key={index}
                   direction="y"
-                  offset={20}
+                  offset={-20}
+                  transition={{duration: 0.3, ease: "circInOut"}}
                   className="flex items-start gap-3"
                 >
                   <BadgeCheck className="w-6 h-6 text-cyan-400 flex-shrink-0" />
@@ -107,11 +106,10 @@ export default function HeroSlideCenter() {
             </StaggerListContainer>
 
             {/* Botón CTA */}
-            <InViewAnimationWrapper
+            <SimpleInViewWrapper
               direction="y"
               offset={20}
-              delay={0.3}
-              transition={{duration: 0.4}}
+              transition={{duration: 0.4, delay: 0.2}}
               className="order-5 table-lg:order-none mt-8 table-lg:mt-4 mb-10"
             >
               <ButtonCta
@@ -122,15 +120,14 @@ export default function HeroSlideCenter() {
               >
                 Empieza tu proyecto
               </ButtonCta>
-            </InViewAnimationWrapper>
+            </SimpleInViewWrapper>
           </div>
 
           {/* 4. IMAGEN DERECHA - Móvil: oculta | Desktop: tercera columna */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
-            delay={0.3}
-            transition={{duration: 0.6}}
+            transition={{duration: 0.4, delay: 0.5}}
             className="hidden table-lg:flex justify-start mb-14 table-lg:mt-8"
           >
             <div className="relative group w-full max-w-md">
@@ -154,7 +151,7 @@ export default function HeroSlideCenter() {
                 className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></div>
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

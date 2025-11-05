@@ -89,7 +89,6 @@ export default function ResultSection({ project }: ResultSectionProps) {
                     key={index} 
                     direction="y"
                     offset={-20}
-                    index={index}
                     className="flex items-start gap-3 p-3 rounded-xl bg-red-50/50 border border-red-200/30 hover:bg-red-50/80 transition-all duration-300"
                   >
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
@@ -136,7 +135,6 @@ export default function ResultSection({ project }: ResultSectionProps) {
                 {result.despues.map((item, index) => (
                   <StaggerListItemClient
                     key={index} 
-                    index={index}
                     direction="y"
                     offset={-20}
                     className="flex items-start gap-3 p-3 rounded-xl bg-green-50/50 border border-green-200/30 hover:bg-green-50/80 transition-all duration-300"

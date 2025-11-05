@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import { BadgeCheck   } from "lucide-react";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 export default function HeroLeft() {
   return (
@@ -103,15 +103,14 @@ export default function HeroLeft() {
             delay={0.3}
             transition={{ duration: 0.4}}
           >
-            <Link href="/contact">
-              <button
-                className="
-                  px-10 py-3 text-lg md-tablet:text-xl font-semibold bg-white text-black rounded-lg shadow-md 
-                  transition-all duration-300 border border-colorSecundario2 hover:scale-[1.05] active:scale-[0.98] transform"
-              >
-                Empieza tu proyecto
-              </button>
-            </Link>
+            <ButtonCta
+              href="/contact"
+              className="
+                px-10 py-3 text-lg md-tablet:text-xl font-semibold bg-white text-black rounded-lg shadow-md 
+                transition-all duration-300 border border-colorSecundario2 hover:scale-[1.05] active:scale-[0.98] transform"
+            >
+              Empieza tu proyecto
+            </ButtonCta>
           </InViewAnimationWrapper>
 
         </div>

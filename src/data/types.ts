@@ -1,4 +1,4 @@
-import { Zap, Shield, Palette } from "lucide-react";
+import { Zap, Shield, Palette, Code, Database, Smartphone, Cloud, CheckCircle, Star  } from "lucide-react";
 
 // Definimos el mapeo de iconos 
 export const IconMap = {
@@ -12,11 +12,36 @@ export interface BenefitItem {
   icon: keyof typeof IconMap; 
   title: string;
   description: string;
-  gradient: string;
+  gradient?: string;
 }
 
-// Tipamos las props del componente cliente para poder importarlas
-export interface BenefitsContentProps {
-    benefits: BenefitItem[];
-    checklistItems: string[];
+export const IconMapTech = {
+  Code: Code,
+  DataBase: Database,
+  Smartphone: Smartphone,
+  Cloud: Cloud,
+}
+
+
+export interface TechItem {
+  icon: keyof typeof IconMapTech; 
+  title: string;
+  description: string;
+}
+
+export const IconMapPlan = {
+  CheckCircle: CheckCircle,
+  Star: Star,
+  Shield: Shield,
+}
+
+export interface PlanItem {
+  title: string,
+  subtitle: string,
+  icon: keyof typeof IconMapPlan,
+  gradient?: string,
+  iconGradient: string,
+  borderColor?: string,
+  popular?: boolean,
+  beneficio: string[]
 }

@@ -1,8 +1,9 @@
-import Link from "next/link";
 import { ServicesData } from "@/data/ServicesDetails";
 import { Sparkles } from "lucide-react";
 import { CardInViewWrapper } from "@/components/ui/CardInViewWrapper";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import ButtonCta from "@/components/ui/ButtonCta";
+import { Rocket } from "lucide-react";
 
 interface HeroSectionProps {
   service: ServicesData;
@@ -71,16 +72,16 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
         transition={{duration: 0.3, delay: 0.2}}
         className="my-8 mx-10"
       >
-        <Link href="/contact">
-          <button
-            className="
-              px-5 md-tablet:px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
-              text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 transform transition-all duration-300 
-              flex items-center gap-3 drop-shadow-lg hover:scale-[1.05] active:scale-[0.98]"
-          >
-            Cotiza tu proyecto
-          </button>
-        </Link>
+        <ButtonCta
+          href="/contact"
+          icon={Rocket}
+          className="
+            px-5 md-tablet:px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+            text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 transform transition-all duration-300 
+            flex items-center gap-3 drop-shadow-lg hover:scale-[1.05] active:scale-[0.98]"
+        >
+          Cotiza tu proyecto ahora
+        </ButtonCta>
       </InViewAnimationWrapper>
     </section>
   );

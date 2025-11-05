@@ -64,7 +64,6 @@ export default function PortfolioHero({ project }: PortfolioHeroProps) {
           {projectDetails.map((detail, index) => (
             <StaggerListItemClient
               key={index}
-              index={index}
               direction="y"
               offset={30}
               className="

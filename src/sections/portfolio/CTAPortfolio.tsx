@@ -91,10 +91,8 @@ export default function CTAServices() {
             ].map((value, index)=> (
               <StaggerListItemClient
                 key={index} 
-                index={index}
                 direction="y"
                 offset={30}
-                delayBase={0.2}
                 className="text-center px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20"
               >
                 <div className="text-2xl font-bold text-colorPrimario5">{value.data}</div>

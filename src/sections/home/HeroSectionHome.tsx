@@ -1,11 +1,11 @@
-import Link from "next/link";
 import React from 'react';
 import Image from "next/image";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import ImageAnimatedWrapper from "@/components/ui/ImageAnimatedWrapper";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { CircleCheck } from "lucide-react";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
+import ButtonCta from "@/components/ui/ButtonCta";
+import TextRevealClient from '@/components/ui/TextRevealClient';
+import { SimpleInViewWrapper } from '@/components/ui/SimpleInViewWrapper';
 
 export default function HeroSectionHome() {
   const listItems = [
@@ -19,20 +19,24 @@ export default function HeroSectionHome() {
     <section className="relative w-full bg-colorFondo overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6 mb-10">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
-          <InViewAnimationWrapper 
+          <TextRevealClient
+            direction="x"
+            offset={-30}
+            transition={{ duration: 0.4, delay: 0.2, ease: "easeInOut" }}
             className="order-1 text-center table-lg:text-left text-4xl md-tablet:text-5xl font-extrabold text-colorPrimario2 leading-tight tracking-tight"
-            direction="x" offset={-20} delay={0.2}>
+          >
             <h1>
               Desarrollo de 
               <strong className="text-colorPrimario5"> software inteligente </strong> 
               a tu medida
             </h1>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
     
           {/* Contenedor para la image: */}
-          <ImageAnimatedWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
+            transition={{duration: 0.3, delay: 0.2}}
             className="order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
             <div className="relative w-[460px] h-[460px] md-tablet:w-[600px] md-tablet:h-[600px] rounded-2xl">
@@ -45,25 +49,31 @@ export default function HeroSectionHome() {
                 priority
               />
             </div>
-          </ImageAnimatedWrapper>
+          </SimpleInViewWrapper>
     
-          <InViewAnimationWrapper 
+          <TextRevealClient
+            direction="x"
+            offset={-30}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeInOut" }}
             className="order-3 text-lg md-tablet:text-xl text-center table-lg:text-left text-colorPrimario1 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
-            direction="x" offset={-20} delay={0.3}>
+          >
             <h2>
               Desarrollo de páginas web modernas, aplicaciones móviles y sistemas empresariales con inteligencia artificial para que tu negocio sea más innovador, eficiente y competitivo en el mercado digital.
             </h2>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
     
           <StaggerListContainer
             className="order-4 space-y-2 text-base md-tablet:text-lg text-gray-800 text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
+            staggerChildren={0.15}
+            delayChildren={0.4}
           >
             {listItems.map((item, idx) => (
               <StaggerListItemClient
                 key={idx}
+                direction="x"
+                offset={-20}
+                transition={{duration: 0.2, delay: 0.3, ease: 'backInOut'}}
                 className="flex items-center gap-3"
-                direction="y"
-                offset={30}
               >
                 <CircleCheck className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
                 <span>{item}</span>
@@ -72,30 +82,48 @@ export default function HeroSectionHome() {
           </StaggerListContainer>
     
           {/* Botones: */}
-          <InViewAnimationWrapper
-            direction="x" offset={-10} delay={0.3}
-            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
+          <div
+            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-5"
           >
-            <Link href="/services">
-              <button
-                className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                  bg-colorSecundario3 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
-                  hover:scale-[1.05] active:scale-[0.98] transform"
+            <SimpleInViewWrapper
+              direction="y" 
+              offset={30}
+              transition={{duration: 0.3, delay: 0.3}}
+            >
+              <div className="
+                hover:scale-[1.05] active:scale-[0.98] 
+                transform transition-all duration-300"
               >
-                Ver nuestros servicios
-              </button>
-            </Link>
+
+                <ButtonCta // Este botón ahora solo tiene los estilos de diseño
+                  href="/services"
+                  className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
+                      bg-colorSecundario3 text-white rounded-2xl shadow-lg hover:shadow-xl w-full
+                      inline-block whitespace-nowrap"
+                >
+                  Ver nuestros servicios
+                </ButtonCta>
+              </div>
+            </SimpleInViewWrapper>
     
-            <Link href="/portfolio">
-              <button
-                className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                  bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white transition-all duration-300
-                  hover:scale-[1.05] active:scale-[0.98] transform"
-              >
-                Ver nuestro portafolio
-              </button>
-            </Link>
-          </InViewAnimationWrapper>
+            <SimpleInViewWrapper
+              direction="y" 
+              offset={30} 
+              transition={{duration: 0.3, delay: 0.4}}
+            >
+              <div className="hover:scale-[1.05] active:scale-[0.98] 
+                transform transition-all duration-300">
+                <ButtonCta
+                  href="/portfolio"
+                  className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
+                    bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white
+                    inline-block whitespace-nowrap"
+                >
+                  Ver nuestro portafolio
+                </ButtonCta>
+              </div>
+            </SimpleInViewWrapper>
+          </div>
         </div>
       </div>
     </section>

@@ -58,7 +58,6 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
                 return (
                   <StaggerListItemClient
                     key={idx}
-                    index={idx}
                     direction="y"
                     offset={40}
                     className="flex items-center gap-2 px-4 py-2 rounded-full bg-white backdrop-blur-sm border border-white/30 hover:bg-white transition-all duration-300"

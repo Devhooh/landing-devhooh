@@ -108,7 +108,6 @@ export default function ChallengeSection({ project }: ChallengeSectionProps) {
                                 key={i}
                                 direction="y"
                                 offset={20}
-                                index={i + 1}
                                 className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
                               >
                                 <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">

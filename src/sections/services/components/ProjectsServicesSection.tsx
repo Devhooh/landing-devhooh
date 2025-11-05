@@ -68,10 +68,8 @@ export default function ProjectsServicesSection() {
           ].map((value, index) => (
             <StaggerListItemClient 
               key={index} 
-              index={index}
               direction="y"
               offset={30}
-              delayBase={0.3}
               className="text-center p-6 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/20"
             >
               <div className="text-3xl font-bold text-colorPrimario5 mb-2">

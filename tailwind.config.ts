@@ -55,19 +55,31 @@ const config: Config = {
       },
       keyframes: {
         scroll: {
-        '0%': { transform: 'translateX(0)' },
-        '100%': { transform: 'translateX(-50%)' }, // mueve la mitad del contenedor
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }, // mueve la mitad del contenedor
         },
         'card-image-in': {
           // El mismo efecto de Framer Motion
           '0%': { opacity: '0', transform: 'scale(0.9)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
         },
+        gradientShift: {
+          '0%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+          '100%': { 'background-position': '0% 50%' },
+        },
+        shine: {
+          '0%': { transform: 'translateX(-100%) rotate(45deg)' },
+          '50%': { transform: 'translateX(200%) rotate(45deg)' }, 
+          '100%': { transform: 'translateX(-100%) rotate(45deg)' },
+        },
       },
       animation: {
         scroll: 'scroll 40s linear infinite',
         'scroll-reverse': 'scroll 40s linear infinite reverse',
         'card-image-in': 'card-image-in 0.5s ease-out forwards',
+        gradient: 'gradientShift 6s ease infinite',
+        shine: 'shine 3s linear infinite',
       }
     },
   },

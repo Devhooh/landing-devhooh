@@ -49,7 +49,6 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
               key={index}
               direction="x"
               offset={-20}
-              index={index + 1 }
               className={`
                 group relative bg-white/70 
                 border-2 border-${item.color}-400

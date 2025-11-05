@@ -2,11 +2,11 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { ProjectCard } from "@/sections/home/ProjectCard";
+import { ProjectCard } from "@/components/cards/home/ProjectCard";
 import { motion, Variants } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from 'react';
-import { AnimatedProjectSlide } from "@/components/ui/AnimatedProjectSlide";
+import { AnimatedProjectSlide } from "@/components/layout/AnimatedProjectSlide";
 
 interface ProjectData {
   id: number;

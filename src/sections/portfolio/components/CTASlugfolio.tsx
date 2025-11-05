@@ -60,7 +60,6 @@ export default function CTATech() {
               key={index} 
               direction="y"
               offset={30}
-              index={index}
               className="bg-white/70 rounded-xl p-6 flex flex-col items-center"
             >
               <value.icon className="w-8 h-8 text-colorPrimario5 mb-2" />

@@ -44,8 +44,6 @@ export function ContactForm() {
             ].map((value, index) => (
               <StaggerListItemClient 
                 key={index} 
-                index={index}
-                delayBase={0.5}
                 direction="y"
                 offset={30}
                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-colorDarkFondo1/50 border border-colorPrimario5/30 backdrop-blur-sm"

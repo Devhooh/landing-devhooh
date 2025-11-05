@@ -1,5 +1,5 @@
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import { ProjectSlider } from "../home/ProjectSlider";
+import { ProjectSlider } from "../../components/sliders/ProjectSlider";
 import { logos } from "@/data/projects";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
@@ -47,8 +47,6 @@ export function PortfolioSlider() {
 
             <StaggerListItemClient 
               key={index} 
-              index={index}
-              delayBase={0.2}
               direction="y"
               offset={40}
               className="text-center px-6 py-4 rounded-2xl bg-colorHover6 backdrop-blur-sm border border-white/20"

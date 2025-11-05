@@ -3,7 +3,7 @@ import { Trophy, Sparkles } from "lucide-react";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
-import CardProjectsSlider from "@/components/layout/CardProjectsSlider";
+import CardProjectsSlider from "@/components/sliders/CardProjectsSlider";
 
 interface ServicesSliderProjectsProps {
   projects: Project[];

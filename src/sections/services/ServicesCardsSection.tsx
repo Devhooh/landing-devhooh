@@ -1,10 +1,11 @@
 import { Target, Zap } from "lucide-react";
 import Link from "next/link";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import { CardInViewWrapper } from "@/components/ui/CardInViewWrapper";
 import SmallCard from "@/components/cards/services/SmallCard";
 import MediumCard from "@/components/cards/services/MediumCard";
 import LargeCard from "@/components/cards/services/LargeCard";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 export default function ServicesCardsSection() {
   return (
@@ -14,8 +15,9 @@ export default function ServicesCardsSection() {
           {/* Lado izquierdo - Contenedor de las tarjetas */}
           <div className="flex flex-col gap-10 self-start order-last table-lg:order-first">
             {/* Tarjeta pequeña */}
-            <CardInViewWrapper
+            <CardInViewStagger
               direction="x"
+              index={0.2}
               offset={-20}
               className="
                 bg-colorSecundario4 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -23,11 +25,12 @@ export default function ServicesCardsSection() {
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
             >
               <SmallCard/>
-            </CardInViewWrapper>
+            </CardInViewStagger>
 
             {/* Tarjeta mediana */}
-            <CardInViewWrapper
+            <CardInViewStagger
               direction="x"
+              index={0.3}
               offset={-20}
               className="
                 bg-colorSecundario4 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -35,11 +38,12 @@ export default function ServicesCardsSection() {
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
             >
               <MediumCard/>
-            </CardInViewWrapper>
+            </CardInViewStagger>
 
             {/* Tarjeta grande */}
-            <CardInViewWrapper
+            <CardInViewStagger
               direction="x"
+              index={0.4}
               offset={-20}
               className="
                 bg-colorSecundario4 ring-2 ring-white/20 hover:ring-colorSecundario2
@@ -47,37 +51,37 @@ export default function ServicesCardsSection() {
                 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
             >
               <LargeCard/>
-            </CardInViewWrapper>
+            </CardInViewStagger>
           </div>
           
           {/* Lado derecho - Título y subtítulo */}
           <div className="text-center table-lg:text-right order-first table-lg:order-last">
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="x"
               offset={20}
-              transition={{duration: 0.3, delay: 0.2}}
+              transition={{duration: 0.3, delay: 0.3, ease: "easeIn"}}
             >
               <h2 className="text-4xl md-tablet:text-7xl font-extrabold text-colorPrimario2 mb-8">
                 ¿En qué etapa se encuentra 
                 <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> tu proyecto?</span>
               </h2>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="x"
               offset={20}
-              transition={{duration: 0.3, delay: 0.3}}
+              transition={{duration: 0.3, delay: 0.4, ease: "easeIn"}}
             >
               <p className="text-lg md-tablet:text-2xl font-semibold text-gray-700 mb-8 mx-auto table-lg:mx-0">
                 Desde la conceptualización (MVP y Startups) hasta el crecimiento (PyMEs) y la modernización de plataformas (Legacy), adaptamos nuestra experiencia para 
                 <span className="text-colorSecundario4"> impulsar tu visión. </span>
               </p>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
           </div>
         </div>
 
         {/* Call to action final */}
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           className="relative z-10 text-center mt-20"
           direction="y"
           offset={20}
@@ -96,7 +100,7 @@ export default function ServicesCardsSection() {
             </span>
             <Zap className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </Link>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
       </div>
 
       {/* CTA para los servicios */}

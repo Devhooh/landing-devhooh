@@ -1,6 +1,6 @@
-import BeneficiosSection1 from "./BeneficiosSection1";
-import BeneficiosSection2 from "./BeneficiosSection2";
-import BeneficiosSection3 from "./BeneficiosSection3";
+import BeneficiosSection1 from "@/components/cards/services/BeneficiosSection1";
+import BeneficiosSection2 from "@/components/cards/services/BeneficiosSection2";
+import BeneficiosSection3 from "@/components/cards/services/BeneficiosSection3";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";

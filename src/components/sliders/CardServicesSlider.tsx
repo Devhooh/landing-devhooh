@@ -4,7 +4,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import CaroulselCard from "@/sections/services/CaroulselCard";
+import CaroulselCard from "@/components/cards/services/CaroulselCard";
 import ProjectStaggerWrapper from "../ui/ProjectStaggerWrapper";
 
 interface CardData {

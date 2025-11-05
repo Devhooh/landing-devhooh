@@ -4,7 +4,7 @@ import { LucideProps } from "lucide-react";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
-import CardServicesSlider from "@/components/layout/CardServicesSlider";
+import CardServicesSlider from "@/components/sliders/CardServicesSlider";
 
 interface CardData {
   slug: string;

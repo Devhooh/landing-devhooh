@@ -83,7 +83,7 @@ export default function HeroSectionHome() {
     
           {/* Botones: */}
           <div
-            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
+            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-12 md-tablet:gap-5"
           >
             <SimpleInViewWrapper
               direction="y" 
@@ -98,7 +98,8 @@ export default function HeroSectionHome() {
                 <ButtonCta // Este botón ahora solo tiene los estilos de diseño
                   href="/services"
                   className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                      bg-colorSecundario3 text-white rounded-2xl shadow-lg hover:shadow-xl w-full"
+                      bg-colorSecundario3 text-white rounded-2xl shadow-lg hover:shadow-xl w-full
+                      inline-block whitespace-nowrap"
                 >
                   Ver nuestros servicios
                 </ButtonCta>
@@ -115,7 +116,8 @@ export default function HeroSectionHome() {
                 <ButtonCta
                   href="/portfolio"
                   className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                    bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white"
+                    bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white
+                    inline-block whitespace-nowrap"
                 >
                   Ver nuestro portafolio
                 </ButtonCta>

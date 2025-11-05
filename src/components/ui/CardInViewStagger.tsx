@@ -30,7 +30,7 @@ const generateStaggerVariants = (i: number, direction: Direction, offset: number
       y: 0, 
       transition: { 
         delay: i * 0.15, 
-        type: "spring", 
+        type: "tween", 
         stiffness: 80, 
         damping: 15,
       },

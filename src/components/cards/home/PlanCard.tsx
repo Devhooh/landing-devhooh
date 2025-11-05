@@ -60,7 +60,7 @@ export default function PlanCard({
         <ButtonCta
           href="/contact"
           className={`
-              group w-full py-4 px-6 rounded-2xl font-semibold text-lg
+              group w-full py-4 px-2 rounded-2xl font-semibold text-lg
               flex items-center justify-center gap-2
               transition-all duration-300
               ${popular 

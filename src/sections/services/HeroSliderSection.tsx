@@ -1,7 +1,7 @@
 "use client";
-import HeroLeft from "./HeroLeft";
-import HeroCenter from "./HeroCenter";
-import HeroRight from "./HeroRight";
+import HeroSlideLeft from "./hero-slides/HeroSlideLeft";
+import HeroSlideCenter from "./hero-slides/HeroSlideCenter";
+import HeroSlideRight from "./hero-slides/HeroSlideRight";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -19,19 +19,19 @@ export default function HeroSlider() {
         loop
         // className="w-full mx-auto bg-colorSecundario"
       >
-        {/* Slide 1: HeroLeft */}
+        {/* Slide 1: HeroSlideLeft */}
         <SwiperSlide>
-          <HeroLeft/>
+          <HeroSlideLeft/>
         </SwiperSlide>
 
-        {/* Slide 2: HeroCenter */}
+        {/* Slide 2: HeroSlideCenter */}
         <SwiperSlide>
-          <HeroCenter/>
+          <HeroSlideCenter/>
         </SwiperSlide>
 
-        {/* Slide 3: HeroRight */}
+        {/* Slide 3: HeroSlideRight */}
         <SwiperSlide>
-          <HeroRight/>
+          <HeroSlideRight/>
         </SwiperSlide>
 
         {/* Botones custom */}

@@ -4,8 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { Project } from "@/data/portfolioData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import ServicesProjects from "@/sections/services/ServicesProjects";
 import ProjectStaggerWrapper from "../ui/ProjectStaggerWrapper";
+import ServicesProjectCard from "@/components/cards/services/ServicesProjectCard";
 
 interface ServicesSliderProjectsProps {
   projects: Project[];
@@ -44,7 +44,7 @@ export default function CardProjectsSlider({projects, showService = true,}: Serv
             <ProjectStaggerWrapper
               index={index}
             >
-              <ServicesProjects 
+              <ServicesProjectCard
                 project={project} 
                 showService={showService} 
                 index={index} 

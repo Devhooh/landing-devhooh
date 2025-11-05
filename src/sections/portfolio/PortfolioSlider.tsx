@@ -1,5 +1,5 @@
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import { ProjectSlider } from "../home/ProjectSlider";
+import { ProjectSlider } from "../../components/sliders/ProjectSlider";
 import { logos } from "@/data/projects";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";

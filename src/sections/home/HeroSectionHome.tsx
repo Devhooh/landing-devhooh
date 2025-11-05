@@ -83,21 +83,27 @@ export default function HeroSectionHome() {
     
           {/* Botones: */}
           <div
-            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-4"
+            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-5"
           >
             <SimpleInViewWrapper
               direction="y" 
               offset={30}
               transition={{duration: 0.3, delay: 0.3}}
+            >
+              <div className="
+                hover:scale-[1.05] active:scale-[0.98] 
+                transform transition-all duration-300"
               >
-                <ButtonCta 
+
+                <ButtonCta // Este botón ahora solo tiene los estilos de diseño
                   href="/services"
                   className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                  bg-colorSecundario3 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 
-                  hover:scale-[1.05] active:scale-[0.98] transform"
+                      bg-colorSecundario3 text-white rounded-2xl shadow-lg hover:shadow-xl w-full
+                      inline-block whitespace-nowrap"
                 >
                   Ver nuestros servicios
                 </ButtonCta>
+              </div>
             </SimpleInViewWrapper>
     
             <SimpleInViewWrapper
@@ -105,14 +111,17 @@ export default function HeroSectionHome() {
               offset={30} 
               transition={{duration: 0.3, delay: 0.4}}
             >
-              <ButtonCta
-                href="/portfolio"
-                className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
-                  bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white transition-all duration-300
-                  hover:scale-[1.05] active:scale-[0.98] transform"
-              >
-                Ver nuestro portafolio
-              </ButtonCta>
+              <div className="hover:scale-[1.05] active:scale-[0.98] 
+                transform transition-all duration-300">
+                <ButtonCta
+                  href="/portfolio"
+                  className="px-4 py-4 text-lg md-tablet:text-lg font-semibold border border-colorPrimarioLogo1
+                    bg-white hover:bg-colorSecundario3 text-black rounded-2xl shadow-lg hover:shadow-xl hover:text-white
+                    inline-block whitespace-nowrap"
+                >
+                  Ver nuestro portafolio
+                </ButtonCta>
+              </div>
             </SimpleInViewWrapper>
           </div>
         </div>

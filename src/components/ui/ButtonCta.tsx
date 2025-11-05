@@ -13,12 +13,10 @@ export default function ButtonCta({
   children,
   icon: Icon,
 }: CtaButtonProps) {
-  return <Link href={href} passHref>
-    <button
-      className={`${className}`}
-    >
+  return (
+    <Link href={href} className={className}>
       {children}
       {Icon && <Icon className="w-5 h-5 ml-1 flex-shrink-0"/>}
-    </button>
-  </Link>
+    </Link>
+  );
 }

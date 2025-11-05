@@ -1,8 +1,8 @@
 import React from "react";
 import { reviewData } from "@/data/reviewData";
 
-import { ReviewsHomeCard } from "./ReviewsHomeCard";
-import { ReviewsSlider } from "@/components/ui/ReviewsSlider";
+import { ReviewsHomeCard } from "../../components/cards/home/ReviewsHomeCard";
+import { ReviewsSlider } from "@/components/sliders/ReviewsSlider";
 import TextRevealClient from "@/components/ui/TextRevealClient";
 
 export default function ReviewsHome() {

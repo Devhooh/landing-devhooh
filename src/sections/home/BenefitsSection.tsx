@@ -1,46 +1,15 @@
-import { BenefitItem } from "@/data/types";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import React from 'react';
 
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import StaggerListContainer from "@/components/ui/StaggerListContainer"; 
-import { IconMap } from "@/data/types";
 import TextRevealClient from "@/components/ui/TextRevealClient";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 import CardInViewStagger from "@/components/ui/CardInViewStagger";
-
-// Definición de los datos se queda aquí (es estático)
-const benefits: BenefitItem[] = [
-  {
-    icon: "Zap",
-    title: "Entrega de proyectos optimizada",
-    description:
-    "Implementamos procesos ágiles (Scrum/Kanban) y un ciclo de entrega continua (CI/CD) para que tu software web y móvil esté listo a tiempo, sin sacrificar la calidad del código ni la funcionalidad.",
-  },
-  {
-    icon: "Shield",
-    title: "Seguridad y estabilidad garantizadas",
-    description:
-    "Desarrollamos soluciones de software confiables siguiendo los estándares modernos de seguridad (OWASP) y ofrecemos mantenimiento proactivo para proteger tu aplicación y tus datos contra ataques.",
-  },
-  {
-    icon: "Palette",
-    title: "Diseño personalizado y profesional",
-    description:
-    "Cada proyecto se adapta a tu marca y objetivos. Creamos interfaces únicas, atractivas y funcionales, priorizando la Experiencia de Usuario (UX) y el diseño responsivo en todos los dispositivos.",
-  },
-];
-
-const checklistItems = [
-  "Diseño responsive y optimizado para móviles y tablets",
-  "Optimización SEO (On-Page) para mejorar tu visibilidad online",
-  "Hosting de alto rendimiento y dominio propio configurado",
-  "Panel de administración intuitivo (CMS) y fácil de usar",
-  "Integración con redes sociales y herramientas de marketing (Analytics)",
-  "Certificado SSL gratuito para mayor seguridad de datos",
-];
-
+import { benefitsData } from "@/data/sections/home/benefitsData";
+import BenefitsCard from "@/components/cards/home/BenefitsCard";
+import { checklistItems } from "@/data/sections/home/benefitsData"
 
 export function BenefitsSection() {
   return (
@@ -72,8 +41,7 @@ export function BenefitsSection() {
   
         {/* CARDS HORIZONTALES */}
         <div className="grid grid-cols-1 table-lg:grid-cols-3 gap-6 mb-20">
-          {benefits.map((benefit, index) => {
-            const IconComponent = IconMap[benefit.icon];
+          {benefitsData.map((benefit, index) => {
             return (
               <CardInViewStagger
                 key={index}
@@ -84,17 +52,11 @@ export function BenefitsSection() {
                     relative p-6 rounded-2xl bg-gradient-to-br from-colorPrimario5 to-colorPrimario6 shadow-[0_0_30px_rgba(103,61,230,0.25)] 
                     hover:shadow-[0_0_40px_rgba(103,61,230,0.4)] transition-all duration-300"
               >
-                <div className="flex flex-col items-start text-left">
-                  <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm mb-4">
-                    <IconComponent className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl md-tablet:text-2xl font-bold text-white mb-3">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-colorHover5 leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
+                <BenefitsCard
+                  icon={benefit.icon}
+                  title={benefit.title}
+                  description={benefit.description}
+                />
               </CardInViewStagger>
             )
           })}

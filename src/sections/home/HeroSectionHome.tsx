@@ -83,7 +83,7 @@ export default function HeroSectionHome() {
     
           {/* Botones: */}
           <div
-            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-12 md-tablet:gap-5"
+            className="order-5 flex justify-center items-center flex-col md-tablet:flex-row table-lg:justify-start pt-4 gap-5"
           >
             <SimpleInViewWrapper
               direction="y" 

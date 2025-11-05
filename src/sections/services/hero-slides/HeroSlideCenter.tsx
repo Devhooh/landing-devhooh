@@ -17,7 +17,7 @@ export default function HeroSlideCenter() {
           <TextRevealClient
             className="order-1 table-lg:hidden text-center"
             direction="y"
-            offset={20}
+            offset={-20}
             transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
           >
             <h2 className="mt-5 text-4xl md-tablet:text-5xl font-extrabold leading-tight drop-shadow-lg text-white">
@@ -58,7 +58,7 @@ export default function HeroSlideCenter() {
             {/* Título para Desktop */}
             <TextRevealClient
               direction="y"
-              offset={20}
+              offset={-20}
               transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
               className="hidden table-lg:block md-tablet:mt-2"
             >

@@ -17,7 +17,7 @@ export default function HeroSlideLeft() {
             className="order-1 mt-6 table-lg:mt-2"
             direction="x"
             offset={-20}
-            transition={{duration: 0.4, delay: 0.3, ease: "backIn"}}
+            transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
           >
             <h1 className="
               text-4xl font-extrabold leading-tight text-center table-lg:text-left 
@@ -48,7 +48,6 @@ export default function HeroSlideLeft() {
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
               {/* Círculos decorativos flotantes */}
               <div className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"></div>
             </div>
@@ -59,7 +58,7 @@ export default function HeroSlideLeft() {
             className="order-3 mb-5 table-lg:mb-0"
             direction="x"
             offset={-20}
-            transition={{ duration: 0.4, delay: 0.4, ease: "backIn"}}
+            transition={{ duration: 0.4, delay: 0.4, ease: "easeInOut"}}
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
               Descubre nuestros servicios de desarrollo y conoce las tecnologías web y herramientas que utilizamos para llevar tus proyectos digitales al siguiente nivel.
@@ -106,7 +105,6 @@ export default function HeroSlideLeft() {
               Empieza tu proyecto
             </ButtonCta>
           </SimpleInViewWrapper>
-
         </div>
       </div>
     </section>

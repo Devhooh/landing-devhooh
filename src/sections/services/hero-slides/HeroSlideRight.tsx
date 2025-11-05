@@ -16,7 +16,7 @@ export default function HeroSlideRight() {
           <TextRevealClient
             direction="x"
             offset={20}
-            transition={{duration: 0.4, delay: 0.3, ease: "backOut"}}
+            transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
             className="order-1 table-lg:order-2 mt-10 table-lg:mt-2"
           >
             <h2 className="text-4xl font-extrabold leading-tight drop-shadow-lg text-center table-lg:text-right text-white">
@@ -55,7 +55,7 @@ export default function HeroSlideRight() {
           <TextRevealClient
             direction="x"
             offset={20}
-            transition={{ duration: 0.4, delay: 0.3}}
+            transition={{ duration: 0.4, delay: 0.3, ease: "easeInOut"}}
             className="order-3 mb-5 table-lg:mb-0"
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
@@ -105,10 +105,8 @@ export default function HeroSlideRight() {
               Empieza tu proyecto
             </ButtonCta>
           </SimpleInViewWrapper>
-
         </div>
       </div>
     </section>
   );
 }
-

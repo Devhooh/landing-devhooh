@@ -12,12 +12,13 @@ export default function HeroSlideCenter() {
       <div className="max-w-[1550px] mx-auto px-6 pt-10 md-tablet:pt-4 table-lg:pt-0 md-tablet:px-12">
         {/* Grid que cambia completamente entre móvil y desktop */}
         <div className="flex flex-col table-lg:grid table-lg:grid-cols-3 table-lg:items-center gap-6">
+
           {/* 1. TÍTULO - Móvil: primero | Desktop: dentro del centro */}
           <TextRevealClient
             className="order-1 table-lg:hidden text-center"
             direction="y"
             offset={20}
-            transition={{duration: 0.4, delay: 0.3, ease: "backIn"}}
+            transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
           >
             <h2 className="mt-5 text-4xl md-tablet:text-5xl font-extrabold leading-tight drop-shadow-lg text-white">
               De la estrategia a tu
@@ -43,11 +44,9 @@ export default function HeroSlideCenter() {
                   sizes="(max-width: 549px) 85vw, (max-width: 749px) 70vw, (max-width: 949px) 60vw, (min-width: 950px) 400px"
                   loading="lazy"
                 />
-                
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
               {/* Círculos decorativos flotantes */}
               <div className="animate-pulse absolute -top-4 -right-4 table-lg:-right-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></div>
@@ -60,7 +59,7 @@ export default function HeroSlideCenter() {
             <TextRevealClient
               direction="y"
               offset={20}
-              transition={{duration: 0.4, delay: 0.3, ease: "backIn"}}
+              transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
               className="hidden table-lg:block md-tablet:mt-2"
             >
               <h2 className="mt-5 text-4xl font-extrabold leading-tight drop-shadow-lg text-white">
@@ -73,7 +72,7 @@ export default function HeroSlideCenter() {
             <TextRevealClient
               direction="y"
               offset={-20}
-              transition={{duration: 0.4, delay: 0.4, ease: "backIn"}}
+              transition={{duration: 0.4, delay: 0.4, ease: "easeInOut"}}
               className="order-3 table-lg:order-none"
             >
               <p className="text-lg md-tablet:text-xl text-white max-w-2xl">
@@ -145,11 +144,8 @@ export default function HeroSlideCenter() {
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
               {/* Círculos decorativos flotantes */}
-              <div
-                className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
-              ></div>
+              <div className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"></div>
             </div>
           </SimpleInViewWrapper>
         </div>

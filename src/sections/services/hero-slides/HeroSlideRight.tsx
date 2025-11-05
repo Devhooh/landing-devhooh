@@ -5,7 +5,7 @@ import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import ButtonCta from "@/components/ui/ButtonCta";
 
-export default function HeroRight() {
+export default function HeroSlideRight() {
   return (
     <section className="relative w-full h-auto overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">

@@ -5,7 +5,7 @@ import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import ButtonCta from "@/components/ui/ButtonCta";
 
-export default function HeroCenter() {
+export default function HeroSlideCenter() {
   return (
     <section className="h-auto">
       <div className="max-w-[1550px] mx-auto px-6 pt-10 md-tablet:pt-4 table-lg:pt-0 md-tablet:px-12">

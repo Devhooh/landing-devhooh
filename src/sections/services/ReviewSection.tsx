@@ -1,4 +1,4 @@
-import CardReviewSlider from "@/components/layout/CardReviewSlider";
+import CardReviewSlider from "@/components/sliders/CardReviewSlider";
 import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";

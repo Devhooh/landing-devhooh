@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { reviewData } from "@/data/reviewData";
-import ReviewSectionCard from "@/sections/services/ReviewSectionCard";
+import ReviewSectionCard from "@/components/cards/services/ReviewSectionCard";
 import { CardInViewWrapper } from "../ui/CardInViewWrapper";
 
 export default function CardReviewSlider() {

@@ -5,7 +5,7 @@ import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjec
 import FAQSection from "@/components/ui/FAQSection";
 import { faqDataServices } from "@/data/faqDataServices";
 import { projectsData } from "@/data/portfolioData";
-import HeroSlider from "@/sections/services/HeroSlider";
+import HeroSlider from "@/sections/services/HeroSliderSection";
 import CTAServices from "@/sections/services/CTAServices";
 import GarantiasSection from "@/sections/services/GarantiasSection";
 import BeneficiosSection from "@/sections/services/BeneficiosSection";

@@ -1,36 +1,33 @@
 import Image from "next/image";
 import { CheckCircle, Shield, Clock, Headphones, TrendingUp } from "lucide-react";
-import Link from "next/link";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
-import { CardInViewWrapper } from "@/components/ui/CardInViewWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 export default function GarantiasSection() {
   return (
     <section className="relative w-full pb-20 bg-colorFondo">
       <div className="container mx-auto px-6 tablet-md:px-12 max-w-7xl">
-        
         {/* Bloque 1 */}
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
-
-          {/* Texto */}
           <div className="flex flex-col gap-6">
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="x"
               offset={-20}
-              delay={0.3}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.4, delay: 0.3, ease: "easeInOut" }}
             >
-              <h2 className="
-                text-3xl tablet-md:text-5xl font-extrabold 
-                text-colorPrimario1">
+              <h2 className="text-3xl tablet-md:text-5xl font-extrabold text-colorPrimario1 py-2">
                 <strong className="text-colorPrimario5">Confianza y calidad </strong>
                 en cada entrega
               </h2>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
             
-            <StaggerListContainer 
+            <StaggerListContainer
+              staggerChildren={0.15}
+              delayChildren={0.2}
               className="flex flex-col gap-4 text-colorPrimario1 text-lg"
             >
               {[ 
@@ -42,8 +39,8 @@ export default function GarantiasSection() {
               ].map((item, index) => (
                 <StaggerListItemClient
                   key={index}
-                  direction="x"
-                  offset={-20}
+                  direction="y"
+                  offset={-30}
                   className="flex items-center gap-3"
                 >
                   <CheckCircle className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
@@ -54,12 +51,11 @@ export default function GarantiasSection() {
           </div>
 
           {/* Imagen */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
-            delay={0.3}
+            transition={{ duration: 0.4, delay: 0.4}}
             className="flex justify-center"
-            transition={{ duration: 0.4 }}
           >
             <Image
               src="/assets/images/garantia.png"
@@ -69,8 +65,7 @@ export default function GarantiasSection() {
               className="rounded-2xl shadow-lg"
               loading="lazy"
             />
-          </InViewAnimationWrapper>
-
+          </SimpleInViewWrapper>
         </div>
 
         {/* Bloque 2 */}
@@ -83,11 +78,10 @@ export default function GarantiasSection() {
               { icon: <Headphones className="w-8 h-8 text-white" />, title: "Soporte continuo", text: "Incluye soporte gratuito post-entrega (30-60 días)." },
               { icon: <TrendingUp className="w-8 h-8 text-white" />, title: "Escalabilidad asegurada", text: "Diseño y código listos para crecer junto a tu negocio." }
             ].map((item, i) => (
-              <CardInViewWrapper
+              <CardInViewStagger
                 key={i}
+                index={i}
                 direction="y"
-                delay={0.2}
-                transition={{ delay: i * 0.2}}
                 offset={20}
                 className="
                   flex flex-col items-center text-center gap-4 p-6 rounded-2xl 
@@ -98,28 +92,26 @@ export default function GarantiasSection() {
                 </div>
                 <h3 className="text-xl font-bold text-white">{item.title}</h3>
                 <p className="text-sm text-slate-300">{item.text}</p>
-              </CardInViewWrapper>
+              </CardInViewStagger>
             ))}
           </div>
 
           {/* CTA */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="y"
             offset={20}
-            delay={0.3}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Link href="/portfolio">
-              <button
-                className="
-                  px-4 md-tablet:px-8 py-4 rounded-xl font-semibold text-white 
-                  bg-colorPrimario5 hover:bg-colorPrimario6
-                  hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
-              >
-                Descubre cómo nuestras garantías hacen la diferencia
-              </button>
-            </Link>
-          </InViewAnimationWrapper>
+            <ButtonCta
+              href="/portfolio"
+              className="
+                px-4 md-tablet:px-8 py-4 rounded-xl font-semibold text-white text-center
+                bg-colorPrimario5 hover:bg-colorPrimario6 inline-block
+                hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300"
+            >
+              Descubre cómo nuestras garantías hacen la diferencia
+            </ButtonCta>
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

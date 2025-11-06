@@ -29,7 +29,7 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
         <TextRevealClient
           direction="y"
           offset={30}
-          transition={{duration: 0.5, delay: 0.3, ease: "easeInOut"}}
+          transition={{duration: 0.4, delay: 0.2, ease: "easeInOut"}}
         >
           <h2 className="px-4 text-3xl md-tablet:text-4xl text-center font-extrabold text-colorPrimario1 pb-4 drop-shadow-sm">
             {title}
@@ -39,7 +39,7 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
         {features && (
           <StaggerListContainer 
             staggerChildren={0.15}
-            delayChildren={0.4}
+            delayChildren={0.3}
             className="flex flex-col items-center tablet-md:flex-row tablet-md:justify-center gap-6 my-3"
           >
             {features.map((f, idx) => {
@@ -48,7 +48,7 @@ export default function CaroulselSection({ title, cardData, features }: CardCaro
                 <StaggerListItemClient 
                   key={idx} 
                   direction="y"
-                  offset={30}
+                  offset={40}
                   className="flex items-center gap-2 text-gray-600"
                 >
                   <Icon className="w-6 h-6 tablet-md:w-8 tablet-md:h-8 text-colorSecundario3" />

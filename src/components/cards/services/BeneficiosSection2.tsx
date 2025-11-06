@@ -1,4 +1,4 @@
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import Image from "next/image";
@@ -7,7 +7,10 @@ export default function BeneficiosSection2() {
   return (
     <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
       {/* Texto */}
-      <StaggerListContainer className="flex flex-col gap-8 order-1 table-lg:order-1">
+      <StaggerListContainer 
+        delayChildren={0.4}
+        className="flex flex-col gap-8 order-1 table-lg:order-1"
+      >
         {[
           {
             title: "Optimización y Automatización de Procesos",
@@ -30,6 +33,7 @@ export default function BeneficiosSection2() {
             key={i}
             direction="x"
             offset={-20}
+            transition={{duration: 0.3, ease: "easeIn"}}
           >
             <h3 className="text-2xl md-tablet:text-3xl font-bold text-cyan-500">{item.title}</h3>
             <p className="text-gray-200 mt-1 text-base md-tablet:text-lg">{item.desc}</p>
@@ -38,7 +42,7 @@ export default function BeneficiosSection2() {
       </StaggerListContainer>
 
       {/* Imagen */}
-      <InViewAnimationWrapper
+      <SimpleInViewWrapper
         direction="x"
         offset={20}
         className="order-2 table-lg:order-2"
@@ -52,7 +56,7 @@ export default function BeneficiosSection2() {
           className="rounded-2xl shadow-lg bg-colorHover2/10"
           loading="lazy"
         />
-      </InViewAnimationWrapper>
+      </SimpleInViewWrapper>
     </div>
   )
 }

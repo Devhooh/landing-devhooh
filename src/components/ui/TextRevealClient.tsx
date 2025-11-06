@@ -58,17 +58,17 @@ export default function TextRevealClient({
     : { whileInView: "show", viewport: { once: true, amount: 0.3 }};
 
   return (
-      <div className={className} style={{ overflow: "hidden" }}> 
-        <motion.div
-            initial="hidden"
-            variants={revealVariants}
-            transition={finalTransition}
-            custom={customProps}
-            suppressHydrationWarning={true}
-            {...animationProps}
-        >
-            {children}
-        </motion.div>
-    </div>
+    <motion.div
+      initial="hidden"
+      variants={revealVariants}
+      transition={finalTransition}
+      custom={customProps}
+      suppressHydrationWarning={true}
+      style={{ overflow: "hidden" }}
+      {...animationProps}
+      className={className}
+    >
+        {children}
+    </motion.div>
   );
 }

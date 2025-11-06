@@ -11,9 +11,16 @@ interface CardInViewStaggerProps {
   index?: number; 
   direction?: Direction;
   offset?: number;
+  staggerDelay?: number; 
 }
 
-const generateStaggerVariants = (i: number, direction: Direction, offset: number): Variants => {
+// función
+const generateStaggerVariants = (
+  i: number, 
+  direction: Direction, 
+  offset: number,
+  staggerDelay: number
+  ): Variants => {
   const hiddenProps: { x?: number; y?: number } = {};
   
   if (direction === 'y') {
@@ -29,7 +36,7 @@ const generateStaggerVariants = (i: number, direction: Direction, offset: number
       x: 0, 
       y: 0, 
       transition: { 
-        delay: i * 0.15, 
+        delay: i * staggerDelay, 
         type: "tween", 
         stiffness: 80, 
         damping: 15,
@@ -43,7 +50,8 @@ export default function CardInViewStagger({
   className,
   index = 0,
   direction = 'y',
-  offset = 40
+  offset = 40,
+  staggerDelay = 0.15
 }: CardInViewStaggerProps) {
 
   return (
@@ -52,7 +60,7 @@ export default function CardInViewStagger({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2}}
-      variants={generateStaggerVariants(index, direction, offset)}
+      variants={generateStaggerVariants(index, direction, offset, staggerDelay)}
       custom={index} 
     >
       {children}

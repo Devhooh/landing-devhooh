@@ -7,8 +7,9 @@ import ProcessServicesSection from "@/sections/services/components/ProcessServic
 import ProjectsServicesSection from "@/sections/services/components/ProjectsServicesSection";
 import ServicesBenefits from "@/sections/services/components/ServicesBenefits";
 import ServicesDataSection from "@/sections/services/components/ServicesDataSection";
-import ServicesIncluded from "@/sections/services/components/ServicesIncluded";
+import WhyChooseProject from "@/sections/services/components/WhyChooseProject";
 import ServicesStackTech from "@/sections/services/components/ServicesStackTech";
+import ServicesIncluded from "@/sections/services/components/ServicesIncluded";
 
 interface Props {
   params: { slug: string };
@@ -26,6 +27,8 @@ export default function ServicePage({ params }: Props) {
   return (
     <div className="flex flex-col gap-8">
       <HeroSectionServices service={service}/>
+
+      <WhyChooseProject service={service}/>
 
       <ServicesIncluded service={service}/>
 

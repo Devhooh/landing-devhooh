@@ -76,7 +76,11 @@ export default function Services() {
 
       <CTAServices/>
 
-      <FAQSection itemsDate={faqDataServices}/>
+      <FAQSection 
+        title="Preguntas de nuestros servicios"
+        description="¿Tiene preguntas sobre nuestros servicios digitales? Explore nuestra sección de preguntas frecuentes o póngase en contacto con nosotros."
+        itemsDate={faqDataServices}
+      />
     </div>
   )
 }

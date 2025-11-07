@@ -4,8 +4,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import CaroulselCard from "@/sections/services/CaroulselCard";
-import ProjectStaggerWrapper from "../ui/ProjectStaggerWrapper";
+import CaroulselCard from "@/components/cards/services/CaroulselCard";
+import CardInViewStagger from "../ui/CardInViewStagger";
 
 interface CardData {
   slug: string;
@@ -42,11 +42,13 @@ export default function CardServicesSlider({cardData}: CardCaroulselSectionProps
           className="px-4 py-8 md-tablet:pb-10 flex justify-center items-center"
         >
           {/* pasamos index para el stagger */}
-          <ProjectStaggerWrapper
+          <CardInViewStagger
             index={index}
+            direction="y"
+            offset={40}
           >
             <CaroulselCard card={card} index={index}/>
-          </ProjectStaggerWrapper>
+          </CardInViewStagger>
         </SwiperSlide>
       ))}
 

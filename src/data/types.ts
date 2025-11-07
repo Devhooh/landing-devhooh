@@ -2,17 +2,17 @@ import { Zap, Shield, Palette, Code, Database, Smartphone, Cloud, CheckCircle, S
 
 // Definimos el mapeo de iconos 
 export const IconMap = {
-  Zap: Zap,
-  Shield: Shield,
-  Palette: Palette,
+  Zap: Zap,
+  Shield: Shield,
+  Palette: Palette,
 }
 
 // Definimos el tipo de beneficio usando el tipado del mapeo
 export interface BenefitItem {
-  icon: keyof typeof IconMap; 
-  title: string;
-  description: string;
-  gradient?: string;
+  icon: keyof typeof IconMap; 
+  title: string;
+  description: string;
+  gradient?: string;
 }
 
 export const IconMapTech = {
@@ -24,9 +24,9 @@ export const IconMapTech = {
 
 
 export interface TechItem {
-  icon: keyof typeof IconMapTech; 
-  title: string;
-  description: string;
+  icon: keyof typeof IconMapTech; 
+  title: string;
+  description: string;
 }
 
 export const IconMapPlan = {

@@ -11,6 +11,7 @@ interface TextRevealProps {
   direction?: Direction;
   offset?: number;
   transition?: Transition;
+  animateOnLoad?: boolean;
 }
 
 interface CustomProps {
@@ -35,7 +36,8 @@ export default function TextRevealClient({
   className, 
   direction = 'y',
   offset = 30,
-  transition
+  transition,
+  animateOnLoad = false,
 }: TextRevealProps) {
 
   const defaultTransition: Transition = { 
@@ -51,25 +53,22 @@ export default function TextRevealClient({
     offset,
   };
   
-  const initialStyle: React.CSSProperties = { 
-    opacity: 0, 
-    [direction]: offset,
-  };
+  const animationProps = animateOnLoad
+    ? { animate: "show" } 
+    : { whileInView: "show", viewport: { once: true, amount: 0.3 }};
 
   return (
-      <div className={className} style={{ overflow: "hidden" }}> 
-        <motion.div
-            initial="hidden"
-            whileInView="show"
-            variants={revealVariants}
-            transition={finalTransition}
-            custom={customProps}
-            viewport={{ once: true, amount: 0.3 }} 
-            style={initialStyle} 
-            suppressHydrationWarning={true}
-        >
-            {children}
-        </motion.div>
-    </div>
+    <motion.div
+      initial="hidden"
+      variants={revealVariants}
+      transition={finalTransition}
+      custom={customProps}
+      suppressHydrationWarning={true}
+      style={{ overflow: "hidden" }}
+      {...animationProps}
+      className={className}
+    >
+        {children}
+    </motion.div>
   );
 }

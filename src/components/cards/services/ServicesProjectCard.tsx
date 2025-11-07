@@ -17,7 +17,7 @@ interface ServicesProjectsProps {
   index?: number;
 }
 
-export default function ServicesProjects({
+export default function ServicesProjectCard({
   project,
   showService = true,
   index = 0,

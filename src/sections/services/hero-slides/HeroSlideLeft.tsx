@@ -1,23 +1,23 @@
 import Image from "next/image";
 import { BadgeCheck   } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import ButtonCta from "@/components/ui/ButtonCta";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
-export default function HeroLeft() {
+export default function HeroSlideLeft() {
   return (
     <section className="relative w-full h-auto overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             className="order-1 mt-6 table-lg:mt-2"
             direction="x"
             offset={-20}
-            delay={0.3}
-            transition={{duration: 0.5}}
+            transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
           >
             <h1 className="
               text-4xl font-extrabold leading-tight text-center table-lg:text-left 
@@ -26,56 +26,49 @@ export default function HeroLeft() {
               ¿Buscas desarrollo de calidad y escalable? 
               <span className="text-colorPrimario2"> Aquí lo tienes.</span>
             </h1>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* Imagen mejorada */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
-            delay={0.3}
-            transition={{ duration: 0.4}}
-            className="
-              order-2 mt-5 mb-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center"
+            transition={{ duration: 0.4, delay: 0.4}}
+            className="order-2 mt-5 mb-5 table-lg:mb-16 table-lg:order-2 table-lg:row-span-4 flex justify-center"
           >
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
                   src="/assets/images/image5.png"
                   alt="Imagen-desarrollo-de-calidad-servicios-de-desarrollo"
-                  // Se usan las dimensiones originales para que Next.js las optimice correctamente
                   width={520}
                   height={523}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
-                
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
               {/* Círculos decorativos flotantes */}
-              <div
-                className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
-              ></div>
+              <div className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"></div>
             </div>
-          </InViewAnimationWrapper>
-
+          </SimpleInViewWrapper>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             className="order-3 mb-5 table-lg:mb-0"
             direction="x"
             offset={-20}
-            delay={0.3}
-            transition={{ duration: 0.5}}
+            transition={{ duration: 0.4, delay: 0.4, ease: "easeInOut"}}
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-left leading-relaxed max-w-xl mx-auto table-lg:mx-0">
               Descubre nuestros servicios de desarrollo y conoce las tecnologías web y herramientas que utilizamos para llevar tus proyectos digitales al siguiente nivel.
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* --- 4) LISTA --- */}
           <StaggerListContainer
+            staggerChildren={0.15}
+            delayChildren={0.4}
             className="order-4 flex justify-center table-lg:justify-start flex-col space-y-4 text-white text-left table-lg:text-left max-w-md mx-0 md-tablet:mx-auto table-lg:mx-0"
           >
             {[
@@ -87,6 +80,7 @@ export default function HeroLeft() {
                 key={index}
                 direction="x"
                 offset={-20}
+                transition={{duration: 0.3, delay: 0.3, ease: "circInOut"}}
                 className="flex items-start gap-3"
               >
                 <BadgeCheck   className="w-6 h-6 text-cyan-400 flex-shrink-0" />
@@ -96,12 +90,11 @@ export default function HeroLeft() {
           </StaggerListContainer>
 
           {/* --- 5) BOTÓN --- */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             className="order-5 flex justify-center table-lg:justify-start mt-10 mb-5 table-lg:mt-5"
             direction="x"
             offset={-20}
-            delay={0.3}
-            transition={{ duration: 0.4}}
+            transition={{ duration: 0.4, delay: 0.3}}
           >
             <ButtonCta
               href="/contact"
@@ -111,8 +104,7 @@ export default function HeroLeft() {
             >
               Empieza tu proyecto
             </ButtonCta>
-          </InViewAnimationWrapper>
-
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

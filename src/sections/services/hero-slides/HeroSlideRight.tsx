@@ -1,41 +1,39 @@
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import ButtonCta from "@/components/ui/ButtonCta";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
-export default function HeroRight() {
+export default function HeroSlideRight() {
   return (
     <section className="relative w-full h-auto overflow-hidden">
       <div className="max-w-[1550px] mx-auto px-6 md-tablet:px-12 py-6">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={20}
-            delay={0.3}
+            transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
             className="order-1 table-lg:order-2 mt-10 table-lg:mt-2"
-            transition={{duration: 0.5}}
           >
             <h2 className="text-4xl font-extrabold leading-tight drop-shadow-lg text-center table-lg:text-right text-white">
               Servicios completos con
               <span className="text-colorPrimario2"> tecnologías actuales</span>
             </h2>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* --- 2) IMAGEN --- */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={-20}
-            delay={0.3}
-            transition={{ duration: 0.4}}
+            transition={{ duration: 0.4, delay: 0.3}}
             className="
               my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4 
               flex justify-center table-lg:justify-start"
           >
-
             <div className="relative group">
               <div className="bg-white/10 px-1 py-2 relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <Image
@@ -45,33 +43,32 @@ export default function HeroRight() {
                   height={520}
                   className="w-full max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
               {/* Círculos decorativos flotantes */}
-              <div
-                className="absolute -top-4 -right-4  w-8 h-8 rounded-full bg-white opacity-20"
-              ></div>
+              <div className="absolute -top-4 -right-4  w-8 h-8 rounded-full bg-white opacity-20"></div>
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={20}
-            delay={0.3}
-            transition={{ duration: 0.4}}
+            transition={{ duration: 0.4, delay: 0.3, ease: "easeInOut"}}
             className="order-3 mb-5 table-lg:mb-0"
           >
             <p className="text-lg md-tablet:text-xl text-white text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               Impulsamos la innovación en tu negocio. Nuestro Stack Tecnológico incluye Inteligencia Artificial, Apps Móviles nativas (iOS/Android), Blockchain y arquitectura Cloud para máxima escalabilidad.
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* --- 4) LISTA --- */}
-          <StaggerListContainer className="order-4 flex justify-end">
+          <StaggerListContainer
+            staggerChildren={0.15}
+            delayChildren={0.4}
+            className="order-4 flex justify-end"
+          >
             <ul className="space-y-3 text-white text-left max-w-md mx-auto table-lg:mx-0">
               {[
                 "Desarrollo de aplicaciones móviles multiplataforma modernas",
@@ -82,6 +79,7 @@ export default function HeroRight() {
                   key={index}
                   direction="x"
                   offset={20}
+                  transition={{duration: 0.3, delay: 0.3, ease: "circInOut"}}
                   className="flex items-start gap-3"
                 >
                   <BadgeCheck className="w-6 h-6 text-cyan-400 flex-shrink-0" />
@@ -92,11 +90,10 @@ export default function HeroRight() {
           </StaggerListContainer>
 
           {/* --- 5) BOTÓN --- */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
-            delay={0.3}
-            transition={{ duration: 0.4}}
+            transition={{ duration: 0.4, delay: 0.3}}
             className="order-5 flex justify-center table-lg:justify-end mt-10 table-lg:mt-1 mb-5 table-lg:my-8 "
           >
             <ButtonCta
@@ -107,11 +104,9 @@ export default function HeroRight() {
             >
               Empieza tu proyecto
             </ButtonCta>
-          </InViewAnimationWrapper>
-
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>
   );
 }
-

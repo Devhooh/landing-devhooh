@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
 
 export default function BeneficiosSection3() {
   return (
     <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
       {/* Imagen */}
-      <InViewAnimationWrapper
+      <SimpleInViewWrapper
         direction="x"
         offset={-20}
         transition={{duration: 0.2, delay: 0.2}}
@@ -22,22 +23,22 @@ export default function BeneficiosSection3() {
           className="rounded-2xl shadow-lg bg-colorHover2/10"
           loading="lazy"
         />
-      </InViewAnimationWrapper>
+      </SimpleInViewWrapper>
 
       {/* Texto */}
       <div className="flex flex-col gap-8 order-1 table-lg:order-2">
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="y"
           offset={20}
-          transition={{ duration: 0.2, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
           <h3
             className="text-2xl md-tablet:text-4xl font-bold text-cyan-500">
             Mantenimiento, soporte y asesoría técnica
           </h3>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="y"
           offset={20}
           transition={{ duration: 0.3, delay: 0.3 }}
@@ -45,9 +46,12 @@ export default function BeneficiosSection3() {
           <p className="text-gray-200 text-base md-tablet:text-lg">
             Establecemos un partnership estratégico para garantizar la longevidad de tu inversión. Nuestro soporte asegura un alto uptime y la evolución continuas del software, manteniéndolo siempre actualizado y competitivo.
           </p>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
-        <StaggerListContainer className="flex flex-col gap-3 text-colorFondo text-base md-tablet:text-lg">
+        <StaggerListContainer 
+          delayChildren={0.3}
+          className="flex flex-col gap-3 text-colorFondo text-base md-tablet:text-lg"
+        >
           {[
             "Monitoreo y Soporte especializado 24/7.",
             "Garantía y Soporte gratuito durante la etapa de Go-Live.",
@@ -57,6 +61,7 @@ export default function BeneficiosSection3() {
               key={i}
               direction="y"
               offset={20}
+              transition={{duration: 0.3, ease: "easeInOut"}}
               className="flex items-center gap-2"
             >
               <CheckCircle className="w-6 h-6 text-cyan-500 flex-shrink-0" />

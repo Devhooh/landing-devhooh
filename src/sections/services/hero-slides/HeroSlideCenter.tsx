@@ -1,36 +1,36 @@
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import ButtonCta from "@/components/ui/ButtonCta";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
-export default function HeroCenter() {
+export default function HeroSlideCenter() {
   return (
     <section className="h-auto">
       <div className="max-w-[1550px] mx-auto px-6 pt-10 md-tablet:pt-4 table-lg:pt-0 md-tablet:px-12">
         {/* Grid que cambia completamente entre móvil y desktop */}
         <div className="flex flex-col table-lg:grid table-lg:grid-cols-3 table-lg:items-center gap-6">
+
           {/* 1. TÍTULO - Móvil: primero | Desktop: dentro del centro */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             className="order-1 table-lg:hidden text-center"
             direction="y"
-            offset={20}
-            delay={0.3}
-            transition={{duration: 0.5}}
+            offset={-20}
+            transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
           >
             <h2 className="mt-5 text-4xl md-tablet:text-5xl font-extrabold leading-tight drop-shadow-lg text-white">
               De la estrategia a tu
               <span className="text-colorPrimario2"> producto digital</span>
             </h2>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* 2. IMAGEN IZQUIERDA - Móvil: segunda (reutilizada) | Desktop: primera columna */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={-20}
-            delay={0.3}
-            transition={{duration: 0.6}}
+            transition={{duration: 0.4, delay: 0.4}}
             className="order-2 table-lg:order-none flex justify-center table-lg:justify-end mb-8 table-lg:mb-14 table-lg:mt-8"
           >
             <div className="relative group w-full max-w-md">
@@ -44,49 +44,46 @@ export default function HeroCenter() {
                   sizes="(max-width: 549px) 85vw, (max-width: 749px) 70vw, (max-width: 949px) 60vw, (min-width: 950px) 400px"
                   loading="lazy"
                 />
-                
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
               {/* Círculos decorativos flotantes */}
-              <div
-                className="animate-pulse absolute -top-4 -right-4 table-lg:-right-4 w-8 h-8 rounded-full bg-white opacity-20"
+              <div className="animate-pulse absolute -top-4 -right-4 table-lg:-right-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></div>
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
 
           {/* 3. CONTENEDOR CENTRAL - Móvil: dividido en partes | Desktop: columna central completa */}
           <div className="order-3 table-lg:order-none flex flex-col items-center text-center gap-8 col-span-1">
             {/* Título para Desktop */}
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
-              offset={20}
-              delay={0.3}
-              transition={{duration: 0.5}}
+              offset={-20}
+              transition={{duration: 0.4, delay: 0.3, ease: "easeInOut"}}
               className="hidden table-lg:block md-tablet:mt-2"
             >
               <h2 className="mt-5 text-4xl font-extrabold leading-tight drop-shadow-lg text-white">
                 De la estrategia a tu
               <span className="text-colorPrimario2"> producto digital</span>
               </h2>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
             {/* Subtítulo */}
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={-20}
-              delay={0.3}
-              transition={{duration: 0.5}}
+              transition={{duration: 0.4, delay: 0.4, ease: "easeInOut"}}
               className="order-3 table-lg:order-none"
             >
               <p className="text-lg md-tablet:text-xl text-white max-w-2xl">
                 Ofrecemos un servicio de consultoría integral. Te guiamos a través de la definición del producto, diseño UX/UI y desarrollo de un MVP
               </p>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
             {/* Lista */}
             <StaggerListContainer
+              staggerChildren={0.15}
+              delayChildren={0.4}
               className="order-4 table-lg:order-none mt-6 table-lg:mt-0 space-y-4 text-white text-left max-w-md"
             >
               {[
@@ -97,7 +94,8 @@ export default function HeroCenter() {
                 <StaggerListItemClient
                   key={index}
                   direction="y"
-                  offset={20}
+                  offset={-20}
+                  transition={{duration: 0.3, ease: "circInOut"}}
                   className="flex items-start gap-3"
                 >
                   <BadgeCheck className="w-6 h-6 text-cyan-400 flex-shrink-0" />
@@ -107,11 +105,10 @@ export default function HeroCenter() {
             </StaggerListContainer>
 
             {/* Botón CTA */}
-            <InViewAnimationWrapper
+            <SimpleInViewWrapper
               direction="y"
               offset={20}
-              delay={0.3}
-              transition={{duration: 0.4}}
+              transition={{duration: 0.4, delay: 0.2}}
               className="order-5 table-lg:order-none mt-8 table-lg:mt-4 mb-10"
             >
               <ButtonCta
@@ -122,15 +119,14 @@ export default function HeroCenter() {
               >
                 Empieza tu proyecto
               </ButtonCta>
-            </InViewAnimationWrapper>
+            </SimpleInViewWrapper>
           </div>
 
           {/* 4. IMAGEN DERECHA - Móvil: oculta | Desktop: tercera columna */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
-            delay={0.3}
-            transition={{duration: 0.6}}
+            transition={{duration: 0.4, delay: 0.5}}
             className="hidden table-lg:flex justify-start mb-14 table-lg:mt-8"
           >
             <div className="relative group w-full max-w-md">
@@ -148,13 +144,10 @@ export default function HeroCenter() {
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
               {/* Círculos decorativos flotantes */}
-              <div
-                className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
-              ></div>
+              <div className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"></div>
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

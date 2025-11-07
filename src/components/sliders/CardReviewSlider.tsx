@@ -2,8 +2,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { reviewData } from "@/data/reviewData";
-import ReviewSectionCard from "@/sections/services/ReviewSectionCard";
-import { CardInViewWrapper } from "../ui/CardInViewWrapper";
+import ReviewSectionCard from "@/components/cards/services/ReviewSectionCard";
+import CardInViewStagger from "../ui/CardInViewStagger";
 
 export default function CardReviewSlider() {
   return (
@@ -17,13 +17,13 @@ export default function CardReviewSlider() {
       className="pb-12"
     >
       {reviewData.slice(-3).map((review, index) => (
-        <SwiperSlide key={review.id} className="py-5">
+        <SwiperSlide key={review.id} className="py-12">
 
-          <CardInViewWrapper
+          <CardInViewStagger
+            index={index}
             direction="y"
             offset={30}
-            delay={0.2}
-            transition={{ delay: index * 0.2}}
+            staggerDelay={0.2}
           >
             <ReviewSectionCard
               reviewBody={review.reviewBody}
@@ -31,7 +31,7 @@ export default function CardReviewSlider() {
               position={review.position}
               reviewerProfileUrl={review.reviewerProfileUrl}
             />
-          </CardInViewWrapper>
+          </CardInViewStagger>
         </SwiperSlide>
       ))}
     </Swiper>

@@ -88,7 +88,7 @@ export default function FAQSection({title, description, itemsDate}: listFAQ ) {
                 font-semibold underline underline-offset-4 hover:underline-offset-8 transition-all duration-300
                 hover:scale-[1.05] active:scale-[0.98] transform"
             >
-              Empezemos con tu proyecto            </ButtonCta>
+              Empecemos con tu proyecto            </ButtonCta>
           </SimpleInViewWrapper>
         </div>
       </div>

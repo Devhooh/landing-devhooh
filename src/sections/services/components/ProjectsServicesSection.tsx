@@ -93,8 +93,8 @@ export default function ProjectsServicesSection() {
             >
               {/* Badge de proyecto destacado para algunos */}
               {index < 3 && (
-                <div className="absolute -top-3 -right-3 z-20 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center shadow-lg">
-                  <Award className="w-4 h-4 text-white" />
+                <div className="absolute -top-3 -right-3 z-20 w-10 h-10 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center shadow-lg">
+                  <Award className="w-6 h-6 text-white" />
                 </div>
               )}
               

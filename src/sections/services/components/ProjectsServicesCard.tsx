@@ -21,10 +21,9 @@ export default function ProjectsServicesCard({ projects }: { projects: ProjectCa
         group relative w-full h-full rounded-3xl overflow-hidden 
         bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 
         border border-colorPrimario5/20 shadow-[0_0_25px_rgba(103,61,230,0.15)] hover:shadow-[0_0_35px_rgba(103,61,230,0.25)]
-        transition-all duration-500
-      "
+        transition-all duration-500"
     >
-      <div className="w-full h-full rounded-2xl shadow-lg p-4 flex flex-col justify-between relative z-10">
+      <div className="w-full h-full rounded-2xl shadow-lg p-6 py-10 flex flex-col justify-between relative z-10">
         {/* Header */}
         <div className="mb-6">
           <h2 className="text-xl font-bold text-white group-hover:text-colorPrimario5 transition-colors duration-300 mb-2">

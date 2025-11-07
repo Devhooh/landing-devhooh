@@ -2,9 +2,9 @@ import Link from "next/link";
 import * as Icons from "lucide-react";
 import { LucideProps, ArrowRight } from "lucide-react";
 import { ServicesData } from "@/data/ServicesDetails";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import StaggerListContainer from "@/components/ui/StaggerListContainer";
-import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 interface TechStackSectionProps {
   service: ServicesData;
@@ -16,37 +16,37 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
   return (
     <section className="py-8 px-6 md-tablet:px-12 bg-violet-50">
       {/* Encabezado */}
-      <InViewAnimationWrapper
-        direction="y"
+      <TextRevealClient
+        direction="x"
         offset={-20}
-        transition={{duration: 0.3, delay: 0.4}}
+        transition={{duration: 0.3, delay: 0.2}}
       >
         <h2 className="text-left text-3xl md-tablet:text-4xl font-extrabold text-colorPrimario2 mb-4">
-          Stack de tecnología que utilizamos
+          Stack de tecnología
           <br/>
           para <strong className="text-colorPrimario5">{service.name}</strong>
         </h2>
-      </InViewAnimationWrapper>
+      </TextRevealClient>
 
-      <InViewAnimationWrapper
+      <TextRevealClient
         direction="x"
         offset={-20}
-        transition={{duration: 0.4, delay: 0.5}}
+        transition={{duration: 0.3, delay: 0.3}}
       >
         <p className="mt-3 text-colorPrimario1 text-lg md-tablet:text-xl leading-relaxed">
           {stack.description}
         </p>
-      </InViewAnimationWrapper>
+      </TextRevealClient>
 
       {/* Grid de tecnologías */}
-      <StaggerListContainer className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6 mt-8 px-4">
+      <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6 mt-8 px-4">
         {stack.tech.map((item, index) => {
-          const Icon =
-            (Icons[item.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) || Icons.HelpCircle;
+          const Icon = (Icons[item.icon as keyof typeof Icons] as React.ComponentType<LucideProps>) || Icons.HelpCircle;
 
           return (
-            <StaggerListItemClient
+            <CardInViewStagger
               key={index}
+              index={index + 1}
               direction="x"
               offset={-20}
               className={`
@@ -89,16 +89,16 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
 
               {/* Efecto de brillo en hover */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </StaggerListItemClient>
+            </CardInViewStagger>
           );
         })}
-      </StaggerListContainer>
+      </div>
 
       {/* Botón */}
-      <InViewAnimationWrapper 
+      <SimpleInViewWrapper
         direction="y"
         offset={30}
-        transition={{duration: 0.5, delay: 0.6}}
+        transition={{duration: 0.5, delay: 0.3}}
         className="mt-10 text-center"
       >
         <Link
@@ -118,8 +118,7 @@ export default function ServicesStackTech({ service }: TechStackSectionProps) {
           <span>Ver todas las tecnologías</span>
           <ArrowRight className="w-6 h-6 flex-shrink-0"/>
         </Link>
-      </InViewAnimationWrapper>
-
+      </SimpleInViewWrapper>
     </section>
   );
 } 

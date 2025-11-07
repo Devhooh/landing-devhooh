@@ -51,7 +51,7 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
       <TextRevealClient
         direction="y"
         offset={20}
-        transition={{duration: 0.3, delay: 0.6}}
+        transition={{duration: 0.3, delay: 0.4}}
       >
         <p className="
           text-xl md-tablet:text-2xl table-lg:text-3xl text-black 
@@ -65,7 +65,7 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
       <SimpleInViewWrapper
         direction="y"
         offset={20}
-        transition={{duration: 0.3, delay: 0.2}}
+        transition={{duration: 0.3, delay: 0.4}}
         className="my-8"
       >
         <ButtonCta

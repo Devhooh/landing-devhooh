@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
-import { InViewAnimationWrapper } from '@/components/ui/InViewAnimationWrapper';
-import { AnimatedLetters } from '@/components/ui/AnimatedLetters';
+import TextRevealClient from './TextRevealClient';
 
 type FAQItemProps = {
   id: number;
@@ -82,20 +81,26 @@ export default function FAQSection({itemsDate}: listFAQ ) {
     <section className="bg-colorHover5 pb-24 pt-8 sm:px-6 table-lg:px-8 flex items-center justify-center">
       <div className="w-full max-w-4xl mx-auto px-10">
         <div className="text-center mb-12">
-          <AnimatedLetters 
-            text="Preguntas frecuentes" 
-            className="text-xl md-tablet:text-4xl table-lg:text-5xl font-extrabold text-black mb-4"
-          />
 
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction='y'
             offset={30}
-            delay={0.3}
+            transition={{duration: 0.3, delay: 0.3, ease: "easeInOut"}}
+          >
+            <h1 className="text-xl md-tablet:text-4xl table-lg:text-5xl font-extrabold text-black mb-4">
+              Preguntas frecuentes
+            </h1>
+          </TextRevealClient>
+
+          <TextRevealClient
+            direction='y'
+            offset={30}
+            transition={{duration: 0.3, delay: 0.4}}
           >
             <p className="text-base md-tablet:text-lg text-gray-600 max-w-2xl mx-auto">
               ¿Tiene preguntas sobre nuestros servicios digitales? Explore nuestra sección de preguntas frecuentes o póngase en contacto con nosotros directamente para obtener asistencia e información personalizadas.
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
         </div>
         <div className="space-y-4">
           {itemsDate.map((item, index) => (

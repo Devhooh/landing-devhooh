@@ -10,7 +10,7 @@ interface BenefitsSectionProps {
 
 export default function ServicesBenefits({ service }: BenefitsSectionProps) {
   return (
-    <section className="p-6 md-tablet:px-8 table-lg:px-12 bg-blue-50">
+    <section className="px-6 py-20 md-tablet:px-8 table-lg:px-12 bg-blue-50">
       <div className="w-auto px-auto">
         <TextRevealClient
           direction="x"

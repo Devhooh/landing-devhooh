@@ -41,9 +41,9 @@ export const FAQItemSection: React.FC<FAQItemSectionProps> = ({
     >
       <button
         onClick={onClick}
-        className="flex justify-between items-center w-full p-4 table-lg:p-6 text-left"
+        className="flex justify-between items-center w-full p-3 table-lg:p-6 text-left"
       >
-        <span className="text-lg sm:text-xl font-semibold text-colorDarkFondo1 m-1">
+        <span className="text-lg md-tablet:text-xl font-semibold text-colorDarkFondo1 m-1">
           {question}
         </span>
         {isOpen ? 
@@ -58,9 +58,9 @@ export const FAQItemSection: React.FC<FAQItemSectionProps> = ({
         initial={false} // Evita el flicker si la transición anterior ya ha corrido
         animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="px-4 sm:px-6 overflow-hidden"
+        className="px-5 md-tablet:px-8 overflow-hidden"
       >
-        <p className="text-sm sm:text-base text-gray-600 py-2 pb-5">{answer}</p>
+        <p className="text-base md-tablet:text-lg text-gray-600 py-2 pb-5">{answer}</p>
       </motion.div>
     </motion.div>
   );

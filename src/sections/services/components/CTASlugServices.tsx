@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, Rocket } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { FloatingWrapper } from "@/components/ui/FloatingWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 export default function CTASlugServices() {
   return (
@@ -16,32 +17,32 @@ export default function CTASlugServices() {
           {/* Columna izquierda: texto */}
           <div className="flex-1 flex flex-col items-center tablet-md:items-start text-center tablet-md:text-left">
 
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={30}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
               <p className="text-xl tablet-md:text-2xl font-semibold text-colorPrimario1 mb-6">
                 ¿Listo para llevar tu proyecto al siguiente nivel?
               </p>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={30}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
             >
               <h2 className="text-3xl tablet-md:text-4xl font-extrabold mb-4 leading-tight text-colorPrimario2">
-                Nuestro equipo está listo para despegar. Empezemos {" "}
+                Nuestro equipo está listo ¡Empezemos {" "}
                 <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
                   tu proyecto ahora!
                 </span>{" "}
               </h2>
-            </InViewAnimationWrapper>
-
+            </TextRevealClient>
 
             {/* Estadísticas rápidas */}
             <StaggerListContainer
+              delayChildren={0.2}
               className="flex gap-8 mb-8 justify-center tablet-md:justify-start"
             > 
               {[
@@ -52,7 +53,7 @@ export default function CTASlugServices() {
                 <StaggerListItemClient
                   key={index} 
                   direction="y"
-                  offset={20}
+                  offset={30}
                   className="text-center"
                 >
                   <div className="text-2xl font-bold text-colorPrimario7">{value.data}</div>
@@ -62,10 +63,10 @@ export default function CTASlugServices() {
             </StaggerListContainer>
 
             {/* Botón premium */}
-            <InViewAnimationWrapper
+            <SimpleInViewWrapper
               direction="y"
               offset={30}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               className="flex justify-center tablet-md:justify-start"
             >
               <Link href="/contact">
@@ -83,31 +84,28 @@ export default function CTASlugServices() {
                   </span>
                 </button>
               </Link>
-            </InViewAnimationWrapper>
+            </SimpleInViewWrapper>
           </div>
 
           {/* Columna derecha: visual premium */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.6 }}
             className="flex justify-center items-center"
           >
-            {/* VISUAL: Un elemento animado más simple y elegante */}
             <FloatingWrapper
               className="relative w-40 h-40 md-tablet:w-48 md-tablet:h-48 flex-shrink-0 flex items-center justify-center"
             >
               {/* Círculo con 'glow' animado */}
-              <div
-                className="absolute inset-0 rounded-full bg-colorPrimario5/90 border border-white/10"
-              ></div>
+              <div className="absolute inset-0 rounded-full bg-colorPrimario5/90 border border-white/10"></div>
               
               {/* Icono del cohete flotando */}
               <FloatingWrapper>
                 <Rocket className="w-16 h-16 md-tablet:w-20 md-tablet:h-20 text-white" />
               </FloatingWrapper>
             </FloatingWrapper>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

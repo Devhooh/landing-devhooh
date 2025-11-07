@@ -1,8 +1,8 @@
 import * as Icons from "lucide-react";
 import { LucideProps } from "lucide-react";
 import { ServicesData } from "@/data/ServicesDetails";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
 
 interface BenefitsSectionProps {
   service: ServicesData;
@@ -10,20 +10,20 @@ interface BenefitsSectionProps {
 
 export default function ServicesIncluded({ service }: BenefitsSectionProps) {
   return (
-    <section className="py-12 px-6 md-tablet:px-12 bg-white">
+    <section className="py-16 px-6 md-tablet:px-12 bg-white">
       {/* Título secundario */}
-      <InViewAnimationWrapper
+      <TextRevealClient
         direction="y"
-        offset={40}
+        offset={30}
         transition={{duration: 0.3, delay: 0.3}}
       >
         <h3 className="text-3xl md-tablet:text-4xl font-extrabold text-center text-colorPrimario2">
           Lo que incluye nuestro servicio de{" "}
           <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">{service.name}</strong>
         </h3>
-      </InViewAnimationWrapper>
+      </TextRevealClient>
 
-      <InViewAnimationWrapper
+      <TextRevealClient
         direction="y"
         offset={20}
         transition={{ duration: 0.3, delay: 0.4 }}
@@ -32,7 +32,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
           Descubre cada una de las características y beneficios que forman parte de este servicio. 
           Nos aseguramos de brindarte soluciones completas y adaptadas a tus necesidades.
         </p>
-      </InViewAnimationWrapper>
+      </TextRevealClient>
 
       {/* Cards de beneficios */}
       <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-6">
@@ -43,9 +43,11 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
             >) || Icons.HelpCircle;
 
           return (
-            <ProjectStaggerWrapper
-              key={index}
+            <CardInViewStagger
+              key={index + 1}
               index={index}
+              direction="y"
+              offset={30}
               className="flex flex-col p-6 rounded-2xl bg-gradient-to-t from-white to-purple-200 border shadow-sm hover:shadow-xl hover:border-fuchsia-400 transition duration-300"
             >
               {/* Icono + título */}
@@ -77,7 +79,7 @@ export default function ServicesIncluded({ service }: BenefitsSectionProps) {
                   </li>
                 ))}
               </ul>
-            </ProjectStaggerWrapper>
+            </CardInViewStagger>
           );
         })}
       </div>

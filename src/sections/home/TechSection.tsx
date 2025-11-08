@@ -11,7 +11,7 @@ export default function TechSection() {
     <section className="w-full py-16 bg-gradient-to-b from-colorHover5 to-colorHover6">
       <div className="mx-auto text-center">
         {/* Contenido principal */}
-        <div className="max-w-[1400px] mx-auto px-4">
+        <div className="max-w-[1400px] mx-auto px-7">
           {/* Título animado letra por letra */}
           <TextRevealClient
             direction="y"
@@ -60,8 +60,7 @@ export default function TechSection() {
           >
             <div className="group">
               <ButtonCta
-                href="/services"
-                icon={ArrowRight}
+                href="/tecnologia"
                 className="relative overflow-hidden text-lg md-tablet:text-xl 
                   bg-gradient-to-r from-colorPrimario5 to-colorSecundario2 
                   text-white py-4 px-10 rounded-2xl font-semibold 
@@ -69,9 +68,10 @@ export default function TechSection() {
                   hover:scale-[1.05] active:scale-[0.98] transform"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  <p className="relative z-10">
-                    Explora todas nuestras tecnologías
-                  </p>
+                <div className="relative z-10 flex items-center gap-3">
+                  <p>Explora todas nuestras tecnologías</p>
+                  <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                </div>
               </ButtonCta>
             </div>
           </SimpleInViewWrapper>

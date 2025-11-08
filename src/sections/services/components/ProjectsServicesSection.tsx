@@ -59,7 +59,7 @@ export default function ProjectsServicesSection() {
         {/* Estadísticas rápidas */}
         <StaggerListContainer
           delayChildren={0.2}
-          className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16"
+          className="grid grid-cols-1 md-tablet:grid-cols-3 gap-6 mx-10 mb-16"
         >
           {[
             {data: "20+", text: "Proyectos completados"},
@@ -71,7 +71,7 @@ export default function ProjectsServicesSection() {
               direction="y"
               offset={30}
               transition={{duration: 0.3}}
-              className="text-center p-6 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/20"
+              className="text-center py-4 px-7 rounded-2xl bg-colorHover4 backdrop-blur-sm border border-white/20"
             >
               <div className="text-3xl font-bold text-colorPrimario5 mb-2">
                 {value.data}
@@ -82,7 +82,7 @@ export default function ProjectsServicesSection() {
         </StaggerListContainer>
 
         {/* Grid de proyectos mejorado */}
-        <div className="grid grid-cols-1 md-tablet:grid-cols-2 table-lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 tablet-md:grid-cols-2 table-lg:grid-cols-3 gap-8 mb-16 px-2">
           {displayedProjects.map((project, index) => (
             <CardInViewStagger
               key={project.id}

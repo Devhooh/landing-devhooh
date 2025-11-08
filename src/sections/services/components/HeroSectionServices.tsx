@@ -70,13 +70,15 @@ export default function HeroSectionServices({ service }: HeroSectionProps) {
       >
         <ButtonCta
           href="/contact"
-          icon={Rocket}
           className="
             px-5 md-tablet:px-10 py-5 text-xl md:text-2xl font-bold bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
             text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 transform transition-all duration-300 
             flex items-center gap-3 drop-shadow-lg hover:scale-[1.05] active:scale-[0.98]"
         >
-          Cotiza tu proyecto ahora
+          <div className="relative z-10 flex items-center gap-3">
+            <p>Cotiza tu proyecto ahora</p>
+            <Rocket className="w-5 h-5 flex-shrink-0" />
+          </div>
         </ButtonCta>
       </SimpleInViewWrapper>
     </section>

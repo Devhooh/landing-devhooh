@@ -33,7 +33,7 @@ export default function CTASlugServices() {
               transition={{ duration: 0.3, delay: 0.4 }}
             >
               <h2 className="text-3xl tablet-md:text-4xl font-extrabold mb-4 leading-tight text-colorPrimario2">
-                Nuestro equipo está listo ¡Empezemos {" "}
+                Nuestro equipo está listo ¡Empecemos {" "}
                 <span className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
                   tu proyecto ahora!
                 </span>{" "}

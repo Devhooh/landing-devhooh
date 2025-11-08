@@ -70,8 +70,10 @@ export default function PlanCard({
               hover:scale-[1.05] active:scale-[0.98] transform
             `}
         >
-          Cotiza tu proyecto
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          <div className="relative z-10 flex items-center gap-3">
+            <p className="text-center">Cotiza tu proyecto</p>
+            <ArrowRight className="w-5 h-5 flex-shrink-0" />
+          </div>
         </ButtonCta>
       </div>
       {/* Efecto decorativo */}

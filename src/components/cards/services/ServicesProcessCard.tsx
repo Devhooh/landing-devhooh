@@ -23,8 +23,7 @@ export const ServicesProcessCard: React.FC<ProcessProps> = ({
     <div className="flex-grow group">
       <div className="
         relative p-6 md-tablet:p-8 rounded-3xl bg-white backdrop-blur-sm border-2 border-white/20
-        hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)] 
-        hover:scale-[1.02] active:scale-[0.98] transform transition-all duration-300"
+        hover:border-colorPrimario5/30 shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.15)]"
       >
         
         {/* Efectos decorativos */}
@@ -64,8 +63,9 @@ export const ServicesProcessCard: React.FC<ProcessProps> = ({
                 <StaggerListItemClient
                   key={i}
                   direction="y"
-                  offset={-20}
-                  className="flex items-start gap-3 p-3 rounded-xl bg-colorHover4/50 border border-white/10 transition-all duration-300"
+                  offset={-10}
+                  className="flex items-start gap-3 p-3 rounded-xl bg-colorHover4/50
+                    border border-white/10 transition-all duration-300 "
                 >
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 flex items-center justify-center">
                     <CheckCircle className="w-3 h-3 text-white flex-shrink-0" />

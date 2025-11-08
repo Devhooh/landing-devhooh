@@ -97,20 +97,20 @@ export function SolutionsSection() {
           <div className="group">
             <ButtonCta
               href="/services"
-              icon={ArrowRight}
               className="
-                  relative overflow-hidden text-lg md-tablet:text-xl 
-                  bg-gradient-to-r from-colorPrimario5 to-colorSecundario2 text-white 
-                  py-4 px-5 md-tablet:px-10 rounded-2xl font-semibold 
-                  shadow-[0_0_25px_rgba(103,61,230,0.3)] hover:shadow-[0_0_35px_rgba(103,61,230,0.5)] 
-                  transition-all duration-300 flex items-center gap-3
-                  hover:scale-[1.05] active:scale-[0.98] transform"
+                relative overflow-hidden text-lg md-tablet:text-xl 
+                bg-gradient-to-r from-colorPrimario5 to-colorSecundario2 text-white 
+                py-4 px-5 md-tablet:px-10 rounded-2xl font-semibold 
+                shadow-[0_0_25px_rgba(103,61,230,0.3)] hover:shadow-[0_0_35px_rgba(103,61,230,0.5)] 
+                transition-all duration-300 flex items-center gap-3
+                hover:scale-[1.05] active:scale-[0.98] transform"
             >
               {/* Efecto de brillo animado */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              <p className="relative z-10 text-center">
-                Descubre todas nuestras soluciones
-              </p>
+              <div className="relative z-10 flex items-center gap-3">
+                <p className="text-center">Descubre todas nuestras soluciones</p>
+                <ArrowRight className="w-5 h-5 flex-shrink-0" />
+              </div>
             </ButtonCta>
           </div>
         </SimpleInViewWrapper>

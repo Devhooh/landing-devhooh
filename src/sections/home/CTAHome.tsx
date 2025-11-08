@@ -13,7 +13,7 @@ export default function CTAHome() {
       {/* Fondo con gradiente mejorado */}
       <div className="absolute inset-0 bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4"></div>
       
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 md-tablet:px-10">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md-tablet:px-10">
         <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-12 items-center">
           
           {/* Columna izquierda - Contenido */}
@@ -75,14 +75,14 @@ export default function CTAHome() {
             >
               <ButtonCta
                 href="/contact"
-                className="group relative overflow-hidden px-5 md-tablet:px-8 py-4 rounded-2xl font-bold text-lg bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+                className="group relative overflow-hidden mx-auto px-5 md-tablet:px-8 py-4 rounded-2xl font-bold text-lg bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
                   text-white shadow-[0_0_30px_rgba(103,61,230,0.4)] hover:shadow-[0_0_40px_rgba(103,61,230,0.6)] transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] transform"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700">
                 </div>
-                  <span className="relative z-10 flex items-center gap-3">
+                  <span className="relative z-0 flex items-center gap-3">
                     ¡Empezamos tu proyecto hoy!
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="w-5 h-5 flex-shrink-0" />
                   </span>
               </ButtonCta>
 

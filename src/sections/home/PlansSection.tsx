@@ -1,9 +1,9 @@
 import TextRevealClient from "@/components/ui/TextRevealClient";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
-import ButtonCta from "@/components/ui/ButtonCta";
 import CardInViewStagger from "@/components/ui/CardInViewStagger";
 import PlanCard from "@/components/cards/home/PlanCard";
 import { planesData } from "@/data/sections/home/PlanesData";
+import Link from "next/link";
 
 export function PlansSection() {
   return (
@@ -81,14 +81,14 @@ export function PlansSection() {
           </TextRevealClient>
 
           <SimpleInViewWrapper>
-            <ButtonCta
+            <Link
               href="/contact"
-              className="text-colorSecundario1 hover:text-colorSecundario3 
+              className="text-colorSecundario1 hover:text-colorSecundario3 text-xl
                 font-semibold underline underline-offset-4 hover:underline-offset-8 transition-all duration-300
                 hover:scale-[1.05] active:scale-[0.98] transform"
             >
               Hablemos de tu proyecto personalizado
-            </ButtonCta>
+            </Link>
           </SimpleInViewWrapper>
         </div>
       </div>

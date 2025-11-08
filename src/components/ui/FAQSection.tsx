@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import TextRevealClient from './TextRevealClient';
 import { FAQItemSection } from '../layout/FAQItemSection';
 import { SimpleInViewWrapper } from './SimpleInViewWrapper';
-import ButtonCta from './ButtonCta';
+import Link from 'next/link';
 
 type FAQItemProps = {
   id: number;
@@ -76,19 +76,20 @@ export default function FAQSection({title, description, itemsDate}: listFAQ ) {
             offset={30}
             transition={{duration: 0.3, delay: 0.3, ease: "easeInOut"}}
           >
-            <p className="text-colorPrimario1/70 mb-4 font-medium text-2xl">
+            <p className="text-colorPrimario1/70 mb-4 font-medium text-xl">
               ¿Ya tienes una idea en mente?
             </p>
           </TextRevealClient>
 
           <SimpleInViewWrapper>
-            <ButtonCta
+            <Link
               href="/contact"
               className="text-colorSecundario1 hover:text-colorSecundario3 text-xl
                 font-semibold underline underline-offset-4 hover:underline-offset-8 transition-all duration-300
                 hover:scale-[1.05] active:scale-[0.98] transform"
             >
-              Empecemos con tu proyecto            </ButtonCta>
+              Empecemos con tu proyecto            
+            </Link>
           </SimpleInViewWrapper>
         </div>
       </div>

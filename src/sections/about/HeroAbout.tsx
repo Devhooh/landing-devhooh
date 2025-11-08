@@ -54,9 +54,7 @@ export default function HeroAbout() {
                   text-white rounded-2xl shadow-xl hover:bg-colorSecundario4 flex items-center gap-3 drop-shadow-lg 
                   transition-all duration-300 hover:scale-[1.05] active:scale-[0.98] transform"
               >
-                <span className="inline-block w-3 h-3 rounded-full bg-white animate-pulse"></span>
-                  Hablemos de tu proyecto
-                <span className="inline-block w-3 h-3 rounded-full bg-white animate-pulse"></span>
+                Hablemos de tu proyecto
               </ButtonCta>
             </InViewAnimationWrapper>
           </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import ButtonCta from "@/components/ui/ButtonCta";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 export default function HeroSectionTech() {
 
@@ -10,10 +11,10 @@ export default function HeroSectionTech() {
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={-20}
-            transition={{ duration: 0.3, delay: 0.1}}
+            transition={{ duration: 0.3, delay: 0.3}}
           >
             <h1 className="order-1 text-center table-lg:text-left text-4xl font-extrabold drop-shadow-lg
               leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-50"
@@ -21,13 +22,13 @@ export default function HeroSectionTech() {
               La tecnología detrás de nuestras  
               <strong className="text-colorPrimario5"> soluciones de vanguardia</strong>
             </h1>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* --- 2) IMAGEN --- */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
-            transition={{ duration: 0.3, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
             className="
               order-2 table-lg:order-2 table-lg:col-start-2 table-lg:row-span-4 flex justify-center"
           >
@@ -53,13 +54,13 @@ export default function HeroSectionTech() {
                 className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white opacity-20"
               ></div>
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={-20}
-            transition={{duration: 0.3, delay: 0.3}}
+            transition={{duration: 0.3, delay: 0.4}}
             className="order-3 text-lg md-tablet:text-xl 
               text-center table-lg:text-left my-5 table-lg:pr-32
             text-gray-200 leading-relaxed max-w-xl mx-auto table-lg:mx-0"
@@ -67,13 +68,13 @@ export default function HeroSectionTech() {
             <p>
               Donde los frameworks y la innovación de productos se unen con la experiencia técnica.
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* --- 5) BOTÓN --- */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={-20}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
             className="order-5 flex justify-center table-lg:justify-start"
           >
             <ButtonCta
@@ -86,7 +87,7 @@ export default function HeroSectionTech() {
             >
               Construyamos tu proyecto!
             </ButtonCta>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

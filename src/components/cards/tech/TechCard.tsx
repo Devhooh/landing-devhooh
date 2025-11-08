@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, Code, Sparkles } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { TechIcon } from "@/components/utils/TechIconMapper";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
 
 interface Technology {
   name: string;
@@ -28,51 +29,55 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
         <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
 
         {/* Badge superior */}
-        <div className="flex items-center gap-2 mb-6">
+        <SimpleInViewWrapper 
+          direction="x"
+          offset={-20}
+          transition={{duration: 0.3, delay: 0.2}}
+          className="flex items-center gap-2 mb-6"
+        >
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorPrimario6 flex items-center justify-center shadow-lg">
             <Code className="w-5 h-5 text-white flex-shrink-0" />
           </div>
           <div className="px-3 py-1 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <span className="text-white font-semibold text-sm">Especialización</span>
           </div>
-        </div>
+        </SimpleInViewWrapper>
 
         {/* Título*/}
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="x"
           offset={-20}
-          transition={{duration: 0.2, delay: 0.2}}
+          transition={{duration: 0.3, delay: 0.3}}
         >
           <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-white mb-4 leading-tight">
             <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">
               {title}
             </strong>
           </h3>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
         {/* Subtítulo mejorado */}
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="x"
           offset={-20}
-          transition={{duration: 0.2, delay: 0.3}}
+          transition={{duration: 0.3, delay: 0.4}}
           >
           <p className="text-lg text-colorHover5 mb-8 leading-relaxed max-w-2xl">
             {subtitle}
           </p>
-        </InViewAnimationWrapper>
-
+        </TextRevealClient>
 
         {/* Contador de tecnologías */}
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           direction="x"
           offset={-20}
-          transition={{duration: 0.2, delay: 0.3 }}
+          transition={{duration: 0.3, delay: 0.3 }}
           className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
           <Sparkles className="w-4 h-4 text-colorSecundario1 flex-shrink-0" />
           <span className="text-colorHover5 font-semibold text-sm">
             {technologies.length} tecnologías disponibles
           </span>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
 
         {/* Grid de tecnologías mejorado */}
         <StaggerListContainer className="my-3 grid grid-cols-1 table-lg:grid-cols-2 lg-table:grid-cols-4 gap-4">
@@ -126,7 +131,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
         </StaggerListContainer>
 
         {/* Call to action */}
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           direction="y"
           offset={30}
           className="text-center my-8"
@@ -137,7 +142,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
               Haz clic en cualquier tecnología para explorar más
             </span>
           </div>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
 
         {/* Efecto de brillo en hover */}
         <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>

@@ -60,7 +60,7 @@ export function ProjectsBenefits() {
         </div>
 
         {/* Cards de beneficios */}
-        <div className="flex flex-col tablet-md:flex-row gap-6">
+        <div className="flex flex-col table-lg:flex-row gap-6">
           {benefits.map((benefit, idx) => (
             <CardInViewStagger
               key={idx}

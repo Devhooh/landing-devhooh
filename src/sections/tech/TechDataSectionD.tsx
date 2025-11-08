@@ -1,5 +1,5 @@
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import TechCard from "./TechCard";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import TechCard from "../../components/cards/tech/TechCard";
 import {
   backendTech,
   designerTech,
@@ -17,22 +17,22 @@ export default function TechDataSection() {
       <div className="w-full pb-5 mx-auto">
 
         <div className="overflow-hidden mx-auto mt-16 px-5 md-tablet:px-10 space-y-4 pb-5 text-left">
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={-20}
-            transition={{ duration: 0.3, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
             <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario1">
               De un vistazo a nuestro kit 
               <br/>de 
               <strong className="text-colorPrimario5">  herramientas tecnológicas</strong>
             </h3>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
           
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={-20}
-            transition={{ duration: 0.3, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
           >
             <p className="text-lg md-tablet:text-xl max-w-2xl text-gray-700">
               Profundizamos en las necesidades de su proyecto para asegurarnos de
@@ -40,7 +40,7 @@ export default function TechDataSection() {
               mayoría de los proyectos en los que trabajamos se dividen en el
               siguiente stack de tecnológicas.
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
         </div>
       </div>
 

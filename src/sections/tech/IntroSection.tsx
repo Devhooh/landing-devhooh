@@ -75,7 +75,7 @@ export default function IntroSection() {
               offset={30}
               className="inline-flex items-center gap-2 mt-8 px-4 md-tablet:px-8 py-3 rounded-3xl 
               bg-colorPrimario5 border border-colorPrimario5/30 backdrop-blur-sm"
-              transition={{ duration: 0.3, delay: 0.5 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
             >
               <Award className="w-5 h-5 text-white flex-shrink-0" />
               <strong className="text-colorHover5 font-semibold">Empieza tu proyecto con calidad</strong>

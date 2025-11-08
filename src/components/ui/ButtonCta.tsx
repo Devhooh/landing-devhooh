@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useTransition } from "react";
 import { useRouter } from 'next/navigation';
 import { Loader2 } from "lucide-react";
 
@@ -16,18 +16,17 @@ export default function ButtonCta({
   children,
 }: CtaButtonProps) {
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault(); 
-    setIsLoading(true);
-    setTimeout(() => {
-        router.push(href);
-    }, 100);
-  };
+    e.preventDefault(); 
+    startTransition(() => {
+      router.push(href);
+    });
+  };
 
-  const disabledClasses = isLoading ? "opacity-60 cursor-not-allowed pointer-events-none" : "";
+  const disabledClasses = isPending ? "opacity-60 cursor-not-allowed pointer-events-none" : "";
   const baseClasses = "relative transition-all duration-300";
 
   return (
@@ -36,11 +35,11 @@ export default function ButtonCta({
       className={`${baseClasses} ${className} ${disabledClasses}`}
       onClick={handleClick}
     >
-      <span className={`${isLoading ? 'invisible' : ''} inline-block`}>
+      <span className={`${isPending ? 'invisible' : ''} inline-block`}>
         {children}
       </span>
 
-      {isLoading && (
+      {isPending && (
         <span 
           className="absolute inset-0 flex items-center justify-center"
         >

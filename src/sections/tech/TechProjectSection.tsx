@@ -1,5 +1,5 @@
-import TechProjectSlider from "@/components/layout/TechProjectSlider";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import TechProjectSlider from "@/components/sliders/TechProjectSlider";
+import TextRevealClient from "@/components/ui/TextRevealClient";
 
 export default function TechProjectSection() {
 
@@ -7,10 +7,10 @@ export default function TechProjectSection() {
     <section className="w-full my-20 py-16 px-4 table-lg:px-10 bg-gradient-to-b from-colorPrimario4 to-colorPrimario3">
       <div className="max-w-7xl mx-auto text-left mb-8">
         {/* Título animado */}
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="y"
           offset={30}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
           <h2 className="px-6 text-3xl md-tablet:text-4xl font-extrabold text-white">
             Proyectos con {" "}
@@ -18,19 +18,19 @@ export default function TechProjectSection() {
               nuestra tecnología:
             </strong>
           </h2>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
         {/* Subtítulo */}
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="y"
           offset={30}
-          transition={{ duration: 0.4, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
         >
           <p className="px-6 mt-4 text-gray-300 max-w-2xl text-lg md-tablet:text-xl">
             Una selección de proyectos recientes donde aplicamos nuestras mejores
             tecnologías para lograr impacto real.
           </p>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
       </div>
 

@@ -2,10 +2,10 @@
 
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import TechProjectCard from "@/sections/tech/TechProjectCard";
+import TechProjectCard from "@/components/cards/tech/TechProjectCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
-import ProjectStaggerWrapper from "../ui/ProjectStaggerWrapper";
+import CardInViewStagger from "../ui/CardInViewStagger";
 
 export default function TechProjectSlider() {
 
@@ -38,12 +38,14 @@ export default function TechProjectSlider() {
             key={project.id}
             className="flex my-6 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
-            <ProjectStaggerWrapper
+            <CardInViewStagger
               key={project.id}
               index={index}
+              direction="y"
+              offset={30}
             >
               <TechProjectCard projects={project} />
-            </ProjectStaggerWrapper>
+            </CardInViewStagger>
           </SwiperSlide>
         ))}
 

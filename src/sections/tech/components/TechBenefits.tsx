@@ -1,8 +1,9 @@
 import * as Icons from "lucide-react";
 import { LucideProps } from "lucide-react";
 import { Award, TrendingUp } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
-import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
 
 interface Benefit {
   icon: string;
@@ -18,26 +19,22 @@ interface TechBenefitsProps {
 export default function TechBenefits({benefits, name}: TechBenefitsProps) {
   return (
     <section className="relative py-20 bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 overflow-hidden">
-
       <div className="relative z-10 max-w-6xl mx-auto px-4">
-        
         {/* Encabezado mejorado */}
         <div className="text-center mb-16">
-          
           {/* Badge superior */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="y"
             offset={30}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-500/20 border border-green-400/30 backdrop-blur-sm mb-8"
           >
             <Award className="w-5 h-5 text-green-400" />
             <strong className="text-green-300 font-semibold">Ventajas competitivas</strong>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
 
-          {/* Título con animación letra por letra */}
-
-          <InViewAnimationWrapper
+          {/* Título */}
+          <TextRevealClient
             direction="y"
             offset={30}
             transition={{ duration: 0.3, delay: 0.3 }}
@@ -47,9 +44,9 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
             >
               Beneficios al usar {name}
             </h2>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="y"
             offset={30}
             transition={{ duration: 0.4, delay: 0.4 }}
@@ -57,7 +54,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
             <p className="text-lg md-tablet:text-xl text-colorHover5 max-w-3xl mx-auto">
               Descubre por qué {name} es la elección perfecta para tu próximo proyecto
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
         </div>
 
         {/* Grid de beneficios mejorado */}
@@ -69,16 +66,17 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
               >) || Icons.HelpCircle;
 
             return (
-              <ProjectStaggerWrapper
+              <CardInViewStagger
                 key={index}
                 index={index}
-                className={`
+                direction="y"
+                offset={30}
+                className="
                   group relative p-8 rounded-3xl 
                   bg-colorFondo/80 backdrop-blur-sm
                   border-2 border-white/20 hover:border-colorPrimario5/40
                   shadow-[0_0_20px_rgba(103,61,230,0.1)] hover:shadow-[0_0_30px_rgba(103,61,230,0.2)]
-                  transition-all duration-300 text-center
-                `}
+                  transition-all duration-300 text-center"
               >
                 
                 {/* Efectos decorativos */}
@@ -117,13 +115,13 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
 
                 {/* Efecto de brillo en hover */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              </ProjectStaggerWrapper>
+              </CardInViewStagger>
             );
           })}
         </div>
 
         {/* Call to action final */}
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           direction="y"
           offset={30}
           className="text-center mt-12"
@@ -136,7 +134,7 @@ export default function TechBenefits({benefits, name}: TechBenefitsProps) {
             </span>
             <TrendingUp className="w-6 h-6 text-colorPrimario5 flex-shrink-0" />
           </div>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
       </div>
     </section>
   );

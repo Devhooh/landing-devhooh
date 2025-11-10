@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 export default function CTASlugfolio() {
 
@@ -14,34 +15,33 @@ export default function CTASlugfolio() {
 
   return (
     <section className="relative w-full pb-28 pt-14 px-5 tablet-md:px-10 flex justify-center overflow-hidden text-white">
-      {/* Contenedor principal */}
       <div className="relative z-10 max-w-4xl w-full flex flex-col items-center gap-8 bg-gradient-to-br from-colorDarkFondo2 via-colorDarkFondo3 to-colorDarkFondo4 p-10 rounded-3xl shadow-2xl text-center">
         
         {/* Título animado letra por letra */}
-        <InViewAnimationWrapper
-          direction="y"
-          offset={30}
-          transition={{ duration: 0.3, delay: 0.2 }}
-        >
-          <h2 className="text-3xl tablet-md:text-5xl font-extrabold leading-tight">
-            Innovación tecnológica que impulsa tu negocio
-          </h2>
-        </InViewAnimationWrapper>
-
-        {/* Subtítulo */}
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="y"
           offset={30}
           transition={{ duration: 0.3, delay: 0.3 }}
         >
+          <h2 className="text-3xl tablet-md:text-5xl font-extrabold leading-tight">
+            Innovación tecnológica que impulsa tu negocio
+          </h2>
+        </TextRevealClient>
+
+        {/* Subtítulo */}
+        <TextRevealClient
+          direction="y"
+          offset={30}
+          transition={{ duration: 0.3, delay: 0.4 }}
+        >
           <p className="text-base tablet-md:text-xl text-gray-200 max-w-3xl">
             Desarrollamos soluciones digitales con seguridad, escalabilidad y un enfoque personalizado para maximizar tu crecimiento.
           </p>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
 
         {/* Botón principal */}
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           direction="y"
           offset={30}
           transition={{duration:0.4, delay: 0.3}}
@@ -61,7 +61,7 @@ export default function CTASlugfolio() {
               </span>
             </button>
           </Link>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
 
         {/* Stats / badges */}
         <StaggerListContainer className="flex flex-wrap justify-center gap-6 mt-12">

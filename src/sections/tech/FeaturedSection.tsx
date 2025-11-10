@@ -1,81 +1,51 @@
-import { Brain, Smartphone, Database, Layers, Star, TrendingUp } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import { Star, TrendingUp } from "lucide-react";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
-import ProjectStaggerWrapper from "@/components/ui/ProjectStaggerWrapper";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { techFeaturedData } from "@/data/sections/tech/techFeaturedData";
+import { TechFeaturedCard } from "@/components/cards/tech/TechFeaturedCard";
+import CardInViewStagger from "@/components/ui/CardInViewStagger";
 
 export default function FeaturedSection() {
-  const items = [
-    {
-      title: "Aplicaciones Full Stack",
-      icon: <Layers className="w-8 h-8 text-white" />,
-      description:
-        "Creamos aplicaciones web escalables con frontend y backend modernos. Gestionamos clústeres en Kubernetes, microservicios y pruebas de seguridad para garantizar rendimiento, agilidad y crecimiento.",
-    },
-    {
-      title: "Inteligencia Artificial",
-      icon: <Brain className="w-8 h-8 text-white" />,
-      description:
-        "Desarrollamos soluciones de inteligencia artificial aplicando algoritmos avanzados y aprendizaje automático. Desde el análisis de datos hasta el entrenamiento de modelos predictivos, creamos sistemas inteligentes adaptados a cada necesidad.",
-    },
-    {
-      title: "Aplicaciones con datos intensivos",
-      icon: <Database className="w-8 h-8 text-white" />,
-      description:
-        "Administramos bases de datos a gran escala e integramos análisis avanzados y aprendizaje automático. Garantizamos aplicaciones confiables, seguras y escalables que se adaptan a sus necesidades más exigentes.",
-    },
-    {
-      title: "Aplicaciones móviles (Android & iOS)",
-      icon: <Smartphone className="w-8 h-8 text-white" />,
-      description:
-        "Desarrollamos aplicaciones móviles nativas y multiplataforma, asegurando interfaces intuitivas, alto rendimiento y compatibilidad con Android e iOS. Creamos experiencias móviles atractivas, responsivas y adaptadas a las necesidades de los usuarios.",
-    },
-  ];
-
-
   return (
     <section className="relative my-24 mx-4 md-tablet:mx-8 py-20 rounded-3xl bg-colorPrimario4 overflow-hidden">
-      
       <div className="relative z-10 max-w-7xl mx-auto px-4 md-tablet:px-8">
-        
         {/* Badge superior */}
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           className="flex justify-center mb-8"
           direction="y"
           offset={30}
-          transition={{ duration: 0.1, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
         >
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-colorPrimario5/20 border border-colorPrimario5/30 backdrop-blur-sm">
             <Star className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             <strong className="text-colorPrimario5 font-semibold">Nuestras especialidades</strong>
           </div>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
 
         {/* Título */}
-
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="y"
           offset={30}
-          transition={{duration: 0.2, delay: 0.3}}
+          transition={{duration: 0.3, delay: 0.3}}
         >
           <h2 className="text-3xl table-lg:text-5xl font-extrabold text-center mb-4 text-white">
             En qué nos 
             <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text"> destacamos</strong>
           </h2>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
         {/* Subtítulo mejorado */}
-        <InViewAnimationWrapper
+        <TextRevealClient
           direction="y"
           offset={30}
-          transition={{ duration: 0.3, delay: 0.3 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
         >
-          <p
-            className="text-center text-colorHover5 mb-8 max-w-3xl mx-auto text-lg md-tablet:text-xl leading-relaxed"
-          >
+          <p className="text-center text-colorHover5 mb-8 max-w-3xl mx-auto text-lg md-tablet:text-xl leading-relaxed">
             Soluciones tecnológicas de vanguardia que marcan la diferencia en cada proyecto que desarrollamos.
           </p>
-        </InViewAnimationWrapper>
+        </TextRevealClient>
 
         {/* Estadísticas rápidas */}
         <StaggerListContainer
@@ -99,13 +69,13 @@ export default function FeaturedSection() {
         </StaggerListContainer>
 
         {/* Grid mejorado con cards premium */}
-        <div
-          className="grid grid-cols-1 table-lg:grid-cols-2 gap-8"
-        >
-          {items.map((item, index) => (
-            <ProjectStaggerWrapper
+        <div className="grid grid-cols-1 table-lg:grid-cols-2 gap-8">
+          {techFeaturedData.map((item, index) => (
+            <CardInViewStagger
               key={index}
               index={index}
+              direction="y"
+              offset={30}
               className={`
                 group relative p-8 rounded-3xl 
                 bg-gradient-to-br from-colorPrimario5/10 to-colorPrimario6/10 backdrop-blur-sm
@@ -114,55 +84,18 @@ export default function FeaturedSection() {
                 hover:scale-[1.05] active:scale-[0.98] transform transition-all duration-300
               `}
             >
-              
-              {/* Efectos decorativos */}
-              <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
-              
-              {/* Badge numerado */}
-              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 text-white font-bold text-sm flex items-center justify-center shadow-lg">
-                {String(index + 1).padStart(2, '0')}
-              </div>
-
-              {/* Icono principal */}
-              <div className="flex items-center gap-4 mb-6">
-                <div
-                  className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-r from-colorSecundario1 to-colorSecundario2 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300`}
-                >
-                  {item.icon}
-                </div>
-                
-                <div>
-                  <h3 className="text-xl md-tablet:text-2xl font-bold text-white transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <div className="flex items-center gap-2 mt-1">
-                    <TrendingUp className="w-4 h-4 text-colorPrimario5 flex-shrink-0" />
-                    <p className="text-sm text-colorPrimario5 font-semibold">Especialidad destacada</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Descripción */}
-              <p className="text-colorHover5 leading-relaxed mb-6">
-                {item.description}
-              </p>
-
-              {/* Badge de tecnología */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-                <div className="w-2 h-2 rounded-full bg-colorPrimario5 animate-pulse"></div>
-                <strong className="text-white font-semibold text-sm">
-                  Tecnología de vanguardia
-                </strong>
-              </div>
-
-              {/* Efecto de brillo en hover */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            </ProjectStaggerWrapper>
+              <TechFeaturedCard
+                title={item.title}
+                icon={item.icon}
+                description={item.description}
+                index={index}
+              />
+            </CardInViewStagger>
           ))}
         </div>
 
         {/* Call to action final */}
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           direction="y"
           offset={30}
           className="text-center mt-16"
@@ -175,7 +108,7 @@ export default function FeaturedSection() {
             </strong>
             <TrendingUp className="flex-shrink-0 w-6 h-6 text-colorPrimario5" />
           </div>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
       </div>
     </section>
   );

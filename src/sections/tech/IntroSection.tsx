@@ -1,11 +1,12 @@
 import dynamic from "next/dynamic";
 import { Award } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 // 1. Cargamos el componente SliderTech Y los datos (sliderLogoTech) de forma dinámica.
 const DynamicSliderCarousel = dynamic(() =>
   Promise.all([
-    import("./SliderTech").then((mod) => mod.SliderTech),
+    import("../../components/cards/tech/SliderTech").then((mod) => mod.SliderTech),
     import("@/data/sliderLogoTech").then((mod) => mod.sliderLogoTech),
   ]).then(([SliderTech, sliderLogoTech]) => {
     
@@ -31,99 +32,67 @@ const DynamicSliderCarousel = dynamic(() =>
 export default function IntroSection() {
   return (
     <section className="w-full pb-5 pt-16 mx-auto">
-
       <div className="container mx-auto max-w-[1400px] relative z-10">
         <div className="flex justify-center px-4">
 
-        {/* Hero de Tecnología */}
+          {/* Hero de Tecnología */}
           <div className="
             max-w-5xl mx-auto px-6 md-tablet:px-10 text-center items-center space-y-4 relative backdrop-blur-md
-            bg-gradient-to-b from-colorHover2/10 to-colorHover3 py-5 rounded-3xl"
+            bg-gradient-to-b from-colorHover2/10 to-colorHover3 py-10 rounded-3xl"
           >
             {/* Efectos decorativos en la card */}
             <div className="absolute top-6 right-6 w-4 h-4 rounded-full bg-colorPrimario5 opacity-60"></div>
             <div className="absolute bottom-6 left-6 w-3 h-3 rounded-full bg-colorSecundario3 opacity-40"></div>
             
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={30}
-              transition={{ duration: 0.2, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
               <h2
-                className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorPrimario1 pb-5"
+                className="text-2xl md-tablet:text-3xl table-lg:text-4xl font-extrabold text-colorPrimario1"
               >
                 Todo lo que necesitas para {""}
                 <strong className="text-transparent bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 bg-clip-text">construir y escalar</strong>
               </h2>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="y"
               offset={30}
-              transition={{ duration: 0.2, delay: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
             >
-              <p className="text-lg text-colorPrimario1 md-tablet:text-xl max-w-3xl mx-auto">
+              <p className="text-lg text-colorPrimario1 md-tablet:text-xl max-w-3xl mx-auto my-7">
                 Utilizamos herramientas modernas que aseguran rendimiento,
                 escalabilidad y experiencias inolvidables. No solo se trata de usar
                 tecnología, sino de cómo la aplicamos para hacer crecer tu proyecto.
               </p>
-            </InViewAnimationWrapper>
-
+            </TextRevealClient>
 
             {/* Badge de años de experiencia */}
-            <InViewAnimationWrapper
+            <SimpleInViewWrapper
               direction="y"
               offset={30}
-              className="inline-flex items-center gap-2 mt-8 px-4 md-tablet:px-8 py-3 rounded-full bg-colorPrimario5 border border-colorPrimario5/30 backdrop-blur-sm"
-              transition={{ duration: 0.3, delay: 0.4 }}
+              className="inline-flex items-center gap-2 mt-8 px-4 md-tablet:px-8 py-3 rounded-3xl 
+              bg-colorPrimario5 border border-colorPrimario5/30 backdrop-blur-sm"
+              transition={{ duration: 0.3, delay: 0.2 }}
             >
               <Award className="w-5 h-5 text-white flex-shrink-0" />
               <strong className="text-colorHover5 font-semibold">Empieza tu proyecto con calidad</strong>
-            </InViewAnimationWrapper>
-
+            </SimpleInViewWrapper>
           </div>
         </div>
       </div>
 
       {/* Carrusel de logos */}
-      <InViewAnimationWrapper
+      <SimpleInViewWrapper
         direction="y"
         offset={30}
-        transition={{ duration: 0.4, delay: 0.4 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
         className="overflow-hidden mt-12 py-5 mx-auto bg-colorPrimario5 border-y border-colorSecundario3"
       >
-        {/* Renderizamos el componente dinámico sin pasar props */}
         <DynamicSliderCarousel /> 
-      </InViewAnimationWrapper>
-
-      {/* Bloque de Kit Tecnológico */}
-      <div className="overflow-hidden mx-auto mt-16 px-5 md-tablet:px-10 space-y-4 pb-5 text-left">
-        <InViewAnimationWrapper
-          direction="x"
-          offset={-20}
-          transition={{ duration: 0.3, delay: 0.2 }}
-        >
-          <h3 className="text-2xl md-tablet:text-3xl font-extrabold text-colorPrimario1">
-            De un vistazo a nuestro kit 
-            <br/>de 
-            <strong className="text-colorPrimario5">  herramientas tecnológicas</strong>
-          </h3>
-        </InViewAnimationWrapper>
-        
-        <InViewAnimationWrapper
-          direction="x"
-          offset={-20}
-          transition={{ duration: 0.3, delay: 0.2 }}
-        >
-          <p className="text-lg md-tablet:text-xl max-w-2xl text-gray-700">
-            Profundizamos en las necesidades de su proyecto para asegurarnos de
-            seleccionar las mejores herramientas y marcos para su producto. La
-            mayoría de los proyectos en los que trabajamos se dividen en el
-            siguiente stack de tecnológicas.
-          </p>
-        </InViewAnimationWrapper>
-
-      </div>
+      </SimpleInViewWrapper>
     </section>
   );
 }

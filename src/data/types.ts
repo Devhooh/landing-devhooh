@@ -1,4 +1,7 @@
-import { Zap, Shield, Palette, Code, Database, Smartphone, Cloud, CheckCircle, Star  } from "lucide-react";
+import { 
+  Zap, Shield, Palette, Code, Database, Smartphone, 
+  Cloud, CheckCircle, Star, Brain, Layers,
+} from "lucide-react";
 
 // Definimos el mapeo de iconos 
 export const IconMap = {
@@ -44,4 +47,18 @@ export interface PlanItem {
   borderColor?: string,
   popular?: boolean,
   beneficio: string[]
+}
+
+export const IconMapFeatured = {
+  Layers: Layers,
+  Brain: Brain,
+  Database: Database,
+  Smartphone: Smartphone,
+}
+
+export interface TechFeaturedItem  {
+  index?: number;
+  title: string;
+  icon: keyof typeof IconMapFeatured;
+  description: string;
 }

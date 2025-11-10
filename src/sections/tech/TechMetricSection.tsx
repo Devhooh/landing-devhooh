@@ -28,12 +28,15 @@ const metrics = [
 export default function TechMetricSection() {
   return (
     <section className="py-16 px-8 bg-colorPrimario3">
-      <StaggerListContainer className="max-w-6xl mx-auto grid grid-cols-1 md-tablet:grid-cols-2 lg-table:grid-cols-4 gap-10 text-center">
+      <StaggerListContainer 
+        className="max-w-6xl mx-auto grid grid-cols-1 md-tablet:grid-cols-2 lg-table:grid-cols-4 gap-10 text-center"
+      >
         {metrics.map((item, index) => (
           <StaggerListItemClient
             key={index}
             direction="y"
             offset={30}
+            transition={{duration: 0.2, ease: "easeInOut"}}
             className="bg-colorSecundario4 rounded-3xl p-8 shadow-xl hover:scale-105 transition-transform duration-300"
           >
             <div className="flex justify-center mb-4">{item.icon}</div>

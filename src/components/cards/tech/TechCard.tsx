@@ -1,10 +1,10 @@
-import Link from "next/link";
 import { ArrowRight, Code, Sparkles } from "lucide-react";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import { TechIcon } from "@/components/utils/TechIconMapper";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 import TextRevealClient from "@/components/ui/TextRevealClient";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 interface Technology {
   name: string;
@@ -88,15 +88,14 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
                 direction="y"
                 offset={30}
               >
-                <Link
+                <ButtonCta
                   href={`/tecnologia/${tech.slug}`}
-                  className={`
+                  className="
                     group/tech relative block p-2 rounded-2xl 
                     bg-gradient-to-r from-colorHover5/80 to-colorHover6/80
                     backdrop-blur-sm border border-white/20 hover:border-colorPrimario5/40
                     shadow-lg hover:shadow-xl 
-                    transform transition-all duration-300 hover:scale-102 hover:-translate-y-1
-                  `}
+                    transform transition-all duration-300 hover:scale-102 hover:-translate-y-1"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -124,7 +123,7 @@ export default function TechCard({ title, subtitle, technologies }: TechCardProp
                       <ArrowRight className="flex-shrink-0 w-4 h-4 text-colorPrimario5 group-hover/tech:text-white transition-all duration-300" />
                     </div>
                   </div>
-                </Link>
+                </ButtonCta>
               </StaggerListItemClient>
             );
           })}

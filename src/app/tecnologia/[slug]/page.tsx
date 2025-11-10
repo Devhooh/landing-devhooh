@@ -2,7 +2,7 @@ import TechHero from "@/sections/tech/components/TechHero";
 import { techData } from "@/data/techDataPage";
 import TechBenefits from "@/sections/tech/components/TechBenefits";
 import TechServices from "@/sections/tech/components/TechServices";
-import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
+import { ServicesSliderProjects } from "@/components/layout/ServicesSliderProjects";
 import { projectsData } from "@/data/portfolioData";
 import TechWhy from "@/sections/tech/components/TechWhy";
 import TechProcess from "@/sections/tech/components/TechProcess";

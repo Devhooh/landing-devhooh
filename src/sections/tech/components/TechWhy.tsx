@@ -1,10 +1,11 @@
-import Link from "next/link";
 import Image from "next/image";
 import { Code2, Sparkles } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import { FloatingWrapper } from "@/components/ui/FloatingWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import ButtonCta from "@/components/ui/ButtonCta";
 
 interface TechWhyProps {
   title: string;
@@ -28,8 +29,7 @@ export default function TechWhy({
           bg-gradient-to-bl from-colorDarkFondo1 to-colorHover 
           text-white rounded-3xl p-8 md-tablet:p-12
           shadow-[0_0_50px_rgba(103,61,230,0.3)] border border-colorPrimario5/20 
-          backdrop-blur-md max-w-6xl w-full
-        "
+          backdrop-blur-md max-w-6xl w-full"
       >
         {/* Decorativos */}
         <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 opacity-60"></div>
@@ -42,10 +42,10 @@ export default function TechWhy({
         {/* Grid principal: imagen + texto */}
         <div className="grid grid-cols-1 tablet-md:grid-cols-2 gap-12 items-center">
           {/* Imagen izquierda */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={-20}
-            transition={{ duration: 0.4, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             className="flex justify-center order-2 tablet-md:order-1"
           >
             <Image
@@ -56,11 +56,11 @@ export default function TechWhy({
               loading="lazy"
               className="rounded-2xl object-cover w-80 h-auto shadow-lg"
             />
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
 
           {/* Texto derecha */}
           <div className="order-1 tablet-md:order-2 text-center tablet-md:text-right flex flex-col items-center tablet-md:items-end">
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="x"
               offset={20}
               transition={{ duration: 0.3, delay: 0.4 }}
@@ -68,9 +68,9 @@ export default function TechWhy({
               <h2 className="text-2xl tablet-md:text-3xl font-extrabold mb-4 leading-tight">
                 ¿Por qué desarrollar con {title}
               </h2>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
-            <InViewAnimationWrapper
+            <TextRevealClient
               direction="x"
               offset={20}
               transition={{ duration: 0.3, delay: 0.5  }}
@@ -78,15 +78,16 @@ export default function TechWhy({
               <p className="text-colorHover5 leading-relaxed mb-6 max-w-md">
                 {description}
               </p>
-            </InViewAnimationWrapper>
+            </TextRevealClient>
 
             {/* Botón premium */}
-            <InViewAnimationWrapper
+            <SimpleInViewWrapper
               direction="y"
               offset={30}
               transition={{ duration: 0.3, delay: 0.6 }}
             >
-              <Link
+
+              <ButtonCta
                 href="/contact"
                 className="
                   relative inline-flex items-center justify-center px-7 py-3 
@@ -94,16 +95,15 @@ export default function TechWhy({
                   bg-gradient-to-r from-colorPrimario5 to-colorSecundario1
                   text-white shadow-lg hover:shadow-2xl 
                   transition-transform duration-300 hover:scale-[1.03]
-                  overflow-hidden group
-                "
+                  overflow-hidden group"
               >
                 <span className="relative z-10">Solicita presupuesto</span>
                 <div
                   className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/20 via-transparent to-white/20 
                   translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
                 />
-              </Link>
-            </InViewAnimationWrapper>
+              </ButtonCta>
+            </SimpleInViewWrapper>
           </div>
         </div>
 
@@ -134,7 +134,7 @@ export default function TechWhy({
         </StaggerListContainer>
 
         {/* Call to action final */}
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           direction="y"
           offset={30}
           transition={{ duration: 0.3, delay: 0.3}}
@@ -147,7 +147,7 @@ export default function TechWhy({
               Stack optimizado para máximo rendimiento
             </strong>
           </div>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
       </div>
     </section>
   );

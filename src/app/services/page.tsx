@@ -1,7 +1,7 @@
 import CaroulselSection from "@/sections/services/CaroulselSection";
 import ServicesCardsSection from "@/sections/services/ServicesCardsSection";
 import { customDevelopmentCardData, DesignerQACardData, InfraestructureSupportCardData, ServicesIACardData } from "@/data/servicesData";
-import { ServicesSliderProjects } from "@/sections/services/ServicesSliderProjects";
+import { ServicesSliderProjects } from "@/components/layout/ServicesSliderProjects";
 import FAQSection from "@/components/ui/FAQSection";
 import { faqDataServices } from "@/data/faqDataServices";
 import { projectsData } from "@/data/portfolioData";

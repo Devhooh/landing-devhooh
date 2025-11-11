@@ -1,4 +1,5 @@
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
+import TextRevealClient from "@/components/ui/TextRevealClient";
 import { DataTech } from "@/data/techDataPage";
 import Image from "next/image";
 
@@ -11,7 +12,7 @@ export default function TechHero({ tech }: TechHeroProps) {
     <section className="container mx-auto px-6 md-tablet:px-14 py-12">
       <div className="grid grid-cols-1 tablet-md:grid-cols-2 gap-8 items-center">
         <div>
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={-20}
             transition={{duration: 0.3, delay: 0.3}}
@@ -19,9 +20,9 @@ export default function TechHero({ tech }: TechHeroProps) {
             <h1 className="text-3xl md-tablet:text-4xl tablet-md:text-6xl text-colorPrimario2 font-bold drop-shadow-lg">
               Servicios de desarrollo con <strong className="text-colorPrimario5">{tech.title}</strong>
             </h1>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={-20}
             transition={{duration: 0.3, delay: 0.4}}
@@ -29,10 +30,10 @@ export default function TechHero({ tech }: TechHeroProps) {
             <p className="mt-4 text-lg md-tablet:text-xl tablet-md:text-3xl text-gray-700">
               {tech.subtitle}
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
         </div>
 
-        <InViewAnimationWrapper
+        <SimpleInViewWrapper
           direction="x"
           offset={20}
           transition={{duration: 0.3, delay: 0.5}}
@@ -48,17 +49,14 @@ export default function TechHero({ tech }: TechHeroProps) {
                 priority
                 className="w-80 max-w-md h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              
               {/* Overlay con gradiente */}
               <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
             {/* Círculos decorativos flotantes */}
-            <div
-              className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gray-500 opacity-20"
-            ></div>
+            <div className="animate-pulse absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gray-500 opacity-20"></div>
           </div>
-        </InViewAnimationWrapper>
+        </SimpleInViewWrapper>
       </div>
     </section>
   );

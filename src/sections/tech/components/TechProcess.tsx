@@ -48,7 +48,7 @@ export default function TechProcess({ name, steps }: TechProcessProps) {
         {/* Timeline mejorado */}
         <div className="relative">
           {/* Línea principal del timeline */}
-          <div className="absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-colorPrimario5 via-colorSecundario1 to-colorPrimario5 rounded-full shadow-lg"></div>
+          <div className="absolute left-6 md-tablet:left-8 top-0 w-1 h-full bg-gradient-to-b from-colorPrimario5 via-colorSecundario1 to-colorPrimario5 rounded-full shadow-lg"></div>
           <div className="flex flex-col gap-8">
             {steps.map((step, index) => {
               const isLast = index === steps.length - 1;

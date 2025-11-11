@@ -26,7 +26,7 @@ export default function TechProcessCard({
       <div className="relative z-10 flex-shrink-0">
         <div 
           className="
-            w-16 h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
+            w-12 h-12 md-tablet:w-16 md-tablet:h-16 rounded-2xl bg-gradient-to-r from-colorPrimario5 to-colorSecundario1 
             flex items-center justify-center shadow-lg group hover:shadow-xl transition-all duration-300
             hover:scale-[1.02]"
         >

@@ -3,12 +3,12 @@ import { TrendingUp } from "lucide-react";
 import React from "react";
 
 
-export const TechFeaturedCard: React.FC<TechFeaturedItem> = ({
+export function TechFeaturedCard ({
   title,
   icon,
   description,
   index = 0,
-}) => {
+}: TechFeaturedItem) {
   const IconComponent = IconMapFeatured[icon]
 
   return (

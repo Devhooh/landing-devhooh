@@ -1,5 +1,5 @@
+import ButtonCta from "@/components/ui/ButtonCta";
 import Image from "next/image";
-import Link from "next/link";
 
 interface Project {
   id: number;
@@ -35,11 +35,9 @@ export default function PortfolioCard({ project }: { project: Project }) {
           <h2 className="text-xl font-semibold text-colorPrimario2 mb-2">
             {project.ProjectName}
           </h2>
-
           <p className="text-sm text-gray-700 pb-5 line-clamp-3 overflow-hidden">
             {project.description}
           </p>
-
           {/* Chips */}
           <div className="flex flex-wrap gap-2 mt-2">
             {project.technologies.map((tech) => (
@@ -55,18 +53,21 @@ export default function PortfolioCard({ project }: { project: Project }) {
 
         {/* Botones */}
         <div className="flex flex-col justify-between tablet-md:flex-row gap-4 mt-6">
-          <Link
+          <ButtonCta
             href={`/portfolio/${project.slug}`}
-            className="flex-1 text-center border border-colorPrimario1 bg-colorFondo hover:bg-colorSecundario4 text-colorPrimario3 hover:text-white font-semibold py-2 px-4 rounded-lg transition"
+            className="flex-1 text-center border border-colorPrimario1 bg-colorFondo hover:bg-colorSecundario4 
+            text-colorPrimario3 hover:text-white font-semibold py-2 px-4 rounded-lg transition transform"
           >
             Más detalles
-          </Link>
-          <Link
+          </ButtonCta>
+
+          <ButtonCta
             href={`/portfolio/${project.slug}`}
-            className="flex-1 text-center border border-colorPrimario1 bg-colorFondo hover:bg-colorSecundario4 text-colorPrimario3 hover:text-white font-semibold py-2 px-4 rounded-lg transition"
+            className="flex-1 text-center border border-colorPrimario1 bg-colorFondo hover:bg-colorSecundario4 
+            text-colorPrimario3 hover:text-white font-semibold py-2 px-4 rounded-lg transition transform"
           >
             Ver proyecto
-          </Link>
+          </ButtonCta>
         </div>
       </div>
     </div>

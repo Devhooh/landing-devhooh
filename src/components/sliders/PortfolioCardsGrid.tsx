@@ -2,21 +2,11 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { motion, Variants } from "framer-motion";
 
-import PortfolioCard from "@/sections/portfolio/PortfolioCard";
+import PortfolioCard from "@/components/cards/portfolio/PortfolioCard";
 import { Project } from "@/data/portfolioData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const gridContainer = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.2 } },
-};
-
-const cardItem: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
-};
+import CardInViewStagger from "../ui/CardInViewStagger";
 
 interface CardsProps {
   filteredProjects: Project[];
@@ -36,30 +26,27 @@ export default function PortfolioCardsGrid({ filteredProjects }: CardsProps) {
   return (
     <section className="bg-colorHover3/60 w-full pt-8 pb-8 md-tablet:pb-14 rounded-3xl">
       {/* Grid para PC */}
-      <motion.div
+      <div
         className="hidden table-lg:grid grid-cols-1 mx-2 md-tablet:mx-8 table-lg:grid-cols-2 gap-8 mt-8 "
-        variants={gridContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.1 }}
       >
         {filteredProjects.map((project) => (
-          <motion.div key={project.id} variants={cardItem}>
+          <CardInViewStagger
+            key={project.id}
+            index={0.1}
+            direction="y"
+            offset={30}
+          >
             <PortfolioCard project={project} />
-          </motion.div>
+          </CardInViewStagger>
         ))}
-      </motion.div>
+      </div>
 
       {/* Swiper para tablets y móviles */}
       <div className="block table-lg:hidden mt-8 px-2 md-tablet:px-5">
         {chunkedProjects.map((chunk, index) => (
-          <motion.div
+          <div
             key={index}
             className="mb-8"
-            variants={gridContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
           >
             <Swiper
               modules={[Navigation, Pagination]}
@@ -74,9 +61,14 @@ export default function PortfolioCardsGrid({ filteredProjects }: CardsProps) {
             >
               {chunk.map((project) => (
                 <SwiperSlide key={project.id} className="p-2">
-                  <motion.div variants={cardItem}>
+                  <CardInViewStagger
+                    key={project.id}
+                    index={0.1}
+                    direction="y"
+                    offset={30}
+                  >
                     <PortfolioCard project={project} />
-                  </motion.div>
+                  </CardInViewStagger>
                 </SwiperSlide>
               ))}
 
@@ -89,7 +81,7 @@ export default function PortfolioCardsGrid({ filteredProjects }: CardsProps) {
               </div>
 
             </Swiper>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

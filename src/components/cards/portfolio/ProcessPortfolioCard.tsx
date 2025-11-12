@@ -1,18 +1,13 @@
-import * as Icons from "lucide-react";
-import { LucideProps } from "lucide-react";
+import { IconMapProcessPort, ProcessPortItem } from "@/data/types";
 
-interface ProcessProps {
-  icon: string;
-  title: string;
-  description: string;
-  index: number;
-  isLast: boolean
-}
-
-export default function ProcessPortfolioCard({icon, title, description, index, isLast}: ProcessProps) {
-  const Icon =
-    (Icons[icon as keyof typeof Icons] as React.ComponentType<LucideProps>) ||
-    Icons.HelpCircle;
+export default function ProcessPortfolioCard({
+  icon, 
+  title, 
+  description, 
+  index = 0, 
+  isLast
+}: ProcessPortItem) {
+  const IconComponent = IconMapProcessPort[icon]
 
   return (
     <>
@@ -42,7 +37,7 @@ export default function ProcessPortfolioCard({icon, title, description, index, i
           {/* Header del step */}
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-colorPrimario5/20 to-colorSecundario1/20 flex items-center justify-center border border-colorPrimario5/30">
-              <Icon className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
+              <IconComponent className="w-5 h-5 text-colorPrimario5 flex-shrink-0" />
             </div>
             <div>
               <h3 className="text-xl md-tablet:text-2xl font-bold text-colorPrimario2 group-hover:text-colorPrimario5 transition-colors duration-300">

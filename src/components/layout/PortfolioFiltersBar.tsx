@@ -1,6 +1,6 @@
-import { CustomSelect } from "@/sections/portfolio/CustomSelect";
 import { Project } from "@/data/portfolioData";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
+import { CustomSelect } from "./CustomSelect";
+import { SimpleInViewWrapper } from "../ui/SimpleInViewWrapper";
 
 interface FiltersProps {
   projectsData: Project[];
@@ -34,7 +34,7 @@ export default function PortfolioFiltersBar({
     <div
       className="bg-colorSecundario4 shadow-2xl rounded-xl flex flex-col tablet-md:flex-row gap-4 items-center mb-6 p-6 mx-2 md-tablet:mx-4"
     >
-      <InViewAnimationWrapper
+      <SimpleInViewWrapper
         direction="y"
         offset={10}
         transition={{duration: 0.2, delay: 0.2}}
@@ -46,9 +46,9 @@ export default function PortfolioFiltersBar({
           value={selectedProject} 
           onChange={setSelectedProject} 
         />
-      </InViewAnimationWrapper>
+      </SimpleInViewWrapper>
 
-      <InViewAnimationWrapper
+      <SimpleInViewWrapper
         direction="y"
         offset={10}
         transition={{duration: 0.3, delay: 0.3}}
@@ -60,9 +60,9 @@ export default function PortfolioFiltersBar({
           value={selectedCountry} 
           onChange={setSelectedCountry} 
         />
-      </InViewAnimationWrapper>
+      </SimpleInViewWrapper>
       
-      <InViewAnimationWrapper
+      <SimpleInViewWrapper
         direction="y"
         offset={10}
         transition={{duration: 0.3, delay: 0.4}}
@@ -74,9 +74,9 @@ export default function PortfolioFiltersBar({
           value={selectedService} 
           onChange={setSelectedService} 
         />
-      </InViewAnimationWrapper>
+      </SimpleInViewWrapper>
       
-      <InViewAnimationWrapper
+      <SimpleInViewWrapper
         direction="y"
         offset={10}
         transition={{duration: 0.3, delay: 0.5}}
@@ -88,7 +88,7 @@ export default function PortfolioFiltersBar({
           value={selectedTechnology} 
           onChange={setSelectedTechnology} 
         />
-      </InViewAnimationWrapper>
+      </SimpleInViewWrapper>
     </div>
   );
 }

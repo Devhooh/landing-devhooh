@@ -2,25 +2,15 @@ import ProcessPortfolioCard from "@/components/cards/portfolio/ProcessPortfolioC
 import CardInViewStagger from "@/components/ui/CardInViewStagger";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 import TextRevealClient from "@/components/ui/TextRevealClient";
+import { portfolioDesarrollo } from "@/data/sections/portfolio/portfolioDesarrollo";
 import { CheckCircle, Target } from "lucide-react";
 
-interface ProcessStep {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface TechProcessProps {
-  steps: ProcessStep[];
-}
-
-export default function ProcessPortfolio({ steps }: TechProcessProps) {
-  if (!steps || steps.length === 0) return null;
-
+export default function ProcessPortfolio() {
   return (
     <section className="relative py-20 bg-gradient-to-b from-colorHover6 via-colorHover5 to-colorHover6 overflow-hidden">
       <div className="relative z-10 max-w-5xl mx-auto px-6 md-tablet:px-12">
         <div className="text-center mb-16">
+          {/* Título */}
           <TextRevealClient
             direction="y"
             offset={30}
@@ -47,8 +37,8 @@ export default function ProcessPortfolio({ steps }: TechProcessProps) {
           {/* Línea principal del timeline */}
           <div className="absolute left-6 md-tablet:left-8 top-0 w-1 h-full bg-gradient-to-b from-colorPrimario5 via-colorSecundario1 to-colorPrimario5 rounded-full shadow-lg"></div>
           <div className="flex flex-col gap-8">
-            {steps.map((step, index) => {
-              const isLast = index === steps.length - 1;
+            {portfolioDesarrollo.map((step, index) => {
+              const isLast = index === portfolioDesarrollo.length - 1;
               
               return (
                 <CardInViewStagger

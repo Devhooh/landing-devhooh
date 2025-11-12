@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import ReviewCard from "../../components/cards/portfolio/ReviewCard";
+import ReviewCard from "@/components/cards/portfolio/ReviewCard";
 import { reviewData } from "@/data/reviewData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";

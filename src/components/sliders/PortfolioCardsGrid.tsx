@@ -29,10 +29,10 @@ export default function PortfolioCardsGrid({ filteredProjects }: CardsProps) {
       <div
         className="hidden table-lg:grid grid-cols-1 mx-2 md-tablet:mx-8 table-lg:grid-cols-2 gap-8 mt-8 "
       >
-        {filteredProjects.map((project) => (
+        {filteredProjects.map((project, index) => (
           <CardInViewStagger
             key={project.id}
-            index={0.1}
+            index={index}
             direction="y"
             offset={30}
           >
@@ -59,11 +59,11 @@ export default function PortfolioCardsGrid({ filteredProjects }: CardsProps) {
               slidesPerView={1} // SOLO 1 card por slider
               spaceBetween={20}
             >
-              {chunk.map((project) => (
+              {chunk.map((project, index) => (
                 <SwiperSlide key={project.id} className="p-2">
                   <CardInViewStagger
                     key={project.id}
-                    index={0.1}
+                    index={index}
                     direction="y"
                     offset={30}
                   >

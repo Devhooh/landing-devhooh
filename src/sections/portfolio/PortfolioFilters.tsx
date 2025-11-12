@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { projectsData} from "@/data/portfolioData";
 
-import PortfolioFiltersBar from "./PortfolioFiltersBar";
+import PortfolioFiltersBar from "@/components/layout/PortfolioFiltersBar";
 import { Filter, Folder, PartyPopper, Sparkles } from "lucide-react";
 import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 import TextRevealClient from "@/components/ui/TextRevealClient";

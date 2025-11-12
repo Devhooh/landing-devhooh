@@ -11,8 +11,7 @@ interface CustomSelectProps {
   onChange: (value: string) => void;
 }
 
-
-export const CustomSelect: React.FC<CustomSelectProps> = ({ label, options, value, onChange }) => {
+export function CustomSelect ({ label, options, value, onChange }: CustomSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 

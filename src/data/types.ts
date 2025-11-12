@@ -1,6 +1,7 @@
 import { 
   Zap, Shield, Palette, Code, Database, Smartphone, 
-  Cloud, CheckCircle, Star, Brain, Layers,
+  Cloud, CheckCircle, Star, Brain, Layers, ClipboardList,
+  Map, PenTool, Activity
 } from "lucide-react";
 
 // Definimos el mapeo de iconos 
@@ -61,4 +62,20 @@ export interface TechFeaturedItem  {
   title: string;
   icon: keyof typeof IconMapFeatured;
   description: string;
+}
+
+export const IconMapProcessPort = {
+  ClipboardList: ClipboardList,
+  Map: Map,
+  Code: Code,
+  PenTool: PenTool,
+  Activity: Activity,
+}
+
+export interface ProcessPortItem {
+  icon: keyof typeof IconMapProcessPort;
+  title: string;
+  description: string;
+  index?: number;
+  isLast?: boolean;
 }

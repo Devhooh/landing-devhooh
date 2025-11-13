@@ -6,6 +6,7 @@ import TextRevealClient from './TextRevealClient';
 import { FAQItemSection } from '../layout/FAQItemSection';
 import { SimpleInViewWrapper } from './SimpleInViewWrapper';
 import Link from 'next/link';
+import CardInViewStagger from './CardInViewStagger';
 
 type FAQItemProps = {
   id: number;
@@ -57,14 +58,20 @@ export default function FAQSection({title, description, itemsDate}: listFAQ ) {
         </div>
         <div className="space-y-4">
           {itemsDate.map((item, index) => (
-            <FAQItemSection
-              key={item.id}
-              question={item.question}
-              answer={item.answer}
-              isOpen={index === openIndex}
-              onClick={() => handleToggle(index)}
-              index={index} // para el delay de aparición
-            />
+            <CardInViewStagger
+              key={index}
+              direction='y'
+              offset={30}
+              index={index}
+            >
+              <FAQItemSection
+                key={item.id}
+                question={item.question}
+                answer={item.answer}
+                isOpen={index === openIndex}
+                onClick={() => handleToggle(index)}
+              />
+            </CardInViewStagger>
           ))}
         </div>
 

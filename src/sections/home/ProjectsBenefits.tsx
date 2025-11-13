@@ -10,19 +10,19 @@ interface Benefit {
 
 const benefits: Benefit[] = [
   {
-    icon: <Star className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    icon: <Star className="w-8 h-8 md-tablet:w-10 md-tablet:h-10 text-white" />,
     title: "Calidad y enfoque al cliente",
     description:
     "Garantizamos la entrega de soluciones de software de alto nivel, con código limpio, escalable y diseñado para ofrecer una Experiencia de Usuario (UX) sorprendente."
   },
   {
-    icon: <Wrench className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    icon: <Wrench className="w-8 h-8 md-tablet:w-10 md-tablet:h-10 text-white" />,
     title: "Transparencia y colaboración",
     description:
       "Trabajamos de la mano contigo en ciclos cortos (Sprints). Mantenemos comunicación constante a través de herramientas de gestión para total transparencia en cada avance."
   },
   {
-    icon: <Shield className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    icon: <Shield className="w-8 h-8 md-tablet:w-10 md-tablet:h-10 text-white" />,
     title: "Responsabilidad y cumplimiento",
     description:
       "Nuestro compromiso es con el resultado final. Cumplimos con los plazos de entrega acordados y con los estándares internacionales de calidad y seguridad de datos en el desarrollo."

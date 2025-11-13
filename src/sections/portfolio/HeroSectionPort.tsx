@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
-import { InViewAnimationWrapper } from "@/components/ui/InViewAnimationWrapper";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import ButtonCta from "@/components/ui/ButtonCta";
+import TextRevealClient from "@/components/ui/TextRevealClient";
+import { SimpleInViewWrapper } from "@/components/ui/SimpleInViewWrapper";
 
 export default function HeroSectionPort() {
   return (
@@ -12,10 +13,10 @@ export default function HeroSectionPort() {
         <div className="grid grid-cols-1 table-lg:grid-cols-2 items-center gap-6">
 
           {/* --- 1) TÍTULO --- */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={20}
-            transition={{ duration: 0.2, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             className="order-1 table-lg:order-2 mt-10 table-lg:mt-2"
           >
             <h1 className="text-4xl font-extrabold text-center table-lg:text-right text-colorPrimario2 leading-tight drop-shadow-lg">
@@ -25,13 +26,13 @@ export default function HeroSectionPort() {
               </strong>
               por sí solos
             </h1>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* --- 2) IMAGEN --- */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={-20}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
             className="
               my-10 table-lg:mb-16 order-2 table-lg:order-1 table-lg:row-span-4
               flex justify-center table-lg:justify-start"
@@ -49,28 +50,28 @@ export default function HeroSectionPort() {
                 {/* Overlay con gradiente */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
               {/* Círculos decorativos flotantes */}
-              <div
-                className="animate-pulse absolute -top-4 -right-4  w-8 h-8 rounded-full bg-gray-500 opacity-20"
-              ></div>
+              <div className="animate-pulse absolute -top-4 -right-4  w-8 h-8 rounded-full bg-gray-500 opacity-20"></div>
             </div>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
 
           {/* --- 3) SUBTÍTULO --- */}
-          <InViewAnimationWrapper
+          <TextRevealClient
             direction="x"
             offset={20}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
             className="order-3 mb-5 table-lg:mb-0"
           >
             <p className="text-lg md-tablet:text-xl text-colorPrimario1/80 text-center table-lg:text-right max-w-2xl mx-auto table-lg:mx-0">
               Cada proyecto representa una historia de innovación, colaboración y éxito. Mira cómo ayudamos a crecer negocios con tecnología moderna.
             </p>
-          </InViewAnimationWrapper>
+          </TextRevealClient>
 
           {/* --- 4) LISTA --- */}
-          <StaggerListContainer className="order-4 flex justify-end">
+          <StaggerListContainer 
+            delayChildren={0.2}
+            className="order-4 flex justify-end"
+          >
             <ul className="space-y-3 text-gray-800 text-left max-w-md mx-auto table-lg:mx-0">
               {[
                 "Tiendas online con integración de pagos",
@@ -84,6 +85,7 @@ export default function HeroSectionPort() {
                   direction="x"
                   offset={20}
                   className="flex items-start gap-3"
+                  transition={{duration: 0.2}}
                 >
                   <Check className="w-6 h-6 text-green-600 flex-shrink-0" />
                   <span className="text-base md-tablet:text-xl">{feature}</span>
@@ -93,7 +95,7 @@ export default function HeroSectionPort() {
           </StaggerListContainer>
 
           {/* Boton CTA */}
-          <InViewAnimationWrapper
+          <SimpleInViewWrapper
             direction="x"
             offset={20}
             transition={{ duration: 0.3, delay: 0.3 }}
@@ -107,7 +109,7 @@ export default function HeroSectionPort() {
             >
               Cotiza tu proyecto ahora
             </ButtonCta>
-          </InViewAnimationWrapper>
+          </SimpleInViewWrapper>
         </div>
       </div>
     </section>

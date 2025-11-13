@@ -1,7 +1,7 @@
 import { logos } from "@/data/projects";
 import { projectsData } from "@/data/portfolioData";
-import { ProjectSlider } from "../../components/sliders/ProjectSlider";
-import { ProjectSwiper } from "../../components/sliders/ProjectSwiper";
+import { ProjectSlider } from "@/components/sliders/ProjectSlider";
+import { ProjectSwiper } from "@/components/sliders/ProjectSwiper";
 import React from 'react';
 import { StaggerListItemClient } from "@/components/ui/StaggerListItemClient";
 import StaggerListContainer from "@/components/ui/StaggerListContainer";

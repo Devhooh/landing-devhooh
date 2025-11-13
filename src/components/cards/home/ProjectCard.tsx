@@ -1,5 +1,5 @@
+import ButtonCta from "@/components/ui/ButtonCta";
 import Image from "next/image";
-import Link from "next/link";
 
 interface ProjectCardProps {
   id: number;
@@ -80,13 +80,14 @@ export function ProjectCard({
 
         {/* Botón */}
         <div className="flex justify-center m-5">
-          <Link href={`/portfolio/${slug}`}>
-            <button className="
+          <ButtonCta
+            href={`/portfolio/${slug}`}
+            className="
               bg-colorSecundario2 hover:bg-colorSecundario3 text-white py-2.5 md-tablet:py-3 px-7 md-tablet:px-14 rounded-xl 
-              text-lg md-tablet:text-xl font-semibold shadow-md transition-all duration-300">
-              Ver proyecto
-            </button>
-          </Link>
+              text-lg md-tablet:text-xl font-semibold shadow-md transition-all duration-300"
+          >
+            Ver proyecto
+          </ButtonCta>
         </div>
       </div>
     </div>
